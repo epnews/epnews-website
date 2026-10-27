@@ -9,9 +9,9 @@ Object.assign(STORIES.find(s=>s.id==='power'),{
   "category": "investigations",
   "type": "FEATURED INVESTIGATION",
   "image": {
-    "src": "assets/images/chaos-investigation-photo.jpg",
-    "alt": "EP News magazine graphic using an archival U.S. Government Accountability Office photograph of an LNG export facility; not a photo of the reported 2026 transactions.",
-    "credit": "Archival source photo: U.S. GAO (2014), public domain; EP News headline design."
+    "src": "assets/images/chaos-approved-cover.png",
+    "alt": "EP News AI-generated editorial collage illustrating war, unrest, energy, trade and financial power; composite scenes are not documentary photographs.",
+    "credit": "EP News AI-generated editorial composite. Illustrative scenes, not photographs of specific events."
   },
   "body": [
     "This complete investigative article is presented through structured sections with citations and evidence tables."
