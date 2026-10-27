@@ -10,9 +10,9 @@ STORIES.push({
   "title": "DOJ Pursues New Case Against James Comey — Without Grand-Jury Indictment",
   "deck": "Prosecutors allege a 2016 national-defense information leak. Comey denies wrongdoing, while his lawyers challenge the Justice Department's use of a criminal information.",
   "image": {
-    "src": "assets/images/comey-case-magazine.svg",
-    "alt": "EP News original editorial illustration of a courthouse, redacted filing, and justice scales; not an authentic photograph of James Comey or a court document.",
-    "credit": "EP News original editorial illustration; not a documentary photograph"
+    "src": "assets/images/comey-case-approved.png",
+    "alt": "EP News composite editorial graphic illustrating the legal dispute involving James Comey; dramatized image, not a documentary photograph.",
+    "credit": "EP News editorial composite; not an authentic photograph of the proceedings"
   },
   "body": [
     "The Justice Department is seeking to prosecute former FBI Director James Comey over allegations that he improperly disclosed national defense information to a reporter in October 2016. The charges were disclosed when court records were unsealed on October 26, 2026.",
