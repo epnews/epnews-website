@@ -9,7 +9,7 @@ Object.assign(STORIES.find(s=>s.id==='power'),{
   "category": "investigations",
   "type": "FEATURED INVESTIGATION",
   "image": {
-    "src": "assets/images/chaos-investigation.svg",
+    "src": "assets/images/chaos-investigation-magazine.svg",
     "alt": "EP News editorial illustration combining industrial infrastructure, shipping and economic data. Not a documentary photograph.",
     "credit": "EP News original editorial illustration; conceptual, not documentary photography"
   },
