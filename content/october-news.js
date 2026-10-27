@@ -28,9 +28,9 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/egypt-saudi-approved-photo.jpg",
-      "alt": "EP News headline graphic over an archival photograph of the Egyptian Parliament building; Egypt authorized military assistance for Saudi Arabia if requested, not a deployment.",
-      "credit": "Archive photograph: Abdelrhman 1990 (2025), CC BY 4.0; cropped and overlaid by EP News."
+      "src": "assets/images/egypt-saudi-approved-graphic.png",
+      "alt": "EP News AI-generated editorial collage illustrating Egypt and Saudi Arabia, regional defense cooperation, and conditional military support; not documentary photography.",
+      "credit": "EP News AI-generated editorial composite; illustrative military scenes are not photographs of a deployment."
     }
   },
   {
