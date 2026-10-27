@@ -28,9 +28,9 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/egypt-saudi-magazine.svg",
-      "alt": "EP News editorial headline card showing Egypt and Saudi Arabia labels and a regional map motif, not a documentary photograph",
-      "credit": "EP News editorial illustration"
+      "src": "assets/images/egypt-saudi-photo.jpg",
+      "alt": "Archival photograph of the Egyptian parliament building with EP News headline design, not a photograph of the October 2026 decision.",
+      "credit": "Archive photograph: Abdelrhman 1990 (2025), CC BY 4.0; cropped and overlaid by EP News."
     }
   },
   {
@@ -62,9 +62,9 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/eqt-range-magazine.svg",
-      "alt": "Original EP News abstract graphic featuring natural gas pipeline silhouettes and transaction headline",
-      "credit": "EP News editorial illustration"
+      "src": "assets/images/eqt-range-photo.jpg",
+      "alt": "Archival Marcellus Shale gas drilling photograph with EP News headline design; not a photograph of the EQT-Range transaction.",
+      "credit": "Archive photograph: Ruhrfisch (2009), CC BY-SA 3.0; adapted by EP News, share-alike terms apply."
     }
   },
   {
@@ -91,9 +91,9 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/judiciary-report-magazine.svg",
-      "alt": "EP News original typography graphic showing a U.S. congressional chamber motif and the words House Judiciary Report",
-      "credit": "EP News editorial illustration"
+      "src": "assets/images/judiciary-report-photo.jpg",
+      "alt": "Archival House Judiciary hearing photograph with EP News headline design; the pictured hearing is unrelated to the October 2026 report.",
+      "credit": "Archive photograph: DHS / Mikaela McGee (2026), U.S. public domain; unrelated Judiciary hearing."
     }
   }
 ]);
