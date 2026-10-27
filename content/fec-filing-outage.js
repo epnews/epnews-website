@@ -18,7 +18,7 @@ STORIES.push({
     'The cause and extent of any unauthorized access remain unresolved. So does the practical question of how quickly delayed reports will become available to voters before Election Day.',
     'EP News will update this report when the FEC confirms restoration, issues technical findings or explains how it will handle delayed disclosures.'
   ],
-  image:{src:'assets/images/fec-filing-outage-2026.svg',alt:'EP News editorial graphic reporting the FEC electronic filing system outage and reported hacking attempts; not documentary photography.',credit:'EP News original editorial illustration; not documentary photography.'},
+  image:{src:'assets/images/epnews-fec-website-1600x900.jpg',alt:'EP News editorial graphic reporting the FEC electronic filing system outage and reported hacking attempts; not documentary photography.',credit:'EP News original Story Multiplier graphic; editorial visual, not documentary photography.'},
   sources:[
     {label:'Federal Election Commission — official electronic filing outage status, October 27, 2026',url:'https://fecgov.statuspage.io/incidents/1f16b9021jfx'},
     {label:'Reuters — hacking attempts and disrupted campaign finance disclosures, October 27, 2026',url:'https://www.reuters.com/technology/hacker-trying-breach-us-federal-election-commission-system-email-shows-2026-10-27/'},
