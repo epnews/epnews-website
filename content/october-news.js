@@ -28,7 +28,7 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/egypt-saudi-news.svg",
+      "src": "assets/images/egypt-saudi-magazine.svg",
       "alt": "EP News editorial headline card showing Egypt and Saudi Arabia labels and a regional map motif, not a documentary photograph",
       "credit": "EP News editorial illustration"
     }
@@ -62,7 +62,7 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/eqt-range-news.svg",
+      "src": "assets/images/eqt-range-magazine.svg",
       "alt": "Original EP News abstract graphic featuring natural gas pipeline silhouettes and transaction headline",
       "credit": "EP News editorial illustration"
     }
@@ -91,7 +91,7 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/judiciary-report-news.svg",
+      "src": "assets/images/judiciary-report-magazine.svg",
       "alt": "EP News original typography graphic showing a U.S. congressional chamber motif and the words House Judiciary Report",
       "credit": "EP News editorial illustration"
     }
