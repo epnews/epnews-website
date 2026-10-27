@@ -16,3 +16,14 @@
 .investigation-table th{background:#17212d;color:#fff}
 .investigation-table tr:nth-child(even){background:#efefea}
 @media(max-width:600px){.investigation-metrics{gap:8px;padding:9px}.investigation-metrics>div{padding:10px}.investigation-metrics strong{font-size:25px}}
+
+/* Visible story photos throughout headline wire and mobile readers */
+.wire-item{grid-template-columns:62px 118px minmax(0,1fr) auto;align-items:center}
+.wire-image{margin:0;width:118px;max-width:100%}
+.wire-image img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:2px;background:#e9e9e6}
+.wire-image figcaption{display:none}
+.wire-copy{min-width:0}
+.article-featured{display:block;max-width:100%;margin:22px 0 26px}
+.article-featured img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#17212b;border-radius:3px}
+.article-featured figcaption{display:block;color:#646b76;font-size:11px;margin-top:7px}
+@media(max-width:680px){.wire-item{grid-template-columns:75px minmax(0,1fr);gap:8px;align-items:center}.wire-time{grid-column:1/-1}.wire-image{width:75px;grid-column:1}.wire-copy{grid-column:2}.wire-type{grid-column:2;justify-self:start}}
