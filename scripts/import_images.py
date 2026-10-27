@@ -29,6 +29,25 @@ for entry in data:
     for addr in addresses:
         ip=ipaddress.ip_address(addr[4][0])
         if not ip.is_global: raise ValueError('Private or special-use image source blocked')
+    if parsed.hostname == 'drive.google.com' and parsed.path == '/uc':
+        from urllib.parse import parse_qs
+        ids=parse_qs(parsed.query).get('id',[])
+        if len(ids)!=1 or not ids[0].replace('-','').replace('_','').isalnum():
+            raise ValueError('Invalid Google Drive ID')
+        import gdown
+        import tempfile
+        with tempfile.TemporaryDirectory() as folder:
+            downloaded=gdown.download(id=ids[0],output=str(Path(folder)/'image'),quiet=True)
+            if not downloaded: raise ValueError('Google Drive download failed; check anyone-with-link access')
+            payload=Path(downloaded).read_bytes()
+        if len(payload)>MAX_BYTES:raise ValueError('Image exceeds 8MB')
+        signatures={'.png':payload.startswith(bytes.fromhex('89504e470d0a1a0a')),'.jpg':payload.startswith(bytes.fromhex('ffd8ff')),'.jpeg':payload.startswith(bytes.fromhex('ffd8ff')),'.webp':payload.startswith(b'RIFF') and payload[8:12]==b'WEBP'}
+        if not signatures[extension]:raise ValueError('Image file signature mismatch')
+        target=ROOT/dest
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_bytes(payload)
+        print(f'Imported Google Drive image {dest} ({len(payload)} bytes)')
+        continue
     req=Request(source,headers={'User-Agent':'EPNewsImageImporter/1.0'})
     with urlopen(req,timeout=25) as res:
         if res.url != source: raise ValueError('Redirects are not supported; use the final URL')
