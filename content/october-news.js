@@ -28,8 +28,8 @@ STORIES.push(...[
       }
     ],
     "image": {
-      "src": "assets/images/egypt-saudi-photo.jpg",
-      "alt": "Archival photograph of the Egyptian parliament building with EP News headline design, not a photograph of the October 2026 decision.",
+      "src": "assets/images/egypt-saudi-approved-photo.jpg",
+      "alt": "EP News headline graphic over an archival photograph of the Egyptian Parliament building; Egypt authorized military assistance for Saudi Arabia if requested, not a deployment.",
       "credit": "Archive photograph: Abdelrhman 1990 (2025), CC BY 4.0; cropped and overlaid by EP News."
     }
   },
