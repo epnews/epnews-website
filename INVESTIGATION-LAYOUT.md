@@ -1,0 +1,5 @@
+# EP News investigation reader standard
+
+For investigation stories only (category: investigations), optionally add a sections array. Entries are {kind:'heading',text:'...'}, {kind:'paragraph',text:'...',citation:{label:'Original document',url:'https://example.org'}}, {kind:'metrics',items:[{value:'...',label:'...',citation:{label:'Source',url:'https://example.org'}}]}, {kind:'quote',text:'...'}, or {kind:'table',title:'Project status',columns:['Project','Stage','Evidence outstanding'],rows:[['Example','Announced','Operating results']]}. All fields render as escaped text; citations allow only HTTP(S). Retain a body array for backward compatibility and sources:[{label,url}] for the full Sources & Documents list. Use 16:9 featured image with image src, alt, and photo credit. Normal Facebook caption standards remain unchanged.
+
+The demo investigation remains a demo; this pull request adds rendering support only, with no verified article released. Review Cloudflare preview on desktop and mobile prior to merging.
