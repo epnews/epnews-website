@@ -9,7 +9,7 @@ Object.assign(STORIES.find(s=>s.id==='power'),{
   "category": "investigations",
   "type": "FEATURED INVESTIGATION",
   "image": {
-    "src": "assets/images/chaos-approved-cover.png",
+    "src": "assets/images/chaos-featured.svg",
     "alt": "EP News AI-generated editorial collage illustrating war, unrest, energy, trade and financial power; composite scenes are not documentary photographs.",
     "credit": "EP News AI-generated editorial composite. Illustrative scenes, not photographs of specific events."
   },
