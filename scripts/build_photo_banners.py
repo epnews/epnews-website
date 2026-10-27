@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import quote
 from io import BytesIO
 import requests
+import time
 from PIL import Image,ImageDraw,ImageFont,ImageOps
 ROOT=Path(__file__).resolve().parents[1]
 DEST=ROOT/"assets/images"
@@ -21,8 +22,13 @@ font_regular="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 def f(sz,bold=True):return ImageFont.truetype(font_bold if bold else font_regular,sz)
 for out,name,lines,sub,credit in ITEMS:
     url="https://commons.wikimedia.org/wiki/Special:FilePath/"+quote(name)
-    response=requests.get(url,headers=HEADERS,timeout=45)
+    response=None
+    for attempt in range(6):
+        response=requests.get(url,headers=HEADERS,timeout=45)
+        if response.status_code not in (429,503):break
+        time.sleep(5*(attempt+1))
     response.raise_for_status()
+    time.sleep(3)
     if len(response.content)>10_000_000:raise ValueError("Source too large")
     im=Image.open(BytesIO(response.content)).convert("RGB")
     canvas=ImageOps.fit(im,(1600,900),method=Image.Resampling.LANCZOS,centering=(.5,.5))
