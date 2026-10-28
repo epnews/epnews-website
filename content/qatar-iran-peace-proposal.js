@@ -14,7 +14,7 @@ STORIES.push({
  'The immediate test is whether Iran responds and whether Washington agrees to a documented, reciprocal sequence. Even an initial deal would leave difficult questions about shipping, sanctions, nuclear oversight and guarantees.',
  'For Gulf countries, the stakes include regional security, energy infrastructure and commercial shipping. For the wider world, the issue is whether the proposed process can produce verifiable steps instead of another short-lived pause in fighting.'
  ],
- image:{src:'assets/images/epnews-qatar-iran-peace-website-1600x900.jpg',alt:'EP News editorial composite of Doha skyline with headline on Qatar's reported seven-day Iran peace proposal; illustrative, not documentary photography.',credit:'EP News editorial composite; illustrative image, not a photograph of negotiations.'},
+ image:{src:'assets/images/epnews-qatar-iran-peace-website-1600x900.jpg',alt:'EP News editorial composite of Doha skyline with headline on Qatar’s reported seven-day Iran peace proposal; illustrative, not documentary photography.',credit:'EP News editorial composite; illustrative image, not a photograph of negotiations.'},
  sources:[
  {label:'Reuters — Qatari mediators present Iran with new draft, October 28, 2026',url:'https://www.streetinsider.com/Reuters/Qatari%2Bmediators%2Bpresent%2BIran%2Bwith%2Bnew%2Bdeal%2Bto%2Bend%2Bthe%2Bwar%2C%2Bofficial%2Bsays/27243554.html'},
  {label:'Qatar Ministry of Foreign Affairs — mediation and regional security briefing, October 27, 2026',url:'https://mofa.gov.qa/en/qatar/latest-articles/latest-news/details/2026/10/27/qatar-calls-for-new-regional-security-framework-based-on-state-sovereignty-respect'},
