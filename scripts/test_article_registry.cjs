@@ -24,5 +24,24 @@ for (const id of result.editorial.wire) {
 for (const id of ['us-canada-tariff-talks-2026','venezuela-oil-corpus-christi-2026','fec-filing-outage-2026','comey-criminal-information-2026']) {
   assert.ok(ids.includes(id), 'Existing story disappeared: ' + id);
 }
+
+// Every newly published report must be discoverable from the homepage.
+// Older legacy/demo content predating this policy is grandfathered in.
+const homepageIds = new Set([
+  ...result.editorial.wire,
+  ...result.editorial.editorPicks,
+  ...result.editorial.analysis,
+  result.editorial.lead || 'power'
+]);
+for (const story of result.stories) {
+  if (story.status === 'published' && story.publishedAt >= '2026-10-28') {
+    assert.ok(homepageIds.has(story.id),
+      'Published article missing from homepage editorial placement: ' + story.id +
+      '. Add it to EDITORIAL.wire, editorPicks, analysis, or lead.');
+  }
+}
+assert.ok(homepageIds.has('us-treasury-debt-buyback-october-2026'),
+  'Treasury buyback article missing from homepage placement');
+
 assert.ok(html.includes('src="app.js"'), 'Application script missing');
 console.log('PASS: Qatar + '+result.stories.length+' total stories; '+result.editorial.wire.length+' headline wire IDs; legacy articles retained.');
