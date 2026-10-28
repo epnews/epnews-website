@@ -29,10 +29,13 @@ document.getElementById('test').addEventListener('click',async()=>{
 document.getElementById('link-test').addEventListener('click',async event=>{
  event.preventDefault();
  const output=document.getElementById('link-out');
- const before=await fetch('/api/facebook-clicks',{cache:'no-store'}).then(r=>r.json());
- output.textContent='Link tap detected. Waiting for tracking request…';
- await new Promise(resolve=>setTimeout(resolve,700));
- const after=await fetch('/api/facebook-clicks',{cache:'no-store'}).then(r=>r.json());
- output.textContent='Link tap detected: YES\\nFooter before: '+before.byPlacement.footer+'\\nFooter after: '+after.byPlacement.footer+'\\n'+(after.byPlacement.footer>before.byPlacement.footer?'PASS: website click handler recorded the link.':'FAIL: website click handler did not record the link.');
+ output.textContent='Testing website click handler…';
+ try{
+  // Read previous total; the tracking listener runs when this click bubbles to document.
+  const before=await fetch('/api/facebook-clicks',{cache:'no-store'}).then(r=>r.json());
+  const response=await window.epNewsLastFacebookTracking;
+  const after=await fetch('/api/facebook-clicks',{cache:'no-store'}).then(r=>r.json());
+  output.textContent='Link tap detected: YES\\nTracking response: '+JSON.stringify(response)+'\\nFooter before: '+before.byPlacement.footer+'\\nFooter after: '+after.byPlacement.footer+'\\n'+(after.byPlacement.footer>before.byPlacement.footer?'PASS: website click handler recorded the link.':'FAIL: tracking request did not increase footer count.');
+ }catch(error){output.textContent='Diagnostic error: '+String(error);}
 });
 </script><script src="facebook-tracking.js"></script></body></html>
