@@ -41,7 +41,10 @@ function layoutNewsColumns(){
  const feed=under.querySelector('.feed-panel');
  const rail=under.querySelector('.right-rail');
  if(!eyebrow||!lead||!picks||!feed||!rail)return;
+ const investigation=container.querySelector('.investigations');
  primary.append(eyebrow,lead,feed);
+ // Continue the investigation coverage under the wire rather than leaving an empty desktop column.
+ if(investigation) primary.append(investigation);
  secondary.append(picks,rail);
  layout.append(primary,secondary);
  container.insertBefore(layout,feature);
