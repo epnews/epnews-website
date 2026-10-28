@@ -12,17 +12,17 @@ errors = []
 base = os.environ.get("GITHUB_BASE_REF", "main")
 subprocess.run(["git", "fetch", "--no-tags", "origin", base, "--depth=1"], check=True)
 changed = subprocess.check_output(["git", "diff", "--name-only", "origin/" + base + "...HEAD"], text=True).splitlines()
-articles = [p for p in changed if re.fullmatch(r"content/[a-z0-9-]+\\.js", p) and p not in ("content/editorial.js", "content/stories.js")]
+articles = [p for p in changed if re.fullmatch(r"content/[a-z0-9-]+\.js", p) and p not in ("content/editorial.js", "content/stories.js")]
 manifest = json.loads(Path("content/image-imports.json").read_text())
 imports = {entry["path"]: entry["url"] for entry in manifest}
 for path in articles:
     content = Path(path).read_text()
-    match = re.search(r"image\\s*:\\s*\\{[^}]*?src\\s*:\\s*['\\\"]([^'\\\"]+)['\\\"]", content, re.S)
+    match = re.search(r"image\s*:\s*\{[^}]*?src\s*:\s*['\\"]([^'\\"]+)['\\"]", content, re.S)
     if not match:
         fail(f"{path}: missing image.src")
         continue
     asset = match.group(1)
-    if not re.fullmatch(r"assets/images/[a-zA-Z0-9_.-]+\\.(png|jpg|jpeg|webp)", asset, re.I):
+    if not re.fullmatch(r"assets/images/[a-zA-Z0-9_.-]+\.(png|jpg|jpeg|webp)", asset, re.I):
         fail(f"{path}: website image must be a raster PNG/JPG/WebP in assets/images (not SVG): {asset}")
         continue
     if asset not in imports or "drive.google.com/" not in imports[asset] or "id=" not in imports[asset]:
