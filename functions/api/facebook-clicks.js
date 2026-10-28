@@ -16,6 +16,8 @@ export async function onRequestPost({request,env}) {
   try {
     await ensureTable(env.EP_VISITS_DB);
     await env.EP_VISITS_DB.prepare("INSERT INTO facebook_outbound_clicks (placement,total) VALUES (?,1) ON CONFLICT(placement) DO UPDATE SET total=total+1").bind(data.placement).run();
+    await env.EP_VISITS_DB.prepare("CREATE TABLE IF NOT EXISTS analytics_daily (day TEXT NOT NULL, metric TEXT NOT NULL, placement TEXT NOT NULL DEFAULT '', total INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(day,metric,placement))").run();
+    await env.EP_VISITS_DB.prepare("INSERT INTO analytics_daily(day,metric,placement,total) VALUES(date('now'),'facebook',?,1) ON CONFLICT(day,metric,placement) DO UPDATE SET total=total+1").bind(data.placement).run();
     return respond({ok:true});
   } catch(error) { console.error('Facebook click counter error',error);return respond({error:'Counter temporarily unavailable'},503); }
 }

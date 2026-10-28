@@ -18,6 +18,8 @@ async function handler(context, increment) {
     await ensureTable(db);
     if (increment) {
       await db.prepare("UPDATE site_visits SET total = total + 1 WHERE id = 1").run();
+      await db.prepare("CREATE TABLE IF NOT EXISTS analytics_daily (day TEXT NOT NULL, metric TEXT NOT NULL, placement TEXT NOT NULL DEFAULT '', total INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(day,metric,placement))").run();
+      await db.prepare("INSERT INTO analytics_daily(day,metric,placement,total) VALUES(date('now'),'visit','',1) ON CONFLICT(day,metric,placement) DO UPDATE SET total=total+1").run();
     }
     const row = await db.prepare("SELECT total FROM site_visits WHERE id = 1").first();
     return respond({total: Number(row?.total || 0), label:"visits since activation"});
