@@ -39,7 +39,25 @@ for path in articles:
                 fail(f"{path}: {asset} is {img.size}, expected 1600x900")
     except Exception as exc:
         fail(f"{path}: image unreadable: {exc}")
-    if asset not in changed:
+    # Reuse is permitted only when this article already referenced the exact
+    # same asset on the base branch. New articles or changed images still
+    # require a freshly committed image, as before.
+    prior = subprocess.run(
+        ["git", "show", f"origin/{base}:{path}"],
+        capture_output=True, text=True
+    )
+    prior_match = re.search(
+        r"""image\s*:\s*\{[^}]*?src\s*:\s*['"]([^'"]+)['"]""",
+        prior.stdout, re.S
+    ) if prior.returncode == 0 else None
+    reusing_existing_image = (
+        prior_match is not None and prior_match.group(1) == asset
+        and subprocess.run(
+            ["git", "cat-file", "-e", f"origin/{base}:{asset}"],
+            capture_output=True
+        ).returncode == 0
+    )
+    if asset not in changed and not reusing_existing_image:
         fail(f"{path}: {asset} must be newly imported/committed on the article PR branch")
 print(f"Checked {len(articles)} changed article(s); errors: {len(errors)}")
 sys.exit(bool(errors))
