@@ -67,10 +67,6 @@ for entry in data:
             picture.save(buffer,format='PNG',optimize=True)
             payload=buffer.getvalue()
             assert Image.open(BytesIO(payload)).size == (1600,900)
-        from PIL import Image
-        from io import BytesIO
-        if Image.open(BytesIO(payload)).size != (1600, 900):
-            raise ValueError(f"Website image {dest} must be 1600x900 pixels")
         target.write_bytes(payload)
         print(f'Imported Google Drive image {dest} ({len(payload)} bytes)')
         continue
