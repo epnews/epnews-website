@@ -71,3 +71,14 @@ editorPicks();wireInit();sidebars();leadPhoto();window.addEventListener('hashcha
  }catch{display.textContent='—';display.title='Visit counter not yet configured';}
 })();
 
+
+// Aggregate clicks to Facebook by page placement. Never blocks navigation.
+document.addEventListener('click',event=>{
+  const link=event.target.closest('a[data-fb-cta]');
+  if(!link)return;
+  try{
+    const body=JSON.stringify({placement:link.dataset.fbCta});
+    if(navigator.sendBeacon)navigator.sendBeacon('/api/facebook-clicks',new Blob([body],{type:'application/json'}));
+    else fetch('/api/facebook-clicks',{method:'POST',headers:{'Content-Type':'application/json'},body,keepalive:true}).catch(()=>{});
+  }catch{}
+});
