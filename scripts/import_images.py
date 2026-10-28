@@ -37,8 +37,21 @@ for entry in data:
         import gdown
         import tempfile
         with tempfile.TemporaryDirectory() as folder:
-            downloaded=gdown.download(id=ids[0],output=str(Path(folder)/'image'),quiet=True)
-            if not downloaded: raise ValueError('Google Drive download failed; check anyone-with-link access')
+            try:
+                downloaded=gdown.download(id=ids[0],output=str(Path(folder)/'image'),quiet=True)
+            except Exception as exc:
+                raise ValueError(
+                    f"Google Drive file {ids[0]} is not publicly downloadable. "
+                    "Upload the image to EP News public folder "
+                    "(11Lu7G8A6hzT7F9QKP3quF-MJlLWt9ByZ), then set "
+                    "this FILE's General access to Anyone with the link — Viewer. "
+                    "Re-run the failed import job after confirming anonymous access."
+                ) from exc
+            if not downloaded:
+                raise ValueError(
+                    f"Google Drive file {ids[0]} cannot be downloaded. "
+                    "Verify file-level Anyone with the link — Viewer access."
+                )
             payload=Path(downloaded).read_bytes()
         if len(payload)>MAX_BYTES:raise ValueError('Image exceeds 8MB')
         signatures={'.png':payload.startswith(bytes.fromhex('89504e470d0a1a0a')),'.jpg':payload.startswith(bytes.fromhex('ffd8ff')),'.jpeg':payload.startswith(bytes.fromhex('ffd8ff')),'.webp':payload.startswith(b'RIFF') and payload[8:12]==b'WEBP'}
