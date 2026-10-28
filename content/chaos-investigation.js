@@ -5,13 +5,13 @@ Object.assign(STORIES.find(s=>s.id==='power'),{
   "publishedAt": "2026-10-27",
   "updatedAt": "2026-10-27",
   "title": "Who Benefits From the Chaos?",
-  "deck": "The Trump Corollary to the Monroe Doctrine is declared U.S. policy. Could today’s geopolitical and economic disruptions reflect an effort to build a more self-reliant Western Hemisphere? We test the connections, results and costs.",
+  "deck": "America's economic gains are emerging—but who pays the price? Financing promises, energy exports and industrial projects under examination.",
   "category": "investigations",
   "type": "FEATURED INVESTIGATION",
-  image: {
-    src: "assets/images/chaos-user-approved.svg",
-    alt: "EP News featured investigation graphic: Who Benefits From the Chaos? Smoke over a city, oil extraction, global trade, and international flags in an illustrative editorial montage.",
-    credit: "EP News AI-generated editorial composite. Illustrative scenes, not photographs of specific events."
+  "image": {
+    "src": "assets/images/chaos-user-approved.svg",
+    "alt": "EP News featured investigation graphic: Who Benefits From the Chaos? Smoke over a city, oil extraction, global trade, and international flags in an illustrative editorial montage.",
+    "credit": "EP News AI-generated editorial composite. Illustrative scenes, not photographs of specific events."
   },
   "body": [
     "This complete investigative article is presented through structured sections with citations and evidence tables."
