@@ -58,13 +58,13 @@ for entry in data:
         if not signatures[extension]:raise ValueError('Image file signature mismatch')
         target=ROOT/dest
         target.parent.mkdir(parents=True,exist_ok=True)
-        if dest == 'assets/images/epnews-venezuela-oil-website-1600x900.png':
+        if dest in ('assets/images/epnews-venezuela-oil-website-1600x900.png', 'assets/images/china-trade-investigation-2026.jpg'):
             from PIL import Image
             from io import BytesIO
             picture=Image.open(BytesIO(payload)).convert('RGB')
             picture=picture.resize((1600,900),Image.Resampling.LANCZOS)
             buffer=BytesIO()
-            picture.save(buffer,format='PNG',optimize=True)
+            picture.save(buffer,format='JPEG',quality=90) if extension in ('.jpg','.jpeg') else picture.save(buffer,format='PNG',optimize=True)
             payload=buffer.getvalue()
             assert Image.open(BytesIO(payload)).size == (1600,900)
         target.write_bytes(payload)
