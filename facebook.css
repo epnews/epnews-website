@@ -1,0 +1,9 @@
+/* EP News Facebook audience conversion */
+.facebook-follow-header,.facebook-follow-strip,.facebook-discussion a{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;text-decoration:none;font-weight:800;letter-spacing:.035em;background:#1769aa;color:#fff;border-radius:3px;padding:.72rem .9rem;font-size:.77rem}
+.facebook-follow-header:hover,.facebook-follow-strip:hover,.facebook-discussion a:hover{background:#104e81;color:#fff}
+.facebook-follow-strip{margin-left:auto;background:#145d98}
+.facebook-discussion{margin:2.2rem 0;padding:1.7rem;border-top:4px solid #1769aa;background:#eef3f8;color:#152638}
+.facebook-discussion-kicker{font-size:.72rem;letter-spacing:.12em;font-weight:800;color:#1769aa}
+.facebook-discussion h2{font-size:1.6rem;margin:.55rem 0}
+.facebook-discussion p{margin:0 0 1rem;line-height:1.5}
+@media(max-width:780px){.facebook-follow-header{font-size:.68rem;padding:.55rem}.facebook-follow-strip{font-size:.66rem;padding:.5rem}.strip-inner{flex-wrap:wrap;gap:.5rem}.facebook-discussion{padding:1.2rem}}
