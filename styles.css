@@ -59,3 +59,7 @@
  .lead-story .lead-content p{font-size:14px;line-height:1.6;margin-bottom:22px}
  .lead-story .lead-photo-credit{font-size:10px;padding:9px 12px}
 }
+
+/* Prevent the shorter featured investigation card from stretching to the Editor's Desk height. */
+.hero-layout{align-items:start}
+.hero-layout>.lead-story,.hero-layout>.hero-side{align-self:start;min-height:0}
