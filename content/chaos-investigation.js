@@ -5,7 +5,7 @@ Object.assign(STORIES.find(s=>s.id==='power'),{
   "publishedAt": "2026-10-27",
   "updatedAt": "2026-10-27",
   "title": "Who Benefits From the Chaos?",
-  "deck": "America's economic gains are emerging—but who pays the price? Financing promises, energy exports and industrial projects under examination.",
+  "deck": "The Trump Corollary to the Monroe Doctrine is declared U.S. policy. Could today’s geopolitical and economic disruptions reflect an effort to build a more self-reliant Western Hemisphere? We test the connections, results and costs.",
   "category": "investigations",
   "type": "FEATURED INVESTIGATION",
   "image": {
