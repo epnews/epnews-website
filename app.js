@@ -52,3 +52,21 @@ function layoutNewsColumns(){
 }
 layoutNewsColumns();
 editorPicks();wireInit();sidebars();leadPhoto();window.addEventListener('hashchange',route);route();document.addEventListener('click',e=>{let card=e.target.closest('.story-open');if(card)openStory(card.dataset.story)});document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&document.activeElement.classList.contains('story-open')){e.preventDefault();openStory(document.activeElement.dataset.story)}});const menu=document.querySelector('#menu-button');menu.onclick=()=>{let nav=document.querySelector('#main-nav');let state=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(state))};const panel=document.querySelector('#search-panel');document.querySelector('#search-button').onclick=()=>{panel.hidden=!panel.hidden;if(!panel.hidden)document.querySelector('#search-input').focus()};document.querySelector('#search-close').onclick=()=>panel.hidden=true;document.querySelector('#search-input').oninput=e=>{let term=e.target.value.trim().toLowerCase();if(!term)return;let matched=STORIES.filter(s=>(s.title+' '+s.deck+' '+s.category).toLowerCase().includes(term));document.querySelector('#home-view').hidden=true;let v=document.querySelector('#route-view');v.hidden=false;v.innerHTML=`<section class="story-list"><h1>Search results</h1><p>${matched.length} articles match “${escapeHtml(term)}”</p>${matched.map(s=>`<article class="list-card story-open" role="button" tabindex="0" data-story="${s.id}"><span>${escapeHtml(s.type)}</span><h2>${escapeHtml(s.title)}</h2><p>${escapeHtml(s.deck)}</p></article>`).join('')}</section>`};document.querySelector('#subscribe-button').onclick=()=>location.hash='#contact';document.querySelector('#briefing-action').onclick=()=>location.hash='#contact';if(document.querySelector('#dismiss-demo'))document.querySelector('#dismiss-demo').onclick=()=>document.querySelector('.demo-banner')?.remove();
+// Public count of browser-tab sessions since the counter was activated.
+// The footer shows a dash if the database has not yet been configured.
+(async function initVisitCounter(){
+ const display=document.getElementById('site-visit-count');
+ if(!display)return;
+ try{
+  const key='epnews-visit-counted-v1';
+  let counted=false;
+  try{counted=sessionStorage.getItem(key)==='yes';}catch{}
+  const response=await fetch('/api/visits',{method:counted?'GET':'POST',cache:'no-store',headers:{'Accept':'application/json'}});
+  if(!response.ok)throw new Error('Counter backend unavailable');
+  const data=await response.json();
+  if(!Number.isSafeInteger(data.total)||data.total<0)throw new Error('Invalid visit count');
+  display.textContent=new Intl.NumberFormat('en-US').format(data.total);
+  display.title='Website visits since counter activation (not unique visitors)';
+  if(!counted){try{sessionStorage.setItem(key,'yes');}catch{}}
+ }catch{display.textContent='—';display.title='Visit counter not yet configured';}
+})();
