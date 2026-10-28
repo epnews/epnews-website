@@ -85,3 +85,8 @@
 .news-primary>.investigations .invest-intro{display:block}
 .news-primary>.investigations .series-tag{display:inline-block;margin-top:12px}
 @media(max-width:950px){.news-primary>.investigations{margin-top:24px}}
+
+/* Persistent website visit counter: footer only, no popups or tracking cookies. */
+.site-visit-counter{display:inline-flex;gap:9px;align-items:center;letter-spacing:.06em;white-space:nowrap}
+.site-visit-counter strong{font-variant-numeric:tabular-nums;color:#fff;font-weight:800;font-size:14px}
+@media(max-width:680px){.site-visit-counter{display:flex;margin:12px 0;white-space:normal}}
