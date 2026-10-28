@@ -11,7 +11,7 @@ export async function onRequestPost({request,env}) {
   const origin=request.headers.get('Origin');
   if (origin && new URL(origin).host !== new URL(request.url).host) return respond({error:'Forbidden'},403);
   let data;
-  try { data=await request.json(); } catch { return respond({error:'Invalid JSON'},400); }
+  try { data=JSON.parse(await request.text()); } catch { return respond({error:'Invalid JSON'},400); }
   if (!data || !placements.has(data.placement)) return respond({error:'Invalid placement'},400);
   try {
     await ensureTable(env.EP_VISITS_DB);
