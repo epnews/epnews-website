@@ -4,7 +4,11 @@
 <style>body{font:16px system-ui,sans-serif;max-width:680px;margin:36px auto;padding:0 18px;line-height:1.5;color:#18202a}button{padding:13px 18px;background:#202b3b;color:white;border:0;border-radius:8px;font:inherit}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f3f5;padding:14px;border-radius:8px}p{color:#475569}</style></head><body>
 <h1>Facebook click tracking diagnostic</h1>
 <p>This tests whether your browser can send a click event and whether Cloudflare saves it. It does not open Facebook or collect personal information. A successful test adds one clearly labeled <strong>diagnostic</strong> event, not a real Facebook click.</p>
-<button id="test">Run diagnostic</button><pre id="out">Press Run diagnostic to begin.</pre>
+<button id="test">Run diagnostic</button>
+<h2>Test website link detection</h2>
+<p>This second test checks whether the same click handler used by EP News detects a Facebook link. It stays on this page so navigation cannot interrupt the request. It adds one real <strong>footer</strong> test click if successful.</p>
+<a href="https://www.facebook.com/61593962901875" data-fb-cta="footer" id="link-test">Test Facebook link tracking without leaving page</a>
+<pre id="link-out">Tap the test link above.</pre><pre id="out">Press Run diagnostic to begin.</pre>
 <script>
 document.getElementById('test').addEventListener('click',async()=>{
  const output=document.getElementById('out'),button=document.getElementById('test');button.disabled=true;output.textContent='Testing…';
@@ -21,4 +25,14 @@ document.getElementById('test').addEventListener('click',async()=>{
  }catch(e){output.textContent='NETWORK ERROR: '+String(e);}
  finally{button.disabled=false;}
 });
-</script></body></html>
+
+document.getElementById('link-test').addEventListener('click',async event=>{
+ event.preventDefault();
+ const output=document.getElementById('link-out');
+ const before=await fetch('/api/facebook-clicks',{cache:'no-store'}).then(r=>r.json());
+ output.textContent='Link tap detected. Waiting for tracking request…';
+ await new Promise(resolve=>setTimeout(resolve,700));
+ const after=await fetch('/api/facebook-clicks',{cache:'no-store'}).then(r=>r.json());
+ output.textContent='Link tap detected: YES\\nFooter before: '+before.byPlacement.footer+'\\nFooter after: '+after.byPlacement.footer+'\\n'+(after.byPlacement.footer>before.byPlacement.footer?'PASS: website click handler recorded the link.':'FAIL: website click handler did not record the link.');
+});
+</script><script src="app.js"></script></body></html>
