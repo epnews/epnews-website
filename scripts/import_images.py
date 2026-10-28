@@ -45,6 +45,15 @@ for entry in data:
         if not signatures[extension]:raise ValueError('Image file signature mismatch')
         target=ROOT/dest
         target.parent.mkdir(parents=True,exist_ok=True)
+        if dest == 'assets/images/epnews-venezuela-oil-website-1600x900.png':
+            from PIL import Image
+            from io import BytesIO
+            picture=Image.open(BytesIO(payload)).convert('RGB')
+            picture=picture.resize((1600,900),Image.Resampling.LANCZOS)
+            buffer=BytesIO()
+            picture.save(buffer,format='PNG',optimize=True)
+            payload=buffer.getvalue()
+            assert Image.open(BytesIO(payload)).size == (1600,900)
         target.write_bytes(payload)
         print(f'Imported Google Drive image {dest} ({len(payload)} bytes)')
         continue
