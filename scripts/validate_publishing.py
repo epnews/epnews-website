@@ -17,7 +17,7 @@ manifest = json.loads(Path("content/image-imports.json").read_text())
 imports = {entry["path"]: entry["url"] for entry in manifest}
 for path in articles:
     content = Path(path).read_text()
-    match = re.search(r"image\s*:\s*\{[^}]*?src\s*:\s*['\\"]([^'\\"]+)['\\"]", content, re.S)
+    match = re.search(r"""image\s*:\s*\{[^}]*?src\s*:\s*['"]([^'"]+)['"]""", content, re.S)
     if not match:
         fail(f"{path}: missing image.src")
         continue
