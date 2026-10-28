@@ -10,6 +10,7 @@ STORIES.push({
   "publishedAt": "2026-10-28",
   "title": "China Trade Shift: Are American Factories Actually Winning?",
   "deck": "U.S. manufacturing jobs have recovered from a recent low, but trade deficits with China and alternative suppliers show why shifting imports is not the same as bringing production home.",
+  "image": {"src":"assets/images/china-trade-investigation-2026.svg","alt":"EP News graphic: China Trade Shift — Are American Factories Actually Winning? Stylized industrial and cargo imagery.","credit":"EP News original illustrative graphic; not documentary photography."},
   "body": [],
   "sections": [
     {
