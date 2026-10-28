@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EP News Facebook Tracking Diagnostic</title>
+<style>body{font:16px system-ui,sans-serif;max-width:680px;margin:36px auto;padding:0 18px;line-height:1.5;color:#18202a}button{padding:13px 18px;background:#202b3b;color:white;border:0;border-radius:8px;font:inherit}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f3f5;padding:14px;border-radius:8px}p{color:#475569}</style></head><body>
+<h1>Facebook click tracking diagnostic</h1>
+<p>This tests whether your browser can send a click event and whether Cloudflare saves it. It does not open Facebook or collect personal information. A successful test adds one clearly labeled <strong>diagnostic</strong> event, not a real Facebook click.</p>
+<button id="test">Run diagnostic</button><pre id="out">Press Run diagnostic to begin.</pre>
+<script>
+document.getElementById('test').addEventListener('click',async()=>{
+ const output=document.getElementById('out'),button=document.getElementById('test');button.disabled=true;output.textContent='Testing…';
+ try{
+  const before=await fetch('/api/facebook-clicks',{cache:'no-store'});
+  const beforeText=await before.text();
+  const sent=await fetch('/api/facebook-clicks',{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify({placement:'diagnostic'}),cache:'no-store'});
+  const sentText=await sent.text();
+  const after=await fetch('/api/facebook-clicks',{cache:'no-store'});
+  const afterText=await after.text();
+  let verdict='Check the status and response details below.';
+  try{const b=JSON.parse(beforeText),a=JSON.parse(afterText);if(sent.ok&&Number(a.byPlacement?.diagnostic)===Number(b.byPlacement?.diagnostic)+1)verdict='PASS: POST saved to Cloudflare D1.';else verdict='FAIL: POST did not increase the diagnostic count.';}catch{}
+  output.textContent=verdict+'\n\nGET before: HTTP '+before.status+'\n'+beforeText+'\n\nPOST: HTTP '+sent.status+'\n'+sentText+'\n\nGET after: HTTP '+after.status+'\n'+afterText;
+ }catch(e){output.textContent='NETWORK ERROR: '+String(e);}
+ finally{button.disabled=false;}
+});
+</script></body></html>
