@@ -71,5 +71,3 @@ editorPicks();wireInit();sidebars();leadPhoto();window.addEventListener('hashcha
  }catch{display.textContent='—';display.title='Visit counter not yet configured';}
 })();
 
-// Privacy-conscious aggregate Facebook outbound click measurement; no personal identifiers.
-document.addEventListener('click',event=>{const link=event.target.closest('a[data-fb-cta]');if(!link)return;try{const payload=JSON.stringify({event:'facebook_outbound_click',placement:link.dataset.fbCta});if(navigator.sendBeacon)navigator.sendBeacon('/api/social-clicks',new Blob([payload],{type:'application/json'}));}catch{}});
