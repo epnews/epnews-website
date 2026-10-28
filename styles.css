@@ -63,3 +63,25 @@
 /* Prevent the shorter featured investigation card from stretching to the Editor's Desk height. */
 .hero-layout{align-items:start}
 .hero-layout>.lead-story,.hero-layout>.hero-side{align-self:start;min-height:0}
+
+/* Independent desktop news columns: headline wire flows immediately under lead story. */
+.news-columns{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(280px,1fr);gap:27px;align-items:start;margin:32px 0 56px}
+.news-primary,.news-secondary{min-width:0}
+.news-primary .feed-panel{margin-top:30px}
+.news-secondary .hero-side{display:block}
+.news-secondary .right-rail{display:flex;flex-direction:column;gap:22px;margin-top:25px}
+@media(max-width:950px){
+ .news-columns{grid-template-columns:1fr;margin-top:20px}
+ .news-secondary .hero-side{display:none}
+ .news-secondary .right-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:520px){
+ .news-secondary .right-rail{grid-template-columns:1fr}
+}
+
+/* Fill the shorter left-column area with the investigation instead of leaving a blank gap. */
+.news-primary>.investigations{margin-top:26px;margin-bottom:0;min-width:0}
+.news-primary>.investigations .invest-grid{grid-template-columns:1fr}
+.news-primary>.investigations .invest-intro{display:block}
+.news-primary>.investigations .series-tag{display:inline-block;margin-top:12px}
+@media(max-width:950px){.news-primary>.investigations{margin-top:24px}}
