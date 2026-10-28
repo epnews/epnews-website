@@ -35,4 +35,4 @@ document.getElementById('link-test').addEventListener('click',async event=>{
  const after=await fetch('/api/facebook-clicks',{cache:'no-store'}).then(r=>r.json());
  output.textContent='Link tap detected: YES\\nFooter before: '+before.byPlacement.footer+'\\nFooter after: '+after.byPlacement.footer+'\\n'+(after.byPlacement.footer>before.byPlacement.footer?'PASS: website click handler recorded the link.':'FAIL: website click handler did not record the link.');
 });
-</script><script src="app.js"></script></body></html>
+</script><script src="facebook-tracking.js"></script></body></html>
