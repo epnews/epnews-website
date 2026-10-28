@@ -72,18 +72,3 @@ editorPicks();wireInit();sidebars();leadPhoto();window.addEventListener('hashcha
 })();
 
 
-// Send anonymous Facebook click counts before external navigation.
-// A plain-text beacon avoids a JSON preflight in embedded mobile browsers.
-function trackFacebookClick(link){
-  const placement=link?.dataset?.fbCta;
-  if(!['header','homepage','footer','article'].includes(placement))return;
-  const body=JSON.stringify({placement});
-  try{
-    if(navigator.sendBeacon && navigator.sendBeacon('/api/facebook-clicks',body))return;
-  }catch{}
-  fetch('/api/facebook-clicks',{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body,keepalive:true}).catch(()=>{});
-}
-document.addEventListener('click',event=>{
-  const link=event.target.closest?.('a[data-fb-cta]');
-  if(link)trackFacebookClick(link);
-});
