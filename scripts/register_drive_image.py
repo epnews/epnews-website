@@ -14,7 +14,7 @@ def register(file_id, filename, verified_folder, verified_public, dry_run=False)
         raise ValueError("STOP: independently verify Drive folder membership and public file access first")
     if not re.fullmatch(r"[A-Za-z0-9_-]{15,}", file_id):
         raise ValueError("Invalid Google Drive file ID")
-    if not re.fullmatch(r"[A-Za-z0-9_.-]+\\.(?:png|jpg|jpeg|webp)", filename, re.I):
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+\.(?:png|jpg|jpeg|webp)", filename, re.I):
         raise ValueError("Invalid raster image filename")
     path = "assets/images/" + filename
     url = "https://drive.google.com/uc?export=download&id=" + file_id
@@ -33,7 +33,7 @@ def register(file_id, filename, verified_folder, verified_public, dry_run=False)
         raise ValueError("Manifest import limit reached (20); review before proceeding")
     items.append({"url": url, "path": path})
     if not dry_run:
-        MANIFEST.write_text(json.dumps(items, indent=2) + "\\n")
+        MANIFEST.write_text(json.dumps(items, indent=2) + "\n")
     print(("Would register: " if dry_run else "Registered: ") + path)
     print("Drive folder verification is an external prerequisite, NOT performed by this script.")
 
