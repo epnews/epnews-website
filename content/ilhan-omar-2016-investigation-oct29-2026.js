@@ -4,7 +4,7 @@ STORIES.push({
   category: 'politics',
   type: 'U.S. POLITICS',
   status: 'published',
-  publishedAt: '2026-10-29',
+  publishedAt: '2026-10-29T22:16:00',
   updatedAt: '2026-10-29',
   author: 'EP News',
   title: 'FBI and DHS Examined Ilhan Omar Marriage in 2016; Prosecutors Cited Time Limit',
