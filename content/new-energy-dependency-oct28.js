@@ -10,7 +10,7 @@ STORIES.push({
  title:'The New Energy Dependency',
  deck:'How Middle East disruptions are redirecting the world’s fuel purchases toward America.',
  image:{
-   src:'https://drive.google.com/thumbnail?id=15vJNCcdWl3TXGhums857mlbDTN0DMkzu&sz=w1600',
+   src:'assets/images/epnews_energy_dependency_website_1600x900.png',
    alt:'EP News feature graphic: The New Energy Dependency',
    credit:'EP News website graphic, stored in the verified public EP News Google Drive folder.'
  },
