@@ -20,11 +20,7 @@ STORIES.push({
     "The questions ahead are whether the Pentagon will publicly substantiate the allegations, whether any formal investigative action will be confirmed, and who will assume responsibility for the Joint Staff planning office.",
     "EP News will update this report as official information and independently corroborated evidence become available."
   ],
-  "image": {
-    "src": "assets/images/epnews_sylvia_website_1600x900.png",
-    "alt": "EP News editorial illustration showing the Pentagon and an unidentified military silhouette beneath a headline about Lt. Gen. Brett Sylvia's removal.",
-    "credit": "EP News / AI-generated editorial illustration; not a documentary photograph of Lt. Gen. Sylvia."
-  },
+  image: {src: 'assets/images/epnews_sylvia_website_1600x900.png', alt: 'EP News editorial illustration showing the Pentagon and an unidentified military silhouette beneath a headline about Lt. Gen. Brett Sylvia\'s removal.', credit: 'EP News / AI-generated editorial illustration; not a documentary photograph of Lt. Gen. Sylvia.'},
   "sources": [
     {
       "label": "Associated Press — report on Sylvia's removal",
