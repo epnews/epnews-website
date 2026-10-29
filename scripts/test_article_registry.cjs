@@ -1,9 +1,23 @@
 // EP News: fail a PR if article registration or the existing news feed breaks.
 const fs = require('node:fs');
 const vm = require('node:vm');
+const path = require('node:path');
 const assert = require('node:assert/strict');
 const html = fs.readFileSync('index.html', 'utf8');
 const scripts = [...html.matchAll(/<script\s+src="([^"]+)"/g)].map(m => m[1].split('?')[0]);
+// Parse every site JavaScript file before evaluating the content registry.
+function checkJavaScript(directory) {
+  if (!fs.existsSync(directory)) return;
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) checkJavaScript(file);
+    else if (entry.name.endsWith('.js')) new vm.Script(fs.readFileSync(file, 'utf8'), { filename: file });
+  }
+}
+checkJavaScript('content');
+for (const file of ['app.js', 'facebook-tracking.js']) {
+  if (fs.existsSync(file)) new vm.Script(fs.readFileSync(file, 'utf8'), { filename: file });
+}
 const context = vm.createContext({});
 for (const file of scripts.filter(s => s.startsWith('content/'))) {
   assert.ok(fs.existsSync(file), 'Missing script: ' + file);
@@ -12,6 +26,9 @@ for (const file of scripts.filter(s => s.startsWith('content/'))) {
 const result = vm.runInContext('({ stories: STORIES, editorial: EDITORIAL })', context);
 const ids = result.stories.map(s => s.id);
 assert.equal(new Set(ids).size, ids.length, 'Duplicate article IDs');
+const publishedIds = result.stories.filter(s => s.status === 'published' && s.id !== 'power').map(s => s.id);
+assert.equal(new Set(result.editorial.wire).size, result.editorial.wire.length, 'Duplicate wire IDs');
+for (const id of publishedIds) assert.ok(result.editorial.wire.includes(id), 'Published story absent from automatic wire: ' + id);
 const qatar = result.stories.find(s => s.id === 'qatar-iran-peace-proposal-2026');
 assert.ok(qatar, 'Qatar article missing from STORIES registry');
 assert.equal(qatar.category, 'world');
