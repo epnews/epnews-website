@@ -1,0 +1,49 @@
+// EP News | Who Benefits From the Chaos? | October 29, 2026
+STORIES.push({
+ id: 'china-import-shift-oct29-2026',
+ category: 'investigations',
+ type: 'INVESTIGATION',
+ status: 'published',
+ publishedAt: '2026-10-29',
+ updatedAt: '2026-10-29',
+ author: 'EP News',
+ title: "China Lost Its Dominance of U.S. Imports. Did American Factories Get the Business?",
+ deck: "America buys far less directly from China, but rising imports from Mexico, Vietnam and other suppliers raise a harder question: reshoring or rerouting?",
+ body: [
+  "The map of American imports has changed dramatically. China is no longer the dominant direct supplier it was before the first U.S.–China tariff war. But a fall in China's recorded share of imports does not tell us whether production returned to American factories or moved to other foreign countries. That distinction is central to the EP News investigation Who Benefits From the Chaos?",
+  "According to an analysis of Census trade data by CK Economics, China supplied 7.8% of U.S. goods imports in the twelve months from September 2025 through August 2026, compared with 11.0% in the preceding twelve months. Mexico accounted for about 17.1% and Vietnam for 7.0% of imports in the later period. These are shares of the dollar value of merchandise imports by recorded country of origin—not measures of domestic factory production or the nationality of every component.",
+  "The latest official monthly release provides another view. In August 2026, the United States imported $60.6 billion in goods from Mexico and $26.5 billion from Vietnam, both monthly records. China supplied about $27.1 billion. Those country figures are on a Census merchandise-trade basis; they should not be mixed directly with seasonally adjusted goods-and-services totals.",
+  "The same Census and Bureau of Economic Analysis release reported that the overall goods-and-services deficit rose to $105.6 billion in August and that total imports reached $420.8 billion. Capital-goods imports were a record $146.4 billion. This is not the pattern of an economy simply ceasing to buy foreign goods. Some of those imports are equipment that may ultimately support U.S. production; their immediate purchase is still an import.",
+  "Newer preliminary data underscore that distinction. Reuters reported on October 28 that September advance goods imports reached a record $344.1 billion, with capital-goods demand especially strong. The advance goods release is a different series from the complete August goods-and-services report and does not yet provide the same country-by-country breakdown. It cannot be used to update China's September import share.",
+  "WHERE DID THE BUSINESS GO? The first possibility is straightforward trade diversion: American companies source finished goods from Mexico, Vietnam, Taiwan, India or other countries instead of China. The second is genuine reshoring: American plants produce goods that would otherwise have been imported. The third is a hybrid: factories abroad assemble products using Chinese parts, machinery or intermediate materials. All three can occur at once.",
+  "A September 2026 Peterson Institute for International Economics study finds that China's direct share of U.S. imports fell much faster than the Chinese value added embedded in those imports. Stanford's October China Briefs summarizes the same underlying concern: the location printed on a finished product may change while the upstream supply chain remains linked to China. These estimates rely on input-output models with publication lags, not real-time tracing of every shipment.",
+  "The distinction between lawful manufacturing and tariff evasion also matters. In an October 29 analysis, the Center for Strategic and International Studies warns against treating all Chinese inputs in third-country exports as illegal transshipment. A product substantially transformed in Mexico or Vietnam can legitimately acquire that country's origin. Routing an unchanged Chinese product through another country while misrepresenting its origin is different. Rising exports from a third country alone are not proof of wrongdoing.",
+  "Tariffs likely influenced some of these decisions, but they are not the only explanation. Research by Chad Bown finds that electronics supply chains shifted to India and Vietnam, while much of the longer-running increase in Taiwan and Mexico sourcing also reflected data-center and artificial-intelligence equipment demand. The move away from China began before the most recent tariff changes. Currency, labor costs, technology investment and supply-chain resilience also affect location decisions.",
+  "THE DOMESTIC FACTORY TEST. The Bureau of Labor Statistics reported manufacturing employment up 9,000 in September 2026 and 72,000 above December 2025. These are real aggregate payroll changes, but they cannot be allocated to specific tariff decisions without a matched industry analysis. Employment, real output, hours worked, capacity utilization and domestic value added must all be examined before claiming that displaced Chinese imports became American production.",
+  "Tariff incidence is another part of the ledger. New York Fed research on the 2025 tariffs found that the added duties were largely reflected in prices paid by U.S. importers. A strategy that encourages domestic production may also increase costs for American manufacturers that use imported inputs. The net effect cannot be inferred from customs collections or factory announcements alone.",
+  "One new piece of counterevidence comes from shipping. Descartes reported October 8 that U.S. September container imports from China rose 4.5% from August and 21.2% from September 2025, measured in container units. Container volumes are not dollar-value imports and do not overturn the longer-run decline in China's import-value share. They do show why a single headline about permanent separation is too simple.",
+  "HOW EP NEWS WILL TEST THE CLAIM. First, match the same six-digit or ten-digit tariff product codes across China and alternative suppliers over identical months, using both quantities and values. Second, map those products to domestic manufacturing industries and compare real production, shipments, payroll and capacity. Third, use actual duties collected and legally applicable rates by product and date, rather than one headline tariff. Fourth, compare exposed and less-exposed industries while accounting for preexisting trends, the AI capital-spending cycle and changing demand.",
+  "Any proposed displacement ratio—how much alternative-country imports rose relative to China's decline—will be labeled an accounting comparison, not proof of causation. The economic benefit ledger must also include household prices, manufacturers' input costs, tariff receipts and refunds, subsidies and any loss of exports from retaliation. The presence of Chinese inputs abroad will not automatically be classified as illegal transshipment.",
+  "THE FINDING. China has lost substantial direct share of the American import market, while Mexico, Vietnam and other suppliers have expanded their role. That is measurable diversification of where the United States buys goods. It is not yet a verified measure of how much new production American factories captured, nor proof that the shift produced a positive net economic return.",
+  "The question that matters is no longer simply whether America buys less directly from China. It is whether American workers, factories and taxpayers are better off after the costs are counted—and whether the United States has reduced strategic dependence or merely changed the route by which it receives the same inputs."
+ ],
+ image: {
+  src: 'assets/images/epnews_china_trade_shift_website_1600x900.png',
+  alt: 'AI-generated editorial illustration of U.S. manufacturing and Asian shipping with Census-derived import share statistics; not a documentary photograph.',
+  credit: 'EP News / AI-generated editorial illustration; not documentary photography.'
+ },
+ sources: [
+  {label: "U.S. Census Bureau / BEA — August 2026 trade release", url: "https://www.census.gov/foreign-trade/current/"},
+  {label: "BEA — August trade detail and country figures", url: "https://bea.gov/news/2026/us-international-trade-goods-and-services-august-2026"},
+  {label: "CK Economics — Census-derived supplier-share tracker", url: "https://www.ckeconomics.com/monitors/supplier-shifts"},
+  {label: "Stanford SCCEI — China's value added in U.S. imports, October 2026", url: "https://scceichinabriefs.substack.com/p/chinas-share-of-us-imports-has-plunged"},
+  {label: "Peterson Institute — Made with China, September 2026", url: "https://www.piie.com/publications/policy-briefs/2026/made-china-global-supply-chains-and-limits-us-decoupling"},
+  {label: "CSIS — Transshipment analysis, October 29, 2026", url: "https://www.csis.org/analysis/transshipment-crackdowns-wont-fix-us-china-trade-imbalance"},
+  {label: "Center for Global Development — Tariffs, prices and trade monitor", url: "https://www.cgdev.org/publication/tariffs-prices-and-trade-evidence-cgd-us-import-prices-and-trade-flows-monitor"},
+  {label: "CEPR — Chad Bown on 2025 trade war and supply chains", url: "https://cepr.org/publications/dp21801"},
+  {label: "Reuters — September advance goods imports, October 28", url: "https://www.reuters.com/business/us-goods-trade-deficit-unexpectedly-widens-september-2026-10-28/"},
+  {label: "Descartes — September container-import data, October 8", url: "https://www.descartes.com/resources/knowledge-center/descartes-releases-october-global-shipping-report-us-container-imports"},
+  {label: "BLS — Employment Situation", url: "https://www.bls.gov/news.release/empsit.htm"},
+  {label: "New York Fed — Who Is Paying for the 2025 U.S. Tariffs?", url: "https://libertystreeteconomics.newyorkfed.org/2026/02/who-is-paying-for-the-2025-u-s-tariffs/"}
+ ]
+});
