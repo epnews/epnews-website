@@ -1,0 +1,13 @@
+{
+  "slug": "publication-manifest-automation-test",
+  "headline": "EP News Publication Manifest — Technical Test Only",
+  "facebook_description": "This is an internal EP News automation test and not a news report. It checks whether an explicitly approved publication manifest automatically creates a Reel package and triggers a 15-second video preview after a GitHub merge. The artwork is an existing previously tested Google Drive image. No public Facebook posting is authorized, and this caption must not be used as a news story. The test verifies the technical connection between the editorial manifest, the package generator, the existing Google Drive image download, and the Reel Generator. Any soundtrack preference is metadata only and does not embed copyrighted audio. #EPNews #AutomationTest #ReelWorkflow",
+  "drive_file_id": "1vW-FyICS4Bbq7FJxpxbx3nKJD0dlKb2R",
+  "image_verified": true,
+  "fact_checked": true,
+  "website_published": true,
+  "approved_for_reel": true,
+  "automatic_reel": true,
+  "music_category": "none",
+  "duration": "15"
+}
