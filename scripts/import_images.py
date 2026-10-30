@@ -14,7 +14,7 @@ MAX_BYTES=8_000_000
 if not MANIFEST.exists():
     raise SystemExit('No image import manifest')
 data=json.loads(MANIFEST.read_text())
-if not isinstance(data,list) or len(data)>20: raise ValueError('Expected 0-20 images')
+if not isinstance(data,list) or len(data)>40: raise ValueError('Expected 0-40 images')
 for entry in data:
     source=entry['url']
     dest=entry['path']
@@ -25,6 +25,9 @@ for entry in data:
         raise ValueError('Path must be a single filename in assets/images/')
     extension=Path(dest).suffix.lower()
     if extension not in ('.png','.jpg','.jpeg','.webp'): raise ValueError('Unsupported extension')
+    if (ROOT/dest).is_file():
+        print(f'Already imported: {dest}')
+        continue
     # Do not allow fetching local/private-network endpoints.
     addresses=socket.getaddrinfo(parsed.hostname,443,type=socket.SOCK_STREAM)
     for addr in addresses:
