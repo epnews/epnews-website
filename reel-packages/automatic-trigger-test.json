@@ -1,0 +1,11 @@
+{
+  "approved": true,
+  "automatic_reel": true,
+  "drive_file_id": "1vW-FyICS4Bbq7FJxpxbx3nKJD0dlKb2R",
+  "reel_title": "EP News Automatic Reel Trigger — Technical Test Only",
+  "reel_description": "This is an internal EP News automation test, not a current news report. It checks whether an explicitly approved test package merged into the main GitHub branch automatically starts the Reel Generator, retrieves a previously tested Google Drive graphic, produces a 15-second vertical MP4, and saves the preview artifact without manual workflow dispatch. This material must not be published as news or sent to the Facebook Page. Soundtrack preferences are metadata only; no licensed music is embedded. The test is considered successful only after the GitHub Actions run and its output artifact have been independently verified. #EPNews #AutomationTest #ReelWorkflow",
+  "music_category": "none",
+  "music_track": "",
+  "duration": "15",
+  "custom_seconds": "30"
+}
