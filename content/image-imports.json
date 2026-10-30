@@ -1,9 +1,5 @@
 [
   {
-    "url": "https://drive.google.com/uc?export=download&id=1f8i-yKnd_guRcXNoN9rhBI2LjBZyjhqk",
-    "path": "assets/images/egypt-saudi-approved-graphic.png"
-  },
-  {
     "url": "https://drive.google.com/uc?export=download&id=1v0ZbptA2xEKFkhCoqmYC_kD_JZBrQ_DY",
     "path": "assets/images/epnews-fec-website-1600x900.jpg"
   },
@@ -78,5 +74,9 @@
   {
     "url": "https://drive.google.com/uc?export=download&id=1rU8yXv1simx9Wbqx68OgpB5b8RhfBGDR",
     "path": "assets/images/epnews_omar_2016_investigation_1600x900.png"
+  },
+  {
+    "url": "https://drive.google.com/uc?export=download&id=1iJ6R7JfFjgefhTuT9RTUly_UQVyoqKqN",
+    "path": "assets/images/epnews_qatar_woodside_lng_1600x900.png"
   }
 ]
