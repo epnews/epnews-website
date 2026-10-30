@@ -2,17 +2,21 @@ name: EP News Reel Generator
 on:
   workflow_dispatch:
     inputs:
+      package_path:
+        description: 'Optional approved reel-packages/*.json path; overrides manual story fields'
+        required: false
+        type: string
       drive_file_id:
         description: 'Google Drive file ID or share link for approved EP News graphic'
-        required: true
+        required: false
         type: string
       reel_title:
         description: 'Approved factual headline'
-        required: true
+        required: false
         type: string
       reel_description:
         description: 'Approved short news article (~100 words, 3-5 hashtags)'
-        required: true
+        required: false
         type: string
       music_category:
         description: 'Music preference (reference only until licensed audio is available)'
@@ -63,15 +67,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Resolve approved EP News package
+        env:
+          PACKAGE_PATH: ${{ inputs.package_path }}
+        run: python3 scripts/resolve_reel_package.py
       - name: Install FFmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Install Drive downloader
         run: python3 -m pip install --disable-pip-version-check gdown==5.2.0
       - name: Validate inputs and download approved artwork
         env:
-          DRIVE_FILE_ID: ${{ inputs.drive_file_id }}
-          DURATION: ${{ inputs.duration }}
-          CUSTOM_SECONDS: ${{ inputs.custom_seconds }}
+          DRIVE_FILE_ID: ${{ env.DRIVE_FILE_ID || inputs.drive_file_id }}
+          DURATION: ${{ env.DURATION || inputs.duration }}
+          CUSTOM_SECONDS: ${{ env.CUSTOM_SECONDS || inputs.custom_seconds }}
         run: |
           python3 - <<'PY'
           import os, re, urllib.parse
@@ -122,8 +130,8 @@ jobs:
           PY
       - name: Record soundtrack preference (no unlicensed audio embedded)
         env:
-          MUSIC_CATEGORY: ${{ inputs.music_category }}
-          MUSIC_TRACK: ${{ inputs.music_track }}
+          MUSIC_CATEGORY: ${{ env.MUSIC_CATEGORY || inputs.music_category }}
+          MUSIC_TRACK: ${{ env.MUSIC_TRACK || inputs.music_track }}
         run: |
           python3 - <<'PY'
           import json, os, pathlib
@@ -158,8 +166,8 @@ jobs:
           fi
       - name: Attach news article and optionally submit unpublished Meta draft
         env:
-          REEL_TITLE: ${{ inputs.reel_title }}
-          REEL_DESCRIPTION: ${{ inputs.reel_description }}
+          REEL_TITLE: ${{ env.REEL_TITLE || inputs.reel_title }}
+          REEL_DESCRIPTION: ${{ env.REEL_DESCRIPTION || inputs.reel_description }}
           REEL_MODE: ${{ inputs.publish_mode }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
         run: python3 scripts/meta_reel_upload.py
