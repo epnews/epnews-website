@@ -19,6 +19,8 @@ jobs:
           python-version: '3.12'
       - name: Install Google Drive image downloader
         run: python -m pip install gdown==5.2.0 pillow==11.3.0
+      - name: Allow Google Drive public download to propagate
+        run: sleep 15
       - name: Download and validate images
         run: python scripts/import_images.py
       - name: Commit imported assets to review branch
