@@ -2,8 +2,8 @@ name: EP News Reel Generator
 on:
   workflow_dispatch:
     inputs:
-      image_url:
-        description: 'Public HTTPS URL of approved EP News image'
+      drive_file_id:
+        description: 'Google Drive file ID or share link for approved EP News graphic'
         required: true
         type: string
       duration:
@@ -34,16 +34,23 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Validate inputs and download approved artwork
         env:
-          IMAGE_URL: ${{ inputs.image_url }}
+          DRIVE_FILE_ID: ${{ inputs.drive_file_id }}
           DURATION: ${{ inputs.duration }}
           CUSTOM_SECONDS: ${{ inputs.custom_seconds }}
         run: |
           python3 - <<'PY'
-          import os, urllib.parse
-          url=os.environ['IMAGE_URL']
-          parsed=urllib.parse.urlparse(url)
-          if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
-              raise SystemExit('Image URL must be a public HTTPS URL')
+          import os, re, urllib.parse
+          supplied=os.environ['DRIVE_FILE_ID'].strip()
+          if supplied.startswith('https://'):
+              parsed=urllib.parse.urlparse(supplied)
+              if parsed.hostname not in ('drive.google.com','www.drive.google.com'):
+                  raise SystemExit('Expected a Google Drive share link')
+              match=re.search(r'/file/d/([A-Za-z0-9_-]+)',parsed.path)
+              supplied=match.group(1) if match else urllib.parse.parse_qs(parsed.query).get('id',[''])[0]
+          if not re.fullmatch(r'[A-Za-z0-9_-]{15,}',supplied):
+              raise SystemExit('Invalid Google Drive file ID or share link')
+          with open(os.environ['GITHUB_ENV'],'a') as f:
+              f.write(f'DRIVE_ID={supplied}\n')
           duration=os.environ['DURATION']
           if duration == 'auto':
               seconds=15
@@ -56,9 +63,14 @@ jobs:
           with open(os.environ['GITHUB_ENV'],'a') as f:
               f.write(f'REEL_SECONDS={seconds}\n')
           PY
-          curl --fail --location --max-time 40 --max-filesize 15000000 --output artwork.img "$IMAGE_URL"
-          file artwork.img
-          ffprobe -v error -show_entries stream=codec_type -of csv=p=0 artwork.img | grep -q video || true
+          curl --fail --location --max-time 60 --max-filesize 15000000 --output artwork.img "https://drive.google.com/uc?export=download&id=$DRIVE_ID"
+          python3 - <<'PY'
+          import subprocess
+          p=subprocess.run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=width,height','-of','csv=p=0','artwork.img'],capture_output=True,text=True)
+          if p.returncode or not p.stdout.strip():
+              raise SystemExit('Google Drive did not return a valid image. Check file sharing (Anyone with link / Viewer), file size, and download restrictions.')
+          print('Image dimensions:',p.stdout.strip())
+          PY
       - name: Generate vertical MP4
         run: |
           ffmpeg -hide_banner -loglevel error -loop 1 -framerate 30 -i artwork.img \
