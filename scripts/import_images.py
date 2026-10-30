@@ -6,6 +6,7 @@ from urllib.request import Request, urlopen
 from urllib.parse import urlparse
 import socket
 import ipaddress
+import time
 
 ROOT=Path(__file__).resolve().parents[1]
 MANIFEST=ROOT/'content/image-imports.json'
@@ -37,20 +38,27 @@ for entry in data:
         import gdown
         import tempfile
         with tempfile.TemporaryDirectory() as folder:
-            try:
-                downloaded=gdown.download(id=ids[0],output=str(Path(folder)/'image'),quiet=True)
-            except Exception as exc:
-                raise ValueError(
-                    f"Google Drive file {ids[0]} is not publicly downloadable. "
-                    "Upload the image to EP News public folder "
-                    "(11Lu7G8A6hzT7F9QKP3quF-MJlLWt9ByZ), then set "
-                    "this FILE's General access to Anyone with the link — Viewer. "
-                    "Re-run the failed import job after confirming anonymous access."
-                ) from exc
+            downloaded=None
+            last_error=None
+            for attempt in range(1, 5):
+                try:
+                    downloaded=gdown.download(id=ids[0],output=str(Path(folder)/'image'),quiet=True)
+                    if downloaded and Path(downloaded).is_file() and Path(downloaded).stat().st_size:
+                        break
+                    downloaded=None
+                    last_error='No nonempty file returned'
+                except Exception as exc:
+                    last_error=str(exc)
+                    downloaded=None
+                if attempt < 4:
+                    delay=15 * attempt
+                    print(f'Google Drive download not ready for {ids[0]} (attempt {attempt}/4); retrying in {delay}s',flush=True)
+                    time.sleep(delay)
             if not downloaded:
                 raise ValueError(
-                    f"Google Drive file {ids[0]} cannot be downloaded. "
-                    "Verify file-level Anyone with the link — Viewer access."
+                    f'Google Drive file {ids[0]} was not downloadable after four attempts. '
+                    'Check file-level Anyone with the link — Viewer access and verify the Drive ID. '
+                    f'Last error: {last_error}'
                 )
             payload=Path(downloaded).read_bytes()
         if len(payload)>MAX_BYTES:raise ValueError('Image exceeds 8MB')
