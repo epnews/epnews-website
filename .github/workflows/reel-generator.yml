@@ -71,6 +71,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: Resolve approved EP News package
         env:
           PACKAGE_PATH: ${{ inputs.package_path }}
