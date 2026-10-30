@@ -1,0 +1,76 @@
+name: EP News Reel Generator
+on:
+  workflow_dispatch:
+    inputs:
+      image_url:
+        description: 'Public HTTPS URL of approved EP News image'
+        required: true
+        type: string
+      duration:
+        description: 'Reel length in seconds, or auto'
+        required: true
+        default: '15'
+        type: choice
+        options:
+          - '10'
+          - '15'
+          - '30'
+          - '60'
+          - 'auto'
+          - 'custom'
+      custom_seconds:
+        description: 'Only used when duration is custom (3-90 seconds)'
+        required: false
+        default: '30'
+        type: string
+permissions:
+  contents: read
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Validate inputs and download approved artwork
+        env:
+          IMAGE_URL: ${{ inputs.image_url }}
+          DURATION: ${{ inputs.duration }}
+          CUSTOM_SECONDS: ${{ inputs.custom_seconds }}
+        run: |
+          python3 - <<'PY'
+          import os, urllib.parse
+          url=os.environ['IMAGE_URL']
+          parsed=urllib.parse.urlparse(url)
+          if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
+              raise SystemExit('Image URL must be a public HTTPS URL')
+          duration=os.environ['DURATION']
+          if duration == 'auto':
+              seconds=15
+          elif duration == 'custom':
+              seconds=int(os.environ['CUSTOM_SECONDS'])
+          else:
+              seconds=int(duration)
+          if not 3 <= seconds <= 90:
+              raise SystemExit('Duration must be between 3 and 90 seconds')
+          with open(os.environ['GITHUB_ENV'],'a') as f:
+              f.write(f'REEL_SECONDS={seconds}\n')
+          PY
+          curl --fail --location --max-time 40 --max-filesize 15000000 --output artwork.img "$IMAGE_URL"
+          file artwork.img
+          ffprobe -v error -show_entries stream=codec_type -of csv=p=0 artwork.img | grep -q video || true
+      - name: Generate vertical MP4
+        run: |
+          ffmpeg -hide_banner -loglevel error -loop 1 -framerate 30 -i artwork.img \
+            -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 \
+            -t "$REEL_SECONDS" \
+            -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x111827,format=yuv420p" \
+            -c:v libx264 -preset veryfast -r 30 -pix_fmt yuv420p \
+            -c:a aac -b:a 96k -shortest -movflags +faststart reel.mp4
+          ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 reel.mp4
+      - name: Save video for review (no Facebook publishing)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ep-news-reel-preview
+          path: reel.mp4
+          retention-days: 7
