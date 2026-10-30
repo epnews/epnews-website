@@ -1,5 +1,9 @@
 name: EP News Reel Generator
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'reel-packages/*.json'
   workflow_dispatch:
     inputs:
       package_path:
@@ -67,10 +71,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: Resolve approved EP News package
         env:
           PACKAGE_PATH: ${{ inputs.package_path }}
-        run: python3 scripts/resolve_reel_package.py
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          if [ "$EVENT_NAME" = "push" ]; then
+            export PACKAGE_PATH="$(python3 scripts/select_changed_reel_package.py)"
+          fi
+          python3 scripts/resolve_reel_package.py
       - name: Install FFmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Install Drive downloader
@@ -168,7 +181,7 @@ jobs:
         env:
           REEL_TITLE: ${{ env.REEL_TITLE || inputs.reel_title }}
           REEL_DESCRIPTION: ${{ env.REEL_DESCRIPTION || inputs.reel_description }}
-          REEL_MODE: ${{ inputs.publish_mode }}
+          REEL_MODE: ${{ inputs.publish_mode || 'preview' }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
         run: python3 scripts/meta_reel_upload.py
       - name: Save video for review (no Facebook publishing)
