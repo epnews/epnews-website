@@ -24,7 +24,7 @@ on:
         required: false
         type: string
       music_category:
-        description: 'Music preference (reference only until licensed audio is available)'
+        description: 'Music category: requires licensed audio unless none'
         required: true
         default: 'none'
         type: choice
@@ -35,7 +35,7 @@ on:
           - 'concerning'
           - 'texas-south'
       music_track:
-        description: 'Optional exact track title override from catalog (reference only)'
+        description: 'Optional exact licensed track from catalog'
         required: false
         type: string
       publish_mode:
@@ -142,35 +142,28 @@ jobs:
               raise SystemExit('Google Drive did not return a valid image. Check file sharing (Anyone with link / Viewer), file size, and download restrictions.')
           print('Image dimensions:',p.stdout.strip())
           PY
-      - name: Record soundtrack preference (no unlicensed audio embedded)
+      - name: Resolve and validate licensed soundtrack
         env:
           MUSIC_CATEGORY: ${{ env.MUSIC_CATEGORY || inputs.music_category }}
           MUSIC_TRACK: ${{ env.MUSIC_TRACK || inputs.music_track }}
+        run: python3 scripts/resolve_reel_audio.py
+      - name: Generate vertical MP4 with approved audio
+        shell: bash
         run: |
-          python3 - <<'PY'
-          import json, os, pathlib
-          catalog=json.loads(pathlib.Path('config/reel-music-catalog.json').read_text())
-          category=os.environ['MUSIC_CATEGORY']
-          override=os.environ['MUSIC_TRACK'].strip()
-          if category != 'none' and category not in catalog['categories']:
-              raise SystemExit('Unknown music category')
-          tracks=[] if category=='none' else catalog['categories'][category]['tracks']
-          if override and not any(t['title'].lower()==override.lower() for t in tracks):
-              raise SystemExit('Music track override is not in selected category')
-          chosen=next((t for t in tracks if t['title'].lower()==override.lower()),tracks[0] if tracks else None)
-          result={'category':category,'preferred_track':chosen,'audio_embedded':False,'rights_verified':False,
-                  'note':'Music selection is reference only. No copyrighted audio is downloaded or embedded.'}
-          pathlib.Path('reel-music-selection.json').write_text(json.dumps(result,indent=2)+'\n')
-          print('Music preference recorded:',json.dumps(result))
-          PY
-      - name: Generate vertical MP4
-        run: |
-          ffmpeg -hide_banner -loglevel error -loop 1 -framerate 30 -i artwork.img \
-            -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 \
-            -t "$REEL_SECONDS" \
-            -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x111827,format=yuv420p" \
-            -c:v libx264 -preset veryfast -r 30 -pix_fmt yuv420p \
-            -c:a aac -b:a 96k -shortest -movflags +faststart reel.mp4
+          set -euo pipefail
+          if [ "$REEL_MUSIC_MODE" = "track" ]; then
+            ffmpeg -hide_banner -loglevel error -loop 1 -framerate 30 -i artwork.img -stream_loop -1 -i "$REEL_AUDIO_PATH" \
+              -t "$REEL_SECONDS" -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x111827,format=yuv420p" \
+              -af "afade=t=out:st=$((REEL_SECONDS-1)):d=1,aresample=48000" \
+              -c:v libx264 -preset veryfast -r 30 -pix_fmt yuv420p -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart reel.mp4
+            python3 scripts/check_reel_audio.py reel.mp4
+          elif [ "$REEL_MUSIC_MODE" = "none" ]; then
+            ffmpeg -hide_banner -loglevel error -loop 1 -framerate 30 -i artwork.img \
+              -t "$REEL_SECONDS" -vf "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:color=0x111827,format=yuv420p" \
+              -c:v libx264 -preset veryfast -r 30 -pix_fmt yuv420p -an -movflags +faststart reel.mp4
+          else
+            echo 'Unrecognized music selection state' >&2; exit 1
+          fi
           ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 reel.mp4
       - name: Validate duration for Meta Reels
         run: |
