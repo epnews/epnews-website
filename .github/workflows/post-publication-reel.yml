@@ -45,6 +45,17 @@ jobs:
           branch="automation/reel-${slug}-${GITHUB_RUN_ID}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo "Existing automation branch found: $branch"
+            existing="$(gh pr list --head "$branch" --state all --json number --jq '.[0].number // empty')"
+            if [ -n "$existing" ]; then
+              echo "Existing review PR #$existing; nothing to recreate."
+              exit 0
+            fi
+            echo "Branch exists without a PR; create PR from existing branch."
+            gh pr create --base main --head "$branch" --title "Reel preview handoff: ${slug}" --body "Recovered approved Reel manifest after live website verification. Requires human review. No Meta draft or public Facebook publishing."
+            exit 0
+          fi
           git checkout -b "$branch"
           git add "publication-manifests/${slug}.json"
           git commit -m "Prepare approved Reel manifest for ${slug}"
