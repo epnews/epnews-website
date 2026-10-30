@@ -39,13 +39,18 @@ on:
         required: false
         type: string
       publish_mode:
-        description: 'Preview locally, or upload unpublished Meta draft'
+        description: 'Preview, upload Meta draft, or explicitly publish approved Reel'
         required: true
         default: 'preview'
         type: choice
         options:
           - 'preview'
           - 'draft'
+          - 'publish'
+      publish_confirmation:
+        description: 'For publish only: type PUBLISH_EP_NEWS_REEL'
+        required: false
+        type: string
       duration:
         description: 'Reel length in seconds, or auto'
         required: true
@@ -68,7 +73,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -182,8 +187,9 @@ jobs:
           REEL_DESCRIPTION: ${{ env.REEL_DESCRIPTION || inputs.reel_description }}
           REEL_MODE: ${{ inputs.publish_mode || 'preview' }}
           FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          REEL_PUBLISH_APPROVAL: ${{ inputs.publish_confirmation }}
         run: python3 scripts/meta_reel_upload.py
-      - name: Save video for review (no Facebook publishing)
+      - name: Save Reel artifact and Meta upload result
         uses: actions/upload-artifact@v4
         with:
           name: ep-news-reel-preview
