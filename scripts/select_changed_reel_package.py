@@ -18,4 +18,4 @@ path=approved[0]
 with open(os.environ["GITHUB_ENV"],"a") as f:
     f.write(f"PACKAGE_PATH={path}\n")
 os.environ["PACKAGE_PATH"]=path
-print(f"Selected automatic preview package: {path}")
+print(path)
