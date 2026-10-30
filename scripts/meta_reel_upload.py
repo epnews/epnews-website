@@ -4,6 +4,7 @@ import json
 import os
 import pathlib
 import sys
+import time
 from urllib.parse import urlparse
 import requests
 
@@ -38,8 +39,10 @@ def main():
         print("PREVIEW ONLY: no requests to Meta; description is stored in preview artifact.")
         pathlib.Path("reel-description.txt").write_text(description + "\n", encoding="utf-8")
         return
-    if MODE != "draft":
-        raise SystemExit("Public publishing is intentionally disabled in this version.")
+    if MODE not in ("draft", "publish"):
+        raise SystemExit("Unknown publishing mode.")
+    if MODE == "publish" and (os.getenv("GITHUB_EVENT_NAME") != "workflow_dispatch" or os.getenv("REEL_PUBLISH_APPROVAL") != "PUBLISH_EP_NEWS_REEL"):
+        raise SystemExit("Public publishing requires manual dispatch and explicit approval.")
     if not TOKEN:
         raise SystemExit("FACEBOOK_PAGE_ACCESS_TOKEN repository secret is missing.")
     auth = {"Authorization": f"OAuth {TOKEN}"}
@@ -56,14 +59,30 @@ def main():
                      "Content-Type": "application/octet-stream"},
             data=fh, timeout=240)
     api(upload)
-    print("Video uploaded to Meta; finalizing as DRAFT.")
+    print("Video uploaded; submitting to Meta in requested mode.")
     result = api(requests.post(f"{GRAPH}/{PAGE_ID}/video_reels", headers=auth,
         data={"upload_phase": "finish", "video_id": video_id,
-              "video_state": "DRAFT", "title": title, "description": description}, timeout=90))
+              "video_state": ("PUBLISHED" if MODE=="publish" else "DRAFT"), "title": title, "description": description}, timeout=90))
     if result.get("success") is not True:
         raise SystemExit("Meta did not confirm draft finish.")
-    print(f"Draft submission accepted. Video ID: {video_id}. Processing may continue asynchronously.")
-    pathlib.Path("reel-meta-result.json").write_text(json.dumps({"video_id": video_id, "state_requested": "DRAFT"}, indent=2))
+    requested = "PUBLISHED" if MODE=="publish" else "DRAFT"
+    print(f"Meta accepted {requested} request for video ID {video_id}.")
+    state, permalink = "unknown", None
+    if MODE=="publish":
+        for attempt in range(12):
+            time.sleep(10)
+            info = api(requests.get(f"{GRAPH}/{video_id}", headers=auth, params={"fields":"status,permalink_url"}, timeout=45))
+            permalink = info.get("permalink_url") or permalink
+            raw = info.get("status") or {}
+            state = (raw.get("video_status") or "unknown") if isinstance(raw,dict) else str(raw)
+            print("Meta processing status:", state)
+            if state.lower() in ("error","failed"):
+                raise SystemExit("Meta Reel processing failed.")
+            if permalink and state.lower() in ("ready","published","complete","completed"):
+                break
+    pathlib.Path("reel-meta-result.json").write_text(json.dumps({"video_id":video_id,"state_requested":requested,"processing_status":state,"permalink_url":permalink},indent=2))
+    if MODE=="publish" and not permalink:
+        print("Meta accepted publication request, but live permalink remains unverified.",file=sys.stderr)
 
 if __name__ == "__main__":
     try:
