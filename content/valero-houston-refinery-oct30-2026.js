@@ -4,7 +4,7 @@ STORIES.push({
   category: 'economy',
   type: 'REPORTING',
   status: 'published',
-  publishedAt: '2026-10-30T18:50:00-05:00',
+  publishedAt: '2026-10-30',
   updatedAt: '2026-10-30',
   author: 'EP News',
   title: 'Valero Agrees to Buy Shuttered Houston Refinery, Plans 2027 Restart',
