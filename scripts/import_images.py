@@ -13,7 +13,7 @@ MAX_BYTES=8_000_000
 if not MANIFEST.exists():
     raise SystemExit('No image import manifest')
 data=json.loads(MANIFEST.read_text())
-if not isinstance(data,list) or len(data)>20: raise ValueError('Expected 0-20 images')
+if not isinstance(data,list) or len(data)>40: raise ValueError('Expected 0-40 images')
 for entry in data:
     source=entry['url']
     dest=entry['path']
