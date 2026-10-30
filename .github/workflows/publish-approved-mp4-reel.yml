@@ -1,0 +1,64 @@
+name: Publish approved existing MP4 Reel
+on:
+  workflow_dispatch:
+    inputs:
+      drive_file_id:
+        description: 'Google Drive ID for exact approved MP4'
+        required: true
+        type: string
+      expected_sha256:
+        description: 'SHA256 of approved MP4 (64 hex characters)'
+        required: true
+        type: string
+      reel_title:
+        description: 'Approved title'
+        required: true
+        type: string
+      reel_description:
+        description: 'Approved caption'
+        required: true
+        type: string
+      publish_confirmation:
+        description: 'Type PUBLISH_EP_NEWS_REEL'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: ep-news-approved-reel-publishing
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify explicit publish authorization
+        env:
+          REEL_PUBLISH_APPROVAL: ${{ inputs.publish_confirmation }}
+        run: |
+          test "$REEL_PUBLISH_APPROVAL" = "PUBLISH_EP_NEWS_REEL" || { echo "Publish approval not given"; exit 1; }
+      - name: Install downloader and video verification
+        run: |
+          python3 -m pip install --disable-pip-version-check gdown==5.2.0 requests
+          sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Fetch and verify exact approved video
+        env:
+          DRIVE_FILE_ID: ${{ inputs.drive_file_id }}
+          EXPECTED_SHA256: ${{ inputs.expected_sha256 }}
+        run: python3 scripts/download_approved_reel.py
+      - name: Publish this exact MP4 to Meta
+        env:
+          REEL_TITLE: ${{ inputs.reel_title }}
+          REEL_DESCRIPTION: ${{ inputs.reel_description }}
+          REEL_MODE: publish
+          REEL_PUBLISH_APPROVAL: ${{ inputs.publish_confirmation }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: python3 scripts/meta_reel_upload.py
+      - name: Save Meta publication result for verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: approved-reel-publication-result
+          path: reel-meta-result.json
+          if-no-files-found: warn
