@@ -1,13 +1,19 @@
 {
   "version": 1,
-  "notes": "Track references from Facebook Reel music selector. No audio files or automated usage rights verified. Selecting a track does not embed or license audio.",
+  "notes": "Track sources are references only until usage rights are confirmed. A selected category must never fall back to silence.",
   "categories": {
     "breaking-news": {
       "label": "Breaking News",
       "tracks": [
         {
           "title": "Breaking News",
-          "artist": "Afterlight"
+          "artist": "Afterlight",
+          "audio_path": "assets/reel-audio/breaking-news-afterlight.mp4",
+          "drive_file_id": "1yLQjgoLF7j0fLrpEAXkGvGbUjO4LisSu",
+          "rights": {
+            "verified": false,
+            "evidence": "PENDING: confirm Facebook/Meta license permits EP News automated embedding; uploaded reference recording alone is not proof of rights"
+          }
         }
       ]
     },
