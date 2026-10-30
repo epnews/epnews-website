@@ -11,8 +11,14 @@
           "audio_path": "assets/reel-audio/breaking-news-afterlight.mp4",
           "drive_file_id": "1yLQjgoLF7j0fLrpEAXkGvGbUjO4LisSu",
           "rights": {
-            "verified": false,
-            "evidence": "PENDING: confirm Facebook/Meta license permits EP News automated embedding; uploaded reference recording alone is not proof of rights"
+            "verified": true,
+            "evidence": "Meta Sound Collection asset 1700926814543903; user confirmed displayed title Breaking News and artist Afterlight on 2026-10-30. Meta Sound Collection terms cover commercial/noncommercial content distributed on Meta products only. Publishing is restricted to Facebook/Instagram; not standalone website/YouTube/TikTok. Source: https://www.facebook.com/sound/collection/?sound_collection_tab=sound_tracks&asset_id=1700926814543903&reference=artist_attr",
+            "platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "source": "meta-sound-collection",
+            "asset_id": "1700926814543903"
           }
         }
       ]
