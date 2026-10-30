@@ -1,0 +1,52 @@
+name: EP News post-publication Reel handoff
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'editorial-reel-inputs/*.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: ep-news-reel-handoff
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Select one approved editorial story
+        id: select
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t paths < <(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'editorial-reel-inputs/*.json')
+          if [ "${#paths[@]}" -ne 1 ]; then
+            echo "Exactly one newly added editorial input required; got ${#paths[@]}"
+            exit 1
+          fi
+          echo "path=${paths[0]}" >> "$GITHUB_OUTPUT"
+      - name: Verify deployed article before creating manifest
+        run: python3 scripts/verify_live_reel_story.py "${{ steps.select.outputs.path }}"
+      - name: Prepare approved Reel manifest
+        run: python3 scripts/prepare_publication_reel.py verified-reel-story.json --approve-reel
+      - name: Open review PR for generated manifest
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STORY_PATH: ${{ steps.select.outputs.path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          slug="$(python3 -c 'import json,os;print(json.load(open(os.environ["STORY_PATH"]))["slug"])')"
+          branch="automation/reel-${slug}-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add "publication-manifests/${slug}.json"
+          git commit -m "Prepare approved Reel manifest for ${slug}"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" --title "Reel preview handoff: ${slug}" --body "Generated after verifying the article script is live on EP News. Requires human merge approval. Merging triggers preview MP4 only; no Meta draft or public Facebook posting."

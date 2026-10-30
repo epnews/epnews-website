@@ -1,0 +1,14 @@
+{
+  "slug": "replace-with-actual-article-id",
+  "article_script": "content/replace-with-actual-article-file.js",
+  "headline": "Replace with verified headline",
+  "facebook_description": "Replace with approved approximately 100-word Facebook description and 3–5 hashtags.",
+  "drive_file_id": "REPLACE_WITH_VERIFIED_DRIVE_ID",
+  "fact_checked": false,
+  "image_verified": false,
+  "website_published": false,
+  "approved_for_reel": false,
+  "automatic_reel": false,
+  "music_category": "none",
+  "duration": "15"
+}

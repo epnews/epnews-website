@@ -5,6 +5,8 @@ on:
       - 'scripts/prepare_publication_reel.py'
       - 'scripts/test_prepare_publication_reel.py'
       - '.github/workflows/test-editorial-reel.yml'
+      - 'scripts/verify_live_reel_story.py'
+      - '.github/workflows/post-publication-reel.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -13,5 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Compile Reel handoff scripts
+        run: python3 -m py_compile scripts/verify_live_reel_story.py scripts/prepare_publication_reel.py
       - name: Test approved manifest and safety rejection cases
         run: python3 scripts/test_prepare_publication_reel.py
