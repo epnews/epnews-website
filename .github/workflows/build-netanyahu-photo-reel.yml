@@ -1,0 +1,26 @@
+name: Build Netanyahu photo Reel artwork for review
+on:
+  push:
+    branches: [feature/netanyahu-photo-reel-replacement]
+    paths:
+      - 'scripts/build_netanyahu_photo_reel.py'
+      - '.github/workflows/build-netanyahu-photo-reel.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Pillow and requests
+        run: python3 -m pip install --disable-pip-version-check pillow requests
+      - name: Build 1080x1920 authentic photo graphic
+        run: python3 scripts/build_netanyahu_photo_reel.py
+      - name: Upload image for visual editorial approval
+        uses: actions/upload-artifact@v4
+        with:
+          name: netanyahu-photo-reel-graphic-review
+          path: artifacts/netanyahu-photo-reel-1080x1920.jpg
+          retention-days: 7
