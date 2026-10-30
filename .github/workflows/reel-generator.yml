@@ -142,6 +142,11 @@ jobs:
               raise SystemExit('Google Drive did not return a valid image. Check file sharing (Anyone with link / Viewer), file size, and download restrictions.')
           print('Image dimensions:',p.stdout.strip())
           PY
+      - name: Download approved licensed soundtrack
+        env:
+          MUSIC_CATEGORY: ${{ env.MUSIC_CATEGORY || inputs.music_category }}
+          MUSIC_TRACK: ${{ env.MUSIC_TRACK || inputs.music_track }}
+        run: python3 scripts/download_licensed_reel_audio.py
       - name: Resolve and validate licensed soundtrack
         env:
           MUSIC_CATEGORY: ${{ env.MUSIC_CATEGORY || inputs.music_category }}
