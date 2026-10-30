@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "notes": "Track references from Facebook Reel music selector. No audio files or automated usage rights verified. Selecting a track does not embed or license audio.",
+  "categories": {
+    "breaking-news": {
+      "label": "Breaking News",
+      "tracks": [
+        {
+          "title": "Breaking News",
+          "artist": "Afterlight"
+        }
+      ]
+    },
+    "war-military": {
+      "label": "War & Military",
+      "tracks": [
+        {
+          "title": "Battle",
+          "artist": "Sam Marshall"
+        },
+        {
+          "title": "Shield",
+          "artist": "Sam Marshall"
+        }
+      ]
+    },
+    "concerning": {
+      "label": "Concerning Developments",
+      "tracks": [
+        {
+          "title": "Dark Angel",
+          "artist": "Sam Marshall"
+        },
+        {
+          "title": "Alien Invasion",
+          "artist": "Sam Marshall"
+        }
+      ]
+    },
+    "texas-south": {
+      "label": "Texas & Southern",
+      "tracks": [
+        {
+          "title": "Cowboy Boots",
+          "artist": "bbox"
+        }
+      ]
+    }
+  }
+}
