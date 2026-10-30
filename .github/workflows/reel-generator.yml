@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'reel-packages/*.json'
+      - 'publication-manifests/*.json'
   workflow_dispatch:
     inputs:
       package_path:
