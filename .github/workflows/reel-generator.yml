@@ -51,6 +51,7 @@ jobs:
               supplied=match.group(1) if match else urllib.parse.parse_qs(parsed.query).get('id',[''])[0]
           if not re.fullmatch(r'[A-Za-z0-9_-]{15,}',supplied):
               raise SystemExit('Invalid Google Drive file ID or share link')
+          os.environ['DRIVE_ID']=supplied
           with open(os.environ['GITHUB_ENV'],'a') as f:
               f.write(f'DRIVE_ID={supplied}\n')
           duration=os.environ['DURATION']
@@ -67,7 +68,12 @@ jobs:
           PY
           python3 - <<'PY'
           import os, gdown
-          file_id=os.environ['DRIVE_ID']
+          file_id=os.environ['DRIVE_FILE_ID'].strip()
+          if file_id.startswith('https://'):
+              import re, urllib.parse
+              parsed=urllib.parse.urlparse(file_id)
+              match=re.search(r'/file/d/([A-Za-z0-9_-]+)',parsed.path)
+              file_id=match.group(1) if match else urllib.parse.parse_qs(parsed.query).get('id',[''])[0]
           result=gdown.download(id=file_id,output='artwork.img',quiet=False,fuzzy=True)
           if not result:
               raise SystemExit('Drive download failed. Confirm file is shared as Anyone with the link (Viewer), downloading is allowed, and the file ID is correct.')
