@@ -32,6 +32,8 @@ jobs:
     steps:
       - name: Install FFmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Install Drive downloader
+        run: python3 -m pip install --disable-pip-version-check gdown==5.2.0
       - name: Validate inputs and download approved artwork
         env:
           DRIVE_FILE_ID: ${{ inputs.drive_file_id }}
@@ -63,7 +65,15 @@ jobs:
           with open(os.environ['GITHUB_ENV'],'a') as f:
               f.write(f'REEL_SECONDS={seconds}\n')
           PY
-          curl --fail --location --max-time 60 --max-filesize 15000000 --output artwork.img "https://drive.google.com/uc?export=download&id=$DRIVE_ID"
+          python3 - <<'PY'
+          import os, gdown
+          file_id=os.environ['DRIVE_ID']
+          result=gdown.download(id=file_id,output='artwork.img',quiet=False,fuzzy=True)
+          if not result:
+              raise SystemExit('Drive download failed. Confirm file is shared as Anyone with the link (Viewer), downloading is allowed, and the file ID is correct.')
+          if os.path.getsize(result)>15_000_000:
+              raise SystemExit('Image exceeds 15 MB limit.')
+          PY
           python3 - <<'PY'
           import subprocess
           p=subprocess.run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=width,height','-of','csv=p=0','artwork.img'],capture_output=True,text=True)
