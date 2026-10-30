@@ -33,11 +33,11 @@ for attempt in range(a.attempts):
     try:
         index=get("")
         article=get(script)
-        if not re.search(r'<script\s+src=["\\']'+re.escape(script)+r'(?:\?[^"\\']*)?["\\']',index):
+        if ('src="'+script+'"' not in index and "src='"+script+"'" not in index):
             raise ValueError("Article script not registered in live homepage")
-        if not re.search(r'\bid\s*:\s*["\\']'+re.escape(slug)+r'["\\']',article):
+        if not re.search(r"\\bid\\s*:\\s*['\\\"]"+re.escape(slug)+r"['\\\"]",article):
             raise ValueError("Article ID absent from live script")
-        if not re.search(r'\bstatus\s*:\s*["\\']published["\\']',article):
+        if not re.search(r"\\bstatus\\s*:\\s*['\\\"]published['\\\"]",article):
             raise ValueError("Live article is not marked published")
         break
     except (urllib.error.URLError,TimeoutError,ValueError) as e:
