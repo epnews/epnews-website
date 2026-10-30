@@ -81,7 +81,7 @@ jobs:
           AFTER_SHA: ${{ github.sha }}
         run: |
           if [ "$EVENT_NAME" = "push" ]; then
-            python3 scripts/select_changed_reel_package.py
+            export PACKAGE_PATH="$(python3 scripts/select_changed_reel_package.py)"
           fi
           python3 scripts/resolve_reel_package.py
       - name: Install FFmpeg
