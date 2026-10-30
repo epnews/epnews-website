@@ -1,9 +1,9 @@
 // EP News | World News | October 30, 2026
 STORIES.push({
-  "id": "netanyahu-loses-majority-oct30-2026",
+  id: "netanyahu-loses-majority-oct30-2026",
   "category": "world",
   "type": "REPORTING",
-  "status": "published",
+  status: "published",
   "publishedAt": "2026-10-30",
   "updatedAt": "2026-10-30",
   "author": "EP News",
