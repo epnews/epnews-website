@@ -14,6 +14,21 @@ on:
         description: 'Approved short news article (~100 words, 3-5 hashtags)'
         required: true
         type: string
+      music_category:
+        description: 'Music preference (reference only until licensed audio is available)'
+        required: true
+        default: 'none'
+        type: choice
+        options:
+          - 'none'
+          - 'breaking-news'
+          - 'war-military'
+          - 'concerning'
+          - 'texas-south'
+      music_track:
+        description: 'Optional exact track title override from catalog (reference only)'
+        required: false
+        type: string
       publish_mode:
         description: 'Preview locally, or upload unpublished Meta draft'
         required: true
@@ -105,6 +120,27 @@ jobs:
               raise SystemExit('Google Drive did not return a valid image. Check file sharing (Anyone with link / Viewer), file size, and download restrictions.')
           print('Image dimensions:',p.stdout.strip())
           PY
+      - name: Record soundtrack preference (no unlicensed audio embedded)
+        env:
+          MUSIC_CATEGORY: ${{ inputs.music_category }}
+          MUSIC_TRACK: ${{ inputs.music_track }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib
+          catalog=json.loads(pathlib.Path('config/reel-music-catalog.json').read_text())
+          category=os.environ['MUSIC_CATEGORY']
+          override=os.environ['MUSIC_TRACK'].strip()
+          if category != 'none' and category not in catalog['categories']:
+              raise SystemExit('Unknown music category')
+          tracks=[] if category=='none' else catalog['categories'][category]['tracks']
+          if override and not any(t['title'].lower()==override.lower() for t in tracks):
+              raise SystemExit('Music track override is not in selected category')
+          chosen=next((t for t in tracks if t['title'].lower()==override.lower()),tracks[0] if tracks else None)
+          result={'category':category,'preferred_track':chosen,'audio_embedded':False,'rights_verified':False,
+                  'note':'Music selection is reference only. No copyrighted audio is downloaded or embedded.'}
+          pathlib.Path('reel-music-selection.json').write_text(json.dumps(result,indent=2)+'\n')
+          print('Music preference recorded:',json.dumps(result))
+          PY
       - name: Generate vertical MP4
         run: |
           ffmpeg -hide_banner -loglevel error -loop 1 -framerate 30 -i artwork.img \
@@ -135,5 +171,6 @@ jobs:
             reel.mp4
             reel-description.txt
             reel-meta-result.json
+            reel-music-selection.json
           if-no-files-found: warn
           retention-days: 7
