@@ -18,10 +18,10 @@ STORIES.push({
     "Netanyahu remains prime minister while government formation proceeds. Claims that the election has already removed him from office would be premature. The next decisive development is not another vote count, but whether any candidate can secure enough parliamentary support to govern.",
     "EP News will track the coalition consultations, presidential mandate and any proposed governing agreement as those developments are confirmed."
   ],
-  "image": {
-    "src": "assets/images/epnews_netanyahu_website_1600x900.jpg",
-    "alt": "EP News informational election graphic showing the completed Israeli Knesset count: Netanyahu bloc 53, opposition 48, Arab-led parties 19; no photographic depiction.",
-    "credit": "EP News / original data-only election infographic; results sourced to Israel's Central Elections Committee."
+  image: {
+    src: "assets/images/epnews_netanyahu_website_1600x900.jpg",
+    alt: "EP News informational election graphic showing the completed Israeli Knesset count: Netanyahu bloc 53, opposition 48, Arab-led parties 19; no photographic depiction.",
+    credit: "EP News / original data-only election infographic; results sourced to Israel's Central Elections Committee."
   },
   "sources": [
     {
