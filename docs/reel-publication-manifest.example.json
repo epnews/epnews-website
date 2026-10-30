@@ -1,0 +1,11 @@
+{
+  "slug": "example-story",
+  "headline": "Verified headline goes here",
+  "facebook_description": "Approved approximately 100-word Facebook description with 3–5 hashtags goes here.",
+  "drive_file_id": "REPLACE_WITH_VERIFIED_DRIVE_ID",
+  "image_verified": false,
+  "fact_checked": false,
+  "website_published": false,
+  "music_category": "none",
+  "duration": "15"
+}
