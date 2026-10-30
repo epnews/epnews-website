@@ -1,0 +1,10 @@
+{
+  "approved": true,
+  "drive_file_id": "1vW-FyICS4Bbq7FJxpxbx3nKJD0dlKb2R",
+  "reel_title": "EP News — Reel Automation Test (Not for Publication)",
+  "reel_description": "This is a technical test of the EP News Reel production workflow. The image is retrieved from the approved Google Drive folder, and this description is attached to the generated preview. This test is not a current news report and must not be published as a news story. The purpose is to confirm that the workflow can read an approved package, create a vertical video, preserve the accompanying description, and record the selected soundtrack category without requiring individual manual inputs. No music is embedded in this test, and no public Facebook publication is authorized. #EPNews #WorkflowTest #ReelTest",
+  "music_category": "none",
+  "music_track": "",
+  "duration": "15",
+  "custom_seconds": "30"
+}
