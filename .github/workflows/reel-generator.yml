@@ -6,6 +6,22 @@ on:
         description: 'Google Drive file ID or share link for approved EP News graphic'
         required: true
         type: string
+      reel_title:
+        description: 'Approved factual headline'
+        required: true
+        type: string
+      reel_description:
+        description: 'Approved short news article (~100 words, 3-5 hashtags)'
+        required: true
+        type: string
+      publish_mode:
+        description: 'Preview locally, or upload unpublished Meta draft'
+        required: true
+        default: 'preview'
+        type: choice
+        options:
+          - 'preview'
+          - 'draft'
       duration:
         description: 'Reel length in seconds, or auto'
         required: true
@@ -30,6 +46,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Install FFmpeg
         run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
       - name: Install Drive downloader
@@ -96,9 +114,26 @@ jobs:
             -c:v libx264 -preset veryfast -r 30 -pix_fmt yuv420p \
             -c:a aac -b:a 96k -shortest -movflags +faststart reel.mp4
           ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 reel.mp4
+      - name: Validate duration for Meta Reels
+        run: |
+          if [ "$REEL_SECONDS" -lt 4 ] || [ "$REEL_SECONDS" -gt 60 ]; then
+            echo "For Meta Reels use a duration of 4-60 seconds." >&2
+            exit 1
+          fi
+      - name: Attach news article and optionally submit unpublished Meta draft
+        env:
+          REEL_TITLE: ${{ inputs.reel_title }}
+          REEL_DESCRIPTION: ${{ inputs.reel_description }}
+          REEL_MODE: ${{ inputs.publish_mode }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: python3 scripts/meta_reel_upload.py
       - name: Save video for review (no Facebook publishing)
         uses: actions/upload-artifact@v4
         with:
           name: ep-news-reel-preview
-          path: reel.mp4
+          path: |
+            reel.mp4
+            reel-description.txt
+            reel-meta-result.json
+          if-no-files-found: warn
           retention-days: 7
