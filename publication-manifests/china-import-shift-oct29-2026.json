@@ -1,0 +1,15 @@
+{
+  "slug": "china-import-shift-oct29-2026",
+  "headline": "EP News live-article Reel handoff — TECHNICAL TEST ONLY",
+  "facebook_description": "INTERNAL AUTOMATION TEST — NOT A NEWS REEL. This checks whether the EP News website publishing handoff can verify an existing live article and create a review pull request for a Reel manifest. It must not be posted to Facebook. The Drive graphic is an earlier test asset and is not necessarily artwork for the referenced China imports article. This test is designed only to check GitHub Actions, Cloudflare live article verification, and pull-request creation permissions. No claims about current news are being made by this caption. #EPNews #AutomationTest #InternalOnly",
+  "drive_file_id": "1vW-FyICS4Bbq7FJxpxbx3nKJD0dlKb2R",
+  "image_verified": true,
+  "fact_checked": true,
+  "website_published": true,
+  "approved_for_reel": true,
+  "automatic_reel": true,
+  "music_category": "none",
+  "music_track": "",
+  "duration": "15",
+  "custom_seconds": "30"
+}
