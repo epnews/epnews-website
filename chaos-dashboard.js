@@ -65,6 +65,10 @@ function update(){
  const e=root.querySelector('#chaos-evidence');e.textContent=dim==='Overall change'?'Select a dimension to inspect its evidence. All four dimensions must pass before a composite is calculated.':'Selected evidence: '+records[dim].title+'. Missing to score: '+(model.missingRequirements(records[dim]).join('; ')||'none')+'. See the measurement, source and limits below.';
  const label=root.querySelector('#chaos-indicator-explainer');label.hidden=false;label.textContent='Evidence coverage: '+count+' of 4. The influence dial stays inactive until independently reviewed outcome assessments qualify. GDP, spending, gas flows and treaty events are not interchangeable.';
  renderCards(actor.id,dim);
+ let worksheet=root.querySelector('#chaos-research-worksheet');if(!worksheet){worksheet=element('section',undefined,'chaos-indicator-card');worksheet.id='chaos-research-worksheet';worksheet.setAttribute('aria-label','Influence assessment research worksheet');cards.parentNode.insertBefore(worksheet,cards);}
+ worksheet.replaceChildren();const sheet=data.researchWorksheets&&data.researchWorksheets[actor.id]&&data.researchWorksheets[actor.id][dim];
+ if(sheet){worksheet.hidden=false;worksheet.append(element('h4','Research worksheet · '+dim),element('strong',sheet.status));for(const [heading,key] of [['Baseline','candidateBaseline'],['Observed outcome','candidateOutcome'],['Interpretation','interpretation'],['Missing independent outcomes','additionalOutcomesNeeded'],['Costs and beneficiaries','costAccountingNeeded'],['Counterfactual','counterfactualNeeded'],['Calibration','calibrationNeeded'],['Editorial status','editorialReview']]){worksheet.append(element('h5',heading),element('p',sheet[key]));}sourceLinks(worksheet,sheet.sources);}else{worksheet.hidden=true;}
+
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
 const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),comparison=root.querySelector('#chaos-comparison-result');

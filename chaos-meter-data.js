@@ -14,6 +14,36 @@ window.EP_CHAOS_DATA = {
     "Diplomatic": 0.2,
     "Energy and resources": 0.2
   },
+  "researchWorksheets": {
+    "us": {
+      "Energy and resources": {
+        "status": "Baseline research — no influence score",
+        "candidateBaseline": "Global LNG export share, 2024: 21%",
+        "candidateOutcome": "Global LNG export share, 2025: 26% (+5 percentage points)",
+        "sources": ["lng"],
+        "interpretation": "Observed market-share change, not proof of geopolitical bargaining power or a causal effect of the Iran conflict.",
+        "additionalOutcomesNeeded": "Independently sourced destination-level contracted deliveries and realized net export revenues, matched to baseline and period.",
+        "costAccountingNeeded": "Domestic gas and electricity price exposure, terminal and transport costs, taxpayer support, emissions and consumer incidence.",
+        "counterfactualNeeded": "Preexisting LNG capacity expansion, competitor outages, demand and price trends without the conflict.",
+        "calibrationNeeded": "Define an ex-ante materiality target in a common unit for net external leverage; distinguish commercial market share from durable geopolitical control.",
+        "editorialReview": "Pending; no score authorized"
+      }
+    },
+    "russia": {
+      "Energy and resources": {
+        "status": "Baseline research — no influence score",
+        "candidateBaseline": "EU gas dependence before 2022; source reports over 150 bcm Russian supply in 2021.",
+        "candidateOutcome": "Reduced EU reliance on Russian gas; existing record does not support a precise matched net influence estimate.",
+        "sources": ["gas"],
+        "interpretation": "A market-access loss for Russia may coincide with higher energy revenue elsewhere; do not treat EU imports as Russia's total export revenue.",
+        "additionalOutcomesNeeded": "Independently verified destination-level gas and oil volumes, realized net receipts, contract duration and sanctions-related discounts.",
+        "costAccountingNeeded": "Production, transport, discounts, taxes, lost market access, infrastructure and war-related expenditures.",
+        "counterfactualNeeded": "European diversification already underway, demand changes, weather and alternative export markets.",
+        "calibrationNeeded": "Predefine comparable net external leverage measures and fixed materiality target before computing any score.",
+        "editorialReview": "Pending; no score authorized"
+      }
+    }
+  },
   "sources": {
     "wb": {
       "label": "World Bank WDI · 2025 observations",
