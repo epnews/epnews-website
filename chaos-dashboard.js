@@ -88,12 +88,16 @@ function update(){
   sourceLinks(worksheet,[...new Set(audit.observations.map(o=>o.source))]);
   if(audit.domesticPriceEvidence){const p=audit.domesticPriceEvidence;
    worksheet.append(element('h5','Domestic natural gas price context'),element('p',p.status));
-   for(const o of p.observations)worksheet.append(element('p',o.year+' '+o.hub+': const ledger=audit.costIncidenceLedger;
+   for(const o of p.observations)worksheet.append(element('p',o.year+' '+o.hub+': $'+o.valueUsdPerMMBtu.toFixed(2)+'/MMBtu ('+o.method+').'));
+   worksheet.append(element('p','Comparability: '+p.sourceComparability),element('p','Attribution: '+p.causality),element('p','Cost evidence needed: '+p.verificationNeeded),element('p','Export-attributable household cost: NOT ESTABLISHED'));
+   sourceLinks(worksheet,p.observations.map(o=>o.source));
+  }
+  if(audit.costIncidenceLedger){const ledger=audit.costIncidenceLedger;
    worksheet.append(element('h5','Who benefits and who pays?'),element('p',ledger.status),element('p',ledger.scope));
    for(const [heading,entries] of [['Potential beneficiaries',ledger.beneficiaries],['Potential payers and costs',ledger.payers]]){
-    worksheet.append(element('h5',heading));const list=element('ul');
-    for(const item of entries)list.append(element('li',item.party+' — '+item.measure+'. '+item.state+'; evidence needed: '+item.sourceGap+'.'));
-    worksheet.append(list);
+    worksheet.append(element('h5',heading));const items=element('ul');
+    for(const item of entries)items.append(element('li',item.party+' — '+item.measure+'. '+item.state+'; evidence needed: '+item.sourceGap+'.'));
+    worksheet.append(items);
    }
    worksheet.append(element('h5','Net benefit calculation'),element('p',ledger.accountingRule),element('p','Counterfactual: '+ledger.counterfactual),element('p','Foreign-policy test: '+ledger.foreignPolicyTest),element('p','Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
   }
