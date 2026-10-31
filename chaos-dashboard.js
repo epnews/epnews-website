@@ -9,6 +9,13 @@ const spheres=[
 ];
 function init(){
 const root=document.getElementById('chaos-dashboard');if(!root)return;
+const hub=document.getElementById('chaos-hub');
+if(hub){
+ const label=hub.querySelector('.chaos-expand');
+ const helper=hub.querySelector('.chaos-expand-helper');
+ const sync=()=>{if(label)label.textContent=hub.open?'COLLAPSE INVESTIGATION ↑':'EXPAND INVESTIGATION ↓';if(helper)helper.textContent=hub.open?'Hide the investigation dashboard':'Open the tracker, comparison tools, and latest updates';};
+ hub.addEventListener('toggle',sync);sync();
+}
 const select=root.querySelector('#chaos-sphere'),meter=root.querySelector('#chaos-meter'),name=root.querySelector('#chaos-sphere-name'),description=root.querySelector('#chaos-sphere-description');
 const category=root.querySelector('#chaos-dimension');
 select.innerHTML=spheres.map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');
