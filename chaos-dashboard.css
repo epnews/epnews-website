@@ -51,3 +51,18 @@
 .chaos-compare-controls select{width:100%;padding:11px;border:0;border-radius:6px;background:#f7f9fc;color:#152238}
 .chaos-compare-result{background:#243951;border-left:3px solid #d6a057;padding:12px;font-size:12px}
 @media(max-width:600px){.chaos-compare-controls{grid-template-columns:1fr}}
+
+/* Distinct local-power research tracker; separate from major-power scores. */
+.chaos-local-tracker{background:#101e30;border:1px solid #41526a;border-radius:10px;padding:20px;margin:14px 0 20px}
+.chaos-local-tracker h3{font-size:clamp(18px,2vw,24px);margin:7px 0}
+.chaos-local-tracker p{margin:7px 0 14px}
+.chaos-local-tracker label{display:block;font-size:12px;font-weight:700;margin:12px 0 6px}
+.chaos-local-tracker select{width:100%;max-width:540px;background:#f7f9fc;color:#152238;border:0;border-radius:6px;padding:11px}
+.chaos-local-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.chaos-local-card{border:1px solid #3b5068;background:#1b2f46;border-radius:8px;padding:15px;min-width:0}
+.chaos-local-card h4{font-size:15px;margin:0 0 4px}
+.chaos-local-card small{color:#aebfd2}
+.chaos-local-card p{font-size:12px;margin:9px 0;line-height:1.55}
+.chaos-local-pending{display:inline-block;font-size:11px;color:#f6c786;font-weight:700;margin-top:4px}
+.chaos-local-tracker .chaos-local-method{font-size:12px;color:#bac7d6}
+@media(max-width:720px){.chaos-local-tracker{padding:16px}.chaos-local-list{grid-template-columns:1fr}}
