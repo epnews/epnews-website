@@ -35,3 +35,7 @@ All actors: harmonized outcome baselines, independently measured durable leverag
 ## Validation
 
 `node scripts/test_chaos_meter.cjs` checks source completeness, null scores, rejection of partial/proxy assessments, independent sources, true zero, bounds, composites, sensitivity and HTML integration. Also run the existing article registry and publishing gate. Browser QA checks selectors, cards, comparisons, archive and accessible pending state. Live deployment must contain the matching data/model/dashboard and pass the same interaction checks.
+
+## Observed indicator needle mode
+
+For a selected country and dimension with a source-backed numeric GDP-growth, real military-spending-change or LNG-export-share-change observation, the gauge displays the observed value and moves the needle. This is an exploratory **indicator mode**, not a scored geopolitical influence assessment. The indicator's original unit is shown, and the fixed −10 to +10 observation reference window maps to the visual −90° to +90° sweep; out-of-window values cap the needle position but retain the exact number in text. This visual window is not a statistical normalization or a cross-metric ranking. Treaty events and records without supported numeric values remain NOT SCORED, and the overall geopolitical influence needle stays withheld until the four reviewed dimensions qualify. No missing numeric data are inferred or zero-filled.
