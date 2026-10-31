@@ -88,7 +88,7 @@ function update(){
   sourceLinks(worksheet,[...new Set(audit.observations.map(o=>o.source))]);
   if(audit.domesticPriceEvidence){const p=audit.domesticPriceEvidence;
    worksheet.append(element('h5','Domestic natural gas price context'),element('p',p.status));
-   for(const o of p.observations)worksheet.append(element('p',o.year+' '+o.hub+': $'+o.valueUsdPerMMBtu.toFixed(2)+'/MMBtu ('+o.method+').'));
+   for(const o of p.observations)worksheet.append(element('p',o.year+' '+o.hub+': $'+o.valueUsdPerMMBtu.toFixed(2)+'/MMBtu ('+o.method+')'));
    worksheet.append(element('p','Comparability: '+p.sourceComparability),element('p','Attribution: '+p.causality),element('p','Cost evidence needed: '+p.verificationNeeded),element('p','Export-attributable household cost: NOT ESTABLISHED'));
    sourceLinks(worksheet,p.observations.map(o=>o.source));
   }
