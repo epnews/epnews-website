@@ -72,7 +72,7 @@ function metricFor(sphere,dimension){
 function renderAssessment(sphere){
  const available=dimensions.filter(d=>metricFor(sphere,d));
  const count=available.length;
- meter.dataset.state='pending';
+ meter.dataset.state='coverage';
  meter.setAttribute('aria-label',sphere.name+': '+count+' of four dimensions have a source-linked proxy; overall geopolitical influence is not scored');
  const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
  if(status)status.textContent=count+' OF 4';
