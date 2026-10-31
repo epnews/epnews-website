@@ -132,3 +132,23 @@
  .under-hero>.relocated-editor{display:block;width:100%}
  .hero-layout>.top-wire .wire-item{grid-template-columns:1fr}
 }
+
+/* Independent columns eliminate the empty space below the collapsed investigation. */
+.hero-layout{align-items:start}
+.hero-layout>.chaos-left-stack,.hero-layout>.chaos-right-stack{display:flex;flex-direction:column;align-items:stretch;gap:24px;min-width:0}
+.chaos-left-stack>.chaos-hub{margin-bottom:0}
+.chaos-left-stack>.relocated-editor{display:block;min-width:0}
+.chaos-right-stack>.top-wire{min-width:0;align-self:stretch;padding:17px 16px;background:#fff}
+.chaos-right-stack>.top-wire .block-head{display:block;margin-bottom:14px}
+.chaos-right-stack>.top-wire .block-head h2{font-size:clamp(18px,1.8vw,24px);line-height:1.2}
+.chaos-right-stack>.top-wire .head-tag{display:block;margin-top:5px}
+.chaos-right-stack>.top-wire .wire-filters{display:flex;flex-wrap:wrap;gap:5px}
+.chaos-right-stack>.top-wire .wire-filters button{font-size:10px;padding:5px 7px}
+.chaos-right-stack>.top-wire .wire-item{display:grid;grid-template-columns:1fr;gap:5px;padding:12px 0}
+.chaos-right-stack>.top-wire .wire-image{display:none}
+.chaos-right-stack>.top-wire .wire-time{font-size:10px}
+.chaos-right-stack>.top-wire .wire-copy strong{font-size:13px;line-height:1.4}
+.chaos-right-stack>.top-wire .wire-copy small{font-size:11px}
+.chaos-right-stack>.top-wire .wire-type{font-size:10px}
+.chaos-right-stack>.right-rail{min-width:0}
+@media(max-width:720px){.hero-layout>.chaos-left-stack,.hero-layout>.chaos-right-stack{gap:20px}.chaos-right-stack>.top-wire{display:block;width:100%;padding:17px}.chaos-right-stack>.top-wire .wire-item{grid-template-columns:1fr}}
