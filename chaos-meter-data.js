@@ -14,6 +14,47 @@ window.EP_CHAOS_DATA = {
     "Diplomatic": 0.2,
     "Energy and resources": 0.2
   },
+  "evidenceAudits": {
+    "us": {
+      "Energy and resources": {
+            "caseId": "us-lng-share-2024-2025",
+            "actor": "us",
+            "dimension": "Energy and resources",
+            "status": "One observed market-share change; geopolitical influence not established",
+            "observations": [
+                  {
+                        "period": "2024",
+                        "measure": "Share of global LNG exports",
+                        "value": 21,
+                        "unit": "percent",
+                        "source": "lng"
+                  },
+                  {
+                        "period": "2025",
+                        "measure": "Share of global LNG exports",
+                        "value": 26,
+                        "unit": "percent",
+                        "source": "lng"
+                  }
+            ],
+            "derived": {
+                  "value": 5,
+                  "unit": "percentage points",
+                  "formula": "26 − 21",
+                  "note": "Descriptive change only; not a causal effect, revenue gain, or influence score."
+            },
+            "evidenceIndependence": "Both observations come from the same EIA article; they are one source family, not two independent outcome validations.",
+            "chronology": "The observed 2024–2025 shift predates any later 2026 conflict narrative. Do not attribute this increase to 2026 disruptions.",
+            "unresolved": [
+                  "Independently validated country-by-country delivered LNG volumes and contract prices for matched periods.",
+                  "Realized net export receipts, operating and capital costs, and domestic consumer impacts.",
+                  "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
+                  "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
+            ],
+            "score": null
+      }
+    }
+  },
   "researchWorksheets": {
     "china": {
       "Diplomatic": {
