@@ -86,6 +86,9 @@ function update(){
   worksheet.append(element('h5','Evidence required before scoring'));
   const list=element('ul');for(const item of audit.unresolved)list.append(element('li',item));worksheet.append(list);
   sourceLinks(worksheet,[...new Set(audit.observations.map(o=>o.source))]);
+  if(audit.deliveryEvidence){const d=audit.deliveryEvidence;
+   worksheet.append(element('h5','Verified destination deliveries'),element('p',d.region+' · '+d.period+': '+d.baselineBcfPerDay+' → '+d.outcomeBcfPerDay+' billion cubic feet per day (+'+d.changeBcfPerDay+' Bcf/d).'),element('p',d.interpretation),element('p','Source independence: '+d.independenceCaution),element('p','Still unresolved: '+d.remaining));sourceLinks(worksheet,d.sourceIds);
+  }
  }
  }else{worksheet.hidden=true;}
 
