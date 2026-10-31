@@ -99,6 +99,13 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.capacityTimelineEvidence){const c=audit.capacityTimelineEvidence;
+   const panel=element('section');panel.id='chaos-lng-capacity-timeline';panel.setAttribute('aria-label','LNG capacity project timeline');
+   panel.append(element('h5',c.title),element('strong',c.status),element('p',c.scope));
+   for(const e of c.events){panel.append(element('p',e.date+' · '+e.event));sourceLinks(panel,[e.source]);}
+   panel.append(element('p',c.capacity),element('p',c.interpretation),element('p','Still unresolved: '+c.remaining));
+   worksheet.append(panel);
+  }
   if(audit.exportPriceEvidence){const p=audit.exportPriceEvidence;
    const panel=element('section');panel.id='chaos-lng-export-prices';panel.setAttribute('aria-label','DOE destination FOB export prices');
    panel.append(element('h5',p.title),element('strong',p.status),element('p',p.scope),element('p',p.definition),element('p',p.stage+' · '+p.stageLimitation),element('p','Source: '+p.table+' · Published '+p.published+' · Retrieved '+p.retrieved));sourceLinks(panel,[p.source]);
