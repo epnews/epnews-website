@@ -60,6 +60,7 @@ function update(){
  const isStrategic=category.value==='Strategic';
  const e=isEnergy?gasIndicator(s.id):isStrategic?militaryIndicator(s.id):null;
  const evidence=root.querySelector('#chaos-evidence'),chips=root.querySelector('#chaos-evidence-chips');
+ const statusLabel=root.querySelector('.chaos-status-badge span');if(statusLabel)statusLabel.textContent=e?'INDICATOR DIRECTION':'INFLUENCE STATUS';
  const metricName=isEnergy?'EU GAS IMPORT VOLUME':'REAL MILITARY EXPENDITURE';
  if(e){
   meter.setAttribute('aria-label',s.name+': '+metricName+' indicator '+(e.index>0?'+':'')+e.index+'. Not total geopolitical influence.');
