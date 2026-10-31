@@ -51,6 +51,81 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "causalResearchGates": {
+  "title": "Eight unanswered tests of who benefits from LNG expansion",
+  "status": "OPEN RESEARCH QUESTIONS — NOT VERIFIED OUTCOMES",
+  "asOf": "2026-10-31",
+  "questions": [
+    {
+      "id": "incremental-sales",
+      "title": "1 · Additional export sales",
+      "known": "CCH recognized revenue and DOE destination FOB prices are documented.",
+      "missing": "Destination-matched realized shipment quantities and attributable third-party cash receipts, excluding affiliate double-counting.",
+      "test": "Reconcile invoices/receivables with shipment-level quantities, contract prices and ownership.",
+      "source": "cch2025Sec"
+    },
+    {
+      "id": "incremental-margin",
+      "title": "2 · Actual project margins",
+      "known": "Consolidated CCH cash flows and Stage 3 construction spending are documented.",
+      "missing": "Stage 3-only incremental operating expenses, revenue, debt service, maintenance and capital cost.",
+      "test": "Calculate project-level cash margin only after a reconciled project boundary and counterfactual exist.",
+      "source": "cch2025Sec"
+    },
+    {
+      "id": "taxpayer-exposure",
+      "title": "3 · Taxpayer costs and guarantees",
+      "known": "Subsidiary financing flows are documented, but they do not measure public exposure.",
+      "missing": "Award-level subsidies, tax expenditures, guarantees, permitting costs and public infrastructure spending, with recipient and dates.",
+      "test": "Cross-check award, budget and guarantee records; avoid treating absence of an identified award as zero.",
+      "source": "cch2025Sec"
+    },
+    {
+      "id": "household-incidence",
+      "title": "4 · Domestic household gas costs",
+      "known": "EIA annual Henry Hub observations and conditional DOE 2050 model scenarios are separately documented.",
+      "missing": "Observed regional residential bills and a defensible export-driven counterfactual.",
+      "test": "Separate weather, production, storage, infrastructure and policy from export-driven price effects.",
+      "source": "eiaHenryHubAnnual"
+    },
+    {
+      "id": "manufacturing-incidence",
+      "title": "5 · Domestic industry competitiveness",
+      "known": "The domestic benchmark price series alone does not establish factory impacts.",
+      "missing": "Industry-level natural-gas input cost, output, employment and export response matched over time.",
+      "test": "Compare gas-intensive industries with plausible controls and account for broader economic trends.",
+      "source": "eiaHenryHubAnnual"
+    },
+    {
+      "id": "european-dependence",
+      "title": "6 · European buyer dependence",
+      "known": "DOE destination FOB prices establish export-side prices, not the buyer's full delivered cost.",
+      "missing": "Destination-matched delivered prices, total imports, substitution options and contract flexibility.",
+      "test": "Measure concentration, alternatives and delivered-cost changes; distinguish supply security from coercive leverage.",
+      "source": "doeLNGPrices2026Aug"
+    },
+    {
+      "id": "causal-timing",
+      "title": "7 · What actually caused capacity growth",
+      "known": "Stage 3 startup predates the later 2026 disruptions.",
+      "missing": "Pre-disruption investment decisions, contractual commitments, capacity utilization and credible alternative scenarios.",
+      "test": "Separate investment timing, 2025 output, and any post-disruption change in sales or utilization.",
+      "source": "eiaCorpusStartup"
+    },
+    {
+      "id": "national-net",
+      "title": "8 · Net American benefit",
+      "known": "Revenue, capital outlays, financing and conditional model projections use incompatible accounting scopes.",
+      "missing": "Comparable incremental producer surplus, consumer costs, public costs, wages, taxes, environmental effects and alternative uses.",
+      "test": "Build a non-duplicative national accounting boundary and uncertainty ranges before assigning any net result.",
+      "source": "cch2025Sec"
+    }
+  ],
+  "rule": "A research question is not an evidence milestone or a confirmed outcome. Keep all scores null until independently corroborated causal outcomes and comparable costs are available.",
+  "resolvedCount": 0,
+  "netBenefitUsd": null,
+  "influenceScore": null
+},
             "eightPointAudit": {
   "title": "Eight-point LNG evidence integrity audit",
   "status": "Eight descriptive cross-checks; no causal or national-benefit scoring",
