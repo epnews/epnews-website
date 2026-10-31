@@ -51,6 +51,134 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "exportPriceEvidence": {
+              "caseId": "doe-destination-fob-2024-2025",
+              "title": "DOE destination comparisons · FOB export prices",
+              "status": "Observed export-price statistics; realized receipts and margins unresolved",
+              "scope": "LNG by vessel only; 15 European destinations with numeric annual observations in both 2024 and 2025. Includes non-EU countries and Turkiye under DOE’s convention. ISO containers, trucks and year-to-date columns are excluded.",
+              "baselinePeriod": "2024 calendar year",
+              "comparisonPeriod": "2025 calendar year",
+              "unit": "USD/MMBtu",
+              "priceBasis": "FOB",
+              "transport": "Vessel",
+              "stage": "Independently measured outcome",
+              "stageLimitation": "Government-published reported statistics, not an independent audit of cash receipts or causal outcomes.",
+              "source": "doeLNGPrices2026Aug",
+              "sourceFamily": "DOE natural gas import/export reporting",
+              "published": "2026-10-22",
+              "retrieved": "2026-10-31",
+              "table": "15b, printed page 32 (PDF page 38)",
+              "definition": "FOB export prices include commodity and liquefaction costs up to export. They are not realized company revenue, cash receipts, profit, or net national economic benefit; subsequent shipping and regasification are outside this price boundary.",
+              "comparability": "Each row compares the same destination, vessel mode, annual period and USD/MMBtu definition within one report vintage. Cargo, seller and contract mix can change; this is not a constant-contract price index. Missing or withheld values must stay null, never zero.",
+              "calculation": "Change = 2025 price minus 2024 price, rounded to two decimals. No volume multiplication, regional average or profit estimate is calculated. MMBtu measures energy; Bcf measures volume and cannot be substituted without heat-content conversion.",
+              "independence": "DOE price rows are one reporting family, not 15 independent geopolitical outcomes. EIA republication of DOE data does not add independent confirmation.",
+              "observations": [
+                {
+                  "destination": "Belgium",
+                  "baseline": 6.23,
+                  "outcome": 8.96,
+                  "change": 2.73
+                },
+                {
+                  "destination": "Croatia",
+                  "baseline": 5.89,
+                  "outcome": 7.0,
+                  "change": 1.11
+                },
+                {
+                  "destination": "Finland",
+                  "baseline": 6.45,
+                  "outcome": 6.62,
+                  "change": 0.17
+                },
+                {
+                  "destination": "France",
+                  "baseline": 6.26,
+                  "outcome": 7.66,
+                  "change": 1.4
+                },
+                {
+                  "destination": "Germany",
+                  "baseline": 8.66,
+                  "outcome": 8.98,
+                  "change": 0.32
+                },
+                {
+                  "destination": "Greece",
+                  "baseline": 6.83,
+                  "outcome": 7.83,
+                  "change": 1.0
+                },
+                {
+                  "destination": "Italy",
+                  "baseline": 6.05,
+                  "outcome": 7.9,
+                  "change": 1.85
+                },
+                {
+                  "destination": "Lithuania",
+                  "baseline": 5.87,
+                  "outcome": 7.6,
+                  "change": 1.73
+                },
+                {
+                  "destination": "Malta",
+                  "baseline": 5.49,
+                  "outcome": 6.49,
+                  "change": 1.0
+                },
+                {
+                  "destination": "Netherlands",
+                  "baseline": 5.94,
+                  "outcome": 7.67,
+                  "change": 1.73
+                },
+                {
+                  "destination": "Poland",
+                  "baseline": 6.37,
+                  "outcome": 7.14,
+                  "change": 0.77
+                },
+                {
+                  "destination": "Portugal",
+                  "baseline": 5.1,
+                  "outcome": 6.22,
+                  "change": 1.12
+                },
+                {
+                  "destination": "Spain",
+                  "baseline": 6.03,
+                  "outcome": 7.45,
+                  "change": 1.42
+                },
+                {
+                  "destination": "Turkiye",
+                  "baseline": 6.86,
+                  "outcome": 8.13,
+                  "change": 1.27
+                },
+                {
+                  "destination": "United Kingdom",
+                  "baseline": 7.08,
+                  "outcome": 8.06,
+                  "change": 0.98
+                }
+              ],
+              "revenueFinding": "Cheniere assigns country revenue using the contractual buyer’s principal business location, not cargo destination. Its UK revenue cannot be matched directly to DOE UK deliveries or extrapolated to Europe. No matched cash receipts or cargo netback has been established.",
+              "revenueSource": "cheniere2025Geography",
+              "costFinding": "The existing audited company table documents capital spending, operating costs and financing. Those consolidated figures cannot be allocated to these destinations without contract and project accounts. Lifetime capital recovery, public exposure and export-attributable household costs remain open.",
+              "domesticFollowup": {
+                "baseline": 2.19,
+                "outcome": 3.52,
+                "unit": "USD/MMBtu",
+                "source": "eiaHenryHubAnnual",
+                "text": "A same-series check of EIA’s annual Henry Hub spot series gives $2.19/MMBtu for 2024 and $3.52/MMBtu for 2025 (release October 28, 2026). This supplements the differently sourced historical context below. It does not reconcile all provider/vintage differences or identify the contribution of exports to domestic prices or bills."
+              },
+              "realizedRevenueUsd": null,
+              "realizedMarginUsd": null,
+              "netNationalBenefitUsd": null,
+              "influenceScore": null
+            },
             "financialEvidence": {
               "caseId": "cheniere-financials-2024-2025",
               "title": "LNG financial evidence · Cheniere 2024–2025",
@@ -611,6 +739,10 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "doeLNGPrices2026Aug": {"label": "DOE · August 2026 report, Table 15b (annual columns)", "url": "https://www.energy.gov/sites/default/files/2026-10/Natural%20Gas%20Imports%20and%20Exports%20Monthly%20August%202026.pdf#page=38", "date": "2026-10-22; 2024–2025 annual observations"},
+    "cheniere2025Geography": {"label": "Cheniere FY2025 10-K · geographic revenue attribution", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4763", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "eiaHenryHubAnnual": {"label": "EIA · Henry Hub annual spot price series", "url": "https://www.eia.gov/dnav/ng/hist/rngwhhda.htm", "date": "2026-10-28 release; 2024–2025 observations"},
+
     "cheniere2025Operations": {"label": "Cheniere FY2025 10-K · statements of operations", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4738", "date": "2026-02-26; FY2024–FY2025 observations"},
     "cheniere2025Revenue": {"label": "Cheniere FY2025 10-K · revenue disaggregation", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4778", "date": "2026-02-26; FY2024–FY2025 observations"},
     "cheniere2025CashFlow": {"label": "Cheniere FY2025 10-K · cash-flow statement", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4742", "date": "2026-02-26; FY2024–FY2025 observations"},
