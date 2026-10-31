@@ -99,6 +99,18 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.accountingReconciliationEvidence){const a=audit.accountingReconciliationEvidence;
+   const panel=element('section');panel.id='chaos-lng-reconciliations';panel.setAttribute('aria-label','LNG accounting reconciliation checkpoints');
+   panel.append(element('h5',a.title),element('strong',a.status),element('p',a.unit));
+   const pct=n=>(100*n).toFixed(1)+'%';
+   for(const c of a.checks){const section=element('section');section.append(element('h5',c.title));
+    if(c.baseline.thirdParty!==undefined){const b=c.baseline,o=c.outcome;section.append(element('p','2024: '+b.thirdParty.toLocaleString('en-US')+' + '+b.affiliate.toLocaleString('en-US')+' = '+b.total.toLocaleString('en-US')+' · third-party share '+pct(b.thirdParty/b.total)),element('p','2025: '+o.thirdParty.toLocaleString('en-US')+' + '+o.affiliate.toLocaleString('en-US')+' = '+o.total.toLocaleString('en-US')+' · third-party share '+pct(o.thirdParty/o.total)));}
+    else if(c.baseline.capitalized!==undefined){const b=c.baseline,o=c.outcome;section.append(element('p','2024: '+b.total+' − '+b.capitalized+' = '+b.expense),element('p','2025: '+o.total+' − '+o.capitalized+' = '+o.expense));}
+    else{const b=c.baseline,o=c.outcome;section.append(element('p','2024 operating/investing outflow: '+b.operating.toLocaleString('en-US')+' / '+b.investingOutflow.toLocaleString('en-US')+' = '+pct(b.operating/b.investingOutflow)),element('p','2025 operating/investing outflow: '+o.operating.toLocaleString('en-US')+' / '+o.investingOutflow.toLocaleString('en-US')+' = '+pct(o.operating/o.investingOutflow)));}
+    section.append(element('p','Method: '+c.method),element('p','Limit: '+c.limitation));sourceLinks(section,[c.source]);panel.append(section);
+   }
+   panel.append(element('p',a.conclusion),element('p','Stage 3 return: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.threePartFinancialAudit){const a=audit.threePartFinancialAudit;
    const panel=element('section');panel.id='chaos-lng-three-part-audit';panel.setAttribute('aria-label','LNG three-part financial and consumer audit');
    panel.append(element('h5',a.title),element('strong',a.status));
