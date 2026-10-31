@@ -51,6 +51,54 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "subsidiaryCashFlowEvidence": {
+  "title": "Corpus Christi Holdings · cash generation and financing, 2024–2025",
+  "status": "Audited consolidated subsidiary cash flows; Stage 3 incremental returns not isolated",
+  "scope": "Cheniere Corpus Christi Holdings LLC and subsidiaries; USD millions; calendar years 2024 and 2025.",
+  "observations": [
+    {
+      "label": "Operating cash flow",
+      "baseline": 1771,
+      "outcome": 1995,
+      "unit": "USD millions",
+      "source": "cch2025Sec"
+    },
+    {
+      "label": "Net cash used in investing activities",
+      "baseline": 1830,
+      "outcome": 2306,
+      "unit": "USD millions",
+      "source": "cch2025Sec"
+    },
+    {
+      "label": "Cash distributions to member",
+      "baseline": 400,
+      "outcome": 515,
+      "unit": "USD millions",
+      "source": "cch2025Sec"
+    },
+    {
+      "label": "Cash contributions from member",
+      "baseline": 415,
+      "outcome": 375,
+      "unit": "USD millions",
+      "source": "cch2025Sec"
+    },
+    {
+      "label": "Borrowing proceeds",
+      "baseline": 0,
+      "outcome": 550,
+      "unit": "USD millions",
+      "source": "cch2025Sec"
+    }
+  ],
+  "accountingRules": "Operating cash flow already incorporates operating receipts and payments, working-capital changes and relevant cash settlements; do not subtract them again. Investing outflows include Stage 3, separate Trains 8 & 9 and other items; they are not Stage 3-only costs. Distributions and contributions are financing transfers within the ownership structure, not profit or public receipts. Borrowing proceeds are financing, not income. Do not add these lines into a national-benefit total or claim the 2025 change is caused by Stage 3.",
+  "interpretation": "Operating cash flow increased $224 million year over year for the entire CCH consolidated business; the filing attributes the increase primarily to higher net LNG sales cash inflows, partially offset by working-capital timing. The figure cannot isolate incremental Stage 3 returns or effects of later 2026 disruptions.",
+  "remaining": "Isolate Stage 3 cash inflows, realized cargo receipts and costs, asset-life capital recovery, financing allocation, domestic incidence, public exposure and a pre-disruption counterfactual.",
+  "netNationalBenefitUsd": null,
+  "stage3ReturnUsd": null,
+  "influenceScore": null
+},
             "projectCapitalEvidence": {
   "title": "Corpus Christi Stage 3 · construction costs and commitments",
   "status": "Reported subsidiary construction cash spending and EPC commitments; returns unmeasured",
