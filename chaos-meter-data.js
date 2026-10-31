@@ -51,6 +51,99 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "eightPointAudit": {
+  "title": "Eight-point LNG evidence integrity audit",
+  "status": "Eight descriptive cross-checks; no causal or national-benefit scoring",
+  "unitNote": "USD millions unless otherwise noted; observations drawn from previously published source records",
+  "items": [
+    {
+      "id": "external-share",
+      "title": "1 · Third-party revenue share",
+      "source": "cch2025Sec",
+      "baseline": 0.7375,
+      "outcome": 0.6842024303953238,
+      "unit": "fraction",
+      "method": "Third-party revenue divided by total reported revenue; affiliate revenue is not an extra external receipt.",
+      "limit": "Revenue is accrued, not cash received."
+    },
+    {
+      "id": "reported-revenue-change",
+      "title": "2 · Reported revenue change",
+      "source": "cch2025Sec",
+      "baseline": 4880,
+      "outcome": 6501,
+      "unit": "USD millions",
+      "method": "2025 reported revenue minus 2024 reported revenue.",
+      "limit": "Consolidated CCH change cannot be assigned entirely to Stage 3."
+    },
+    {
+      "id": "operating-cash-change",
+      "title": "3 · Operating cash-flow change",
+      "source": "cch2025Sec",
+      "baseline": 1771,
+      "outcome": 1995,
+      "unit": "USD millions",
+      "method": "Consolidated operating cash flows; do not subtract embedded operating payments again.",
+      "limit": "Not project-specific incremental return."
+    },
+    {
+      "id": "investing-outflow-change",
+      "title": "4 · Investing cash outflow change",
+      "source": "cch2025Sec",
+      "baseline": 1830,
+      "outcome": 2306,
+      "unit": "USD millions outflow magnitude",
+      "method": "Compare positive magnitudes of net cash used in investing activities.",
+      "limit": "Includes other projects; not all Stage 3 costs."
+    },
+    {
+      "id": "interest-expense",
+      "title": "5 · Interest expense after capitalization",
+      "source": "cch2025Sec",
+      "baseline": 65,
+      "outcome": 31,
+      "unit": "USD millions",
+      "method": "Total interest incurred less capitalized interest: 239−174 and 221−190.",
+      "limit": "Accrual expense differs from cash interest; capitalized interest is not an extra cost to add."
+    },
+    {
+      "id": "construction-spend",
+      "title": "6 · Stage 3 construction cash spending",
+      "source": "cch2025Sec",
+      "baseline": 1500,
+      "outcome": 1300,
+      "unit": "USD millions approximate",
+      "method": "Compare reported approximate construction cash spending in 2024 and 2025.",
+      "limit": "Do not add annual payments to EPC contract face value."
+    },
+    {
+      "id": "doe-fob-belgium",
+      "title": "7 · Belgium FOB LNG price",
+      "source": "doeLNGPrices2026Aug",
+      "baseline": 6.23,
+      "outcome": 8.96,
+      "unit": "USD/MMBtu",
+      "method": "DOE vessel LNG annual FOB price, 2024 to 2025, same destination and unit.",
+      "limit": "FOB price is not cash receipts, delivered consumer price or profit."
+    },
+    {
+      "id": "henry-hub",
+      "title": "8 · Henry Hub annual spot price",
+      "source": "eiaHenryHubAnnual",
+      "baseline": 2.19,
+      "outcome": 3.52,
+      "unit": "USD/MMBtu",
+      "method": "EIA same-series annual U.S. benchmark observations for 2024 and 2025.",
+      "limit": "Cannot attribute observed domestic price change to LNG exports without counterfactual."
+    }
+  ],
+  "interpretation": "These eight checks reuse source-backed observations and explicitly retain source definitions. They are not eight independent geopolitical outcomes. Differences across revenue, cash flow, contract commitments and prices must not be summed.",
+  "stage3ReturnUsd": null,
+  "publicExposureUsd": null,
+  "domesticExportAttributableCostUsd": null,
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "accountingReconciliationEvidence": {
   "title": "LNG audit · three accounting cross-checks",
   "status": "Reconciled published figures; descriptive calculations only",

@@ -99,6 +99,17 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.eightPointAudit){const a=audit.eightPointAudit;
+   const panel=element('section');panel.id='chaos-lng-eight-checks';panel.setAttribute('aria-label','Eight-point LNG evidence audit');
+   panel.append(element('h5',a.title),element('strong',a.status),element('p',a.unitNote));
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Eight LNG evidence comparisons; scroll horizontally on small screens');
+   const table=element('table'),head=element('thead'),hr=element('tr');table.append(element('caption','Eight verified comparisons · 2024 and 2025 · see definitions below'));
+   for(const h of ['Measure','2024','2025','Difference']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const c of a.items){const tr=element('tr'),th=element('th',c.title);th.scope='row';const fmt=n=>c.unit==='fraction'?(100*n).toFixed(1)+'%':n.toLocaleString('en-US',{maximumFractionDigits:2});const delta=c.outcome-c.baseline;tr.append(th,element('td',fmt(c.baseline)),element('td',fmt(c.outcome)),element('td',(delta>0?'+':'')+(c.unit==='fraction'?(100*delta).toFixed(1)+' pp':fmt(delta))));body.append(tr);}
+   table.append(body);scroll.append(table);panel.append(scroll);
+   for(const c of a.items){const sec=element('section');sec.append(element('p',c.title+' · '+c.unit),element('p','Definition: '+c.method),element('p','Limit: '+c.limit));sourceLinks(sec,[c.source]);panel.append(sec);}
+   panel.append(element('p',a.interpretation),element('p','Stage 3 return, public exposure, export-attributable domestic costs, net national benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.accountingReconciliationEvidence){const a=audit.accountingReconciliationEvidence;
    const panel=element('section');panel.id='chaos-lng-reconciliations';panel.setAttribute('aria-label','LNG accounting reconciliation checkpoints');
    panel.append(element('h5',a.title),element('strong',a.status),element('p',a.unit));

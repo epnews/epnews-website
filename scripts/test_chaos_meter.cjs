@@ -1,5 +1,11 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const eight=data.evidenceAudits.us['Energy and resources'].eightPointAudit;
+assert.equal(eight.items.length,8);
+assert.equal(new Set(eight.items.map(x=>x.id)).size,8);
+assert.deepEqual(Array.from(eight.items,x=>[x.baseline,x.outcome]),[[3599/4880,4448/6501],[4880,6501],[1771,1995],[1830,2306],[65,31],[1500,1300],[6.23,8.96],[2.19,3.52]]);
+for(const x of eight.items){assert.ok(Number.isFinite(x.baseline));assert.ok(Number.isFinite(x.outcome));assert.ok(data.sources[x.source]);assert.ok(x.method);assert.ok(x.limit);}
+for(const k of ['stage3ReturnUsd','publicExposureUsd','domesticExportAttributableCostUsd','netNationalBenefitUsd','influenceScore'])assert.equal(eight[k],null);
 const recon=data.evidenceAudits.us['Energy and resources'].accountingReconciliationEvidence;
 assert.equal(recon.checks.length,3);
 const [rev,interest,coverage]=recon.checks;
