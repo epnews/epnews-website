@@ -16,6 +16,21 @@ window.EP_CHAOS_DATA = {
   },
   "researchWorksheets": {
     "china": {
+      "Diplomatic": {
+            "status": "Implemented or announced diplomacy — no influence score",
+            "candidateBaseline": "China's foreign ministry describes the March 2023 Saudi–Iran agreement and subsequent implementation review.",
+            "candidateOutcome": "The reported rapprochement is a diplomatic event; durable Chinese leverage remains unmeasured.",
+            "sources": [
+                  "chinaDeal",
+                  "chinaDipl"
+            ],
+            "interpretation": "Official participant statements are not independent proof of Chinese control over subsequent Saudi or Iranian decisions.",
+            "additionalOutcomesNeeded": "Independent implementation evidence, sustained third-party cooperation and specific policy concessions attributable to Chinese mediation.",
+            "costAccountingNeeded": "Mediation resources, commercial exposure, reputational costs and commitments to both parties.",
+            "counterfactualNeeded": "Regional de-escalation incentives, Iraqi/Omani mediation and bilateral decisions predating the Beijing announcement.",
+            "calibrationNeeded": "Predefine independently measurable diplomatic bargaining outcomes, attribution rules and a fixed materiality threshold before assigning any influence score.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Economic": {
             "status": "Candidate evidence — no influence score",
             "candidateBaseline": "2025 real GDP growth is reported in the World Bank WDI series.",
@@ -58,6 +73,21 @@ window.EP_CHAOS_DATA = {
       }
     },
     "eu": {
+      "Diplomatic": {
+            "status": "Implemented or announced diplomacy — no influence score",
+            "candidateBaseline": "The EU–New Zealand free trade agreement entered into force on 1 May 2024.",
+            "candidateOutcome": "Legal implementation establishes market access, not realized net diplomatic leverage.",
+            "sources": [
+                  "eunz",
+                  "eunzimpact"
+            ],
+            "interpretation": "Trade-growth forecasts are projections, not independently measured outcomes or political influence.",
+            "additionalOutcomesNeeded": "Observed matched bilateral trade and investment changes, verified policy concessions and durable standards adoption.",
+            "costAccountingNeeded": "Sectoral adjustment, compliance, consumer and producer distributional costs.",
+            "counterfactualNeeded": "Preexisting trade growth, global prices, supply-chain shifts and New Zealand's independent trade policy.",
+            "calibrationNeeded": "Predefine independently measurable diplomatic bargaining outcomes, attribution rules and a fixed materiality threshold before assigning any influence score.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Economic": {
             "status": "Candidate evidence — no influence score",
             "candidateBaseline": "World Bank WDI reports EU aggregate economic growth; member-country coverage and observation periods require care.",
@@ -100,6 +130,21 @@ window.EP_CHAOS_DATA = {
       }
     },
     "india": {
+      "Diplomatic": {
+            "status": "Implemented or announced diplomacy — no influence score",
+            "candidateBaseline": "India–EFTA TEPA entered into force on 1 October 2025; EFTA is not the EU.",
+            "candidateOutcome": "The agreement is implemented, but investment and job targets are future commitments, not delivered outcomes.",
+            "sources": [
+                  "efta",
+                  "indiaDeal"
+            ],
+            "interpretation": "Do not book the US$100B investment or one million jobs objective as realized geopolitical influence.",
+            "additionalOutcomesNeeded": "Verified EFTA capital deployed to India, independently counted jobs and bilateral market-access outcomes.",
+            "costAccountingNeeded": "Tariff concessions, adjustment costs, public incentives and distribution of benefits.",
+            "counterfactualNeeded": "Preexisting investor plans, domestic growth, trade diversion and partner incentives.",
+            "calibrationNeeded": "Predefine independently measurable diplomatic bargaining outcomes, attribution rules and a fixed materiality threshold before assigning any influence score.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Economic": {
             "status": "Candidate evidence — no influence score",
             "candidateBaseline": "World Bank WDI reports India's 2025 real GDP growth; national-account periods need reconciliation.",
@@ -142,6 +187,21 @@ window.EP_CHAOS_DATA = {
       }
     },
     "us": {
+      "Diplomatic": {
+            "status": "Implemented or announced diplomacy — no influence score",
+            "candidateBaseline": "Sweden joined NATO on 7 March 2024; this is an alliance-wide institutional outcome, not exclusively a U.S. gain.",
+            "candidateOutcome": "Membership is implemented, but incremental American leverage and security burdens have not been independently quantified.",
+            "sources": [
+                  "nato",
+                  "sweden"
+            ],
+            "interpretation": "Do not credit the United States alone for Swedish sovereign accession or equate allied capacity with unilateral command.",
+            "additionalOutcomesNeeded": "Independently verified basing, interoperability, partner commitments and durable diplomatic concessions attributable to U.S. actions.",
+            "costAccountingNeeded": "U.S. and allied security commitments, defense support, deployment and fiscal exposure.",
+            "counterfactualNeeded": "Sweden's own security decisions, Russian invasion, Finland's accession and preexisting NATO cooperation.",
+            "calibrationNeeded": "Predefine independently measurable diplomatic bargaining outcomes, attribution rules and a fixed materiality threshold before assigning any influence score.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Economic": {
             "status": "Candidate evidence — no influence score",
             "candidateBaseline": "Real GDP growth, 2025 versus 2024: 2.2% (World Bank WDI series).",
@@ -184,6 +244,20 @@ window.EP_CHAOS_DATA = {
       }
     },
     "russia": {
+      "Diplomatic": {
+            "status": "Implemented or announced diplomacy — no influence score",
+            "candidateBaseline": "Russian authorities reported ratification of the Russia–North Korea treaty in November 2024.",
+            "candidateOutcome": "Ratification is not independent evidence of delivered alliance benefits or measurable leverage.",
+            "sources": [
+                  "russiaTreaty"
+            ],
+            "interpretation": "Distinguish treaty status, claimed support, delivered military assistance and net bargaining gains.",
+            "additionalOutcomesNeeded": "Independent evidence of treaty implementation, verified delivered resources, operational effects and concessions.",
+            "costAccountingNeeded": "Financial transfers, sanctions costs, military supply dependence and opportunity costs.",
+            "counterfactualNeeded": "War-driven demand, longstanding bilateral ties and North Korea's independent incentives.",
+            "calibrationNeeded": "Predefine independently measurable diplomatic bargaining outcomes, attribution rules and a fixed materiality threshold before assigning any influence score.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Economic": {
             "status": "Candidate evidence — no influence score",
             "candidateBaseline": "2025 real GDP growth is reported in the World Bank WDI series.",

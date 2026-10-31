@@ -10,7 +10,7 @@ for(const records of Object.values(data.actors)){
  }
 }
 // All five actors now have energy worksheets, but none are an approved influence assessment.
-for(const actor of Object.keys(data.actors))for(const dimension of ['Economic','Strategic','Energy and resources'])assert.ok(data.researchWorksheets[actor][dimension],actor+' '+dimension);
+for(const actor of Object.keys(data.actors))for(const dimension of data.dimensions)assert.ok(data.researchWorksheets[actor][dimension],actor+' '+dimension);
 // Research worksheets may display candidate outcomes but never unlock a score.
 for(const [actor,worksheets] of Object.entries(data.researchWorksheets))for(const [dim,sheet] of Object.entries(worksheets)){
  assert.ok(data.actors[actor][dim]);assert.equal(dimensionScore(data.actors[actor][dim]),null);
