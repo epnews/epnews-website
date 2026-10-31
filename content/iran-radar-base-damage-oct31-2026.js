@@ -21,9 +21,9 @@ STORIES.push({
     'This is a synthesis of independently reported investigations, not an original EP News field investigation. EP News will track official damage assessments, congressional oversight, repair costs and changes to regional basing.'
   ],
   image: {
-    src: 'assets/images/epnews_iran_bases_oct31_website_1600x900.png',
-    alt: 'EP News text-only informational graphic stating that AP satellite analysis found Iran struck early-warning radars and military installations in the Middle East.',
-    credit: 'EP News original text-based informational graphic; no documentary photo or depiction of an actual strike.'
+    src: 'assets/images/epnews_iran_radar_replacement_1600x900.png',
+    alt: 'EP News editorial infographic with an illustrative Persian Gulf map and radar silhouette, reporting AP findings on Iranian attacks against U.S.-linked radar and military sites. Map markers are illustrative, not verified strike coordinates.',
+    credit: 'EP News original illustrative map and radar graphic; not documentary photography, satellite imagery, or verified target-location mapping.'
   },
   sources: [
     {label: 'Associated Press — Iran targeted U.S. air defenses before aircraft and bases, October 31, 2026', url: 'https://apnews.com/article/26e0f05e01d6f56ff46f7c1a14384f7c'},
