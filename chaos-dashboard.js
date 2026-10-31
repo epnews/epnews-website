@@ -99,6 +99,12 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.causalResearchGates){const a=audit.causalResearchGates;
+   const panel=element('section');panel.id='chaos-causality-research-gates';panel.setAttribute('aria-label','Eight unresolved causal research questions');
+   panel.append(element('h5',a.title),element('strong',a.status),element('p','Reviewed '+a.asOf+' · '+a.resolvedCount+' of '+a.questions.length+' research questions resolved'));
+   for(const q of a.questions){const section=element('section');section.append(element('h5',q.title),element('p','Established so far: '+q.known),element('p','Still needed: '+q.missing),element('p','Verification test: '+q.test));sourceLinks(section,[q.source]);panel.append(section);}
+   panel.append(element('p',a.rule),element('p','Net American benefit: NOT ESTABLISHED · Geopolitical influence: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.eightPointAudit){const a=audit.eightPointAudit;
    const panel=element('section');panel.id='chaos-lng-eight-checks';panel.setAttribute('aria-label','Eight-point LNG evidence audit');
    panel.append(element('h5',a.title),element('strong',a.status),element('p',a.unitNote));
