@@ -42,3 +42,13 @@
 .chaos-update{padding:9px 0}
 .chaos-recent h3{margin-bottom:8px}
 @media(max-width:720px){.chaos-layout{grid-template-columns:1fr}.chaos-gauge,.chaos-recent{padding:16px}}
+
+/* Structural dial fix: SVG, zone labels and status live in separate flow blocks.
+   No negative margins or overlay positioning on the status. */
+.chaos-gauge .chaos-meter-graphic{position:static;display:block;max-width:240px;margin:12px auto 0;padding:0;line-height:normal}
+.chaos-gauge .chaos-meter-graphic svg{position:static;display:block;width:100%;height:auto;max-width:100%;margin:0}
+.chaos-gauge .chaos-meter-status{position:static;display:flex;flex-direction:column;align-items:stretch;gap:10px;width:min(100%,260px);margin:8px auto 18px;padding:0;clear:both;text-align:center}
+.chaos-gauge .chaos-meter-status .chaos-meter-text{position:static;display:block;margin:0!important;transform:none!important;line-height:1.35;font-size:14px;font-weight:800;color:#f6c786;overflow-wrap:anywhere}
+.chaos-gauge .chaos-meter-status .chaos-meter-zones{position:static;display:flex;justify-content:space-between;gap:12px;margin:0;line-height:1.35}
+.chaos-gauge .chaos-meter-status .chaos-meter-zones span{flex:1;min-width:0}
+.chaos-gauge #chaos-sphere-name{margin-top:12px}
