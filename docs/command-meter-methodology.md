@@ -28,6 +28,10 @@ All five actors now have visible source-linked energy research worksheets. These
 
 All five actors now have economic and strategic candidate worksheets in addition to energy. Economic inputs include WDI output observations; strategic inputs include SIPRI estimates, except the EU worksheet uses EDA's EU-27 spending aggregate. These are **input or output proxies**, not measured external leverage. Every worksheet explicitly withholds a score and names the independent delivered outcomes, net costs, alternative explanations and fixed normalization still needed. GDP growth cannot be scored as a gain in international command, and military spending cannot be scored as improved military effectiveness. EU defence spending must not be equated to NATO or an EU standing army.
 
+## Diplomatic research coverage
+
+All five actors now have diplomatic worksheets, completing the initial 20 actor/dimension research slots. U.S. NATO enlargement, China-backed Saudi–Iran talks, Russia–North Korea treaty ratification, EU–New Zealand FTA implementation and India–EFTA TEPA implementation are dated institutional events, not interchangeable or independently proven net diplomatic influence gains. Official participant accounts must be distinguished from independent delivered outcomes. Treaty forecasts, pledged investment and aspirational jobs are not realized benefits. All five diplomatic scores and all national composite scores remain withheld.
+
 ## Remaining research gates
 
 All actors: harmonized outcome baselines, independently measured durable leverage, realized costs/distribution, alternative explanations, normalization targets and editorial worksheet. Russia: ratification record alone does not independently establish treaty implementation. India: energy snapshot lacks a verified newer matched series. Diplomacy: ratification/entry into force must be distinguished from actual economic and security returns. The regional tracker remains a list of research questions outside the five-actor scoring grid.
