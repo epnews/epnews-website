@@ -17,6 +17,14 @@ for(const [actor,worksheets] of Object.entries(data.researchWorksheets))for(cons
  assert.match(sheet.editorialReview,/Pending/);assert.ok(sheet.candidateBaseline&&sheet.candidateOutcome&&sheet.counterfactualNeeded&&sheet.costAccountingNeeded);
  for(const id of sheet.sources)assert.ok(data.sources[id]);
 }
+// Audited LNG observations are one source family, not two independent influence outcomes.
+const lngAudit=data.evidenceAudits.us['Energy and resources'];
+assert.equal(lngAudit.score,null);
+assert.equal(lngAudit.observations.length,2);
+assert.equal(lngAudit.observations[1].value-lngAudit.observations[0].value,lngAudit.derived.value);
+assert.equal(new Set(lngAudit.observations.map(x=>x.source)).size,1);
+for(const observation of lngAudit.observations){assert.ok(data.sources[observation.source]);assert.ok(Number.isFinite(observation.value));}
+assert.ok(lngAudit.unresolved.length>=3);
 // Synthetic fixtures test the gate; these are not published evidence or scores.
 const valid={kind:'Influence assessment',confidence:'Moderate',editorialReview:'review-id',baseline:'dated baseline',costAccounting:'cost ledger',counterfactual:'alternative explanation',normalizationRationale:'predefined materiality',targetFixedBeforeAssessment:true,netChange:10,materialityTarget:20,outcomes:[{stage:'Measured outcome',source:'a',independenceGroup:'a',period:'2024–25'},{stage:'Measured outcome',source:'b',independenceGroup:'b',period:'2024–25'}]};
 assert.deepEqual(missingRequirements(valid),[]);assert.ok(missingRequirements(data.actors.us.Economic).includes('two independent measured outcomes'));assert.ok(missingRequirements(data.actors.us.Economic).includes('editorial approval'));assert.equal(dimensionScore(valid),50);assert.equal(dimensionScore({...valid,netChange:0}),0);assert.equal(dimensionScore({...valid,netChange:-40}),-100);
