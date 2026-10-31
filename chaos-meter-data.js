@@ -51,6 +51,7 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "domesticPriceEvidence": {"status":"Observed domestic benchmark price context; causal export cost not established","observations":[{"year":2024,"hub":"Henry Hub","valueUsdPerMMBtu":2.21,"source":"eiaHenry2024","method":"EIA published annual spot average"},{"year":2025,"hub":"Henry Hub","valueUsdPerMMBtu":3.54,"source":"fercGas2025","method":"FERC reported annual spot average using S&P Global Platts data"}],"sourceComparability":"These values come from different price data providers and averaging conventions; do not present their arithmetic difference as a verified homogeneous series without reconciliation.","causality":"Gas benchmark prices respond to weather, production, storage, pipeline constraints, industrial and power demand, and LNG exports. Observed price movement alone does not quantify costs attributable to incremental LNG exports.","costEstimateUsd":null,"consumerIncidenceEstimateUsd":null,"verificationNeeded":"Obtain same-series 2024–2025 Henry Hub observations, regional retail/electricity price pass-through, and an export/no-export counterfactual before estimating attributable household costs."},
             "costIncidenceLedger": {
                   "status": "Cost-incidence accounting incomplete; no net national benefit estimated",
                   "scope": "Incremental U.S. LNG deliveries to Europe, 2024–2025; avoid treating gross export receipts as net U.S. gains",
@@ -418,6 +419,8 @@ window.EP_CHAOS_DATA = {
       "url": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
       "date": "2025 data; retrieved 2026-10-31"
     },
+    "eiaHenry2024": {"label":"EIA · Henry Hub 2024 annual average","url":"https://www.eia.gov/TodayinEnergy/detail.php?id=64184","date":"2025-01-08; 2024 observation"},
+    "fercGas2025": {"label":"FERC · 2025 State of the Markets natural gas price review","url":"https://www.ferc.gov/sites/default/files/2026-03/26_State-of-the-Market_0324_1430.pdf","date":"2026-03; 2025 observation"},
     "lngDest": {"label":"EIA · U.S. LNG exports by destination","url":"https://www.eia.gov/TodayinEnergy/detail.php?id=67484","date":"2026; 2024–2025 observations"},
     "fercLNG": {"label":"FERC · 2025 State of the Markets","url":"https://www.ferc.gov/sites/default/files/2026-03/26_State-of-the-Market_0324_1430.pdf","date":"2026-03; 2025 review"},
     "lng": {
