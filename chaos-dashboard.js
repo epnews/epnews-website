@@ -70,7 +70,7 @@ function metricFor(sphere,dimension){
  return null;
 }
 function renderAssessment(sphere){
- const available=dimensions.filter(d=>metricFor(sphere,d));
+ const available=dimensions.filter(d=>metricFor(sphere.id,d));
  const count=available.length;
  meter.dataset.state='coverage';
  meter.setAttribute('aria-label',sphere.name+': '+count+' of four dimensions have a source-linked proxy; overall geopolitical influence is not scored');
@@ -83,9 +83,9 @@ function renderAssessment(sphere){
  if(note)note.textContent='Needle shows evidence coverage only ('+count+'/4 dimensions). It does not show geopolitical gains or losses.';
  const readiness=root.querySelector('#chaos-readiness-text'),coverage=root.querySelector('#chaos-readiness-coverage');
  if(readiness)readiness.textContent='Overall influence score withheld. Each dimension needs comparable outcome evidence, dated baselines, costs, counterfactuals and editorial verification; these activity proxies cannot be averaged into a power index.';
- if(coverage)coverage.textContent='Source-linked proxy coverage: '+count+' of 4 dimensions. Missing: '+(count===4?'none at the proxy level (outcome validation still pending)':dimensions.filter(d=>!metricFor(sphere,d)).join(', '))+'. Missing evidence is not a zero score.';
+ if(coverage)coverage.textContent='Source-linked proxy coverage: '+count+' of 4 dimensions. Missing: '+(count===4?'none at the proxy level (outcome validation still pending)':dimensions.filter(d=>!metricFor(sphere.id,d)).join(', '))+'. Missing evidence is not a zero score.';
  const chips=root.querySelector('#chaos-evidence-chips');
- if(chips){chips.replaceChildren();for(const d of dimensions){const span=document.createElement('span');span.textContent=(d==='Energy and resources'?'Energy':d)+' · '+(metricFor(sphere,d)?'Sourced proxy':'Not measured');chips.append(span);}}
+ if(chips){chips.replaceChildren();for(const d of dimensions){const span=document.createElement('span');span.textContent=(d==='Energy and resources'?'Energy':d)+' · '+(metricFor(sphere.id,d)?'Sourced proxy':'Not measured');chips.append(span);}}
 }
 function update(){
  const sphere=spheres.find(x=>x.id===select.value)||spheres[0];
