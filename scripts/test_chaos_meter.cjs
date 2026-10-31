@@ -1,5 +1,11 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const gates=data.evidenceAudits.us['Energy and resources'].causalResearchGates;
+assert.equal(gates.questions.length,8);
+assert.equal(gates.resolvedCount,0);
+assert.equal(new Set(gates.questions.map(q=>q.id)).size,8);
+for(const q of gates.questions){assert.ok(q.known&&q.missing&&q.test);assert.ok(data.sources[q.source]);}
+assert.equal(gates.netBenefitUsd,null);assert.equal(gates.influenceScore,null);
 const eight=data.evidenceAudits.us['Energy and resources'].eightPointAudit;
 assert.equal(eight.items.length,8);
 assert.equal(new Set(eight.items.map(x=>x.id)).size,8);
@@ -160,6 +166,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.causalResearchGates\)/);
 assert.match(dashboard.trimEnd(),/}\)\(\);?$/,'orphaned code after dashboard closure');
 assert.equal((dashboard.match(/if\(audit\.exportPriceEvidence\)/g)||[]).length,1,'duplicate export-price renderer');
 console.log('PASS: 15 matched FOB destination prices; 20 records; 13 financial rows and sources; accounting reconciliation; null scores; scoring gates; numeric indicators; single initialization and integration.');
