@@ -38,6 +38,7 @@ function renderAssessment(record){
  conf.textContent=record&&record.confidence?record.confidence.toUpperCase()+' CONFIDENCE':'NOT YET ASSESSED';
  const validScore=record&&typeof record.score==='number'&&Number.isFinite(record.score)&&record.score>=-100&&record.score<=100;
  if(needle)needle.style.transform='rotate('+ (validScore ? Math.max(-90,Math.min(90,record.score*.9)) : 0)+'deg)';
+ const note=root.querySelector('#chaos-needle-note');if(note)note.textContent=validScore?'Needle reflects the documented editorial change index.':'Needle inactive — no score assigned. Center does not mean neutral.';
  if(confidenceArc)confidenceArc.style.strokeDasharray=(record&&typeof record.confidenceFraction==='number'&&record.confidenceFraction>=0&&record.confidenceFraction<=100?record.confidenceFraction:0)+' 100';
 }
 function update(){
