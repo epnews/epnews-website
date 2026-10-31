@@ -99,6 +99,18 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.threePartFinancialAudit){const a=audit.threePartFinancialAudit;
+   const panel=element('section');panel.id='chaos-lng-three-part-audit';panel.setAttribute('aria-label','LNG three-part financial and consumer audit');
+   panel.append(element('h5',a.title),element('strong',a.status));
+   for(const c of a.components){const section=element('section');section.append(element('h5',c.title));
+    if(c.rows.length){const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label',c.title+' comparison table');const table=element('table'),head=element('thead'),hr=element('tr');
+     for(const h of ['Measure','2024','2025']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+     for(const r of c.rows){const tr=element('tr'),th=element('th',r.label);th.scope='row';tr.append(th,element('td',r.baseline.toLocaleString('en-US')),element('td',r.outcome.toLocaleString('en-US')));body.append(tr);}
+     table.append(body);scroll.append(table);section.append(element('p','USD millions · calendar years'),scroll);}
+    section.append(element('p',c.note));sourceLinks(section,[c.source]);panel.append(section);
+   }
+   panel.append(element('p','Accounting and causal limitations: '+a.limitations),element('p','Stage 3 return, public exposure, realized domestic cost, net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.subsidiaryCashFlowEvidence){const c=audit.subsidiaryCashFlowEvidence;
    const panel=element('section');panel.id='chaos-lng-cch-cashflow';panel.setAttribute('aria-label','LNG subsidiary operating and financing cash flows');
    panel.append(element('h5',c.title),element('strong',c.status),element('p',c.scope));
