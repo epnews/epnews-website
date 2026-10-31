@@ -175,7 +175,7 @@ if(!articles.length){const p=document.createElement('p');p.textContent='No separ
 for(const s of articles){const a=document.createElement('a');a.className='chaos-update';a.href='#article/'+encodeURIComponent(s.id);const title=document.createElement('strong');title.textContent=s.title||'Investigation update';const d=document.createElement('small');d.textContent=(s.publishedAt||s.updatedAt||'')+' · '+(s.type||'INVESTIGATION');a.append(title,d);list.append(a);}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();+o.valueUsdPerMMBtu.toFixed(2)+'/MMBtu ('+o.method+').'));
+})();
    worksheet.append(element('p','Comparability: '+p.sourceComparability),element('p','Attribution: '+p.causality),element('p','Cost evidence needed: '+p.verificationNeeded),element('p','Export-attributable household cost: NOT ESTABLISHED'));
    sourceLinks(worksheet,p.observations.map(o=>o.source));
   }
