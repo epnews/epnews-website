@@ -1,5 +1,17 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const recon=data.evidenceAudits.us['Energy and resources'].accountingReconciliationEvidence;
+assert.equal(recon.checks.length,3);
+const [rev,interest,coverage]=recon.checks;
+for(const period of ['baseline','outcome']){
+ assert.equal(rev[period].thirdParty+rev[period].affiliate,rev[period].total);
+ assert.equal(interest[period].total-interest[period].capitalized,interest[period].expense);
+ assert.ok(coverage[period].operating>0 && coverage[period].investingOutflow>0);
+}
+assert.equal(Math.round(1000*coverage.baseline.operating/coverage.baseline.investingOutflow)/10,96.8);
+assert.equal(Math.round(1000*coverage.outcome.operating/coverage.outcome.investingOutflow)/10,86.5);
+for(const c of recon.checks)assert.ok(data.sources[c.source]);
+assert.equal(recon.stage3ReturnUsd,null);assert.equal(recon.netNationalBenefitUsd,null);assert.equal(recon.influenceScore,null);
 const batch=data.evidenceAudits.us['Energy and resources'].threePartFinancialAudit;
 assert.equal(batch.components.length,3);
 assert.deepEqual(Array.from(batch.components[0].rows,r=>[r.baseline,r.outcome]),[[3599,4448],[1281,2053],[4880,6501]]);
