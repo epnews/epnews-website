@@ -88,3 +88,17 @@
  .chaos-hub>summary:before{background:linear-gradient(90deg,rgba(16,29,46,.95),rgba(16,29,46,.70))}
  .chaos-hub>summary .chaos-hero-copy{max-width:100%}
 }
+
+/* Purpose-built artwork: retain recognizable globe and maritime/energy foreground. */
+.chaos-hub>summary{min-height:320px}
+.chaos-hub>summary .chaos-hero-art{width:62%;height:100%;object-fit:cover;object-position:50% 58%;opacity:.92;mask-image:linear-gradient(to right,transparent 0%,#000 27%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 27%)}
+.chaos-hub>summary:before{background:linear-gradient(90deg,#101d2e 0%,rgba(16,29,46,.98) 27%,rgba(16,29,46,.70) 48%,rgba(16,29,46,.18) 100%)}
+.chaos-hub>summary .chaos-hero-copy{max-width:60%}
+.chaos-hub>summary .chaos-expand-wrap{background:rgba(11,22,36,.73);padding:10px;border-radius:8px}
+@media(max-width:720px){
+.chaos-hub>summary{min-height:330px}
+.chaos-hub>summary .chaos-hero-art{width:100%;object-position:center 52%;opacity:.46;mask-image:none;-webkit-mask-image:none}
+.chaos-hub>summary:before{background:linear-gradient(90deg,rgba(16,29,46,.94),rgba(16,29,46,.68))}
+.chaos-hub>summary .chaos-hero-copy{max-width:100%}
+.chaos-hub>summary .chaos-expand-wrap{max-width:100%}
+}
