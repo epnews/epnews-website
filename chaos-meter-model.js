@@ -5,7 +5,7 @@ const weights={Economic:.30,Strategic:.30,Diplomatic:.20,'Energy and resources':
 function dimensionScore(r){
  if(!r||r.kind!=='Influence assessment'||!['Moderate','High'].includes(r.confidence)||!r.editorialReview||!r.baseline||!r.costAccounting||!r.counterfactual||!r.normalizationRationale||!r.targetFixedBeforeAssessment)return null;
  const outcomes=r.outcomes;
- if(!Array.isArray(outcomes)||outcomes.length<2||outcomes.some(x=>x.stage!=='Measured outcome'||!x.source||!x.independenceGroup||!x.period))return null;
+ if(!Array.isArray(outcomes)||outcomes.length<2||outcomes.some(x=>!x||x.stage!=='Measured outcome'||!x.source||!x.independenceGroup||!x.period))return null;
  if(new Set(outcomes.map(x=>x.independenceGroup)).size<2)return null;
  if(!Number.isFinite(r.netChange)||!Number.isFinite(r.materialityTarget)||r.materialityTarget<=0)return null;
  return Math.max(-100,Math.min(100,100*r.netChange/r.materialityTarget));
@@ -16,7 +16,8 @@ function missingRequirements(r){
  if(!r||r.kind!=='Influence assessment')missing.push('reviewed influence assessment');
  if(!r||!r.baseline)missing.push('dated baseline');
  const outcomes=r&&r.outcomes;
- if(!Array.isArray(outcomes)||outcomes.filter(x=>x&&x.stage==='Measured outcome'&&x.source&&x.independenceGroup&&x.period).length<2||new Set((outcomes||[]).filter(x=>x&&x.stage==='Measured outcome'&&x.source&&x.independenceGroup&&x.period).map(x=>x.independenceGroup)).size<2)missing.push('two independent measured outcomes');
+ const qualified=Array.isArray(outcomes)?outcomes.filter(x=>x&&x.stage==='Measured outcome'&&x.source&&x.independenceGroup&&x.period):[];
+ if(qualified.length<2||new Set(qualified.map(x=>x.independenceGroup)).size<2)missing.push('two independent measured outcomes');
  if(!r||!r.costAccounting)missing.push('cost and beneficiary accounting');
  if(!r||!r.counterfactual)missing.push('counterfactual');
  if(!r||!r.normalizationRationale||!r.targetFixedBeforeAssessment||!Number.isFinite(r.materialityTarget)||r.materialityTarget<=0)missing.push('predefined normalization target');
