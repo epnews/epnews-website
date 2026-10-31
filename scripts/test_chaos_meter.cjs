@@ -1,5 +1,12 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const cf=data.evidenceAudits.us['Energy and resources'].subsidiaryCashFlowEvidence;
+assert.deepEqual(Array.from(cf.observations,r=>[r.baseline,r.outcome]),[[1771,1995],[1830,2306],[400,515],[415,375],[0,550]]);
+assert.match(cf.accountingRules,/do not subtract them again/);
+assert.equal(cf.netNationalBenefitUsd,null);
+assert.equal(cf.stage3ReturnUsd,null);
+assert.equal(cf.influenceScore,null);
+for(const r of cf.observations)assert.ok(data.sources[r.source]);
 const capital=data.evidenceAudits.us['Energy and resources'].projectCapitalEvidence;
 assert.deepEqual(Array.from(capital.observations,r=>[r.baseline,r.outcome]),[[1.5,1.3]]);
 assert.deepEqual(Array.from(capital.commitments,r=>r.value),[6,0.7]);
