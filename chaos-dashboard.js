@@ -99,6 +99,17 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.subsidiaryCashFlowEvidence){const c=audit.subsidiaryCashFlowEvidence;
+   const panel=element('section');panel.id='chaos-lng-cch-cashflow';panel.setAttribute('aria-label','LNG subsidiary operating and financing cash flows');
+   panel.append(element('h5',c.title),element('strong',c.status),element('p',c.scope));
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Subsidiary cash-flow comparison; scroll horizontally on small screens');
+   const table=element('table'),head=element('thead'),header=element('tr');table.append(element('caption','CCH consolidated cash flows · USD millions · annual'));
+   for(const t of ['Measure','2024','2025','Change']){const th=element('th',t);th.scope='col';header.append(th);}head.append(header);table.append(head);const body=element('tbody');
+   for(const r of c.observations){const tr=element('tr'),th=element('th',r.label);th.scope='row';const diff=r.outcome-r.baseline;tr.append(th,element('td',r.baseline.toLocaleString('en-US')),element('td',r.outcome.toLocaleString('en-US')),element('td',(diff>0?'+':'')+diff.toLocaleString('en-US')));body.append(tr);}
+   table.append(body);scroll.append(table);panel.append(scroll);sourceLinks(panel,[c.observations[0].source]);
+   panel.append(element('p',c.interpretation),element('p','Accounting boundaries: '+c.accountingRules),element('p','Still unresolved: '+c.remaining),element('p','Stage 3 return: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
+   worksheet.append(panel);
+  }
   if(audit.projectCapitalEvidence){const c=audit.projectCapitalEvidence;
    const panel=element('section');panel.id='chaos-lng-project-capital';panel.setAttribute('aria-label','LNG project construction costs and commitments');
    panel.append(element('h5',c.title),element('strong',c.status),element('p',c.scope));
