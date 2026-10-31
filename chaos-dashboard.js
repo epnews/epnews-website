@@ -64,9 +64,17 @@ function renderAssessment(record){
  const note=root.querySelector('#chaos-needle-note');if(note)note.textContent=validScore?'Needle reflects the documented editorial change index.':'Needle inactive — no score assigned. Center does not mean neutral.';
  if(confidenceArc)confidenceArc.style.strokeDasharray=(record&&typeof record.confidenceFraction==='number'&&record.confidenceFraction>=0&&record.confidenceFraction<=100?record.confidenceFraction:0)+' 100';
 }
+// Outcome-scoring gate: raw proxy availability is not geopolitical outcome verification.
+const proxyCoverage={us:['Economic','Strategic','Diplomatic','Energy and resources'],china:['Economic','Strategic'],russia:['Economic','Strategic','Diplomatic','Energy and resources'],eu:['Economic'],india:['Economic','Strategic']};
+function showReadiness(sphere){
+ const found=proxyCoverage[sphere]||[];
+ const t=root.querySelector('#chaos-readiness-text'),c=root.querySelector('#chaos-readiness-coverage');
+ if(t)t.textContent='Overall score withheld: '+found.length+' of 4 categories have at least one published activity/input proxy, but none has a complete, comparable outcome-based influence assessment. Required: baseline, independently sourced outcomes, net costs, alternative explanations and editorial review in every category.';
+ if(c)c.textContent='Available proxy categories: '+(found.length?found.join(' · '):'None')+'. Missing data is not a zero score.';
+}
 function update(){
  const s=spheres.find(x=>x.id===select.value)||spheres[0];
- name.textContent=s.name;description.textContent=s.note;
+ name.textContent=s.name;description.textContent=s.note;showReadiness(s.id);
  const isEnergy=category.value==='Energy and resources';
  const isStrategic=category.value==='Strategic';
  const isEconomic=category.value==='Economic';
