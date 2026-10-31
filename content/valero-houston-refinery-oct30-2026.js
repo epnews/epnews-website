@@ -19,9 +19,9 @@ STORIES.push({
     'The development is notable because the refinery was closed only last year. But the announcement is an acquisition and restart plan, not evidence that Houston fuel output has already increased. EP News will track the transaction closing, restart milestones, workforce changes and actual production as those become verifiable.'
   ],
   image: {
-    src: 'assets/images/valero-houston-refinery-2026_1600x900.jpg',
-    alt: 'Aerial view of an industrial refinery complex and storage tanks along the Houston Ship Channel, with an EP News headline describing Valero’s proposed acquisition and restart.',
-    credit: 'Photograph supplied by EP News contributor; EP News text overlay. Original photographer and usage rights to be confirmed before final publication.'
+    src: 'assets/images/epnews_valero_replacement_1600x900.jpg',
+    alt: 'EP News illustrated refinery-at-sunset headline graphic describing Valero’s proposed acquisition and planned Houston restart; AI-generated illustration, not documentary photography.',
+    credit: 'EP News / AI-generated editorial illustration; not a documentary photograph of the acquired facility.'
   },
   sources: [
     {label: 'Valero Energy — October 30, 2026 acquisition announcement', url: 'https://investorvalero.com/news/news-details/2026/Valero-to-Acquire-Former-Houston-Refinery-from-LyondellBasell/default.aspx'},
