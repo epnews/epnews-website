@@ -9,6 +9,8 @@ for(const records of Object.values(data.actors)){
   assert.ok(r.sources.length);for(const id of r.sources){assert.ok(data.sources[id],id);assert.match(data.sources[id].url,/^https:\/\//);assert.ok(data.sources[id].date);}
  }
 }
+// All five actors now have energy worksheets, but none are an approved influence assessment.
+for(const actor of Object.keys(data.actors))assert.ok(data.researchWorksheets[actor]['Energy and resources'],actor);
 // Research worksheets may display candidate outcomes but never unlock a score.
 for(const [actor,worksheets] of Object.entries(data.researchWorksheets))for(const [dim,sheet] of Object.entries(worksheets)){
  assert.ok(data.actors[actor][dim]);assert.equal(dimensionScore(data.actors[actor][dim]),null);

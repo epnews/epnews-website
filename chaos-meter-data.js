@@ -15,6 +15,48 @@ window.EP_CHAOS_DATA = {
     "Energy and resources": 0.2
   },
   "researchWorksheets": {
+    "china": {
+      "Energy and resources": {
+        "status": "Import exposure research — no influence score",
+        "candidateBaseline": "Chinese crude-oil import sourcing before the latest reported EIA observation; comparable source-by-source baseline not yet established.",
+        "candidateOutcome": "EIA's 2026 report describes Chinese crude import patterns; import sourcing is an exposure measure, not an influence outcome.",
+        "sources": ["chinaoil"],
+        "interpretation": "Supplier concentration and maritime vulnerability can affect leverage, but import volume alone cannot establish dependence or coercion.",
+        "additionalOutcomesNeeded": "Matched supplier shares, actual discounted prices, storage buffers, alternative route capacity and independently verified contract outcomes.",
+        "costAccountingNeeded": "Import premiums and discounts, refining and storage costs, infrastructure spending and consumer or industrial price incidence.",
+        "counterfactualNeeded": "Demand cycles, refinery capacity, strategic-stockpiling decisions and preexisting supplier diversification.",
+        "calibrationNeeded": "Specify ex-ante comparable net energy bargaining-power units and a fixed materiality target.",
+        "editorialReview": "Pending; no score authorized"
+      }
+    },
+    "eu": {
+      "Energy and resources": {
+        "status": "Gas diversification research — no influence score",
+        "candidateBaseline": "EU Russian-gas exposure before 2022; Council source reports more than 150 bcm supplied in 2021.",
+        "candidateOutcome": "EU gas sourcing subsequently diversified; the existing source does not establish the EU's net influence gain.",
+        "sources": ["gas"],
+        "interpretation": "Reduced supplier concentration may improve autonomy but can also introduce new costs or dependencies; this overlaps Russia's loss-of-access observation.",
+        "additionalOutcomesNeeded": "Matched origin shares, contracted capacity, delivered gas volumes, price and supply reliability outcomes from independent sources.",
+        "costAccountingNeeded": "Replacement fuel premiums, LNG terminals, industrial competitiveness, household costs and public subsidies.",
+        "counterfactualNeeded": "Demand reduction, weather, storage policy, preexisting diversification and renewable generation trends.",
+        "calibrationNeeded": "Fix a net autonomy/leverage measure and materiality threshold before comparing the EU with other actors.",
+        "editorialReview": "Pending; no score authorized"
+      }
+    },
+    "india": {
+      "Energy and resources": {
+        "status": "Energy import exposure research — no influence score",
+        "candidateBaseline": "India ministry's 2025 statement reports roughly 88% crude-oil import reliance; this is a single-period exposure snapshot.",
+        "candidateOutcome": "A comparable subsequent import-reliance and supplier-diversification outcome has not yet been verified.",
+        "sources": ["indiaoil"],
+        "interpretation": "Import reliance does not by itself prove lost autonomy; price terms, alternate suppliers and reserve capacity matter.",
+        "additionalOutcomesNeeded": "Independently sourced matched-period crude and gas dependence, supplier shares, realized price discounts and contract outcomes.",
+        "costAccountingNeeded": "Import bill, freight and insurance, fiscal subsidy exposure, refiner margins and household fuel costs.",
+        "counterfactualNeeded": "Economic growth, refinery demand, domestic production and diversification predating the conflict.",
+        "calibrationNeeded": "Set an ex-ante net autonomy or bargaining-power metric and materiality threshold.",
+        "editorialReview": "Pending; no score authorized"
+      }
+    },
     "us": {
       "Energy and resources": {
         "status": "Baseline research — no influence score",
