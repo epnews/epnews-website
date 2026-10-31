@@ -1,5 +1,13 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const batch=data.evidenceAudits.us['Energy and resources'].threePartFinancialAudit;
+assert.equal(batch.components.length,3);
+assert.deepEqual(Array.from(batch.components[0].rows,r=>[r.baseline,r.outcome]),[[3599,4448],[1281,2053],[4880,6501]]);
+assert.deepEqual(Array.from(batch.components[1].rows,r=>[r.baseline,r.outcome]),[[239,221],[174,190],[65,31],[140,23]]);
+assert.match(batch.components[2].note,/2050/);
+assert.match(batch.components[2].note,/4%/);
+for(const c of batch.components)assert.ok(data.sources[c.source]);
+for(const k of ['stage3ReturnUsd','publicExposureUsd','domesticRealizedCostUsd','netNationalBenefitUsd','influenceScore'])assert.equal(batch[k],null);
 const cf=data.evidenceAudits.us['Energy and resources'].subsidiaryCashFlowEvidence;
 assert.deepEqual(Array.from(cf.observations,r=>[r.baseline,r.outcome]),[[1771,1995],[1830,2306],[400,515],[415,375],[0,550]]);
 assert.match(cf.accountingRules,/do not subtract them again/);
