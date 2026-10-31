@@ -19,6 +19,16 @@ for(const [actor,worksheets] of Object.entries(data.researchWorksheets))for(cons
 }
 // Audited LNG observations are one source family, not two independent influence outcomes.
 const lngAudit=data.evidenceAudits.us['Energy and resources'];
+const costLedger=lngAudit.costIncidenceLedger;
+assert.equal(costLedger.netBenefitUsd,null);
+assert.equal(costLedger.netInfluenceScore,null);
+assert.ok(costLedger.beneficiaries.length>=3);
+assert.ok(costLedger.payers.length>=3);
+for(const entry of [...costLedger.beneficiaries,...costLedger.payers]){
+ assert.equal(entry.state,'Unverified');
+ assert.ok(entry.party&&entry.measure&&entry.sourceGap);
+}
+assert.ok(costLedger.counterfactual&&costLedger.foreignPolicyTest&&costLedger.accountingRule);
 assert.equal(lngAudit.score,null);
 assert.equal(lngAudit.observations.length,2);
 assert.equal(lngAudit.observations[1].value-lngAudit.observations[0].value,lngAudit.derived.value);
