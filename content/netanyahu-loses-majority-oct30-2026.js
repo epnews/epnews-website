@@ -19,9 +19,9 @@ STORIES.push({
     "EP News will track the coalition consultations, presidential mandate and any proposed governing agreement as those developments are confirmed."
   ],
   image: {
-    src: "assets/images/epnews_netanyahu_website_1600x900.jpg",
-    alt: "EP News informational election graphic showing the completed Israeli Knesset count: Netanyahu bloc 53, opposition 48, Arab-led parties 19; no photographic depiction.",
-    credit: "EP News / original data-only election infographic; results sourced to Israel's Central Elections Committee."
+    src: "assets/images/epnews_netanyahu_replacement_1600x900.jpg",
+    alt: "EP News election graphic showing 53 seats for Netanyahu-aligned parties, 48 for the opposition bloc and 19 for Arab-led parties, with an AI-generated illustrative depiction of the Knesset; not a documentary photograph.",
+    credit: "EP News / AI-generated illustrative Knesset background, not documentary photography; election figures sourced to the Central Elections Committee."
   },
   "sources": [
     {
