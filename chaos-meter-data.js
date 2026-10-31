@@ -51,6 +51,63 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "accountingReconciliationEvidence": {
+  "title": "LNG audit · three accounting cross-checks",
+  "status": "Reconciled published figures; descriptive calculations only",
+  "unit": "USD millions unless otherwise stated",
+  "checks": [
+    {
+      "title": "1 · Third-party and affiliate revenue reconcile to reported total",
+      "source": "cch2025Sec",
+      "baseline": {
+        "thirdParty": 3599,
+        "affiliate": 1281,
+        "total": 4880
+      },
+      "outcome": {
+        "thirdParty": 4448,
+        "affiliate": 2053,
+        "total": 6501
+      },
+      "method": "Third-party LNG revenue + affiliate LNG revenue = reported revenue in each year. Third-party share = third-party divided by total, displayed to one decimal percent.",
+      "limitation": "Affiliate sales may represent intra-group transactions and are not an additional national export receipt. Recognized revenue is not cash collected."
+    },
+    {
+      "title": "2 · Interest cost reconciles with capitalized interest",
+      "source": "cch2025Sec",
+      "baseline": {
+        "total": 239,
+        "capitalized": 174,
+        "expense": 65
+      },
+      "outcome": {
+        "total": 221,
+        "capitalized": 190,
+        "expense": 31
+      },
+      "method": "Total interest incurred minus capitalized interest = interest expense after capitalization for each year. Do not add the components together.",
+      "limitation": "Cash interest paid net of capitalized amounts is a different cash-flow measure and must not be used to force a reconciliation to accrual interest."
+    },
+    {
+      "title": "3 · Operating cash flow compared with investing outflows",
+      "source": "cch2025Sec",
+      "baseline": {
+        "operating": 1771,
+        "investingOutflow": 1830
+      },
+      "outcome": {
+        "operating": 1995,
+        "investingOutflow": 2306
+      },
+      "method": "Operating cash flow / magnitude of net investing cash outflow; ratio is a descriptive coverage comparison, not free cash flow or return on investment.",
+      "limitation": "Investing outflows cover multiple projects, not Stage 3 alone. The ratio omits financing, working-capital context, asset-life recovery and future project returns."
+    }
+  ],
+  "conclusion": "These reconciliations test internal accounting consistency; they do not measure incremental Stage 3 profit, U.S. national welfare or geopolitical influence.",
+  "stage3ReturnUsd": null,
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "threePartFinancialAudit": {
   "title": "LNG economic incidence · three verified evidence checkpoints",
   "status": "Descriptive company accounts and modeled consumer impacts; net benefit not established",
