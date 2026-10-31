@@ -75,3 +75,16 @@
 @keyframes chaos-expand-pulse{0%,100%{box-shadow:0 0 0 0 rgba(230,174,118,0);border-color:#c9a477}50%{box-shadow:0 0 0 7px rgba(230,174,118,.14);border-color:#ffd59b}}
 @media(max-width:720px){.chaos-hub .chaos-expand-wrap{align-items:flex-start;max-width:100%;margin-top:16px}.chaos-hub .chaos-expand-helper{text-align:left}.chaos-hub .chaos-expand{min-width:0}}
 @media(prefers-reduced-motion:reduce){.chaos-hub .chaos-expand{animation:none!important}}
+
+/* Editorial globe imagery from approved EP News concept; text and CTA remain live HTML. */
+.chaos-hub>summary{position:relative;isolation:isolate;overflow:hidden;min-height:250px;align-items:center;background:#101d2e}
+.chaos-hub>summary .chaos-hero-art{position:absolute;z-index:-1;right:0;top:0;width:53%;height:100%;object-fit:cover;object-position:center 42%;opacity:.86;mask-image:linear-gradient(to right,transparent 0%,#000 30%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 30%)}
+.chaos-hub>summary:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#101d2e 0%,rgba(16,29,46,.98) 28%,rgba(16,29,46,.38) 75%,rgba(16,29,46,.32) 100%)}
+.chaos-hub>summary .chaos-hero-copy{position:relative;z-index:1;max-width:65%}
+.chaos-hub>summary .chaos-expand-wrap{position:relative;z-index:1}
+@media(max-width:720px){
+ .chaos-hub>summary{min-height:295px;padding:22px}
+ .chaos-hub>summary .chaos-hero-art{width:100%;opacity:.36;object-position:center 35%;mask-image:none;-webkit-mask-image:none}
+ .chaos-hub>summary:before{background:linear-gradient(90deg,rgba(16,29,46,.95),rgba(16,29,46,.70))}
+ .chaos-hub>summary .chaos-hero-copy{max-width:100%}
+}
