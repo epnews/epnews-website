@@ -18,7 +18,7 @@ STORIES.push({
     'The immediate development is the decision to keep talking despite public threats and incompatible demands. Whether mediators can turn those contacts into reciprocal, verifiable steps remains unresolved. EP News will distinguish proposed terms, agreed terms and implemented measures as talks develop.'
   ],
   image: {
-    src: 'assets/images/epnews_iran_qatar_doha_oct31_1600x900.png',
+    src: 'assets/images/epnews_iran_qatar_replacement_corrected_1600x900.png',
     alt: 'EP News text-only informational graphic: Iran sends envoys to Qatar as U.S. strike decision looms; negotiators met Qatari mediators in Doha October 31.',
     credit: 'EP News original text-based editorial graphic; no event photograph or synthetic documentary scene.'
   },
