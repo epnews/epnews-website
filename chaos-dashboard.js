@@ -52,16 +52,17 @@ function update(){
  // The dial exclusively represents reviewed influence assessments, never mixed proxy units.
  const count=dimensions.filter(key=>records[key]&&records[key].sources.length).length;
  const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
- meter.dataset.state='coverage';status.textContent=count+' OF 4';conf.textContent='CITED CATEGORIES · NOT A POWER SCORE';
- if(needle)needle.style.transform='rotate('+(-90+count*45)+'deg)';
+ meter.dataset.state=result.score===null?'pending':'scored';status.textContent=result.score===null?'NOT SCORED':result.score.toFixed(1);conf.textContent=result.score===null?'INFLUENCE · AWAITING REVIEW':'REVIEWED INFLUENCE CHANGE';
+ if(needle){needle.style.visibility=result.score===null?'hidden':'visible';if(result.score!==null)needle.style.transform='rotate('+(result.score*.9)+'deg)';}
  if(confidenceArc)confidenceArc.style.strokeDasharray='0 100';
- root.querySelector('#chaos-needle-note').textContent='Needle counts cited categories only. Influence score remains withheld.';
- meter.setAttribute('aria-label',actor.name+': '+count+' of 4 categories documented; influence score withheld');
- root.querySelector('#chaos-readiness-text').textContent=result.ready+' of 4 dimensions meet the influence scoring gate. All four have cited evidence records; a record is not a complete national influence assessment.';
+ root.querySelector('#chaos-needle-note').textContent=result.score===null?'No influence needle until independently reviewed outcome scores qualify. Evidence coverage: '+count+' of 4.':'Reviewed influence change: '+result.score.toFixed(1)+' on a −100 to +100 scale.';
+ meter.setAttribute('aria-label',actor.name+': '+(result.score===null?'influence not yet scored':result.score.toFixed(1)+' influence change')+'; '+count+' of 4 evidence categories documented');
+ root.querySelector('#chaos-readiness-text').textContent=result.ready+' of 4 dimensions meet the influence scoring gate. '+count+' of 4 categories have cited evidence. Evidence coverage is not influence.';
+ let readiness=root.querySelector('#chaos-dimension-readiness');if(!readiness){readiness=document.createElement('div');readiness.id='chaos-dimension-readiness';readiness.setAttribute('aria-live','polite');root.querySelector('#chaos-assessment-readiness').append(readiness);}readiness.replaceChildren();for(const key of dimensions){const record=records[key],score=result.scores[key],line=element('p',key+': '+(score===null?'Not scored — requires two independent measured outcomes, baseline, costs, counterfactual, fixed normalization target and editorial review.':'Reviewed change '+score.toFixed(1)),'chaos-readiness-dimension');line.style.cssText='font-size:12px;line-height:1.5;margin:7px 0';readiness.append(line);}
  root.querySelector('#chaos-readiness-coverage').textContent='Reviewed '+data.reviewed+' · Sources have their own observation periods. No automatic live-data feed.';
- root.querySelector('#chaos-evidence-chips').replaceChildren(...dimensions.map(key=>element('span',key+' · Evidence recorded')));
+ root.querySelector('#chaos-evidence-chips').replaceChildren(...dimensions.map(key=>element('span',key+' · Evidence recorded · '+(result.scores[key]===null?'Unscored':'Scored'))));
  const e=root.querySelector('#chaos-evidence');e.textContent=dim==='Overall change'?'Select a dimension to inspect its evidence. All four dimensions must pass before a composite is calculated.':'Selected evidence: '+records[dim].title+'. See the measurement, source and limits below.';
- const label=root.querySelector('#chaos-indicator-explainer');label.hidden=false;label.textContent='Coverage is not scoring readiness. GDP, spending, gas flows and treaty events remain in their own units and are never averaged together.';
+ const label=root.querySelector('#chaos-indicator-explainer');label.hidden=false;label.textContent='Evidence coverage: '+count+' of 4. The influence dial stays inactive until independently reviewed outcome assessments qualify. GDP, spending, gas flows and treaty events are not interchangeable.';
  renderCards(actor.id,dim);
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
