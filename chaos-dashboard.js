@@ -77,7 +77,7 @@ function update(){
  const metricName=isEnergy?'EU GAS IMPORT VOLUME':isStrategic?'REAL MILITARY EXPENDITURE':isEconomic?'REAL GDP GROWTH':'UNGA MAJORITY ALIGNMENT';
  if(e){
   meter.setAttribute('aria-label',s.name+': '+metricName+' indicator '+(e.index>0?'+':'')+e.index+'. Not total geopolitical influence.');
-  renderAssessment({status:e.index>0?'rising':e.index<0?'declining':'stable',score:e.index,confidence:'high'});
+  renderAssessment({status:e.index>0?'rising':e.index<0?'declining':'stable',score:e.index,confidence:isDiplomatic?'moderate':'high'});
   if(isEnergy){
    evidence.textContent='EU GAS IMPORT VOLUME INDICATOR (2021–2025): '+e.baseline+' to '+e.latest+' bcm; symmetric change index '+(e.index>0?'+':'')+e.index+'. Formula: 100 × (2025 volume − 2021 volume) ÷ (2025 volume + 2021 volume). This measures EU supply volume, NOT total geopolitical power. ';
   }else if(isStrategic){
