@@ -29,7 +29,14 @@ if(segmentRoot&&tickRoot){
  for(let i=0;i<5;i++){const el=document.createElementNS(svgNS,'path');el.setAttribute('d',arc(i*36+2,(i+1)*36-2,128));el.setAttribute('stroke',palette[i]);el.setAttribute('class','chaos-dial-segment');segmentRoot.append(el);}
  for(let i=0;i<=30;i++){const a=i*6,p1=point(a,i%5===0?109:114),p2=point(a,118);const line=document.createElementNS(svgNS,'line');line.setAttribute('x1',p1.x);line.setAttribute('y1',p1.y);line.setAttribute('x2',p2.x);line.setAttribute('y2',p2.y);if(i%5===0)line.setAttribute('class','major');tickRoot.append(line);}
 }
-// Reserved for a later sourced scoring dataset; no numeric scores are inferred from article headlines.
+// Observed EU gas-import volume change only; NOT a national geopolitical composite score.
+// Symmetric change index = 100*(latest-baseline)/(latest+baseline), bounded [-100,100].
+// 2021/2025 bcm: EC/LSEG/ENTSOG Council infographic (see source below).
+const gasVolumeEvidence={
+ us:{baseline:18.9,latest:75.6},russia:{baseline:152,latest:36}
+};
+const gasSource='https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/';
+function gasIndicator(sphere){const d=gasVolumeEvidence[sphere];if(!d)return null;const index=Math.round(100*(d.latest-d.baseline)/(d.latest+d.baseline));return {...d,index,source:gasSource};}
 function renderAssessment(record){
  const state=record&&['rising','stable','declining','mixed'].includes(record.status)?record.status:'pending';
  meter.dataset.state=state;
@@ -44,9 +51,20 @@ function renderAssessment(record){
 function update(){
  const s=spheres.find(x=>x.id===select.value)||spheres[0];
  name.textContent=s.name;description.textContent=s.note;
- meter.setAttribute('aria-label',s.name+': influence assessment pending evidence review');
- renderAssessment(null);
- root.querySelector('#chaos-evidence').textContent='Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
+ const isEnergy=category.value==='Energy and resources',e=isEnergy?gasIndicator(s.id):null;
+ const evidence=root.querySelector('#chaos-evidence'),chips=root.querySelector('#chaos-evidence-chips');
+ if(e){
+  meter.setAttribute('aria-label',s.name+': EU gas-import volume change indicator '+(e.index>0?'plus':'')+e.index+'. Not overall geopolitical influence.');
+  renderAssessment({status:e.index>0?'rising':'declining',score:e.index,confidence:'high'});
+  evidence.textContent='EU GAS IMPORT VOLUME INDICATOR (2021–2025): '+e.baseline+' to '+e.latest+' bcm; symmetric change index '+(e.index>0?'+':'')+e.index+'. Formula: 100 × (2025 volume − 2021 volume) ÷ (2025 volume + 2021 volume). This is a volume-change index, NOT a measure of total U.S. or Russian power, profit, or causation. Source: European Council / European Commission. ';
+  const a=document.createElement('a');a.href=e.source;a.target='_blank';a.rel='noopener noreferrer';a.textContent='View source ↗';evidence.appendChild(a);
+ }else{
+  meter.setAttribute('aria-label',s.name+': national influence assessment pending evidence review');renderAssessment(null);
+  evidence.textContent=isEnergy?'Energy assessment pending: no comparable EU gas-volume indicator for '+s.name+'. Do not infer zero change.':'Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
+ }
+ if(chips)chips.querySelectorAll('span').forEach(span=>{span.textContent=span.textContent.split(' · ')[0]+' · Pending';});
+ if(chips&&e)chips.querySelectorAll('span').forEach(span=>{if(span.textContent.startsWith('Energy'))span.textContent='Energy · EU gas indicator measured';});
+ const label=root.querySelector('#chaos-indicator-explainer');if(label)label.hidden=!e;
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
 const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),comparison=root.querySelector('#chaos-comparison-result');
