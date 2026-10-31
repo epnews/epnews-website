@@ -99,6 +99,14 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.projectCapitalEvidence){const c=audit.projectCapitalEvidence;
+   const panel=element('section');panel.id='chaos-lng-project-capital';panel.setAttribute('aria-label','LNG project construction costs and commitments');
+   panel.append(element('h5',c.title),element('strong',c.status),element('p',c.scope));
+   for(const r of c.observations){panel.append(element('p',r.label+' · '+r.period+': '+r.baseline.toFixed(1)+' → '+r.outcome.toFixed(1)+' '+r.unit));sourceLinks(panel,[r.source]);}
+   for(const r of c.commitments){panel.append(element('p',r.label+' · '+r.asOf+': approximately '+r.value.toFixed(1)+' '+r.unit));sourceLinks(panel,[r.source]);}
+   panel.append(element('p','Accounting boundaries: '+c.boundaries),element('p','Still unresolved: '+c.remaining),element('p','Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
+   worksheet.append(panel);
+  }
   if(audit.capacityTimelineEvidence){const c=audit.capacityTimelineEvidence;
    const panel=element('section');panel.id='chaos-lng-capacity-timeline';panel.setAttribute('aria-label','LNG capacity project timeline');
    panel.append(element('h5',c.title),element('strong',c.status),element('p',c.scope));
