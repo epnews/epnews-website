@@ -37,6 +37,11 @@ const gasVolumeEvidence={
 };
 const gasSource='https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/';
 function gasIndicator(sphere){const d=gasVolumeEvidence[sphere];if(!d)return null;const index=Math.round(100*(d.latest-d.baseline)/(d.latest+d.baseline));return {...d,index,source:gasSource};}
+// SIPRI April 2026 military expenditure estimates: REAL percentage change 2024–2025.
+// This is defense spending momentum, NOT strategic influence or military effectiveness.
+const militaryExpenditure={us:{spending2025:954,change:-7.5},china:{spending2025:336,change:7.4},russia:{spending2025:190,change:5.9},india:{spending2025:92.1,change:8.9}};
+const sipriSource='https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025';
+function militaryIndicator(sphere){const d=militaryExpenditure[sphere];return d?{...d,index:d.change,source:sipriSource}:null;}
 function renderAssessment(record){
  const state=record&&['rising','stable','declining','mixed'].includes(record.status)?record.status:'pending';
  meter.dataset.state=state;
@@ -51,20 +56,27 @@ function renderAssessment(record){
 function update(){
  const s=spheres.find(x=>x.id===select.value)||spheres[0];
  name.textContent=s.name;description.textContent=s.note;
- const isEnergy=category.value==='Energy and resources',e=isEnergy?gasIndicator(s.id):null;
+ const isEnergy=category.value==='Energy and resources';
+ const isStrategic=category.value==='Strategic';
+ const e=isEnergy?gasIndicator(s.id):isStrategic?militaryIndicator(s.id):null;
  const evidence=root.querySelector('#chaos-evidence'),chips=root.querySelector('#chaos-evidence-chips');
+ const statusLabel=root.querySelector('.chaos-status-badge span');if(statusLabel)statusLabel.textContent=e?'INDICATOR DIRECTION':'INFLUENCE STATUS';
+ const metricName=isEnergy?'EU GAS IMPORT VOLUME':'REAL MILITARY EXPENDITURE';
  if(e){
-  meter.setAttribute('aria-label',s.name+': EU gas-import volume change indicator '+(e.index>0?'plus':'')+e.index+'. Not overall geopolitical influence.');
-  renderAssessment({status:e.index>0?'rising':'declining',score:e.index,confidence:'high'});
-  evidence.textContent='EU GAS IMPORT VOLUME INDICATOR (2021–2025): '+e.baseline+' to '+e.latest+' bcm; symmetric change index '+(e.index>0?'+':'')+e.index+'. Formula: 100 × (2025 volume − 2021 volume) ÷ (2025 volume + 2021 volume). This is a volume-change index, NOT a measure of total U.S. or Russian power, profit, or causation. Source: European Council / European Commission. ';
-  const a=document.createElement('a');a.href=e.source;a.target='_blank';a.rel='noopener noreferrer';a.textContent='View source ↗';evidence.appendChild(a);
+  meter.setAttribute('aria-label',s.name+': '+metricName+' indicator '+(e.index>0?'+':'')+e.index+'. Not total geopolitical influence.');
+  renderAssessment({status:e.index>0?'rising':e.index<0?'declining':'stable',score:e.index,confidence:'high'});
+  if(isEnergy){
+   evidence.textContent='EU GAS IMPORT VOLUME INDICATOR (2021–2025): '+e.baseline+' to '+e.latest+' bcm; symmetric change index '+(e.index>0?'+':'')+e.index+'. Formula: 100 × (2025 volume − 2021 volume) ÷ (2025 volume + 2021 volume). This measures EU supply volume, NOT total geopolitical power. ';
+  }else{
+   evidence.textContent='STRATEGIC RESOURCE INPUT INDICATOR (2024–2025): '+e.spending2025+' billion USD spent in 2025; SIPRI inflation-adjusted spending change '+(e.change>0?'+':'')+e.change+'%. Needle uses the real percentage change directly (capped to ±100 if necessary), NOT an index of strategic success, capability, or national influence. SIPRI 2025 estimates. ';
+  }
+  const link=document.createElement('a');link.href=e.source;link.target='_blank';link.rel='noopener noreferrer';link.textContent='View source ↗';evidence.appendChild(link);
  }else{
   meter.setAttribute('aria-label',s.name+': national influence assessment pending evidence review');renderAssessment(null);
-  evidence.textContent=isEnergy?'Energy assessment pending: no comparable EU gas-volume indicator for '+s.name+'. Do not infer zero change.':'Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
+  evidence.textContent=isEnergy?'Energy indicator pending for '+s.name+'. This EU gas-volume measure does not cover all spheres.':isStrategic?'Strategic resource indicator pending for '+s.name+'. SIPRI regional Europe data includes non-EU countries; it is not a defensible EU-only measure.':'Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
  }
- if(chips)chips.querySelectorAll('span').forEach(span=>{span.textContent=span.textContent.split(' · ')[0]+' · Pending';});
- if(chips&&e)chips.querySelectorAll('span').forEach(span=>{if(span.textContent.startsWith('Energy'))span.textContent='Energy · EU gas indicator measured';});
- const label=root.querySelector('#chaos-indicator-explainer');if(label)label.hidden=!e;
+ if(chips){chips.querySelectorAll('span').forEach(span=>{span.textContent=span.textContent.split(' · ')[0]+' · Pending';});if(e)chips.querySelectorAll('span').forEach(span=>{if(span.textContent.startsWith(isEnergy?'Energy':'Strategic'))span.textContent=(isEnergy?'Energy · EU gas volume':'Strategic · military spending')+' measured';});}
+ const label=root.querySelector('#chaos-indicator-explainer');if(label){label.hidden=!e;label.textContent=isEnergy?'Indicator only: needle tracks 2021–2025 EU gas-import volume change, not overall influence.':isStrategic?'Indicator only: needle tracks 2024–2025 inflation-adjusted military-spending change, not strategic influence or performance.':' ';}
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
 const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),comparison=root.querySelector('#chaos-comparison-result');
