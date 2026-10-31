@@ -27,3 +27,18 @@
 .chaos-hub a:hover{text-decoration:underline}
 .chaos-disclaimer{background:#263951;border-left:3px solid #d6a057;padding:12px 14px;font-size:12px!important}
 @media(max-width:720px){.chaos-hub summary{padding:20px;display:block}.chaos-expand{display:inline-block;margin-top:14px}.chaos-dashboard{padding:20px}.chaos-layout{grid-template-columns:1fr}.chaos-hub h1{font-size:27px}}
+
+/* Compact readable dial: retain all meter labels below SVG bounds. */
+.chaos-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin:16px 0;align-items:start}
+.chaos-gauge,.chaos-recent{padding:18px}
+.chaos-gauge label{margin:10px 0 5px}
+.chaos-meter-graphic{width:min(100%,240px);margin:12px auto 8px}
+.chaos-meter-graphic svg{height:auto}
+.chaos-meter-text{margin:8px auto 4px;font-size:14px;line-height:1.25;overflow-wrap:anywhere}
+.chaos-meter-zones{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;font-weight:700;letter-spacing:.04em;color:#cbd5e1}
+.chaos-meter-zones span:last-child{text-align:right}
+.chaos-gauge h3{margin:12px 0 5px}
+.chaos-gauge p{margin:7px 0}
+.chaos-update{padding:9px 0}
+.chaos-recent h3{margin-bottom:8px}
+@media(max-width:720px){.chaos-layout{grid-template-columns:1fr}.chaos-gauge,.chaos-recent{padding:16px}}
