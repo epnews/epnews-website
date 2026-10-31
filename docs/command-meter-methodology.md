@@ -24,6 +24,10 @@ EU and Russian gas records describe opposite sides of one flow; they are not ind
 
 All five actors now have visible source-linked energy research worksheets. These are investigation leads, not independently approved outcome assessments or scored national leverage. U.S. LNG share and EU/Russian gas-flow changes must not be counted as independent geopolitical gains without separate delivered, net-of-cost influence outcomes. China and India worksheets explicitly distinguish import exposure from bargaining power. Every worksheet states its baseline limitations, needed independent outcomes, costs, counterfactual and calibration work. All energy influence scores remain withheld.
 
+## Economic and strategic research coverage
+
+All five actors now have economic and strategic candidate worksheets in addition to energy. Economic inputs include WDI output observations; strategic inputs include SIPRI estimates, except the EU worksheet uses EDA's EU-27 spending aggregate. These are **input or output proxies**, not measured external leverage. Every worksheet explicitly withholds a score and names the independent delivered outcomes, net costs, alternative explanations and fixed normalization still needed. GDP growth cannot be scored as a gain in international command, and military spending cannot be scored as improved military effectiveness. EU defence spending must not be equated to NATO or an EU standing army.
+
 ## Remaining research gates
 
 All actors: harmonized outcome baselines, independently measured durable leverage, realized costs/distribution, alternative explanations, normalization targets and editorial worksheet. Russia: ratification record alone does not independently establish treaty implementation. India: energy snapshot lacks a verified newer matched series. Diplomacy: ratification/entry into force must be distinguished from actual economic and security returns. The regional tracker remains a list of research questions outside the five-actor scoring grid.
