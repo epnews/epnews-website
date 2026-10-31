@@ -66,3 +66,12 @@
 .chaos-local-pending{display:inline-block;font-size:11px;color:#f6c786;font-weight:700;margin-top:4px}
 .chaos-local-tracker .chaos-local-method{font-size:12px;color:#bac7d6}
 @media(max-width:720px){.chaos-local-tracker{padding:16px}.chaos-local-list{grid-template-columns:1fr}}
+
+/* Explicit, accessible expand/collapse affordance */
+.chaos-hub .chaos-expand-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;flex:0 0 235px;max-width:235px}
+.chaos-hub .chaos-expand{display:inline-flex;justify-content:center;align-items:center;white-space:normal;text-align:center;min-width:210px;font-weight:800;border-color:#e6ae76;animation:chaos-expand-pulse 2.5s ease-in-out infinite}
+.chaos-hub .chaos-expand-helper{font-size:11px;color:#c7d3e0;text-align:center;line-height:1.45}
+.chaos-hub[open] .chaos-expand{animation:none;background:#293d59}
+@keyframes chaos-expand-pulse{0%,100%{box-shadow:0 0 0 0 rgba(230,174,118,0);border-color:#c9a477}50%{box-shadow:0 0 0 7px rgba(230,174,118,.14);border-color:#ffd59b}}
+@media(max-width:720px){.chaos-hub .chaos-expand-wrap{align-items:flex-start;max-width:100%;margin-top:16px}.chaos-hub .chaos-expand-helper{text-align:left}.chaos-hub .chaos-expand{min-width:0}}
+@media(prefers-reduced-motion:reduce){.chaos-hub .chaos-expand{animation:none!important}}
