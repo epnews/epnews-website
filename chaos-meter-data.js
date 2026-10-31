@@ -51,6 +51,41 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "projectCapitalEvidence": {
+  "title": "Corpus Christi Stage 3 · construction costs and commitments",
+  "status": "Reported subsidiary construction cash spending and EPC commitments; returns unmeasured",
+  "scope": "Cheniere Corpus Christi Holdings (CCH), not all U.S. LNG exporters. USD billions; amounts approximate where reported.",
+  "observations": [
+    {
+      "label": "Stage 3 construction costs paid",
+      "baseline": 1.5,
+      "outcome": 1.3,
+      "unit": "USD billions",
+      "period": "2024 → 2025",
+      "source": "cch2025Sec"
+    }
+  ],
+  "commitments": [
+    {
+      "label": "Stage 3 EPC contract price including change orders",
+      "value": 6,
+      "unit": "USD billions",
+      "asOf": "December 31, 2025",
+      "source": "cch2025Sec"
+    },
+    {
+      "label": "Stage 3 EPC remaining contractual obligations",
+      "value": 0.7,
+      "unit": "USD billions",
+      "asOf": "December 31, 2025",
+      "source": "cch2025Sec"
+    }
+  ],
+  "boundaries": "The $6.0B EPC price is a contract amount, not all-in capital invested, net present value or cash paid in 2025. Remaining $0.7B is part of the contract commitments, not an additional $0.7B to add to the contract price. The annual $1.5B and $1.3B construction cash spending are components of project investment, not profit or household costs. Do not sum these categories.",
+  "remaining": "Verify complete lifetime capital spending, financing and interest allocation, post-2025 costs, project-specific realized operating cash flows, public exposure and domestic price counterfactual. Do not calculate project ROI or net national benefit.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "capacityTimelineEvidence": {
   "title": "LNG capacity timing · preexisting investment versus later disruptions",
   "status": "Verified milestones; project return and causal impact unresolved",
@@ -764,6 +799,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "cch2025Sec": {"label":"Cheniere Corpus Christi Holdings · FY2025 SEC Form 10-K, construction costs and EPC commitments","url":"https://www.sec.gov/Archives/edgar/data/1693317/000169331726000003/cch-20251231.htm","date":"2026-02-26; FY2024–FY2025 figures"},
     "eiaCorpusStartup": {"label":"EIA · Corpus Christi Stage 3 first cargo","url":"https://www.eia.gov/todayinenergy/detail.php?id=64704","date":"2025-03-11"},
     "eiaCorpusComplete": {"label":"EIA · Corpus Christi Stage 3 completion","url":"https://www.eia.gov/todayinenergy/detail.php?id=68144","date":"2026-09-15"},
     "doeLNGPrices2026Aug": {"label": "DOE · August 2026 report, Table 15b (annual columns)", "url": "https://www.energy.gov/sites/default/files/2026-10/Natural%20Gas%20Imports%20and%20Exports%20Monthly%20August%202026.pdf#page=38", "date": "2026-10-22; 2024–2025 annual observations"},
