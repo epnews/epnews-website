@@ -16,6 +16,34 @@ window.EP_CHAOS_DATA = {
   },
   "researchWorksheets": {
     "china": {
+      "Economic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "2025 real GDP growth is reported in the World Bank WDI series.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "wb"
+            ],
+            "interpretation": "Output growth does not directly measure foreign leverage.",
+            "additionalOutcomesNeeded": "Realized trade share, independently documented port throughput, investment receipts and counterparty bargaining outcomes.",
+            "costAccountingNeeded": "Debt and subsidy burdens, partner liabilities and external financing costs.",
+            "counterfactualNeeded": "Preexisting industrial capacity, cyclical demand and trade diversion.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
+      "Strategic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "SIPRI publishes estimated Chinese military spending changes for 2025.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "sipri"
+            ],
+            "interpretation": "Spending estimates do not establish usable overseas reach.",
+            "additionalOutcomesNeeded": "Verified access agreements, deployed assets, sustained operations and independent readiness outcomes.",
+            "costAccountingNeeded": "Acquisition, maintenance, regional security response and economic opportunity costs.",
+            "counterfactualNeeded": "Modernization already underway and neighboring states' deterrence investments.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Energy and resources": {
         "status": "Import exposure research — no influence score",
         "candidateBaseline": "Chinese crude-oil import sourcing before the latest reported EIA observation; comparable source-by-source baseline not yet established.",
@@ -30,6 +58,34 @@ window.EP_CHAOS_DATA = {
       }
     },
     "eu": {
+      "Economic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "World Bank WDI reports EU aggregate economic growth; member-country coverage and observation periods require care.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "wb"
+            ],
+            "interpretation": "EU economic output cannot be conflated with European geopolitical influence.",
+            "additionalOutcomesNeeded": "Verified cross-border investment, implemented trade gains, market access and partner policy changes.",
+            "costAccountingNeeded": "Adjustment costs, subsidies, energy premiums and uneven member-state incidence.",
+            "counterfactualNeeded": "Business cycles, preexisting trade integration and national rather than EU-level policies.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
+      "Strategic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "EDA reported EU-27 defence spending of €418B in 2025; 2026 figures are projections.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "eda"
+            ],
+            "interpretation": "Member-state budgets are not an EU standing force or independently verified readiness.",
+            "additionalOutcomesNeeded": "Delivered joint procurement, operational deployments, interoperability and security outcomes.",
+            "costAccountingNeeded": "National budget incidence, procurement duplication, sustainment and displacement of social spending.",
+            "counterfactualNeeded": "NATO and U.S. contributions, previously planned spending and national initiatives.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Energy and resources": {
         "status": "Gas diversification research — no influence score",
         "candidateBaseline": "EU Russian-gas exposure before 2022; Council source reports more than 150 bcm supplied in 2021.",
@@ -44,6 +100,34 @@ window.EP_CHAOS_DATA = {
       }
     },
     "india": {
+      "Economic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "World Bank WDI reports India's 2025 real GDP growth; national-account periods need reconciliation.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "wb"
+            ],
+            "interpretation": "Growth does not prove external bargaining power or treaty benefits.",
+            "additionalOutcomesNeeded": "Delivered TEPA investment, verified employment, export access and counterpart dependence after entry into force.",
+            "costAccountingNeeded": "Tariff concessions, infrastructure and fiscal costs, and distributional impacts.",
+            "counterfactualNeeded": "Domestic growth momentum, investment plans preceding TEPA and global demand.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
+      "Strategic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "SIPRI publishes Indian military expenditure estimates for 2025.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "sipri"
+            ],
+            "interpretation": "Input spending does not measure strategic autonomy or delivered deterrence.",
+            "additionalOutcomesNeeded": "Verified deployment readiness, domestic production deliveries, usable access and partner policy outcomes.",
+            "costAccountingNeeded": "Procurement and sustainment costs, import dependence and public budget trade-offs.",
+            "counterfactualNeeded": "Long-running modernization, regional threats and alliance-independent decisions.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Energy and resources": {
         "status": "Energy import exposure research — no influence score",
         "candidateBaseline": "India ministry's 2025 statement reports roughly 88% crude-oil import reliance; this is a single-period exposure snapshot.",
@@ -58,6 +142,34 @@ window.EP_CHAOS_DATA = {
       }
     },
     "us": {
+      "Economic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "Real GDP growth, 2025 versus 2024: 2.2% (World Bank WDI series).",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "wb"
+            ],
+            "interpretation": "Domestic growth is not a measure of overseas bargaining power.",
+            "additionalOutcomesNeeded": "Cross-border realized investment and production, partner dependence, verified trade terms and employment changes.",
+            "costAccountingNeeded": "Subsidies, tariff incidence, consumer prices and public debt exposure.",
+            "counterfactualNeeded": "Business-cycle and investment trends that preceded the geopolitical events.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
+      "Strategic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "SIPRI estimates U.S. 2025 military expenditure at US$954B, with a reported real change of −7.5%.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "sipri"
+            ],
+            "interpretation": "Spending is a resource input, not delivered readiness or deterrence.",
+            "additionalOutcomesNeeded": "Operationally available access, delivered systems, independently assessed readiness and measurable security outcomes.",
+            "costAccountingNeeded": "Taxpayer opportunity costs, deployment, sustainment and conflict losses.",
+            "counterfactualNeeded": "Changes already budgeted, inflation, allied contributions and adversary responses.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Energy and resources": {
         "status": "Baseline research — no influence score",
         "candidateBaseline": "Global LNG export share, 2024: 21%",
@@ -72,6 +184,34 @@ window.EP_CHAOS_DATA = {
       }
     },
     "russia": {
+      "Economic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "2025 real GDP growth is reported in the World Bank WDI series.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "wb"
+            ],
+            "interpretation": "Domestic output and wartime spending are not net external economic influence.",
+            "additionalOutcomesNeeded": "Realized export receipts, sanctions-adjusted trade access, capital flows and verified partner dependence.",
+            "costAccountingNeeded": "Fiscal burden, financing restrictions, war-related losses and price discounts.",
+            "counterfactualNeeded": "Commodity prices, exchange-rate effects and prewar trading patterns.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
+      "Strategic": {
+            "status": "Candidate evidence — no influence score",
+            "candidateBaseline": "SIPRI publishes Russian military expenditure estimates for 2025.",
+            "candidateOutcome": "No independently reviewed net geopolitical influence outcome established from this input.",
+            "sources": [
+                  "sipri"
+            ],
+            "interpretation": "War spending and treaty announcements are not proof of strategic gains.",
+            "additionalOutcomesNeeded": "Verified force readiness, deployable capacity, access implementation and durable partner security outcomes.",
+            "costAccountingNeeded": "Equipment attrition, casualties, military expenditure and civilian displacement.",
+            "counterfactualNeeded": "Prewar force posture, battlefield adaptation and independent allied actions.",
+            "calibrationNeeded": "Predefine the unit, historical baseline, net-change method and materiality target before scoring; do not combine incompatible proxy units.",
+            "editorialReview": "Pending; no score authorized"
+      },
       "Energy and resources": {
         "status": "Baseline research — no influence score",
         "candidateBaseline": "EU gas dependence before 2022; source reports over 150 bcm Russian supply in 2021.",
