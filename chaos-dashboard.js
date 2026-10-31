@@ -99,6 +99,18 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.exportPriceEvidence){const p=audit.exportPriceEvidence;
+   const panel=element('section');panel.id='chaos-lng-export-prices';panel.setAttribute('aria-label','DOE destination FOB export prices');
+   panel.append(element('h5',p.title),element('strong',p.status),element('p',p.scope),element('p',p.definition),element('p',p.stage+' · '+p.stageLimitation),element('p','Source: '+p.table+' · Published '+p.published+' · Retrieved '+p.retrieved));sourceLinks(panel,[p.source]);
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Destination FOB prices; scroll horizontally on small screens');
+   const table=element('table'),head=element('thead'),header=element('tr');table.append(element('caption','LNG by vessel · FOB USD/MMBtu · matching calendar years'));
+   for(const text of ['Destination','2024 baseline','2025 outcome','Change (USD/MMBtu)']){const th=element('th',text);th.scope='col';header.append(th);}head.append(header);table.append(head);const body=element('tbody');
+   const format=value=>value===null?'Not available':value.toFixed(2);
+   for(const r of p.observations){const row=element('tr'),label=element('th',r.destination);label.scope='row';row.append(label,element('td',format(r.baseline)),element('td',format(r.outcome)),element('td',r.change===null?'Not available':(r.change>0?'+':'')+format(r.change)));body.append(row);}
+   table.append(body);scroll.append(table);panel.append(scroll,element('p',p.comparability),element('p',p.calculation),element('p','Source independence: '+p.independence),element('p','Revenue investigation: '+p.revenueFinding));sourceLinks(panel,[p.revenueSource]);
+   panel.append(element('p','Costs investigation: '+p.costFinding),element('p','Domestic-price follow-up: '+p.domesticFollowup.text));sourceLinks(panel,[p.domesticFollowup.source]);
+   panel.append(element('p','Realized receipts and margins: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.domesticPriceEvidence){const p=audit.domesticPriceEvidence;
    worksheet.append(element('h5','Domestic natural gas price context'),element('p',p.status));
    for(const o of p.observations)worksheet.append(element('p',o.year+' '+o.hub+': $'+o.valueUsdPerMMBtu.toFixed(2)+'/MMBtu ('+o.method+')'));

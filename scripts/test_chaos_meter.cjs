@@ -45,6 +45,24 @@ assert.equal(financialById.incomeTaxesPaid.baseline,-92);assert.equal(financialB
 assert.match(financial.marginCaution,/not a realized LNG cargo netback/);assert.match(financial.accountingRules,/do not subtract those again/);
 assert.match(financial.taxContext,/already reflected/);
 assert.equal(data.actors.us['Energy and resources'].number,5,'financial evidence must not replace the moving-needle observation');
+// Destination prices remain descriptive evidence, separate from company accounts and scoring.
+const exportPrices=lngAudit.exportPriceEvidence;
+assert.equal(exportPrices.priceBasis,'FOB');assert.equal(exportPrices.unit,'USD/MMBtu');assert.equal(exportPrices.transport,'Vessel');
+assert.equal(exportPrices.baselinePeriod,'2024 calendar year');assert.equal(exportPrices.comparisonPeriod,'2025 calendar year');
+assert.equal(exportPrices.stage,'Independently measured outcome');assert.match(exportPrices.stageLimitation,/not an independent audit/);
+assert.equal(exportPrices.published,'2026-10-22');assert.equal(exportPrices.retrieved,'2026-10-31');
+assert.match(exportPrices.definition,/not realized company revenue, cash receipts, profit, or net national economic benefit/);
+assert.match(exportPrices.comparability,/Missing or withheld values must stay null/);
+assert.match(exportPrices.calculation,/No volume multiplication/);assert.match(exportPrices.independence,/one reporting family/);
+assert.match(exportPrices.revenueFinding,/not cargo destination/);
+for(const key of ['realizedRevenueUsd','realizedMarginUsd','netNationalBenefitUsd','influenceScore'])assert.equal(exportPrices[key],null);
+for(const id of [exportPrices.source,exportPrices.revenueSource,exportPrices.domesticFollowup.source]){assert.ok(data.sources[id]);assert.match(data.sources[id].url,/^https:\/\//);assert.ok(data.sources[id].date);}
+// Transcription fixture: DOE Table 15b annual vessel columns (2024, 2025), not adjacent YTD columns.
+const destinationFixture={Belgium:[6.23,8.96],Croatia:[5.89,7],Finland:[6.45,6.62],France:[6.26,7.66],Germany:[8.66,8.98],Greece:[6.83,7.83],Italy:[6.05,7.9],Lithuania:[5.87,7.6],Malta:[5.49,6.49],Netherlands:[5.94,7.67],Poland:[6.37,7.14],Portugal:[5.1,6.22],Spain:[6.03,7.45],Turkiye:[6.86,8.13],'United Kingdom':[7.08,8.06]};
+assert.equal(exportPrices.observations.length,15);assert.equal(new Set(exportPrices.observations.map(r=>r.destination)).size,15);
+for(const row of exportPrices.observations){assert.deepEqual([row.baseline,row.outcome],destinationFixture[row.destination]);assert.equal(row.change,Number((row.outcome-row.baseline).toFixed(2)));}
+assert.equal(exportPrices.domesticFollowup.baseline,2.19);assert.equal(exportPrices.domesticFollowup.outcome,3.52);assert.equal(exportPrices.domesticFollowup.unit,'USD/MMBtu');
+assert.equal(data.actors.us['Energy and resources'].metric,'lng-export-share-pp');
 const prices=lngAudit.domesticPriceEvidence;
 assert.equal(prices.observations.length,2);
 assert.equal(prices.costEstimateUsd,null);
@@ -96,4 +114,5 @@ const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
 assert.match(dashboard.trimEnd(),/}\)\(\);?$/,'orphaned code after dashboard closure');
-console.log('PASS: 20 records; 13 financial rows and sources; accounting reconciliation; null scores; scoring gates; numeric indicators; single initialization and integration.');
+assert.equal((dashboard.match(/if\(audit\.exportPriceEvidence\)/g)||[]).length,1,'duplicate export-price renderer');
+console.log('PASS: 15 matched FOB destination prices; 20 records; 13 financial rows and sources; accounting reconciliation; null scores; scoring gates; numeric indicators; single initialization and integration.');
