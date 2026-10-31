@@ -77,7 +77,17 @@ function update(){
  renderCards(actor.id,dim);
  let worksheet=root.querySelector('#chaos-research-worksheet');if(!worksheet){worksheet=element('section',undefined,'chaos-indicator-card');worksheet.id='chaos-research-worksheet';worksheet.setAttribute('aria-label','Influence assessment research worksheet');cards.parentNode.insertBefore(worksheet,cards);}
  worksheet.replaceChildren();const sheet=data.researchWorksheets&&data.researchWorksheets[actor.id]&&data.researchWorksheets[actor.id][dim];
- if(sheet){worksheet.hidden=false;worksheet.append(element('h4','Research worksheet · '+dim),element('strong',sheet.status));for(const [heading,key] of [['Baseline','candidateBaseline'],['Observed outcome','candidateOutcome'],['Interpretation','interpretation'],['Missing independent outcomes','additionalOutcomesNeeded'],['Costs and beneficiaries','costAccountingNeeded'],['Counterfactual','counterfactualNeeded'],['Calibration','calibrationNeeded'],['Editorial status','editorialReview']]){worksheet.append(element('h5',heading),element('p',sheet[key]));}sourceLinks(worksheet,sheet.sources);}else{worksheet.hidden=true;}
+ if(sheet){worksheet.hidden=false;worksheet.append(element('h4','Research worksheet · '+dim),element('strong',sheet.status));for(const [heading,key] of [['Baseline','candidateBaseline'],['Observed outcome','candidateOutcome'],['Interpretation','interpretation'],['Missing independent outcomes','additionalOutcomesNeeded'],['Costs and beneficiaries','costAccountingNeeded'],['Counterfactual','counterfactualNeeded'],['Calibration','calibrationNeeded'],['Editorial status','editorialReview']]){worksheet.append(element('h5',heading),element('p',sheet[key]));}sourceLinks(worksheet,sheet.sources);
+ const audit=data.evidenceAudits&&data.evidenceAudits[actor.id]&&data.evidenceAudits[actor.id][dim];
+ if(audit){
+  worksheet.append(element('h4','Evidence audit · '+audit.caseId),element('strong',audit.status));
+  for(const o of audit.observations)worksheet.append(element('p',o.period+': '+o.value+' '+o.unit+' · '+o.measure));
+  worksheet.append(element('p','Observed change: '+(audit.derived.value>0?'+':'')+audit.derived.value+' '+audit.derived.unit+' ('+audit.derived.formula+'). '+audit.derived.note),element('p','Source independence: '+audit.evidenceIndependence),element('p','Attribution: '+audit.chronology));
+  worksheet.append(element('h5','Evidence required before scoring'));
+  const list=element('ul');for(const item of audit.unresolved)list.append(element('li',item));worksheet.append(list);
+  sourceLinks(worksheet,[...new Set(audit.observations.map(o=>o.source))]);
+ }
+ }else{worksheet.hidden=true;}
 
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
