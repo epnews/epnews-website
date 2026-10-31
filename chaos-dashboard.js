@@ -19,7 +19,34 @@ if(hub){
 const select=root.querySelector('#chaos-sphere'),meter=root.querySelector('#chaos-meter'),name=root.querySelector('#chaos-sphere-name'),description=root.querySelector('#chaos-sphere-description');
 const category=root.querySelector('#chaos-dimension');
 select.innerHTML=spheres.map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');
-function update(){let s=spheres.find(x=>x.id===select.value)||spheres[0];name.textContent=s.name;description.textContent=s.note;meter.setAttribute('aria-label',s.name+': influence score pending evidence review');root.querySelector('#chaos-evidence').textContent='Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';}
+const svgNS='http://www.w3.org/2000/svg';
+const segmentRoot=root.querySelector('#chaos-dial-segments'),tickRoot=root.querySelector('#chaos-dial-ticks');
+const needle=root.querySelector('#chaos-needle-group'),confidenceArc=root.querySelector('#chaos-confidence-value');
+const palette=['#c06369','#cf8b6b','#8393a7','#53a9a0','#2ba77d'];
+const point=(deg,r)=>({x:160+r*Math.cos((180-deg)*Math.PI/180),y:174-r*Math.sin((180-deg)*Math.PI/180)});
+function arc(d1,d2,r){const p1=point(d1,r),p2=point(d2,r);return 'M '+p1.x.toFixed(2)+' '+p1.y.toFixed(2)+' A '+r+' '+r+' 0 0 1 '+p2.x.toFixed(2)+' '+p2.y.toFixed(2);}
+if(segmentRoot&&tickRoot){
+ for(let i=0;i<5;i++){const el=document.createElementNS(svgNS,'path');el.setAttribute('d',arc(i*36+2,(i+1)*36-2,128));el.setAttribute('stroke',palette[i]);el.setAttribute('class','chaos-dial-segment');segmentRoot.append(el);}
+ for(let i=0;i<=30;i++){const a=i*6,p1=point(a,i%5===0?109:114),p2=point(a,118);const line=document.createElementNS(svgNS,'line');line.setAttribute('x1',p1.x);line.setAttribute('y1',p1.y);line.setAttribute('x2',p2.x);line.setAttribute('y2',p2.y);if(i%5===0)line.setAttribute('class','major');tickRoot.append(line);}
+}
+// Reserved for a later sourced scoring dataset; no numeric scores are inferred from article headlines.
+function renderAssessment(record){
+ const state=record&&['rising','stable','declining','mixed'].includes(record.status)?record.status:'pending';
+ meter.dataset.state=state;
+ const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
+ status.textContent=state==='pending'?'PENDING':state.toUpperCase();
+ conf.textContent=record&&record.confidence?record.confidence.toUpperCase()+' CONFIDENCE':'NOT YET ASSESSED';
+ const validScore=record&&typeof record.score==='number'&&Number.isFinite(record.score)&&record.score>=-100&&record.score<=100;
+ if(needle)needle.style.transform='rotate('+ (validScore ? Math.max(-90,Math.min(90,record.score*.9)) : 0)+'deg)';
+ if(confidenceArc)confidenceArc.style.strokeDasharray=(record&&typeof record.confidenceFraction==='number'&&record.confidenceFraction>=0&&record.confidenceFraction<=100?record.confidenceFraction:0)+' 100';
+}
+function update(){
+ const s=spheres.find(x=>x.id===select.value)||spheres[0];
+ name.textContent=s.name;description.textContent=s.note;
+ meter.setAttribute('aria-label',s.name+': influence assessment pending evidence review');
+ renderAssessment(null);
+ root.querySelector('#chaos-evidence').textContent='Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
+}
 select.addEventListener('change',update);category.addEventListener('change',update);
 const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),comparison=root.querySelector('#chaos-comparison-result');
 if(left&&right&&comparison){

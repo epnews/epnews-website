@@ -117,3 +117,26 @@
 .chaos-hub>summary{background:#101d2e url('https://drive.google.com/thumbnail?id=19LfRg67skzr9ifpSO1jgrOuNjU1rZ-wu&sz=w1000') center center / cover no-repeat}
 .chaos-hub>summary .chaos-hero-art{display:none!important}
 }
+
+/* Geopolitical Command Dial: separate instrument and status, responsive and accessible. */
+.chaos-command-dial{margin:12px auto 0;max-width:100%;color:#eff4fc}
+.chaos-dial-wrap{position:relative;width:min(100%,320px);margin:0 auto}
+.chaos-dial-svg{display:block;width:100%;height:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.28))}
+.chaos-dial-track{stroke:#2b425a;stroke-width:20;fill:none;stroke-linecap:round}
+.chaos-dial-segment{fill:none;stroke-width:18;stroke-linecap:butt}
+.chaos-confidence-track{fill:none;stroke:#30475e;stroke-width:5;stroke-linecap:round}
+.chaos-confidence-value{fill:none;stroke:#e4b867;stroke-width:5;stroke-dasharray:0 100;transition:stroke-dasharray .5s ease}
+.chaos-dial-ticks line{stroke:#e3eaf4;stroke-width:1.6;opacity:.85}
+.chaos-dial-ticks line.major{stroke-width:2.6;opacity:1}
+.chaos-needle-group{transform-origin:160px 174px;transition:transform .6s ease}
+.chaos-needle{stroke:#faf5e7;stroke-width:3;stroke-linecap:round}
+.chaos-needle-glow{stroke:#f9c976;stroke-width:8;opacity:.35}
+.chaos-needle-cap{fill:#e6eef6;stroke:#9dacc3;stroke-width:2}
+.chaos-status-badge{position:relative;max-width:212px;margin:-10px auto 0;padding:8px 10px;border:1px solid #4c6481;border-radius:12px;background:linear-gradient(#192c43,#0f1d2e);box-shadow:0 8px 20px rgba(0,0,0,.25);text-align:center}
+.chaos-status-badge span,.chaos-status-badge small{display:block;font-size:9px;font-weight:700;letter-spacing:.09em;color:#c0d0e2;line-height:1.45}
+.chaos-status-badge strong{display:block;margin:2px 0;color:#f4c57b;font-size:19px;line-height:1.15}
+.chaos-dial-zones{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;max-width:320px;margin:11px auto 0;text-align:center;font-size:8px;line-height:1.4;font-weight:800;color:#c3d1e1}
+.chaos-evidence-chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.chaos-evidence-chips span{border:1px solid #405a75;background:#1a304a;border-radius:15px;color:#d2deeb;padding:5px 8px;font-size:10px;font-weight:700}
+@media(max-width:720px){.chaos-dial-wrap{width:min(100%,300px)}.chaos-dial-zones{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.chaos-needle-group,.chaos-confidence-value{transition:none!important}}
