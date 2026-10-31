@@ -86,6 +86,15 @@ function update(){
   worksheet.append(element('h5','Evidence required before scoring'));
   const list=element('ul');for(const item of audit.unresolved)list.append(element('li',item));worksheet.append(list);
   sourceLinks(worksheet,[...new Set(audit.observations.map(o=>o.source))]);
+  if(audit.costIncidenceLedger){const ledger=audit.costIncidenceLedger;
+   worksheet.append(element('h5','Who benefits and who pays?'),element('p',ledger.status),element('p',ledger.scope));
+   for(const [heading,entries] of [['Potential beneficiaries',ledger.beneficiaries],['Potential payers and costs',ledger.payers]]){
+    worksheet.append(element('h5',heading));const list=element('ul');
+    for(const item of entries)list.append(element('li',item.party+' — '+item.measure+'. '+item.state+'; evidence needed: '+item.sourceGap+'.'));
+    worksheet.append(list);
+   }
+   worksheet.append(element('h5','Net benefit calculation'),element('p',ledger.accountingRule),element('p','Counterfactual: '+ledger.counterfactual),element('p','Foreign-policy test: '+ledger.foreignPolicyTest),element('p','Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
+  }
   if(audit.deliveryEvidence){const d=audit.deliveryEvidence;
    worksheet.append(element('h5','Verified destination deliveries'),element('p',d.region+' · '+d.period+': '+d.baselineBcfPerDay+' → '+d.outcomeBcfPerDay+' billion cubic feet per day (+'+d.changeBcfPerDay+' Bcf/d).'),element('p',d.interpretation),element('p','Source independence: '+d.independenceCaution),element('p','Still unresolved: '+d.remaining));sourceLinks(worksheet,d.sourceIds);
   }
