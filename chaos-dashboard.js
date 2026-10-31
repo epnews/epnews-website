@@ -42,6 +42,11 @@ function gasIndicator(sphere){const d=gasVolumeEvidence[sphere];if(!d)return nul
 const militaryExpenditure={us:{spending2025:954,change:-7.5},china:{spending2025:336,change:7.4},russia:{spending2025:190,change:5.9},india:{spending2025:92.1,change:8.9}};
 const sipriSource='https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025';
 function militaryIndicator(sphere){const d=militaryExpenditure[sphere];return d?{...d,index:d.change,source:sipriSource}:null;}
+// World Bank WDI 2025 GDP real annual growth, five geopolitical spheres.
+// This is domestic output growth (economic momentum), NOT external economic influence.
+const economicGDPGrowth={us:2.2,china:5.0,russia:1.0,eu:1.5,india:7.6};
+const worldBankSource='https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2';
+function economicIndicator(sphere){const g=economicGDPGrowth[sphere];return typeof g==='number'?{index:g,growth:g,source:worldBankSource}:null;}
 function renderAssessment(record){
  const state=record&&['rising','stable','declining','mixed'].includes(record.status)?record.status:'pending';
  meter.dataset.state=state;
@@ -58,25 +63,29 @@ function update(){
  name.textContent=s.name;description.textContent=s.note;
  const isEnergy=category.value==='Energy and resources';
  const isStrategic=category.value==='Strategic';
- const e=isEnergy?gasIndicator(s.id):isStrategic?militaryIndicator(s.id):null;
+ const isEconomic=category.value==='Economic';
+ const isDiplomatic=category.value==='Diplomatic';
+ const e=isEnergy?gasIndicator(s.id):isStrategic?militaryIndicator(s.id):isEconomic?economicIndicator(s.id):null;
  const evidence=root.querySelector('#chaos-evidence'),chips=root.querySelector('#chaos-evidence-chips');
  const statusLabel=root.querySelector('.chaos-status-badge span');if(statusLabel)statusLabel.textContent=e?'INDICATOR DIRECTION':'INFLUENCE STATUS';
- const metricName=isEnergy?'EU GAS IMPORT VOLUME':'REAL MILITARY EXPENDITURE';
+ const metricName=isEnergy?'EU GAS IMPORT VOLUME':isStrategic?'REAL MILITARY EXPENDITURE':'REAL GDP GROWTH';
  if(e){
   meter.setAttribute('aria-label',s.name+': '+metricName+' indicator '+(e.index>0?'+':'')+e.index+'. Not total geopolitical influence.');
   renderAssessment({status:e.index>0?'rising':e.index<0?'declining':'stable',score:e.index,confidence:'high'});
   if(isEnergy){
    evidence.textContent='EU GAS IMPORT VOLUME INDICATOR (2021–2025): '+e.baseline+' to '+e.latest+' bcm; symmetric change index '+(e.index>0?'+':'')+e.index+'. Formula: 100 × (2025 volume − 2021 volume) ÷ (2025 volume + 2021 volume). This measures EU supply volume, NOT total geopolitical power. ';
-  }else{
+  }else if(isStrategic){
    evidence.textContent='STRATEGIC RESOURCE INPUT INDICATOR (2024–2025): '+e.spending2025+' billion USD spent in 2025; SIPRI inflation-adjusted spending change '+(e.change>0?'+':'')+e.change+'%. Needle uses the real percentage change directly (capped to ±100 if necessary), NOT an index of strategic success, capability, or national influence. SIPRI 2025 estimates. ';
+  }else{
+   evidence.textContent='ECONOMIC OUTPUT MOMENTUM (2025): World Bank real GDP growth '+e.growth+'%. Needle uses annual real GDP growth in percentage points; this does NOT measure economic influence abroad, bargaining leverage, or net benefit from instability. ';
   }
   const link=document.createElement('a');link.href=e.source;link.target='_blank';link.rel='noopener noreferrer';link.textContent='View source ↗';evidence.appendChild(link);
  }else{
   meter.setAttribute('aria-label',s.name+': national influence assessment pending evidence review');renderAssessment(null);
-  evidence.textContent=isEnergy?'Energy indicator pending for '+s.name+'. This EU gas-volume measure does not cover all spheres.':isStrategic?'Strategic resource indicator pending for '+s.name+'. SIPRI regional Europe data includes non-EU countries; it is not a defensible EU-only measure.':'Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
+  evidence.textContent=isEnergy?'Energy indicator pending for '+s.name+'. This EU gas-volume measure does not cover all spheres.':isStrategic?'Strategic resource indicator pending for '+s.name+'. SIPRI regional Europe data includes non-EU countries; it is not a defensible EU-only measure.':isDiplomatic?'Diplomatic indicator not scored: one-year UN voting snapshots and treaty announcements do not establish a comparable 2024–2025 change in diplomatic influence. Source framework: https://digitallibrary.un.org/ .':'Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
  }
- if(chips){chips.querySelectorAll('span').forEach(span=>{span.textContent=span.textContent.split(' · ')[0]+' · Pending';});if(e)chips.querySelectorAll('span').forEach(span=>{if(span.textContent.startsWith(isEnergy?'Energy':'Strategic'))span.textContent=(isEnergy?'Energy · EU gas volume':'Strategic · military spending')+' measured';});}
- const label=root.querySelector('#chaos-indicator-explainer');if(label){label.hidden=!e;label.textContent=isEnergy?'Indicator only: needle tracks 2021–2025 EU gas-import volume change, not overall influence.':isStrategic?'Indicator only: needle tracks 2024–2025 inflation-adjusted military-spending change, not strategic influence or performance.':' ';}
+ if(chips){chips.querySelectorAll('span').forEach(span=>{span.textContent=span.textContent.split(' · ')[0]+' · Pending';});if(e)chips.querySelectorAll('span').forEach(span=>{if(span.textContent.startsWith(isEnergy?'Energy':isStrategic?'Strategic':'Economic'))span.textContent=(isEnergy?'Energy · EU gas volume':isStrategic?'Strategic · military spending':'Economic · real GDP growth')+' measured';});}
+ const label=root.querySelector('#chaos-indicator-explainer');if(label){label.hidden=!e;label.textContent=isEnergy?'Indicator only: needle tracks 2021–2025 EU gas-import volume change, not overall influence.':isStrategic?'Indicator only: needle tracks 2024–2025 inflation-adjusted military-spending change, not strategic influence or performance.':isEconomic?'Indicator only: needle tracks 2025 annual real GDP growth (not 2024–2025 change in influence).':' ';}
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
 const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),comparison=root.querySelector('#chaos-comparison-result');
