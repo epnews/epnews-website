@@ -1,5 +1,12 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const cap=data.evidenceAudits.us['Energy and resources'].capacityTimelineEvidence;
+assert.equal(cap.events.length,3);
+assert.equal(cap.events[0].date,'December 2024');
+assert.equal(cap.events[2].date,'August 28, 2026');
+assert.match(cap.capacity,/1.3 Bcf\/day nominal/);
+for(const e of cap.events){assert.ok(data.sources[e.source]);}
+assert.equal(data.actors.us['Energy and resources'].score,null);
 assert.equal(Object.keys(data.actors).length,5);assert.equal(Object.values(weights).reduce((a,b)=>a+b,0),1);
 for(const records of Object.values(data.actors)){
  assert.equal(Object.keys(records).length,4);assert.equal(assessment(records).score,null);

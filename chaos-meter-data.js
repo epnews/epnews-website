@@ -51,6 +51,31 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "capacityTimelineEvidence": {
+  "title": "LNG capacity timing · preexisting investment versus later disruptions",
+  "status": "Verified milestones; project return and causal impact unresolved",
+  "scope": "Corpus Christi Stage 3, Texas; capacity is not shipped volume",
+  "events": [
+    {
+      "date": "December 2024",
+      "event": "First LNG production",
+      "source": "eiaCorpusStartup"
+    },
+    {
+      "date": "February 2025",
+      "event": "First LNG cargo",
+      "source": "eiaCorpusStartup"
+    },
+    {
+      "date": "August 28, 2026",
+      "event": "Final Stage 3 train transferred into custody and control",
+      "source": "eiaCorpusComplete"
+    }
+  ],
+  "capacity": "Stage 3: 1.3 Bcf/day nominal and 1.5 Bcf/day peak. Total Corpus Christi: 3.1 Bcf/day nominal and 3.9 Bcf/day peak.",
+  "interpretation": "Production began in 2024. Later 2026 disruptions cannot be credited with initiating this project. Completion does not prove profit, net U.S. benefit or geopolitical leverage.",
+  "remaining": "Project-specific realized capital spending, financing, operating costs, cash receipts, public exposure and counterfactual are not established. No influence score."
+},
             "exportPriceEvidence": {
               "caseId": "doe-destination-fob-2024-2025",
               "title": "DOE destination comparisons · FOB export prices",
@@ -739,6 +764,8 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaCorpusStartup": {"label":"EIA · Corpus Christi Stage 3 first cargo","url":"https://www.eia.gov/todayinenergy/detail.php?id=64704","date":"2025-03-11"},
+    "eiaCorpusComplete": {"label":"EIA · Corpus Christi Stage 3 completion","url":"https://www.eia.gov/todayinenergy/detail.php?id=68144","date":"2026-09-15"},
     "doeLNGPrices2026Aug": {"label": "DOE · August 2026 report, Table 15b (annual columns)", "url": "https://www.energy.gov/sites/default/files/2026-10/Natural%20Gas%20Imports%20and%20Exports%20Monthly%20August%202026.pdf#page=38", "date": "2026-10-22; 2024–2025 annual observations"},
     "cheniere2025Geography": {"label": "Cheniere FY2025 10-K · geographic revenue attribution", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4763", "date": "2026-02-26; FY2024–FY2025 observations"},
     "eiaHenryHubAnnual": {"label": "EIA · Henry Hub annual spot price series", "url": "https://www.eia.gov/dnav/ng/hist/rngwhhda.htm", "date": "2026-10-28 release; 2024–2025 observations"},
