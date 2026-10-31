@@ -111,3 +111,24 @@
 .series-report span{font-size:12px;font-weight:800}
 .series-hub-note{font-size:13px;line-height:1.7;color:#59616b;border-top:1px solid #ddd;padding-top:20px}
 @media(max-width:600px){.series-hub{padding:24px 16px 48px}.series-report-link{display:block}.series-report-image{max-width:100%;width:100%;margin-bottom:12px}}
+
+/* Headline Wire beside flagship; Editor's Desk below */
+.hero-layout>.top-wire{min-width:0;align-self:start;padding:17px 16px;background:#fff}
+.hero-layout>.top-wire .block-head{display:block;margin-bottom:14px}
+.hero-layout>.top-wire .block-head h2{font-size:clamp(18px,1.8vw,24px);line-height:1.2}
+.hero-layout>.top-wire .head-tag{display:block;margin-top:5px}
+.hero-layout>.top-wire .wire-filters{display:flex;flex-wrap:wrap;gap:5px}
+.hero-layout>.top-wire .wire-filters button{font-size:10px;padding:5px 7px}
+.hero-layout>.top-wire .wire-item{display:grid;grid-template-columns:1fr;gap:5px;padding:12px 0}
+.hero-layout>.top-wire .wire-image{display:none}
+.hero-layout>.top-wire .wire-time{font-size:10px}
+.hero-layout>.top-wire .wire-copy strong{font-size:13px;line-height:1.4}
+.hero-layout>.top-wire .wire-copy small{font-size:11px}
+.hero-layout>.top-wire .wire-type{font-size:10px}
+.under-hero>.relocated-editor{display:block;min-width:0;align-self:start}
+.under-hero>.relocated-editor .pick{align-items:flex-start}
+@media(max-width:720px){
+ .hero-layout>.top-wire{display:block;width:100%;padding:17px}
+ .under-hero>.relocated-editor{display:block;width:100%}
+ .hero-layout>.top-wire .wire-item{grid-template-columns:1fr}
+}
