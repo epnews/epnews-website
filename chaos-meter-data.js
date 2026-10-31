@@ -362,6 +362,8 @@ window.EP_CHAOS_DATA = {
       "url": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
       "date": "2025 data; retrieved 2026-10-31"
     },
+    "lngDest": {"label":"EIA · U.S. LNG exports by destination","url":"https://www.eia.gov/TodayinEnergy/detail.php?id=67484","date":"2026; 2024–2025 observations"},
+    "fercLNG": {"label":"FERC · 2025 State of the Markets","url":"https://www.ferc.gov/sites/default/files/2026-03/26_State-of-the-Market_0324_1430.pdf","date":"2026-03; 2025 review"},
     "lng": {
       "label": "EIA · global LNG trade",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=67864",
