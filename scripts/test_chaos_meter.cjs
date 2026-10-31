@@ -19,6 +19,32 @@ for(const [actor,worksheets] of Object.entries(data.researchWorksheets))for(cons
 }
 // Audited LNG observations are one source family, not two independent influence outcomes.
 const lngAudit=data.evidenceAudits.us['Energy and resources'];
+// Audited company accounting does not establish national welfare or Europe cargo margins.
+const financial=lngAudit.financialEvidence;
+assert.equal(financial.caseId,'cheniere-financials-2024-2025');
+assert.match(financial.scope,/worldwide/);assert.match(financial.independence,/one company reporting family/);
+for(const field of ['realizedEuropeMarginUsd','netNationalBenefitUsd','taxpayerNetCostUsd','influenceScore'])assert.equal(financial[field],null);
+const financialRows=[...financial.observations,...financial.derived];
+assert.equal(new Set(financialRows.map(r=>r.id)).size,financialRows.length,'duplicate financial measurements');
+for(const row of financialRows){
+ assert.equal(row.baselineYear,2024);assert.equal(row.outcomeYear,2025);
+ assert.ok(Number.isFinite(row.baseline)&&Number.isFinite(row.outcome));
+ assert.ok(row.unit&&row.limitation);assert.equal(row.stage,'Independently measured outcome');assert.ok(data.sources[row.source]);
+}
+for(const row of financial.observations)assert.equal(row.sourceFamily,financial.sourceFamily);
+for(const id of [financial.assuranceSource,...financial.marginSources,...financial.taxSources])assert.ok(data.sources[id]);
+const financialById=Object.fromEntries(financialRows.map(r=>[r.id,r]));
+for(const period of ['baseline','outcome']){
+ assert.equal(financialById.totalRevenue[period]-financialById.totalOperatingCosts[period],financialById.operatingIncome[period]);
+ assert.equal(Number((100*financialById.operatingIncome[period]/financialById.totalRevenue[period]).toFixed(1)),financialById.gaapOperatingMargin[period]);
+}
+assert.equal(financialById.lngCustomerRevenue.baseline,14972);assert.equal(financialById.lngCustomerRevenue.outcome,19091);
+assert.equal(financialById.totalInterestCost.baseline,1226);assert.equal(financialById.totalInterestCost.outcome,1197);
+assert.equal(financialById.ppeCashOutflow.outcome,3078);assert.match(financialById.ppeCashOutflow.limitation, /net of \$174M/);
+assert.equal(financialById.incomeTaxesPaid.baseline,-92);assert.equal(financialById.incomeTaxesPaid.outcome,32);
+assert.match(financial.marginCaution,/not a realized LNG cargo netback/);assert.match(financial.accountingRules,/do not subtract those again/);
+assert.match(financial.taxContext,/already reflected/);
+assert.equal(data.actors.us['Energy and resources'].number,5,'financial evidence must not replace the moving-needle observation');
 const prices=lngAudit.domesticPriceEvidence;
 assert.equal(prices.observations.length,2);
 assert.equal(prices.costEstimateUsd,null);
@@ -31,7 +57,7 @@ assert.equal(costLedger.netInfluenceScore,null);
 assert.ok(costLedger.beneficiaries.length>=3);
 assert.ok(costLedger.payers.length>=3);
 for(const entry of [...costLedger.beneficiaries,...costLedger.payers]){
- assert.equal(entry.state,'Unverified');
+ assert.ok(['Unverified','Partially documented — company accounts only'].includes(entry.state));
  assert.ok(entry.party&&entry.measure&&entry.sourceGap);
 }
 assert.ok(costLedger.counterfactual&&costLedger.foreignPolicyTest&&costLedger.accountingRule);
@@ -66,4 +92,8 @@ for(const records of Object.values(data.actors))for(const record of Object.value
 assert.ok(observed>=5,'expected multiple numeric observations for the moving needle');
 const complete=Object.fromEntries(data.dimensions.map(k=>[k,valid]));assert.equal(assessment(complete).score,50);assert.deepEqual(assessment(complete).sensitivity,[50,50]);delete complete.Strategic;assert.equal(assessment(complete).score,null);assert.equal(assessment(complete).scores.Economic,50);assert.equal(assessment(complete).scores.Strategic,null);
 const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length,'duplicate HTML IDs');for(const file of ['chaos-meter-data.js','chaos-meter-model.js','chaos-dashboard.js'])assert.ok(html.includes(file));
-console.log('PASS: 20 sourced records, missing-evidence gate, true zero, bounds, independent sources, composite, sensitivity and integration.');
+const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
+assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
+assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard.trimEnd(),/}\)\(\);?$/,'orphaned code after dashboard closure');
+console.log('PASS: 20 records; 13 financial rows and sources; accounting reconciliation; null scores; scoring gates; numeric indicators; single initialization and integration.');

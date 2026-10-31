@@ -86,6 +86,19 @@ function update(){
   worksheet.append(element('h5','Evidence required before scoring'));
   const list=element('ul');for(const item of audit.unresolved)list.append(element('li',item));worksheet.append(list);
   sourceLinks(worksheet,[...new Set(audit.observations.map(o=>o.source))]);
+  if(audit.financialEvidence){const f=audit.financialEvidence;
+   const panel=element('section');panel.id='chaos-lng-financial-evidence';panel.setAttribute('aria-label','U.S. LNG financial evidence');
+   panel.append(element('h5',f.title),element('strong',f.status),element('p',f.scope),element('p','Evidence independence: '+f.independence));sourceLinks(panel,[f.assuranceSource]);
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','LNG financial evidence table; scroll horizontally on small screens');
+   const table=element('table'),caption=element('caption','Matched annual company accounts · monetary figures in USD millions unless stated'),head=element('thead'),header=element('tr');
+   for(const text of ['Measurement','2024 baseline','2025 outcome','Evidence and limits']){const th=element('th',text);th.scope='col';header.append(th);}head.append(header);table.append(caption,head);const body=element('tbody');
+   const format=value=>new Intl.NumberFormat('en-US',{maximumFractionDigits:1}).format(value);
+   for(const r of [...f.observations,...f.derived]){const row=element('tr'),label=element('th',r.label);label.scope='row';row.append(label,element('td',format(r.baseline)+' '+r.unit),element('td',format(r.outcome)+' '+r.unit));const note=element('td');note.append(element('p',r.stage+' · '+(r.basis||'Derived annual accounting ratio')+'. '+r.limitation));if(r.formula)note.append(element('p','Formula: '+r.formula));sourceLinks(note,[r.source]);row.append(note);body.append(row);}
+   table.append(body);scroll.append(table);panel.append(scroll,element('p',f.marginCaution));sourceLinks(panel,f.marginSources);
+   panel.append(element('p','Public-cost evidence: '+f.taxContext));sourceLinks(panel,f.taxSources);
+   panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
+   worksheet.append(panel);
+  }
   if(audit.domesticPriceEvidence){const p=audit.domesticPriceEvidence;
    worksheet.append(element('h5','Domestic natural gas price context'),element('p',p.status));
    for(const o of p.observations)worksheet.append(element('p',o.year+' '+o.hub+': $'+o.valueUsdPerMMBtu.toFixed(2)+'/MMBtu ('+o.method+')'));

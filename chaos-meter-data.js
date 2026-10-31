@@ -47,10 +47,222 @@ window.EP_CHAOS_DATA = {
             "chronology": "The observed 2024–2025 shift predates any later 2026 conflict narrative. Do not attribute this increase to 2026 disruptions.",
             "unresolved": [
                   "Independently validated country-by-country delivered LNG volumes and contract prices for matched periods.",
-                  "Realized net export receipts, operating and capital costs, and domestic consumer impacts.",
+                  "Europe-specific realized receipts and margins, industry-wide capital recovery, public support and causal domestic consumer costs; audited Cheniere accounts provide only partial company evidence.",
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "financialEvidence": {
+              "caseId": "cheniere-financials-2024-2025",
+              "title": "LNG financial evidence · Cheniere 2024–2025",
+              "status": "Audited company outcomes; Europe-only realized margin and net U.S. benefit not established",
+              "scope": "Cheniere Energy, Inc. and consolidated subsidiaries, worldwide operations. Calendar-year 2024 baseline versus calendar-year 2025; not the whole U.S. LNG industry or Europe-only deliveries. Later interim filings are not substituted for this matched annual comparison.",
+              "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+              "independence": "KPMG audited the financial statements. The filing, its XBRL tables and the earnings release share one company reporting family; they are not separate independent geopolitical outcomes.",
+              "assuranceSource": "cheniere2025Audit",
+              "observations": [
+                {
+                  "id": "lngCustomerRevenue",
+                  "label": "LNG customer revenue, excluding net derivative gains/losses",
+                  "baselineYear": 2024,
+                  "baseline": 14972,
+                  "outcomeYear": 2025,
+                  "outcome": 19091,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Revenue",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Recognized contract revenue; not cash collections or Europe-only export receipts."
+                },
+                {
+                  "id": "totalRevenue",
+                  "label": "Consolidated total revenue",
+                  "baselineYear": 2024,
+                  "baseline": 15703,
+                  "outcomeYear": 2025,
+                  "outcome": 19976,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Operations",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Includes LNG, regasification, other revenue and derivative effects."
+                },
+                {
+                  "id": "costOfSales",
+                  "label": "Cost of sales",
+                  "baselineYear": 2024,
+                  "baseline": 6021,
+                  "outcomeYear": 2025,
+                  "outcome": 7150,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Operations",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Excludes separately reported O&M and depreciation; includes derivative valuation effects."
+                },
+                {
+                  "id": "operationsMaintenance",
+                  "label": "Operating and maintenance expense",
+                  "baselineYear": 2024,
+                  "baseline": 1857,
+                  "outcomeYear": 2025,
+                  "outcome": 1966,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Operations",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Reported expense, not a cash-only Europe cost allocation."
+                },
+                {
+                  "id": "totalOperatingCosts",
+                  "label": "Total operating costs and expenses",
+                  "baselineYear": 2024,
+                  "baseline": 9575,
+                  "outcomeYear": 2025,
+                  "outcome": 10864,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Operations",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Includes cost of sales, O&M, SG&A, depreciation and other costs; do not sum again with its components."
+                },
+                {
+                  "id": "operatingIncome",
+                  "label": "GAAP income from operations",
+                  "baselineYear": 2024,
+                  "baseline": 6128,
+                  "outcomeYear": 2025,
+                  "outcome": 9112,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Operations",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Includes noncash derivative effects; not realized cargo margin."
+                },
+                {
+                  "id": "operatingCashFlow",
+                  "label": "Net cash provided by operating activities",
+                  "baselineYear": 2024,
+                  "baseline": 5394,
+                  "outcomeYear": 2025,
+                  "outcome": 5539,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025CashFlow",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Company-wide cash flow after working-capital effects; not national value added."
+                },
+                {
+                  "id": "ppeCashOutflow",
+                  "label": "PP&E cash outflow, net of commissioning sales",
+                  "baselineYear": 2024,
+                  "baseline": 2238,
+                  "outcomeYear": 2025,
+                  "outcome": 3078,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025CashFlow",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Positive amounts show cash spent; 2025 is net of $174M commissioning-sale proceeds, versus zero in 2024. Not total lifetime project cost."
+                },
+                {
+                  "id": "totalDebt",
+                  "label": "Total debt before unamortized discount/issuance costs",
+                  "baselineYear": 2024,
+                  "baseline": 23097,
+                  "outcomeYear": 2025,
+                  "outcome": 22995,
+                  "unit": "USD millions",
+                  "basis": "Stock at 31 December",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Debt",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Year-end stock; includes multiple corporate/project capital structures, not public debt."
+                },
+                {
+                  "id": "totalInterestCost",
+                  "label": "Total interest cost incurred",
+                  "baselineYear": 2024,
+                  "baseline": 1226,
+                  "outcomeYear": 2025,
+                  "outcome": 1197,
+                  "unit": "USD millions",
+                  "basis": "Annual accrual cost",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Debt",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Includes capitalized interest of $216M in 2024 and $249M in 2025. Accrual cost is not an additional cash payment or another deduction from operating cash flow."
+                },
+                {
+                  "id": "interestPaid",
+                  "label": "Cash interest paid, net of capitalized amounts",
+                  "baselineYear": 2024,
+                  "baseline": 1075,
+                  "outcomeYear": 2025,
+                  "outcome": 844,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025CashSupplement",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Excludes capitalized interest; not total financing cost or an additional deduction from operating cash flow."
+                },
+                {
+                  "id": "incomeTaxesPaid",
+                  "label": "Cash income taxes paid, net of refunds",
+                  "baselineYear": 2024,
+                  "baseline": -92,
+                  "outcomeYear": 2025,
+                  "outcome": 32,
+                  "unit": "USD millions",
+                  "basis": "Annual flow",
+                  "stage": "Independently measured outcome",
+                  "source": "cheniere2025Taxes",
+                  "sourceFamily": "Cheniere FY2025 Form 10-K, SEC accession 0000003570-26-000005",
+                  "limitation": "Negative 2024 means net refund. Worldwide income taxes, not all taxes, public costs or a subsidy estimate."
+                }
+              ],
+              "derived": [
+                {
+                  "id": "gaapOperatingMargin",
+                  "label": "Derived GAAP operating margin",
+                  "baselineYear": 2024,
+                  "outcomeYear": 2025,
+                  "baseline": 39.0,
+                  "outcome": 45.6,
+                  "unit": "percent",
+                  "stage": "Independently measured outcome",
+                  "formula": "100 × consolidated income from operations ÷ consolidated total revenue; rounded to one decimal",
+                  "inputIds": [
+                    "operatingIncome",
+                    "totalRevenue"
+                  ],
+                  "source": "cheniere2025Operations",
+                  "limitation": "Descriptive accounting ratio; includes noncash effects, is not a realized LNG margin, and cannot move the needle or unlock a score."
+                }
+              ],
+              "marginCaution": "Revenue is recognized under accounting rules, not necessarily cash collected. Cost of sales includes approximately $3.5B of pre-delivery derivative fair-value gains in 2025 versus $1.4B in 2024. The GAAP operating margin shown here is not a realized LNG cargo netback. The company reports lower total margins per MMBtu despite higher delivered volumes; its adjusted EBITDA is non-GAAP and is not used as cash profit.",
+              "marginSources": [
+                "cheniere2025Results"
+              ],
+              "taxContext": "The tax note records a $380M refund of previously paid corporate alternative minimum tax received in December 2025. It also reports deferred cash tax obligations from accelerated depreciation on qualifying Corpus Christi Stage 3 assets. This is documented tax treatment, not a measured LNG-specific grant, lifetime subsidy or net taxpayer cost. The refund is already reflected in annual cash/tax accounts; do not add it again as a separate cash benefit.",
+              "taxSources": [
+                "cheniere2025Taxes"
+              ],
+              "accountingRules": "Operating cash flow already reflects operating payments and relevant cash interest/taxes; do not subtract those again. PP&E cash outflow is capital investment, not another operating expense. Debt balance is a stock, borrowing/repayment are financing flows, and neither is a taxpayer guarantee. Never add Cheniere Partners accounts to this parent consolidation without eliminating overlap.",
+              "remaining": "National export receipts, Europe-specific realized sales and margins by contract, capital recovery over asset lives, quantified public support across projects, causal domestic price costs and independently verified foreign-policy concessions.",
+              "realizedEuropeMarginUsd": null,
+              "netNationalBenefitUsd": null,
+              "taxpayerNetCostUsd": null,
+              "influenceScore": null
+            },
             "domesticPriceEvidence": {"status":"Observed domestic benchmark price context; causal export cost not established","observations":[{"year":2024,"hub":"Henry Hub","valueUsdPerMMBtu":2.21,"source":"eiaHenry2024","method":"EIA published annual spot average"},{"year":2025,"hub":"Henry Hub","valueUsdPerMMBtu":3.54,"source":"fercGas2025","method":"FERC reported annual spot average using S&P Global Platts data"}],"sourceComparability":"These values come from different price data providers and averaging conventions; do not present their arithmetic difference as a verified homogeneous series without reconciliation.","causality":"Gas benchmark prices respond to weather, production, storage, pipeline constraints, industrial and power demand, and LNG exports. Observed price movement alone does not quantify costs attributable to incremental LNG exports.","costEstimateUsd":null,"consumerIncidenceEstimateUsd":null,"verificationNeeded":"Obtain same-series 2024–2025 Henry Hub observations, regional retail/electricity price pass-through, and an export/no-export counterfactual before estimating attributable household costs."},
             "costIncidenceLedger": {
                   "status": "Cost-incidence accounting incomplete; no net national benefit estimated",
@@ -59,8 +271,8 @@ window.EP_CHAOS_DATA = {
                         {
                               "party": "U.S. LNG sellers and associated service firms",
                               "measure": "Realized export sales margin after feedgas, liquefaction, shipping and financing",
-                              "state": "Unverified",
-                              "sourceGap": "Matched destination prices, volumes, contract types and costs"
+                              "state": "Partially documented — company accounts only",
+                              "sourceGap": "Cheniere annual accounts documented in financial evidence; matched Europe contract prices and cash margins remain unverified"
                         },
                         {
                               "party": "European buyers and consumers",
@@ -85,8 +297,8 @@ window.EP_CHAOS_DATA = {
                         {
                               "party": "U.S. developers, lenders and taxpayers",
                               "measure": "Terminal capital, operating costs, debt service and any public subsidies",
-                              "state": "Unverified",
-                              "sourceGap": "Project-level capital recovery, tax incentives and financing terms"
+                              "state": "Partially documented — company accounts only",
+                              "sourceGap": "Cheniere capital outflow, debt, cash interest and tax treatment documented in financial evidence; complete project capital recovery, subsidies and public exposure remain unverified"
                         },
                         {
                               "party": "European importers and households",
@@ -399,6 +611,14 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "cheniere2025Operations": {"label": "Cheniere FY2025 10-K · statements of operations", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4738", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "cheniere2025Revenue": {"label": "Cheniere FY2025 10-K · revenue disaggregation", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4778", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "cheniere2025CashFlow": {"label": "Cheniere FY2025 10-K · cash-flow statement", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4742", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "cheniere2025Debt": {"label": "Cheniere FY2025 10-K · debt note", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4753", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "cheniere2025CashSupplement": {"label": "Cheniere FY2025 10-K · supplemental cash flows", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4764", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "cheniere2025Taxes": {"label": "Cheniere FY2025 10-K · income tax note", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/xbrl_doc_only/4757", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "cheniere2025Audit": {"label": "Cheniere FY2025 10-K · auditor and full report", "url": "https://lngir.cheniere.com/sec-filings/all-sec-filings/content/0000003570-26-000005/lng-20251231.htm", "date": "2026-02-26; FY2024–FY2025 observations"},
+    "cheniere2025Results": {"label": "Cheniere FY2025 results · derivative and margin caveats", "url": "https://lngir.cheniere.com/news-events/press-releases/detail/333/cheniere-reports-fourth-quarter-and-full-year-2025-results", "date": "2026-02-26; FY2024–FY2025 observations"},
     "wb": {
       "label": "World Bank WDI · 2025 observations",
       "url": "https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2",
