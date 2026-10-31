@@ -51,6 +51,61 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "costIncidenceLedger": {
+                  "status": "Cost-incidence accounting incomplete; no net national benefit estimated",
+                  "scope": "Incremental U.S. LNG deliveries to Europe, 2024–2025; avoid treating gross export receipts as net U.S. gains",
+                  "beneficiaries": [
+                        {
+                              "party": "U.S. LNG sellers and associated service firms",
+                              "measure": "Realized export sales margin after feedgas, liquefaction, shipping and financing",
+                              "state": "Unverified",
+                              "sourceGap": "Matched destination prices, volumes, contract types and costs"
+                        },
+                        {
+                              "party": "European buyers and consumers",
+                              "measure": "Supply reliability, gas prices, avoided curtailment and distributional effects",
+                              "state": "Unverified",
+                              "sourceGap": "Observed wholesale and retail prices versus a credible no-incremental-supply counterfactual"
+                        },
+                        {
+                              "party": "U.S. workers and local tax bases",
+                              "measure": "Incremental employment, wages and public revenues net of displacement",
+                              "state": "Unverified",
+                              "sourceGap": "Facility-specific jobs and receipts, distinguishing existing from new capacity"
+                        }
+                  ],
+                  "payers": [
+                        {
+                              "party": "U.S. gas and electricity customers",
+                              "measure": "Domestic price impacts attributable to incremental exports",
+                              "state": "Unverified",
+                              "sourceGap": "Regional price pass-through and modeled no-export counterfactual"
+                        },
+                        {
+                              "party": "U.S. developers, lenders and taxpayers",
+                              "measure": "Terminal capital, operating costs, debt service and any public subsidies",
+                              "state": "Unverified",
+                              "sourceGap": "Project-level capital recovery, tax incentives and financing terms"
+                        },
+                        {
+                              "party": "European importers and households",
+                              "measure": "Delivered LNG premiums, infrastructure, regasification and distribution costs",
+                              "state": "Unverified",
+                              "sourceGap": "Landed prices, regasification fees, public support and consumer incidence"
+                        },
+                        {
+                              "party": "Communities and environment",
+                              "measure": "Local infrastructure and emissions externalities",
+                              "state": "Unverified",
+                              "sourceGap": "Measured local impacts and defensible cost valuation"
+                        }
+                  ],
+                  "accountingRule": "Net gain cannot be computed by multiplying volume by a spot price. Separate contracted and spot volumes, value added versus transfers, domestic price effects, and capital already sunk before the study period.",
+                  "counterfactual": "Compare with pre-2024 capacity plans, demand and weather, Russian pipeline supply losses, Asian prices, and other LNG suppliers. Do not assign all destination shifts to 2026 conflicts.",
+                  "foreignPolicyTest": "Identify specific, dated and independently verified foreign-government concessions plausibly linked to U.S. LNG deliveries; increased purchases alone do not qualify.",
+                  "netBenefitUsd": null,
+                  "netInfluenceScore": null
+            },
             "deliveryEvidence": {"region":"Europe, including non-EU destinations","period":"2024–2025 annual average","baselineBcfPerDay":6.3,"outcomeBcfPerDay":10.3,"changeBcfPerDay":4,"sourceIds":["lngDest","fercLNG"],"independenceCaution":"FERC corroborates the destination shift but cites EIA underlying export statistics, so this is not two independent underlying outcome datasets.","interpretation":"Europe-bound deliveries rose while Asia-bound deliveries declined from 4.0 to 2.5 Bcf/d. This is a measured destination shift, not proof of political leverage.","remaining":"Independent foreign-policy outcomes, net revenue and domestic costs, plus an ex-ante counterfactual are still required."},
             "score": null
       }
