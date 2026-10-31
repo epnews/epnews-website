@@ -29,91 +29,128 @@ if(segmentRoot&&tickRoot){
  for(let i=0;i<5;i++){const el=document.createElementNS(svgNS,'path');el.setAttribute('d',arc(i*36+2,(i+1)*36-2,128));el.setAttribute('stroke',palette[i]);el.setAttribute('class','chaos-dial-segment');segmentRoot.append(el);}
  for(let i=0;i<=30;i++){const a=i*6,p1=point(a,i%5===0?109:114),p2=point(a,118);const line=document.createElementNS(svgNS,'line');line.setAttribute('x1',p1.x);line.setAttribute('y1',p1.y);line.setAttribute('x2',p2.x);line.setAttribute('y2',p2.y);if(i%5===0)line.setAttribute('class','major');tickRoot.append(line);}
 }
-// Observed EU gas-import volume change only; NOT a national geopolitical composite score.
-// Symmetric change index = 100*(latest-baseline)/(latest+baseline), bounded [-100,100].
-// 2021/2025 bcm: EC/LSEG/ENTSOG Council infographic (see source below).
-const gasVolumeEvidence={
- us:{baseline:18.9,latest:75.6},russia:{baseline:152,latest:36}
-};
+// A source-linked evidence coverage meter, NOT an invented geopolitical power index.
+// Each cell has one transparent activity/outcome proxy; coverage is never treated as a gain.
+const dimensions=['Economic','Strategic','Diplomatic','Energy and resources'];
 const gasSource='https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/';
-function gasIndicator(sphere){const d=gasVolumeEvidence[sphere];if(!d)return null;const index=Math.round(100*(d.latest-d.baseline)/(d.latest+d.baseline));return {...d,index,source:gasSource};}
-// SIPRI April 2026 military expenditure estimates: REAL percentage change 2024–2025.
-// This is defense spending momentum, NOT strategic influence or military effectiveness.
-const militaryExpenditure={us:{spending2025:954,change:-7.5},china:{spending2025:336,change:7.4},russia:{spending2025:190,change:5.9},india:{spending2025:92.1,change:8.9}};
 const sipriSource='https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025';
-function militaryIndicator(sphere){const d=militaryExpenditure[sphere];return d?{...d,index:d.change,source:sipriSource}:null;}
-// World Bank WDI 2025 GDP real annual growth, five geopolitical spheres.
-// This is domestic output growth (economic momentum), NOT external economic influence.
-const economicGDPGrowth={us:2.2,china:5.0,russia:1.0,eu:1.5,india:7.6};
 const worldBankSource='https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2';
-function economicIndicator(sphere){const g=economicGDPGrowth[sphere];return typeof g==='number'?{index:g,growth:g,source:worldBankSource}:null;}
-// 3DL 2025 UNGA Country Alignment Index, Pillar 3, change in majority alignment 2024→2025.
-// U.S. exact endpoints 16.2→0.0; Russia published change +29.8 points.
-// Proximity to UN voting majorities is NOT diplomatic success, influence, or policy merit.
-const diplomacyEvidence={us:{index:-16.2,from:16.2,to:0},russia:{index:29.8}};
 const diplomacySource='https://datadrivendecisionlab.com/2025-UNGA-report';
-function diplomaticIndicator(sphere){const d=diplomacyEvidence[sphere];return d?{...d,source:diplomacySource}:null;}
-function renderAssessment(record){
- const state=record&&['rising','stable','declining','mixed'].includes(record.status)?record.status:'pending';
- meter.dataset.state=state;
- const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
- status.textContent=state==='pending'?'PENDING':state.toUpperCase();
- conf.textContent=record&&record.confidence?record.confidence.toUpperCase()+' CONFIDENCE':'NOT YET ASSESSED';
- const validScore=record&&typeof record.score==='number'&&Number.isFinite(record.score)&&record.score>=-100&&record.score<=100;
- if(needle)needle.style.transform='rotate('+ (validScore ? Math.max(-90,Math.min(90,record.score*.9)) : 0)+'deg)';
- const note=root.querySelector('#chaos-needle-note');if(note)note.textContent=validScore?'Needle reflects the documented editorial change index.':'Needle inactive — no score assigned. Center does not mean neutral.';
- if(confidenceArc)confidenceArc.style.strokeDasharray=(record&&typeof record.confidenceFraction==='number'&&record.confidenceFraction>=0&&record.confidenceFraction<=100?record.confidenceFraction:0)+' 100';
+const economicGDPGrowth={us:2.2,china:5.0,russia:1.0,eu:1.5,india:7.6};
+const militaryExpenditure={us:{spending2025:954,change:-7.5},china:{spending2025:336,change:7.4},russia:{spending2025:190,change:5.9},india:{spending2025:92.1,change:8.9}};
+const diplomacyEvidence={us:{change:-16.2,from:16.2,to:0},russia:{change:29.8}};
+const gasVolumeEvidence={us:{baseline:18.9,latest:75.6},russia:{baseline:152,latest:36}};
+const signed=(n,digits=1)=>(n>0?'+':'')+n.toFixed(digits);
+function metricFor(sphere,dimension){
+ if(dimension==='Economic'&&typeof economicGDPGrowth[sphere]==='number'){
+  const n=economicGDPGrowth[sphere];
+  return {label:'Real GDP growth',short:'GDP '+signed(n)+'%',value:signed(n)+'%',numeric:n,unit:'percentage points',key:'gdp-growth',period:'2025',source:worldBankSource,
+   detail:'World Bank WDI real GDP annual growth, 2025: '+n+'%.',caveat:'Domestic output growth is not proof of external economic influence, bargaining leverage or net benefit from a particular policy.'};
+ }
+ if(dimension==='Strategic'&&militaryExpenditure[sphere]){
+  const d=militaryExpenditure[sphere];
+  return {label:'Real military expenditure change',short:'Spend '+signed(d.change)+'%',value:signed(d.change)+'%',numeric:d.change,unit:'percentage points',key:'real-defense-spending',period:'2024–2025',source:sipriSource,
+   detail:'SIPRI April 2026 estimates: '+d.spending2025+' billion USD spent in 2025; inflation-adjusted 2024–2025 change '+signed(d.change)+'%.',
+   caveat:'Expenditure is a resource input, not a measured improvement or decline in military capability, deterrence or alliance influence.'};
+ }
+ if(dimension==='Diplomatic'&&diplomacyEvidence[sphere]){
+  const d=diplomacyEvidence[sphere];
+  return {label:'UNGA majority-alignment movement',short:'UNGA '+signed(d.change)+' pp',value:signed(d.change)+' percentage points',numeric:d.change,unit:'percentage points',key:'unga-pillar-3',period:'2024–2025',source:diplomacySource,
+   detail:'Independent 3DL UN General Assembly Country Alignment Index, Pillar 3: '+signed(d.change)+' percentage points'+(typeof d.from==='number'?' ('+d.from+' in 2024 to '+d.to+' in 2025).':'.'),
+   caveat:'Voting similarity to UNGA majorities is not proof of diplomacy succeeding, other states changing policy or influence being exercised. The voting agenda changed markedly in 2025.'};
+ }
+ if(dimension==='Energy and resources'&&(gasVolumeEvidence[sphere]||sphere==='eu')){
+  const d=sphere==='eu'?gasVolumeEvidence.russia:gasVolumeEvidence[sphere],delta=d.latest-d.baseline;
+  const isEU=sphere==='eu';
+  return {label:isEU?'EU imports of Russian-origin gas':'EU imports of gas from '+(sphere==='us'?'the United States':'Russia'),
+   short:(isEU?'Russia gas ':'EU gas ')+signed(delta)+' bcm',value:signed(delta)+' bcm',numeric:delta,unit:'billion cubic metres',key:isEU?'eu-russian-dependency':'eu-supplier-gas-volume',period:'2021–2025',source:gasSource,
+   detail:(isEU?'Russian-origin gas received by the EU':'EU gas imports from '+(sphere==='us'?'the United States':'Russia'))+': '+d.baseline+' bcm in 2021 → '+d.latest+' bcm in 2025 ('+signed(delta)+' bcm). European Commission / LSEG / ENTSOG data.',
+   caveat:isEU?'Reduced exposure to Russian supply is a documented EU diversification outcome, not a numerical measure of EU geopolitical power. The costs of substitution and other suppliers matter.':'This is one destination market, not the supplier’s total energy exports or its diplomatic leverage. Differences in data providers and EU gas consumption also matter.'};
+ }
+ return null;
 }
-// Outcome-scoring gate: raw proxy availability is not geopolitical outcome verification.
-const proxyCoverage={us:['Economic','Strategic','Diplomatic','Energy and resources'],china:['Economic','Strategic'],russia:['Economic','Strategic','Diplomatic','Energy and resources'],eu:['Economic'],india:['Economic','Strategic']};
-function showReadiness(sphere){
- const found=proxyCoverage[sphere]||[];
- const t=root.querySelector('#chaos-readiness-text'),c=root.querySelector('#chaos-readiness-coverage');
- if(t)t.textContent='Overall score withheld: '+found.length+' of 4 categories have at least one published activity/input proxy, but none has a complete, comparable outcome-based influence assessment. Required: baseline, independently sourced outcomes, net costs, alternative explanations and editorial review in every category.';
- if(c)c.textContent='Available proxy categories: '+(found.length?found.join(' · '):'None')+'. Missing data is not a zero score.';
+function renderAssessment(sphere){
+ const available=dimensions.filter(d=>metricFor(sphere.id,d));
+ const count=available.length;
+ meter.dataset.state='coverage';
+ meter.setAttribute('aria-label',sphere.name+': '+count+' of four dimensions have a source-linked proxy; overall geopolitical influence is not scored');
+ const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
+ if(status)status.textContent=count+' OF 4';
+ if(conf)conf.textContent='PROXY COVERAGE · NOT A POWER SCORE';
+ if(needle)needle.style.transform='rotate('+(-90+count*45)+'deg)';
+ if(confidenceArc)confidenceArc.style.strokeDasharray=(count*25)+' 100';
+ const note=root.querySelector('#chaos-needle-note');
+ if(note)note.textContent='Needle shows evidence coverage only ('+count+'/4 dimensions). It does not show geopolitical gains or losses.';
+ const readiness=root.querySelector('#chaos-readiness-text'),coverage=root.querySelector('#chaos-readiness-coverage');
+ if(readiness)readiness.textContent='Overall influence score withheld. Each dimension needs comparable outcome evidence, dated baselines, costs, counterfactuals and editorial verification; these activity proxies cannot be averaged into a power index.';
+ if(coverage)coverage.textContent='Source-linked proxy coverage: '+count+' of 4 dimensions. Missing: '+(count===4?'none at the proxy level (outcome validation still pending)':dimensions.filter(d=>!metricFor(sphere.id,d)).join(', '))+'. Missing evidence is not a zero score.';
+ const chips=root.querySelector('#chaos-evidence-chips');
+ if(chips){chips.replaceChildren();for(const d of dimensions){const span=document.createElement('span');span.textContent=(d==='Energy and resources'?'Energy':d)+' · '+(metricFor(sphere.id,d)?'Sourced proxy':'Not measured');chips.append(span);}}
 }
 function update(){
- const s=spheres.find(x=>x.id===select.value)||spheres[0];
- name.textContent=s.name;description.textContent=s.note;showReadiness(s.id);
- const isEnergy=category.value==='Energy and resources';
- const isStrategic=category.value==='Strategic';
- const isEconomic=category.value==='Economic';
- const isDiplomatic=category.value==='Diplomatic';
- const e=isEnergy?gasIndicator(s.id):isStrategic?militaryIndicator(s.id):isEconomic?economicIndicator(s.id):isDiplomatic?diplomaticIndicator(s.id):null;
- const evidence=root.querySelector('#chaos-evidence'),chips=root.querySelector('#chaos-evidence-chips');
- const statusLabel=root.querySelector('.chaos-status-badge span');if(statusLabel)statusLabel.textContent=e?'INDICATOR DIRECTION':'INFLUENCE STATUS';
- const metricName=isEnergy?'EU GAS IMPORT VOLUME':isStrategic?'REAL MILITARY EXPENDITURE':isEconomic?'REAL GDP GROWTH':'UNGA MAJORITY ALIGNMENT';
+ const sphere=spheres.find(x=>x.id===select.value)||spheres[0];
+ name.textContent=sphere.name;description.textContent=sphere.note;
+ renderAssessment(sphere);
+ const dim=category.value;
+ const e=dim==='Overall change'?null:metricFor(sphere.id,dim);
+ const evidence=root.querySelector('#chaos-evidence'),explainer=root.querySelector('#chaos-indicator-explainer');
+ evidence.replaceChildren();
  if(e){
-  meter.setAttribute('aria-label',s.name+': '+metricName+' indicator '+(e.index>0?'+':'')+e.index+'. Not total geopolitical influence.');
-  renderAssessment({status:e.index>0?'rising':e.index<0?'declining':'stable',score:e.index,confidence:isDiplomatic?'moderate':'high'});
-  if(isEnergy){
-   evidence.textContent='EU GAS IMPORT VOLUME INDICATOR (2021–2025): '+e.baseline+' to '+e.latest+' bcm; symmetric change index '+(e.index>0?'+':'')+e.index+'. Formula: 100 × (2025 volume − 2021 volume) ÷ (2025 volume + 2021 volume). This measures EU supply volume, NOT total geopolitical power. ';
-  }else if(isStrategic){
-   evidence.textContent='STRATEGIC RESOURCE INPUT INDICATOR (2024–2025): '+e.spending2025+' billion USD spent in 2025; SIPRI inflation-adjusted spending change '+(e.change>0?'+':'')+e.change+'%. Needle uses the real percentage change directly (capped to ±100 if necessary), NOT an index of strategic success, capability, or national influence. SIPRI 2025 estimates. ';
-  }else if(isEconomic){
-   evidence.textContent='ECONOMIC OUTPUT MOMENTUM (2025): World Bank real GDP growth '+e.growth+'%. Needle uses annual real GDP growth in percentage points; this does NOT measure economic influence abroad, bargaining leverage, or net benefit from instability. ';
-  }else{
-   evidence.textContent='DIPLOMATIC VOTING INDICATOR (2024–2025): change '+(e.index>0?'+':'')+e.index+' percentage points in UN General Assembly majority alignment (3DL Country Alignment Index, Pillar 3). '+(typeof e.from==='number'?'2024: '+e.from+'; 2025: '+e.to+'. ':'')+'This measures vote-pattern similarity to UNGA majorities, NOT geopolitical influence, leadership, favorable outcomes, or vote persuasion. Changes in the resolutions voted on can affect comparability. Independent research estimate, not a UN-issued diplomatic power rating. ';
-  }
-  const link=document.createElement('a');link.href=e.source;link.target='_blank';link.rel='noopener noreferrer';link.textContent='View source ↗';evidence.appendChild(link);
+  evidence.textContent=e.detail+' '+e.caveat+' ';
+  const a=document.createElement('a');a.href=e.source;a.target='_blank';a.rel='noopener noreferrer';a.textContent='View original source ↗';evidence.append(a);
+  if(explainer){explainer.hidden=false;explainer.textContent='SOURCE-LINKED '+dim.toUpperCase()+' INDICATOR ('+e.period+'). '+e.label+'. This metric is not an influence score and does not move the coverage needle.';}
  }else{
-  meter.setAttribute('aria-label',s.name+': national influence assessment pending evidence review');renderAssessment(null);
-  evidence.textContent=isEnergy?'Energy indicator pending for '+s.name+'. This EU gas-volume measure does not cover all spheres.':isStrategic?'Strategic resource indicator pending for '+s.name+'. SIPRI regional Europe data includes non-EU countries; it is not a defensible EU-only measure.':isDiplomatic?'Diplomatic voting-alignment indicator pending for '+s.name+'. Comparable 2024–2025 country figures have not yet been independently checked; the EU is not a single UNGA voting member.':'Assessment pending — no verified composite score published for '+s.name+'. '+category.options[category.selectedIndex].text+' requires documented indicators, a baseline and dated evidence.';
+  evidence.textContent=dim==='Overall change'?'No overall geopolitical influence score has been established for '+sphere.name+'. Select a dimension or a cell in the evidence matrix to inspect sourced data.':'No sufficiently comparable published proxy is yet included for '+sphere.name+' in '+dim+'. Missing data is not evidence of no change.';
+  if(explainer)explainer.hidden=true;
  }
- if(chips){chips.querySelectorAll('span').forEach(span=>{span.textContent=span.textContent.split(' · ')[0]+' · Pending';});if(e)chips.querySelectorAll('span').forEach(span=>{if(span.textContent.startsWith(isEnergy?'Energy':isStrategic?'Strategic':isEconomic?'Economic':'Diplomatic'))span.textContent=(isEnergy?'Energy · EU gas volume':isStrategic?'Strategic · military spending':isEconomic?'Economic · real GDP growth':'Diplomatic · UN voting alignment')+' measured';});}
- const label=root.querySelector('#chaos-indicator-explainer');if(label){label.hidden=!e;label.textContent=isEnergy?'Indicator only: needle tracks 2021–2025 EU gas-import volume change, not overall influence.':isStrategic?'Indicator only: needle tracks 2024–2025 inflation-adjusted military-spending change, not strategic influence or performance.':isEconomic?'Indicator only: needle tracks 2025 annual real GDP growth (not 2024–2025 change in influence).':isDiplomatic?'Indicator only: needle tracks 2024–2025 change in UNGA majority-vote alignment, not diplomatic influence.':' ';}
+}
+function renderMatrix(){
+ const body=root.querySelector('#chaos-matrix-body'),countLabel=root.querySelector('#chaos-matrix-count');
+ if(!body)return;
+ body.replaceChildren();
+ let measured=0;
+ for(const sphere of spheres){
+  const tr=document.createElement('tr'),head=document.createElement('th');head.scope='row';head.textContent=sphere.name;tr.append(head);
+  for(const d of dimensions){
+   const td=document.createElement('td'),e=metricFor(sphere.id,d);
+   if(e){
+    measured++;
+    const button=document.createElement('button');button.type='button';button.className='chaos-matrix-observed';button.textContent=e.short;button.title=e.label+' · '+e.period+' · inspect source';
+    button.setAttribute('aria-label','Inspect '+sphere.name+' '+d+': '+e.short);
+    button.addEventListener('click',()=>{select.value=sphere.id;category.value=d;update();root.querySelector('.chaos-gauge').scrollIntoView({behavior:'smooth',block:'start'});});
+    td.append(button);
+   }else{
+    const span=document.createElement('span');span.className='chaos-matrix-missing';span.textContent='Not measured';td.append(span);
+   }
+   tr.append(td);
+  }
+  body.append(tr);
+ }
+ if(countLabel)countLabel.textContent=measured+' / '+(spheres.length*dimensions.length)+' PROXY CELLS';
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
-const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),comparison=root.querySelector('#chaos-comparison-result');
-if(left&&right&&comparison){
-const opts=spheres.map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');
-left.innerHTML=opts;right.innerHTML=opts;left.value='us';right.value='india';
-function compare(){
-const a=spheres.find(s=>s.id===left.value),b=spheres.find(s=>s.id===right.value);
-comparison.textContent=a.id===b.id?'Choose two different spheres to compare.':'Comparing '+a.name+' and '+b.name+': evidence-based influence changes and confidence ratings are pending. No comparative advantage is assumed.';
+const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),compareDimension=root.querySelector('#chaos-compare-dimension'),comparison=root.querySelector('#chaos-comparison-result');
+if(left&&right&&comparison&&compareDimension){
+ const opts=spheres.map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');
+ left.innerHTML=opts;right.innerHTML=opts;left.value='us';right.value='india';
+ function compare(){
+  const a=spheres.find(s=>s.id===left.value),b=spheres.find(s=>s.id===right.value),dim=compareDimension.value;
+  comparison.replaceChildren();
+  if(a.id===b.id){comparison.textContent='Choose two different spheres to compare.';return;}
+  const x=metricFor(a.id,dim),y=metricFor(b.id,dim);
+  comparison.textContent=dim+' · '+a.name+': '+(x?x.value+' ('+x.period+')':'no matched proxy')+'; '+b.name+': '+(y?y.value+' ('+y.period+')':'no matched proxy')+'. ';
+  if(x&&y&&x.key===y.key&&x.period===y.period){
+   comparison.append(document.createTextNode('Difference in this specific indicator (A minus B): '+signed(x.numeric-y.numeric)+' '+x.unit+'. This is not an overall influence ranking. '));
+  }else{
+   comparison.append(document.createTextNode('No like-for-like numerical comparison is justified for this pair and dimension. '));
+  }
+  const sources=[...new Set([x?.source,y?.source].filter(Boolean))];
+  sources.forEach((url,i)=>{const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Source '+(i+1)+' ↗';comparison.append(link);comparison.append(document.createTextNode(' '));});
+  comparison.append(document.createTextNode('Interpretation: '+(x?x.caveat:'Missing source-linked data for '+a.name+'.')+' '+(y&&(!x||x.caveat!==y.caveat)?y.caveat:'')));
+ }
+ left.addEventListener('change',compare);right.addEventListener('change',compare);compareDimension.addEventListener('change',compare);compare();
 }
-left.addEventListener('change',compare);right.addEventListener('change',compare);compare();
-}
+renderMatrix();
 update();
 const localGroups={
  subspheres:[
