@@ -1,7 +1,7 @@
 /* EP News Global Power Shift dashboard. No unverified numerical claims. */
 (()=>{'use strict';
 const spheres=[
- {id:'us',name:'United States / U.S.-aligned',note:'American economic and strategic influence; allied gains are assessed separately where interests diverge.'},
+ {id:'us',name:'United States',note:'American economic and strategic influence; allied gains are assessed separately where interests diverge.'},
  {id:'china',name:'China',note:'Trade, manufacturing, strategic minerals, infrastructure and diplomatic leverage.'},
  {id:'russia',name:'Russia',note:'Energy, security partnerships and diplomatic influence.'},
  {id:'eu',name:'European Union',note:'EU trade, regulation, economic integration and diplomacy; the broader European security sphere includes non-EU states.'},
@@ -29,128 +29,61 @@ if(segmentRoot&&tickRoot){
  for(let i=0;i<5;i++){const el=document.createElementNS(svgNS,'path');el.setAttribute('d',arc(i*36+2,(i+1)*36-2,128));el.setAttribute('stroke',palette[i]);el.setAttribute('class','chaos-dial-segment');segmentRoot.append(el);}
  for(let i=0;i<=30;i++){const a=i*6,p1=point(a,i%5===0?109:114),p2=point(a,118);const line=document.createElementNS(svgNS,'line');line.setAttribute('x1',p1.x);line.setAttribute('y1',p1.y);line.setAttribute('x2',p2.x);line.setAttribute('y2',p2.y);if(i%5===0)line.setAttribute('class','major');tickRoot.append(line);}
 }
-// A source-linked evidence coverage meter, NOT an invented geopolitical power index.
-// Each cell has one transparent activity/outcome proxy; coverage is never treated as a gain.
-const dimensions=['Economic','Strategic','Diplomatic','Energy and resources'];
-const gasSource='https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/';
-const sipriSource='https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025';
-const worldBankSource='https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2';
-const diplomacySource='https://datadrivendecisionlab.com/2025-UNGA-report';
-const economicGDPGrowth={us:2.2,china:5.0,russia:1.0,eu:1.5,india:7.6};
-const militaryExpenditure={us:{spending2025:954,change:-7.5},china:{spending2025:336,change:7.4},russia:{spending2025:190,change:5.9},india:{spending2025:92.1,change:8.9}};
-const diplomacyEvidence={us:{change:-16.2,from:16.2,to:0},russia:{change:29.8}};
-const gasVolumeEvidence={us:{baseline:18.9,latest:75.6},russia:{baseline:152,latest:36}};
-const signed=(n,digits=1)=>(n>0?'+':'')+n.toFixed(digits);
-function metricFor(sphere,dimension){
- if(dimension==='Economic'&&typeof economicGDPGrowth[sphere]==='number'){
-  const n=economicGDPGrowth[sphere];
-  return {label:'Real GDP growth',short:'GDP '+signed(n)+'%',value:signed(n)+'%',numeric:n,unit:'percentage points',key:'gdp-growth',period:'2025',source:worldBankSource,
-   detail:'World Bank WDI real GDP annual growth, 2025: '+n+'%.',caveat:'Domestic output growth is not proof of external economic influence, bargaining leverage or net benefit from a particular policy.'};
- }
- if(dimension==='Strategic'&&militaryExpenditure[sphere]){
-  const d=militaryExpenditure[sphere];
-  return {label:'Real military expenditure change',short:'Spend '+signed(d.change)+'%',value:signed(d.change)+'%',numeric:d.change,unit:'percentage points',key:'real-defense-spending',period:'2024–2025',source:sipriSource,
-   detail:'SIPRI April 2026 estimates: '+d.spending2025+' billion USD spent in 2025; inflation-adjusted 2024–2025 change '+signed(d.change)+'%.',
-   caveat:'Expenditure is a resource input, not a measured improvement or decline in military capability, deterrence or alliance influence.'};
- }
- if(dimension==='Diplomatic'&&diplomacyEvidence[sphere]){
-  const d=diplomacyEvidence[sphere];
-  return {label:'UNGA majority-alignment movement',short:'UNGA '+signed(d.change)+' pp',value:signed(d.change)+' percentage points',numeric:d.change,unit:'percentage points',key:'unga-pillar-3',period:'2024–2025',source:diplomacySource,
-   detail:'Independent 3DL UN General Assembly Country Alignment Index, Pillar 3: '+signed(d.change)+' percentage points'+(typeof d.from==='number'?' ('+d.from+' in 2024 to '+d.to+' in 2025).':'.'),
-   caveat:'Voting similarity to UNGA majorities is not proof of diplomacy succeeding, other states changing policy or influence being exercised. The voting agenda changed markedly in 2025.'};
- }
- if(dimension==='Energy and resources'&&(gasVolumeEvidence[sphere]||sphere==='eu')){
-  const d=sphere==='eu'?gasVolumeEvidence.russia:gasVolumeEvidence[sphere],delta=d.latest-d.baseline;
-  const isEU=sphere==='eu';
-  return {label:isEU?'EU imports of Russian-origin gas':'EU imports of gas from '+(sphere==='us'?'the United States':'Russia'),
-   short:(isEU?'Russia gas ':'EU gas ')+signed(delta)+' bcm',value:signed(delta)+' bcm',numeric:delta,unit:'billion cubic metres',key:isEU?'eu-russian-dependency':'eu-supplier-gas-volume',period:'2021–2025',source:gasSource,
-   detail:(isEU?'Russian-origin gas received by the EU':'EU gas imports from '+(sphere==='us'?'the United States':'Russia'))+': '+d.baseline+' bcm in 2021 → '+d.latest+' bcm in 2025 ('+signed(delta)+' bcm). European Commission / LSEG / ENTSOG data.',
-   caveat:isEU?'Reduced exposure to Russian supply is a documented EU diversification outcome, not a numerical measure of EU geopolitical power. The costs of substitution and other suppliers matter.':'This is one destination market, not the supplier’s total energy exports or its diplomatic leverage. Differences in data providers and EU gas consumption also matter.'};
- }
- return null;
+const data=window.EP_CHAOS_DATA,model=window.EPChaosModel;
+if(!data||!model){const e=root.querySelector('#chaos-evidence');if(e)e.textContent='Evidence could not load. Reload this page; scores remain withheld.';return;}
+const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
+const element=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
+function sourceLinks(parent,ids){
+ const line=element('p',undefined,'chaos-source-links');
+ for(const id of ids){const src=data.sources[id];const a=element('a',src.label+' ↗');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a,element('small','Source date: '+src.date));}
+ parent.append(line);
 }
-function renderAssessment(sphere){
- const available=dimensions.filter(d=>metricFor(sphere.id,d));
- const count=available.length;
- meter.dataset.state='coverage';
- meter.setAttribute('aria-label',sphere.name+': '+count+' of four dimensions have a source-linked proxy; overall geopolitical influence is not scored');
- const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
- if(status)status.textContent=count+' OF 4';
- if(conf)conf.textContent='PROXY COVERAGE · NOT A POWER SCORE';
- if(needle)needle.style.transform='rotate('+(-90+count*45)+'deg)';
- if(confidenceArc)confidenceArc.style.strokeDasharray=(count*25)+' 100';
- const note=root.querySelector('#chaos-needle-note');
- if(note)note.textContent='Needle shows evidence coverage only ('+count+'/4 dimensions). It does not show geopolitical gains or losses.';
- const readiness=root.querySelector('#chaos-readiness-text'),coverage=root.querySelector('#chaos-readiness-coverage');
- if(readiness)readiness.textContent='Overall influence score withheld. Each dimension needs comparable outcome evidence, dated baselines, costs, counterfactuals and editorial verification; these activity proxies cannot be averaged into a power index.';
- if(coverage)coverage.textContent='Source-linked proxy coverage: '+count+' of 4 dimensions. Missing: '+(count===4?'none at the proxy level (outcome validation still pending)':dimensions.filter(d=>!metricFor(sphere.id,d)).join(', '))+'. Missing evidence is not a zero score.';
- const chips=root.querySelector('#chaos-evidence-chips');
- if(chips){chips.replaceChildren();for(const d of dimensions){const span=document.createElement('span');span.textContent=(d==='Energy and resources'?'Energy':d)+' · '+(metricFor(sphere.id,d)?'Sourced proxy':'Not measured');chips.append(span);}}
+function renderCards(actor,dimension){
+ cards.replaceChildren();
+ for(const key of dimension==='Overall change'?dimensions:[dimension]){
+  const r=data.actors[actor][key],card=element('article',undefined,'chaos-indicator-card');
+  card.append(element('span',key+' · '+r.kind,'chaos-tag'),element('h4',r.title),element('strong',r.value,'chaos-metric-value'),element('p',r.period,'chaos-period'),element('span',r.stage+' · '+r.confidence+' fact confidence','chaos-record-stage'),element('p',r.meaning));
+  const details=element('details'),summary=element('summary','Who pays / what remains unresolved');details.append(summary,element('p','Costs and beneficiaries: '+r.costs),element('p','Scoring limit: '+r.gap));card.append(details);sourceLinks(card,r.sources);cards.append(card);
+ }
 }
 function update(){
- const sphere=spheres.find(x=>x.id===select.value)||spheres[0];
- name.textContent=sphere.name;description.textContent=sphere.note;
- renderAssessment(sphere);
- const dim=category.value;
- const e=dim==='Overall change'?null:metricFor(sphere.id,dim);
- const evidence=root.querySelector('#chaos-evidence'),explainer=root.querySelector('#chaos-indicator-explainer');
- evidence.replaceChildren();
- if(e){
-  evidence.textContent=e.detail+' '+e.caveat+' ';
-  const a=document.createElement('a');a.href=e.source;a.target='_blank';a.rel='noopener noreferrer';a.textContent='View original source ↗';evidence.append(a);
-  if(explainer){explainer.hidden=false;explainer.textContent='SOURCE-LINKED '+dim.toUpperCase()+' INDICATOR ('+e.period+'). '+e.label+'. This metric is not an influence score and does not move the coverage needle.';}
- }else{
-  evidence.textContent=dim==='Overall change'?'No overall geopolitical influence score has been established for '+sphere.name+'. Select a dimension or a cell in the evidence matrix to inspect sourced data.':'No sufficiently comparable published proxy is yet included for '+sphere.name+' in '+dim+'. Missing data is not evidence of no change.';
-  if(explainer)explainer.hidden=true;
- }
-}
-function renderMatrix(){
- const body=root.querySelector('#chaos-matrix-body'),countLabel=root.querySelector('#chaos-matrix-count');
- if(!body)return;
- body.replaceChildren();
- let measured=0;
- for(const sphere of spheres){
-  const tr=document.createElement('tr'),head=document.createElement('th');head.scope='row';head.textContent=sphere.name;tr.append(head);
-  for(const d of dimensions){
-   const td=document.createElement('td'),e=metricFor(sphere.id,d);
-   if(e){
-    measured++;
-    const button=document.createElement('button');button.type='button';button.className='chaos-matrix-observed';button.textContent=e.short;button.title=e.label+' · '+e.period+' · inspect source';
-    button.setAttribute('aria-label','Inspect '+sphere.name+' '+d+': '+e.short);
-    button.addEventListener('click',()=>{select.value=sphere.id;category.value=d;update();root.querySelector('.chaos-gauge').scrollIntoView({behavior:'smooth',block:'start'});});
-    td.append(button);
-   }else{
-    const span=document.createElement('span');span.className='chaos-matrix-missing';span.textContent='Not measured';td.append(span);
-   }
-   tr.append(td);
-  }
-  body.append(tr);
- }
- if(countLabel)countLabel.textContent=measured+' / '+(spheres.length*dimensions.length)+' PROXY CELLS';
+ const actor=spheres.find(x=>x.id===select.value)||spheres[0],records=data.actors[actor.id],result=model.assessment(records),dim=category.value;
+ name.textContent=actor.name;description.textContent=actor.note;
+ // The dial exclusively represents reviewed influence assessments, never mixed proxy units.
+ const count=dimensions.filter(key=>records[key]&&records[key].sources.length).length;
+ const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
+ meter.dataset.state='coverage';status.textContent=count+' OF 4';conf.textContent='CITED CATEGORIES · NOT A POWER SCORE';
+ if(needle)needle.style.transform='rotate('+(-90+count*45)+'deg)';
+ if(confidenceArc)confidenceArc.style.strokeDasharray='0 100';
+ root.querySelector('#chaos-needle-note').textContent='Needle counts cited categories only. Influence score remains withheld.';
+ meter.setAttribute('aria-label',actor.name+': '+count+' of 4 categories documented; influence score withheld');
+ root.querySelector('#chaos-readiness-text').textContent=result.ready+' of 4 dimensions meet the influence scoring gate. All four have cited evidence records; a record is not a complete national influence assessment.';
+ root.querySelector('#chaos-readiness-coverage').textContent='Reviewed '+data.reviewed+' · Sources have their own observation periods. No automatic live-data feed.';
+ root.querySelector('#chaos-evidence-chips').replaceChildren(...dimensions.map(key=>element('span',key+' · Evidence recorded')));
+ const e=root.querySelector('#chaos-evidence');e.textContent=dim==='Overall change'?'Select a dimension to inspect its evidence. All four dimensions must pass before a composite is calculated.':'Selected evidence: '+records[dim].title+'. See the measurement, source and limits below.';
+ const label=root.querySelector('#chaos-indicator-explainer');label.hidden=false;label.textContent='Coverage is not scoring readiness. GDP, spending, gas flows and treaty events remain in their own units and are never averaged together.';
+ renderCards(actor.id,dim);
 }
 select.addEventListener('change',update);category.addEventListener('change',update);
-const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),compareDimension=root.querySelector('#chaos-compare-dimension'),comparison=root.querySelector('#chaos-comparison-result');
+const left=root.querySelector('#chaos-compare-a'),right=root.querySelector('#chaos-compare-b'),comparison=root.querySelector('#chaos-comparison-result');
+const compareDimension=root.querySelector('#chaos-compare-dimension');
 if(left&&right&&comparison&&compareDimension){
- const opts=spheres.map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');
- left.innerHTML=opts;right.innerHTML=opts;left.value='us';right.value='india';
+ const opts=spheres.map(s=>'<option value="'+s.id+'">'+s.name+'</option>').join('');left.innerHTML=opts;right.innerHTML=opts;left.value='us';right.value='india';
  function compare(){
-  const a=spheres.find(s=>s.id===left.value),b=spheres.find(s=>s.id===right.value),dim=compareDimension.value;
-  comparison.replaceChildren();
+  const a=spheres.find(s=>s.id===left.value),b=spheres.find(s=>s.id===right.value),host=root.querySelector('#chaos-comparison-table');host.replaceChildren();
   if(a.id===b.id){comparison.textContent='Choose two different spheres to compare.';return;}
-  const x=metricFor(a.id,dim),y=metricFor(b.id,dim);
-  comparison.textContent=dim+' · '+a.name+': '+(x?x.value+' ('+x.period+')':'no matched proxy')+'; '+b.name+': '+(y?y.value+' ('+y.period+')':'no matched proxy')+'. ';
-  if(x&&y&&x.key===y.key&&x.period===y.period){
-   comparison.append(document.createTextNode('Difference in this specific indicator (A minus B): '+signed(x.numeric-y.numeric)+' '+x.unit+'. This is not an overall influence ranking. '));
-  }else{
-   comparison.append(document.createTextNode('No like-for-like numerical comparison is justified for this pair and dimension. '));
-  }
-  const sources=[...new Set([x?.source,y?.source].filter(Boolean))];
-  sources.forEach((url,i)=>{const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Source '+(i+1)+' ↗';comparison.append(link);comparison.append(document.createTextNode(' '));});
-  comparison.append(document.createTextNode('Interpretation: '+(x?x.caveat:'Missing source-linked data for '+a.name+'.')+' '+(y&&(!x||x.caveat!==y.caveat)?y.caveat:'')));
+  comparison.textContent='Evidence comparison: '+a.name+' / '+b.name+'. No overall winner is assigned. Periods and units differ; only matching measures support arithmetic comparisons.';
+  const table=element('table'),caption=element('caption','Source-backed evidence, not a ranking'),head=element('thead'),row=element('tr');row.append(...['Dimension',a.name,b.name,'Comparison limit'].map(t=>element('th',t)));head.append(row);table.append(caption,head);const body=element('tbody');
+  for(const dim of (compareDimension.value==='All dimensions'?dimensions:[compareDimension.value])){const ra=data.actors[a.id][dim],rb=data.actors[b.id][dim],tr=element('tr');const label=element('th',dim);label.scope='row';tr.append(label);
+   for(const r of [ra,rb]){const td=element('td');td.append(element('strong',r.value),element('p',r.title+' · '+r.period+' · '+r.stage));sourceLinks(td,r.sources);tr.append(td);}
+   const matching=ra.metric&&ra.metric===rb.metric&&ra.period===rb.period&&Number.isFinite(ra.number)&&Number.isFinite(rb.number);
+   tr.append(element('td',matching?'A minus B: '+(ra.number-rb.number).toFixed(1)+' percentage points for this proxy only. No causal or influence ranking.':'Different measures, scope or periods. No numeric difference calculated.'));body.append(tr);
+  }table.append(body);host.append(table);
  }
  left.addEventListener('change',compare);right.addEventListener('change',compare);compareDimension.addEventListener('change',compare);compare();
 }
-renderMatrix();
+const matrix=root.querySelector('#chaos-matrix-body');
+if(matrix){for(const actor of spheres){const row=element('tr'),head=element('th',actor.name);head.scope='row';row.append(head);for(const dim of dimensions){const r=data.actors[actor.id][dim],td=element('td'),button=element('button',r.value,'chaos-matrix-button');button.type='button';button.setAttribute('aria-label','Inspect '+actor.name+' '+dim);button.addEventListener('click',()=>{select.value=actor.id;category.value=dim;update();cards.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});td.append(button);row.append(td);}matrix.append(row);}}
 update();
 const localGroups={
  subspheres:[
@@ -191,6 +124,7 @@ mode.addEventListener('change',renderLocal);renderLocal();
 }
 const list=root.querySelector('#chaos-updates');
 const articles=(typeof STORIES!=='undefined'?STORIES:[]).filter(s=>s&&s.status==='published'&&s.id!=='power'&&(s.category==='investigations'||/investigat|energy dependency|supply.chain|tariff|resource/i.test(s.type||''))).sort((a,b)=>String(b.publishedAt||b.updatedAt||'').localeCompare(String(a.publishedAt||a.updatedAt||''))).slice(0,10);
+if(!list)return;
 list.replaceChildren();
 const counter=root.querySelector('#chaos-update-count');if(counter)counter.textContent='('+articles.length+' OF UP TO 10)';
 if(!articles.length){const p=document.createElement('p');p.textContent='No separately classified investigation updates are available yet. Read the flagship report or browse the investigations archive.';list.append(p);}

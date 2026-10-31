@@ -1,0 +1,22 @@
+name: EP News command meter
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'chaos-*.js'
+      - 'chaos-dashboard.css'
+      - 'index.html'
+      - 'scripts/test_chaos_meter.cjs'
+      - '.github/workflows/command-meter.yml'
+permissions:
+  contents: read
+jobs:
+  command-meter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check chaos-dashboard.js && node --check chaos-meter-data.js && node --check chaos-meter-model.js
+      - run: node scripts/test_chaos_meter.cjs
