@@ -10,6 +10,21 @@ function dimensionScore(r){
  if(!Number.isFinite(r.netChange)||!Number.isFinite(r.materialityTarget)||r.materialityTarget<=0)return null;
  return Math.max(-100,Math.min(100,100*r.netChange/r.materialityTarget));
 }
+// Explain missing requirements without mistaking evidence coverage for influence.
+function missingRequirements(r){
+ const missing=[];
+ if(!r||r.kind!=='Influence assessment')missing.push('reviewed influence assessment');
+ if(!r||!r.baseline)missing.push('dated baseline');
+ const outcomes=r&&r.outcomes;
+ if(!Array.isArray(outcomes)||outcomes.filter(x=>x&&x.stage==='Measured outcome'&&x.source&&x.independenceGroup&&x.period).length<2||new Set((outcomes||[]).filter(x=>x&&x.stage==='Measured outcome'&&x.source&&x.independenceGroup&&x.period).map(x=>x.independenceGroup)).size<2)missing.push('two independent measured outcomes');
+ if(!r||!r.costAccounting)missing.push('cost and beneficiary accounting');
+ if(!r||!r.counterfactual)missing.push('counterfactual');
+ if(!r||!r.normalizationRationale||!r.targetFixedBeforeAssessment||!Number.isFinite(r.materialityTarget)||r.materialityTarget<=0)missing.push('predefined normalization target');
+ if(!r||!Number.isFinite(r.netChange))missing.push('measured net change');
+ if(!r||!['Moderate','High'].includes(r.confidence))missing.push('moderate/high confidence');
+ if(!r||!r.editorialReview)missing.push('editorial approval');
+ return missing;
+}
 function assessment(records){
  const scores=Object.fromEntries(Object.keys(weights).map(k=>[k,dimensionScore(records&&records[k])]));
  const ready=Object.values(scores).filter(x=>x!==null).length;
@@ -19,6 +34,6 @@ function assessment(records){
  const range=variants.map(total);
  return {score:total(weights),ready,scores,sensitivity:[Math.min(...range),Math.max(...range)]};
 }
-const api={weights,dimensionScore,assessment};root.EPChaosModel=api;
+const api={weights,dimensionScore,missingRequirements,assessment};root.EPChaosModel=api;
 if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
