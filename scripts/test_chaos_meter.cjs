@@ -25,6 +25,11 @@ assert.equal(lngAudit.observations[1].value-lngAudit.observations[0].value,lngAu
 assert.equal(new Set(lngAudit.observations.map(x=>x.source)).size,1);
 for(const observation of lngAudit.observations){assert.ok(data.sources[observation.source]);assert.ok(Number.isFinite(observation.value));}
 assert.ok(lngAudit.unresolved.length>=3);
+const deliveries=lngAudit.deliveryEvidence;
+assert.equal(Number((deliveries.outcomeBcfPerDay-deliveries.baselineBcfPerDay).toFixed(1)),deliveries.changeBcfPerDay);
+assert.ok(deliveries.sourceIds.every(id=>data.sources[id]));
+assert.match(deliveries.independenceCaution,/not two independent/);
+assert.equal(lngAudit.score,null);
 // Synthetic fixtures test the gate; these are not published evidence or scores.
 const valid={kind:'Influence assessment',confidence:'Moderate',editorialReview:'review-id',baseline:'dated baseline',costAccounting:'cost ledger',counterfactual:'alternative explanation',normalizationRationale:'predefined materiality',targetFixedBeforeAssessment:true,netChange:10,materialityTarget:20,outcomes:[{stage:'Measured outcome',source:'a',independenceGroup:'a',period:'2024–25'},{stage:'Measured outcome',source:'b',independenceGroup:'b',period:'2024–25'}]};
 assert.deepEqual(missingRequirements(valid),[]);assert.ok(missingRequirements(data.actors.us.Economic).includes('two independent measured outcomes'));assert.ok(missingRequirements(data.actors.us.Economic).includes('editorial approval'));assert.equal(dimensionScore(valid),50);assert.equal(dimensionScore({...valid,netChange:0}),0);assert.equal(dimensionScore({...valid,netChange:-40}),-100);

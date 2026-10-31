@@ -51,6 +51,7 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "deliveryEvidence": {"region":"Europe, including non-EU destinations","period":"2024–2025 annual average","baselineBcfPerDay":6.3,"outcomeBcfPerDay":10.3,"changeBcfPerDay":4,"sourceIds":["lngDest","fercLNG"],"independenceCaution":"FERC corroborates the destination shift but cites EIA underlying export statistics, so this is not two independent underlying outcome datasets.","interpretation":"Europe-bound deliveries rose while Asia-bound deliveries declined from 4.0 to 2.5 Bcf/d. This is a measured destination shift, not proof of political leverage.","remaining":"Independent foreign-policy outcomes, net revenue and domestic costs, plus an ex-ante counterfactual are still required."},
             "score": null
       }
     }
@@ -362,6 +363,8 @@ window.EP_CHAOS_DATA = {
       "url": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
       "date": "2025 data; retrieved 2026-10-31"
     },
+    "lngDest": {"label":"EIA · U.S. LNG exports by destination","url":"https://www.eia.gov/TodayinEnergy/detail.php?id=67484","date":"2026; 2024–2025 observations"},
+    "fercLNG": {"label":"FERC · 2025 State of the Markets","url":"https://www.ferc.gov/sites/default/files/2026-03/26_State-of-the-Market_0324_1430.pdf","date":"2026-03; 2025 review"},
     "lng": {
       "label": "EIA · global LNG trade",
       "url": "https://www.eia.gov/todayinenergy/detail.php?id=67864",
