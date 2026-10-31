@@ -51,6 +51,80 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "threePartFinancialAudit": {
+  "title": "LNG economic incidence · three verified evidence checkpoints",
+  "status": "Descriptive company accounts and modeled consumer impacts; net benefit not established",
+  "components": [
+    {
+      "title": "1 · Recognized LNG revenue versus realized receipts",
+      "source": "cch2025Sec",
+      "rows": [
+        {
+          "label": "CCH LNG revenues, third-party",
+          "baseline": 3599,
+          "outcome": 4448,
+          "unit": "USD millions"
+        },
+        {
+          "label": "CCH LNG revenues, affiliates",
+          "baseline": 1281,
+          "outcome": 2053,
+          "unit": "USD millions"
+        },
+        {
+          "label": "CCH total reported revenue",
+          "baseline": 4880,
+          "outcome": 6501,
+          "unit": "USD millions"
+        }
+      ],
+      "note": "Recognized revenue is accrual accounting, not cash collected. Affiliate revenue is not an additional external national sale. Reported company-wide increase reflects higher Henry Hub-linked prices and additional output, not isolated Stage 3 realized margin or post-2025 disruption impact."
+    },
+    {
+      "title": "2 · Financing cost and public exposure boundary",
+      "source": "cch2025Sec",
+      "rows": [
+        {
+          "label": "CCH total interest cost",
+          "baseline": 239,
+          "outcome": 221,
+          "unit": "USD millions"
+        },
+        {
+          "label": "CCH capitalized interest",
+          "baseline": 174,
+          "outcome": 190,
+          "unit": "USD millions"
+        },
+        {
+          "label": "CCH interest expense after capitalization",
+          "baseline": 65,
+          "outcome": 31,
+          "unit": "USD millions"
+        },
+        {
+          "label": "Cash interest paid, net of capitalized amounts",
+          "baseline": 140,
+          "outcome": 23,
+          "unit": "USD millions"
+        }
+      ],
+      "note": "Capitalized interest is included in qualifying asset costs; total interest already contains it. Do not sum total interest, capitalized interest and expense. Cash interest net of capitalized amounts is not all cash borrowing costs. Public grants, guarantees and taxpayer exposure have not been comprehensively verified; absence of an identified figure is not proof of zero exposure."
+    },
+    {
+      "title": "3 · Domestic consumer impact: modeled, not observed",
+      "source": "doeLngEconomic2025",
+      "rows": [],
+      "note": "DOE LNG export assessment scenario comparison for 2050, Defined Policies with reference U.S. supply: modeled Henry Hub $3.53 versus $4.62 per MMBtu (+31%) with higher model-resolved exports relative to existing/FID exports; modeled residential gas prices 4% higher. These are conditional 2050 model results in 2022 dollars, not observed 2024–2026 household bills or a causal estimate of 2025 price changes. The study does not establish a realized 2026 national net benefit."
+    }
+  ],
+  "limitations": "CCH data are one subsidiary reporting family; DOE scenarios are a distinct modeling study, not independent realized outcomes. Company receipts, finance cost and hypothetical domestic-price impacts are not directly additive. Do not attribute these changes to 2026 disruptions.",
+  "stage3ReturnUsd": null,
+  "publicExposureUsd": null,
+  "domesticRealizedCostUsd": null,
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "subsidiaryCashFlowEvidence": {
   "title": "Corpus Christi Holdings · cash generation and financing, 2024–2025",
   "status": "Audited consolidated subsidiary cash flows; Stage 3 incremental returns not isolated",
@@ -847,6 +921,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "doeLngEconomic2025": {"label":"DOE · Energy, Economic, and Environmental Assessment of U.S. LNG Exports (model scenarios)","url":"https://www.energy.gov/sites/default/files/2025-10/ENERGY%2C%20ECONOMIC%2C%20AND%20ENVIRONMENTAL%20ASSESSMENT%20OF%20U.S.%20LNG%20EXPORTS_0.pdf","date":"2025-10; 2050 scenario projections"},
     "cch2025Sec": {"label":"Cheniere Corpus Christi Holdings · FY2025 SEC Form 10-K, construction costs and EPC commitments","url":"https://www.sec.gov/Archives/edgar/data/1693317/000169331726000003/cch-20251231.htm","date":"2026-02-26; FY2024–FY2025 figures"},
     "eiaCorpusStartup": {"label":"EIA · Corpus Christi Stage 3 first cargo","url":"https://www.eia.gov/todayinenergy/detail.php?id=64704","date":"2025-03-11"},
     "eiaCorpusComplete": {"label":"EIA · Corpus Christi Stage 3 completion","url":"https://www.eia.gov/todayinenergy/detail.php?id=68144","date":"2026-09-15"},
