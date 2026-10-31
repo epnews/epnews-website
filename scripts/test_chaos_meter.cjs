@@ -19,6 +19,12 @@ for(const [actor,worksheets] of Object.entries(data.researchWorksheets))for(cons
 }
 // Audited LNG observations are one source family, not two independent influence outcomes.
 const lngAudit=data.evidenceAudits.us['Energy and resources'];
+const prices=lngAudit.domesticPriceEvidence;
+assert.equal(prices.observations.length,2);
+assert.equal(prices.costEstimateUsd,null);
+assert.equal(prices.consumerIncidenceEstimateUsd,null);
+assert.match(prices.sourceComparability,/different price data providers/);
+for(const o of prices.observations){assert.ok(Number.isFinite(o.valueUsdPerMMBtu));assert.ok(data.sources[o.source]);}
 const costLedger=lngAudit.costIncidenceLedger;
 assert.equal(costLedger.netBenefitUsd,null);
 assert.equal(costLedger.netInfluenceScore,null);
