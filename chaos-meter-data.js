@@ -92,6 +92,84 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "lngCausalCounterfactualAudit": {
+  "title": "Domestic LNG-price causation: observed counterevidence and modeled counterfactuals",
+  "findings": [
+    {
+      "label": "Summer Henry Hub spot price",
+      "value": "$2.93/MMBtu, June–August 2026",
+      "type": "observed",
+      "source": "eiaSummer2026Gas",
+      "interpretation": "6% lower than June–August 2025 despite higher LNG export capacity; does not negate longer-run export price pressure."
+    },
+    {
+      "label": "Summer dry gas production change",
+      "value": "+2.7 Bcf/day (+2%), June–August 2026 versus 2025",
+      "type": "EIA estimate",
+      "source": "eiaSummer2026Gas",
+      "interpretation": "Supply response can offset export demand."
+    },
+    {
+      "label": "July Lower 48 average temperature",
+      "value": "77°F, hottest July on record",
+      "type": "observed",
+      "source": "eiaSummer2026Gas",
+      "interpretation": "Cooling demand was a positive price-pressure confounder."
+    },
+    {
+      "label": "Storage at April 2026 injection-season start",
+      "value": "1,906 Bcf, 4% above five-year average",
+      "type": "observed",
+      "source": "eiaSummer2026Gas",
+      "interpretation": "Above-average inventories buffered prices."
+    },
+    {
+      "label": "2026 annual dry gas production",
+      "value": "112.20 Bcf/day vs 107.64 in 2025",
+      "type": "EIA October forecast",
+      "source": "eiaOct2026Steo",
+      "interpretation": "Forecast, not a realized 2026 full-year result."
+    },
+    {
+      "label": "2026 annual LNG exports",
+      "value": "17.6 Bcf/day vs 15.1 in 2025",
+      "type": "EIA October forecast",
+      "source": "eiaOct2026Steo",
+      "interpretation": "Forecast; no disruption-attributed share."
+    },
+    {
+      "label": "2026 Henry Hub annual average",
+      "value": "$3.48/MMBtu vs $3.53 in 2025",
+      "type": "EIA October forecast",
+      "source": "eiaOct2026Steo",
+      "interpretation": "Forecast; price does not monotonically track LNG exports."
+    },
+    {
+      "label": "Modeled 2050 residential delivered gas price uplift",
+      "value": "$0.36 / $0.50 / $1.13 per MMBtu (high/reference/low U.S. supply)",
+      "type": "DOE conditional scenarios",
+      "source": "doeLNGCounterfactualAppendix",
+      "interpretation": "2050 model scenario effects, not measured 2026 consumer costs or Hormuz-specific effects."
+    }
+  ],
+  "researchContrast": [
+    {
+      "source": "nberLNGPriceLinkage",
+      "finding": "Stock and Zaragoza-Watkins (2024) estimate global LNG market recoupling raises domestic gas price exposure; their long-run identification is not a 2026 Hormuz event study."
+    },
+    {
+      "source": "rffLNGMarginalSupply",
+      "finding": "Prest (2025, updated 2026) shows domestic price effects depend on gas supply response; model results are conditional, not 2026 observations."
+    },
+    {
+      "source": "eiaSummer2026Gas",
+      "finding": "EIA documents lower summer Henry Hub prices amid supply and storage buffers, supporting a distinction between long-run upward pressure and short-run realized price paths."
+    }
+  ],
+  "causalVerdict": "Not identified for the 2026 geopolitical shock. Do not attribute the observed domestic prices, producer cash flow or exports to Hormuz without a counterfactual that controls weather, production, storage, terminal maintenance, global LNG capacity and prior project commitments.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "domesticGasMatched2025to2026": {
   "title": "Matched August 2025 vs August 2026 natural-gas prices",
   "period": "Same calendar month, nominal dollars per thousand cubic feet",
@@ -1894,6 +1972,10 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaSummer2026Gas":{"label":"EIA, September 25 2026 · Henry Hub natural gas prices this summer were 6% lower than last summer","url":"https://www.eia.gov/todayinenergy/detail.php?id=68204","date":"2026-09-25"},
+    "doeLNGCounterfactualAppendix":{"label":"DOE LNG export economic assessment, Appendix B · Table 6 conditional 2050 delivered gas prices","url":"https://www.energy.gov/sites/default/files/2026-02/Ex.%202%20%20LNGUpdate_AppendixB_Dec2024.pdf","date":"2024-12 study, posted 2026"},
+    "nberLNGPriceLinkage":{"label":"Stock and Zaragoza-Watkins (2024), NBER Working Paper 32228","url":"https://www.nber.org/papers/w32228","date":"2024-03"},
+    "rffLNGMarginalSupply":{"label":"Resources for the Future, Prest, marginal LNG supply and domestic prices","url":"https://www.rff.org/publications/working-papers/where-does-the-marginal-methane-molecule-come-from-implications-of-lng-exports-for-us-natural-gas-supply-and-methane-emissions/","date":"2025-03; updated 2026-05"},
     "eiaGasResidentialHistory":{"label":"EIA · Monthly U.S. residential gas price, 2025–2026","url":"https://www.eia.gov/dnav/ng/hist/n3010us3m.htm","date":"2026-10-30"},
     "eiaGasCommercialHistory":{"label":"EIA · Monthly U.S. commercial gas price, 2025–2026","url":"https://www.eia.gov/dnav/ng/hist/n3020us3m.htm","date":"2026-10-30"},
     "eiaGasIndustrialHistory":{"label":"EIA · Monthly U.S. industrial gas price, 2025–2026","url":"https://www.eia.gov/dnav/ng/hist/n3035us3m.htm","date":"2026-10-30"},
