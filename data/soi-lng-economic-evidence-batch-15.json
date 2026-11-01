@@ -1,0 +1,198 @@
+{
+  "title": "EU gas supplier changes, LNG firm financial evidence and attribution boundaries",
+  "period": "EU 2021–2025; company 2024–2025 and H1 2025–H1 2026; DOE May 2026",
+  "sourceFiles": [
+    "data/soi-energy-trade-rerouting-2021-2025.json",
+    "data/soi-lng-sec-financial-change-2024-2025.json",
+    "data/soi-venture-global-capacity-ramp-2024-2026.json",
+    "data/soi-doe-may2026-hypothetical-gross-fob-value.json",
+    "data/soi-lng-volume-price-decomposition-h1-2026.json"
+  ],
+  "euGasImportSupplierChanges": [
+    {
+      "supplier": "Russia",
+      "bcm2021": 153,
+      "bcm2025": 36,
+      "changeBcm": -117,
+      "percentChange": -76.5
+    },
+    {
+      "supplier": "United States",
+      "bcm2021": 18.9,
+      "bcm2025": 75.6,
+      "changeBcm": 56.7,
+      "percentChange": 300
+    },
+    {
+      "supplier": "Norway",
+      "bcm2021": 79.5,
+      "bcm2025": 89.3,
+      "changeBcm": 9.8,
+      "percentChange": 12.3
+    }
+  ],
+  "euSupplierContext": {
+    "usGainAsShareOfRussianLossPercent": 48.5,
+    "explanation": "Descriptive volume ratio only: U.S. gas import growth divided by Russia gas import decline. Not evidence of one-for-one replacement, attributable sales or financial gains.",
+    "russiaLostBcm": 117,
+    "usGainedBcm": 56.7,
+    "norwayGainedBcm": 9.8
+  },
+  "companyAttribution": {
+    "matchedToEuDestinationInvoices": false,
+    "companyShipmentEuropeShare": null,
+    "incrementalProfitAttributableToRussianDisplacement": null,
+    "domesticNetEconomicBenefit": null,
+    "knownConfounders": [
+      "Plaquemines LNG facility startup and ramp-up",
+      "Average LNG sales price decline in 2025 and H1 2026",
+      "Changes in global LNG supply and demand",
+      "Changes in EU total gas demand",
+      "Different geographic and reporting periods",
+      "Contract mix, cargo diversions and derivative accounting"
+    ]
+  },
+  "evidenceMatrix": [
+    {
+      "question": "Did EU imports from Russia decline?",
+      "status": "measured",
+      "source": "EU supplier series",
+      "finding": "153 bcm in 2021 to 36 bcm in 2025; approximate/rounded"
+    },
+    {
+      "question": "Did EU imports from the U.S. rise?",
+      "status": "measured",
+      "source": "EU supplier series",
+      "finding": "18.9 bcm to 75.6 bcm in same years"
+    },
+    {
+      "question": "Did company revenue and operating income rise?",
+      "status": "measured",
+      "source": "SEC consolidated annual results",
+      "finding": "Both Cheniere and Venture Global increased 2024–2025 operating income"
+    },
+    {
+      "question": "Was company export growth exclusively due to Europe?",
+      "status": "not_established",
+      "source": "SEC facility export figures",
+      "finding": "Plaquemines accounted for 96.16% of Venture Global export volume growth 2024–2025; destination not assigned"
+    },
+    {
+      "question": "Did higher prices drive Venture Global's growth?",
+      "status": "contradicted_for_observed_period",
+      "source": "SEC company average LNG selling prices",
+      "finding": "Weighted-average LNG price decreased 2024–2025 and H1 2025–H1 2026"
+    },
+    {
+      "question": "What is May 2026 FOB export value?",
+      "status": "scenario_only",
+      "source": "DOE price-volume subset",
+      "finding": "Five destination hypothetical gross FOB values depend on assumed heating content"
+    },
+    {
+      "question": "What were realized EU-specific company receipts?",
+      "status": "not_established",
+      "source": null,
+      "finding": null
+    },
+    {
+      "question": "What were Europe-attributable profits after all costs?",
+      "status": "not_established",
+      "source": null,
+      "finding": null
+    },
+    {
+      "question": "What is net U.S. national benefit?",
+      "status": "not_established",
+      "source": null,
+      "finding": null
+    }
+  ],
+  "researchTasks": [
+    {
+      "id": 1,
+      "topic": "EU supplier before/after",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 2,
+      "topic": "US supplier growth",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 3,
+      "topic": "Russian gas decline",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 4,
+      "topic": "Norway comparator",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 5,
+      "topic": "Supplier-change ratios",
+      "status": "completed_derived"
+    },
+    {
+      "id": 6,
+      "topic": "Producer annual financial changes",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 7,
+      "topic": "Producer margin comparisons",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 8,
+      "topic": "Venture Global capacity ramp",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 9,
+      "topic": "Matched-half-year volume/price split",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 10,
+      "topic": "DOE five-destination FOB scenario",
+      "status": "completed_existing_data"
+    },
+    {
+      "id": 11,
+      "topic": "Destination invoice linkage",
+      "status": "blocked_missing_primary_data"
+    },
+    {
+      "id": 12,
+      "topic": "Export contracts by EU destination",
+      "status": "blocked_missing_primary_data"
+    },
+    {
+      "id": 13,
+      "topic": "Incremental liquefaction/transport capital and operating costs",
+      "status": "blocked_missing_primary_data"
+    },
+    {
+      "id": 14,
+      "topic": "Domestic US price and taxpayer effects",
+      "status": "blocked_missing_counterfactual"
+    },
+    {
+      "id": 15,
+      "topic": "Geopolitical benefit calibration and regression guards",
+      "status": "completed_no_score_guard"
+    }
+  ],
+  "status": "CONSOLIDATED_EVIDENCE_AND_GAPS_NOT_NEW_PRIMARY_RESEARCH",
+  "newIndependentPrimarySeries": 0,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
