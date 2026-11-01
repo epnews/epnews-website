@@ -1,0 +1,87 @@
+{
+  "title": "May 2026 five-destination LNG hypothetical FOB gross-value scenarios",
+  "sourceData": "data/soi-doe-may2026-destination-volume-price-matches.json",
+  "priceAndVolumePeriod": "2026-05",
+  "calculation": "gross value in USD millions = Bcf × assumed MMBtu/Mcf × FOB USD/MMBtu",
+  "explanation": "1 Bcf equals 1 million Mcf; multiplying Bcf by MMBtu/Mcf yields million MMBtu. The 1.037 reference is an illustrative conversion assumption, not measured shipment-specific heating value.",
+  "assumedMMBtuPerMcf": {
+    "low": 1,
+    "reference": 1.037,
+    "high": 1.1
+  },
+  "assumptionStatus": "ILLUSTRATIVE_NOT_CARGO_MEASURED",
+  "rows": [
+    {
+      "destination": "Netherlands",
+      "volumeBcf": 63.6,
+      "fobUsdPerMMBtu": 6.43,
+      "scenarioGrossValueUsdMillions": {
+        "low": 408.95,
+        "reference": 424.08,
+        "high": 449.84
+      }
+    },
+    {
+      "destination": "South Korea",
+      "volumeBcf": 49.5,
+      "fobUsdPerMMBtu": 7.6,
+      "scenarioGrossValueUsdMillions": {
+        "low": 376.2,
+        "reference": 390.12,
+        "high": 413.82
+      }
+    },
+    {
+      "destination": "Italy",
+      "volumeBcf": 46.7,
+      "fobUsdPerMMBtu": 8.57,
+      "scenarioGrossValueUsdMillions": {
+        "low": 400.22,
+        "reference": 415.03,
+        "high": 440.24
+      }
+    },
+    {
+      "destination": "Japan",
+      "volumeBcf": 42.5,
+      "fobUsdPerMMBtu": 6.35,
+      "scenarioGrossValueUsdMillions": {
+        "low": 269.88,
+        "reference": 279.86,
+        "high": 296.86
+      }
+    },
+    {
+      "destination": "Egypt",
+      "volumeBcf": 36.2,
+      "fobUsdPerMMBtu": 6.46,
+      "scenarioGrossValueUsdMillions": {
+        "low": 233.85,
+        "reference": 242.5,
+        "high": 257.24
+      }
+    }
+  ],
+  "subsetTotalsUsdMillions": {
+    "low": 1689.1,
+    "reference": 1751.59,
+    "high": 1858
+  },
+  "coverage": "Only five reported destinations; excludes other US LNG destinations and does not represent total US LNG exports",
+  "limitations": [
+    "Scenario gross FOB values only, not actual realized company cash receipts, operating profits, tax revenue or national economic benefit",
+    "No cargo-specific higher heating values, contractual pricing or reconciliation of timing and invoices",
+    "DOE destination average FOB prices may not be volume-weighted for exactly the reported shipments",
+    "No costs for feedgas, liquefaction, pipeline transport, shipping, capital, financing, taxes or domestic price effects included",
+    "Do not use for country influence scores, economic gain attribution or net US benefit"
+  ],
+  "netEconomicBenefit": null,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
