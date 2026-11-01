@@ -786,3 +786,30 @@ for(const sphere of ['us','china','russia','eu']){
  assert.equal(m.causallyAttributable,false);
  assert.equal(m.eligibleForInfluenceScoring,false);
 }
+
+// Cross-file audit consistency: every completed verification task must have scoped evidence,
+// and case evidence must never be silently promoted into influence authorization.
+const auditCaseSource=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-source-candidates.json','utf8'));
+const auditFramework=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-influence-framework.json','utf8'));
+assert.equal(auditFramework.influenceScoreAuthorized,false);
+assert.equal(diplomaticQueue.items.length,auditCaseSource.cases.length);
+for(const item of diplomaticQueue.items){
+ const candidate=auditCaseSource.cases.find(c=>c.id===item.caseId&&c.sphere===item.sphere);
+ assert.ok(candidate,'Every worklist item must resolve to exactly one curated case');
+ assert.equal(candidate.influenceScore,null);
+ assert.equal(item.influenceScore,null);
+ const ids=item.priorityTasks.map(t=>t.id);
+ assert.equal(new Set(ids).size,ids.length);
+ assert.deepEqual(ids,['verify-primary','verify-counterpart','match-baseline','match-followup','attribute','costs']);
+ for(const task of item.priorityTasks){
+  if(task.complete){
+   assert.ok(/^https:\/\//.test(task.evidence),'Completed task requires linked evidence');
+   assert.ok(task.scope&&task.scope.length>=25,'Completed task requires a specific verification scope');
+  }
+ }
+ assert.equal(item.causalAttributionPlan?.causalInfluenceAuthorized,false);
+ assert.equal(item.baselineFollowupAssessment?.causallyAttributable,false);
+ assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
+ assert.equal(item.priorityTasks.find(t=>t.id==='costs').complete,false);
+}
+assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),6);
