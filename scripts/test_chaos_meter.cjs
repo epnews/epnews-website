@@ -1,5 +1,11 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const quality=data.evidenceAudits.us['Energy and resources'].evidenceQualityGates;
+assert.equal(quality.checks.length,8);
+assert.equal(new Set(quality.checks.map(c=>c.id)).size,8);
+assert.equal(quality.newEmpiricalFindings,0);
+for(const c of quality.checks){assert.ok(c.risk&&c.requirement);assert.ok(data.sources[c.baselineSource]);}
+assert.equal(quality.netNationalBenefitUsd,null);assert.equal(quality.influenceScore,null);
 const gates=data.evidenceAudits.us['Energy and resources'].causalResearchGates;
 assert.equal(gates.questions.length,8);
 assert.equal(gates.resolvedCount,0);
@@ -166,6 +172,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.evidenceQualityGates\)/);
 assert.match(dashboard,/if\(audit\.causalResearchGates\)/);
 assert.match(dashboard.trimEnd(),/}\)\(\);?$/,'orphaned code after dashboard closure');
 assert.equal((dashboard.match(/if\(audit\.exportPriceEvidence\)/g)||[]).length,1,'duplicate export-price renderer');
