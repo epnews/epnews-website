@@ -1,0 +1,37 @@
+name: EIA H1 Coverage-Adjusted Gross Value Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_eia_h1_coverage_adjusted_values.py'
+      - 'scripts/test_eia_h1_coverage_adjusted_values.py'
+      - 'data/eia-h1-table24-monthly-coverage.json'
+      - '.github/workflows/eia-h1-coverage-adjusted-values.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pandas xlrd
+      - run: python -m py_compile scripts/build_eia_h1_coverage_adjusted_values.py
+      - run: python -m unittest scripts.test_eia_h1_coverage_adjusted_values
+      - run: python scripts/build_eia_h1_coverage_adjusted_values.py
+      - run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('eia-h1-coverage-adjusted-gross-values.json'))
+          assert not d['publishable']
+          assert d['actualConsumerExpenditureUsd'] is None
+          assert d['lngCausedDomesticCostUsd'] is None
+          assert d['netNationalBenefitUsd'] is None
+          assert d['geopoliticalInfluenceScore'] is None
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eia-h1-coverage-adjusted-audit
+          path: eia-h1-coverage-adjusted-gross-values.json
