@@ -1,5 +1,10 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const gulfRetail=data.evidenceAudits.us['Energy and resources'].tenGulfElectricityConsumerPrices;
+assert.equal(gulfRetail.items.length,10);assert.equal(new Set(gulfRetail.items.map(x=>x.id)).size,10);
+assert.deepEqual(Array.from(gulfRetail.items,x=>x.v2026),[15.91,8.96,7.21,12.87,11.09,6.10,14.82,10.90,8.16,11.23]);
+assert.deepEqual(Array.from(gulfRetail.items,x=>x.v2025),[15.40,8.76,6.42,12.55,10.90,6.29,14.42,10.00,6.64,10.42]);
+assert.ok(data.sources[gulfRetail.source]);assert.equal(gulfRetail.netNationalBenefitUsd,null);assert.equal(gulfRetail.influenceScore,null);
 const borderPrices=data.evidenceAudits.us['Energy and resources'].tenBorderGasPriceComparisons;
 assert.equal(borderPrices.items.length,10);assert.equal(new Set(borderPrices.items.map(x=>x.id)).size,10);
 assert.deepEqual(Array.from(borderPrices.items,x=>x.later),[2.15,8.76,3.82,8.59,2.96,6.19,2.75,3.60,6.25,2.79]);
@@ -272,6 +277,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.tenGulfElectricityConsumerPrices\)/);
 assert.match(dashboard,/if\(audit\.tenBorderGasPriceComparisons\)/);
 assert.match(dashboard,/if\(audit\.tenSabinePassCashFlows\)/);
 assert.match(dashboard,/if\(audit\.tenSabinePassPartnershipCosts\)/);

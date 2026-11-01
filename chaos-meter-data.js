@@ -92,6 +92,88 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "tenGulfElectricityConsumerPrices": {
+  "title": "Ten Gulf-region household and business electricity-price comparisons",
+  "period": "August 2025 versus August 2026",
+  "source": "eiaStateElectricityAugust2026",
+  "items": [
+    {
+      "id": "texas-residential",
+      "state": "Texas",
+      "sector": "Residential",
+      "v2025": 15.4,
+      "v2026": 15.91
+    },
+    {
+      "id": "texas-commercial",
+      "state": "Texas",
+      "sector": "Commercial",
+      "v2025": 8.76,
+      "v2026": 8.96
+    },
+    {
+      "id": "texas-industrial",
+      "state": "Texas",
+      "sector": "Industrial",
+      "v2025": 6.42,
+      "v2026": 7.21
+    },
+    {
+      "id": "louisiana-residential",
+      "state": "Louisiana",
+      "sector": "Residential",
+      "v2025": 12.55,
+      "v2026": 12.87
+    },
+    {
+      "id": "louisiana-commercial",
+      "state": "Louisiana",
+      "sector": "Commercial",
+      "v2025": 10.9,
+      "v2026": 11.09
+    },
+    {
+      "id": "louisiana-industrial",
+      "state": "Louisiana",
+      "sector": "Industrial",
+      "v2025": 6.29,
+      "v2026": 6.1
+    },
+    {
+      "id": "oklahoma-residential",
+      "state": "Oklahoma",
+      "sector": "Residential",
+      "v2025": 14.42,
+      "v2026": 14.82
+    },
+    {
+      "id": "oklahoma-commercial",
+      "state": "Oklahoma",
+      "sector": "Commercial",
+      "v2025": 10,
+      "v2026": 10.9
+    },
+    {
+      "id": "oklahoma-industrial",
+      "state": "Oklahoma",
+      "sector": "Industrial",
+      "v2025": 6.64,
+      "v2026": 8.16
+    },
+    {
+      "id": "texas-all-sectors",
+      "state": "Texas",
+      "sector": "All sectors",
+      "v2025": 10.42,
+      "v2026": 11.23
+    }
+  ],
+  "unit": "US cents per kilowatthour",
+  "methodology": "Ten distinct EIA Form 861M state-sector weighted-average electricity retail prices: residential, commercial and industrial for Texas, Louisiana and Oklahoma, plus Texas all-sector average. The Texas all-sector average overlaps its sector averages and is NOT a tenth independent causal study. Prices equal sector revenue divided by electricity sales; they are not an individual household's tariff or monthly bill. 2026 preliminary; 2025 final. Comparisons are nominal and not inflation-adjusted. Weather, utility rates, fuel mix, transmission, regulatory policies, demand and natural gas price changes all confound causation.",
+  "causalStatus": "Observed state electricity-price changes do not establish LNG export expansion or Hormuz disruption caused any particular share of customer costs. No national benefit or geopolitical influence inference.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "tenBorderGasPriceComparisons": {
   "title": "Ten observed U.S.–Canada/Mexico border gas trade-price comparisons",
   "source": "doeAug2026BorderGasPriceTable",
@@ -2627,6 +2709,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaStateElectricityAugust2026":{"label":"EIA Electric Power Monthly Table 5.6.A, August 2026 vs August 2025 state retail electricity prices","url":"https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a","date":"2026-10-23"},
     "doeAug2026BorderGasPriceTable":{"label":"DOE Natural Gas Imports and Exports Monthly August 2026, Table 19a, pipeline/truck border prices","url":"https://www.energy.gov/sites/default/files/2026-10/Natural%20Gas%20Imports%20and%20Exports%20Monthly%20August%202026.pdf","date":"2026-10-22"},
     "sabine2026SEC10Q":{"label":"SEC Cheniere Energy Partners Form 10-Q, September 30 2026, consolidated cash flows and supplemental interest","url":"https://www.sec.gov/Archives/edgar/data/1383650/000138365026000038/cqp-20260930.htm","date":"2026-10-29"},
     "chenierePartnersQ32026":{"label":"Cheniere Energy Partners Q3 2026 earnings release, nine-month GAAP statement","url":"https://cqpir.cheniere.com/sec-filings/all-sec-filings/content/0001383650-26-000040/cqp20263rdqtrerex991.htm","date":"2026-10-29"},
