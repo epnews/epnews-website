@@ -1,0 +1,102 @@
+{
+  "asOf": "2026-11-01",
+  "title": "SEC-filed U.S. LNG company revenue and operating-cost evidence, FY2024–2025",
+  "currency": "USD millions",
+  "fiscalPeriod": "years ended December 31",
+  "sources": [
+    {
+      "company": "Cheniere Energy Inc",
+      "url": "https://www.sec.gov/Archives/edgar/data/3570/000000357026000005/lng-20251231.htm",
+      "filing": "FY2025 Form 10-K, consolidated statements of operations",
+      "observations": [
+        {
+          "year": 2024,
+          "lngRevenue": 14899,
+          "totalRevenue": 15703,
+          "costOfSales": 6021,
+          "operatingAndMaintenance": 1857,
+          "depreciationAmortizationAccretion": 1220,
+          "totalOperatingExpenses": 9575,
+          "operatingIncome": 6128
+        },
+        {
+          "year": 2025,
+          "lngRevenue": 19435,
+          "totalRevenue": 19976,
+          "costOfSales": 7150,
+          "operatingAndMaintenance": 1966,
+          "depreciationAmortizationAccretion": 1329,
+          "totalOperatingExpenses": 10864,
+          "operatingIncome": 9112
+        }
+      ],
+      "accountingNotes": [
+        "Reported LNG revenue includes derivatives and may include FOB or delivered sales; not destination-specific DOE FOB receipts",
+        "Total operating expenses include additional selling/general/admin and other expenses not itemized in this compact comparison",
+        "Operating income is total revenue less total operating expenses, not LNG-only margin or net income"
+      ]
+    },
+    {
+      "company": "Venture Global Inc",
+      "url": "https://www.sec.gov/Archives/edgar/data/2007855/000200785526000030/vg-annualreporttosharehold.pdf",
+      "filing": "FY2025 annual report, results of operations",
+      "observations": [
+        {
+          "year": 2024,
+          "totalRevenue": 4972,
+          "costOfSales": 1351,
+          "operatingAndMaintenance": 589,
+          "generalAndAdministrative": 312,
+          "development": 635,
+          "depreciationAndAmortization": 322,
+          "totalOperatingExpenses": 3209,
+          "operatingIncome": 1763
+        },
+        {
+          "year": 2025,
+          "totalRevenue": 13769,
+          "costOfSales": 5920,
+          "operatingAndMaintenance": 975,
+          "generalAndAdministrative": 433,
+          "development": 344,
+          "depreciationAndAmortization": 941,
+          "totalOperatingExpenses": 8613,
+          "operatingIncome": 5156
+        }
+      ],
+      "additionalOperatingMetrics": [
+        {
+          "year": 2024,
+          "lngVolumesSoldTBtu": 500.6,
+          "weightedAverageLNGSalesPriceUsdPerMMBtu": 9.89
+        },
+        {
+          "year": 2025,
+          "lngVolumesSoldTBtu": 1408.8,
+          "weightedAverageLNGSalesPriceUsdPerMMBtu": 9.8
+        }
+      ],
+      "accountingNotes": [
+        "Company total revenue, not necessarily solely LNG FOB exports",
+        "2025 output increase partly reflects commissioning and ramp-up, not geopolitical supplier displacement",
+        "Development costs, depreciation and other expenses affect operating income; financing and tax costs remain below operating line"
+      ]
+    }
+  ],
+  "comparabilityRules": [
+    "Company SEC-reported consolidated revenue/operating income is observed accounting data, unlike hypothetical DOE volume-times-FOB values",
+    "Do not add Venture Global and Cheniere and call sum total U.S. LNG industry revenue; other firms exist",
+    "Do not allocate company revenue or operating income to DOE destinations without shipment-level contract and ownership linkage",
+    "Operating income is not net profit, free cash flow, tax revenue or national net economic benefit",
+    "Revenue and operating costs may include intercompany accounting, derivatives, LNG bought from third parties and non-LNG businesses",
+    "Never conflate 2024–2025 annual company accounts with May 2026 DOE monthly destination figures"
+  ],
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
