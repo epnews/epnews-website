@@ -109,7 +109,7 @@ function appendVotingEvidence(actor,dimension){
  if(influenceFramework){
   const guide=element('details');guide.append(element('summary','How diplomatic influence will be verified · 6 evidence gates'));
   guide.append(element('p','A diplomatic event is not an influence outcome. This framework applies identically to all five spheres and does not produce a score.'));
-  const list=element('ol');for(const gate of influenceFramework.dimensions){const li=element('li');li.append(element('strong',gate.question),element('p',gate.note));list.append(li);}guide.append(list,element('p','Evidence stages: '+influenceFramework.stages.join(' → ')+'. No calibrated influence score is authorized.'));panel.append(guide);
+  const list=element('ol');for(const gate of influenceFramework.dimensions){const li=element('li');li.append(element('strong',gate.question),element('p',gate.note));list.append(li);}guide.append(list,element('p','Evidence stages: '+influenceFramework.stages.join(' → ')+'. No calibrated influence score is authorized.'),element('p','Auditable case register: '+influenceFramework.caseFiles.filter(item=>item.sphere===actor).length+' verified entries for this sphere. Empty means no case has passed source review, not zero diplomatic activity.'));panel.append(guide);
  }
  const code=voteActor[actor];
  const coverage=element('p',undefined,'chaos-voting-coverage');
