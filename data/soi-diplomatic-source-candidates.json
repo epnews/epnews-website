@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "status": "source-backed-research-candidates-not-scored",
+  "reviewedOn": "2026-11-01",
+  "methodology": "Source confirms described event or legal stage only; independent implementation, attribution, durability and cost assessment remain open. These are candidates, not verified influence outcomes.",
+  "cases": [
+    {
+      "id": "soi-dip-candidate-1",
+      "sphere": "us",
+      "counterpart": "Japan and South Korea",
+      "title": "2023 Camp David trilateral cooperation commitments",
+      "stage": "announced",
+      "eventDate": "2023-08-18",
+      "sourceUrl": "https://www.mofa.go.kr/us-en/brd/m_4511/view.do?seq=761791",
+      "caveat": "Shared commitments do not by themselves prove US-caused policy change.",
+      "reviewStatus": "candidate-source-identified",
+      "influenceScore": null
+    },
+    {
+      "id": "soi-dip-candidate-2",
+      "sphere": "china",
+      "counterpart": "Saudi Arabia and Iran",
+      "title": "2023 Beijing agreement to resume Saudi-Iran diplomatic relations",
+      "stage": "signed",
+      "eventDate": "2023-03-10",
+      "sourceUrl": "https://www.spa.gov.sa/en/ed7aabfefaw",
+      "caveat": "Iraq and Oman also hosted earlier talks; exclusive Chinese attribution is unsupported.",
+      "reviewStatus": "candidate-source-identified",
+      "influenceScore": null
+    },
+    {
+      "id": "soi-dip-candidate-3",
+      "sphere": "russia",
+      "counterpart": "Belarus",
+      "title": "Russia-Belarus Union State security guarantees treaty",
+      "stage": "implemented",
+      "eventDate": "2025-03-13",
+      "sourceUrl": "https://base.garant.ru/411209091/",
+      "caveat": "Treaty entry into force is verifiable; net influence and counterfactual remain unmeasured.",
+      "reviewStatus": "candidate-source-identified",
+      "influenceScore": null
+    },
+    {
+      "id": "soi-dip-candidate-4",
+      "sphere": "eu",
+      "counterpart": "EU member states",
+      "title": "EU Artificial Intelligence Act enters into force",
+      "stage": "implemented",
+      "eventDate": "2024-08-01",
+      "sourceUrl": "https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en",
+      "caveat": "EU internal legislation is not an external diplomatic influence outcome; comparison eligibility pending.",
+      "reviewStatus": "candidate-source-identified",
+      "influenceScore": null
+    },
+    {
+      "id": "soi-dip-candidate-5",
+      "sphere": "india",
+      "counterpart": "United Arab Emirates",
+      "title": "India-UAE Comprehensive Economic Partnership Agreement enters into force",
+      "stage": "implemented",
+      "eventDate": "2022-05-01",
+      "sourceUrl": "https://rtais.wto.org/UI/PublicShowRTAIDCard.aspx?rtaid=1198",
+      "caveat": "Bilateral treaty is verified; attribution of trade changes and costs not established.",
+      "reviewStatus": "candidate-source-identified",
+      "influenceScore": null
+    }
+  ]
+}
