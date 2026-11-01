@@ -1,0 +1,89 @@
+{
+  "version": "2026-11-01",
+  "title": "Observed outcome gauges; not geopolitical influence scores",
+  "metrics": [
+    {
+      "id": "us-eu-gas",
+      "actor": "us",
+      "label": "EU imports of U.S. gas",
+      "baseline": 18.9,
+      "current": 75.6,
+      "baselineYear": 2021,
+      "currentYear": 2025,
+      "unit": "bcm",
+      "scaleMax": 100,
+      "source": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
+      "note": "EU natural gas imports, pipeline and LNG combined; volume is not company profit."
+    },
+    {
+      "id": "ru-eu-gas",
+      "actor": "russia",
+      "label": "EU imports of Russian gas",
+      "baseline": 153,
+      "current": 36,
+      "baselineYear": 2021,
+      "currentYear": 2025,
+      "unit": "bcm",
+      "scaleMax": 175,
+      "source": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
+      "note": "2021 value approximate; declining EU gas imports do not measure Russia's global revenues."
+    },
+    {
+      "id": "eu-russian-reliance",
+      "actor": "eu",
+      "label": "EU Russian gas import reduction",
+      "baseline": 0,
+      "current": 76.47,
+      "baselineYear": 2021,
+      "currentYear": 2025,
+      "unit": "% vs 2021",
+      "scaleMax": 100,
+      "source": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
+      "note": "Reduction in Russian import volume relative to 2021; not Russia's share of all EU imports."
+    },
+    {
+      "id": "china-phase-one",
+      "actor": "china",
+      "label": "China Phase One purchase fulfillment",
+      "baseline": 0,
+      "current": 57.9,
+      "baselineYear": 2020,
+      "currentYear": 2021,
+      "unit": "% commitment",
+      "scaleMax": 100,
+      "source": "https://www.piie.com/research/piie-charts/us-china-phase-one-tracker-chinas-purchases-us-goods",
+      "note": "2020–2021 combined commitment fulfillment, not a change from zero in 2020 or a China influence score.",
+      "baselineLabel": "Reference: 0% of target",
+      "currentLabel": "2020–2021 combined"
+    },
+    {
+      "id": "us-customs",
+      "actor": "us",
+      "label": "U.S. federal customs duties",
+      "baseline": 77.037,
+      "current": 194.866,
+      "baselineYear": 2024,
+      "currentYear": 2025,
+      "unit": "USD billions (FY)",
+      "scaleMax": 220,
+      "source": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/receipts-of-the-u-s-government",
+      "note": "Federal fiscal receipts, not net national benefit or tariff-incidence accounting."
+    },
+    {
+      "id": "india-russian-crude",
+      "actor": "india",
+      "label": "Indian imports of Russian crude",
+      "baseline": 0.05,
+      "current": 1.7,
+      "baselineYear": 2020,
+      "currentYear": 2024,
+      "unit": "million b/d",
+      "scaleMax": 2,
+      "source": "https://www.eia.gov/international/analysis/country/RUS",
+      "note": "2020 baseline approximate; imports measure supply sourcing, not net economic gain."
+    }
+  ],
+  "scoringPolicy": "Each gauge is a separately scaled observed outcome. No aggregation, country ranking, influence score, or readiness adjustment.",
+  "influenceScores": null,
+  "readinessAdjustment": null
+}
