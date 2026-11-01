@@ -433,4 +433,13 @@ for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(d
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
 assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
-assert.ok(html.includes('chaos-dashboard.js?v=clean-layout-1'));
+assert.ok(html.includes('chaos-dashboard.js?v=observed-dials-1'));
+
+assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
+assert.equal(data.actors.us.Diplomatic.number,1);
+assert.equal(data.actors.eu.Strategic.metric,'defence-spending-change-pct');
+assert.equal(data.actors.eu.Strategic.number,20);
+assert.equal(data.actors.china['Energy and resources'].metric??null,null);
+assert.equal(data.actors.russia['Energy and resources'].metric??null,null);
+assert.equal(data.actors.us.Diplomatic.score??null,null);
+assert.equal(data.actors.eu.Strategic.score??null,null);
