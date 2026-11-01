@@ -1,12 +1,12 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,13);
+assert.equal(evidenceTables.length,17);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
 
-for(const entry of evidenceTables){assert.ok(entry.id&&entry.auditKey);assert.ok(entry.columns.length);const record=data.evidenceAudits.us['Energy and resources'][entry.auditKey];assert.ok(record&&record.items.length);assert.ok(record.source||record.items.every(item=>item.source));for(const item of record.items)if(item.source)assert.ok(data.sources[item.source]);if(record.source)assert.ok(data.sources[record.source]);for(const column of entry.columns)for(const item of record.items)assert.ok(Object.hasOwn(item,column.key));}
+for(const entry of evidenceTables){assert.ok(entry.id&&entry.auditKey);assert.ok(entry.columns.length);const record=data.evidenceAudits.us['Energy and resources'][entry.auditKey];assert.ok(record&&record.items.length);const sourceIds=[record.source,...record.items.flatMap(item=>[item.source,...(Array.isArray(item.sources)?item.sources:[])])].filter(Boolean);assert.ok(sourceIds.length||record.items.every(item=>item.caveat||item.limit),'dataset must have sources or explicit caveats');for(const id of sourceIds)assert.ok(data.sources[id],'unknown source '+id);for(const column of entry.columns)for(const item of record.items)assert.ok(Object.hasOwn(item,column.key));}
 const southernFifteen=data.evidenceAudits.us['Energy and resources'].fifteenSouthernElectricityPrices;
 assert.equal(southernFifteen.items.length,15);assert.equal(new Set(southernFifteen.items.map(x=>x.id)).size,15);
 assert.deepEqual(Array.from(southernFifteen.items,x=>x.v2026),[14.37,11.73,7.85,14.43,13.45,7.57,16.33,14.98,8.11,13.42,13.13,6.92,13.80,12.09,7.37]);
@@ -303,14 +303,14 @@ assert.match(dashboard,/if\(audit\.domesticGasMatched2025to2026\)/);
 assert.doesNotMatch(dashboard,/if\(audit\.domesticGasPricesAug2026\)/);
 
 assert.doesNotMatch(dashboard,/if\(audit\.q32026SecCashAndCosts\)/);
-assert.match(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
 assert.match(dashboard,/chaos-meter-readiness/);
 assert.ok(dashboard.indexOf('const element=(tag,text,cls)=>')<dashboard.indexOf('const readiness=data.meterReadiness;'),'DOM helper must be initialized before readiness panel uses it');
 assert.equal((dashboard.match(/const element=\(tag,text,cls\)=>/g)||[]).length,1,'DOM helper must be declared exactly once');
 assert.match(dashboard,/readiness\.percent/);
-assert.match(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
 assert.doesNotMatch(dashboard,/if\(audit\.h12026MarketObservations\)/);
-assert.match(dashboard,/if\(audit\.observedTradeIndicators\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.observedTradeIndicators\)/);
 assert.match(dashboard,/if\(audit\.evidenceQualityGates\)/);
 assert.match(dashboard,/if\(audit\.causalResearchGates\)/);
 assert.match(dashboard.trimEnd(),/}\)\(\);?$/,'orphaned code after dashboard closure');
@@ -320,3 +320,5 @@ console.log('PASS: 15 matched FOB destination prices; 20 records; 13 financial r
 for(const key of ["tenCheniereQ3CostsCapital","tenGasStorageSupplyAudit","aug2026TenDemandDestinationMeasures"]){assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);}
 
 for(const key of ["aug2026GasSupplyDemandBalance","domesticGasPricesAug2026","q32026SecCashAndCosts","h12026MarketObservations"])assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);
+
+for(const key of ["q32026CompanyOutcomes","tradeFinancialCrossChecks","observedTradeIndicators","eightPointAudit"])assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);

@@ -146,39 +146,9 @@ function update(){
   }
 
 
-  if(audit.q32026CompanyOutcomes){const a=audit.q32026CompanyOutcomes;
-   const panel=element('section');panel.id='chaos-q3-2026-company-outcomes';panel.setAttribute('aria-label','Cheniere third-quarter 2026 reported outcomes');
-   panel.append(element('h5',a.title),element('strong',a.status));
-   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Cheniere reported 2026 and 2025 results');
-   const table=element('table'),head=element('thead'),hr=element('tr');for(const h of ['Measure','2025','2026','Unit']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
-   for(const c of a.items){const tr=element('tr'),th=element('th',c.label);th.scope='row';tr.append(th,element('td',c.value2025===null?'Not compared':String(c.value2025)),element('td',String(c.value2026)),element('td',c.unit));body.append(tr);}
-   table.append(body);scroll.append(table);panel.append(scroll);
-   for(const c of a.items){panel.append(element('p',c.label+' · '+c.meaning+' · '+c.caveat));}
-   sourceLinks(panel,[a.companySource]);panel.append(element('p','Domestic benchmark context: '+a.context));sourceLinks(panel,[a.contextSource]);
-   panel.append(element('p',a.limits),element('p','Net national benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
-  }
-  if(audit.tradeFinancialCrossChecks){const a=audit.tradeFinancialCrossChecks;
-   const panel=element('section');panel.id='chaos-trade-financial-crosschecks';panel.setAttribute('aria-label','Eight LNG trade and financial arithmetic cross-checks');
-   panel.append(element('h5',a.title),element('strong',a.status));
-   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Eight calculated LNG comparisons');
-   const table=element('table'),head=element('thead'),hr=element('tr');for(const h of ['Comparison','Calculated difference','Formula']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
-   for(const c of a.items){const tr=element('tr'),th=element('th',c.title);th.scope='row';tr.append(th,element('td',String(c.value)+' '+c.unit),element('td',c.formula));body.append(tr);}
-   table.append(body);scroll.append(table);panel.append(scroll);
-   for(const c of a.items){const sec=element('section');sec.append(element('p',c.title+' · '+c.limit));sourceLinks(sec,c.sources);panel.append(sec);}
-   panel.append(element('p',a.warning),element('p','Independent new studies: '+a.newIndependentStudies+' · Stage 3 return, net U.S. benefit and influence: NOT ESTABLISHED'));worksheet.append(panel);
-  }
 
-  if(audit.observedTradeIndicators){const a=audit.observedTradeIndicators;
-   const panel=element('section');panel.id='chaos-lng-observed-trade';panel.setAttribute('aria-label','Eight observed LNG trade indicators');
-   panel.append(element('h5',a.title),element('strong',a.status));
-   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Observed 2024 and 2025 LNG trade indicators');
-   const table=element('table'),head=element('thead'),hr=element('tr');
-   for(const h of ['Indicator','2024','2025','Unit']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
-   for(const c of a.items){const tr=element('tr'),th=element('th',c.title);th.scope='row';tr.append(th,element('td',c.baseline===null?'Not comparable':String(c.baseline)),element('td',String(c.outcome)),element('td',c.unit));body.append(tr);}
-   table.append(body);scroll.append(table);panel.append(scroll);
-   for(const c of a.items){const sec=element('section');sec.append(element('p',c.title+' · Limitation: '+c.limit));sourceLinks(sec,[c.source]);panel.append(sec);}
-   panel.append(element('p',a.interpretation),element('p','National net benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
-  }
+
+
   if(audit.evidenceQualityGates){const a=audit.evidenceQualityGates;
    const panel=element('section');panel.id='chaos-lng-evidence-quality';panel.setAttribute('aria-label','Eight LNG evidence quality safeguards');
    panel.append(element('h5',a.title),element('strong',a.status),element('p','Reviewed '+a.reviewed+' · '+a.newEmpiricalFindings+' new empirical findings'));
@@ -191,17 +161,7 @@ function update(){
    for(const q of a.questions){const section=element('section');section.append(element('h5',q.title),element('p','Established so far: '+q.known),element('p','Still needed: '+q.missing),element('p','Verification test: '+q.test));sourceLinks(section,[q.source]);panel.append(section);}
    panel.append(element('p',a.rule),element('p','Net American benefit: NOT ESTABLISHED · Geopolitical influence: NOT SCORED'));worksheet.append(panel);
   }
-  if(audit.eightPointAudit){const a=audit.eightPointAudit;
-   const panel=element('section');panel.id='chaos-lng-eight-checks';panel.setAttribute('aria-label','Eight-point LNG evidence audit');
-   panel.append(element('h5',a.title),element('strong',a.status),element('p',a.unitNote));
-   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Eight LNG evidence comparisons; scroll horizontally on small screens');
-   const table=element('table'),head=element('thead'),hr=element('tr');table.append(element('caption','Eight verified comparisons · 2024 and 2025 · see definitions below'));
-   for(const h of ['Measure','2024','2025','Difference']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
-   for(const c of a.items){const tr=element('tr'),th=element('th',c.title);th.scope='row';const fmt=n=>c.unit==='fraction'?(100*n).toFixed(1)+'%':n.toLocaleString('en-US',{maximumFractionDigits:2});const delta=c.outcome-c.baseline;tr.append(th,element('td',fmt(c.baseline)),element('td',fmt(c.outcome)),element('td',(delta>0?'+':'')+(c.unit==='fraction'?(100*delta).toFixed(1)+' pp':fmt(delta))));body.append(tr);}
-   table.append(body);scroll.append(table);panel.append(scroll);
-   for(const c of a.items){const sec=element('section');sec.append(element('p',c.title+' · '+c.unit),element('p','Definition: '+c.method),element('p','Limit: '+c.limit));sourceLinks(sec,[c.source]);panel.append(sec);}
-   panel.append(element('p',a.interpretation),element('p','Stage 3 return, public exposure, export-attributable domestic costs, net national benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
-  }
+
   if(audit.accountingReconciliationEvidence){const a=audit.accountingReconciliationEvidence;
    const panel=element('section');panel.id='chaos-lng-reconciliations';panel.setAttribute('aria-label','LNG accounting reconciliation checkpoints');
    panel.append(element('h5',a.title),element('strong',a.status),element('p',a.unit));
