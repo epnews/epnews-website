@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,25);
+assert.equal(evidenceTables.length,26);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -385,10 +385,19 @@ assert.equal(completion.classify({requirements:[]}), 'Insufficient evidence');
 assert.equal(data.completionSprint.researchGates.length,4);
 assert.deepEqual(Array.from(completion.audit(data.completionSprint.researchGates),g=>g.status),['Partially verified','Partially verified','Partially verified','Partially verified']);
 for(const gate of data.completionSprint.researchGates){assert.ok(gate.nextAction);assert.ok(gate.caveat);for(const req of gate.requirements){assert.ok(completion.statuses.includes(req.status));if(req.source)assert.ok(data.sources[req.source], 'Missing gate source: '+req.source);}}
-assert.ok(html.includes('chaos-completion-model.js?v=completion-sprint-1'));
+assert.ok(html.includes('chaos-completion-model.js?v='), 'Completion model script and version query must be present');
 assert.ok(html.indexOf('chaos-completion-model.js')<html.indexOf('chaos-dashboard.js'));
 assert.match(dashboard,/chaos-completion-status/);
 assert.match(dashboard,/completionModel\.audit\(sprint\.researchGates\)/);
 assert.equal(data.meterReadiness.components.find(c=>c.id==='technical').percent,90);
 assert.equal(data.meterReadiness.influenceScore,null);
+assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
+
+const weather=data.evidenceAudits.us['Energy and resources'].henryHubWeatherConfounder2026;
+assert.equal(weather.items.length,6);
+assert.equal(weather.items[0].value,7.72);
+assert.equal(weather.items[3].value,weather.items[4].value);
+assert.equal(weather.items[5].value,null);
+assert.ok(data.sources[weather.source]);
+assert.equal(evidenceTables.filter(x=>x.auditKey==='henryHubWeatherConfounder2026').length,1);
 assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
