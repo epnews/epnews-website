@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,9);
+assert.equal(evidenceTables.length,13);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 for(const entry of evidenceTables){assert.ok(entry.id&&entry.auditKey);assert.ok(entry.columns.length);const record=data.evidenceAudits.us['Energy and resources'][entry.auditKey];assert.ok(record&&record.items.length);assert.ok(record.source||record.items.every(item=>item.source));for(const item of record.items)if(item.source)assert.ok(data.sources[item.source]);if(record.source)assert.ok(data.sources[record.source]);for(const column of entry.columns)for(const item of record.items)assert.ok(Object.hasOwn(item,column.key));}
 const southernFifteen=data.evidenceAudits.us['Energy and resources'].fifteenSouthernElectricityPrices;
@@ -294,19 +294,19 @@ assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'
 assert.doesNotMatch(dashboard,/if\(audit\.tenCheniereQ3CostsCapital\)/);
 assert.doesNotMatch(dashboard,/if\(audit\.tenGasStorageSupplyAudit\)/);
 assert.doesNotMatch(dashboard,/if\(audit\.aug2026TenDemandDestinationMeasures\)/);
-assert.match(dashboard,/if\(audit\.aug2026GasSupplyDemandBalance\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.aug2026GasSupplyDemandBalance\)/);
 assert.match(dashboard,/if\(audit\.lngCausalCounterfactualAudit\)/);
 assert.match(dashboard,/if\(audit\.domesticGasMatched2025to2026\)/);
-assert.match(dashboard,/if\(audit\.domesticGasPricesAug2026\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.domesticGasPricesAug2026\)/);
 
-assert.match(dashboard,/if\(audit\.q32026SecCashAndCosts\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.q32026SecCashAndCosts\)/);
 assert.match(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
 assert.match(dashboard,/chaos-meter-readiness/);
 assert.ok(dashboard.indexOf('const element=(tag,text,cls)=>')<dashboard.indexOf('const readiness=data.meterReadiness;'),'DOM helper must be initialized before readiness panel uses it');
 assert.equal((dashboard.match(/const element=\(tag,text,cls\)=>/g)||[]).length,1,'DOM helper must be declared exactly once');
 assert.match(dashboard,/readiness\.percent/);
 assert.match(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
-assert.match(dashboard,/if\(audit\.h12026MarketObservations\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.h12026MarketObservations\)/);
 assert.match(dashboard,/if\(audit\.observedTradeIndicators\)/);
 assert.match(dashboard,/if\(audit\.evidenceQualityGates\)/);
 assert.match(dashboard,/if\(audit\.causalResearchGates\)/);
@@ -315,3 +315,5 @@ assert.equal((dashboard.match(/if\(audit\.exportPriceEvidence\)/g)||[]).length,1
 console.log('PASS: 15 matched FOB destination prices; 20 records; 13 financial rows and sources; accounting reconciliation; null scores; scoring gates; numeric indicators; single initialization and integration.');
 
 for(const key of ["tenCheniereQ3CostsCapital","tenGasStorageSupplyAudit","aug2026TenDemandDestinationMeasures"]){assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);}
+
+for(const key of ["aug2026GasSupplyDemandBalance","domesticGasPricesAug2026","q32026SecCashAndCosts","h12026MarketObservations"])assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);
