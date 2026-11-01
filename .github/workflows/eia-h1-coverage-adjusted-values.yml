@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11'
       - run: python -m pip install xlrd pdfplumber
       - run: python -m py_compile scripts/build_eia_h1_coverage_adjusted_values.py
-      - run: python -m unittest scripts.test_eia_h1_coverage_adjusted_values
+      - run: python -m unittest scripts.test_eia_h1_coverage_adjusted_values scripts.test_verify_eia_table24_h1_source
       - name: Independently verify monthly Table 24 coverage against both PDFs
         run: python -m scripts.verify_eia_table24_h1_source
       - name: Run audit and preserve full traceback
