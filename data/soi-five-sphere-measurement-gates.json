@@ -1,0 +1,66 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Diplomatic evidence measurement gaps; no influence rankings",
+  "measurementRequirements": [
+    "Dated baseline",
+    "Independent measured outcomes",
+    "Attribution and counterfactual",
+    "Costs and beneficiaries",
+    "Fixed normalization"
+  ],
+  "countries": [
+    {
+      "id": "us",
+      "label": "United States",
+      "linkedEvidence": [
+        "SOI-2026-10-31-QUAD-ECONSEC",
+        "SOI-2026-10-28-US-JP-AMRAAM"
+      ],
+      "next": [
+        "Quad disbursement verification",
+        "AMRAAM facility commissioning and delivered output",
+        "Independent diplomatic outcomes"
+      ]
+    },
+    {
+      "id": "india",
+      "label": "India",
+      "linkedEvidence": [
+        "SOI-2026-10-31-QUAD-ECONSEC"
+      ],
+      "next": [
+        "Mineral recovery facility funding and operations",
+        "Independent India-specific diplomatic outcomes"
+      ]
+    },
+    {
+      "id": "china",
+      "label": "China",
+      "linkedEvidence": [],
+      "next": [
+        "Bilateral agreement implementation records",
+        "Partner decisions and alternative explanations"
+      ]
+    },
+    {
+      "id": "russia",
+      "label": "Russia",
+      "linkedEvidence": [],
+      "next": [
+        "Treaty implementation and delivered cooperation",
+        "Costs and partner policy changes"
+      ]
+    },
+    {
+      "id": "eu",
+      "label": "Europe",
+      "linkedEvidence": [],
+      "next": [
+        "EU versus member-state agreement scope",
+        "Implementation and measurable policy autonomy"
+      ]
+    }
+  ],
+  "measuredInfluence": null,
+  "readinessPercent": null
+}
