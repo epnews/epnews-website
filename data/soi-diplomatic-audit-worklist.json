@@ -1,5 +1,5 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -38,12 +38,16 @@
         {
           "id": "match-baseline",
           "requirement": "Document pre-August-2023 information-sharing arrangements and operational limits.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.mod.go.jp/en/images/b40703a6ef7d0822c278593b3172b4545b475b53.pdf",
+          "scope": "2023 ministerial statement documents preactivation 2014 Trilateral Information Sharing Arrangement and restored Japan-ROK GSOMIA; baseline was not absence of all trilateral cooperation."
         },
         {
           "id": "match-followup",
           "requirement": "Find dated US/Japan/ROK defense ministry reports of operational exchanges, exercises, and continuity.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.defense.gov/News/Releases/Release/Article/3852169/joint-statement-of-the-security-consultative-committee-22/",
+          "scope": "July 2024 US-Japan 2+2 explicitly confirms continued operation of trilateral real-time DPRK missile warning sharing; official continuity report, not independently audited uptime."
         },
         {
           "id": "attribute",
@@ -68,12 +72,14 @@
         "limitations": "Public reporting corroborates a dated event or announced implementation, not independently measured operational effectiveness, causal attribution, or net influence."
       },
       "baselineFollowupAssessment": {
-        "baseline": "Prior separate US-Japan and US-ROK missile-warning channels",
-        "followup": "Trilateral real-time mechanism announced active 2023-12-19",
-        "metric": "operational activation status",
-        "descriptivelyComparable": false,
+        "baseline": "2014 Trilateral Information Sharing Arrangement and pre-existing bilateral channels; Japan-ROK GSOMIA restored before 2023 Camp David summit",
+        "followup": "Activated December 19, 2023; continued operation publicly confirmed by July 2024 US-Japan Security Consultative Committee",
+        "metric": "binary institutional operational status (preactivation arrangement vs activated continuous sharing)",
+        "descriptivelyComparable": true,
         "causallyAttributable": false,
-        "reason": "No independently measured system uptime, warning speed, or common unit"
+        "reason": "Matched institutional status established; no comparable warning latency, interception results, uptime, attribution to US alone, or net costs.",
+        "baselineSource": "https://www.mod.go.jp/en/images/b40703a6ef7d0822c278593b3172b4545b475b53.pdf",
+        "followupSource": "https://www.defense.gov/News/Releases/Release/Article/3852169/joint-statement-of-the-security-consultative-committee-22/"
       },
       "causalAttributionPlan": {
         "status": "hypotheses-not-verified",
@@ -116,17 +122,17 @@
         "eligibleForInfluenceScoring": false
       },
       "auditProgress": {
-        "completedScopedChecks": 2,
+        "completedScopedChecks": 4,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
           "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html",
-          "https://en.yna.co.kr/view/AEN20231219001751315"
+          "https://en.yna.co.kr/view/AEN20231219001751315",
+          "https://www.mod.go.jp/en/images/b40703a6ef7d0822c278593b3172b4545b475b53.pdf",
+          "https://www.defense.gov/News/Releases/Release/Article/3852169/joint-statement-of-the-security-consultative-committee-22/"
         ],
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
-          "match-baseline",
-          "match-followup",
           "attribute",
           "costs"
         ],
@@ -626,7 +632,7 @@
     "Unknown or missing evidence must never be zero-filled"
   ],
   "auditProgressSummary": {
-    "completedScopedChecks": 6,
+    "completedScopedChecks": 8,
     "requiredChecks": 30,
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
