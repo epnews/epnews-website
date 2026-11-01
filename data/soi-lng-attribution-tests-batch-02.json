@@ -1,0 +1,147 @@
+{
+  "title": "EU gas supplier displacement: bounded attribution tests and counterfactual gaps",
+  "asOf": "2026-11-01",
+  "source": "data/soi-lng-economic-evidence-batch-15.json",
+  "scope": "EU natural gas imports, all sources and modes, 2021 and 2025",
+  "units": "billion cubic metres (bcm) unless otherwise indicated",
+  "observed": {
+    "russianImports2021": 153,
+    "russianImports2025": 36,
+    "usImports2021": 18.9,
+    "usImports2025": 75.6,
+    "norwegianImports2021": 79.5,
+    "norwegianImports2025": 89.3
+  },
+  "derived": {
+    "russianImportDeclineBcm": 117,
+    "usImportGrowthBcm": 56.7,
+    "norwegianImportGrowthBcm": 9.8,
+    "usGainToRussianDeclineRatioPercent": 48.46,
+    "norwayGainToRussianDeclineRatioPercent": 8.38,
+    "russiaImportShareOfThreeSelectedSuppliers2021Percent": 60.86,
+    "russiaImportShareOfThreeSelectedSuppliers2025Percent": 17.92,
+    "usImportShareOfThreeSelectedSuppliers2021Percent": 7.52,
+    "usImportShareOfThreeSelectedSuppliers2025Percent": 37.63
+  },
+  "denominatorWarning": "Selected supplier shares are shares of Russia+US+Norway only, NOT shares of all EU gas imports; other suppliers omitted.",
+  "attributionTests": [
+    {
+      "id": 1,
+      "test": "Matching EU geographic definition",
+      "status": "pass_with_caveat",
+      "reason": "All three suppliers in one EU gas source series; Russia 2021 approximate"
+    },
+    {
+      "id": 2,
+      "test": "Matching 2021/2025 years",
+      "status": "pass",
+      "reason": "Both endpoints same years"
+    },
+    {
+      "id": 3,
+      "test": "Matching gas commodity and units",
+      "status": "pass",
+      "reason": "All-gas imports in bcm, not LNG-only"
+    },
+    {
+      "id": 4,
+      "test": "US growth smaller than Russian loss",
+      "status": "pass",
+      "reason": "56.7 bcm increase versus 117 bcm Russian decline"
+    },
+    {
+      "id": 5,
+      "test": "One-to-one physical displacement",
+      "status": "not_proven",
+      "reason": "Other suppliers, EU gas demand reduction, re-exports and portfolio rebalancing"
+    },
+    {
+      "id": 6,
+      "test": "Matched company export shipments",
+      "status": "missing",
+      "reason": "No direct DOE cargo-to-company-to-EU-buyer matching"
+    },
+    {
+      "id": 7,
+      "test": "Matched destination FOB realized receipts",
+      "status": "missing",
+      "reason": "DOE averages are not reconciled to invoices"
+    },
+    {
+      "id": 8,
+      "test": "Incremental company operating margin from Europe",
+      "status": "missing",
+      "reason": "SEC consolidated results not segmented by EU destination"
+    },
+    {
+      "id": 9,
+      "test": "Incremental capacity capital costs",
+      "status": "missing",
+      "reason": "No project-level cost of capital matched to incremental European cargoes"
+    },
+    {
+      "id": 10,
+      "test": "Domestic natural gas price counterfactual",
+      "status": "missing",
+      "reason": "No measured causal domestic-price impact"
+    },
+    {
+      "id": 11,
+      "test": "European energy security counterfactual",
+      "status": "missing",
+      "reason": "Supply resilience and alternative sourcing not quantified"
+    },
+    {
+      "id": 12,
+      "test": "Russian net fiscal impact",
+      "status": "missing",
+      "reason": "Gross fossil export revenue does not equal tax receipts or profit"
+    },
+    {
+      "id": 13,
+      "test": "Country net national benefit",
+      "status": "missing",
+      "reason": "No full producer-consumer-government welfare accounting"
+    },
+    {
+      "id": 14,
+      "test": "Causal geopolitical influence identification",
+      "status": "missing",
+      "reason": "No valid control or causal identification strategy"
+    },
+    {
+      "id": 15,
+      "test": "No-score regression safeguard",
+      "status": "pass",
+      "reason": "No readiness or influence score assigned"
+    }
+  ],
+  "alternativeExplanations": [
+    "Europe reduced aggregate gas consumption",
+    "Norway and other suppliers gained or maintained share",
+    "U.S. LNG export facilities ramped up capacity independently of EU sanctions",
+    "Global price changes and destination switching affect trade flows",
+    "Russian volumes shifted toward other markets"
+  ],
+  "claimsAllowed": [
+    "EU Russian gas imports declined substantially 2021–2025",
+    "EU U.S. gas imports increased substantially 2021–2025",
+    "The supplier shift coincides with European diversification"
+  ],
+  "claimsProhibited": [
+    "56.7 bcm of U.S. gas directly replaced Russian molecules",
+    "All U.S. LNG producer profit growth was caused by Russia sanctions",
+    "DOE FOB prices prove realized net company revenue",
+    "Company operating income proves net U.S. geopolitical benefit"
+  ],
+  "causalUsProfitFromRussianDisplacementUsd": null,
+  "netUsBenefitUsd": null,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
