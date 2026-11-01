@@ -1,0 +1,78 @@
+{
+  "version": "2026-11-01",
+  "period": "H1 ended June 30",
+  "unit": "USD millions unless noted",
+  "issuers": [
+    {
+      "name": "Cheniere Energy",
+      "scope": "consolidated LNG issuer",
+      "source": "https://lngir.cheniere.com/news-events/press-releases/detail/343/cheniere-reports-second-quarter-2026-results-and-raises",
+      "revenue": {
+        "2025": 10085,
+        "2026": 11600
+      },
+      "adjustedEbitda": {
+        "2025": 3288,
+        "2026": 4137
+      },
+      "netIncome": {
+        "2025": 1979,
+        "2026": -434
+      },
+      "volumeTbtu": {
+        "2025": 1159,
+        "2026": 1360
+      },
+      "attribution": "Higher delivered LNG volumes and margins; derivatives affect GAAP net income."
+    },
+    {
+      "name": "Venture Global",
+      "scope": "consolidated LNG issuer",
+      "source": "https://investors.ventureglobal.com/news/news-details/2026/Venture-Global-Reports-Second-Quarter-2026-Results/default.aspx",
+      "revenue": {
+        "2025": 5995,
+        "2026": 9177
+      },
+      "adjustedEbitda": {
+        "2025": 2739,
+        "2026": 3863
+      },
+      "netIncome": {
+        "2025": 764,
+        "2026": 1835
+      },
+      "volumeTbtu": {
+        "2025": 564.4,
+        "2026": 965.5
+      },
+      "attribution": "Primarily Plaquemines commissioning volume growth; net price/feedgas effects and Calcasieu Pass contract transition."
+    }
+  ],
+  "context": [
+    {
+      "name": "Sempra",
+      "source": "https://www.sempra.com/newsroom/press-releases/sempra-reports-strong-second-quarter-2026-results",
+      "scope": "Consolidated diversified utilities/infrastructure; excluded from LNG peer sum",
+      "gaapEarnings": {
+        "2025": 1367,
+        "2026": 1833
+      }
+    }
+  ],
+  "domesticIncidence": {
+    "householdGasPriceEffectUsd": null,
+    "industrialGasPriceEffectUsd": null,
+    "electricityPriceEffectUsd": null,
+    "sourceDataStatus": "not measured; require matched EIA retail price, consumption and causal counterfactual"
+  },
+  "shockAttributableEarningsUsd": null,
+  "netNationalBenefitUsd": null,
+  "geopoliticalInfluenceScore": null,
+  "notes": [
+    "Two-company sums are not the whole LNG industry, and cannot be interpreted as national benefit.",
+    "Adjusted EBITDA is non-GAAP; not interchangeable with net income or cash flow.",
+    "Project ramp-up is a major non-geopolitical driver.",
+    "Sempra is diversified; do not add consolidated earnings to LNG-only peers.",
+    "No causal domestic price burden estimate until counterfactual, weather, production and other demand factors are controlled."
+  ]
+}
