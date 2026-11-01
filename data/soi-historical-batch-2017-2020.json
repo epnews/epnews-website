@@ -1,0 +1,103 @@
+{
+  "version": "2026-11-01",
+  "period": "2017-2020",
+  "method": "Historical event candidates with official references. Dates and legal categories must be rechecked before influence assessment; no automatic positive or negative scores.",
+  "cases": [
+    {
+      "id": "2017-us-tpp-withdrawal",
+      "date": "2017-01-23",
+      "actors": [
+        "us",
+        "china"
+      ],
+      "stage": "withdrawal_from_unsigned_ratification_process",
+      "event": "U.S. presidential memorandum directed withdrawal as a TPP signatory; TPP had not entered into force.",
+      "source": "https://trumpwhitehouse.archives.gov/presidential-actions/presidential-memorandum-regarding-withdrawal-united-states-trans-pacific-partnership-negotiations-agreement/",
+      "outcomeNeeded": "Measure diverted trade and partner policy changes; do not assume Chinese gain."
+    },
+    {
+      "id": "2017-india-china-doklam-disengagement",
+      "date": "2017-08-28",
+      "actors": [
+        "india",
+        "china"
+      ],
+      "stage": "announced_disengagement",
+      "event": "India announced expeditious disengagement of border personnel at Doklam.",
+      "source": "https://www.mea.gov.in/press-releases.htm?dtl/28893/Press_Statement_on_Doklam_disengagement_understanding",
+      "outcomeNeeded": "Independent verification of force positions and sustained changes in border access."
+    },
+    {
+      "id": "2018-us-un-human-rights-council",
+      "date": "2018-06-19",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "stage": "withdrawal_from_institution",
+      "event": "United States announced withdrawal from UN Human Rights Council.",
+      "source": "https://2017-2021.state.gov/remarks-on-the-un-human-rights-council/",
+      "outcomeNeeded": "Measure lost or gained voting influence, participation and reforms against counterfactual."
+    },
+    {
+      "id": "2018-usmca-signed",
+      "date": "2018-11-30",
+      "actors": [
+        "us"
+      ],
+      "stage": "signed_not_yet_effective",
+      "event": "United States, Mexico and Canada signed USMCA; entry into force occurred July 1, 2020.",
+      "source": "https://ustr.gov/trade-agreements/free-trade-agreements/united-states-mexico-canada-agreement",
+      "outcomeNeeded": "Compare trade patterns, investment, wages, costs and policy concessions."
+    },
+    {
+      "id": "2019-russia-inf-termination",
+      "date": "2019-08-02",
+      "actors": [
+        "us",
+        "russia",
+        "eu"
+      ],
+      "stage": "treaty_termination_disputed_compliance",
+      "event": "INF Treaty ended following U.S. withdrawal and allegations of Russian noncompliance, disputed by Russia.",
+      "source": "https://www.nato.int/cps/en/natohq/news_168177.htm",
+      "outcomeNeeded": "Independently attribute security consequences, deployments and arms-control costs."
+    },
+    {
+      "id": "2020-eu-uk-withdrawal",
+      "date": "2020-01-31",
+      "actors": [
+        "eu"
+      ],
+      "stage": "member_state_withdrawal_effective",
+      "event": "United Kingdom formally withdrew from the European Union.",
+      "source": "https://www.consilium.europa.eu/en/policies/brexit/",
+      "outcomeNeeded": "Separate EU diplomatic leverage from UK sovereignty, economic and institutional changes."
+    },
+    {
+      "id": "2020-us-china-phase-one",
+      "date": "2020-01-15",
+      "actors": [
+        "us",
+        "china"
+      ],
+      "stage": "agreement_signed",
+      "event": "United States and China signed Phase One economic and trade agreement.",
+      "source": "https://ustr.gov/phase-one",
+      "outcomeNeeded": "Compare purchasing commitments with realized trade, external shocks and costs."
+    },
+    {
+      "id": "2020-india-china-galwan",
+      "date": "2020-06-15",
+      "actors": [
+        "india",
+        "china"
+      ],
+      "stage": "border_conflict_after_prior_confidence_measures",
+      "event": "Deadly Galwan Valley clash amid border tensions; not classified here as a legally adjudicated treaty breach.",
+      "source": "https://www.mea.gov.in/press-releases.htm?dtl/32770/Statement_by_Official_Spokesperson_on_the_situation_in_the_IndiaChina_border_areas",
+      "outcomeNeeded": "Assess verified casualties, disengagement and durable changes to bilateral ties."
+    }
+  ],
+  "influenceScore": null
+}
