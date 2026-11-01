@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python scripts/build_eia_h1_coverage_adjusted_values.py > eia-h1-audit-run.log 2>&1
+          python -m scripts.build_eia_h1_coverage_adjusted_values > eia-h1-audit-run.log 2>&1
           code=$?
           cat eia-h1-audit-run.log
           python - "$code" <<'PY'
