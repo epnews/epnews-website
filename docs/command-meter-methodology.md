@@ -284,3 +284,8 @@ Five additional September 30, 2026 Cheniere issuer observations: consolidated ca
 ## Earnings reconciliation #221
 
 Cheniere issuer-reported nine-month 2026 consolidated revenues ($17,773 million versus $14,526 million), GAAP attributable income ($736 million versus $3,028 million), and rounded non-GAAP adjusted attributable income (approximately $2,390 million versus $1,880 million). The adjusted figures are approximate and not GAAP cash receipts. Derivative fair-value changes materially complicate GAAP year-over-year interpretation. Source: https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full . Do not add overlapping earnings measures or infer national net benefit. No readiness score change.
+
+
+## Cash-flow arithmetic bridge #222
+
+Using Cheniere SEC nine-month 2026 and 2025 cash flow totals: 2026 operating $5,124m minus investing $2,685m = $2,439m; minus financing $1,967m = $472m. 2025 operating $3,484m minus investing $2,263m = $1,221m; minus financing $3,010m = -$1,789m. Difference in three-activity net movement is $2,261m. These are derived arithmetic, not new independently measured observations, realized destination-specific margins, free cash flow, or national welfare. Working-capital timing and financing activity prevent causal interpretation. Source: https://www.sec.gov/Archives/edgar/data/3570/000000357026000038/lng-20260930.htm . Readiness unchanged.
