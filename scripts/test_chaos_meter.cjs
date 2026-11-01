@@ -606,3 +606,12 @@ assert.equal(Number((observations.india.followup.value-observations.india.baseli
 assert.equal(observations.eu.type,'baseline-confounder');
 assert.ok(observations.eu.finding.includes('before'));
 assert.ok(candidateData.cases.every(c=>c.influenceScore===null&&c.observedEvidence.caveat.length>30));
+
+// Separate quality of a descriptive observation from causal influence.
+const qualityAuditor=require('./soi_diplomatic_measurement_quality.cjs');
+const qualityResults=qualityAuditor.assessAll(candidateData);
+assert.equal(qualityResults.length,5);
+assert.ok(qualityResults.every(x=>!x.measurementReady&&x.score===null&&!x.influenceScoreAuthorized));
+assert.deepEqual(qualityResults.find(x=>x.sphere==='india').missing,['confoundersAddressed','independentOutcomeCorroborated']);
+assert.ok(candidateData.cases.every(x=>x.measurementQuality.eligibleForInfluenceScoring===false));
+assert.equal(qualityAuditor.assess({sphere:'test',measurementQuality:Object.fromEntries(qualityAuditor.CHECKS.map(k=>[k,true]))}).influenceScoreAuthorized,false);
