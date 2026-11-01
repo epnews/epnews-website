@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "status": "protocol_verified_inputs_not_yet_loaded",
+  "baseline": 2021,
+  "comparisonYears": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "weightWithinDiplomaticIndex": 0.25,
+  "source": {
+    "publisher": "United Nations Dag Hammarskjöld Library",
+    "record": "https://digitallibrary.un.org/record/4060887",
+    "documentation": "https://ask.un.org/faq/417475",
+    "license": "UN copyright; noncommercial use with attribution. Do not redistribute source CSV without rights review.",
+    "availability": "UN describes regularly updated CSV; direct bulk retrieval and record-level integrity validation still outstanding"
+  },
+  "scope": {
+    "unit": "One adopted UN General Assembly resolution with a recorded final vote",
+    "include": "Same resolution cohort and participating eligible UN members for every sphere within a given year",
+    "exclude": [
+      "Unadopted drafts",
+      "Paragraph/amendment votes",
+      "Consensus decisions without recorded country positions"
+    ],
+    "voteCodes": {
+      "Y": "yes",
+      "N": "no",
+      "A": "abstain",
+      "X": "absent/not voting"
+    },
+    "europeanUnion": "EU has no independent UN General Assembly member-state vote. EU institutional stance must not be fabricated. Show EU member-state cohesion as a separate proxy, using frozen EU-27 membership, never equate with an EU vote."
+  },
+  "method": {
+    "actorCountryMap": {
+      "us": "USA",
+      "china": "CHN",
+      "russia": "RUS",
+      "india": "IND"
+    },
+    "yearFilter": "calendar year of adoption, not General Assembly session number",
+    "similarity": "Among resolutions where focal country and partner both voted Y/N/A, same vote / shared valid resolutions",
+    "missing": "Exclude absences from similarity denominator, publish coverage and abstention frequency",
+    "partnerSet": "Same frozen UN member partner list for all four voting states; exclude actor itself for each actor, disclose varying denominators",
+    "euProxy": "Mean pairwise EU-27 member-state agreement on same resolution cohort; not directly comparable to country-to-world alignment",
+    "change": "Annual similarity minus 2021 baseline in percentage points; requires matched topic and resolution composition adjustment before diplomatic index scoring",
+    "directionality": "Similarity describes voting agreement, not causal influence or who persuaded whom",
+    "sensitivity": [
+      "Include/exclude abstentions",
+      "Topic-balanced cohorts",
+      "Exclude actor's own vote from peer set",
+      "Partner voting coverage",
+      "EU-27 pairwise cohesion alternative"
+    ],
+    "readiness": "No live diplomatic influence needle until common cohort validated and all five actors comparable; EU may require separate method or alternative dimension"
+  },
+  "evidenceGates": [
+    {
+      "id": "download",
+      "status": "pending",
+      "criterion": "Versioned original UN voting dataset fetched and checksum recorded"
+    },
+    {
+      "id": "codes",
+      "status": "pending",
+      "criterion": "Validate country ISO codes, votes and resolution uniqueness"
+    },
+    {
+      "id": "cohort",
+      "status": "pending",
+      "criterion": "Common calendar-year resolution cohort and topic controls"
+    },
+    {
+      "id": "eu",
+      "status": "pending",
+      "criterion": "EU-27 member-state proxy clearly segregated from sovereign actor measures"
+    },
+    {
+      "id": "coverage",
+      "status": "pending",
+      "criterion": "Publish country and partner sample sizes, abstentions and missingness"
+    },
+    {
+      "id": "sensitivity",
+      "status": "pending",
+      "criterion": "Pass weighting and topic-composition sensitivity analysis"
+    }
+  ],
+  "actorResults": {
+    "us": null,
+    "china": null,
+    "russia": null,
+    "eu": null,
+    "india": null
+  },
+  "scoreAdjustment": null,
+  "readinessAdjustment": null
+}
