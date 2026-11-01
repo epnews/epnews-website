@@ -92,6 +92,97 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "tenSabinePassPartnershipCosts": {
+  "title": "Ten Sabine Pass partnership financial beneficiaries and costs",
+  "period": "Nine months ended September 30: 2025 versus 2026",
+  "source": "chenierePartnersQ32026",
+  "items": [
+    {
+      "id": "third-party-lng-revenue",
+      "label": "LNG revenue, excluding affiliate",
+      "v2025": 5961,
+      "v2026": 6561,
+      "unit": "USD millions",
+      "note": "Revenue earned from non-affiliate customers; not necessarily cash received."
+    },
+    {
+      "id": "affiliate-lng-revenue",
+      "label": "LNG revenue from affiliates",
+      "v2025": 1738,
+      "v2026": 2044,
+      "unit": "USD millions",
+      "note": "Related-party revenue; eliminated or adjusted on parent consolidation."
+    },
+    {
+      "id": "cost-of-sales",
+      "label": "Cost of sales, excluding affiliate",
+      "v2025": 4177,
+      "v2026": 4757,
+      "unit": "USD millions",
+      "note": "Excludes O&M and depreciation, separately reported."
+    },
+    {
+      "id": "affiliate-cost-of-sales",
+      "label": "Cost of sales to affiliates",
+      "v2025": 0,
+      "v2026": 46,
+      "unit": "USD millions",
+      "note": "Reported dash in 2025 treated as zero; intercompany transactions require elimination."
+    },
+    {
+      "id": "om",
+      "label": "Operating and maintenance expense",
+      "v2025": 683,
+      "v2026": 692,
+      "unit": "USD millions",
+      "note": "Does not include separately reported affiliate O&M."
+    },
+    {
+      "id": "affiliate-om",
+      "label": "Operating and maintenance expense—affiliate",
+      "v2025": 126,
+      "v2026": 136,
+      "unit": "USD millions",
+      "note": "Related-party expense; not additional group-wide expense without consolidation adjustments."
+    },
+    {
+      "id": "depreciation",
+      "label": "Depreciation and amortization",
+      "v2025": 515,
+      "v2026": 522,
+      "unit": "USD millions",
+      "note": "Noncash accounting expense."
+    },
+    {
+      "id": "net-interest",
+      "label": "Interest expense net of capitalized interest",
+      "v2025": 567,
+      "v2026": 546,
+      "unit": "USD millions",
+      "note": "Financing cost, not operating gas supply cost."
+    },
+    {
+      "id": "operating-income",
+      "label": "Income from operations",
+      "v2025": 2237,
+      "v2026": 2516,
+      "unit": "USD millions",
+      "note": "Already reflects revenue and expense categories; not additive to them."
+    },
+    {
+      "id": "net-income",
+      "label": "Net income",
+      "v2025": 1700,
+      "v2026": 1986,
+      "unit": "USD millions",
+      "note": "GAAP income, not operating cash or net U.S. benefit."
+    }
+  ],
+  "methodology": "Ten separate GAAP line items from Cheniere Energy Partners, L.P. nine-month consolidated statement, NOT ten independent studies. Cheniere Energy, Inc. consolidates the partnership: never add these to parent Cheniere financial totals. Revenues from affiliates and costs paid to affiliates can be eliminated in group consolidation. Operating income and net income are calculated from overlapping underlying revenue and expense categories and must not be summed with them. Nine-month data include the third quarter. Noncash derivatives and accounting adjustments may affect results.",
+  "causalStatus": "The financial differences cannot be attributed to the 2026 Middle East disruptions without counterfactual controls; partnership profit is not net national economic benefit.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "tenCheniereQ3CostsCapital": {
   "title": "Ten Cheniere Q3 2026 financial cost and capital-allocation measures",
   "period": "Quarter and nine months ended September 30, 2026 versus 2025 where reported",
@@ -2345,6 +2436,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "chenierePartnersQ32026":{"label":"Cheniere Energy Partners Q3 2026 earnings release, nine-month GAAP statement","url":"https://cqpir.cheniere.com/sec-filings/all-sec-filings/content/0001383650-26-000040/cqp20263rdqtrerex991.htm","date":"2026-10-29"},
     "eiaMonthlySupplyDisposition2026":{"label":"EIA U.S. Natural Gas Monthly Supply and Disposition Balance, August 2026","url":"https://www.eia.gov/dnav/ng/ng_sum_sndm_s1_m.htm","date":"2026-10-30"},
     "eiaWeeklyStorage2026":{"label":"EIA Weekly Working Gas in Underground Storage, week ending October 2, 2026","url":"https://www.eia.gov/dnav/ng/ng_stor_wkly_s1_w.htm","date":"2026-10-08"},
     "doeAugust2026LNGDestinations":{"label":"DOE August 2026 U.S. LNG destination and Mexico pipeline trade summary","url":"https://www.energy.gov/hgeo/articles/us-natural-gas-supplying-energy-world-august-2026-summary","date":"2026-10"},
