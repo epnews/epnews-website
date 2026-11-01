@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -114,6 +114,23 @@
         "independentPerformanceMeasured": false,
         "causalAttributionEstablished": false,
         "eligibleForInfluenceScoring": false
+      },
+      "auditProgress": {
+        "completedScopedChecks": 2,
+        "requiredChecks": 6,
+        "verifiedEvidenceLinks": [
+          "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html",
+          "https://en.yna.co.kr/view/AEN20231219001751315"
+        ],
+        "independentOperationalPerformanceAudited": false,
+        "attributionValidated": false,
+        "remainingChecks": [
+          "match-baseline",
+          "match-followup",
+          "attribute",
+          "costs"
+        ],
+        "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
       }
     },
     {
@@ -213,6 +230,23 @@
         "independentOperationalPerformanceAudited": false,
         "causallyAttributable": false,
         "eligibleForInfluenceScoring": false
+      },
+      "auditProgress": {
+        "completedScopedChecks": 1,
+        "requiredChecks": 6,
+        "verifiedEvidenceLinks": [
+          "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/"
+        ],
+        "independentOperationalPerformanceAudited": false,
+        "attributionValidated": false,
+        "remainingChecks": [
+          "verify-primary",
+          "match-baseline",
+          "match-followup",
+          "attribute",
+          "costs"
+        ],
+        "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
       }
     },
     {
@@ -310,6 +344,23 @@
         "independentOperationalPerformanceAudited": false,
         "causallyAttributable": false,
         "eligibleForInfluenceScoring": false
+      },
+      "auditProgress": {
+        "completedScopedChecks": 1,
+        "requiredChecks": 6,
+        "verifiedEvidenceLinks": [
+          "https://www.interfax-russia.ru/military/news/639921"
+        ],
+        "independentOperationalPerformanceAudited": false,
+        "attributionValidated": false,
+        "remainingChecks": [
+          "verify-counterpart",
+          "match-baseline",
+          "match-followup",
+          "attribute",
+          "costs"
+        ],
+        "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
       }
     },
     {
@@ -420,6 +471,23 @@
         "independentPerformanceMeasured": false,
         "causalAttributionEstablished": false,
         "eligibleForInfluenceScoring": false
+      },
+      "auditProgress": {
+        "completedScopedChecks": 1,
+        "requiredChecks": 6,
+        "verifiedEvidenceLinks": [
+          "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027"
+        ],
+        "independentOperationalPerformanceAudited": false,
+        "attributionValidated": false,
+        "remainingChecks": [
+          "verify-counterpart",
+          "match-baseline",
+          "match-followup",
+          "attribute",
+          "costs"
+        ],
+        "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
       }
     },
     {
@@ -532,6 +600,23 @@
           "Neither series establishes incremental geopolitical influence or net economic benefit"
         ],
         "eligibleForInfluenceScoring": false
+      },
+      "auditProgress": {
+        "completedScopedChecks": 1,
+        "requiredChecks": 6,
+        "verifiedEvidenceLinks": [
+          "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2009-dated.-11.03.2025.pdf"
+        ],
+        "independentOperationalPerformanceAudited": false,
+        "attributionValidated": false,
+        "remainingChecks": [
+          "verify-counterpart",
+          "match-baseline",
+          "match-followup",
+          "attribute",
+          "costs"
+        ],
+        "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
       }
     }
   ],
@@ -539,5 +624,12 @@
     "Not a representative sample or cross-sphere ranking",
     "Research task completion is not influence magnitude",
     "Unknown or missing evidence must never be zero-filled"
-  ]
+  ],
+  "auditProgressSummary": {
+    "completedScopedChecks": 6,
+    "requiredChecks": 30,
+    "independentlyAuditedPerformanceCases": 0,
+    "attributionValidatedCases": 0,
+    "scoreAuthorized": false
+  }
 }
