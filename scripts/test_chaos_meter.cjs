@@ -385,7 +385,7 @@ assert.equal(completion.classify({requirements:[]}), 'Insufficient evidence');
 assert.equal(data.completionSprint.researchGates.length,4);
 assert.deepEqual(Array.from(completion.audit(data.completionSprint.researchGates),g=>g.status),['Partially verified','Partially verified','Partially verified','Partially verified']);
 for(const gate of data.completionSprint.researchGates){assert.ok(gate.nextAction);assert.ok(gate.caveat);for(const req of gate.requirements){assert.ok(completion.statuses.includes(req.status));if(req.source)assert.ok(data.sources[req.source], 'Missing gate source: '+req.source);}}
-assert.match(html, /chaos-completion-model\\.js\\?v=[A-Za-z0-9._-]+/);
+assert.ok(html.includes('chaos-completion-model.js?v='), 'Completion model script and version query must be present');
 assert.ok(html.indexOf('chaos-completion-model.js')<html.indexOf('chaos-dashboard.js'));
 assert.match(dashboard,/chaos-completion-status/);
 assert.match(dashboard,/completionModel\.audit\(sprint\.researchGates\)/);
