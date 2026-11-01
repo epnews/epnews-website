@@ -1,0 +1,108 @@
+{
+  "version": "2026-11-01",
+  "title": "Cross-country energy market shifts with non-zero-sum interpretation",
+  "calculations": [
+    {
+      "id": "eu-gas-russia",
+      "series": "data/soi-energy-trade-rerouting-2021-2025.json",
+      "metric": "EU gas imports from Russia",
+      "unit": "bcm",
+      "from": {
+        "year": 2021,
+        "value": 153
+      },
+      "to": {
+        "year": 2025,
+        "value": 36
+      },
+      "delta": -117,
+      "percentChange": -76.47,
+      "interpretation": "Loss of EU market access; not equal to Russian worldwide net revenue loss"
+    },
+    {
+      "id": "eu-gas-us",
+      "series": "data/soi-energy-trade-rerouting-2021-2025.json",
+      "metric": "EU gas imports from United States",
+      "unit": "bcm",
+      "from": {
+        "year": 2021,
+        "value": 18.9
+      },
+      "to": {
+        "year": 2025,
+        "value": 75.6
+      },
+      "delta": 56.7,
+      "percentChange": 300,
+      "interpretation": "Gain in EU gas sales volume; not equal to US company profit or national net benefit"
+    },
+    {
+      "id": "eu-gas-norway",
+      "series": "data/soi-energy-trade-rerouting-2021-2025.json",
+      "metric": "EU gas imports from Norway",
+      "unit": "bcm",
+      "from": {
+        "year": 2021,
+        "value": 79.5
+      },
+      "to": {
+        "year": 2025,
+        "value": 89.3
+      },
+      "delta": 9.8,
+      "percentChange": 12.33,
+      "interpretation": "Increased Norwegian supply; Norway is a comparator, not one of five meter actors"
+    },
+    {
+      "id": "india-russian-crude",
+      "series": "data/soi-energy-trade-rerouting-2021-2025.json",
+      "metric": "Indian crude imports from Russia",
+      "unit": "million barrels per day",
+      "from": {
+        "year": 2020,
+        "value": 0.05,
+        "approximate": true
+      },
+      "to": {
+        "year": 2024,
+        "value": 1.7
+      },
+      "delta": 1.65,
+      "percentChange": 3300,
+      "interpretation": "Approximate low baseline creates unstable percentage; report absolute change primarily; India's purchase price and net benefits unmeasured"
+    },
+    {
+      "id": "russia-global-fossil-revenue",
+      "series": "data/soi-russian-export-revenue-eu-energy-costs.json",
+      "metric": "Modeled worldwide Russian fossil-fuel gross export revenue",
+      "unit": "EUR billion nominal",
+      "from": {
+        "year": 2022,
+        "value": 342
+      },
+      "to": {
+        "year": 2024,
+        "value": 228
+      },
+      "delta": -114,
+      "percentChange": -33.33,
+      "interpretation": "Price and global demand changes confound sanctions attribution; not profit"
+    }
+  ],
+  "interpretationGuards": [
+    "EU gas import origin figures do not show which Russian molecules were physically displaced by each new supplier",
+    "Russia 2021 to 2025 EU gas change and 2022 to 2024 global revenue change have different windows and cannot be subtracted",
+    "EU gas consumption changes mean substitution need not be one-for-one",
+    "US LNG export volumes and EU gas imports can overlap; avoid double counting",
+    "Nominal gross fossil export revenues are not comparable with bcm physical volumes",
+    "Price discounts and actual margins for India/China trade not established"
+  ],
+  "measuredNetGeopoliticalInfluence": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
