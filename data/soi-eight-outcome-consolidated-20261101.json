@@ -204,5 +204,10 @@
     "path": "data/soi-primary-measurements-20261101.json",
     "audit": "node scripts/audit_soi_primary_measurements.cjs",
     "status": "five_new_numeric_series_in_three_workstreams_no_influence_scores"
+  },
+  "remainingOutcomeBatch": {
+    "path": "data/soi-five-remaining-outcomes-20261101.json",
+    "audit": "node scripts/audit_soi_five_remaining.cjs",
+    "status": "one_bounded_delivery_status_no_additional_trade_series"
   }
 }
