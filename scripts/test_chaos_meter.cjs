@@ -1,5 +1,11 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const cross=data.evidenceAudits.us['Energy and resources'].tradeFinancialCrossChecks;
+assert.equal(cross.items.length,8);
+assert.equal(new Set(cross.items.map(x=>x.id)).size,8);
+const expectedCross=[15.1-11.9,Math.round((15.1/11.9-1)*1000)/10,10.3-6.3,2.5-4,4448-3599,2053-1281,1995-1771,2306-1830];
+for(let i=0;i<8;i++){assert.ok(Math.abs(cross.items[i].value-expectedCross[i])<1e-9);for(const source of cross.items[i].sources)assert.ok(data.sources[source]);}
+assert.equal(cross.newIndependentStudies,0);assert.equal(cross.netBenefitUsd,null);assert.equal(cross.influenceScore,null);
 const h1=data.evidenceAudits.us['Energy and resources'].h12026MarketObservations;
 assert.equal(h1.items.length,8);
 assert.equal(new Set(h1.items.map(x=>x.id)).size,8);
@@ -185,6 +191,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
 assert.match(dashboard,/if\(audit\.h12026MarketObservations\)/);
 assert.match(dashboard,/if\(audit\.observedTradeIndicators\)/);
 assert.match(dashboard,/if\(audit\.evidenceQualityGates\)/);

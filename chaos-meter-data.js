@@ -51,6 +51,105 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "tradeFinancialCrossChecks": {
+  "title": "Eight cross-checks linking LNG flows and company accounts",
+  "status": "Arithmetic derived from separately labeled published observations; NOT independent causal findings",
+  "items": [
+    {
+      "id": "national-volume",
+      "title": "1 · U.S. LNG export growth 2024–25",
+      "value": 3.2,
+      "unit": "Bcf/day",
+      "formula": "15.1 − 11.9",
+      "sources": [
+        "eiaGlobalTrade2025"
+      ],
+      "limit": "Annual national average; not a company receipt."
+    },
+    {
+      "id": "national-growth",
+      "title": "2 · U.S. LNG export growth rate",
+      "value": 26.9,
+      "unit": "percent",
+      "formula": "100 × (15.1 / 11.9 − 1), rounded",
+      "sources": [
+        "eiaGlobalTrade2025"
+      ],
+      "limit": "Annual average growth, not a causal share of disruption."
+    },
+    {
+      "id": "europe-growth",
+      "title": "3 · Europe-bound LNG volume change",
+      "value": 4,
+      "unit": "Bcf/day",
+      "formula": "10.3 − 6.3",
+      "sources": [
+        "eiaLNGDestinations2025"
+      ],
+      "limit": "Europe includes Türkiye in EIA classification."
+    },
+    {
+      "id": "asia-change",
+      "title": "4 · Asia-bound LNG volume change",
+      "value": -1.5,
+      "unit": "Bcf/day",
+      "formula": "2.5 − 4.0",
+      "sources": [
+        "eiaLNGDestinations2025"
+      ],
+      "limit": "Regional reallocation, not lost company profit."
+    },
+    {
+      "id": "external-revenue-change",
+      "title": "5 · CCH third-party LNG recognized revenue change",
+      "value": 849,
+      "unit": "USD millions",
+      "formula": "4,448 − 3,599",
+      "sources": [
+        "cch2025Sec"
+      ],
+      "limit": "Accrual revenue; not cash collected or Stage 3-only."
+    },
+    {
+      "id": "affiliate-revenue-change",
+      "title": "6 · CCH affiliate LNG recognized revenue change",
+      "value": 772,
+      "unit": "USD millions",
+      "formula": "2,053 − 1,281",
+      "sources": [
+        "cch2025Sec"
+      ],
+      "limit": "Affiliate accounting is not an additional external national export receipt."
+    },
+    {
+      "id": "operating-cash",
+      "title": "7 · CCH operating cash-flow change",
+      "value": 224,
+      "unit": "USD millions",
+      "formula": "1,995 − 1,771",
+      "sources": [
+        "cch2025Sec"
+      ],
+      "limit": "Consolidated CCH, not incremental Stage 3 margin."
+    },
+    {
+      "id": "investing-cash",
+      "title": "8 · CCH investing outflow magnitude change",
+      "value": 476,
+      "unit": "USD millions",
+      "formula": "2,306 − 1,830",
+      "sources": [
+        "cch2025Sec"
+      ],
+      "limit": "Investing flows cover multiple projects; not Stage 3-only spending."
+    }
+  ],
+  "warning": "Do not multiply aggregate export volume by destination FOB price to claim actual receipts, or sum these eight differences as net U.S. benefit. Different populations, units and accounting boundaries.",
+  "newIndependentStudies": 0,
+  "stage3ReturnUsd": null,
+  "netBenefitUsd": null,
+  "influenceScore": null
+},
             "h12026MarketObservations": {
   "title": "Eight first-half 2026 LNG market observations",
   "status": "Observed volumes and benchmark prices · January–June comparisons where available",
