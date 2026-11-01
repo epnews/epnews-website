@@ -4776,23 +4776,23 @@ window.EP_CHAOS_DATA = {
         "measurementCaveat": "Count of two national embassies (Saudi embassy in Tehran and Iranian embassy in Riyadh) reopened following 2023 diplomacy, NOT Chinese geopolitical influence points, durable peace, or a new 2026 achievement. Iraq and Oman facilitated prior rounds."
       },
       "Energy and resources": {
-        "title": "Crude oil import exposure",
-        "value": "11.6 → 8.1 million b/d",
-        "period": "2025 annual → Q2 2026",
-        "stage": "Observed statistic",
+        "title": "China crude imports: matched consecutive quarters",
+        "value": "−32% quarter over quarter (Q1 → Q2 2026)",
+        "period": "Q1 2026 → Q2 2026 (same customs series)",
+        "stage": "Observed matched-quarter change",
         "kind": "Exposure proxy",
         "sources": [
           "chinaoil"
         ],
-        "meaning": "Q2 2026 imports fell 32% from Q1. Annual and quarterly levels are shown for context, not used to calculate a like-for-like trend.",
+        "meaning": "EIA, using China General Administration of Customs monthly data, reports Q2 2026 crude oil imports of 8.1 million barrels per day, 32% lower than Q1 2026. The drop was approximately 3.9 million barrels per day; this is a quarter-over-quarter comparison, not year-over-year.",
         "costs": "Importers and users face price and supply risks; lower imports may reflect inventory changes or reduced refinery activity.",
-        "gap": "No quantified net national benefit. Require matched-quarter volumes, inventory draws and realized costs before inferring vulnerability or leverage.",
+        "gap": "A year-over-year same-quarter comparison, independent inventory figures, realized import prices and supplier shifts are needed before drawing vulnerability or geopolitical conclusions.",
         "confidence": "Moderate",
         "score": null,
-        "metric": "china-oil-import-context-gap",
-        "number": -3.5,
+        "metric": "china-crude-import-qoq-pct",
+        "number": -32,
         "displayPrecision": "approximate",
-        "measurementCaveat": "−3.5 million b/d is a descriptive gap between 2025 annual average and Q2 2026, NOT matched-period change. The Q2 versus Q1 2026 decline is a different comparison; do not attribute either to geopolitical influence."
+        "measurementCaveat": "−32% compares Q1 and Q2 2026 (matched consecutive quarters), NOT Q2 2025 vs Q2 2026. EIA indicates crude inventory drawdowns: refinery runs fell 2.2 million b/d while imports fell 3.9 million b/d. Lower imports are NOT equivalent to lower demand, lost diplomatic leverage or net economic cost."
       }
     },
     "russia": {

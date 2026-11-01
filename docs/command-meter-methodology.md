@@ -371,3 +371,8 @@ Russia: [Yonhap reporting KCNA's exchange of ratification instruments](https://e
 India: [Indian Ministry of Commerce, October 2026](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2320142) confirms TEPA in force and 92.2% of EFTA tariff lines covered by market-access commitments, which represent 99.6% of India's exports. 92.2% is covered tariff lines, not duty-free utilization or delivered trade/investment/jobs; some reductions are phased.
 
 All three are explicitly **implementation or coverage indicators** with independent units and display ranges. They must never be compared as influence scores or summed. All `score` fields remain null. No readiness percentage increase: the costs, counterfactual, realized benefits and influence gaps remain unresolved.
+
+
+## China crude import matched-quarter correction (#243)
+
+[U.S. EIA July 31, 2026](https://www.eia.gov/todayinenergy/detail.php?id=67905) reports China GACC monthly crude imports averaged **8.1 million b/d in Q2 2026**, **32% below Q1 2026**, equivalent to approximately **3.9 million b/d lower imports**. The indicator now plots −32% quarter-over-quarter, with reference range ±50% for visualization only. This replaces the former misleading annual-2025-to-Q2-2026 −3.5 million b/d context gap. This is **not Q2 2025 vs Q2 2026** and cannot isolate seasonal effects. EIA estimates Q2 refinery runs fell 2.2 million b/d while imports fell 3.9 million b/d, implying inventory drawdowns; imports are not consumption. No geopolitical influence or net benefit is inferred. Further matched-year-quarter comparisons and costs remain research priorities.

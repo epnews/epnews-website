@@ -433,20 +433,20 @@ for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(d
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
 assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
-assert.ok(html.includes('chaos-dashboard.js?v=diplomatic-implementation-241'));
+assert.ok(html.includes('chaos-dashboard.js?v=china-qoq-243'));
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
 assert.equal(data.actors.us.Diplomatic.number,1);
 assert.equal(data.actors.eu.Strategic.metric,'defence-spending-change-pct');
 assert.equal(data.actors.eu.Strategic.number,20);
-assert.equal(data.actors.china['Energy and resources'].metric,'china-oil-import-context-gap');
+assert.equal(data.actors.china['Energy and resources'].metric,'china-crude-import-qoq-pct');
 assert.equal(data.actors.russia['Energy and resources'].metric,'russia-eu-gas-decline-minimum');
 assert.equal(data.actors.us.Diplomatic.score??null,null);
 assert.equal(data.actors.eu.Strategic.score??null,null);
 
-assert.equal(data.actors.china['Energy and resources'].number,-3.5);
+assert.equal(data.actors.china['Energy and resources'].number,-32);
 assert.equal(data.actors.russia['Energy and resources'].number,-114);
-assert.match(data.actors.china['Energy and resources'].measurementCaveat,/NOT matched-period/);
+assert.match(data.actors.china['Energy and resources'].measurementCaveat,/matched consecutive quarters/);
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/MORE THAN 114/);
 assert.equal(data.actors.china['Energy and resources'].score,null);
 assert.equal(data.actors.russia['Energy and resources'].score,null);
@@ -474,3 +474,6 @@ for (const [actor,metric,number] of [['china','china-mediated-embassies-reopened
  assert.equal(data.actors[actor].Diplomatic.score,null);
  assert.ok(data.actors[actor].Diplomatic.measurementCaveat);
 }
+
+assert.match(data.actors.china['Energy and resources'].measurementCaveat,/NOT Q2 2025 vs Q2 2026/);
+assert.match(data.actors.china['Energy and resources'].measurementCaveat,/inventory drawdowns/);
