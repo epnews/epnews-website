@@ -1,0 +1,37 @@
+name: EIA H1 Economic Incidence Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_eia_h1_economic_incidence.py'
+      - 'data/eia-h1-verified-gas-volumes-summary.json'
+      - 'data/eia-h1-2025-2026-sector-prices-verified.json'
+      - '.github/workflows/eia-h1-economic-incidence.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m py_compile scripts/audit_eia_h1_economic_incidence.py
+      - run: python scripts/audit_eia_h1_economic_incidence.py
+      - run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('eia-h1-economic-incidence-audit.json'))
+          assert d['priceVolumeCoverageAligned'] is False
+          assert d['actualConsumerExpenditureUsd'] is None
+          assert d['lngCausedDomesticCostUsd'] is None
+          assert d['netNationalBenefitUsd'] is None
+          assert d['geopoliticalInfluenceScore'] is None
+          assert len(d['sectors'])==2
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eia-h1-economic-incidence-audit
+          path: eia-h1-economic-incidence-audit.json
