@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -22,7 +22,34 @@
         "Independent outcome measurement",
         "Attribution versus Japanese and Korean initiative",
         "Durability and costs"
-      ]
+      ],
+      "evidenceGateCoverage": {
+        "activity": {
+          "status": "source-identified",
+          "note": "Dated event and primary/official source identified; source content requires continued independent verification."
+        },
+        "commitment": {
+          "status": "unassessed",
+          "note": "No signed counterpart commitment established from this record."
+        },
+        "implementation": {
+          "status": "unassessed",
+          "note": "No harmonized before/after counterpart behavior measurement established."
+        },
+        "attribution": {
+          "status": "unassessed",
+          "note": "No defensible counterfactual or causal attribution established."
+        },
+        "durability": {
+          "status": "unassessed",
+          "note": "No common follow-up outcome measure established."
+        },
+        "costs": {
+          "status": "unassessed",
+          "note": "No comparable net-cost assessment established."
+        }
+      },
+      "evidenceCoverageIsInfluenceScore": false
     },
     {
       "id": "soi-dip-candidate-2",
@@ -42,7 +69,34 @@
         "Embassy operations and subsequent durability",
         "China-specific causal attribution",
         "Costs and alternative explanations"
-      ]
+      ],
+      "evidenceGateCoverage": {
+        "activity": {
+          "status": "source-identified",
+          "note": "Dated event and primary/official source identified; source content requires continued independent verification."
+        },
+        "commitment": {
+          "status": "source-identified",
+          "note": "Agreement or commitment source identified; implementation not inferred."
+        },
+        "implementation": {
+          "status": "unassessed",
+          "note": "No harmonized before/after counterpart behavior measurement established."
+        },
+        "attribution": {
+          "status": "unassessed",
+          "note": "No defensible counterfactual or causal attribution established."
+        },
+        "durability": {
+          "status": "unassessed",
+          "note": "No common follow-up outcome measure established."
+        },
+        "costs": {
+          "status": "unassessed",
+          "note": "No comparable net-cost assessment established."
+        }
+      },
+      "evidenceCoverageIsInfluenceScore": false
     },
     {
       "id": "soi-dip-candidate-3",
@@ -61,7 +115,34 @@
         "Observable policy change beyond entry into force",
         "Belarusian agency and counterfactual",
         "Durability and concessions"
-      ]
+      ],
+      "evidenceGateCoverage": {
+        "activity": {
+          "status": "source-identified",
+          "note": "Dated event and primary/official source identified; source content requires continued independent verification."
+        },
+        "commitment": {
+          "status": "source-identified",
+          "note": "Agreement or commitment source identified; implementation not inferred."
+        },
+        "implementation": {
+          "status": "unassessed",
+          "note": "No harmonized before/after counterpart behavior measurement established."
+        },
+        "attribution": {
+          "status": "unassessed",
+          "note": "No defensible counterfactual or causal attribution established."
+        },
+        "durability": {
+          "status": "unassessed",
+          "note": "No common follow-up outcome measure established."
+        },
+        "costs": {
+          "status": "unassessed",
+          "note": "No comparable net-cost assessment established."
+        }
+      },
+      "evidenceCoverageIsInfluenceScore": false
     },
     {
       "id": "soi-dip-candidate-eu-moldova-2024",
@@ -83,7 +164,34 @@
       ],
       "additionalSource": "https://www.consilium.europa.eu/en/policies/moldova/",
       "implementationSource": "https://www.eeas.europa.eu/eeas/eu-moldova-joint-statement-following-4th-high-level-political-and-security-dialogue_en",
-      "counterpartSource": "https://mfa.gov.md/en/content/state-secretary-valeriu-mija-dialogue-european-external-action-service"
+      "counterpartSource": "https://mfa.gov.md/en/content/state-secretary-valeriu-mija-dialogue-european-external-action-service",
+      "evidenceGateCoverage": {
+        "activity": {
+          "status": "source-identified",
+          "note": "Dated event and primary/official source identified; source content requires continued independent verification."
+        },
+        "commitment": {
+          "status": "source-identified",
+          "note": "Agreement or commitment source identified; implementation not inferred."
+        },
+        "implementation": {
+          "status": "unassessed",
+          "note": "No harmonized before/after counterpart behavior measurement established."
+        },
+        "attribution": {
+          "status": "unassessed",
+          "note": "No defensible counterfactual or causal attribution established."
+        },
+        "durability": {
+          "status": "unassessed",
+          "note": "No common follow-up outcome measure established."
+        },
+        "costs": {
+          "status": "unassessed",
+          "note": "No comparable net-cost assessment established."
+        }
+      },
+      "evidenceCoverageIsInfluenceScore": false
     },
     {
       "id": "soi-dip-candidate-5",
@@ -103,7 +211,34 @@
         "Matched trade baseline and product-level outcomes",
         "Attribution versus prices and broader demand",
         "Durability and net costs"
-      ]
+      ],
+      "evidenceGateCoverage": {
+        "activity": {
+          "status": "source-identified",
+          "note": "Dated event and primary/official source identified; source content requires continued independent verification."
+        },
+        "commitment": {
+          "status": "source-identified",
+          "note": "Agreement or commitment source identified; implementation not inferred."
+        },
+        "implementation": {
+          "status": "unassessed",
+          "note": "No harmonized before/after counterpart behavior measurement established."
+        },
+        "attribution": {
+          "status": "unassessed",
+          "note": "No defensible counterfactual or causal attribution established."
+        },
+        "durability": {
+          "status": "unassessed",
+          "note": "No common follow-up outcome measure established."
+        },
+        "costs": {
+          "status": "unassessed",
+          "note": "No comparable net-cost assessment established."
+        }
+      },
+      "evidenceCoverageIsInfluenceScore": false
     }
   ],
   "excludedHistoricalCases": [
@@ -125,5 +260,6 @@
       ],
       "exclusionReason": "EU internal legislation does not demonstrate foreign-government diplomatic behavior change."
     }
-  ]
+  ],
+  "evidenceAuditMethodology": "Source-identified event records are not independently verified causal influence. Gate statuses indicate research coverage, not outcomes or influence. Empty gate means unassessed, not zero. Each sphere is reviewed against the same six gates."
 }
