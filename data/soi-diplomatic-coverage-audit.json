@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "asOf": "2026-11-01",
+  "source": "data/soi-diplomatic-source-candidates.json",
+  "scope": [
+    "us",
+    "china",
+    "russia",
+    "eu",
+    "india"
+  ],
+  "method": "Conservative inventory of preselected research cases; not a representative diplomatic activity denominator. Independently audited requires explicit independent verification status plus checked claim. Observed milestones are documentary case claims, not audited influence outcomes.",
+  "rows": [
+    {
+      "actor": "us",
+      "eligibleEpisodes": 1,
+      "independentlyAudited": 0,
+      "documentedObservedMilestones": 1,
+      "attributionReady": 0,
+      "unassessedCases": 1,
+      "caseIds": [
+        "soi-dip-candidate-1"
+      ]
+    },
+    {
+      "actor": "china",
+      "eligibleEpisodes": 1,
+      "independentlyAudited": 0,
+      "documentedObservedMilestones": 1,
+      "attributionReady": 0,
+      "unassessedCases": 1,
+      "caseIds": [
+        "soi-dip-candidate-2"
+      ]
+    },
+    {
+      "actor": "russia",
+      "eligibleEpisodes": 1,
+      "independentlyAudited": 0,
+      "documentedObservedMilestones": 1,
+      "attributionReady": 0,
+      "unassessedCases": 1,
+      "caseIds": [
+        "soi-dip-candidate-3"
+      ]
+    },
+    {
+      "actor": "eu",
+      "eligibleEpisodes": 1,
+      "independentlyAudited": 0,
+      "documentedObservedMilestones": 1,
+      "attributionReady": 0,
+      "unassessedCases": 1,
+      "caseIds": [
+        "soi-dip-candidate-eu-moldova-2024"
+      ]
+    },
+    {
+      "actor": "india",
+      "eligibleEpisodes": 1,
+      "independentlyAudited": 0,
+      "documentedObservedMilestones": 0,
+      "attributionReady": 0,
+      "unassessedCases": 1,
+      "caseIds": [
+        "soi-dip-candidate-5"
+      ]
+    }
+  ],
+  "scoringAuthorized": false,
+  "needleAuthorized": false,
+  "limitations": [
+    "Candidate sample is curated and only one eligible case per sphere; cannot compare influence levels or success rates",
+    "Source audit pending for every candidate",
+    "Documented milestones do not establish actor-specific causation",
+    "Do not interpret zero audited cases as zero diplomatic influence"
+  ]
+}
