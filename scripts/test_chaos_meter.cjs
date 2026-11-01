@@ -433,7 +433,7 @@ for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(d
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
 assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
-assert.ok(html.includes('chaos-dashboard.js?v=energy-dials-1'));
+assert.ok(html.includes('chaos-dashboard.js?v=diplomatic-implementation-241'));
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
 assert.equal(data.actors.us.Diplomatic.number,1);
@@ -467,3 +467,10 @@ assert.equal(data.actors.eu.Diplomatic.number,8);
 assert.equal(data.actors.eu.Diplomatic.score,null);
 assert.match(data.actors.eu.Diplomatic.measurementCaveat,/NOT the FTA's causal effect/);
 assert.ok(data.sources.euNzTradeCommittee2025);
+
+for (const [actor,metric,number] of [['china','china-mediated-embassies-reopened-count',2],['russia','russia-dprk-treaties-in-force-count',1],['india','india-efta-tariff-lines-covered-pct',92.2]]) {
+ assert.equal(data.actors[actor].Diplomatic.metric,metric);
+ assert.equal(data.actors[actor].Diplomatic.number,number);
+ assert.equal(data.actors[actor].Diplomatic.score,null);
+ assert.ok(data.actors[actor].Diplomatic.measurementCaveat);
+}

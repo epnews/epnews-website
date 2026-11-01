@@ -19,6 +19,12 @@ const assert=require('node:assert/strict');
    await page.locator('.chaos-completion-gate').first().locator('summary').click();
    assert.ok(await page.locator('.chaos-completion-gate').first().locator('li').count()>=2);
    assert.ok(await page.locator('#chaos-sphere option').count()>=5);
+   for (const country of ['china','russia','india']) {
+    await page.locator('#chaos-sphere').selectOption(country);
+    await page.locator('#chaos-dimension').selectOption('Diplomatic');
+    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed',country+' diplomatic needle should be active');
+    assert.ok((await page.locator('#chaos-needle-note').innerText()).length>25);
+   }
    await page.locator('#chaos-sphere').selectOption('us');
    await page.locator('#chaos-dimension').selectOption('Diplomatic');
    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');

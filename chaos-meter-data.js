@@ -4632,6 +4632,21 @@ window.EP_CHAOS_DATA = {
       "label": "European Commission / NZ joint trade committee statement, 25 October 2025: Stats NZ bilateral trade year ended June 2024 and June 2025",
       "url": "https://policy.trade.ec.europa.eu/news/joint-press-statement-following-first-trade-committee-under-eu-new-zealand-fta-2025-10-25_en",
       "date": "2025-10-25"
+    },
+    "chinaSaudiIranReopened2023": {
+      "label": "China MFA: December 2023 trilateral committee confirms Saudi and Iranian embassies reopened",
+      "url": "https://www.mfa.gov.cn/eng/wjb/zygy/hd/202406/t20240603_11375395.html",
+      "date": "2023-12-15"
+    },
+    "russiaDprkTreatyEffective2024": {
+      "label": "Yonhap citing KCNA: Russia–DPRK comprehensive partnership treaty entered into force 4 December 2024",
+      "url": "https://en.yna.co.kr/view/AEN20241205000900315",
+      "date": "2024-12-05"
+    },
+    "indiaTepaTariffImplementation2026": {
+      "label": "India PIB October 2026: EFTA tariff-line coverage and agreement in force",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2320142",
+      "date": "2026-10-07"
     }
   },
   "actors": {
@@ -4742,22 +4757,23 @@ window.EP_CHAOS_DATA = {
         "score": null
       },
       "Diplomatic": {
-        "title": "Saudi–Iran diplomatic restoration",
-        "value": "Embassies reopened",
-        "period": "2016 rupture → 2023 restoration",
-        "stage": "Implemented",
+        "title": "Saudi–Iran: embassies reopened after China-hosted talks",
+        "value": "2 embassies reopened",
+        "period": "2016 rupture → confirmed December 2023",
+        "stage": "Observed implementation milestone (historical)",
         "kind": "Institutional outcome",
         "sources": [
-          "chinaDipl",
+          "chinaSaudiIranReopened2023",
           "chinaDeal"
         ],
         "meaning": "A trilateral review records reopened embassies. China hosted the agreement; Iraq and Oman conducted earlier talks.",
         "costs": "Saudi Arabia and Iran retain independent policies; mediation costs and durable security benefits are unquantified.",
-        "gap": "Official participant accounts confirm the record but are not independent proof of Chinese control or durable peace. Historical context, not a fresh 2026 gain.",
+        "gap": "Historical implementation count; measure durability, security and causal attribution separately.",
         "confidence": "Moderate",
-        "metric": null,
-        "number": null,
-        "score": null
+        "metric": "china-mediated-embassies-reopened-count",
+        "number": 2,
+        "score": null,
+        "measurementCaveat": "Count of two national embassies (Saudi embassy in Tehran and Iranian embassy in Riyadh) reopened following 2023 diplomacy, NOT Chinese geopolitical influence points, durable peace, or a new 2026 achievement. Iraq and Oman facilitated prior rounds."
       },
       "Energy and resources": {
         "title": "Crude oil import exposure",
@@ -4815,21 +4831,23 @@ window.EP_CHAOS_DATA = {
         "score": null
       },
       "Diplomatic": {
-        "title": "Russia–DPRK partnership treaty",
-        "value": "Ratified in Russia",
-        "period": "Signed June → ratified November 2024",
-        "stage": "Ratified",
+        "title": "Russia–DPRK treaty entered into force",
+        "value": "1 treaty in force",
+        "period": "Signed June 2024 → in force 4 December 2024",
+        "stage": "Observed legal implementation milestone (historical)",
         "kind": "Legal commitment",
         "sources": [
+          "russiaDprkTreatyEffective2024",
           "russiaTreaty"
         ],
         "meaning": "The Russian presidency records ratification. A mutual-support commitment is not itself a measured diplomatic victory.",
         "costs": "Reciprocal obligations, escalation exposure and bargaining concessions require a separate audit.",
-        "gap": "This record does not independently verify entry into force, implementation, troop numbers or net gains. No points assigned.",
+        "gap": "Independent implementation, military costs, security consequences and net benefit remain unquantified.",
         "confidence": "Low",
-        "metric": null,
-        "number": null,
-        "score": null
+        "metric": "russia-dprk-treaties-in-force-count",
+        "number": 1,
+        "score": null,
+        "measurementCaveat": "One verified Russia–DPRK comprehensive partnership treaty entered into force on 4 December 2024. This is a legal status count, NOT proof of Russian geopolitical influence, treaty benefits, compliance, or a new 2026 diplomatic gain."
       },
       "Energy and resources": {
         "title": "Gas delivered to the EU",
@@ -4961,22 +4979,23 @@ window.EP_CHAOS_DATA = {
         "score": null
       },
       "Diplomatic": {
-        "title": "India–EFTA TEPA",
-        "value": "In force 1 October 2025",
-        "period": "Signed 2024 → in force 2025",
-        "stage": "Implemented",
+        "title": "India–EFTA TEPA: tariff-line market access",
+        "value": "92.2% of EFTA tariff lines covered",
+        "period": "Agreement in force October 2025; coverage reiterated October 2026",
+        "stage": "Implemented treaty coverage (not realized trade)",
         "kind": "Institutional outcome",
         "sources": [
-          "efta",
-          "indiaDeal"
+          "indiaTepaTariffImplementation2026",
+          "efta"
         ],
         "meaning": "Treaty status is confirmed by both parties. EFTA is not the European Union.",
         "costs": "Tariff concessions and sector adjustment accompany market access; distribution of gains remains unmeasured.",
-        "gap": "US$100B investment and one million jobs are objectives over 15 years, not delivered capital or realized employment.",
+        "gap": "Verify utilization and realized trade/FDI/job changes in matched periods; US$100B/one million jobs are future objectives.",
         "confidence": "Moderate",
-        "metric": null,
-        "number": null,
-        "score": null
+        "metric": "india-efta-tariff-lines-covered-pct",
+        "number": 92.2,
+        "score": null,
+        "measurementCaveat": "92.2% is the share of EFTA tariff lines covered by TEPA commitments, not the percentage of tariffs already reduced to zero, trade growth, realized investment, jobs or India's diplomatic influence. Some reductions are phased."
       },
       "Energy and resources": {
         "title": "Crude oil import dependence (PPAC)",
