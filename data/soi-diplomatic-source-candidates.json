@@ -1,5 +1,5 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -99,6 +99,30 @@
         "reviewer": null,
         "reviewedOn": null,
         "notes": "US and Japanese defense ministry releases and US Pacific Command statements located and reviewed for dated operational activation claim. Full independent claim-level audit (reviewer, publication-date check, definition reconciliation) remains pending. Source-anchor reconciliation: Anchor December 2023 operational activation claim to dated trilateral defense joint statement rather than August Camp David announcement; source still requires claim-level independent audit."
+      },
+      "externalSourceCrossCheck": {
+        "status": "corroborated-reported-milestone-not-influence",
+        "checkedOn": "2026-11-01",
+        "outcomeDate": "2023-12-19",
+        "claim": "US-Japan-ROK trilateral real-time DPRK missile-warning data sharing was activated on 19 December 2023.",
+        "reporting": [
+          {
+            "url": "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html",
+            "kind": "Japanese government statement"
+          },
+          {
+            "url": "https://en.yna.co.kr/view/AEN20231219001700315",
+            "kind": "South Korean news reporting"
+          },
+          {
+            "url": "https://www.investing.com/news/world-news/explainerus-asian-allies-launch-system-to-track-north-korea-missiles-in-realtime-3259578",
+            "kind": "Reuters reporting"
+          }
+        ],
+        "limitations": "Operational activation is reported, not independently measured performance or US-exclusive causation.",
+        "independentPerformanceMeasured": false,
+        "causalAttributionEstablished": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {
@@ -195,6 +219,30 @@
         "reviewer": null,
         "reviewedOn": null,
         "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: Corrected stale US-GCC statement as unrelated to Saudi-Iran diplomatic restoration; primary source is Saudi Press Agency Beijing joint statement."
+      },
+      "externalSourceCrossCheck": {
+        "status": "corroborated-reported-milestone-not-influence",
+        "checkedOn": "2026-11-01",
+        "outcomeDate": "2023-08-09",
+        "claim": "Saudi and Iranian embassies reopened after the March 2023 Beijing agreement: Iran in Riyadh in June, Saudi Arabia in Tehran by August.",
+        "reporting": [
+          {
+            "url": "https://www.investing.com/news/commodities-news/iran-and-saudi-arabia-agree-to-resume-ties-reopen-embassies-iranian-state-media-3027583",
+            "kind": "Reuters agreement reporting"
+          },
+          {
+            "url": "https://www.rferl.org/a/iran-saudi-embassy-reopens-riyadh/32447412.html",
+            "kind": "Reuters reopening reporting"
+          },
+          {
+            "url": "https://english.ahram.org.eg/UI/Front/Inner.aspx?NewsContentID=506335",
+            "kind": "AFP reopening reporting"
+          }
+        ],
+        "limitations": "Embassy operations reported by news agencies citing government statements; earlier Iraqi/Omani mediation prevents exclusive attribution to China.",
+        "independentPerformanceMeasured": false,
+        "causalAttributionEstablished": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {
