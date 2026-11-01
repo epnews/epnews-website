@@ -749,3 +749,12 @@ for(const sphere of ['russia','eu','india']){
  assert.equal(item.priorityTasks.find(t=>t.id==='verify-primary').complete,true);
  assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,false);
 }
+
+// Baseline/follow-up matrix distinguishes descriptive comparability from causal attribution.
+for(const item of diplomaticQueue.items){
+ const assessment=item.baselineFollowupAssessment;
+ assert.ok(assessment?.baseline&&assessment?.followup&&assessment?.reason);
+ assert.equal(assessment.causallyAttributable,false);
+ assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
+}
+assert.equal(diplomaticQueue.items.filter(x=>x.baselineFollowupAssessment.descriptivelyComparable).length,2);
