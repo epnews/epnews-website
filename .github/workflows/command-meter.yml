@@ -13,7 +13,7 @@ permissions:
   contents: read
 jobs:
   command-meter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,7 +24,8 @@ jobs:
       - name: Install Chromium and Playwright
         run: |
           npm install --no-save --no-package-lock playwright@1.58.2
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
+
       - name: Browser smoke tests (desktop and mobile)
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/epnews-meter-server.log 2>&1 &
