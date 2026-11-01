@@ -1,0 +1,105 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Evidence-stage records only. These are not comparable influence scores.",
+  "register": "https://docs.google.com/document/d/15syxneRn28VGUn3943WmtDLWVfm_hnhNonpojuyVuDw/edit",
+  "scoring": {
+    "influenceScore": null,
+    "requireIndependentMeasuredOutcomes": true,
+    "doNotInferRivalLoss": true
+  },
+  "records": [
+    {
+      "id": "SOI-2026-10-31-QUAD-ECONSEC",
+      "date": "2026-10-31",
+      "actors": [
+        "United States",
+        "India",
+        "Japan",
+        "Australia"
+      ],
+      "competitiveContext": [
+        "China"
+      ],
+      "stage": "ministerial_statement",
+      "observations": [
+        {
+          "type": "pledge",
+          "amountUsd": 10000000,
+          "description": "U.S. commitment to critical-mineral recovery facilities in India and ASEAN",
+          "disbursedUsd": null,
+          "deliveredOutcome": null
+        },
+        {
+          "type": "intended_assistance",
+          "amountUsdLowerBound": 85000000,
+          "description": "Quad technical and financial assistance for trusted AI access",
+          "disbursedUsd": null,
+          "deliveredOutcome": null
+        },
+        {
+          "type": "completed_activity_official_report",
+          "description": "Quad-at-Sea ship observer mission, September 25–October 7, Chennai to Perth",
+          "independentOutcome": null
+        }
+      ],
+      "sources": [
+        "https://www.mofa.go.jp/files/101110375.pdf",
+        "https://www.mofa.go.jp/fp/nsp/pageite_000001_00006.html"
+      ],
+      "gaps": [
+        "project-level disbursement",
+        "independently measured outcomes",
+        "attribution and counterfactual"
+      ],
+      "influenceScore": null
+    },
+    {
+      "id": "SOI-2026-10-28-US-JP-AMRAAM",
+      "date": "2026-10-28",
+      "actors": [
+        "United States",
+        "Japan"
+      ],
+      "competitiveContext": [
+        "China"
+      ],
+      "stage": "ministerial_agreement_to_establish",
+      "observations": [
+        {
+          "type": "agreement",
+          "description": "AMRAAM final assembly and check-out facility in Japan",
+          "operational": false,
+          "deliveredUnits": null
+        },
+        {
+          "type": "technical_information_agreement",
+          "description": "Share technical information toward higher SM-3 Block IIA production",
+          "deliveredUnits": null
+        }
+      ],
+      "sources": [
+        "https://www.mod.go.jp/en/article/2026/10/8dbc5c2ef47ef3843a13f3bb48dc6b00fff7ba03.html",
+        "https://www.mod.go.jp/j/press/kisha/2026/1028a_r.html"
+      ],
+      "gaps": [
+        "facility contract and commissioning",
+        "financing and delivery",
+        "independently measured strategic effect"
+      ],
+      "influenceScore": null
+    }
+  ],
+  "countryEvidence": {
+    "United States": [
+      "SOI-2026-10-31-QUAD-ECONSEC",
+      "SOI-2026-10-28-US-JP-AMRAAM"
+    ],
+    "India": [
+      "SOI-2026-10-31-QUAD-ECONSEC"
+    ],
+    "China": [],
+    "Russia": [],
+    "Europe": []
+  },
+  "notes": "China is competitive context, not a demonstrated loser. Europe and Russia have no new records in this batch. Existing historical observations remain separate."
+}
