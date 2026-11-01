@@ -2,6 +2,45 @@
 window.EP_CHAOS_DATA = {
   "reviewed": "2026-10-31",
   "methodologyVersion": "2.0",
+  "meterReadiness": {
+  "label": "Command Meter Readiness",
+  "asOf": "2026-10-31",
+  "percent": 45,
+  "previousPercent": null,
+  "baselinePr": 192,
+  "kind": "Editorial planning estimate; not a measured statistical percentage",
+  "components": [
+    {
+      "id": "technical",
+      "label": "Technical meter and interactions",
+      "percent": 90
+    },
+    {
+      "id": "evidence",
+      "label": "Verified economic evidence",
+      "percent": 55
+    },
+    {
+      "id": "incidence",
+      "label": "Costs versus benefits",
+      "percent": 35
+    },
+    {
+      "id": "causation",
+      "label": "Causation and counterfactuals",
+      "percent": 25
+    },
+    {
+      "id": "scoring",
+      "label": "Defensible influence scoring",
+      "percent": 20
+    }
+  ],
+  "changePolicy": "Only update the percentage when a meaningful evidence, causation, cost-accounting or scoring gap closes. A merged PR alone does not earn percentage points.",
+  "nextEvidenceGate": "Destination- and contract-matched realized receipts, incremental project costs and a credible disruption counterfactual.",
+  "influenceScore": null,
+  "netNationalBenefitUsd": null
+},
   "dimensions": [
     "Economic",
     "Strategic",
