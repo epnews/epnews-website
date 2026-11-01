@@ -1,5 +1,12 @@
 /* Reviewed evidence records. Null scores are intentional, never zero-filled. */
 window.EP_CHAOS_DATA = {
+  "soiDiplomaticUpdates": {
+    "us": [
+      {"title":"Quad economic-security cooperation · Oct 31","stage":"Ministerial statement; pledge and completed observer mission","finding":"$10 million U.S. mineral-recovery commitment and intended Quad AI assistance exceeding $85 million are not verified disbursements. Quad-at-Sea observer mission was reported completed.","limit":"No independently measured diplomatic influence or rival loss.","source":"https://www.mofa.go.jp/files/101110375.pdf"},
+      {"title":"U.S.–Japan missile-production cooperation · Oct 28","stage":"Ministerial agreement; facility not operational","finding":"Agreement to establish AMRAAM final assembly and inspection in Japan; SM-3 technical cooperation planned.","limit":"No verified facility output, delivered missiles, or influence change.","source":"https://www.mod.go.jp/en/article/2026/10/8dbc5c2ef47ef3843a13f3bb48dc6b00fff7ba03.html"}
+    ],
+    "india": [{"title":"Quad economic-security cooperation · Oct 31","stage":"Ministerial statement; observer mission completed","finding":"India participated in Quad economic-security commitments and the completed Chennai–Perth maritime observer mission.","limit":"Pledges and activities do not establish an independently measured influence change.","source":"https://www.mofa.go.jp/files/101110375.pdf"}]
+  },
   "reviewed": "2026-10-31",
   "methodologyVersion": "2.0",
   "evidenceTableRegistry": [
