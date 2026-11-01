@@ -5,10 +5,10 @@ window.EP_CHAOS_DATA = {
   "meterReadiness": {
   "label": "Command Meter Readiness",
   "asOf": "2026-10-31",
-  "percent": 47,
-  "previousPercent": 45,
-  "lastEvidencePr": 194,
-  "changeReason": "Q3 2026 Cheniere recognized revenue, non-GAAP adjusted EBITDA and distributable cash flow, and exported cargo/volume provide more recent issuer-reported outcomes; causal and national accounting gaps remain.",
+  "percent": 49,
+  "previousPercent": 47,
+  "lastEvidencePr": 196,
+  "changeReason": "SEC nine-month 2026 operating, investing and financing cash flows plus project capital spending, cash interest and taxes provide better evidence of company cash generation and cost incidence. Working-capital timing and causal attribution remain unresolved.",
   "baselinePr": 192,
   "kind": "Editorial planning estimate; not a measured statistical percentage",
   "components": [
@@ -25,7 +25,7 @@ window.EP_CHAOS_DATA = {
     {
       "id": "incidence",
       "label": "Costs versus benefits",
-      "percent": 35
+      "percent": 40
     },
     {
       "id": "causation",
