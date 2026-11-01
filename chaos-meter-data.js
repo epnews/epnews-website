@@ -51,6 +51,73 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "evidenceQualityGates": {
+  "title": "Eight evidence-quality gates for the LNG investigation",
+  "status": "Methodological safeguards · no new empirical outcomes",
+  "reviewed": "2026-10-31",
+  "checks": [
+    {
+      "id": "source-independence",
+      "title": "1 · Source independence",
+      "risk": "Several CCH figures derive from the same SEC filing; repeated rows do not constitute independent corroboration.",
+      "requirement": "Require a genuinely independent source for disputed or causal assertions; identify shared underlying datasets.",
+      "baselineSource": "cch2025Sec"
+    },
+    {
+      "id": "accounting-boundary",
+      "title": "2 · Consistent accounting boundary",
+      "risk": "CCH consolidated financials and Stage 3 construction figures cover different scopes.",
+      "requirement": "Label entity, project, affiliate transactions and time period before calculating any return.",
+      "baselineSource": "cch2025Sec"
+    },
+    {
+      "id": "cash-vs-accrual",
+      "title": "3 · Cash versus accrual",
+      "risk": "Reported revenue and cash flow are not interchangeable.",
+      "requirement": "Reconcile recognized sales, working capital and cash collections before stating realized receipts.",
+      "baselineSource": "cch2025Sec"
+    },
+    {
+      "id": "price-vs-profit",
+      "title": "4 · Price versus profit",
+      "risk": "DOE FOB prices exclude downstream costs and cannot establish company profit.",
+      "requirement": "Require matched shipment quantity, costs, contract and ownership data before margin claims.",
+      "baselineSource": "doeLNGPrices2026Aug"
+    },
+    {
+      "id": "counterfactual",
+      "title": "5 · Causal counterfactual",
+      "risk": "Stage 3 startup predates the later 2026 disruptions.",
+      "requirement": "Compare observed output with a credible no-disruption scenario; distinguish trend from event effect.",
+      "baselineSource": "eiaCorpusStartup"
+    },
+    {
+      "id": "domestic-incidence",
+      "title": "6 · Domestic cost incidence",
+      "risk": "Henry Hub changes alone cannot isolate export-driven household and manufacturing costs.",
+      "requirement": "Use matched consumer/industry series and control for weather, supply, storage and other demand.",
+      "baselineSource": "eiaHenryHubAnnual"
+    },
+    {
+      "id": "model-vs-observation",
+      "title": "7 · Model versus observed outcome",
+      "risk": "DOE 2050 scenario results are not observed 2026 household bills.",
+      "requirement": "Separate model assumptions, scenario year, price basis and uncertainty from historical observations.",
+      "baselineSource": "doeLngEconomic2025"
+    },
+    {
+      "id": "netting-and-uncertainty",
+      "title": "8 · Nonduplicative national accounting",
+      "risk": "Adding revenue, capital spending and borrowing double-counts flows and omits costs.",
+      "requirement": "Use comparable incremental welfare measures, cost allocation and uncertainty intervals before any net benefit score.",
+      "baselineSource": "cch2025Sec"
+    }
+  ],
+  "interpretation": "These are publication safeguards, not verified discoveries. Each baseline citation supports the identified limitation or data category; it does not resolve the underlying causal question.",
+  "newEmpiricalFindings": 0,
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "causalResearchGates": {
   "title": "Eight unanswered tests of who benefits from LNG expansion",
   "status": "OPEN RESEARCH QUESTIONS — NOT VERIFIED OUTCOMES",
