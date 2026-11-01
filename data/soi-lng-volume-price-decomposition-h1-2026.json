@@ -1,0 +1,43 @@
+{
+  "title": "Venture Global H1 2025–H1 2026 LNG volume-price revenue proxy decomposition",
+  "source": "data/soi-venture-global-capacity-ramp-2024-2026.json",
+  "method": "Symmetric two-factor Shapley decomposition of V×P. Volume contribution=(V1−V0)×(P0+P1)/2; price contribution=(P1−P0)×(V0+V1)/2.",
+  "units": "USD millions; 1 TBtu × 1 USD/MMBtu = 1 million USD",
+  "inputs": {
+    "h1_2025": {
+      "volumeTBtu": 557.5,
+      "averagePriceUsdPerMMBtu": 10.87
+    },
+    "h1_2026": {
+      "volumeTBtu": 947.2,
+      "averagePriceUsdPerMMBtu": 9.64
+    }
+  },
+  "results": {
+    "modeledGrossSalesValue2025UsdMillions": 6060.03,
+    "modeledGrossSalesValue2026UsdMillions": 9131.01,
+    "modeledChangeUsdMillions": 3070.98,
+    "volumeContributionUsdMillions": 3996.37,
+    "priceContributionUsdMillions": -925.39,
+    "roundingResidualUsdMillions": 0,
+    "volumeContributionShareOfNetChangePercent": 130.13,
+    "priceContributionShareOfNetChangePercent": -30.13
+  },
+  "status": "MODELED_VOLUME_PRICE_REVENUE_PROXY_NOT_REPORTED_REVENUE",
+  "interpretation": [
+    "Volume growth was the positive driver; lower average prices offset part of its gross value",
+    "Average LNG selling price is company-wide, not a DOE destination FOB price",
+    "Price-volume proxy may differ from reported revenue because of contract mix, derivatives, timing and other items",
+    "Two-factor decomposition is arithmetic, not a causal geopolitical attribution",
+    "No determination of which share of volume increase went to Europe or displaced Russia",
+    "No company profit or net US national benefit inferred"
+  ],
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
