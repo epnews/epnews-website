@@ -289,3 +289,8 @@ Cheniere issuer-reported nine-month 2026 consolidated revenues ($17,773 million 
 ## Cash-flow arithmetic bridge #222
 
 Using Cheniere SEC nine-month 2026 and 2025 cash flow totals: 2026 operating $5,124m minus investing $2,685m = $2,439m; minus financing $1,967m = $472m. 2025 operating $3,484m minus investing $2,263m = $1,221m; minus financing $3,010m = -$1,789m. Difference in three-activity net movement is $2,261m. These are derived arithmetic, not new independently measured observations, realized destination-specific margins, free cash flow, or national welfare. Working-capital timing and financing activity prevent causal interpretation. Source: https://www.sec.gov/Archives/edgar/data/3570/000000357026000038/lng-20260930.htm . Readiness unchanged.
+
+
+## Verified cash-flow drivers #223
+
+SEC Form 10-Q, consolidated statement of cash flows for the nine months ended September 30, 2026 and 2025: derivative settlement cash flow -$659m versus +$286m; trade and other receivables adjustment -$50m versus -$587m; inventory adjustment -$219m versus +$42m; accounts payable/accrued liabilities adjustment +$279m versus -$672m. All are components already embedded in operating cash flow, not separate export earnings. Management states working-capital timing primarily explains the operating cash increase, while additional LNG receipts contributed to a lesser extent. Do not infer geopolitical causation, realized destination-specific profits or national net benefit. Source: https://www.sec.gov/Archives/edgar/data/3570/000000357026000038/lng-20260930.htm . No readiness change.
