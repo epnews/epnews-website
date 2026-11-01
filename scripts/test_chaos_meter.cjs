@@ -433,7 +433,7 @@ for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(d
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
 assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
-assert.ok(html.includes('chaos-dashboard.js?v=russia-fiscal-246'));
+assert.ok(html.includes('chaos-dashboard.js?v=russia-freight-247'));
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
 assert.equal(data.actors.us.Diplomatic.number,1);
@@ -491,3 +491,9 @@ assert.match(data.actors.russia['Energy and resources'].costs,/452.4 billion RUB
 assert.match(data.actors.russia['Energy and resources'].costs,/22\.3% year-over-year/);
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/Separate fiscal series/);
 assert.equal(data.actors.russia['Energy and resources'].number,625);
+
+assert.ok(data.actors.russia['Energy and resources'].sources.includes('russiaUralsFreightSep2026'));
+assert.match(data.actors.russia['Energy and resources'].costs,/US\$20\/barrel/);
+assert.match(data.actors.russia['Energy and resources'].costs,/US\$24\.8\/barrel/);
+assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/NOT additive/);
+assert.equal(data.actors.russia['Energy and resources'].score,null);
