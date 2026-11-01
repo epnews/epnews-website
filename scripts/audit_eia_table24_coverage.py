@@ -7,25 +7,31 @@ import hashlib,json,re,urllib.request
 from pathlib import Path
 URL='https://www.eia.gov/naturalgas/monthly/pdf/table_24.pdf'
 ARCHIVE='https://www.eia.gov/naturalgas/monthly/archive/2025/2025_10/pdf/table_24.pdf'
+def national_total(line):
+ return bool(re.match(r'^\s*Total\b',line,re.I))
+def extract_candidates(doc):
+ candidates=[]
+ for idx,page in enumerate(doc.pages):
+  lines=(page.extract_text(layout=False) or '').splitlines()
+  for lineno,line in enumerate(lines):
+   if national_total(line):
+    candidates.append({'pdfPage':idx+1,'lineNumber':lineno+1,'line':line[:500],
+      'precedingLines':lines[max(0,lineno-8):lineno],
+      'followingLines':lines[lineno+1:lineno+3]})
+ return candidates
 MONTHS=[f'{y}-{m:02d}' for y in (2025,2026) for m in range(1,7)]
 def main():
- out={'source':URL,'table':'NGM Table 24','months':MONTHS,'rawPdfSha256':None,'nationalCoveragePct':{},'candidateUnitedStatesLines':[],'candidateNationalTotalLines':[],'archive2025':{'url':ARCHIVE,'sha256':None,'errors':[],'candidateNationalTotalLines':[]},'complete':False,'reviewStatus':'NOT_VERIFIED','onsystemGrossSalesValueUsd':None,'lngCausedCostUsd':None,'netNationalBenefitUsd':None,'geopoliticalInfluenceScore':None,'errors':[]}
+ out={'source':URL,'table':'NGM Table 24','months':MONTHS,'rawPdfSha256':None,'nationalCoveragePct':{},'monthlyNationalCoverageCandidates':{},'candidateUnitedStatesLines':[],'candidateNationalTotalLines':[],'archive2025':{'url':ARCHIVE,'sha256':None,'errors':[],'candidateNationalTotalLines':[]},'complete':False,'reviewStatus':'NOT_VERIFIED','onsystemGrossSalesValueUsd':None,'lngCausedCostUsd':None,'netNationalBenefitUsd':None,'geopoliticalInfluenceScore':None,'errors':[]}
  try:
   import pdfplumber
   with urllib.request.urlopen(urllib.request.Request(URL,headers={'User-Agent':'EPNews-evidence-audit/1.0'}),timeout=60) as r:raw=r.read()
   out['rawPdfSha256']=hashlib.sha256(raw).hexdigest()
   Path('eia-table24-source.pdf').write_bytes(raw)
   with pdfplumber.open('eia-table24-source.pdf') as doc:
-   for idx,page in enumerate(doc.pages):
-    txt=page.extract_text() or ''
-    for line in txt.splitlines():
-     if re.search(r'\b(?:U\.S\.|United States|Total U\.S\.)\b',line,re.I):
-      out['candidateUnitedStatesLines'].append({'pdfPage':idx+1,'line':line[:400]})
-     if re.match(r'^\\s*Total\\b',line,re.I):
-      out['candidateNationalTotalLines'].append({'pdfPage':idx+1,'line':line[:400]})
+   out['candidateNationalTotalLines']=extract_candidates(doc)
   # PDF's multi-column month/year headers need verified association.
   # Never guess from row order, nor substitute a national figure with a state figure.
-  out['errors'].append('National Total rows found as candidates only; month/year column mapping requires verification.')
+  out['errors'].append('Monthly Total candidates require sector/month/year/header verification; no automatic numeric release.')
   try:
    with urllib.request.urlopen(urllib.request.Request(ARCHIVE,headers={'User-Agent':'EPNews-evidence-audit/1.0'}),timeout=60) as r: archived=r.read()
    out['archive2025']['sha256']=hashlib.sha256(archived).hexdigest()
@@ -37,6 +43,6 @@ def main():
   except Exception as exc:out['archive2025']['errors'].append(repr(exc))
  except Exception as e:out['errors'].append(repr(e))
  Path('eia-table24-coverage-audit.json').write_text(json.dumps(out,indent=2)+'\n')
- print(json.dumps({'pdfSha256':out['rawPdfSha256'],'candidateLines':len(out['candidateUnitedStatesLines']),'errors':out['errors']},indent=2))
+ print(json.dumps({'pdfSha256':out['rawPdfSha256'],'currentNationalRows':len(out['candidateNationalTotalLines']),'archivedNationalRows':len(out['archive2025']['candidateNationalTotalLines']),'archiveErrors':out['archive2025']['errors'],'errors':out['errors']},indent=2))
  if not out['rawPdfSha256']:raise SystemExit(2)
 if __name__=='__main__':main()
