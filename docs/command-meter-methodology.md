@@ -396,3 +396,8 @@ See [Russia energy revenue, fiscal and cost ledger](russia-energy-revenue-fiscal
 ## Russian Urals freight and discounts (#247)
 
 Reported September 2026 route-specific Urals freight estimates: China via Suez ~US$20/bbl, India ~US$18/bbl; Argus August 21 FOB Urals discounts to Brent US$24.8/bbl Baltic and US$25.2–26.15/bbl Novorossiysk. These are not audited cash shipping expenses and cannot be added to discounts or multiplied across all exports to assert actual net loss. See [source and basis reconciliation](russia-energy-revenue-fiscal-cost-ledger.md). Existing Russia needle and null score preserved.
+
+
+## US LNG national cost-benefit decision gate (#248)
+
+See [US LNG cost-benefit decision gate](us-lng-cost-benefit-gate.md): Cheniere nine-month 2025/2026 SEC cash-flow bridge (operating less investing cash US$1,221m to US$2,439m; change +US$1,218m), with explicit working-capital and non-causation caveats. One issuer accounting reconciliation complete; five national-benefit and influence gates remain open. Existing LNG-share needle and all controls unchanged; readiness remains 53% under documented evidence-only change policy.
