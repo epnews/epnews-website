@@ -571,5 +571,9 @@ assert.equal(influenceFramework.caseFiles.length,0);
 const candidateData=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-source-candidates.json','utf8'));
 assert.equal(candidateData.cases.length,5);
 assert.deepEqual(candidateData.cases.map(x=>x.sphere).sort(),['china','eu','india','russia','us']);
-for(const c of candidateData.cases){assert.equal(c.influenceScore,null);assert.equal(c.reviewStatus,'candidate-source-identified');assert.ok(/^https:\/\//.test(c.sourceUrl));assert.ok(influenceFramework.stages.includes(c.stage));assert.ok(c.caveat.length>20);}
+for(const c of candidateData.cases){assert.equal(c.influenceScore,null);assert.equal(c.reviewStatus,'event-stage-reviewed-influence-unverified');assert.ok(c.verifiedObservation.length>30);assert.ok(c.missingEvidence.length>=1);assert.ok(['eligible-for-external-diplomacy-review','excluded-internal-regulation'].includes(c.eligibility));assert.ok(/^https:\/\//.test(c.sourceUrl));assert.ok(influenceFramework.stages.includes(c.stage));assert.ok(c.caveat.length>20);}
 assert.equal(influenceFramework.caseFiles.length,0,'research candidates must not be silently promoted to audited case files');
+
+assert.equal(candidateData.cases.filter(c=>c.eligibility==='eligible-for-external-diplomacy-review').length,4);
+assert.equal(candidateData.cases.find(c=>c.sphere==='eu').eligibility,'excluded-internal-regulation');
+assert.ok(candidateData.cases.every(c=>c.influenceScore===null));

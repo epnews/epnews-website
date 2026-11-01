@@ -1,8 +1,8 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
-  "methodology": "Source confirms described event or legal stage only; independent implementation, attribution, durability and cost assessment remain open. These are candidates, not verified influence outcomes.",
+  "methodology": "Primary-source event and legal-stage checks; external influence not established. EU internal legislation excluded from external diplomatic candidate count. Observations remain distinct from causal attribution.",
   "cases": [
     {
       "id": "soi-dip-candidate-1",
@@ -11,10 +11,18 @@
       "title": "2023 Camp David trilateral cooperation commitments",
       "stage": "announced",
       "eventDate": "2023-08-18",
-      "sourceUrl": "https://www.mofa.go.kr/us-en/brd/m_4511/view.do?seq=761791",
+      "sourceUrl": "https://www.govinfo.gov/app/details/DCPD-202300705",
       "caveat": "Shared commitments do not by themselves prove US-caused policy change.",
-      "reviewStatus": "candidate-source-identified",
-      "influenceScore": null
+      "reviewStatus": "event-stage-reviewed-influence-unverified",
+      "influenceScore": null,
+      "eligibility": "eligible-for-external-diplomacy-review",
+      "additionalSource": "https://www.defense.gov/news/releases/release/article/3755811/joint-statement-of-the-14th-defense-trilateral-talks/",
+      "verifiedObservation": "Trilateral leaders issued joint principles in August 2023; April 2024 defense statement reports real-time DPRK missile-warning data sharing and a multi-year exercise plan.",
+      "missingEvidence": [
+        "Independent outcome measurement",
+        "Attribution versus Japanese and Korean initiative",
+        "Durability and costs"
+      ]
     },
     {
       "id": "soi-dip-candidate-2",
@@ -25,8 +33,16 @@
       "eventDate": "2023-03-10",
       "sourceUrl": "https://www.spa.gov.sa/en/ed7aabfefaw",
       "caveat": "Iraq and Oman also hosted earlier talks; exclusive Chinese attribution is unsupported.",
-      "reviewStatus": "candidate-source-identified",
-      "influenceScore": null
+      "reviewStatus": "event-stage-reviewed-influence-unverified",
+      "influenceScore": null,
+      "eligibility": "eligible-for-external-diplomacy-review",
+      "verifiedObservation": "The March 2023 Saudi-Iran-China joint statement announced restoration of diplomatic relations and acknowledged prior Iraqi and Omani talks.",
+      "additionalSource": "https://geneva.china-mission.gov.cn/eng/zgyw/202303/t20230311_11039241.htm",
+      "missingEvidence": [
+        "Embassy operations and subsequent durability",
+        "China-specific causal attribution",
+        "Costs and alternative explanations"
+      ]
     },
     {
       "id": "soi-dip-candidate-3",
@@ -37,8 +53,15 @@
       "eventDate": "2025-03-13",
       "sourceUrl": "https://base.garant.ru/411209091/",
       "caveat": "Treaty entry into force is verifiable; net influence and counterfactual remain unmeasured.",
-      "reviewStatus": "candidate-source-identified",
-      "influenceScore": null
+      "reviewStatus": "event-stage-reviewed-influence-unverified",
+      "influenceScore": null,
+      "eligibility": "eligible-for-external-diplomacy-review",
+      "verifiedObservation": "Russia-Belarus security guarantees treaty entered into force on 13 March 2025, according to published legal text.",
+      "missingEvidence": [
+        "Observable policy change beyond entry into force",
+        "Belarusian agency and counterfactual",
+        "Durability and concessions"
+      ]
     },
     {
       "id": "soi-dip-candidate-4",
@@ -49,8 +72,13 @@
       "eventDate": "2024-08-01",
       "sourceUrl": "https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en",
       "caveat": "EU internal legislation is not an external diplomatic influence outcome; comparison eligibility pending.",
-      "reviewStatus": "candidate-source-identified",
-      "influenceScore": null
+      "reviewStatus": "event-stage-reviewed-influence-unverified",
+      "influenceScore": null,
+      "eligibility": "excluded-internal-regulation",
+      "verifiedObservation": "EU AI Act is internal EU legislation; its entry into force does not establish an external counterpart's diplomatic policy change.",
+      "missingEvidence": [
+        "Replace with eligible external EU diplomatic case"
+      ]
     },
     {
       "id": "soi-dip-candidate-5",
@@ -59,10 +87,18 @@
       "title": "India-UAE Comprehensive Economic Partnership Agreement enters into force",
       "stage": "implemented",
       "eventDate": "2022-05-01",
-      "sourceUrl": "https://rtais.wto.org/UI/PublicShowRTAIDCard.aspx?rtaid=1198",
+      "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1821785&lang=2&reg=48",
       "caveat": "Bilateral treaty is verified; attribution of trade changes and costs not established.",
-      "reviewStatus": "candidate-source-identified",
-      "influenceScore": null
+      "reviewStatus": "event-stage-reviewed-influence-unverified",
+      "influenceScore": null,
+      "eligibility": "eligible-for-external-diplomacy-review",
+      "additionalSource": "https://www.trade.gov.ae/uae-india-comprehensive-economic-partnership-agreement",
+      "verifiedObservation": "India and UAE report CEPA entered into force 1 May 2022; Indian government reports an initial preferential-tariff export shipment.",
+      "missingEvidence": [
+        "Matched trade baseline and product-level outcomes",
+        "Attribution versus prices and broader demand",
+        "Durability and net costs"
+      ]
     }
   ]
 }
