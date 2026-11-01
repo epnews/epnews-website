@@ -92,6 +92,89 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "domesticElectricity2026": {
+  "title": "Observed U.S. retail electricity prices and bills paid: January–August 2026 vs 2025",
+  "period": "Year to date through August in both years",
+  "source": "eiaElectricity2026Aug",
+  "items": [
+    {
+      "id": "residential-price",
+      "label": "Residential electricity average retail price",
+      "v2025": 17.03,
+      "v2026": 18.19,
+      "unit": "cents/kWh",
+      "changePercent": 6.8,
+      "kind": "price"
+    },
+    {
+      "id": "commercial-price",
+      "label": "Commercial electricity average retail price",
+      "v2025": 13.29,
+      "v2026": 14.04,
+      "unit": "cents/kWh",
+      "changePercent": 5.6,
+      "kind": "price"
+    },
+    {
+      "id": "industrial-price",
+      "label": "Industrial electricity average retail price",
+      "v2025": 8.5,
+      "v2026": 9.09,
+      "unit": "cents/kWh",
+      "changePercent": 6.9,
+      "kind": "price"
+    },
+    {
+      "id": "transportation-price",
+      "label": "Transportation electricity average retail price",
+      "v2025": 13.73,
+      "v2026": 15.64,
+      "unit": "cents/kWh",
+      "changePercent": 13.9,
+      "kind": "price"
+    },
+    {
+      "id": "all-sector-price",
+      "label": "All-sector electricity average retail price",
+      "v2025": 13.5,
+      "v2026": 14.37,
+      "unit": "cents/kWh",
+      "changePercent": 6.4,
+      "kind": "price"
+    },
+    {
+      "id": "residential-revenue",
+      "label": "Residential electricity retail revenue",
+      "v2025": 179270,
+      "v2026": 192801,
+      "unit": "USD millions",
+      "changePercent": 7.5,
+      "kind": "revenue"
+    },
+    {
+      "id": "industrial-revenue",
+      "label": "Industrial electricity retail revenue",
+      "v2025": 59626,
+      "v2026": 64014,
+      "unit": "USD millions",
+      "changePercent": 7.4,
+      "kind": "revenue"
+    },
+    {
+      "id": "all-sector-revenue",
+      "label": "All-sector electricity retail revenue",
+      "v2025": 373483,
+      "v2026": 403750,
+      "unit": "USD millions",
+      "changePercent": 8.1,
+      "kind": "revenue"
+    }
+  ],
+  "context": "Electricity retail prices and revenues include generation fuel, capacity, transmission, distribution, weather, regulation, and load mix. Revenue is utility retail sales, not consumer economic welfare loss, and overlaps among sector and total rows.",
+  "causality": "No causal attribution to LNG exports or Hormuz disruption. Observed consumer-facing cost indicators only; gas-to-power exposure is one possible channel among many.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "q32026SecCashAndCosts": {
   "title": "Nine-month 2026 SEC cash flows, investment and taxpayer exposure",
   "status": "Observed cash-flow and project-cost disclosures; not incremental disruption benefit",
@@ -1668,6 +1751,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaElectricity2026Aug": {"label":"EIA Electric Power Monthly · Table ES1.B, U.S. retail electricity sales, revenue and average price, January–August 2025 and 2026","url":"https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=table_es1b","date":"2026-10; YTD through August"},
     "cheniereQ32026Sec": {"label":"Cheniere Energy · SEC Form 10-Q, nine months ended September 30, 2026, cash flows and notes","url":"https://www.sec.gov/Archives/edgar/data/3570/000000357026000038/lng-20260930.htm","date":"2026-10-29"},
     "cheniereQ32026": {"label":"Cheniere Energy · Third Quarter 2026 Results, reported October 28, 2026","url":"https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full","date":"2026-10-28"},
     "eiaOct2026Steo": {"label":"EIA · October 2026 Short-Term Energy Outlook natural gas table","url":"https://www.eia.gov/outlooks/steo/marketreview/natgas.php","date":"2026-10-06"},
