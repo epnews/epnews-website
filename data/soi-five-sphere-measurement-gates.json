@@ -39,7 +39,11 @@
       "linkedEvidence": [],
       "next": [
         "Bilateral agreement implementation records",
-        "Partner decisions and alternative explanations"
+        "Partner decisions and alternative explanations",
+        "Confirm independently measured outcomes, costs and counterfactual for milestone"
+      ],
+      "implementationMilestoneIds": [
+        "SOI-CHINA-SOLOMONS-TRAINING-2025"
       ]
     },
     {
@@ -48,7 +52,11 @@
       "linkedEvidence": [],
       "next": [
         "Treaty implementation and delivered cooperation",
-        "Costs and partner policy changes"
+        "Costs and partner policy changes",
+        "Confirm independently measured outcomes, costs and counterfactual for milestone"
+      ],
+      "implementationMilestoneIds": [
+        "SOI-RUSSIA-DPRK-TREATY-2024"
       ]
     },
     {
@@ -57,10 +65,15 @@
       "linkedEvidence": [],
       "next": [
         "EU versus member-state agreement scope",
-        "Implementation and measurable policy autonomy"
+        "Implementation and measurable policy autonomy",
+        "Confirm independently measured outcomes, costs and counterfactual for milestone"
+      ],
+      "implementationMilestoneIds": [
+        "SOI-EU-JAPAN-SPA-2025"
       ]
     }
   ],
   "measuredInfluence": null,
-  "readinessPercent": null
+  "readinessPercent": null,
+  "implementationEvidenceDataset": "data/soi-implementation-milestones-20261101.json"
 }
