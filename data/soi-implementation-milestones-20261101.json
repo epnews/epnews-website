@@ -1,0 +1,52 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Source-linked diplomatic implementation and legal milestones; not influence assessments",
+  "records": [
+    {
+      "id": "SOI-EU-JAPAN-SPA-2025",
+      "sphere": "eu",
+      "date": "2025-01-01",
+      "stage": "entered_into_force",
+      "claim": "EU–Japan Strategic Partnership Agreement entered into force on January 1, 2025.",
+      "sources": [
+        "https://www.consilium.europa.eu/en/documents/treaties-agreements/agreement/?doclanguage=en&id=2018023",
+        "https://www.consilium.europa.eu/en/press/press-releases/2025/01/01/eu-japan-strategic-partnership-framework-agreement-enters-into-force/"
+      ],
+      "measurementGap": "No attributed policy concessions, independent outcomes, or costs",
+      "influenceScore": null
+    },
+    {
+      "id": "SOI-CHINA-SOLOMONS-TRAINING-2025",
+      "sphere": "china",
+      "date": "2025-06-02",
+      "stage": "implementation_activity_reported",
+      "claim": "Solomon Islands government reported 25 corrections officers departed for training in China under the police-cooperation memorandum.",
+      "sources": [
+        "https://solomons.gov.sb/25-cssi-officers-depart-for-training-in-china/",
+        "https://www.iiss.org/charting-china/2025/12/global-policing-chinas-police-training-in-solomon-islands/"
+      ],
+      "measurementGap": "Departure is not independently verified training completion, institutional capacity, or geopolitical influence",
+      "influenceScore": null
+    },
+    {
+      "id": "SOI-RUSSIA-DPRK-TREATY-2024",
+      "sphere": "russia",
+      "date": "2024-12-04",
+      "stage": "entered_into_force",
+      "claim": "Russia–North Korea comprehensive strategic partnership treaty entered into force December 4, 2024.",
+      "sources": [
+        "https://en.yna.co.kr/view/AEN20241205000900315",
+        "https://www.reuters.com/world/asia-pacific/north-korea-russia-treaty-comes-into-force-kcna-says-2024-12-04/"
+      ],
+      "measurementGap": "Legal entry into force alone cannot establish independently attributable geopolitical influence",
+      "influenceScore": null
+    }
+  ],
+  "countryInfluenceScores": {
+    "us": null,
+    "india": null,
+    "china": null,
+    "russia": null,
+    "eu": null
+  }
+}
