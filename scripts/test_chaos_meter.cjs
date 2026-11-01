@@ -824,3 +824,16 @@ assert.equal(euResources.budgetEUR,19800000);
 assert.equal(euResources.staffCeiling,72);
 assert.match(euResources.budgetDefinition,/not actual spending/i);
 assert.equal(euResources.eligibleForInfluenceScoring,false);
+
+// Audit progress must exactly reflect scoped completed tasks, not count source links as causal evidence.
+const auditProgress=diplomaticQueue.auditProgressSummary;
+assert.equal(auditProgress.completedScopedChecks,6);
+assert.equal(auditProgress.requiredChecks,30);
+assert.equal(auditProgress.independentlyAuditedPerformanceCases,0);
+assert.equal(auditProgress.attributionValidatedCases,0);
+assert.equal(auditProgress.scoreAuthorized,false);
+for(const item of diplomaticQueue.items){
+ assert.equal(item.auditProgress.completedScopedChecks,item.priorityTasks.filter(t=>t.complete).length);
+ assert.deepEqual(item.auditProgress.remainingChecks,item.priorityTasks.filter(t=>!t.complete).map(t=>t.id));
+ assert.equal(item.auditProgress.attributionValidated,false);
+}
