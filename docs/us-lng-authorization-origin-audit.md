@@ -1,0 +1,20 @@
+# LNG authorization causal audit: original application dates and legal limits
+
+**New primary-document finding:** The March 13, 2026 Plaquemines approval was based on an amendment application **filed March 11, 2022**—nearly four years before the March 2026 disruption. This substantially narrows the claim in PR #255: the authorization was *issued during* the crisis and described publicly as helping global supply, but the underlying request was **not initiated by the crisis**.
+
+## Plaquemines chronology and authorization reconciliation
+- **March 11, 2022**: Venture Global Plaquemines LNG filed a limited-amendment application seeking **165.33 Bcf/year** more non-FTA exports based on final project design refinement. DOE's March 13, 2026 NEPA categorical-exclusion record explicitly identifies this original application date. Source: https://www.energy.gov/nepa/articles/cx-270945-plaquemines-lng-project
+- **March 13, 2026**: DOE approved the increase, Order **4446-B**, taking non-FTA authority from **1,240 to 1,405.33 Bcf/year**, approximately **0.45 Bcf/day** more. The DOE press release says aggregate authority reached **3.85 Bcf/day** to FTA and non-FTA destinations; do not add FTA and non-FTA ceilings as if independent physical liquefaction streams. Sources: https://www.energy.gov/articles/energy-department-approves-immediate-additional-lng-exports-plaquemines-lng and https://www.energy.gov/nepa/articles/cx-270945-plaquemines-lng-project
+- **March 5, 2026**: **Different**, later application sought a further **467.67 Bcf/year** non-FTA authorization increase, from **1,405.33 to 1,873 Bcf/year**, reflecting peak output under optimal conditions. Federal Register notice: https://public-inspection.federalregister.gov/2026-05991.pdf. This later application is **not** the 165.33 Bcf/year amendment granted March 13; do not conflate the two.
+- **October 1, 2026**: Plaquemines' filed progress report states that as of that date DOE had **not acted on the non-FTA part** of the March 5 later request, while DOE approved an FTA change in July. Source: https://www.energy.gov/sites/default/files/2026-10/VG%20Plaquemines%20October%202026%20DOE%20Progress%20Report.pdf. Do not describe the later 467.67 Bcf/year non-FTA increase as granted.
+
+## Elba Island: separate, narrower action
+DOE **April 2, 2026**, Order **5404**, increased Elba Island **non-FTA** authorized volume from **130 to 158.25 Bcf/year**, **+28.25 Bcf/year** (+21.73%, rounded 22%). DOE's order appendix separately lists **182.5 Bcf/year FTA** authority; these are destination-category legal ceilings, not additive terminal output. Sources: https://www.energy.gov/hgeo/articles/energy-department-authorizes-additional-exports-lng-elba-island-terminal and https://www.energy.gov/sites/default/files/2026-04/ord5404.pdf.
+
+## Quantitative interpretation
+Plaquemines first increase: 165.33 Bcf/year / 365 = **0.453 Bcf/day** (approximate). Elba non-FTA increase: 28.25 Bcf/year / 365 = **0.0774 Bcf/day**. Their sum is **193.58 Bcf/year of legal destination-specific ceiling increments**, **not** extra gas shipped, actual plant capacity, export sales, profit or economic benefit. Percentages cannot be summed.
+
+## Causal evidence decision
+**Closed narrow provenance gap:** Plaquemines March 2026 approval originated from a 2022 application. Crisis-period approval is not sufficient proof that the crisis *caused* the application, extra liquefaction capacity or export volumes. For Elba, the 2026 approval is established, but original application date and bindingness require a separate docket audit. Actual terminal-month exports relative to old legal ceilings are still needed to show whether either amendment enabled additional shipments. This finding should **correct the impression of a newly initiated post-shock policy response** in PR #255 without deleting the verified authorization dates.
+
+**Command Meter evidence readiness remains 53%; net national economic benefit and geopolitical influence scores remain null.** No existing dashboard code or interactions changed.
