@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -102,6 +102,17 @@
         "quantifiedPerformance": false,
         "independentOperationalPerformanceAudited": false,
         "causallyAttributable": false,
+        "eligibleForInfluenceScoring": false
+      },
+      "additionalOperationalEvidence": {
+        "event": "South Korean defense official reported the trilateral data-sharing system was used during the 2023-12-18 DPRK ICBM launch and data were being analyzed",
+        "eventDate": "2023-12-18",
+        "reportDate": "2023-12-19",
+        "source": "https://en.yna.co.kr/view/AEN20231219001752315",
+        "sourceType": "Yonhap reporting of South Korean defense official",
+        "measurementType": "reported first operational use, not independently audited performance",
+        "independentPerformanceMeasured": false,
+        "causalAttributionEstablished": false,
         "eligibleForInfluenceScoring": false
       }
     },
@@ -395,6 +406,19 @@
         "quantifiedPerformance": false,
         "independentOperationalPerformanceAudited": false,
         "causallyAttributable": false,
+        "eligibleForInfluenceScoring": false
+      },
+      "additionalOperationalEvidence": {
+        "event": "EU Partnership Mission Moldova mandate extension for 2025-2027 with estimated budget of EUR 19.8 million and staffing up to 72; mission established before May 2024 partnership",
+        "period": "2025-2027",
+        "budgetEUR": 19800000,
+        "budgetDefinition": "estimated mission mandate budget, not actual spending or economic benefit",
+        "staffCeiling": 72,
+        "source": "https://www.eeas.europa.eu/eupm-moldova/about-eu-partnership-mission-republic-moldova_en",
+        "sourceType": "European External Action Service official mission information",
+        "measurementType": "mission resource commitments, not outcome performance",
+        "independentPerformanceMeasured": false,
+        "causalAttributionEstablished": false,
         "eligibleForInfluenceScoring": false
       }
     },
