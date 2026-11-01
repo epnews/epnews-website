@@ -1,0 +1,28 @@
+name: DOE LNG H1 Destination Ledger
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_doe_lng_h1_ledger.py'
+      - 'scripts/test_build_doe_lng_h1_ledger.py'
+      - '.github/workflows/doe-lng-h1-ledger.yml'
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install openpyxl==3.1.5
+      - run: python -m unittest scripts.test_build_doe_lng_h1_ledger
+      - run: python scripts/build_doe_lng_h1_ledger.py doe-lng-h1-destination-ledger.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: doe-lng-h1-destination-ledger
+          path: doe-lng-h1-destination-ledger.json
+          retention-days: 30
