@@ -670,3 +670,18 @@ assert.ok(diplomaticProtocol.outcomeClasses.includes('not-assessed'));
 assert.ok(diplomaticProtocol.outcomeClasses.includes('reversed'));
 assert.ok(diplomaticProtocol.excludedCases.some(x=>/UN voting/.test(x)));
 assert.match(diplomaticProtocol.scoringGate,/explicit approval/i);
+
+// Five-sphere diplomatic candidate audit is coverage only, never influence.
+const dipCoverage=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-coverage-audit.json','utf8'));
+const dipCandidates=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-source-candidates.json','utf8'));
+assert.deepEqual(dipCoverage.scope,['us','china','russia','eu','india']);
+assert.equal(dipCoverage.scoringAuthorized,false);
+assert.equal(dipCoverage.needleAuthorized,false);
+for(const row of dipCoverage.rows){
+ const cases=dipCandidates.cases.filter(c=>c.sphere===row.actor&&c.eligibility==='eligible-for-external-diplomacy-review');
+ assert.equal(row.eligibleEpisodes,cases.length);
+ assert.equal(row.independentlyAudited,cases.filter(c=>c.sourceAudit?.status==='independently-verified'&&c.sourceAudit?.claimChecked===true).length);
+ assert.equal(row.documentedObservedMilestones,cases.filter(c=>c.observedEvidence?.finding).length);
+ assert.equal(row.attributionReady,cases.filter(c=>c.measurementQuality?.eligibleForInfluenceScoring===true).length);
+ assert.ok(row.attributionReady<=row.eligibleEpisodes);
+}
