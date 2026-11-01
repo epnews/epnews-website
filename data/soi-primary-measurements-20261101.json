@@ -1,0 +1,105 @@
+{
+  "version": "2026-11-01",
+  "method": "Source-observed data with exact units, periods and caveats; not geopolitical influence scores",
+  "measurements": [
+    {
+      "workstream": "nato-accessions",
+      "id": "finland-defense-share",
+      "country": "Finland",
+      "metric": "Defense expenditure as share of GDP",
+      "unit": "percent of GDP",
+      "observations": [
+        {
+          "year": 2022,
+          "value": 1.7
+        },
+        {
+          "year": 2024,
+          "value": 2.4,
+          "estimate": true
+        }
+      ],
+      "source": "https://www.cbs.nl/en-gb/news/2025/25/the-netherlands-ranks-7th-on-defence-expenditure-among-nato-members",
+      "limitation": "2024 is NATO June 2024 estimate as reported by CBS; change not solely attributable to accession"
+    },
+    {
+      "workstream": "nato-accessions",
+      "id": "sweden-defense-share",
+      "country": "Sweden",
+      "metric": "Defense expenditure as share of GDP",
+      "unit": "percent of GDP",
+      "observations": [
+        {
+          "year": 2022,
+          "value": 1.5
+        },
+        {
+          "year": 2024,
+          "value": 2.1,
+          "estimate": true
+        }
+      ],
+      "source": "https://www.cbs.nl/en-gb/news/2025/25/the-netherlands-ranks-7th-on-defence-expenditure-among-nato-members",
+      "limitation": "2024 estimate; Ukraine war and national policy also influence spending"
+    },
+    {
+      "workstream": "eu-china-investment-freeze",
+      "id": "eu-investment-stock-china",
+      "metric": "EU outward FDI stock in China",
+      "unit": "EUR billions",
+      "observations": [
+        {
+          "year": 2024,
+          "value": 239.3
+        }
+      ],
+      "source": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/china_en",
+      "limitation": "Stock not flow; no causal loss attributed to CAI freeze"
+    },
+    {
+      "workstream": "eu-china-investment-freeze",
+      "id": "china-investment-stock-eu",
+      "metric": "Chinese outward FDI stock in EU",
+      "unit": "EUR billions",
+      "observations": [
+        {
+          "year": 2024,
+          "value": 79.8
+        }
+      ],
+      "source": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/china_en",
+      "limitation": "Stock not flow; no treaty-related counterfactual"
+    },
+    {
+      "workstream": "us-tariffs-retaliation",
+      "id": "us-customs-duties-fy",
+      "metric": "U.S. Treasury customs duty receipts",
+      "unit": "USD billions nominal, federal fiscal year",
+      "observations": [
+        {
+          "year": 2024,
+          "value": 77.037
+        },
+        {
+          "year": 2025,
+          "value": 194.866
+        }
+      ],
+      "source": "https://www.fiscal.treasury.gov/files/reports-statements/combined-statement/cs2025/2025-cs-final.pdf",
+      "limitation": "Federal receipts not net economic benefit; changes cannot all be attributed to a single tariff order"
+    }
+  ],
+  "coverage": {
+    "newNumericSeries": 5,
+    "workstreamsWithNewSeries": 3,
+    "otherWorkstreams": "Existing partial observations and documented missing data retained; no fabricated numerical results"
+  },
+  "influenceScores": {
+    "us": null,
+    "china": null,
+    "russia": null,
+    "eu": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
