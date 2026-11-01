@@ -386,3 +386,8 @@ All three are explicitly **implementation or coverage indicators** with independ
 ## Russian fiscal and counterfactual evidence ledger (#245)
 
 See [Russia energy revenue, fiscal and cost ledger](russia-energy-revenue-fiscal-cost-ledger.md). Separately sourced CREA September crude mineral extraction tax receipts of 688 billion RUB, KSE August oil-only estimated export revenues US$13.9B and KSE August modeled sanctions-related revenue foregone US$4.4B. They differ in period, currency, coverage and meaning; they cannot be combined to produce profit. The September CREA €625m/day observed needle is unchanged and unscored.
+
+
+## Russia federal budget receipts (#246)
+
+[Reuters' October 6 reproduction of Minfin data](https://ru.themoscowtimes.com/2026/10/06/tablitsa-neftegazovye-dokhody-rossiyskogo-byudzheta-za-sentyabr-2026-goda-a207874) shows September 2026 Russian federal oil-and-gas revenue of **452.4B RUB** (+6.7% month-over-month, −22.3% year-over-year), with January–September **5.471T RUB** (−17.2% year-over-year). This is actual reported budget revenue and differs from gross mineral extraction tax (crude September **688.3B RUB**) because of other taxes and offset/subsidy lines. Neither figure is export profit or net national benefit. See [reconciled ledger](russia-energy-revenue-fiscal-cost-ledger.md). CREA September €625m/day modeled gross export needle remains unchanged and unscored.
