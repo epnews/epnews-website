@@ -1,8 +1,8 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
-  "methodology": "Primary-source event and legal-stage checks; external influence not established. EU internal legislation excluded from external diplomatic candidate count. Observations remain distinct from causal attribution.",
+  "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
   "cases": [
     {
       "id": "soi-dip-candidate-1",
@@ -64,21 +64,26 @@
       ]
     },
     {
-      "id": "soi-dip-candidate-4",
+      "id": "soi-dip-candidate-eu-moldova-2024",
       "sphere": "eu",
-      "counterpart": "EU member states",
-      "title": "EU Artificial Intelligence Act enters into force",
-      "stage": "implemented",
-      "eventDate": "2024-08-01",
-      "sourceUrl": "https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en",
-      "caveat": "EU internal legislation is not an external diplomatic influence outcome; comparison eligibility pending.",
+      "counterpart": "Republic of Moldova",
+      "title": "EU–Moldova Security and Defence Partnership",
+      "stage": "signed",
+      "eventDate": "2024-05-21",
+      "sourceUrl": "https://www.eeas.europa.eu/eeas/eu-moldova-security-defence-partnership_en",
+      "caveat": "Bilateral signature and follow-up are documented; neither proves EU-caused change or net diplomatic influence.",
       "reviewStatus": "event-stage-reviewed-influence-unverified",
       "influenceScore": null,
-      "eligibility": "excluded-internal-regulation",
-      "verifiedObservation": "EU AI Act is internal EU legislation; its entry into force does not establish an external counterpart's diplomatic policy change.",
+      "eligibility": "eligible-for-external-diplomacy-review",
+      "verifiedObservation": "EU and Moldova signed a security and defence partnership on 21 May 2024. A November 2024 bilateral dialogue followed, and a November 2025 joint statement describes continuing security cooperation. Earlier EU missions and Moldova's own strategic decisions predate the partnership.",
       "missingEvidence": [
-        "Replace with eligible external EU diplomatic case"
-      ]
+        "Quantified baseline and outcome for Moldovan policy behavior",
+        "Counterfactual separating EU leverage from Moldova's own choices and Russia's invasion of Ukraine",
+        "Verified persistence and program-specific net costs"
+      ],
+      "additionalSource": "https://www.consilium.europa.eu/en/policies/moldova/",
+      "implementationSource": "https://www.eeas.europa.eu/eeas/eu-moldova-joint-statement-following-4th-high-level-political-and-security-dialogue_en",
+      "counterpartSource": "https://mfa.gov.md/en/content/state-secretary-valeriu-mija-dialogue-european-external-action-service"
     },
     {
       "id": "soi-dip-candidate-5",
@@ -99,6 +104,26 @@
         "Attribution versus prices and broader demand",
         "Durability and net costs"
       ]
+    }
+  ],
+  "excludedHistoricalCases": [
+    {
+      "id": "soi-dip-candidate-4",
+      "sphere": "eu",
+      "counterpart": "EU member states",
+      "title": "EU Artificial Intelligence Act enters into force",
+      "stage": "implemented",
+      "eventDate": "2024-08-01",
+      "sourceUrl": "https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en",
+      "caveat": "EU internal legislation is not an external diplomatic influence outcome; comparison eligibility pending.",
+      "reviewStatus": "event-stage-reviewed-influence-unverified",
+      "influenceScore": null,
+      "eligibility": "excluded-internal-regulation",
+      "verifiedObservation": "EU AI Act is internal EU legislation; its entry into force does not establish an external counterpart's diplomatic policy change.",
+      "missingEvidence": [
+        "Replace with eligible external EU diplomatic case"
+      ],
+      "exclusionReason": "EU internal legislation does not demonstrate foreign-government diplomatic behavior change."
     }
   ]
 }
