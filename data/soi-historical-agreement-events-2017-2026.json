@@ -119,6 +119,12 @@
       "path": "data/soi-historical-batch-2021-2024.json",
       "status": "event_candidates_not_scored",
       "audit": "node scripts/audit_soi_historical_batch_2021_2024.cjs"
+    },
+    {
+      "period": "2025-2026",
+      "path": "data/soi-historical-batch-2025-2026.json",
+      "status": "event_candidates_not_scored",
+      "audit": "node scripts/audit_soi_historical_batch_2025_2026.cjs"
     }
   ]
 }
