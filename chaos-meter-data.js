@@ -92,6 +92,82 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "domesticGasMatched2025to2026": {
+  "title": "Matched August 2025 vs August 2026 natural-gas prices",
+  "period": "Same calendar month, nominal dollars per thousand cubic feet",
+  "rows": [
+    {
+      "id": "residential",
+      "label": "Residential",
+      "prior": 26.26,
+      "current": 27.05,
+      "source": "eiaGasResidentialHistory",
+      "note": "Retail end-use price; does not directly measure typical household monthly bill."
+    },
+    {
+      "id": "commercial",
+      "label": "Commercial",
+      "prior": 12.55,
+      "current": 12.87,
+      "source": "eiaGasCommercialHistory",
+      "note": "Retail commercial price includes different delivery and service costs."
+    },
+    {
+      "id": "industrial",
+      "label": "Industrial",
+      "prior": 4.47,
+      "current": 4.34,
+      "source": "eiaGasIndustrialHistory",
+      "note": "Only 13.1% of industrial deliveries included in reported August 2026 prices."
+    },
+    {
+      "id": "lng-export",
+      "label": "LNG export price",
+      "prior": 7.51,
+      "current": 7.92,
+      "source": "eiaGasLNGExportHistory",
+      "note": "EIA export price, not net company profit or destination-matched cash receipt."
+    }
+  ],
+  "supplemental": [
+    {
+      "id": "residential-january",
+      "label": "Residential January matched comparison",
+      "prior": 12.44,
+      "current": 13.96,
+      "source": "eiaGasResidentialHistory",
+      "note": "Same month in both years; distinct seasonal level from August."
+    },
+    {
+      "id": "commercial-january",
+      "label": "Commercial January matched comparison",
+      "prior": 9.88,
+      "current": 11.26,
+      "source": "eiaGasCommercialHistory",
+      "note": "Same month in both years; does not isolate LNG-driven effects."
+    },
+    {
+      "id": "industrial-january",
+      "label": "Industrial January matched comparison",
+      "prior": 6.03,
+      "current": 7.2,
+      "source": "eiaGasIndustrialHistory",
+      "note": "Industrial survey coverage limitation also applies."
+    },
+    {
+      "id": "lng-export-january",
+      "label": "LNG export January matched comparison",
+      "prior": 8.51,
+      "current": 8.69,
+      "source": "eiaGasLNGExportHistory",
+      "note": "Export price series, not realized company net margin."
+    }
+  ],
+  "methodology": "Eight same-month paired comparisons (January and August, four sectors), all drawn from four EIA monthly historical series; NOT eight independent sources. Calculate change from stored matched raw values, not rounded headline claims. January and August have very different seasonal demand profiles. No causal attribution to LNG export volumes or the Hormuz disruption.",
+  "causalStatus": "Not identified; weather, storage, pipeline constraints, utility costs, preexisting export capacity and contracts require controls.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "domesticGasPricesAug2026": {
   "title": "August 2026 observed U.S. natural-gas prices and survey coverage",
   "period": "August 2026 (single-month snapshot; no matched 2025 comparison yet)",
@@ -1818,6 +1894,10 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaGasResidentialHistory":{"label":"EIA · Monthly U.S. residential gas price, 2025–2026","url":"https://www.eia.gov/dnav/ng/hist/n3010us3m.htm","date":"2026-10-30"},
+    "eiaGasCommercialHistory":{"label":"EIA · Monthly U.S. commercial gas price, 2025–2026","url":"https://www.eia.gov/dnav/ng/hist/n3020us3m.htm","date":"2026-10-30"},
+    "eiaGasIndustrialHistory":{"label":"EIA · Monthly U.S. industrial gas price, 2025–2026","url":"https://www.eia.gov/dnav/ng/hist/n3035us3m.htm","date":"2026-10-30"},
+    "eiaGasLNGExportHistory":{"label":"EIA · Monthly U.S. LNG export price, 2025–2026","url":"https://www.eia.gov/dnav/ng/hist/n9133us3m.htm","date":"2026-10-30"},
     "eiaNaturalGasPricesAug2026": {"label":"EIA Natural Gas Monthly · U.S. Natural Gas Prices, August 2026, released October 30","url":"https://www.eia.gov/dnav/ng/ng_pri_sum_dcu_nus_m.htm","date":"2026-10-30; August 2026"},
     "eiaElectricity2026Aug": {"label":"EIA Electric Power Monthly · Table ES1.B, U.S. retail electricity sales, revenue and average price, January–August 2025 and 2026","url":"https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=table_es1b","date":"2026-10; YTD through August"},
     "cheniereQ32026Sec": {"label":"Cheniere Energy · SEC Form 10-Q, nine months ended September 30, 2026, cash flows and notes","url":"https://www.sec.gov/Archives/edgar/data/3570/000000357026000038/lng-20260930.htm","date":"2026-10-29"},

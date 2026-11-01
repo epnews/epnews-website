@@ -109,6 +109,14 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.domesticGasMatched2025to2026){const a=audit.domesticGasMatched2025to2026;const panel=element('section');panel.id='chaos-matched-gas-2025-2026';panel.setAttribute('aria-label','Matched 2025 and 2026 domestic gas prices');
+   panel.append(element('h5',a.title),element('p',a.period));const wrap=element('div',undefined,'chaos-table-scroll');wrap.tabIndex=0;const table=element('table'),head=element('thead'),hr=element('tr');
+   for(const label of ['Sector and month','2025','2026','Change']){const th=element('th',label);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const c of [...a.rows,...a.supplemental]){const tr=element('tr'),th=element('th',c.label);th.scope='row';const change=((c.current/c.prior-1)*100).toFixed(1);tr.append(th,element('td',c.prior.toFixed(2)),element('td',c.current.toFixed(2)),element('td',(Number(change)>0?'+':'')+change+'%'));body.append(tr);}
+   table.append(body);wrap.append(table);panel.append(wrap);
+   for(const c of [...a.rows,...a.supplemental])panel.append(element('p',c.label+': '+c.note));
+   sourceLinks(panel,[...new Set([...a.rows,...a.supplemental].map(c=>c.source))]);panel.append(element('p',a.methodology),element('p',a.causalStatus),element('p','Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.domesticGasPricesAug2026){const a=audit.domesticGasPricesAug2026;const panel=element('section');panel.id='chaos-domestic-gas-2026';panel.setAttribute('aria-label','August 2026 U.S. domestic natural gas prices');
    panel.append(element('h5',a.title),element('p',a.period));const wrap=element('div',undefined,'chaos-table-scroll');wrap.tabIndex=0;const table=element('table'),head=element('thead'),hr=element('tr');
    for(const label of ['Measure','August 2026','Unit']){const th=element('th',label);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
