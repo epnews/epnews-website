@@ -195,3 +195,10 @@
 .chaos-assessment-drawer{margin:12px 0;background:#13283e}
 .chaos-assessment-drawer #chaos-assessment-readiness{margin:0!important;border:0!important;border-top:1px solid #405a75!important;border-radius:0!important}
 @media(max-width:700px){.chaos-clean-drawer>summary{padding:14px}.chaos-clean-drawer>section,.chaos-research-drawer #chaos-completion-status,.chaos-research-drawer #chaos-meter-readiness{margin:10px 12px 16px}}
+
+/* Measured UN voting evidence, independently scrollable on narrow screens. */
+.chaos-voting-evidence{overflow-x:auto;max-width:100%;}
+.chaos-voting-evidence table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:310px;}
+.chaos-voting-evidence th,.chaos-voting-evidence td{padding:.45rem .6rem;text-align:left;border-bottom:1px solid rgba(150,160,170,.22);}
+.chaos-voting-evidence td:last-child{text-align:right;font-variant-numeric:tabular-nums;}
+.chaos-voting-evidence a{overflow-wrap:anywhere;}
