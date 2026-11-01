@@ -1,0 +1,27 @@
+name: EIA EU LNG Destination Reconciliation
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/extract_eia_eu_lng_destinations.py'
+      - '.github/workflows/eia-eu-lng-destinations.yml'
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install xlrd==2.0.2
+      - run: python -m py_compile scripts/extract_eia_eu_lng_destinations.py
+      - run: python scripts/extract_eia_eu_lng_destinations.py eia-eu-lng-destinations.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eia-eu-lng-destinations
+          path: eia-eu-lng-destinations.json
+          retention-days: 30
