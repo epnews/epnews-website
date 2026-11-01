@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "status": "methodology-proposal-not-calibrated",
+  "scope": [
+    "us",
+    "china",
+    "russia",
+    "eu",
+    "india"
+  ],
+  "unitOfAnalysis": "One documented attempt to influence a specific counterpart's observable policy or behavior",
+  "dimensions": [
+    {
+      "id": "activity",
+      "question": "What diplomatic action occurred?",
+      "required": [
+        "actor",
+        "counterpart",
+        "actionDate",
+        "actionType",
+        "primarySource"
+      ],
+      "note": "Activity alone is never evidence of achieved influence."
+    },
+    {
+      "id": "commitment",
+      "question": "Did the counterpart make a verifiable commitment?",
+      "required": [
+        "counterpartStatement",
+        "commitmentDate",
+        "primarySource"
+      ],
+      "note": "Announcements do not establish implementation."
+    },
+    {
+      "id": "implementation",
+      "question": "Did counterpart behavior measurably change?",
+      "required": [
+        "baseline",
+        "observedOutcome",
+        "outcomeDate",
+        "independentSource"
+      ],
+      "note": "Record magnitude and direction in original units."
+    },
+    {
+      "id": "attribution",
+      "question": "Can the change plausibly be attributed to this actor?",
+      "required": [
+        "causalMechanism",
+        "alternativeExplanations",
+        "counterfactual",
+        "corroboration"
+      ],
+      "note": "Sequence alone does not prove causation."
+    },
+    {
+      "id": "durability",
+      "question": "Did the change persist?",
+      "required": [
+        "followupDate",
+        "persistenceEvidence"
+      ],
+      "note": "Reversals and delayed implementation must be recorded."
+    },
+    {
+      "id": "costs",
+      "question": "What concessions, costs, and adverse consequences accompanied it?",
+      "required": [
+        "concessions",
+        "directCosts",
+        "externalities"
+      ],
+      "note": "Gross diplomatic wins are not net benefits."
+    }
+  ],
+  "stages": [
+    "announced",
+    "signed",
+    "financed",
+    "implemented",
+    "measured"
+  ],
+  "decisionRule": "Do not publish a numeric influence score until a peer-reviewed or explicitly approved calibration protocol, comparable denominators, uncertainty bounds, source audit, and all required gates exist.",
+  "measurementRules": [
+    "Maintain same time window and event eligibility across all five spheres.",
+    "Count counterpart behavior rather than the initiating actor's press releases.",
+    "Do not treat UN voting agreement, EU cohesion, or number of meetings as influence.",
+    "Disclose missing baselines, noncomparable sources, and potential double counting.",
+    "Do not infer causality from correlation or temporal proximity.",
+    "No zero-filling of missing evidence; display not assessed.",
+    "Preserve all existing moving needle and selector functionality."
+  ],
+  "influenceScoreAuthorized": false,
+  "caseFiles": []
+}

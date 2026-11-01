@@ -96,6 +96,8 @@ function sourceLinks(parent,ids){
  for(const id of ids){const src=data.sources[id];const a=element('a',src.label+' ↗');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a,element('small','Source date: '+src.date));}
  parent.append(line);
 }
+let influenceFramework=null;
+fetch('data/soi-diplomatic-influence-framework.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('framework unavailable');return r.json();}).then(d=>{if(!d||d.influenceScoreAuthorized!==false||!Array.isArray(d.dimensions))throw Error('invalid framework');influenceFramework=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
 let votingEvidence=null;
 const voteActor={us:'USA',china:'CHN',russia:'RUS',india:'IND'};
 const voteNames={USA:'United States',CHN:'China',RUS:'Russia',IND:'India'};
@@ -104,6 +106,11 @@ function appendVotingEvidence(actor,dimension){
  const panel=element('section',undefined,'chaos-indicator-card chaos-voting-evidence');
  panel.append(element('h4','UN voting agreement · recorded votes (2021–2024)'),element('p','Measured voting agreement, not diplomatic influence. Abstentions count as positions; consensus and nonvoting excluded.'));
  if(!votingEvidence){panel.append(element('p','Country voting evidence is loading or unavailable.'));cards.append(panel);return;}
+ if(influenceFramework){
+  const guide=element('details');guide.append(element('summary','How diplomatic influence will be verified · 6 evidence gates'));
+  guide.append(element('p','A diplomatic event is not an influence outcome. This framework applies identically to all five spheres and does not produce a score.'));
+  const list=element('ol');for(const gate of influenceFramework.dimensions){const li=element('li');li.append(element('strong',gate.question),element('p',gate.note));list.append(li);}guide.append(list,element('p','Evidence stages: '+influenceFramework.stages.join(' → ')+'. No calibrated influence score is authorized.'));panel.append(guide);
+ }
  const code=voteActor[actor];
  const coverage=element('p',undefined,'chaos-voting-coverage');
  const annualYears=['2021','2022','2023','2024'];

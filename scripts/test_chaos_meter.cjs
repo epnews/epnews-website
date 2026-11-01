@@ -541,3 +541,15 @@ for(const year of ['2021','2022','2023','2024']){
 const dashboardSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
 assert.match(dashboardSource,/Compare standardized diplomatic voting profile/);
 assert.match(dashboardSource,/No meter needle or score uses this calculation/);
+
+// Diplomatic influence gate framework must remain unscored and comparable across spheres.
+const influenceFramework=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-influence-framework.json','utf8'));
+assert.equal(influenceFramework.influenceScoreAuthorized,false);
+assert.deepEqual(influenceFramework.scope,['us','china','russia','eu','india']);
+assert.deepEqual(influenceFramework.dimensions.map(d=>d.id),['activity','commitment','implementation','attribution','durability','costs']);
+assert.deepEqual(influenceFramework.stages,['announced','signed','financed','implemented','measured']);
+for(const gate of influenceFramework.dimensions){assert.ok(gate.required.length>=2);assert.ok(gate.question&&gate.note);}
+assert.deepEqual(influenceFramework.caseFiles,[]);
+const dashboardFrameworkSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
+assert.match(dashboardFrameworkSource,/How diplomatic influence will be verified/);
+assert.match(dashboardFrameworkSource,/d\.influenceScoreAuthorized!==false/);
