@@ -1,5 +1,11 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const trade=data.evidenceAudits.us['Energy and resources'].observedTradeIndicators;
+assert.equal(trade.items.length,8);
+assert.equal(new Set(trade.items.map(x=>x.id)).size,8);
+assert.deepEqual(Array.from(trade.items,x=>[x.baseline,x.outcome]),[[11.9,15.1],[21,26],[6.3,10.3],[53,68],[4,2.5],[0.6,0],[0.3,1.2],[null,29]]);
+for(const item of trade.items){assert.ok(data.sources[item.source]);assert.ok(item.limit&&item.unit);}
+assert.equal(trade.netNationalBenefitUsd,null);assert.equal(trade.influenceScore,null);
 const quality=data.evidenceAudits.us['Energy and resources'].evidenceQualityGates;
 assert.equal(quality.checks.length,8);
 assert.equal(new Set(quality.checks.map(c=>c.id)).size,8);
@@ -172,6 +178,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.observedTradeIndicators\)/);
 assert.match(dashboard,/if\(audit\.evidenceQualityGates\)/);
 assert.match(dashboard,/if\(audit\.causalResearchGates\)/);
 assert.match(dashboard.trimEnd(),/}\)\(\);?$/,'orphaned code after dashboard closure');
