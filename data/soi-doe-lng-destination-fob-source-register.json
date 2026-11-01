@@ -1,0 +1,56 @@
+{
+  "version": "2026-11-01",
+  "title": "DOE LNG destination-specific FOB export-price comparison evidence",
+  "source": "https://www.energy.gov/fecm/articles/lng-monthly-2025",
+  "primaryDataPortal": "https://www.energy.gov/fecm/regulation",
+  "dataStatus": "SOURCE_DISCOVERY_ONLY_NOT_EXTRACTED",
+  "targetSeries": [
+    {
+      "id": "us-lng-europe",
+      "destination": "European Union member destinations individually; optionally EU aggregate only when exact composition documented",
+      "metric": "DOE-reported LNG export FOB weighted average price",
+      "unit": "USD per thousand cubic feet or USD per MMBtu (normalize with documented conversion)",
+      "period": "calendar years 2021–2025",
+      "requirements": [
+        "Report monthly destination-specific LNG volumes and weighted FOB prices",
+        "Identify destination codes and member-country inclusion",
+        "State whether DOE tables reflect cargo declarations or estimated prices",
+        "Keep same unit and period in all comparisons"
+      ]
+    },
+    {
+      "id": "us-lng-asia",
+      "destination": "China, India, Japan, South Korea individually",
+      "metric": "DOE-reported LNG export FOB weighted average price",
+      "unit": "USD per thousand cubic feet or USD per MMBtu",
+      "period": "calendar years 2021–2025",
+      "requirements": [
+        "Use identical DOE definitions as Europe comparison",
+        "Flag destinations with zero or suppressed observations",
+        "No claim about final resale price or buyer delivered cost"
+      ]
+    }
+  ],
+  "priceSemantics": {
+    "fob": "Free-on-board price at export point, not realized company cash receipts or net profits",
+    "landed": "Includes additional transport and regasification; not interchangeable with FOB",
+    "revenue": "A hypothetical gross export value may be volume × FOB price only if clearly labeled and matched, never company profit",
+    "netBenefit": "Requires realized receipts, margins, infrastructure costs, domestic price effects, taxes and counterfactual"
+  },
+  "sourceValidation": [
+    "Download original DOE LNG Monthly report and identify exact table/page for destination FOB prices",
+    "Check whether latest report has destination-level FOB prices and volume or only aggregate",
+    "Verify consistent revisions, units and calendar-month alignment",
+    "Add numeric observations only after exact table-level confirmation"
+  ],
+  "observations": [],
+  "newNumericSeries": 0,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
