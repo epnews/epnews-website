@@ -1,5 +1,10 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const cash=data.evidenceAudits.us['Energy and resources'].tenSabinePassCashFlows;
+assert.equal(cash.items.length,10);assert.equal(new Set(cash.items.map(x=>x.id)).size,10);
+assert.deepEqual(Array.from(cash.items,x=>x.v2026),[2550,-526,-531,1903,-1967,-1521,-1616,403,-22,527]);
+assert.deepEqual(Array.from(cash.items,x=>x.v2025),[1881,-176,-180,1262,-1617,-1539,-1916,-215,6,575]);
+assert.ok(data.sources[cash.source]);assert.equal(cash.netNationalBenefitUsd,null);assert.equal(cash.influenceScore,null);
 const sabine=data.evidenceAudits.us['Energy and resources'].tenSabinePassPartnershipCosts;
 assert.equal(sabine.items.length,10);assert.equal(new Set(sabine.items.map(x=>x.id)).size,10);
 assert.deepEqual(Array.from(sabine.items,x=>x.v2026),[6561,2044,4757,46,692,136,522,546,2516,1986]);
@@ -262,6 +267,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.tenSabinePassCashFlows\)/);
 assert.match(dashboard,/if\(audit\.tenSabinePassPartnershipCosts\)/);
 assert.match(dashboard,/if\(audit\.tenCheniereQ3CostsCapital\)/);
 assert.match(dashboard,/if\(audit\.tenGasStorageSupplyAudit\)/);
