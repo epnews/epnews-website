@@ -179,3 +179,8 @@ After SEC-reported 2026 operating, investing, financing, capital-project, cash-i
 ## PR #198 readiness update: 49% → 51%
 
 The editorial readiness estimate rises 2 percentage points after adding observed Jan–Aug 2026 vs 2025 EIA retail electricity price and revenue measures. The subjective costs-versus-benefits component rises 40% → 45%; all other components remain unchanged. These are planning judgments, not a weighted index or statistical probability. Retail prices are observed, but **LNG exports are not established as their cause**. The meter's influence score and net national benefit remain null. Next priority: domestic natural-gas prices, household and industrial cost exposure, and an actual disruption-specific counterfactual.
+
+
+## August 2026 observed natural gas end-use prices
+
+[EIA Natural Gas Monthly U.S. Natural Gas Prices, released October 30, 2026](https://www.eia.gov/dnav/ng/ng_pri_sum_dcu_nus_m.htm) reports August 2026 nominal USD/thousand cubic feet: citygate $5.03; residential $27.05; commercial $12.87; industrial $4.34; electric power $3.22; LNG export $7.92. EIA reports price survey coverage of 97.1% of residential deliveries and only 13.1% of industrial deliveries. These eight figures are from **one EIA monthly table** and the two coverage observations are not prices. The EIA LNG export price is not issuer net realized receipts or profit. Retail and wholesale sector prices differ in distribution, contract and service costs; do not subtract them to infer LNG margins. These are August-only levels; no year-on-year changes or export-caused household burden are claimed. National net benefit and influence remain unscored. Readiness remains 51% until the milestone is merged and assessed.
