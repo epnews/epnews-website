@@ -254,3 +254,8 @@ EIA [September 25, 2026](https://www.eia.gov/todayinenergy/detail.php?id=68204) 
 ## Shared renderer expansion: 38 existing records
 
 Four further existing source-backed datasets now use the common registry renderer: ten U.S.–Canada/Mexico border gas price comparisons, ten Sabine Pass partnership cash-flow observations, ten partnership income/cost observations, and eight nationwide retail electricity indicators. The former bespoke renderer blocks were removed to avoid duplicate tables. These **38 records are not new research measurements**; this is an infrastructure migration that reduces repetitive code for future evidence batches. Their original source, accounting caveats and causal limits remain attached to each dataset. No change to 53% readiness or the null national-benefit/influence scores. Future new evidence still requires independent source checking, not merely passing static regression tests.
+
+
+## Shared evidence renderer batch #216
+
+Three further existing datasets (30 records) migrate to the shared registry: Cheniere Q3 capital and costs, gas storage/supply accounting, and August gas demand/destination observations. These are existing records, not new findings. The renderer now retains each record's explanatory notes and aggregates record-level sources as well as dataset-level sources. Readiness remains 53%; influence and national net benefit remain unscored.
