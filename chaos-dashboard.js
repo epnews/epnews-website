@@ -96,8 +96,35 @@ function sourceLinks(parent,ids){
  for(const id of ids){const src=data.sources[id];const a=element('a',src.label+' ↗');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a,element('small','Source date: '+src.date));}
  parent.append(line);
 }
+let votingEvidence=null;
+const voteActor={us:'USA',china:'CHN',russia:'RUS',india:'IND'};
+const voteNames={USA:'United States',CHN:'China',RUS:'Russia',IND:'India'};
+function appendVotingEvidence(actor,dimension){
+ if(dimension!=='Diplomatic'&&dimension!=='Overall change')return;
+ const panel=element('section',undefined,'chaos-indicator-card chaos-voting-evidence');
+ panel.append(element('h4','UN voting agreement · recorded votes (2021–2024)'),element('p','Measured voting agreement, not diplomatic influence. Abstentions count as positions; consensus and nonvoting excluded.'));
+ if(!votingEvidence){panel.append(element('p','Country voting evidence is loading or unavailable.'));cards.append(panel);return;}
+ const code=voteActor[actor];
+ const table=element('table');const head=element('tr');for(const name of ['Year','Comparison','Agreement'])head.append(element('th',name));table.append(head);
+ for(const year of ['2021','2022','2023','2024']){
+  const annual=votingEvidence.annual[year];if(!annual)continue;
+  const pairs=[];
+  if(code){for(const other of Object.keys(voteNames)){if(other===code)continue;const key=[code,other].sort((a,b)=>['USA','CHN','RUS','IND'].indexOf(a)-['USA','CHN','RUS','IND'].indexOf(b)).join('_');pairs.push([voteNames[other],annual.pairAgreementPct[key]]);}
+   pairs.push(['EU majority proxy',annual.euMajorityAlignmentPct?.[code]]);
+  }else if(actor==='eu'){
+   for(const other of Object.keys(voteNames))pairs.push([voteNames[other],annual.euMajorityAlignmentPct?.[other]]);
+   pairs.push(['EU member cohesion',annual.euMeanCohesionPct]);
+  }
+  for(const [name,value] of pairs){if(typeof value!=='number')continue;const tr=element('tr');for(const cell of [year,name,value.toFixed(2)+'%'])tr.append(element('td',cell));table.append(tr);}
+ }
+ panel.append(table);
+ const source=element('a','Source: SWP/GESIS UNGA-RES (DOI 10.7802/2855) ↗');source.href='https://doi.org/10.7802/2855';source.target='_blank';source.rel='noopener noreferrer';panel.append(source,element('p','EU is a proxy from recorded member-state votes, not an EU vote. Issue mix and vote coverage affect percentages. Influence score remains NOT CALIBRATED.'));
+ cards.append(panel);
+}
+fetch('data/soi-swp-verified-country-vote-alignment-2021-2024.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('voting data unavailable');return r.json();}).then(d=>{if(!d||!d.annual||d.influenceScoreAuthorized!==false)throw Error('invalid voting evidence');votingEvidence=d;const actor=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(actor&&dim&&actor.value&&dim.value)renderCards(actor.value,dim.value);}).catch(()=>{});
 function renderCards(actor,dimension){
  cards.replaceChildren();
+ appendVotingEvidence(actor,dimension);
  if(dimension==='Diplomatic'||dimension==='Overall change'){
   const updates=(data.soiDiplomaticUpdates||{})[actor]||[];
   if(updates.length){const section=element('section',undefined,'chaos-soi-evidence');section.append(element('h4','Recent SOI diplomatic evidence · not an influence score'));
