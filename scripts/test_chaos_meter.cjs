@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,18);
+assert.equal(evidenceTables.length,19);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -327,3 +327,8 @@ const liquidity2026=data.evidenceAudits.us['Energy and resources'].q32026Liquidi
 assert.equal(liquidity2026.items.length,5);
 assert.deepEqual(Array.from(liquidity2026.items,x=>x.value),[1663,393,6023,569,48.6]);
 assert.equal(evidenceTables.filter(x=>x.auditKey==='q32026LiquidityOwnership2026').length,1);
+
+const earningsReconciliation=data.evidenceAudits.us['Energy and resources'].q32026EarningsReconciliation;
+assert.equal(earningsReconciliation.items.length,3);
+assert.deepEqual(Array.from(earningsReconciliation.items,x=>x.v2026),[17773,736,2390]);
+assert.equal(evidenceTables.filter(x=>x.auditKey==='q32026EarningsReconciliation').length,1);
