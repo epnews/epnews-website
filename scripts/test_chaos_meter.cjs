@@ -641,5 +641,13 @@ assert.ok(observations.china.finding.includes('August 2023'));
 assert.ok(observations.china.sources.length>=3);
 assert.equal(observations.eu.type,'documented-partnership-followup-with-preexisting-program');
 assert.ok(observations.eu.baseline.description.includes('before 2024'));
-assert.equal(observations.russia.type,'treaty-event-only');
+assert.equal(observations.russia.type,'preexisting-security-integration-baseline');
 for(const sphere of ['china','eu','russia']){const record=candidateData.cases.find(c=>c.sphere===sphere);assert.equal(record.influenceScore,null);assert.equal(record.measurementQuality.independentOutcomeCorroborated,false);assert.equal(record.sourceAudit.status,'pending-independent-review');}
+
+// Russia baseline predates treaty; legal entry into force cannot be treated as new military behavior.
+assert.equal(observations.russia.baseline.period,'2022–2024, before treaty signature');
+assert.equal(observations.russia.followup.period,'2025-03-13');
+assert.ok(observations.russia.sources.length>=4);
+assert.equal(candidateData.cases.find(c=>c.sphere==='russia').measurementQuality.baselineDocumented,true);
+assert.equal(candidateData.cases.find(c=>c.sphere==='russia').measurementQuality.followupDocumented,false);
+assert.equal(candidateData.cases.find(c=>c.sphere==='russia').sourceAudit.status,'pending-independent-review');
