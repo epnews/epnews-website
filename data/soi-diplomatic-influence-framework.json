@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "status": "methodology-proposal-not-calibrated",
   "scope": [
     "us",
@@ -109,5 +109,54 @@
     "A source URL alone does not establish that a claim is true; human/source verification remains required.",
     "Missing evidence is not a zero outcome and never authorizes a score.",
     "No cases are included until source verification is complete."
-  ]
+  ],
+  "comparabilityProtocol": {
+    "status": "precalibration-evidence-standard",
+    "actors": [
+      "us",
+      "china",
+      "russia",
+      "eu",
+      "india"
+    ],
+    "observationUnit": "One actor–counterpart–policy objective–event episode; linked follow-ups must not be counted as new episodes",
+    "timeWindow": "Use identical calendar-year cohorts and observation cutoffs for every sphere; retain older events only as separately labeled historical case studies",
+    "eligibleCases": [
+      "Externally directed, dated diplomatic initiative with a named counterpart and documented policy objective",
+      "Observable counterpart commitment or behavior with dated evidence"
+    ],
+    "excludedCases": [
+      "UN voting similarity alone",
+      "Meetings, statements, or signed documents without a counterpart outcome",
+      "Domestic-only regulation",
+      "Military or economic activity with no identified diplomatic counterpart objective"
+    ],
+    "mandatoryFields": [
+      "actor",
+      "counterpart",
+      "policyObjective",
+      "eventDate",
+      "baselinePeriod",
+      "outcomePeriod",
+      "sourceUrls",
+      "counterpartAgency",
+      "alternativeExplanations",
+      "costs",
+      "followupDate"
+    ],
+    "caseIdentity": "actor|counterpart|policyObjective|initialEventDate",
+    "outcomeClasses": [
+      "no-observed-change",
+      "commitment-only",
+      "implemented-observed",
+      "measured-change",
+      "reversed",
+      "not-assessed"
+    ],
+    "missingDataRule": "Unknown is not zero; do not infer outcome from stage or source count",
+    "attributionRule": "Record rival explanations and counterpart agency; never infer exclusive causation from hosting, sequencing, or joint statements",
+    "reporting": "Show separately: eligible case counts, independently audited case counts, observed outcome counts, attribution-ready counts and coverage denominators, by actor and year. These are evidence-coverage metrics, not influence scores.",
+    "scoringGate": "No numeric influence score or needle authorization until calibrated cross-actor outcomes, matched denominators, uncertainty, attribution, cost treatment and explicit approval are documented",
+    "needleAuthorized": false
+  }
 }
