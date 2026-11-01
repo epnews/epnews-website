@@ -5,10 +5,10 @@ window.EP_CHAOS_DATA = {
   "meterReadiness": {
   "label": "Command Meter Readiness",
   "asOf": "2026-10-31",
-  "percent": 51,
-  "previousPercent": 49,
-  "lastEvidencePr": 198,
-  "changeReason": "EIA January–August 2026 retail electricity prices and utility revenue establish newer observed domestic cost indicators alongside producer financial gains. They do not establish LNG export causation or incremental national welfare costs.",
+  "percent": 53,
+  "previousPercent": 51,
+  "lastEvidencePr": 201,
+  "changeReason": "Matched January and August 2025–2026 EIA natural-gas prices improve domestic consumer and industrial cost comparisons. Same-month matching reduces seasonal mismatch but does not identify LNG export or disruption causation.",
   "baselinePr": 192,
   "kind": "Editorial planning estimate; not a measured statistical percentage",
   "components": [
@@ -25,7 +25,7 @@ window.EP_CHAOS_DATA = {
     {
       "id": "incidence",
       "label": "Costs versus benefits",
-      "percent": 45
+      "percent": 50
     },
     {
       "id": "causation",
