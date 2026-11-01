@@ -1,7 +1,8 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,2);
+assert.equal(evidenceTables.length,6);
+assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 for(const entry of evidenceTables){assert.ok(entry.id&&entry.auditKey);assert.ok(entry.columns.length);const record=data.evidenceAudits.us['Energy and resources'][entry.auditKey];assert.ok(record&&record.items.length);assert.ok(data.sources[record.source]);for(const column of entry.columns)for(const item of record.items)assert.ok(Object.hasOwn(item,column.key));}
 const southernFifteen=data.evidenceAudits.us['Energy and resources'].fifteenSouthernElectricityPrices;
 assert.equal(southernFifteen.items.length,15);assert.equal(new Set(southernFifteen.items.map(x=>x.id)).size,15);
@@ -287,9 +288,9 @@ assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate ini
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
 
 
-assert.match(dashboard,/if\(audit\.tenBorderGasPriceComparisons\)/);
-assert.match(dashboard,/if\(audit\.tenSabinePassCashFlows\)/);
-assert.match(dashboard,/if\(audit\.tenSabinePassPartnershipCosts\)/);
+
+
+
 assert.match(dashboard,/if\(audit\.tenCheniereQ3CostsCapital\)/);
 assert.match(dashboard,/if\(audit\.tenGasStorageSupplyAudit\)/);
 assert.match(dashboard,/if\(audit\.aug2026TenDemandDestinationMeasures\)/);
@@ -297,7 +298,7 @@ assert.match(dashboard,/if\(audit\.aug2026GasSupplyDemandBalance\)/);
 assert.match(dashboard,/if\(audit\.lngCausalCounterfactualAudit\)/);
 assert.match(dashboard,/if\(audit\.domesticGasMatched2025to2026\)/);
 assert.match(dashboard,/if\(audit\.domesticGasPricesAug2026\)/);
-assert.match(dashboard,/if\(audit\.domesticElectricity2026\)/);
+
 assert.match(dashboard,/if\(audit\.q32026SecCashAndCosts\)/);
 assert.match(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
 assert.match(dashboard,/chaos-meter-readiness/);
