@@ -1,0 +1,32 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Cross-country Command Meter evidence and scoring gates; not an influence-score calculation",
+  "readinessEditorialEstimatePercent": 53,
+  "scorePolicy": {
+    "noScoreFromTradeVolumeAlone": true,
+    "requiresAttributableCounterfactual": true,
+    "requiresCostsAndIncidence": true,
+    "requiresIndependentMeasuredOutcomes": 2,
+    "requiresPrecommittedNormalization": true,
+    "netNationalBenefitUsd": null,
+    "geopoliticalInfluenceScore": null
+  },
+  "countries": [
+    {"country":"United States","priority":"high","research":[
+      {"id":"us-energy-net","question":"How much additional realized U.S. LNG revenue and margin was caused by disruption, net of domestic energy price, infrastructure, environmental and public costs?","evidence":"DOE destination departures and EIA volumes verified; realized margins and attributable counterfactual absent","status":"open"},
+      {"id":"us-leverage","question":"Did any foreign policy concession follow from dependence on U.S. energy, defense, finance or technology?","evidence":"No independently established causal concession in current meter record","status":"open"}]},
+    {"country":"Europe","priority":"high","research":[
+      {"id":"eu-substitution","question":"How did the replacement of Russian energy change European import cost, resilience and policy autonomy?","evidence":"DOE exports to EU destinations and Eurostat LNG partner classifications measured; price incidence and counterfactual incomplete","status":"open"},
+      {"id":"eu-leverage","question":"Did supplier switching create documented U.S. bargaining leverage or European concessions?","evidence":"Do not infer concessions from LNG shipments","status":"open"}]},
+    {"country":"China","priority":"high","research":[
+      {"id":"cn-energy","question":"Did discounted Russian energy improve Chinese realized industrial margins after shipping, insurance and sanctions exposure?","evidence":"Requires matching quantities, delivered prices and comparable counterfactual","status":"open"},
+      {"id":"cn-influence","question":"Did resource purchasing yield independently observed policy concessions?","evidence":"Requires dated decisions and causal alternatives","status":"open"}]},
+    {"country":"Russia","priority":"high","research":[
+      {"id":"ru-export-net","question":"What happened to realized hydrocarbon export receipts after discounts, sanctions, transport and military/fiscal costs?","evidence":"Requires receipts not benchmark prices multiplied by production","status":"open"},
+      {"id":"ru-leverage","question":"Did supply redirection produce measurable foreign dependence or concessions?","evidence":"Requires observed outcomes and costs","status":"open"}]},
+    {"country":"India","priority":"high","research":[
+      {"id":"in-oil-margin","question":"Who captured discounts on Russian crude: refiners, consumers or the government?","evidence":"Requires delivered feedstock prices, product export margins and domestic incidence","status":"open"},
+      {"id":"in-policy","question":"Did energy access cause a measurable change in Indian policy autonomy?","evidence":"Requires specific documented decisions and counterfactual","status":"open"}]}
+  ],
+  "interpretation":"Research priorities are not evidence of benefit, harm or influence. Inactive dials remain null until existing meter scoring gates are met."
+}
