@@ -4757,7 +4757,11 @@ window.EP_CHAOS_DATA = {
         "costs": "Importers and users face price and supply risks; lower imports may reflect inventory changes or reduced refinery activity.",
         "gap": "No quantified net national benefit. Require matched-quarter volumes, inventory draws and realized costs before inferring vulnerability or leverage.",
         "confidence": "Moderate",
-        "score": null
+        "score": null,
+        "metric": "china-oil-import-context-gap",
+        "number": -3.5,
+        "displayPrecision": "approximate",
+        "measurementCaveat": "−3.5 million b/d is a descriptive gap between 2025 annual average and Q2 2026, NOT matched-period change. The Q2 versus Q1 2026 decline is a different comparison; do not attribute either to geopolitical influence."
       }
     },
     "russia": {
@@ -4825,7 +4829,11 @@ window.EP_CHAOS_DATA = {
         "costs": "Lost market access, price changes, rerouting costs and alternative buyers affect net receipts.",
         "gap": "Council text says over 150 bcm for 2021; no false precision or derived index. Global net revenue remains unquantified.",
         "confidence": "Moderate",
-        "score": null
+        "score": null,
+        "metric": "russia-eu-gas-decline-minimum",
+        "number": -114,
+        "displayPrecision": "lower-bound",
+        "measurementCaveat": "2021 baseline is OVER 150 bcm; decline to 36 bcm in 2025 is MORE THAN 114 bcm. The needle plots a conservative threshold, not an exact decrease or global Russian exports."
       }
     },
     "eu": {
