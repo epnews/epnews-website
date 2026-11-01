@@ -194,5 +194,10 @@
     "china": null,
     "india": null
   },
-  "readinessAdjustment": null
+  "readinessAdjustment": null,
+  "measurementProtocols": {
+    "path": "data/soi-eight-outcomes-measurement-protocols.json",
+    "audit": "node scripts/audit_soi_eight_protocols.cjs",
+    "status": "protocols_only_no_new_measured_outcomes"
+  }
 }
