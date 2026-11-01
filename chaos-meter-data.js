@@ -92,6 +92,106 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "tenBorderGasPriceComparisons": {
+  "title": "Ten observed U.S.–Canada/Mexico border gas trade-price comparisons",
+  "source": "doeAug2026BorderGasPriceTable",
+  "items": [
+    {
+      "id": "mexico-pipeline-export-ytd",
+      "label": "Mexico pipeline gas export border price",
+      "period": "Jan–Aug YTD",
+      "earlier": 2.95,
+      "later": 2.15,
+      "unit": "USD/MMBtu",
+      "note": "2025 vs 2026"
+    },
+    {
+      "id": "mexico-pipeline-import-ytd",
+      "label": "Mexico pipeline gas import border price",
+      "period": "Jan–Aug YTD",
+      "earlier": 2.13,
+      "later": 8.76,
+      "unit": "USD/MMBtu",
+      "note": "2025 vs 2026; thin flows may cause volatility"
+    },
+    {
+      "id": "canada-pipeline-export-ytd",
+      "label": "Canada pipeline gas export border price",
+      "period": "Jan–Aug YTD",
+      "earlier": 3.63,
+      "later": 3.82,
+      "unit": "USD/MMBtu",
+      "note": "2025 vs 2026"
+    },
+    {
+      "id": "canada-truck-export-ytd",
+      "label": "Canada truck gas export border price",
+      "period": "Jan–Aug YTD",
+      "earlier": 6.21,
+      "later": 8.59,
+      "unit": "USD/MMBtu",
+      "note": "2025 vs 2026; truck includes CNG/LNG"
+    },
+    {
+      "id": "canada-pipeline-import-ytd",
+      "label": "Canada pipeline gas import border price",
+      "period": "Jan–Aug YTD",
+      "earlier": 2.8,
+      "later": 2.96,
+      "unit": "USD/MMBtu",
+      "note": "2025 vs 2026"
+    },
+    {
+      "id": "canada-truck-import-ytd",
+      "label": "Canada truck gas import border price",
+      "period": "Jan–Aug YTD",
+      "earlier": 4.49,
+      "later": 6.19,
+      "unit": "USD/MMBtu",
+      "note": "2025 vs 2026; truck includes CNG/LNG"
+    },
+    {
+      "id": "mexico-pipeline-export-annual",
+      "label": "Mexico pipeline gas export border price",
+      "period": "Annual",
+      "earlier": 1.81,
+      "later": 2.75,
+      "unit": "USD/MMBtu",
+      "note": "2024 vs 2025; separate historical baseline"
+    },
+    {
+      "id": "canada-pipeline-export-annual",
+      "label": "Canada pipeline gas export border price",
+      "period": "Annual",
+      "earlier": 2.23,
+      "later": 3.6,
+      "unit": "USD/MMBtu",
+      "note": "2024 vs 2025; separate historical baseline"
+    },
+    {
+      "id": "canada-truck-export-annual",
+      "label": "Canada truck gas export border price",
+      "period": "Annual",
+      "earlier": 6.03,
+      "later": 6.25,
+      "unit": "USD/MMBtu",
+      "note": "2024 vs 2025; separate historical baseline"
+    },
+    {
+      "id": "canada-pipeline-import-annual",
+      "label": "Canada pipeline gas import border price",
+      "period": "Annual",
+      "earlier": 1.96,
+      "later": 2.79,
+      "unit": "USD/MMBtu",
+      "note": "2024 vs 2025; separate historical baseline"
+    }
+  ],
+  "methodology": "Six matching Jan–Aug 2025 vs Jan–Aug 2026 cross-border gas prices and four 2024 vs 2025 annual historical comparisons, all from DOE August 2026 Natural Gas Imports and Exports Monthly Table 19a. Annual and year-to-date comparisons are separate time frames and may refer to the same flow category; these are ten reported comparisons, not ten independent causal studies. Pipeline/truck border prices include transportation to the U.S. border and are not LNG FOB export prices, company revenue, profits or consumer retail prices. Truck includes CNG and LNG. Mexico imports may be small-volume and volatile; interpret the 2026 price cautiously. No volume-weighted revenue estimate is calculated.",
+  "causalStatus": "These trade prices do not identify the incremental causal effect of U.S. LNG expansion, Iran conflict, tariffs, or gas-price shocks on domestic consumers or national welfare.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "tenSabinePassCashFlows": {
   "title": "Ten Sabine Pass actual cash flow and capital allocation measurements",
   "period": "Nine months ended September 30: 2025 versus 2026",
@@ -2527,6 +2627,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "doeAug2026BorderGasPriceTable":{"label":"DOE Natural Gas Imports and Exports Monthly August 2026, Table 19a, pipeline/truck border prices","url":"https://www.energy.gov/sites/default/files/2026-10/Natural%20Gas%20Imports%20and%20Exports%20Monthly%20August%202026.pdf","date":"2026-10-22"},
     "sabine2026SEC10Q":{"label":"SEC Cheniere Energy Partners Form 10-Q, September 30 2026, consolidated cash flows and supplemental interest","url":"https://www.sec.gov/Archives/edgar/data/1383650/000138365026000038/cqp-20260930.htm","date":"2026-10-29"},
     "chenierePartnersQ32026":{"label":"Cheniere Energy Partners Q3 2026 earnings release, nine-month GAAP statement","url":"https://cqpir.cheniere.com/sec-filings/all-sec-filings/content/0001383650-26-000040/cqp20263rdqtrerex991.htm","date":"2026-10-29"},
     "eiaMonthlySupplyDisposition2026":{"label":"EIA U.S. Natural Gas Monthly Supply and Disposition Balance, August 2026","url":"https://www.eia.gov/dnav/ng/ng_sum_sndm_s1_m.htm","date":"2026-10-30"},
