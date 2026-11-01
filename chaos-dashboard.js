@@ -98,6 +98,13 @@ function sourceLinks(parent,ids){
 }
 let diplomaticCandidates=null;
 fetch('data/soi-diplomatic-source-candidates.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('candidate evidence unavailable');return r.json();}).then(d=>{if(!d||!Array.isArray(d.cases)||d.cases.some(x=>x.influenceScore!==null))throw Error('invalid candidate evidence');diplomaticCandidates=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
+let diplomaticWorklist=null;
+fetch('data/soi-diplomatic-audit-worklist.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('diplomatic audit unavailable');return r.json();}).then(d=>{
+ if(!d||d.scoringAuthorized!==false||!Array.isArray(d.items)||d.items.length!==5||d.items.some(x=>x.influenceScore!==null))throw Error('invalid diplomatic audit');
+ diplomaticWorklist=d;
+ const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');
+ if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);
+}).catch(()=>{});
 let influenceFramework=null;
 fetch('data/soi-diplomatic-influence-framework.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('framework unavailable');return r.json();}).then(d=>{if(!d||d.influenceScoreAuthorized!==false||!Array.isArray(d.dimensions))throw Error('invalid framework');influenceFramework=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
 let votingEvidence=null;
@@ -116,6 +123,23 @@ function appendVotingEvidence(actor,dimension){
    const milestoneCount=entries.filter(x=>Boolean(x.observedEvidence?.finding)).length;
    drawer.append(element('p','Evidence coverage: '+entries.length+' selected case(s) · '+milestoneCount+' documented milestone(s) · '+audited+' independently audited · '+attributionReady+' attribution-ready. This is research coverage, not diplomatic influence.'));
    drawer.append(element('p','Next evidence needed: independently checked counterpart outcomes, matched baselines, alternative explanations and costs. The diplomatic influence needle remains unscored.'));
+   const liveAudit=diplomaticWorklist?.items.find(x=>x.sphere===actor);
+   if(liveAudit){
+    const completed=liveAudit.priorityTasks.filter(x=>x.complete).length;
+    drawer.append(element('p','VERIFICATION PROGRESS · '+completed+' / '+liveAudit.priorityTasks.length+' scoped checks. Not an influence score.'));
+    const observed=liveAudit.additionalOperationalEvidence||liveAudit.directPolicyUptake||liveAudit.implementationObservation;
+    if(observed){
+     const label=observed.event||observed.observedUnit||'Observed implementation';
+     drawer.append(element('p','OBSERVED OUTCOME · '+label));
+     if(observed.baseline)drawer.append(element('p','Before: '+observed.baseline));
+     if(observed.followup)drawer.append(element('p','After: '+observed.followup));
+     if(observed.budgetDefinition)drawer.append(element('p','Resource limitation: '+observed.budgetDefinition));
+     if(observed.nextIndependentMeasurement)drawer.append(element('p','Measurement needed: '+observed.nextIndependentMeasurement));
+     const links=[...(Array.isArray(observed.sources)?observed.sources:[]),...(observed.source?[observed.source]:[])];
+     for(const url of [...new Set(links)]){if(!/^https:\/\//.test(url))continue;const link=element('a',' Operational evidence source ↗');link.href=url;link.target='_blank';link.rel='noopener noreferrer';drawer.append(link);}
+    }
+    drawer.append(element('p','Not established: independently audited performance, causal attribution, net benefit. Original diplomatic influence needle remains unscored.'));
+   }
 
    drawer.append(element('p','Primary-source event reviews only. External influence remains unverified; excluded internal policy events are clearly identified. No influence score.'));
    for(const item of entries){const p=element('p');p.append(element('strong',item.title+' · '+item.stage+' ('+item.eventDate+')'),element('span',' · '+item.caveat));const a=element('a',' Source ↗');a.href=item.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';p.append(a);drawer.append(p);
