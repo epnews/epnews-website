@@ -657,3 +657,9 @@ assert.equal(candidateData.cases.find(c=>c.sphere==='china').sourceAudit.sourceU
 assert.ok(candidateData.cases.find(c=>c.sphere==='eu').sourceAudit.sourceUrl.includes('eu-moldova-security-defence-partnership'));
 assert.ok(candidateData.cases.find(c=>c.sphere==='us').sourceAudit.sourceUrl.includes('3621934'));
 assert.ok(candidateData.cases.every(c=>c.sourceAudit.status==='pending-independent-review'&&!c.sourceAudit.sourceOpened&&!c.sourceAudit.claimChecked&&!c.sourceAudit.reviewer));
+
+// Claim-source anchors are internally consistent, not independently verified.
+const anchorAudit=require('./soi_diplomatic_source_consistency.cjs');
+assert.ok(anchorAudit.auditAll(candidateData).every(a=>a.valid));
+assert.equal(anchorAudit.auditAnchor({...candidateData.cases.find(c=>c.sphere==='china'),sourceAudit:{...candidateData.cases.find(c=>c.sphere==='china').sourceAudit,sourceUrl:'https://2021-2025.state.gov/joint-statement-following-the-ministerial-meeting-of-the-united-states-and-the-gulf-cooperation-council-gcc/'}}).valid,false);
+assert.equal(anchorAudit.auditAnchor({...candidateData.cases.find(c=>c.sphere==='us'),sourceAudit:{...candidateData.cases.find(c=>c.sphere==='us').sourceAudit,status:'independently-verified'}}).valid,false);
