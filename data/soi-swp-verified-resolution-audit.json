@@ -1,0 +1,41 @@
+{
+  "sourceFile": "2025-03-09_unga-res-un_resolutions.csv",
+  "sourceSha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "sourceSizeApproxMB": 21,
+  "totalResolutions": 10462,
+  "uniqueResolutionIds": 10462,
+  "duplicateResolutionIds": 0,
+  "categorizedResolutions": 10462,
+  "adoptedWithoutVote": 7992,
+  "recordedVoteResolutions": 2470,
+  "annual": [
+    {
+      "year": 2021,
+      "total": 334,
+      "recordedVote": 86,
+      "withoutVote": 248
+    },
+    {
+      "year": 2022,
+      "total": 335,
+      "recordedVote": 89,
+      "withoutVote": 246
+    },
+    {
+      "year": 2023,
+      "total": 338,
+      "recordedVote": 88,
+      "withoutVote": 250
+    },
+    {
+      "year": 2024,
+      "total": 342,
+      "recordedVote": 95,
+      "withoutVote": 247
+    }
+  ],
+  "early2025Records": 3,
+  "scope": "Resolution-level only: no country-specific vote positions",
+  "countryAlignmentCalculable": false,
+  "geopoliticalInfluenceScoreAuthorized": false
+}
