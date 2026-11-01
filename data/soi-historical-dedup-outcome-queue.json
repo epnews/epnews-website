@@ -109,5 +109,11 @@
     "eu": null,
     "india": null
   },
-  "readinessAdjustment": null
+  "readinessAdjustment": null,
+  "consolidatedWorkstreams": {
+    "path": "data/soi-eight-outcome-consolidated-20261101.json",
+    "audit": "node scripts/audit_soi_eight_outcomes.cjs",
+    "status": "partial_measurements_and_explicit_gaps",
+    "scorePolicy": "no automatic influence or readiness adjustment"
+  }
 }
