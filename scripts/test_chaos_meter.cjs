@@ -450,3 +450,9 @@ assert.match(data.actors.china['Energy and resources'].measurementCaveat,/NOT ma
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/MORE THAN 114/);
 assert.equal(data.actors.china['Energy and resources'].score,null);
 assert.equal(data.actors.russia['Energy and resources'].score,null);
+
+assert.equal(data.actors.eu['Energy and resources'].metric,'eu-russian-gas-import-share-pp');
+assert.equal(data.actors.eu['Energy and resources'].number,-33);
+assert.equal(data.actors.eu['Energy and resources'].score,null);
+assert.ok(data.sources.euCommissionGasShare2026);
+assert.match(data.actors.eu['Energy and resources'].measurementCaveat,/not total gas import dependence/);
