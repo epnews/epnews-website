@@ -45,7 +45,7 @@ const assert=require('node:assert/strict');
    await page.locator('#chaos-sphere').selectOption('china');
    await page.locator('#chaos-dimension').selectOption('Energy and resources');
    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
-   assert.match(await page.locator('#chaos-needle-note').innerText(),/NOT matched-period/);
+   assert.match(await page.locator('#chaos-needle-note').innerText(),/matched consecutive quarters/);
    await page.locator('#chaos-sphere').selectOption('russia');
    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
    assert.match(await page.locator('#chaos-needle-note').innerText(),/MORE THAN 114/);
