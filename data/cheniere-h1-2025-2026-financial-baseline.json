@@ -1,0 +1,26 @@
+{
+  "source": "https://lngir.cheniere.com/news-events/press-releases/detail/343/cheniere-reports-second-quarter-2026-results-and-raises",
+  "secSource": "https://www.sec.gov/Archives/edgar/data/3570/000000357026000028/lng-20260630.htm",
+  "issuer": "Cheniere Energy, Inc.",
+  "scope": "Consolidated issuer worldwide operations, not Europe-only or U.S. national economic benefit",
+  "period": "Six months ended June 30",
+  "units": {"financial":"USD millions","lngExported":"TBtu","cargoes":"count"},
+  "measures": {
+    "totalRevenue": {"2025":10085,"2026":11600,"kind":"GAAP"},
+    "lngRevenue": {"2025":9820,"2026":11362,"kind":"GAAP"},
+    "consolidatedAdjustedEbitda": {"2025":3288,"2026":4137,"kind":"non-GAAP"},
+    "netIncome": {"2025":1979,"2026":-434,"kind":"GAAP"},
+    "distributableCashFlow": {"2025":null,"2026":2840,"kind":"non-GAAP"},
+    "lngExported": {"2025":1159,"2026":1360,"kind":"operational"},
+    "cargoesExported": {"2025":322,"2026":371,"kind":"operational"}
+  },
+  "causation": {"shockAttributableIncrementUsd":null,"counterfactual":null,"geopoliticalConcession":null},
+  "nationalBenefit": {"domesticHouseholdEnergyCostUsd":null,"industrialEnergyCostUsd":null,"capitalAndPublicCostsUsd":null,"netNationalEconomicBenefitUsd":null},
+  "warnings": [
+    "Issuer revenue is not national economic benefit",
+    "Adjusted EBITDA is non-GAAP and not net income or cash receipts",
+    "Derivative fair-value changes materially affect 2026 net income",
+    "All company exports are not exclusively EU-bound",
+    "Before/after financial change alone cannot establish disruption causation"
+  ]
+}
