@@ -768,3 +768,10 @@ for(const item of diplomaticQueue.items){
  assert.equal(plan.netBenefitMeasured,false);
  assert.equal(plan.causalInfluenceAuthorized,false);
 }
+
+// India CEPA administrative uptake is observable, but not a diplomatic influence score.
+const indiaCEPA=diplomaticQueue.items.find(x=>x.sphere==='india').directPolicyUptake;
+assert.equal(indiaCEPA.cumulativeCertificates,445000);
+assert.equal(indiaCEPA.exportProductBreadth.followupFY2025_26-indiaCEPA.exportProductBreadth.baselineFY2021_22,507);
+assert.equal(indiaCEPA.eligibleForInfluenceScoring,false);
+assert.ok(indiaCEPA.limitations.some(x=>x.includes('denominator')));
