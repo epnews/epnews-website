@@ -259,3 +259,8 @@ Four further existing source-backed datasets now use the common registry rendere
 ## Shared evidence renderer batch #216
 
 Three further existing datasets (30 records) migrate to the shared registry: Cheniere Q3 capital and costs, gas storage/supply accounting, and August gas demand/destination observations. These are existing records, not new findings. The renderer now retains each record's explanatory notes and aggregates record-level sources as well as dataset-level sources. Readiness remains 53%; influence and national net benefit remain unscored.
+
+
+## Shared renderer batch #217
+
+Four existing source-backed datasets (32 records) migrate to the shared evidence registry: August gas supply/demand, domestic gas prices, SEC cash and costs, and first-half market observations. This is not new research and does not change 53% readiness or assign national benefit/influence scores. Original evidence remains in the source dataset; legacy rendering blocks are replaced by the shared table. Regression tests assert registry membership and removal of the old renderers.
