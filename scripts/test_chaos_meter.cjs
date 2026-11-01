@@ -813,3 +813,14 @@ for(const item of diplomaticQueue.items){
  assert.equal(item.priorityTasks.find(t=>t.id==='costs').complete,false);
 }
 assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),6);
+
+// Additional operational-use and resource evidence remains distinct from influence.
+const usOperational=diplomaticQueue.items.find(x=>x.sphere==='us').additionalOperationalEvidence;
+assert.equal(usOperational.eventDate,'2023-12-18');
+assert.equal(usOperational.independentPerformanceMeasured,false);
+assert.equal(usOperational.eligibleForInfluenceScoring,false);
+const euResources=diplomaticQueue.items.find(x=>x.sphere==='eu').additionalOperationalEvidence;
+assert.equal(euResources.budgetEUR,19800000);
+assert.equal(euResources.staffCeiling,72);
+assert.match(euResources.budgetDefinition,/not actual spending/i);
+assert.equal(euResources.eligibleForInfluenceScoring,false);
