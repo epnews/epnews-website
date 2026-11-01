@@ -269,3 +269,8 @@ Four existing source-backed datasets (32 records) migrate to the shared evidence
 ## Shared renderer hardening #218
 
 The shared renderer now retains per-item note, caution, caveat, limit and meaning fields where supplied, and recognizes both individual source IDs and arrays of source IDs. Regression checks reject duplicate dataset registrations and column keys. This is infrastructure quality work only: no new observations, no changes to source measurements, no readiness increase and no influence score.
+
+
+## Shared renderer batch #219
+
+Four additional existing eight-record datasets (32 observations) migrate to the common registry: Q3 company outcomes, trade financial cross-checks, observed LNG trade indicators and the eight-point LNG evidence audit. No new source claims or readiness increase. The shared renderer retains caveats and links sources, but this migration does not itself establish national net benefit or geopolitical influence. Baseline and outcome fields are displayed without implying causal attribution.
