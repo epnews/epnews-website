@@ -1,5 +1,5 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -157,21 +157,33 @@
         "priority": "high"
       },
       "observedEvidence": {
-        "type": "contextual-corroboration",
-        "finding": "June 2023 US-GCC joint statement welcomed the Saudi-Iran decision to resume diplomatic relations.",
-        "source": "https://2021-2025.state.gov/joint-statement-following-the-ministerial-meeting-of-the-united-states-and-the-gulf-cooperation-council-gcc/",
-        "caveat": "Third-party acknowledgment of agreement is not evidence of exclusive Chinese causation or embassy operations."
+        "type": "documented-bilateral-implementation",
+        "finding": "Saudi Arabia and Iran agreed in Beijing on 10 March 2023 to resume diplomatic ties and reopen missions within two months. Iran reopened its embassy in Riyadh in June 2023; Saudi Arabia's embassy in Tehran resumed operations in August 2023. The embassy reopening milestones occurred after the agreement, but beyond its initial two-month target.",
+        "baseline": {
+          "period": "2016–March 2023",
+          "description": "Diplomatic ties severed in 2016; Iraqi and Omani talks occurred during 2021–2022."
+        },
+        "followup": {
+          "period": "June–August 2023",
+          "description": "Iranian and Saudi embassies reopened in their counterpart capitals."
+        },
+        "sources": [
+          "https://www.spa.gov.sa/en/ed7aabfefaw",
+          "https://saudigazette.com.sa/article/634833/SAUDI-ARABIA/Saudi-embassy-in-Iran-officially-reopens",
+          "https://www.everycrsreport.com/reports/RL33533.html"
+        ],
+        "caveat": "Diplomatic representation resumed, but independent quantitative influence, exclusive Chinese attribution, long-term durability and net costs remain unresolved. Earlier Iraq/Oman mediation was explicitly acknowledged."
       },
       "measurementQuality": {
         "outcomeDefined": true,
-        "baselineDocumented": false,
-        "followupDocumented": false,
+        "baselineDocumented": true,
+        "followupDocumented": true,
         "matchedDefinitions": false,
         "confoundersAddressed": false,
         "independentOutcomeCorroborated": false,
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
-        "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+        "reason": "Diplomatic mission reopening documented by contemporary reporting and CRS review; no matched quantitative influence metric or causal counterfactual."
       },
       "sourceAudit": {
         "status": "pending-independent-review",
@@ -240,10 +252,10 @@
         "priority": "high"
       },
       "observedEvidence": {
-        "type": "legal-baseline",
-        "finding": "Russia-Belarus security guarantees treaty signed December 2024 and entered into force March 13 2025.",
+        "type": "treaty-event-only",
+        "finding": "Russia–Belarus security guarantees treaty entered into force in March 2025. No comparable, independently corroborated Belarusian policy or operational change relative to its pre-treaty obligations is yet established in this case file.",
         "source": "https://base.garant.ru/411209091/",
-        "caveat": "Treaty effectiveness does not establish incremental Belarusian behavior versus existing integration."
+        "caveat": "Legal entry into force is not implementation measurement. Pre-existing Union State defense cooperation requires a separate baseline; do not infer a new outcome from the treaty text."
       },
       "measurementQuality": {
         "outcomeDefined": true,
@@ -254,7 +266,7 @@
         "independentOutcomeCorroborated": false,
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
-        "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+        "reason": "Treaty legal milestone documented, but no matched Belarusian behavioral outcome or independently corroborated post-treaty change established."
       },
       "sourceAudit": {
         "status": "pending-independent-review",
@@ -326,24 +338,33 @@
         "priority": "high"
       },
       "observedEvidence": {
-        "type": "baseline-confounder",
-        "finding": "EU Partnership Mission in Moldova launched in May 2023, before May 2024 security partnership; EU Commission reports Moldova cybersecurity agency and cyber institute launched February 2024, also before partnership.",
+        "type": "documented-partnership-followup-with-preexisting-program",
+        "finding": "EU–Moldova Security and Defence Partnership signed May 2024. Moldova's foreign ministry confirmed in May 2025 that EUPM assistance included contributions to a crisis-management center concept, cybersecurity agency assistance and equipment; mission began in May 2023. A November 2025 joint dialogue recommitted to cybersecurity and hybrid-threat cooperation. These are operational cooperation observations, not demonstrated incremental outcomes caused by the 2024 partnership.",
+        "baseline": {
+          "period": "May 2023–May 2024",
+          "description": "EU Partnership Mission active before 2024 partnership; Moldovan cyber institutions launched February 2024."
+        },
+        "followup": {
+          "period": "May–November 2025",
+          "description": "Moldovan ministry described specific technical assistance and the parties renewed cooperation commitments."
+        },
         "sources": [
-          "https://www.eeas.europa.eu/eupm-moldova/about-eu-partnership-mission-republic-moldova_en",
-          "https://enlargement.ec.europa.eu/document/download/858717b3-f8ef-4514-89fe-54a6aa15ef69_en?filename=Moldova+Report+2024.pdf"
+          "https://www.eeas.europa.eu/eeas/eu-moldova-security-defence-partnership_en",
+          "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027",
+          "https://www.eeas.europa.eu/eeas/eu-moldova-joint-statement-following-4th-high-level-political-and-security-dialogue_en"
         ],
-        "caveat": "Do not attribute pre-partnership actions to May 2024 partnership."
+        "caveat": "Pre-existing EUPM and EU funding mean program outputs cannot be attributed to the May 2024 partnership without project-specific baseline, timeline, counterpart action and counterfactual."
       },
       "measurementQuality": {
         "outcomeDefined": true,
-        "baselineDocumented": false,
-        "followupDocumented": false,
+        "baselineDocumented": true,
+        "followupDocumented": true,
         "matchedDefinitions": false,
         "confoundersAddressed": false,
         "independentOutcomeCorroborated": false,
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
-        "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+        "reason": "Dated mission baseline and subsequent cooperation described, but not a matched outcome attributable to the partnership."
       },
       "sourceAudit": {
         "status": "pending-independent-review",

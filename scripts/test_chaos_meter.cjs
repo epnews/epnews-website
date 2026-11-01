@@ -603,8 +603,8 @@ const observations=Object.fromEntries(candidateData.cases.map(c=>[c.sphere,c.obs
 assert.equal(observations.india.baseline.value,43.3);
 assert.equal(observations.india.followup.value,83.7);
 assert.equal(Number((observations.india.followup.value-observations.india.baseline.value).toFixed(1)),40.4);
-assert.equal(observations.eu.type,'baseline-confounder');
-assert.ok(observations.eu.finding.includes('before'));
+assert.equal(observations.eu.type,'documented-partnership-followup-with-preexisting-program');
+assert.ok(observations.eu.baseline.description.includes('before'));
 assert.ok(candidateData.cases.every(c=>c.influenceScore===null&&c.observedEvidence.caveat.length>30));
 
 // Separate quality of a descriptive observation from causal influence.
@@ -634,3 +634,12 @@ assert.equal(candidateData.cases.find(c=>c.sphere==='us').measurementQuality.ind
 assert.equal(observations.india.preAgreementContext.value,72.9);
 assert.ok(observations.india.caveat.includes('before CEPA'));
 assert.ok(candidateData.cases.every(c=>c.influenceScore===null));
+
+// China and EU dated implementation observations do not constitute attributed influence.
+assert.equal(observations.china.type,'documented-bilateral-implementation');
+assert.ok(observations.china.finding.includes('August 2023'));
+assert.ok(observations.china.sources.length>=3);
+assert.equal(observations.eu.type,'documented-partnership-followup-with-preexisting-program');
+assert.ok(observations.eu.baseline.description.includes('before 2024'));
+assert.equal(observations.russia.type,'treaty-event-only');
+for(const sphere of ['china','eu','russia']){const record=candidateData.cases.find(c=>c.sphere===sphere);assert.equal(record.influenceScore,null);assert.equal(record.measurementQuality.independentOutcomeCorroborated,false);assert.equal(record.sourceAudit.status,'pending-independent-review');}
