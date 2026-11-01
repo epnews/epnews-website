@@ -2,7 +2,7 @@
   "source": "SWP UNGA-RES 2025-03-09 country positions ZIP",
   "totalRowsScanned": 1996092,
   "periodRows": 260357,
-  "methodology": "Recorded votes y/n/a only; consensus and nonvoting excluded; agreement exact same position including abstentions; EU proxy majority of at least 14 EU27 recorded votes; not influence",
+  "methodology": "Recorded votes y/n/a only; consensus and nonvoting excluded; agreement exact same position including abstentions; EU proxy majority of at least 14 EU27 recorded votes; not influence; EU majority alignment computed on resolutions with >=14 EU27 y/n/a votes, matching actor recorded position; 2021-2023 recomputed from source positions, 2024 reproduced exactly",
   "annual": {
     "2021": {
       "recordedResolutions": 86,
@@ -14,7 +14,13 @@
         "CHN_IND": 72.94,
         "RUS_IND": 63.53
       },
-      "euMeanCohesionPct": 94.18
+      "euMeanCohesionPct": 94.18,
+      "euMajorityAlignmentPct": {
+        "USA": 54.22,
+        "CHN": 48.81,
+        "RUS": 50,
+        "IND": 45.78
+      }
     },
     "2022": {
       "recordedResolutions": 89,
@@ -26,7 +32,13 @@
         "CHN_IND": 64.77,
         "RUS_IND": 53.93
       },
-      "euMeanCohesionPct": 95.1
+      "euMeanCohesionPct": 95.1,
+      "euMajorityAlignmentPct": {
+        "USA": 64.37,
+        "CHN": 40.23,
+        "RUS": 41.38,
+        "IND": 42.53
+      }
     },
     "2023": {
       "recordedResolutions": 88,
@@ -38,7 +50,13 @@
         "CHN_IND": 69.77,
         "RUS_IND": 54.02
       },
-      "euMeanCohesionPct": 94.09
+      "euMeanCohesionPct": 94.09,
+      "euMajorityAlignmentPct": {
+        "USA": 60.23,
+        "CHN": 40.23,
+        "RUS": 36.36,
+        "IND": 44.83
+      }
     },
     "2024": {
       "recordedResolutions": 95,
