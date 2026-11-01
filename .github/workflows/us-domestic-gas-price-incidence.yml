@@ -1,0 +1,24 @@
+name: US Domestic Gas Price Incidence Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/us-domestic-gas-price-incidence-july.json'
+      - 'scripts/audit_us_domestic_gas_price_incidence.py'
+      - '.github/workflows/us-domestic-gas-price-incidence.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/audit_us_domestic_gas_price_incidence.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: us-domestic-gas-price-incidence
+          path: us-domestic-gas-price-incidence-audit.json
