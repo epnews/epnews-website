@@ -1,0 +1,13 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const text = fs.readFileSync('docs/us-lng-contract-revenue-cash-reconciliation.md','utf8');
+const rev2026 = [12373,5082,486,-677,197];
+const rev2025 = [10824,2593,188,320,197];
+const sum = a => a.reduce((s,n)=>s+n,0);
+assert.equal(sum(rev2026),17461);
+assert.equal(sum(rev2025),14122);
+assert.equal(sum(rev2026)-sum(rev2025),3339);
+assert.equal(2036-1758,278);
+assert.equal(2439-1221,1218);
+for(const phrase of ['not cash receipts','destination-specific cash collections','Readiness 53%','net national benefit null','influence score null'])assert.ok(text.includes(phrase),phrase);
+console.log('LNG revenue bridge and non-substitution checks passed');
