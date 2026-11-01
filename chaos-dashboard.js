@@ -111,8 +111,8 @@ function appendVotingEvidence(actor,dimension){
  const recorded=present.map(year=>votingEvidence.annual[year].recordedResolutions).filter(Number.isFinite);
  coverage.textContent='Evidence coverage: '+present.length+'/4 years (2021–2024) · recorded resolutions by year: '+recorded.join(', ')+'. Pair percentages use recorded votes and may reflect changing issue mixes; they are not comparable influence scores.';
  panel.append(coverage);
- if(actor==='eu')panel.append(element('p','EU external majority-alignment data are currently available for 2024 only. Earlier EU majority comparisons remain unavailable; EU member cohesion is a separate measure.'));
- else panel.append(element('p','EU majority proxy is only available for 2024; no historical EU alignment change is inferred.'));
+ if(actor==='eu')panel.append(element('p','EU majority-alignment comparisons cover 2021–2024, calculated from member-state recorded votes. EU member cohesion is a distinct measure.'));
+ else panel.append(element('p','EU majority proxy covers 2021–2024 using at least 14 EU27 recorded votes per resolution. Agreement is not diplomatic influence.'));
  const years=['2021','2022','2023','2024'];
  const trendKey=code==='USA'?'USA_CHN':code==='CHN'?'USA_CHN':code==='RUS'?'USA_RUS':code==='IND'?'USA_IND':null;
  if(trendKey){const first=votingEvidence.annual['2021']?.pairAgreementPct?.[trendKey],last=votingEvidence.annual['2024']?.pairAgreementPct?.[trendKey];if(Number.isFinite(first)&&Number.isFinite(last))panel.append(element('p','Standardized reference trend ('+trendKey.replace('_',' / ')+'): '+first.toFixed(2)+'% (2021) → '+last.toFixed(2)+'% (2024); change '+(last-first).toFixed(2)+' percentage points. Descriptive agreement only; not an influence score.'));}
