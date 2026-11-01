@@ -31,6 +31,15 @@ if(segmentRoot&&tickRoot){
 }
 const data=window.EP_CHAOS_DATA,model=window.EPChaosModel;
 if(!data||!model){const e=root.querySelector('#chaos-evidence');if(e)e.textContent='Evidence could not load. Reload this page; scores remain withheld.';return;}
+const readiness=data.meterReadiness;
+if(readiness){const section=element('section');section.id='chaos-meter-readiness';section.setAttribute('aria-label','Command Meter readiness, not influence score');
+ section.append(element('h4',readiness.label+' · '+readiness.percent+'%'),element('p',readiness.kind));
+ const progress=element('progress');progress.max=100;progress.value=readiness.percent;progress.setAttribute('aria-label','Editorial meter readiness');section.append(progress);
+ for(const part of readiness.components){section.append(element('p',part.label+': '+part.percent+'%'));}
+ section.append(element('p','Change rule: '+readiness.changePolicy),element('p','Next evidence needed: '+readiness.nextEvidenceGate));
+ section.append(element('p','Influence score: NOT SCORED · National net benefit: NOT ESTABLISHED'));
+ root.prepend(section);
+}
 const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
 const element=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
 function sourceLinks(parent,ids){
