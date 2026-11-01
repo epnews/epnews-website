@@ -1,0 +1,57 @@
+{
+  "version": "2026-11-01",
+  "eventId": "2022-eu-russian-coal-embargo",
+  "measure": "EU net hard-coal imports by ultimate origin",
+  "unit": "million metric tonnes",
+  "series": [
+    {
+      "year": 2021,
+      "russia": 49,
+      "us": 14.4,
+      "australia": 15.8
+    },
+    {
+      "year": 2022,
+      "russia": 27.2,
+      "us": 20.8,
+      "australia": 19.8
+    },
+    {
+      "year": 2023,
+      "russia": 0.8,
+      "us": 20,
+      "australia": 20.3
+    },
+    {
+      "year": 2024,
+      "russia": 0,
+      "us": 17,
+      "australia": 19
+    }
+  ],
+  "roundingNote": "2024 Russian volume rounds to 0.0 million tonnes but Eurostat reports less than 250,000 tonnes; do not state literal zero",
+  "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/10441.pdf",
+  "support": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250703-1",
+  "crossCheck": "https://www.eia.gov/todayinenergy/detail.php?id=61245",
+  "legalMilestone": "EU Russian coal import ban effective August 2022",
+  "findings": [
+    "Russian-origin EU hard-coal imports collapsed after the ban.",
+    "US and Australian volumes to the EU increased between 2021 and 2023, but this does not prove equivalent net profit.",
+    "Russia redirected some coal exports to China, India and other Asian markets; EU access loss is not equivalent to total Russian export loss."
+  ],
+  "unresolved": [
+    "Russian coal realized export revenue and price discounts",
+    "EU substitution procurement costs and consumer costs",
+    "US and Australian exporter realized margins",
+    "Counterfactual market trends and falling EU coal demand"
+  ],
+  "classification": "verified_market_access_loss_with_substitution",
+  "influenceScores": {
+    "us": null,
+    "china": null,
+    "russia": null,
+    "eu": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
