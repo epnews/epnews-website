@@ -589,3 +589,11 @@ for(const item of candidateData.cases){
  for(const gate of expectedDiplomaticGates){const entry=item.evidenceGateCoverage[gate];assert.ok(['source-identified','unassessed'].includes(entry.status));assert.ok(entry.note.length>15);}
  for(const gate of ['implementation','attribution','durability','costs'])assert.equal(item.evidenceGateCoverage[gate].status,'unassessed');
 }
+
+// Research plans are testable but do not count as verified measurements.
+for(const item of candidateData.cases){
+ const plan=item.researchPlan;
+ assert.equal(plan.completionStatus,'planned-not-measured');
+ for(const key of ['outcomeQuestion','baselineRequirement','followupRequirement','attributionAlternatives','costRequirement'])assert.ok(typeof plan[key]==='string'&&plan[key].length>30);
+ assert.equal(item.influenceScore,null);
+}
