@@ -115,7 +115,8 @@ function appendVotingEvidence(actor,dimension){
    for(const item of entries){const p=element('p');p.append(element('strong',item.title+' · '+item.stage+' ('+item.eventDate+')'),element('span',' · '+item.caveat));const a=element('a',' Source ↗');a.href=item.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';p.append(a);drawer.append(p);
     const status=element('p','Eligibility: '+item.eligibility+' · Event finding: '+item.verifiedObservation);drawer.append(status);
     if(item.additionalSource){const extra=element('a','Supporting source ↗');extra.href=item.additionalSource;extra.target='_blank';extra.rel='noopener noreferrer';drawer.append(extra);}
-    const gaps=element('p','Still needed: '+item.missingEvidence.join('; '));drawer.append(gaps);}panel.append(drawer);
+    const gaps=element('p','Still needed: '+item.missingEvidence.join('; '));drawer.append(gaps);
+    if(item.evidenceGateCoverage){const coverage=element('details');coverage.append(element('summary','Six-gate evidence coverage (not an influence score)'));const table=element('table');for(const [name,g] of Object.entries(item.evidenceGateCoverage)){const tr=element('tr');tr.append(element('th',name),element('td',g.status),element('td',g.note));table.append(tr);}coverage.append(table);drawer.append(coverage);}}panel.append(drawer);
   }
  }
  if(influenceFramework){
