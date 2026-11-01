@@ -109,6 +109,16 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.q32026SecCashAndCosts){const a=audit.q32026SecCashAndCosts;
+   const panel=element('section');panel.id='chaos-q3-2026-sec-cash';panel.setAttribute('aria-label','2026 SEC cash flows and costs');
+   panel.append(element('h5',a.title),element('p',a.status));
+   const wrap=element('div',undefined,'chaos-table-scroll');wrap.tabIndex=0;const table=element('table'),head=element('thead'),hr=element('tr');
+   for(const label of ['Measure','2025','2026','Units']){const th=element('th',label);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const c of a.items){const tr=element('tr'),th=element('th',c.label);th.scope='row';tr.append(th,element('td',String(c.v2025)),element('td',String(c.v2026)),element('td',c.unit));body.append(tr);}
+   table.append(body);wrap.append(table);panel.append(wrap);
+   for(const c of a.items)panel.append(element('p',c.label+': '+c.note));
+   sourceLinks(panel,[a.source]);panel.append(element('p',a.limitations),element('p','Net U.S. benefit: NOT ESTABLISHED · Geopolitical influence: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.q32026CompanyOutcomes){const a=audit.q32026CompanyOutcomes;
    const panel=element('section');panel.id='chaos-q3-2026-company-outcomes';panel.setAttribute('aria-label','Cheniere third-quarter 2026 reported outcomes');
    panel.append(element('h5',a.title),element('strong',a.status));
