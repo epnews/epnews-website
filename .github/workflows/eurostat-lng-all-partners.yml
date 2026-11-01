@@ -1,0 +1,26 @@
+name: Eurostat LNG All Partner Classification
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/extract_eurostat_lng_all_partners.py'
+      - 'scripts/test_eurostat_lng_all_partners.py'
+      - '.github/workflows/eurostat-lng-all-partners.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest scripts.test_eurostat_lng_all_partners
+      - run: python scripts/extract_eurostat_lng_all_partners.py europe-lng-all-partners.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: europe-lng-all-partners
+          path: europe-lng-all-partners.json
+          retention-days: 30
