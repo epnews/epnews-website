@@ -1,0 +1,34 @@
+{
+  "artifactRun": 41277279086,
+  "artifactId": 13071004130,
+  "source": "EIA DNav H1 2025 and 2026 monthly XLS",
+  "rawUnit": "MMcf",
+  "publishedUnit": "Bcf",
+  "conversion": "Bcf = MMcf / 1000",
+  "dataComplete": true,
+  "series": {
+    "dry_production": {
+      "h1_2025_bcf": 19227.628,
+      "h1_2026_bcf": 20040.825,
+      "change_pct": 4.23
+    },
+    "residential_deliveries": {
+      "h1_2025_bcf": 3004.165,
+      "h1_2026_bcf": 2776.123,
+      "change_pct": -7.59
+    },
+    "industrial_deliveries": {
+      "h1_2025_bcf": 4351.235,
+      "h1_2026_bcf": 4344.071,
+      "change_pct": -0.16
+    },
+    "lng_exports": {
+      "h1_2025_bcf": 2571.419,
+      "h1_2026_bcf": 3167.695,
+      "change_pct": 23.19
+    }
+  },
+  "causalDomesticCostUsd": null,
+  "netNationalBenefitUsd": null,
+  "geopoliticalInfluenceScore": null
+}
