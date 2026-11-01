@@ -716,3 +716,15 @@ assert.match(diplomaticDashboardSource,/Evidence coverage:/);
 assert.match(diplomaticDashboardSource,/independently audited/);
 assert.match(diplomaticDashboardSource,/attribution-ready/);
 assert.match(diplomaticDashboardSource,/research coverage, not diplomatic influence/i);
+
+// Diplomatic audit worklist: identical six required tasks across all spheres; no invented completions.
+const diplomaticQueue=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-audit-worklist.json','utf8'));
+assert.deepEqual(diplomaticQueue.items.map(x=>x.sphere),['us','china','russia','eu','india']);
+assert.equal(diplomaticQueue.scoringAuthorized,false);
+for(const item of diplomaticQueue.items){
+ assert.equal(item.priorityTasks.length,6);
+ assert.ok(item.priorityTasks.every(task=>task.complete===false));
+ assert.equal(item.influenceScore,null);
+ assert.ok(item.priorityTasks.some(task=>task.id==='verify-counterpart'));
+ assert.ok(item.priorityTasks.some(task=>task.id==='attribute'));
+}
