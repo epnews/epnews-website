@@ -1,5 +1,5 @@
 {
-  "version": "1.9",
+  "version": "2.0",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -252,21 +252,34 @@
         "priority": "high"
       },
       "observedEvidence": {
-        "type": "treaty-event-only",
-        "finding": "Russia–Belarus security guarantees treaty entered into force in March 2025. No comparable, independently corroborated Belarusian policy or operational change relative to its pre-treaty obligations is yet established in this case file.",
-        "source": "https://base.garant.ru/411209091/",
-        "caveat": "Legal entry into force is not implementation measurement. Pre-existing Union State defense cooperation requires a separate baseline; do not infer a new outcome from the treaty text."
+        "type": "preexisting-security-integration-baseline",
+        "finding": "Treaty signed 6 December 2024, ratified by Russia in February 2025 and entered into force 13 March 2025. Prior to signature, Belarus had already supported Russia's 2022 invasion, hosted Russian forces and missile systems, and engaged in Union State security cooperation. The treaty codifies security commitments; it does not establish that these earlier behaviors resulted from the treaty.",
+        "baseline": {
+          "period": "2022–2024, before treaty signature",
+          "description": "Belarus hosted Russian troops during 2022 invasion preparations and permitted strikes from its territory; Russian missile deployments and joint defense cooperation predated December 2024 treaty."
+        },
+        "followup": {
+          "period": "2025-03-13",
+          "description": "Security guarantees treaty legally entered into force after exchange of ratification instruments; no independently matched incremental operational outcome is established."
+        },
+        "sources": [
+          "https://base.garant.ru/411209091/",
+          "https://www.interfax-russia.ru/military/news/639921",
+          "https://www.congress.gov/crs_external_products/IF/PDF/IF10814/IF10814.31.pdf",
+          "https://www.europarl.europa.eu/ftu/pdf/en/FTU_5.5.6.pdf"
+        ],
+        "caveat": "Preexisting Russian military access is a confounder, not an attributable post-treaty outcome. Treaty entry into force is a legal milestone, not independent evidence of behavioral implementation or net influence."
       },
       "measurementQuality": {
         "outcomeDefined": true,
-        "baselineDocumented": false,
+        "baselineDocumented": true,
         "followupDocumented": false,
         "matchedDefinitions": false,
         "confoundersAddressed": false,
         "independentOutcomeCorroborated": false,
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
-        "reason": "Treaty legal milestone documented, but no matched Belarusian behavioral outcome or independently corroborated post-treaty change established."
+        "reason": "Pre-treaty military integration is documented and legal entry into force independently corroborated, but no measured incremental Belarusian behavior after March 2025 is established."
       },
       "sourceAudit": {
         "status": "pending-independent-review",
@@ -277,7 +290,7 @@
         "matchedDefinitionChecked": false,
         "reviewer": null,
         "reviewedOn": null,
-        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded."
+        "notes": "Cross-checked treaty date against published treaty, Interfax, CRS and European Parliament background. Claim-level audit remains pending because an independently measured behavioral outcome and reviewer sign-off are absent."
       }
     },
     {
