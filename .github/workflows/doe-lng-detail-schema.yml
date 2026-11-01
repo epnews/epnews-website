@@ -1,0 +1,27 @@
+name: DOE LNG Cargo Detail Schema Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/inspect_doe_lng_detail.py'
+      - '.github/workflows/doe-lng-detail-schema.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install openpyxl==3.1.5
+      - run: python -m py_compile scripts/inspect_doe_lng_detail.py
+      - run: python scripts/inspect_doe_lng_detail.py doe-lng-detail-schema.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: doe-lng-detail-schema
+          path: doe-lng-detail-schema.json
+          retention-days: 30
