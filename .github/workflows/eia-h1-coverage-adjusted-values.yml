@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install pandas xlrd
+      - run: python -m pip install xlrd
       - run: python -m py_compile scripts/build_eia_h1_coverage_adjusted_values.py
       - run: python -m unittest scripts.test_eia_h1_coverage_adjusted_values
       - run: python scripts/build_eia_h1_coverage_adjusted_values.py
