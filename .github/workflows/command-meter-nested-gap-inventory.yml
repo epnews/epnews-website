@@ -1,0 +1,27 @@
+name: Command Meter Nested LNG Gap Inventory
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'chaos-meter-data.js'
+      - 'scripts/audit_command_meter_nested_gaps.cjs'
+      - 'scripts/test_command_meter_nested_gaps.cjs'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/test_chaos_meter.cjs
+      - run: node scripts/test_command_meter_nested_gaps.cjs
+      - run: node scripts/audit_command_meter_nested_gaps.cjs command-meter-nested-gap-inventory.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: command-meter-nested-gap-inventory
+          path: command-meter-nested-gap-inventory.json
+          retention-days: 30
