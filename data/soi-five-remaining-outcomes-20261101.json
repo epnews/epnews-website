@@ -1,0 +1,125 @@
+{
+  "version": "2026-11-01",
+  "scope": "Five remaining workstreams, conservative evidence extraction",
+  "method": "Separate observed quantities, legal status, delivered capability, and unknown causal impact",
+  "workstreams": [
+    {
+      "id": "russia-sanctions",
+      "observations": [
+        {
+          "metric": "EU hard-coal imports originating in Russia",
+          "unit": "million metric tonnes",
+          "values": [
+            {
+              "year": 2021,
+              "value": 49
+            },
+            {
+              "year": 2023,
+              "value": 0.8
+            }
+          ],
+          "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/10441.pdf",
+          "note": "Already recorded in earlier coal outcome; reused not counted as new independent series"
+        }
+      ],
+      "newIndependentNumericSeries": 0,
+      "openQuestions": [
+        "Russian total coal revenue after Asian diversion",
+        "EU replacement purchase costs",
+        "Other sanctions categories with pre/post matching definitions"
+      ]
+    },
+    {
+      "id": "institutional-withdrawals",
+      "observations": [],
+      "newIndependentNumericSeries": 0,
+      "verifiedEvent": "U.S. Paris withdrawal and reentry events recorded in prior timeline; effective dates must be used for any analysis",
+      "openQuestions": [
+        "Annual actual funding disbursements for each institution",
+        "Formal representation/voting status by effective date",
+        "Comparative policy outcome metrics"
+      ]
+    },
+    {
+      "id": "india-china-border",
+      "observations": [],
+      "newIndependentNumericSeries": 0,
+      "verifiedEvent": "2017 Doklam disengagement and 2024 Depsang/Demchok patrolling arrangements recorded in timeline",
+      "openQuestions": [
+        "Independent satellite deployment counts in consistent sectors",
+        "Before/after patrol access evidence",
+        "Comparable incident frequency"
+      ]
+    },
+    {
+      "id": "aukus-security",
+      "observations": [
+        {
+          "metric": "AUKUS nuclear-powered submarine deliveries to Australia",
+          "unit": "delivered submarines",
+          "values": [
+            {
+              "date": "2026-11-01",
+              "value": 0
+            }
+          ],
+          "source": "https://www.asa.gov.au/aukus",
+          "note": "Zero deliveries to Australia as of research cutoff; planned acquisition and rotation are distinct from Australian ownership and delivery"
+        }
+      ],
+      "newIndependentNumericSeries": 1,
+      "openQuestions": [
+        "SSN-AUKUS appropriated vs spent outlays",
+        "U.S./UK rotational submarine presence in Australia",
+        "Other AUKUS Pillar II delivered technologies"
+      ]
+    },
+    {
+      "id": "energy-dependence",
+      "observations": [
+        {
+          "metric": "EU hard-coal imports originating in Russia",
+          "unit": "million metric tonnes",
+          "values": [
+            {
+              "year": 2021,
+              "value": 49
+            },
+            {
+              "year": 2023,
+              "value": 0.8
+            }
+          ],
+          "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/10441.pdf",
+          "note": "Same source observation as Russia sanctions, explicitly deduplicated"
+        }
+      ],
+      "newIndependentNumericSeries": 0,
+      "openQuestions": [
+        "Destination-specific LNG volume and FOB export prices",
+        "Oil trade physical volumes and value by origin",
+        "Net company revenue versus export value and infrastructure cost"
+      ]
+    }
+  ],
+  "coverage": {
+    "workstreams": 5,
+    "newIndependentNumericSeries": 1,
+    "reusedIndependentNumericSeries": 1,
+    "workstreamsStillWithoutNewQuantitativeSeries": 4
+  },
+  "limitations": [
+    "The AUKUS zero-delivery datum is a bounded status observation rather than a measured influence change",
+    "No new comparable numerical time series in the other four workstreams",
+    "All source links require verification and all outcomes require independent corroboration before scores"
+  ],
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
