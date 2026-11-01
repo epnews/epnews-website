@@ -51,6 +51,7 @@ const assert=require('node:assert/strict');
    assert.match(await page.locator('#chaos-needle-note').innerText(),/MODEL-ESTIMATED/);
    assert.match(await page.locator('#chaos-needle-note').innerText(),/do not add or subtract/);
    assert.match(await page.locator('#chaos-needle-note').innerText(),/452.4B RUB/);
+   assert.match(await page.locator('#chaos-needle-note').innerText(),/NOT additive/);
    await page.locator('#chaos-sphere').selectOption('india');
    await page.locator('#chaos-dimension').selectOption('Energy and resources');
    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
