@@ -109,6 +109,11 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.lngCausalCounterfactualAudit){const a=audit.lngCausalCounterfactualAudit;const panel=element('section');panel.id='chaos-lng-causal-audit';panel.setAttribute('aria-label','LNG price causal counterfactual evidence');
+   panel.append(element('h5',a.title));for(const c of a.findings){const item=element('div');item.append(element('strong',c.label+': '+c.value),element('p',c.type+' — '+c.interpretation));sourceLinks(item,[c.source]);panel.append(item);}
+   panel.append(element('h6','Research comparison'));for(const c of a.researchContrast){const item=element('p',c.finding);panel.append(item);sourceLinks(panel,[c.source]);}
+   panel.append(element('p',a.causalVerdict),element('p','National net benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.domesticGasMatched2025to2026){const a=audit.domesticGasMatched2025to2026;const panel=element('section');panel.id='chaos-matched-gas-2025-2026';panel.setAttribute('aria-label','Matched 2025 and 2026 domestic gas prices');
    panel.append(element('h5',a.title),element('p',a.period));const wrap=element('div',undefined,'chaos-table-scroll');wrap.tabIndex=0;const table=element('table'),head=element('thead'),hr=element('tr');
    for(const label of ['Sector and month','2025','2026','Change']){const th=element('th',label);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
