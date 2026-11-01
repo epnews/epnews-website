@@ -391,3 +391,8 @@ See [Russia energy revenue, fiscal and cost ledger](russia-energy-revenue-fiscal
 ## Russia federal budget receipts (#246)
 
 [Reuters' October 6 reproduction of Minfin data](https://ru.themoscowtimes.com/2026/10/06/tablitsa-neftegazovye-dokhody-rossiyskogo-byudzheta-za-sentyabr-2026-goda-a207874) shows September 2026 Russian federal oil-and-gas revenue of **452.4B RUB** (+6.7% month-over-month, −22.3% year-over-year), with January–September **5.471T RUB** (−17.2% year-over-year). This is actual reported budget revenue and differs from gross mineral extraction tax (crude September **688.3B RUB**) because of other taxes and offset/subsidy lines. Neither figure is export profit or net national benefit. See [reconciled ledger](russia-energy-revenue-fiscal-cost-ledger.md). CREA September €625m/day modeled gross export needle remains unchanged and unscored.
+
+
+## Russian Urals freight and discounts (#247)
+
+Reported September 2026 route-specific Urals freight estimates: China via Suez ~US$20/bbl, India ~US$18/bbl; Argus August 21 FOB Urals discounts to Brent US$24.8/bbl Baltic and US$25.2–26.15/bbl Novorossiysk. These are not audited cash shipping expenses and cannot be added to discounts or multiplied across all exports to assert actual net loss. See [source and basis reconciliation](russia-energy-revenue-fiscal-cost-ledger.md). Existing Russia needle and null score preserved.

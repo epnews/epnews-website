@@ -4672,6 +4672,16 @@ window.EP_CHAOS_DATA = {
       "label": "Russian Finance Ministry · Federal budget execution",
       "url": "https://minfin.gov.ru/en/statistics/fedbud/",
       "date": "2026-10-12"
+    },
+    "russiaUralsFreightSep2026": {
+      "label": "The Insider · Urals shipping costs, FOB vs delivered and discounts (September 22, 2026)",
+      "url": "https://theins.press/en/economics/297251",
+      "date": "2026-09-22"
+    },
+    "brookingsRussiaShadowFleet2026": {
+      "label": "Brookings · Russian shadow fleet and oil trade sanctions (February 3, 2026)",
+      "url": "https://www.brookings.edu/articles/stiffening-european-sanctions-against-the-russian-oil-trade/",
+      "date": "2026-02-03"
     }
   },
   "actors": {
@@ -4886,17 +4896,19 @@ window.EP_CHAOS_DATA = {
           "russiaMinfinSeptember2026",
           "russiaMinfinBudget",
           "kseRussianOilTrackerOct2026",
-          "gas"
+          "gas",
+          "russiaUralsFreightSep2026",
+          "brookingsRussiaShadowFleet2026"
         ],
         "meaning": "CREA estimates Russian fossil fuel export revenues at €625 million per day in September 2026, broadly unchanged from €604 million/day in August despite September export volumes declining 6%. Covers fossil fuels across global buyers; not just EU gas. KSE independently estimates August oil export revenue at US$13.9 billion (oil only; different model and period).",
-        "costs": "Russia Finance Ministry budget data (Reuters reproduction): federal oil-and-gas revenue 452.4 billion RUB in September 2026 vs 424.0 billion RUB in August (+6.7%); September fell 22.3% year-over-year and January–September receipts totaled 5.471 trillion RUB (−17.2% YoY). September crude MET was 688.3 billion RUB, a gross tax component subject to offsets, subsidies and other fiscal items; NOT net budget receipts or company profit. KSE separately models US$4.4B August sanctions-related oil export revenue foregone, not an observed expense.",
-        "gap": "Reconcile Minfin tax categories, excise and refinery subsidy offsets with cash timing; independently estimate shipping, insurance, discounts and financing costs. Never subtract gross MET from gross exports or mix fiscal receipts with modeled export revenues as profit. Need matched transaction margins and counterfactual for net benefit.",
+        "costs": "Russia Finance Ministry budget data (Reuters reproduction): federal oil-and-gas revenue 452.4 billion RUB in September 2026 vs 424.0 billion RUB in August (+6.7%); September fell 22.3% year-over-year and January–September receipts totaled 5.471 trillion RUB (−17.2% YoY). September crude MET was 688.3 billion RUB, a gross tax component subject to offsets, subsidies and other fiscal items; NOT net budget receipts or company profit. KSE separately models US$4.4B August sanctions-related oil export revenue foregone, not an observed expense. Route-specific reported freight estimates in September analysis: Urals via Suez to China about US$20/barrel and to India about US$18/barrel (approximate, not audited realized company expenses). Argus assessed Aug 21 Urals FOB discount to Brent at US$24.8/barrel Baltic and US$25.2–26.15/barrel Novorossiysk (different benchmark basis from delivered Indian prices). Freight, grade and sanctions discounts overlap economically; never sum these as independent costs.",
+        "gap": "Reconcile Minfin tax categories, excise and refinery subsidy offsets with cash timing; independently estimate shipping, insurance, discounts and financing costs. Never subtract gross MET from gross exports or mix fiscal receipts with modeled export revenues as profit. Need matched transaction margins and counterfactual for net benefit. Need date-matched route contracts, vessel ownership, CIF/DAP vs FOB reconciliation, freight/insurance payer, broker margin and sanctions-related incremental costs. US$20/bbl is a route estimate, not Russia-wide cost per exported barrel.",
         "confidence": "Moderate",
         "score": null,
         "metric": "russia-fossil-export-revenue-eur-mn-day",
         "number": 625,
         "displayPrecision": "estimated",
-        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context. Separately: KSE August oil-only modeled export revenue US$13.9B and sanctions counterfactual loss US$4.4B; CREA-reported September crude MET receipts 688B RUB. Different periods, scopes, currencies and models; do not add or subtract. Minfin federal oil-and-gas budget receipts September 2026 were 452.4B RUB (+6.7% MoM; −22.3% YoY); Jan–Sep 5.471T RUB (−17.2% YoY). Separate fiscal series, not the €625m/day export-sales needle."
+        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context. Separately: KSE August oil-only modeled export revenue US$13.9B and sanctions counterfactual loss US$4.4B; CREA-reported September crude MET receipts 688B RUB. Different periods, scopes, currencies and models; do not add or subtract. Minfin federal oil-and-gas budget receipts September 2026 were 452.4B RUB (+6.7% MoM; −22.3% YoY); Jan–Sep 5.471T RUB (−17.2% YoY). Separate fiscal series, not the €625m/day export-sales needle. Freight reference: China via Suez ≈US$20/bbl, India ≈US$18/bbl; Aug 21 FOB Urals-Brent discounts ≈US$24.8–26.15/bbl by port. Different routes/dates/bases; NOT additive to each other or a verified net margin."
       }
     },
     "eu": {
