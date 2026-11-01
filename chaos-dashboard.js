@@ -99,6 +99,16 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.tradeFinancialCrossChecks){const a=audit.tradeFinancialCrossChecks;
+   const panel=element('section');panel.id='chaos-trade-financial-crosschecks';panel.setAttribute('aria-label','Eight LNG trade and financial arithmetic cross-checks');
+   panel.append(element('h5',a.title),element('strong',a.status));
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Eight calculated LNG comparisons');
+   const table=element('table'),head=element('thead'),hr=element('tr');for(const h of ['Comparison','Calculated difference','Formula']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const c of a.items){const tr=element('tr'),th=element('th',c.title);th.scope='row';tr.append(th,element('td',String(c.value)+' '+c.unit),element('td',c.formula));body.append(tr);}
+   table.append(body);scroll.append(table);panel.append(scroll);
+   for(const c of a.items){const sec=element('section');sec.append(element('p',c.title+' · '+c.limit));sourceLinks(sec,c.sources);panel.append(sec);}
+   panel.append(element('p',a.warning),element('p','Independent new studies: '+a.newIndependentStudies+' · Stage 3 return, net U.S. benefit and influence: NOT ESTABLISHED'));worksheet.append(panel);
+  }
   if(audit.h12026MarketObservations){const a=audit.h12026MarketObservations;
    const panel=element('section');panel.id='chaos-lng-h12026';panel.setAttribute('aria-label','Eight first-half 2026 LNG market observations');
    panel.append(element('h5',a.title),element('strong',a.status));
