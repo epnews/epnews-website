@@ -4627,6 +4627,11 @@ window.EP_CHAOS_DATA = {
       "label": "India PPAC Ready Reckoner FY 2025–26, crude oil import dependency based on consumption, table 2020–21 through 2025–26",
       "url": "https://ppac.gov.in/download.php?file=whatsnew/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf",
       "date": "July 2026"
+    },
+    "euNzTradeCommittee2025": {
+      "label": "European Commission / NZ joint trade committee statement, 25 October 2025: Stats NZ bilateral trade year ended June 2024 and June 2025",
+      "url": "https://policy.trade.ec.europa.eu/news/joint-press-statement-following-first-trade-committee-under-eu-new-zealand-fta-2025-10-25_en",
+      "date": "2025-10-25"
     }
   },
   "actors": {
@@ -4882,22 +4887,23 @@ window.EP_CHAOS_DATA = {
         "score": null
       },
       "Diplomatic": {
-        "title": "EU–New Zealand trade agreement",
-        "value": "In force 1 May 2024",
-        "period": "Signed 2023 → in force 2024",
-        "stage": "Implemented",
+        "title": "EU–New Zealand FTA: realized bilateral trade",
+        "value": "NZ$19.913B → NZ$21.582B (+8%)",
+        "period": "Year ended June 2024 → year ended June 2025",
+        "stage": "Observed statistic after implementation",
         "kind": "Institutional outcome",
         "sources": [
-          "eunz",
-          "eunzimpact"
+          "euNzTradeCommittee2025",
+          "eunz"
         ],
-        "meaning": "An implemented market-access agreement, with New Zealand also a beneficiary.",
+        "meaning": "EU–New Zealand trade committee reports Stats NZ two-way goods and services trade rose 8%, from NZ$19.913B (year ended June 2024) to NZ$21.582B (year ended June 2025), after the FTA entered into force on 1 May 2024.",
         "costs": "Sector adjustment and compliance costs must be measured alongside exporter and consumer gains.",
-        "gap": "Projected 30% trade growth is not realized additional trade. Treaty entry alone does not prove leverage or net gains.",
+        "gap": "Isolate agreement-specific trade gains from prices, exchange rates, and preexisting growth; measure exporter gains, costs and leverage separately.",
         "confidence": "Moderate",
-        "metric": null,
-        "number": null,
-        "score": null
+        "metric": "eu-nz-bilateral-trade-growth-pct",
+        "number": 8,
+        "score": null,
+        "measurementCaveat": "The +8% is an observed nominal two-way trade increase across overlapping pre/post-FTA annual windows, NOT the FTA's causal effect or an EU geopolitical influence score. Currency, price, demand and preexisting trends may affect trade."
       },
       "Energy and resources": {
         "title": "Russian gas exposure reduced",
