@@ -109,6 +109,12 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.aug2026GasSupplyDemandBalance){const a=audit.aug2026GasSupplyDemandBalance;const panel=element('section');panel.id='chaos-gas-balance-aug2026';panel.setAttribute('aria-label','August 2026 U.S. natural gas supply demand and trade');
+   panel.append(element('h5',a.title),element('p',a.period));const wrap=element('div',undefined,'chaos-table-scroll');wrap.tabIndex=0;const table=element('table'),head=element('thead'),hr=element('tr');
+   for(const label of ['Measure','Aug 2025','Aug 2026','Unit']){const th=element('th',label);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const c of a.items){const tr=element('tr'),th=element('th',c.label);th.scope='row';tr.append(th,element('td',c.v2025===null?'Not reported':String(c.v2025)),element('td',String(c.v2026)),element('td',c.unit));body.append(tr);panel.append(element('p',c.label+': '+c.caution));}table.append(body);wrap.append(table);panel.insertBefore(wrap,panel.children[2]||null);
+   sourceLinks(panel,[a.source]);panel.append(element('p',a.interpretation),element('p',a.causality),element('p','National net benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.lngCausalCounterfactualAudit){const a=audit.lngCausalCounterfactualAudit;const panel=element('section');panel.id='chaos-lng-causal-audit';panel.setAttribute('aria-label','LNG price causal counterfactual evidence');
    panel.append(element('h5',a.title));for(const c of a.findings){const item=element('div');item.append(element('strong',c.label+': '+c.value),element('p',c.type+' — '+c.interpretation));sourceLinks(item,[c.source]);panel.append(item);}
    panel.append(element('h6','Research comparison'));for(const c of a.researchContrast){const item=element('p',c.finding);panel.append(item);sourceLinks(panel,[c.source]);}

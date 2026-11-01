@@ -1,5 +1,10 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const balance=data.evidenceAudits.us['Energy and resources'].aug2026GasSupplyDemandBalance;
+assert.equal(balance.items.length,8);assert.equal(new Set(balance.items.map(x=>x.id)).size,8);
+assert.deepEqual(Array.from(balance.items,x=>x.v2026),[115.84,139.03,90.65,19.58,7.55,27.13,16.61,34]);
+assert.deepEqual(Array.from(balance.items,x=>x.v2025),[108.65,131.16,85.39,null,7.68,24.58,null,null]);
+assert.ok(data.sources[balance.source]);assert.equal(balance.netNationalBenefitUsd,null);assert.equal(balance.influenceScore,null);
 const causal=data.evidenceAudits.us['Energy and resources'].lngCausalCounterfactualAudit;
 assert.equal(causal.findings.length,8);
 assert.equal(causal.researchContrast.length,3);
@@ -237,6 +242,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.aug2026GasSupplyDemandBalance\)/);
 assert.match(dashboard,/if\(audit\.lngCausalCounterfactualAudit\)/);
 assert.match(dashboard,/if\(audit\.domesticGasMatched2025to2026\)/);
 assert.match(dashboard,/if\(audit\.domesticGasPricesAug2026\)/);
