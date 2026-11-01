@@ -92,6 +92,81 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "q32026SecCashAndCosts": {
+  "title": "Nine-month 2026 SEC cash flows, investment and taxpayer exposure",
+  "status": "Observed cash-flow and project-cost disclosures; not incremental disruption benefit",
+  "period": "Nine months ended September 30",
+  "items": [
+    {
+      "id": "operating-cash",
+      "label": "Operating cash provided",
+      "v2026": 5124,
+      "v2025": 3484,
+      "unit": "USD millions",
+      "note": "SEC: most of the increase reflects working-capital timing; increased LNG cash receipts contribute to a lesser extent."
+    },
+    {
+      "id": "investing-cash",
+      "label": "Net investing cash used",
+      "v2026": 2685,
+      "v2025": 2263,
+      "unit": "USD millions spent",
+      "note": "Consolidated investing cash outflow, not a net-loss measure."
+    },
+    {
+      "id": "financing-cash",
+      "label": "Net financing cash used",
+      "v2026": 1967,
+      "v2025": 3010,
+      "unit": "USD millions spent",
+      "note": "Includes borrowing, repayments, repurchases and dividends; not operating cost."
+    },
+    {
+      "id": "corpus-stage3-capex",
+      "label": "Corpus Christi Stage 3 project cash spending",
+      "v2026": 1100,
+      "v2025": 1100,
+      "unit": "USD millions approximate",
+      "note": "Project-specific capital cash spending; figures rounded by issuer, exclude capitalized interest."
+    },
+    {
+      "id": "midscale89-capex",
+      "label": "Corpus Christi midscale trains 8–9 cash spending",
+      "v2026": 709,
+      "v2025": 750,
+      "unit": "USD millions",
+      "note": "Separate expansion; should not be charged exclusively to 2026 disruption."
+    },
+    {
+      "id": "gregory-power-capex",
+      "label": "Gregory Power Plant cash spending",
+      "v2026": 245,
+      "v2025": 82,
+      "unit": "USD millions",
+      "note": "Electricity infrastructure costs, separate project."
+    },
+    {
+      "id": "cash-interest",
+      "label": "Cash interest paid, net of capitalized amounts",
+      "v2026": 664,
+      "v2025": 640,
+      "unit": "USD millions",
+      "note": "Financing cash cost; capitalized interest is excluded."
+    },
+    {
+      "id": "cash-income-tax",
+      "label": "Cash income taxes paid, net of refunds",
+      "v2026": 36,
+      "v2025": 415,
+      "unit": "USD millions",
+      "note": "2025 included $380m CAMT later refunded in December 2025; period cash paid is not durable tax benefit."
+    }
+  ],
+  "source": "cheniereQ32026Sec",
+  "limitations": "Single consolidated issuer; cash flow affected by timing, derivatives, contracts, expansions and working capital. No cash receipts attributable solely to Hormuz or net national welfare. Do not add project cash spending to net investing cash flow or count subsidiary results twice.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "q32026CompanyOutcomes": {
   "title": "Cheniere 2026 third-quarter and nine-month company outcomes",
   "status": "Reported company-level results; not Stage 3-only or national net benefit",
@@ -1593,6 +1668,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "cheniereQ32026Sec": {"label":"Cheniere Energy · SEC Form 10-Q, nine months ended September 30, 2026, cash flows and notes","url":"https://www.sec.gov/Archives/edgar/data/3570/000000357026000038/lng-20260930.htm","date":"2026-10-29"},
     "cheniereQ32026": {"label":"Cheniere Energy · Third Quarter 2026 Results, reported October 28, 2026","url":"https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full","date":"2026-10-28"},
     "eiaOct2026Steo": {"label":"EIA · October 2026 Short-Term Energy Outlook natural gas table","url":"https://www.eia.gov/outlooks/steo/marketreview/natgas.php","date":"2026-10-06"},
     "eiaH12026Exports": {"label":"EIA · U.S. LNG exports rose 23% in the first half of 2026 because of higher capacity","url":"https://www.eia.gov/todayinenergy/detail.php?id=68064","date":"2026-09-01"},
