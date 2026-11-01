@@ -1,0 +1,110 @@
+{
+  "title": "LNG regional price trends and May 2026 destination coverage reconciliation",
+  "sourceFiles": [
+    "data/soi-doe-verified-destination-fob-2024-2026.json",
+    "data/soi-doe-may2026-destination-volume-price-matches.json",
+    "data/soi-doe-may2026-hypothetical-gross-fob-value.json",
+    "data/soi-lng-volume-price-decomposition-h1-2026.json"
+  ],
+  "regionalAnnualFobPriceComparison": [
+    {
+      "region": "Europe",
+      "price2024": 6.46,
+      "price2025": 7.83,
+      "changeUsdPerMMBtu": 1.37,
+      "changePercent": 21.21
+    },
+    {
+      "region": "Asia",
+      "price2024": 5.73,
+      "price2025": 7.22,
+      "changeUsdPerMMBtu": 1.49,
+      "changePercent": 26
+    }
+  ],
+  "regionalPriceGapUsdPerMMBtu": {
+    "year2024": 0.73,
+    "year2025": 0.61,
+    "gapChange": -0.12
+  },
+  "may2026": {
+    "allVesselExportsBcf": 502.7,
+    "regionalVolumes": [
+      {
+        "destination": "Europe",
+        "volumeBcf": 232,
+        "sharePercent": 46.1
+      },
+      {
+        "destination": "Asia",
+        "volumeBcf": 207.6,
+        "sharePercent": 41.3
+      },
+      {
+        "destination": "Africa",
+        "volumeBcf": 36.2,
+        "sharePercent": 7.2
+      },
+      {
+        "destination": "Latin America and Caribbean",
+        "volumeBcf": 27.1,
+        "sharePercent": 5.4
+      }
+    ],
+    "euMemberMatchedDestinations": [
+      {
+        "destination": "Netherlands",
+        "volumeBcf": 63.6,
+        "fobUsdPerMMBtu": 6.43
+      },
+      {
+        "destination": "Italy",
+        "volumeBcf": 46.7,
+        "fobUsdPerMMBtu": 8.57
+      }
+    ],
+    "euMemberMatchedVolumeBcf": 110.3,
+    "shareOfReportedEuropeRegionPercent": 47.54,
+    "shareOfTotalVesselExportsPercent": 21.94,
+    "fiveDestinationSubsetVolumeBcf": 238.5,
+    "fiveDestinationSubsetCoveragePercent": 47.44,
+    "scenarioGrossValueUsdMillions": {
+      "low": 1689.1,
+      "reference": 1751.59,
+      "high": 1858
+    }
+  },
+  "companyVolumePriceProxy": {
+    "h1_2025ToH1_2026": {
+      "modeledGrossSalesValue2025UsdMillions": 6060.03,
+      "modeledGrossSalesValue2026UsdMillions": 9131.01,
+      "modeledChangeUsdMillions": 3070.98,
+      "volumeContributionUsdMillions": 3996.37,
+      "priceContributionUsdMillions": -925.39,
+      "roundingResidualUsdMillions": 0,
+      "volumeContributionShareOfNetChangePercent": 130.13,
+      "priceContributionShareOfNetChangePercent": -30.13
+    }
+  },
+  "interpretation": [
+    "Europe DOE regional FOB price increased 2024–2025; this is an average export price change, not a destination-weighted profit change",
+    "Europe regional definition includes United Kingdom and Türkiye, so cannot call 232 Bcf EU-27 exports",
+    "Only Netherlands and Italy from the five matched May destination rows are EU member states; this is a subset, not all EU shipments",
+    "Annual regional price comparisons and May 2026 monthly volumes have different periods and MUST NOT be multiplied together",
+    "Company-wide 2025–2026 half-year LNG average selling prices are different population/period from DOE 2024–2025 regional FOB prices",
+    "No 2024–2025 matched regional LNG volumes available in these source files; no annual regional export-value change calculated",
+    "DOE FOB prices include commodity and liquefaction fees and are not profit, cash receipt or national benefit"
+  ],
+  "verifiedActualCompanyEuropeReceipts": null,
+  "verifiedEuropeIncrementalProfit": null,
+  "verifiedNetUsNationalBenefit": null,
+  "newPrimaryObservations": 0,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
