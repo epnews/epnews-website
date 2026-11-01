@@ -1,5 +1,10 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const domestic=data.evidenceAudits.us['Energy and resources'].domesticElectricity2026;
+assert.equal(domestic.items.length,8);
+assert.equal(new Set(domestic.items.map(x=>x.id)).size,8);
+assert.deepEqual(Array.from(domestic.items,x=>x.v2026),[18.19,14.04,9.09,15.64,14.37,192801,64014,403750]);
+assert.ok(data.sources[domestic.source]);assert.equal(domestic.netNationalBenefitUsd,null);assert.equal(domestic.influenceScore,null);
 const cash=data.evidenceAudits.us['Energy and resources'].q32026SecCashAndCosts;
 assert.equal(cash.items.length,8);
 assert.equal(new Set(cash.items.map(x=>x.id)).size,8);
@@ -214,6 +219,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.domesticElectricity2026\)/);
 assert.match(dashboard,/if\(audit\.q32026SecCashAndCosts\)/);
 assert.match(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
 assert.match(dashboard,/chaos-meter-readiness/);
