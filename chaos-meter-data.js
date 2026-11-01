@@ -4647,6 +4647,16 @@ window.EP_CHAOS_DATA = {
       "label": "India PIB October 2026: EFTA tariff-line coverage and agreement in force",
       "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2320142",
       "date": "2026-10-07"
+    },
+    "creaRussiaSeptember2026": {
+      "label": "CREA · September 2026 Russian fossil export revenue analysis",
+      "url": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "date": "2026-10-16"
+    },
+    "creaRussiaAugust2026": {
+      "label": "CREA · August 2026 Russian fossil export revenue analysis (updated October 16)",
+      "url": "https://energyandcleanair.org/august-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "date": "2026-10-16"
     }
   },
   "actors": {
@@ -4850,23 +4860,25 @@ window.EP_CHAOS_DATA = {
         "measurementCaveat": "One verified Russia–DPRK comprehensive partnership treaty entered into force on 4 December 2024. This is a legal status count, NOT proof of Russian geopolitical influence, treaty benefits, compliance, or a new 2026 diplomatic gain."
       },
       "Energy and resources": {
-        "title": "Gas delivered to the EU",
-        "value": "Over 150 → 36 bcm",
-        "period": "2021 → 2025",
-        "stage": "Observed statistic",
-        "kind": "Market outcome",
+        "title": "Russian fossil fuel export revenue",
+        "value": "€625 million/day estimated (September 2026)",
+        "period": "September 2026; August comparator €604 million/day",
+        "stage": "Estimated realized export sales value (not audited receipts)",
+        "kind": "Revenue estimate",
         "sources": [
+          "creaRussiaSeptember2026",
+          "creaRussiaAugust2026",
           "gas"
         ],
-        "meaning": "A major contraction in the EU gas market, not a complete account of Russian global energy exports.",
-        "costs": "Lost market access, price changes, rerouting costs and alternative buyers affect net receipts.",
-        "gap": "Council text says over 150 bcm for 2021; no false precision or derived index. Global net revenue remains unquantified.",
+        "meaning": "CREA estimates Russian fossil fuel export revenues at €625 million per day in September 2026, broadly unchanged from €604 million/day in August despite September export volumes declining 6%. Covers fossil fuels across global buyers; not just EU gas.",
+        "costs": "Gross modeled export sales value excludes extraction, shipping, insurance, discounts, financing, sanctions compliance, taxes, domestic consumer effects and military or environmental costs.",
+        "gap": "CREA estimates are not audited company cash receipts or profit. Verify destination-matched transaction prices, actual collections, margins, taxes, rerouting costs and comparable pre-disruption periods before claiming net gains or causal attribution.",
         "confidence": "Moderate",
         "score": null,
-        "metric": "russia-eu-gas-decline-minimum",
-        "number": -114,
-        "displayPrecision": "lower-bound",
-        "measurementCaveat": "2021 baseline is OVER 150 bcm; decline to 36 bcm in 2025 is MORE THAN 114 bcm. The needle plots a conservative threshold, not an exact decrease or global Russian exports."
+        "metric": "russia-fossil-export-revenue-eur-mn-day",
+        "number": 625,
+        "displayPrecision": "estimated",
+        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context."
       }
     },
     "eu": {
