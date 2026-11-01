@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,19);
+assert.equal(evidenceTables.length,20);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -332,3 +332,8 @@ const earningsReconciliation=data.evidenceAudits.us['Energy and resources'].q320
 assert.equal(earningsReconciliation.items.length,3);
 assert.deepEqual(Array.from(earningsReconciliation.items,x=>x.v2026),[17773,736,2390]);
 assert.equal(evidenceTables.filter(x=>x.auditKey==='q32026EarningsReconciliation').length,1);
+
+const cashBridge=data.evidenceAudits.us['Energy and resources'].q32026CashFlowBridge;
+assert.deepEqual(Array.from(cashBridge.items,x=>x.v2026),[2439,472,2261]);
+assert.deepEqual(Array.from(cashBridge.items,x=>x.v2025),[1221,-1789,null]);
+assert.equal(evidenceTables.filter(x=>x.auditKey==='q32026CashFlowBridge').length,1);
