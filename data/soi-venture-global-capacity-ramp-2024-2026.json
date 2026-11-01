@@ -1,0 +1,87 @@
+{
+  "asOf": "2026-11-01",
+  "title": "Venture Global LNG export growth decomposition and 2026 interim observations",
+  "sources": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2007855/000200785526000030/vg-annualreporttosharehold.pdf",
+      "document": "2025 Form 10-K, Executive Summary and Our LNG Projects",
+      "period": "FY2024/FY2025"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/2007855/000200785526000062/vg-20260630.htm",
+      "document": "2026 Q2 Form 10-Q, Executive Summary",
+      "period": "H1 2025/H1 2026"
+    }
+  ],
+  "units": {
+    "volume": "trillion British thermal units (TBtu)",
+    "prices": "USD/MMBtu",
+    "operatingIncome": "USD millions"
+  },
+  "annual": {
+    "totalExportedTBtu": {
+      "y2024": 508.4,
+      "y2025": 1415.4
+    },
+    "plaqueminesExportedTBtu": {
+      "y2024": 3.9,
+      "y2025": 876.1
+    },
+    "calcasieuExportedTBtu": {
+      "y2024": 504.5,
+      "y2025": 539.3
+    },
+    "totalSoldTBtu": {
+      "y2024": 500.6,
+      "y2025": 1408.8
+    },
+    "weightedAverageSalesPrice": {
+      "y2024": 9.89,
+      "y2025": 9.8
+    },
+    "operatingIncomeUsdMillions": {
+      "y2024": 1763,
+      "y2025": 5156
+    }
+  },
+  "derived": {
+    "totalExportGrowthTBtu": 907,
+    "plaqueminesGrowthTBtu": 872.2,
+    "calcasieuGrowthTBtu": 34.8,
+    "plaqueminesShareOfExportGrowthPercent": 96.16,
+    "volumeSoldGrowthPercent": 181.42,
+    "weightedAverageSalesPriceChangePercent": -0.91
+  },
+  "interim2026": {
+    "period": "six months ended June 30",
+    "volumesSoldTBtu": {
+      "h1_2025": 557.5,
+      "h1_2026": 947.2
+    },
+    "weightedAverageSalesPriceUsdPerMMBtu": {
+      "h1_2025": 10.87,
+      "h1_2026": 9.64
+    },
+    "operatingIncomeUsdMillions": {
+      "h1_2025": 2118,
+      "h1_2026": 3339
+    }
+  },
+  "interpretation": [
+    "About 96% of 2024-to-2025 LNG export-volume increase occurred at the Plaquemines project; its commissioning/ramp-up is a documented dominant driver of volume growth",
+    "Weighted average 2025 LNG selling price decreased even as total export volume and operating income rose",
+    "2026 H1 average sales price was below 2025 H1 while volume and operating income increased; supports capacity-driven explanation, not proof of Europe-specific price gains",
+    "Plaquemines project volume growth is not independently attributable to Russia sanctions or any European destination",
+    "Company-wide operating income includes other costs and businesses and is not LNG destination net profit",
+    "2026 H1 values cannot be compared to full-year 2025 as if equal reporting periods"
+  ],
+  "netAttributableGeopoliticalBenefit": null,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
