@@ -1,0 +1,32 @@
+{
+  "source": "https://www.eia.gov/outlooks/steo/archives/Aug26.pdf",
+  "publication": "August 2026 STEO",
+  "table": "5b U.S. Regional Natural Gas Prices",
+  "unit": "USD per thousand cubic feet",
+  "status": "published STEO historical/estimated quarters; not verified final monthly billing observations",
+  "metrics": [
+    {
+      "name": "henry_hub_spot",
+      "q1_2025": 4.31,
+      "q2_2025": 3.31,
+      "q1_2026": 4.98,
+      "q2_2026": 3.07
+    },
+    {
+      "name": "residential_retail_us",
+      "q1_2025": 13.11,
+      "q2_2025": 18.5,
+      "q1_2026": 14.83,
+      "q2_2026": 19.74
+    }
+  ],
+  "limitations": [
+    "Quarterly prices cannot be averaged to obtain volume-weighted H1 bills without quarterly consumption weights.",
+    "August 2026 STEO contains estimated/forecast figures; verify final observed EIA monthly series before asserting final H1 outcomes.",
+    "Henry Hub wholesale spot and residential retail prices are not directly comparable margins.",
+    "No causal attribution of changes to LNG exports."
+  ],
+  "exportAttributableDomesticCostUsd": null,
+  "netNationalBenefitUsd": null,
+  "geopoliticalInfluenceScore": null
+}

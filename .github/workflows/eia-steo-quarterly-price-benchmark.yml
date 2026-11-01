@@ -1,0 +1,24 @@
+name: EIA STEO Quarterly Price Benchmark
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/eia-steo-aug26-quarterly-gas-price-benchmark.json'
+      - 'scripts/audit_eia_steo_quarterly_prices.py'
+      - '.github/workflows/eia-steo-quarterly-price-benchmark.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/audit_eia_steo_quarterly_prices.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eia-steo-quarterly-price-benchmark
+          path: eia-steo-quarterly-price-audit.json
