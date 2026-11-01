@@ -1,0 +1,24 @@
+name: LNG Peer Financial Incidence Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/lng-peer-financial-incidence-h1.json'
+      - 'scripts/audit_lng_peer_financial_incidence.py'
+      - '.github/workflows/lng-peer-financial-incidence.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/audit_lng_peer_financial_incidence.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lng-peer-financial-incidence
+          path: lng-peer-financial-incidence-audit.json
