@@ -4622,6 +4622,11 @@ window.EP_CHAOS_DATA = {
       "label": "European Commission DG Energy, Russian gas share of EU imports in 2021 and 2025",
       "url": "https://energy.ec.europa.eu/topics/energy-security/security-gas-supply_en",
       "date": "2026"
+    },
+    "ppacReadyReckonerFY2026": {
+      "label": "India PPAC Ready Reckoner FY 2025–26, crude oil import dependency based on consumption, table 2020–21 through 2025–26",
+      "url": "https://ppac.gov.in/download.php?file=whatsnew/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf",
+      "date": "July 2026"
     }
   },
   "actors": {
@@ -4968,21 +4973,22 @@ window.EP_CHAOS_DATA = {
         "score": null
       },
       "Energy and resources": {
-        "title": "Crude oil import reliance",
-        "value": "About 88%",
-        "period": "2025 ministerial statement",
-        "stage": "Reported statistic",
+        "title": "Crude oil import dependence (PPAC)",
+        "value": "88.2% → 88.7%",
+        "period": "FY 2024–25 → FY 2025–26 (provisional)",
+        "stage": "Observed statistic (latest provisional)",
         "kind": "Exposure proxy",
         "sources": [
-          "indiaoil"
+          "ppacReadyReckonerFY2026"
         ],
-        "meaning": "The ministry reported roughly 88% crude import reliance and 51% gas reliance. This is a dated exposure snapshot.",
+        "meaning": "India's government PPAC Ready Reckoner reports crude oil import dependency based on consumption rising from 88.2% in FY 2024–25 to provisional 88.7% in FY 2025–26: +0.5 percentage points.",
         "costs": "Consumers, refiners and the external balance bear import-price and shipping exposure.",
-        "gap": "No harmonized newer before/after series verified here. Import reliance alone does not establish coercion, loss of autonomy or a change score.",
+        "gap": "The dependence share alone cannot establish coercion, leverage or net national cost; verify final revised fiscal data, supplier mix, prices, and inventory changes before causal inference.",
         "confidence": "Moderate",
-        "metric": null,
-        "number": null,
-        "score": null
+        "metric": "india-crude-import-dependence-pp",
+        "number": 0.5,
+        "score": null,
+        "measurementCaveat": "FY 2025–26 is provisional. The +0.5 percentage-point needle measures change in crude oil import dependency based on consumption, NOT India's diplomatic influence, coercion vulnerability, energy affordability or import-source diversity."
       }
     }
   }

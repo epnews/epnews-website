@@ -456,3 +456,9 @@ assert.equal(data.actors.eu['Energy and resources'].number,-33);
 assert.equal(data.actors.eu['Energy and resources'].score,null);
 assert.ok(data.sources.euCommissionGasShare2026);
 assert.match(data.actors.eu['Energy and resources'].measurementCaveat,/not total gas import dependence/);
+
+assert.equal(data.actors.india['Energy and resources'].metric,'india-crude-import-dependence-pp');
+assert.equal(data.actors.india['Energy and resources'].number,0.5);
+assert.equal(data.actors.india['Energy and resources'].score,null);
+assert.match(data.actors.india['Energy and resources'].measurementCaveat,/provisional/);
+assert.ok(data.sources.ppacReadyReckonerFY2026.url.includes('ppac.gov.in'));
