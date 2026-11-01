@@ -10,36 +10,36 @@
       "destination": "Netherlands",
       "volumeBcf": 63.6,
       "sharePercent": 12.7,
-      "may2026FobUsdPerMMBtu": null,
-      "reason": "May 2026 Netherlands FOB not independently checked in prior dataset"
+      "may2026FobUsdPerMMBtu": 6.43,
+      "priceSourceTable": "DOE May 2026 table 15a LNG Exports by Vessel"
     },
     {
       "destination": "South Korea",
       "volumeBcf": 49.5,
       "sharePercent": 9.9,
-      "may2026FobUsdPerMMBtu": null,
-      "reason": "May 2026 South Korea FOB not independently checked in prior dataset"
+      "may2026FobUsdPerMMBtu": 7.6,
+      "priceSourceTable": "DOE May 2026 table 15a LNG Exports by Vessel"
     },
     {
       "destination": "Italy",
       "volumeBcf": 46.7,
       "sharePercent": 9.3,
-      "may2026FobUsdPerMMBtu": null,
-      "reason": "May 2026 Italy FOB not independently checked in prior dataset"
+      "may2026FobUsdPerMMBtu": 8.57,
+      "priceSourceTable": "DOE May 2026 table 15a LNG Exports by Vessel"
     },
     {
       "destination": "Japan",
       "volumeBcf": 42.5,
       "sharePercent": 8.5,
       "may2026FobUsdPerMMBtu": 6.35,
-      "priceSourceTable": "15a, May 2026"
+      "priceSourceTable": "DOE May 2026 table 15a LNG Exports by Vessel"
     },
     {
       "destination": "Egypt",
       "volumeBcf": 36.2,
       "sharePercent": 7.2,
-      "may2026FobUsdPerMMBtu": null,
-      "reason": "May 2026 Egypt FOB not independently checked in prior dataset"
+      "may2026FobUsdPerMMBtu": 6.46,
+      "priceSourceTable": "DOE May 2026 table 15a LNG Exports by Vessel"
     }
   ],
   "regional": [
@@ -71,7 +71,7 @@
     "apr2026LNGByVesselBcf": 537.8,
     "explanation": "502.8 Bcf broad LNG total and 502.7 Bcf LNG-by-vessel table use different reporting scope/rounding; do not conflate"
   },
-  "matchedPriceVolumePairs": 1,
+  "matchedPriceVolumePairs": 5,
   "estimatedGrossValueUsd": null,
   "conversionRule": "No volume-times-FOB multiplication without exact gas energy content conversion and shipment-matched weighted price; any eventual result hypothetical gross export value, not realized cash or profit",
   "readinessAdjustment": null,
@@ -81,5 +81,13 @@
     "russia": null,
     "china": null,
     "india": null
+  },
+  "priceVerification": {
+    "source": "https://www.energy.gov/documents/4-natural-gas-imports-and-exports-monthly-may-2026pdf",
+    "table": "15a, Monthly Summary: U.S.-Produced LNG Export Prices by Mode of Transport and Country of Destination",
+    "period": "May 2026",
+    "units": "USD/MMBtu, FOB",
+    "volumeSourceTable": "4a, Monthly Summary: U.S.-Produced LNG Exports by Mode of Transport and Country of Destination",
+    "note": "Matched country and month, not necessarily exact cargo-level realized transaction"
   }
 }
