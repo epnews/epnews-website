@@ -580,3 +580,12 @@ assert.equal(candidateData.cases.find(c=>c.sphere==='eu').stage,'signed');
 assert.equal(candidateData.excludedHistoricalCases.length,1);
 assert.equal(candidateData.excludedHistoricalCases[0].eligibility,'excluded-internal-regulation');
 assert.ok(candidateData.cases.every(c=>c.influenceScore===null));
+
+// Evidence coverage must be six-gate, comparable, and never interpreted as influence.
+const expectedDiplomaticGates=['activity','commitment','implementation','attribution','durability','costs'];
+for(const item of candidateData.cases){
+ assert.equal(item.evidenceCoverageIsInfluenceScore,false);
+ assert.deepEqual(Object.keys(item.evidenceGateCoverage),expectedDiplomaticGates);
+ for(const gate of expectedDiplomaticGates){const entry=item.evidenceGateCoverage[gate];assert.ok(['source-identified','unassessed'].includes(entry.status));assert.ok(entry.note.length>15);}
+ for(const gate of ['implementation','attribution','durability','costs'])assert.equal(item.evidenceGateCoverage[gate].status,'unassessed');
+}
