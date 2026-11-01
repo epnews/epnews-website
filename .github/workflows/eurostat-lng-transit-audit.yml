@@ -1,0 +1,26 @@
+name: Eurostat LNG Transit Attribution Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/extract_eurostat_lng_transit_partners.py'
+      - 'scripts/test_eurostat_lng_transit_partners.py'
+      - '.github/workflows/eurostat-lng-transit-audit.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest scripts.test_eurostat_lng_transit_partners
+      - run: python scripts/extract_eurostat_lng_transit_partners.py europe-lng-transit-attribution.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: europe-lng-transit-attribution
+          path: europe-lng-transit-attribution.json
+          retention-days: 30
