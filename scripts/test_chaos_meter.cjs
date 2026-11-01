@@ -244,6 +244,8 @@ assert.match(dashboard,/if\(audit\.domesticElectricity2026\)/);
 assert.match(dashboard,/if\(audit\.q32026SecCashAndCosts\)/);
 assert.match(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
 assert.match(dashboard,/chaos-meter-readiness/);
+assert.ok(dashboard.indexOf('const element=(tag,text,cls)=>')<dashboard.indexOf('const readiness=data.meterReadiness;'),'DOM helper must be initialized before readiness panel uses it');
+assert.equal((dashboard.match(/const element=\(tag,text,cls\)=>/g)||[]).length,1,'DOM helper must be declared exactly once');
 assert.match(dashboard,/readiness\.percent/);
 assert.match(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
 assert.match(dashboard,/if\(audit\.h12026MarketObservations\)/);
