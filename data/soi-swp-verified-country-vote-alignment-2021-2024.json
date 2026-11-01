@@ -1,0 +1,89 @@
+{
+  "source": "SWP UNGA-RES 2025-03-09 country positions ZIP",
+  "totalRowsScanned": 1996092,
+  "periodRows": 260357,
+  "methodology": "Recorded votes y/n/a only; consensus and nonvoting excluded; agreement exact same position including abstentions; EU proxy majority of at least 14 EU27 recorded votes; not influence",
+  "annual": {
+    "2021": {
+      "recordedResolutions": 86,
+      "pairAgreementPct": {
+        "USA_CHN": 16.47,
+        "USA_RUS": 21.18,
+        "USA_IND": 19.05,
+        "CHN_RUS": 76.74,
+        "CHN_IND": 72.94,
+        "RUS_IND": 63.53
+      },
+      "euMeanCohesionPct": 94.18
+    },
+    "2022": {
+      "recordedResolutions": 89,
+      "pairAgreementPct": {
+        "USA_CHN": 15.91,
+        "USA_RUS": 19.1,
+        "USA_IND": 22.47,
+        "CHN_RUS": 70.45,
+        "CHN_IND": 64.77,
+        "RUS_IND": 53.93
+      },
+      "euMeanCohesionPct": 95.1
+    },
+    "2023": {
+      "recordedResolutions": 88,
+      "pairAgreementPct": {
+        "USA_CHN": 16.09,
+        "USA_RUS": 15.91,
+        "USA_IND": 22.99,
+        "CHN_RUS": 66.67,
+        "CHN_IND": 69.77,
+        "RUS_IND": 54.02
+      },
+      "euMeanCohesionPct": 94.09
+    },
+    "2024": {
+      "recordedResolutions": 95,
+      "pairAgreementPct": {
+        "USA_CHN": 18.28,
+        "USA_RUS": 18.09,
+        "USA_IND": 24.47,
+        "CHN_RUS": 67.02,
+        "CHN_IND": 67.02,
+        "RUS_IND": 52.63
+      },
+      "euMeanCohesionPct": 92.38,
+      "actorVotes": {
+        "USA": {
+          "recorded": 94,
+          "yes": 32,
+          "no": 51,
+          "abstain": 11
+        },
+        "CHN": {
+          "recorded": 94,
+          "yes": 68,
+          "no": 11,
+          "abstain": 15
+        },
+        "RUS": {
+          "recorded": 95,
+          "yes": 53,
+          "no": 33,
+          "abstain": 9
+        },
+        "IND": {
+          "recorded": 95,
+          "yes": 66,
+          "no": 4,
+          "abstain": 25
+        }
+      },
+      "euMajorityAlignmentPct": {
+        "USA": 60.87,
+        "CHN": 39.13,
+        "RUS": 38.71,
+        "IND": 44.09
+      }
+    }
+  },
+  "influenceScoreAuthorized": false
+}
