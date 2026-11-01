@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -417,6 +417,36 @@
         "counterfactualMeasured": false,
         "netBenefitMeasured": false,
         "causalInfluenceAuthorized": false
+      },
+      "directPolicyUptake": {
+        "status": "official-administrative-measure-not-causal-influence",
+        "asOf": "2026-11-01",
+        "measure": "CEPA preferential certificates of origin issued",
+        "cumulativeCertificates": 445000,
+        "unit": "certificates (approximately, official reports 4.45 lakh)",
+        "period": "Since 2022-05-01 through date of government parliamentary response; source describes FY2025-26",
+        "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3",
+        "priorSnapshot": {
+          "certificates": 240000,
+          "period": "2022-05-01 through 2025-02-18",
+          "source": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48"
+        },
+        "exportProductBreadth": {
+          "baselineFY2021_22": 7546,
+          "followupFY2025_26": 8053,
+          "change": 507,
+          "percentChange": 6.7,
+          "unit": "HS 8-digit tariff lines with recorded exports",
+          "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3"
+        },
+        "limitations": [
+          "Certificate issuance is observed use of the agreement's administrative mechanism, not verified customs preference claims or realized tariff savings",
+          "Cumulative snapshots do not measure a utilization rate without an eligible shipment denominator",
+          "HS tariff line breadth is descriptive and may reflect demand, prices, product classifications and other policies",
+          "India's official reporting is not an independent customs-level outcome audit",
+          "Neither series establishes incremental geopolitical influence or net economic benefit"
+        ],
+        "eligibleForInfluenceScoring": false
       }
     }
   ],
