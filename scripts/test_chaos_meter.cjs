@@ -837,3 +837,19 @@ for(const item of diplomaticQueue.items){
  assert.deepEqual(item.auditProgress.remainingChecks,item.priorityTasks.filter(t=>!t.complete).map(t=>t.id));
  assert.equal(item.auditProgress.attributionValidated,false);
 }
+
+const {compileDiplomaticOutcomes,SPHERES}=require('../soi-diplomatic-outcomes-model.js');
+const observedOutcomeModel=compileDiplomaticOutcomes(diplomaticQueue);
+assert.deepEqual(observedOutcomeModel.rows.map(x=>x.sphere),SPHERES);
+assert.equal(observedOutcomeModel.checksCompleted,6);
+assert.equal(observedOutcomeModel.checksRequired,30);
+assert.equal(observedOutcomeModel.scoringAuthorized,false);
+assert.equal(observedOutcomeModel.outcomeClassesComparable,false);
+for(const row of observedOutcomeModel.rows){
+ assert.ok(row.observation,'Every sphere must have at least one observed implementation milestone');
+ assert.equal(row.influenceScore,null);
+ assert.equal(row.attributedInfluence,null);
+ assert.equal(row.comparableInfluenceScore,false);
+ assert.equal(row.independentlyAuditedPerformance,false);
+}
+assert.throws(()=>compileDiplomaticOutcomes({items:[]}),/Missing sphere/);
