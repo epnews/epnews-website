@@ -427,7 +427,7 @@ assert.equal(evidenceTables.filter(x=>x.auditKey==='realizedLNGExportsVsExtracti
 assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
 
 // Public-facing dashboard keeps controls and articles visible while preserving all research nodes.
-const dashboardScript=fs.readFileSync(path.join(__dirname,'..','chaos-dashboard.js'),'utf8');
+const dashboardScript=fs.readFileSync('chaos-dashboard.js','utf8');
 for(const id of ['chaos-completion-status','chaos-meter-readiness','chaos-assessment-readiness'])assert.ok(dashboardScript.includes(id));
 for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(dashboardScript.includes(cls));
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
