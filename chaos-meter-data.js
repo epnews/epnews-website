@@ -4662,6 +4662,16 @@ window.EP_CHAOS_DATA = {
       "label": "KSE Institute · Russian Oil Tracker September issue (August 2026 data)",
       "url": "https://kse.ua/en/news/russian-oil-tracker-september-2026-russias-oil-and-oil-products-exports-fall-to-lowest-level-since-2018-as-higher-prices-add-only-0-3-billion-to-export-revenue/",
       "date": "2026-10-05"
+    },
+    "russiaMinfinSeptember2026": {
+      "label": "Reuters/Minfin · September 2026 federal oil and gas budget receipts",
+      "url": "https://ru.themoscowtimes.com/2026/10/06/tablitsa-neftegazovye-dokhody-rossiyskogo-byudzheta-za-sentyabr-2026-goda-a207874",
+      "date": "2026-10-06"
+    },
+    "russiaMinfinBudget": {
+      "label": "Russian Finance Ministry · Federal budget execution",
+      "url": "https://minfin.gov.ru/en/statistics/fedbud/",
+      "date": "2026-10-12"
     }
   },
   "actors": {
@@ -4873,18 +4883,20 @@ window.EP_CHAOS_DATA = {
         "sources": [
           "creaRussiaSeptember2026",
           "creaRussiaAugust2026",
+          "russiaMinfinSeptember2026",
+          "russiaMinfinBudget",
           "kseRussianOilTrackerOct2026",
           "gas"
         ],
         "meaning": "CREA estimates Russian fossil fuel export revenues at €625 million per day in September 2026, broadly unchanged from €604 million/day in August despite September export volumes declining 6%. Covers fossil fuels across global buyers; not just EU gas. KSE independently estimates August oil export revenue at US$13.9 billion (oil only; different model and period).",
-        "costs": "CREA reports 688 billion RUB of September crude mineral extraction tax receipts (a specific fiscal tax stream, not total budget oil-and-gas revenue). KSE estimates August oil export revenues US$13.9B and US$4.4B of sanctions-related revenue losses versus its modeled counterfactual. None is audited company profit or an observed cash cost. Export freight, insurance, production, discounts, financing and domestic costs remain unresolved.",
-        "gap": "Distinguish (1) CREA worldwide all-fossil modeled gross sales, (2) KSE oil-only export revenue, (3) CREA-reported crude mineral extraction tax receipts, and (4) KSE sanctions counterfactual. These are NOT additive, directly comparable or net profit. Need actual receipts, matched period/currency/product coverage, verified fiscal collections and transaction-level costs.",
+        "costs": "Russia Finance Ministry budget data (Reuters reproduction): federal oil-and-gas revenue 452.4 billion RUB in September 2026 vs 424.0 billion RUB in August (+6.7%); September fell 22.3% year-over-year and January–September receipts totaled 5.471 trillion RUB (−17.2% YoY). September crude MET was 688.3 billion RUB, a gross tax component subject to offsets, subsidies and other fiscal items; NOT net budget receipts or company profit. KSE separately models US$4.4B August sanctions-related oil export revenue foregone, not an observed expense.",
+        "gap": "Reconcile Minfin tax categories, excise and refinery subsidy offsets with cash timing; independently estimate shipping, insurance, discounts and financing costs. Never subtract gross MET from gross exports or mix fiscal receipts with modeled export revenues as profit. Need matched transaction margins and counterfactual for net benefit.",
         "confidence": "Moderate",
         "score": null,
         "metric": "russia-fossil-export-revenue-eur-mn-day",
         "number": 625,
         "displayPrecision": "estimated",
-        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context. Separately: KSE August oil-only modeled export revenue US$13.9B and sanctions counterfactual loss US$4.4B; CREA-reported September crude MET receipts 688B RUB. Different periods, scopes, currencies and models; do not add or subtract."
+        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context. Separately: KSE August oil-only modeled export revenue US$13.9B and sanctions counterfactual loss US$4.4B; CREA-reported September crude MET receipts 688B RUB. Different periods, scopes, currencies and models; do not add or subtract. Minfin federal oil-and-gas budget receipts September 2026 were 452.4B RUB (+6.7% MoM; −22.3% YoY); Jan–Sep 5.471T RUB (−17.2% YoY). Separate fiscal series, not the €625m/day export-sales needle."
       }
     },
     "eu": {
