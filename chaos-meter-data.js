@@ -51,6 +51,80 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "h12026MarketObservations": {
+  "title": "Eight first-half 2026 LNG market observations",
+  "status": "Observed volumes and benchmark prices · January–June comparisons where available",
+  "source": "eiaH12026Exports",
+  "items": [
+    {
+      "id": "total",
+      "label": "1 · U.S. LNG exports",
+      "value": 17.4,
+      "unit": "Bcf/day",
+      "comparison": "+23% versus H1 2025",
+      "caution": "EIA national export average, not realized company receipts."
+    },
+    {
+      "id": "ttf",
+      "label": "2 · European TTF benchmark",
+      "value": 14.74,
+      "unit": "USD/MMBtu",
+      "comparison": "H1 2025: $13.10/MMBtu",
+      "caution": "Regional benchmark futures price, not DOE FOB export price or company margin."
+    },
+    {
+      "id": "jkm",
+      "label": "3 · East Asian JKM benchmark",
+      "value": 15.56,
+      "unit": "USD/MMBtu",
+      "comparison": "+$2.38/MMBtu versus H1 2025",
+      "caution": "Regional benchmark, not cargo-specific U.S. realized sales price."
+    },
+    {
+      "id": "europe-change",
+      "label": "4 · Europe-bound U.S. LNG change",
+      "value": 0.1,
+      "unit": "Bcf/day increase",
+      "comparison": "+1% versus H1 2025",
+      "caution": "Europe-bound volume change; not total European import dependence."
+    },
+    {
+      "id": "asia-change",
+      "label": "5 · Asia-bound U.S. LNG change",
+      "value": 2.3,
+      "unit": "Bcf/day increase",
+      "comparison": "+108% versus H1 2025",
+      "caution": "EIA says Hormuz disruption contributed; not a quantified disruption-only causal effect."
+    },
+    {
+      "id": "other-change",
+      "label": "6 · Other regional U.S. LNG change",
+      "value": 0.8,
+      "unit": "Bcf/day increase",
+      "comparison": "+46% to Latin America/Caribbean and Middle East/North Africa combined",
+      "caution": "Combined region; not all exports or a company-specific result."
+    },
+    {
+      "id": "egypt",
+      "label": "7 · Egypt-bound U.S. LNG",
+      "value": 1.7,
+      "unit": "Bcf/day",
+      "comparison": "H1 2026 destination average",
+      "caution": "Destination flow, not profit or a dependency score."
+    },
+    {
+      "id": "netherlands",
+      "label": "8 · Netherlands-bound U.S. LNG",
+      "value": 1.7,
+      "unit": "Bcf/day",
+      "comparison": "H1 2026 destination average",
+      "caution": "Country of discharge need not equal final gas consumption destination."
+    }
+  ],
+  "causalNote": "EIA associates first-half 2026 market disruption with higher global prices and greater Asia-bound U.S. shipments, but also attributes total export growth to capacity additions. Do not infer the share of profits or export growth caused by Hormuz without a counterfactual.",
+  "nationalBenefitUsd": null,
+  "influenceScore": null
+},
             "observedTradeIndicators": {
   "title": "Eight observed LNG trade indicators · 2024 to 2025",
   "status": "Observed EIA/GIIGNL trade quantities and shares · not revenues or national benefit",
@@ -1294,6 +1368,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaH12026Exports": {"label":"EIA · U.S. LNG exports rose 23% in the first half of 2026 because of higher capacity","url":"https://www.eia.gov/todayinenergy/detail.php?id=68064","date":"2026-09-01"},
     "eiaGlobalTrade2025": {"label":"EIA · Global LNG trade volumes reached record high in 2025 (GIIGNL and Natural Gas Monthly)","url":"https://www.eia.gov/todayinenergy/detail.php?id=67864","date":"2026-07-14"},
     "eiaLNGDestinations2025": {"label":"EIA · U.S. natural gas exports to grow nearly 30% by 2027 (2024–25 observed destination flows)","url":"https://www.eia.gov/todayinenergy/detail.php?id=67484","date":"2026-04-16"},
     "doeLngEconomic2025": {"label":"DOE · Energy, Economic, and Environmental Assessment of U.S. LNG Exports (model scenarios)","url":"https://www.energy.gov/sites/default/files/2025-10/ENERGY%2C%20ECONOMIC%2C%20AND%20ENVIRONMENTAL%20ASSESSMENT%20OF%20U.S.%20LNG%20EXPORTS_0.pdf","date":"2025-10; 2050 scenario projections"},

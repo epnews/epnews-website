@@ -99,6 +99,16 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.h12026MarketObservations){const a=audit.h12026MarketObservations;
+   const panel=element('section');panel.id='chaos-lng-h12026';panel.setAttribute('aria-label','Eight first-half 2026 LNG market observations');
+   panel.append(element('h5',a.title),element('strong',a.status));
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','H1 2026 LNG market evidence table');
+   const table=element('table'),head=element('thead'),hr=element('tr');for(const h of ['Measure','H1 2026','Unit','Comparison']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const x of a.items){const tr=element('tr'),th=element('th',x.label);th.scope='row';tr.append(th,element('td',String(x.value)),element('td',x.unit),element('td',x.comparison));body.append(tr);}
+   table.append(body);scroll.append(table);panel.append(scroll);
+   for(const x of a.items){panel.append(element('p',x.label+' · Limitation: '+x.caution));}
+   panel.append(element('p','Causation: '+a.causalNote));sourceLinks(panel,[a.source]);panel.append(element('p','Net national benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.observedTradeIndicators){const a=audit.observedTradeIndicators;
    const panel=element('section');panel.id='chaos-lng-observed-trade';panel.setAttribute('aria-label','Eight observed LNG trade indicators');
    panel.append(element('h5',a.title),element('strong',a.status));
