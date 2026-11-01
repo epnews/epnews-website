@@ -92,6 +92,73 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "domesticGasPricesAug2026": {
+  "title": "August 2026 observed U.S. natural-gas prices and survey coverage",
+  "period": "August 2026 (single-month snapshot; no matched 2025 comparison yet)",
+  "source": "eiaNaturalGasPricesAug2026",
+  "items": [
+    {
+      "id": "citygate",
+      "label": "Citygate gas price",
+      "value": 5.03,
+      "unit": "USD/thousand cubic feet",
+      "type": "price"
+    },
+    {
+      "id": "residential",
+      "label": "Residential gas price",
+      "value": 27.05,
+      "unit": "USD/thousand cubic feet",
+      "type": "price"
+    },
+    {
+      "id": "commercial",
+      "label": "Commercial gas price",
+      "value": 12.87,
+      "unit": "USD/thousand cubic feet",
+      "type": "price"
+    },
+    {
+      "id": "industrial",
+      "label": "Industrial gas price",
+      "value": 4.34,
+      "unit": "USD/thousand cubic feet",
+      "type": "price"
+    },
+    {
+      "id": "electric",
+      "label": "Electric power gas price",
+      "value": 3.22,
+      "unit": "USD/thousand cubic feet",
+      "type": "price"
+    },
+    {
+      "id": "lng-export",
+      "label": "LNG export price (EIA reported)",
+      "value": 7.92,
+      "unit": "USD/thousand cubic feet",
+      "type": "price"
+    },
+    {
+      "id": "residential-coverage",
+      "label": "Residential deliveries included in price reporting",
+      "value": 97.1,
+      "unit": "percent of deliveries",
+      "type": "coverage"
+    },
+    {
+      "id": "industrial-coverage",
+      "label": "Industrial deliveries included in price reporting",
+      "value": 13.1,
+      "unit": "percent of deliveries",
+      "type": "coverage"
+    }
+  ],
+  "methodology": "Price figures use nominal dollars per thousand cubic feet. Residential, commercial, industrial and power sector prices represent distinct markets, with delivery and retail cost differences; they are not directly comparable margins. EIA's reported LNG export price is not a company's realized profit or a matched transaction receipt. Industrial price coverage is only 13.1% of deliveries, which limits extrapolation.",
+  "causality": "Single-month observations do not establish a price change or LNG export/disruption causation. Obtain matched 2025 monthly and 2026 January–August price/volume series before computing household burden or causal differences.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "domesticElectricity2026": {
   "title": "Observed U.S. retail electricity prices and bills paid: January–August 2026 vs 2025",
   "period": "Year to date through August in both years",
@@ -1751,6 +1818,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaNaturalGasPricesAug2026": {"label":"EIA Natural Gas Monthly · U.S. Natural Gas Prices, August 2026, released October 30","url":"https://www.eia.gov/dnav/ng/ng_pri_sum_dcu_nus_m.htm","date":"2026-10-30; August 2026"},
     "eiaElectricity2026Aug": {"label":"EIA Electric Power Monthly · Table ES1.B, U.S. retail electricity sales, revenue and average price, January–August 2025 and 2026","url":"https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=table_es1b","date":"2026-10; YTD through August"},
     "cheniereQ32026Sec": {"label":"Cheniere Energy · SEC Form 10-Q, nine months ended September 30, 2026, cash flows and notes","url":"https://www.sec.gov/Archives/edgar/data/3570/000000357026000038/lng-20260930.htm","date":"2026-10-29"},
     "cheniereQ32026": {"label":"Cheniere Energy · Third Quarter 2026 Results, reported October 28, 2026","url":"https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full","date":"2026-10-28"},
