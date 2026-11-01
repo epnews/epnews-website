@@ -685,3 +685,15 @@ for(const row of dipCoverage.rows){
  assert.equal(row.attributionReady,cases.filter(c=>c.measurementQuality?.eligibleForInfluenceScoring===true).length);
  assert.ok(row.attributionReady<=row.eligibleEpisodes);
 }
+
+// Externally cross-checked milestones remain distinct from influence attribution.
+const externalCases=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-source-candidates.json','utf8')).cases;
+for(const sphere of ['us','china']){
+ const c=externalCases.find(x=>x.sphere===sphere);
+ assert.equal(c.externalSourceCrossCheck.status,'corroborated-reported-milestone-not-influence');
+ assert.ok(c.externalSourceCrossCheck.reporting.length>=2);
+ assert.equal(c.externalSourceCrossCheck.independentPerformanceMeasured,false);
+ assert.equal(c.externalSourceCrossCheck.causalAttributionEstablished,false);
+ assert.equal(c.externalSourceCrossCheck.eligibleForInfluenceScoring,false);
+ assert.equal(c.influenceScore,null);
+}
