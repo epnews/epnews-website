@@ -36,6 +36,7 @@ if(readiness){const section=element('section');section.id='chaos-meter-readiness
  section.append(element('h4',readiness.label+' · '+readiness.percent+'%'),element('p',readiness.kind));
  const progress=element('progress');progress.max=100;progress.value=readiness.percent;progress.setAttribute('aria-label','Editorial meter readiness');section.append(progress);
  for(const part of readiness.components){section.append(element('p',part.label+': '+part.percent+'%'));}
+ if(readiness.previousPercent!==null){section.append(element('p','Previous readiness: '+readiness.previousPercent+'% · Current: '+readiness.percent+'% · Change: '+(readiness.percent-readiness.previousPercent)+' percentage points'));if(readiness.changeReason)section.append(element('p','Reason: '+readiness.changeReason));}
  section.append(element('p','Change rule: '+readiness.changePolicy),element('p','Next evidence needed: '+readiness.nextEvidenceGate));
  section.append(element('p','Influence score: NOT SCORED · National net benefit: NOT ESTABLISHED'));
  root.prepend(section);
