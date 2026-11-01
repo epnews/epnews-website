@@ -507,3 +507,18 @@ assert.equal(lngGate.gates.filter(g=>g.status==='Open').length,5);
 assert.equal(lngGate.netNationalBenefitUsd,null);
 assert.equal(lngGate.influenceScore,null);
 assert.equal(data.meterReadiness.percent,53);
+
+
+// Verified UN voting data integrity: measured agreement is not geopolitical influence.
+const votingEvidence=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/soi-swp-verified-country-vote-alignment-2021-2024.json'),'utf8'));
+assert.equal(votingEvidence.influenceScoreAuthorized,false,'UN voting evidence must not authorize an influence score');
+const votingPairs=['USA_CHN','USA_RUS','USA_IND','CHN_RUS','CHN_IND','RUS_IND'];
+for(const year of ['2021','2022','2023','2024']){
+ const annual=votingEvidence.annual[year];
+ assert.ok(annual,'missing verified voting year '+year);
+ assert.ok(Number.isInteger(annual.recordedResolutions)&&annual.recordedResolutions>0,'invalid resolution coverage '+year);
+ assert.ok(Number.isFinite(annual.euMeanCohesionPct)&&annual.euMeanCohesionPct>=0&&annual.euMeanCohesionPct<=100,'invalid EU cohesion '+year);
+ for(const pair of votingPairs)assert.ok(Number.isFinite(annual.pairAgreementPct[pair])&&annual.pairAgreementPct[pair]>=0&&annual.pairAgreementPct[pair]<=100,'invalid pair agreement '+year+' '+pair);
+ if(year!=='2024')assert.equal(annual.euMajorityAlignmentPct,undefined,'historical EU proxy must not be fabricated for '+year);
+}
+for(const code of ['USA','CHN','RUS','IND'])assert.ok(Number.isFinite(votingEvidence.annual['2024'].euMajorityAlignmentPct[code]),'missing 2024 EU majority proxy '+code);
