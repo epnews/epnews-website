@@ -709,3 +709,10 @@ for(const sphere of ['russia','eu','india']){
  assert.ok(item.outcomeAttributionAudit.nextVerification.length>30);
  assert.equal(item.influenceScore,null);
 }
+
+// Existing diplomatic drawer shows transparent coverage, not influence scoring.
+const diplomaticDashboardSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
+assert.match(diplomaticDashboardSource,/Evidence coverage:/);
+assert.match(diplomaticDashboardSource,/independently audited/);
+assert.match(diplomaticDashboardSource,/attribution-ready/);
+assert.match(diplomaticDashboardSource,/research coverage, not diplomatic influence/i);
