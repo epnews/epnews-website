@@ -98,6 +98,13 @@ function sourceLinks(parent,ids){
 }
 function renderCards(actor,dimension){
  cards.replaceChildren();
+ if(dimension==='Diplomatic'||dimension==='Overall change'){
+  const updates=(data.soiDiplomaticUpdates||{})[actor]||[];
+  if(updates.length){const section=element('section',undefined,'chaos-soi-evidence');section.append(element('h4','Recent SOI diplomatic evidence · not an influence score'));
+   for(const item of updates){const detail=element('details'),summary=element('summary',item.title+' — '+item.stage);detail.append(summary,element('p',item.finding),element('p','Measurement limit: '+item.limit));const link=element('a','Official source ↗');link.href=item.source;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);section.append(detail);}cards.append(section);
+  }
+ }
+
  for(const key of dimension==='Overall change'?dimensions:[dimension]){
   const r=data.actors[actor][key],card=element('article',undefined,'chaos-indicator-card');
   card.append(element('span',key+' · '+r.kind,'chaos-tag'),element('h4',r.title),element('strong',r.value,'chaos-metric-value'),element('p',r.period,'chaos-period'),element('span',r.stage+' · '+r.confidence+' fact confidence','chaos-record-stage'),element('p',r.meaning));
