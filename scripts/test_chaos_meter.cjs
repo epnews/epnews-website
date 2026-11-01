@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,13);
+assert.equal(evidenceTables.length,17);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -303,14 +303,14 @@ assert.match(dashboard,/if\(audit\.domesticGasMatched2025to2026\)/);
 assert.doesNotMatch(dashboard,/if\(audit\.domesticGasPricesAug2026\)/);
 
 assert.doesNotMatch(dashboard,/if\(audit\.q32026SecCashAndCosts\)/);
-assert.match(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
 assert.match(dashboard,/chaos-meter-readiness/);
 assert.ok(dashboard.indexOf('const element=(tag,text,cls)=>')<dashboard.indexOf('const readiness=data.meterReadiness;'),'DOM helper must be initialized before readiness panel uses it');
 assert.equal((dashboard.match(/const element=\(tag,text,cls\)=>/g)||[]).length,1,'DOM helper must be declared exactly once');
 assert.match(dashboard,/readiness\.percent/);
-assert.match(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
 assert.doesNotMatch(dashboard,/if\(audit\.h12026MarketObservations\)/);
-assert.match(dashboard,/if\(audit\.observedTradeIndicators\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.observedTradeIndicators\)/);
 assert.match(dashboard,/if\(audit\.evidenceQualityGates\)/);
 assert.match(dashboard,/if\(audit\.causalResearchGates\)/);
 assert.match(dashboard.trimEnd(),/}\)\(\);?$/,'orphaned code after dashboard closure');
@@ -320,3 +320,5 @@ console.log('PASS: 15 matched FOB destination prices; 20 records; 13 financial r
 for(const key of ["tenCheniereQ3CostsCapital","tenGasStorageSupplyAudit","aug2026TenDemandDestinationMeasures"]){assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);}
 
 for(const key of ["aug2026GasSupplyDemandBalance","domesticGasPricesAug2026","q32026SecCashAndCosts","h12026MarketObservations"])assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);
+
+for(const key of ["q32026CompanyOutcomes","tradeFinancialCrossChecks","observedTradeIndicators","eightPointAudit"])assert.equal(evidenceTables.filter(x=>x.auditKey===key).length,1);
