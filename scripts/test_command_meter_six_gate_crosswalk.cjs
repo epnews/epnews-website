@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const ctx={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),ctx);
+const d=ctx.window.EP_CHAOS_DATA;
+const gates=d.completionSprint.researchGates;
+const req=gates.flatMap(g=>g.requirements);
+assert.equal(gates.length,4);
+assert.equal(req.length,13);
+assert.equal(req.filter(x=>x.status==='Verified').length,7);
+assert.equal(req.filter(x=>x.status==='Insufficient evidence').length,6);
+assert.equal(d.meterReadiness.percent,53);
+const s=fs.readFileSync('docs/command-meter-six-open-gates-evidence-crosswalk.md','utf8');
+for(const k of ['PR #252','PR #257','PR #259','PR #260','PR #264','six open requirements','Readiness 53%'])assert.ok(s.includes(k),k);
+console.log('Live research gate totals and crosswalk coverage verified');
