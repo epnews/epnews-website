@@ -1,0 +1,48 @@
+{
+  "asOf": "2026-11-01",
+  "source": "https://www.eia.gov/dnav/ng/NG_PRI_SUM_DCU_NUS_M.htm",
+  "unit": "USD per thousand cubic feet",
+  "observations": [
+    {
+      "sector": "industrial",
+      "month": "2025-07",
+      "price": 4.64
+    },
+    {
+      "sector": "industrial",
+      "month": "2026-07",
+      "price": 4.58
+    },
+    {
+      "sector": "residential",
+      "month": "2025-07",
+      "price": 25.44
+    },
+    {
+      "sector": "residential",
+      "month": "2026-07",
+      "price": 26.45
+    }
+  ],
+  "sourceCrosscheck": "https://ycharts.com/indicators/us_natural_gas_industrial_price",
+  "limitations": [
+    "July single-month year-over-year prices are not an H1 comparison.",
+    "Nominal national average delivered prices vary with customer composition, distribution charges and seasonal usage.",
+    "Price differences are not LNG export-caused effects.",
+    "A higher consumer payment may be a domestic transfer, not equal national net resource cost."
+  ],
+  "requiredForCausalEstimate": [
+    "EIA sector consumption and monthly prices matched by month",
+    "Henry Hub and regional basis",
+    "domestic dry gas production",
+    "storage changes",
+    "weather heating/cooling degree days",
+    "LNG feedgas and pipeline export demand",
+    "counterfactual export path",
+    "regional distribution and pass-through"
+  ],
+  "exportAttributableHouseholdCostUsd": null,
+  "exportAttributableIndustrialCostUsd": null,
+  "netNationalEconomicBenefitUsd": null,
+  "geopoliticalInfluenceScore": null
+}
