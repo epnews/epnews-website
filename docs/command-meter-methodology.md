@@ -381,3 +381,8 @@ All three are explicitly **implementation or coverage indicators** with independ
 ## Russia energy revenue upgrade (#244)
 
 [CREA September 2026 monthly analysis](https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/) estimates Russia's worldwide fossil fuel export revenues at **€625 million/day** in September 2026; its [August 2026 analysis](https://energyandcleanair.org/august-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/) estimates **€604 million/day** in August. These are modeled gross export-sales estimates, **not audited receipts, cash collections, net profits, fiscal revenue or national economic benefit**. Export volumes fell 6% in September even while modeled revenue remained broadly unchanged; prices and destination mix matter. The needle displays September daily estimated gross export sales with a ±€1,000m/day reference range, not influence. Do not annualize into profits. Historical EU gas-volume declines remain a separate contextual fact. Further gates: realized receipts, contractual pricing, freight/insurance, production costs, sanctions discounts, taxes, and counterfactual prices.
+
+
+## Russian fiscal and counterfactual evidence ledger (#245)
+
+See [Russia energy revenue, fiscal and cost ledger](russia-energy-revenue-fiscal-cost-ledger.md). Separately sourced CREA September crude mineral extraction tax receipts of 688 billion RUB, KSE August oil-only estimated export revenues US$13.9B and KSE August modeled sanctions-related revenue foregone US$4.4B. They differ in period, currency, coverage and meaning; they cannot be combined to produce profit. The September CREA €625m/day observed needle is unchanged and unscored.
