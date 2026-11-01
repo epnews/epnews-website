@@ -657,3 +657,16 @@ assert.equal(candidateData.cases.find(c=>c.sphere==='china').sourceAudit.sourceU
 assert.ok(candidateData.cases.find(c=>c.sphere==='eu').sourceAudit.sourceUrl.includes('eu-moldova-security-defence-partnership'));
 assert.ok(candidateData.cases.find(c=>c.sphere==='us').sourceAudit.sourceUrl.includes('3621934'));
 assert.ok(candidateData.cases.every(c=>c.sourceAudit.status==='pending-independent-review'&&!c.sourceAudit.sourceOpened&&!c.sourceAudit.claimChecked&&!c.sourceAudit.reviewer));
+
+// Uniform diplomatic comparability protocol is evidence-only; it cannot activate a needle.
+const diplomaticProtocol=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-influence-framework.json','utf8')).comparabilityProtocol;
+assert.deepEqual(diplomaticProtocol.actors,['us','china','russia','eu','india']);
+assert.equal(diplomaticProtocol.needleAuthorized,false);
+assert.match(diplomaticProtocol.missingDataRule,/not zero/i);
+assert.match(diplomaticProtocol.attributionRule,/causation/i);
+assert.ok(diplomaticProtocol.mandatoryFields.includes('alternativeExplanations'));
+assert.ok(diplomaticProtocol.mandatoryFields.includes('costs'));
+assert.ok(diplomaticProtocol.outcomeClasses.includes('not-assessed'));
+assert.ok(diplomaticProtocol.outcomeClasses.includes('reversed'));
+assert.ok(diplomaticProtocol.excludedCases.some(x=>/UN voting/.test(x)));
+assert.match(diplomaticProtocol.scoringGate,/explicit approval/i);
