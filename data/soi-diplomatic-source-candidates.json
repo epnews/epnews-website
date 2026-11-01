@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -75,6 +75,17 @@
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
         "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+      },
+      "sourceAudit": {
+        "status": "pending-independent-review",
+        "sourceUrl": "https://www.defense.gov/News/Releases/Release/Article/3498219/statement-from-secretary-of-defense-lloyd-j-austin-iii-on-united-states-trilate/",
+        "claimChecked": false,
+        "sourceOpened": false,
+        "publicationDateChecked": false,
+        "matchedDefinitionChecked": false,
+        "reviewer": null,
+        "reviewedOn": null,
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded."
       }
     },
     {
@@ -148,6 +159,17 @@
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
         "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+      },
+      "sourceAudit": {
+        "status": "pending-independent-review",
+        "sourceUrl": "https://2021-2025.state.gov/joint-statement-following-the-ministerial-meeting-of-the-united-states-and-the-gulf-cooperation-council-gcc/",
+        "claimChecked": false,
+        "sourceOpened": false,
+        "publicationDateChecked": false,
+        "matchedDefinitionChecked": false,
+        "reviewer": null,
+        "reviewedOn": null,
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded."
       }
     },
     {
@@ -220,6 +242,17 @@
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
         "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+      },
+      "sourceAudit": {
+        "status": "pending-independent-review",
+        "sourceUrl": "https://base.garant.ru/411209091/",
+        "claimChecked": false,
+        "sourceOpened": false,
+        "publicationDateChecked": false,
+        "matchedDefinitionChecked": false,
+        "reviewer": null,
+        "reviewedOn": null,
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded."
       }
     },
     {
@@ -298,6 +331,17 @@
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
         "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+      },
+      "sourceAudit": {
+        "status": "pending-independent-review",
+        "sourceUrl": "https://www.eeas.europa.eu/eupm-moldova/about-eu-partnership-mission-republic-moldova_en",
+        "claimChecked": false,
+        "sourceOpened": false,
+        "publicationDateChecked": false,
+        "matchedDefinitionChecked": false,
+        "reviewer": null,
+        "reviewedOn": null,
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded."
       }
     },
     {
@@ -380,6 +424,17 @@
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "descriptive-comparison-only",
         "reason": "Aggregate nominal merchandise trade in matching units is observed, but pre-period pandemic distortion, composition and price effects, counterfactual and independent outcome validation remain unresolved."
+      },
+      "sourceAudit": {
+        "status": "pending-independent-review",
+        "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48",
+        "claimChecked": false,
+        "sourceOpened": false,
+        "publicationDateChecked": false,
+        "matchedDefinitionChecked": false,
+        "reviewer": null,
+        "reviewedOn": null,
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded."
       }
     }
   ],
@@ -406,5 +461,6 @@
   "evidenceAuditMethodology": "Source-identified event records are not independently verified causal influence. Gate statuses indicate research coverage, not outcomes or influence. Empty gate means unassessed, not zero. Each sphere is reviewed against the same six gates.",
   "researchPlanMethodology": "Pre-registered research questions and source categories. Planned research is not a completed evidence audit. Never promote planned outcomes into measurements.",
   "observationPolicy": "Documented observation is not attributable influence. Only matched periods/definitions may support before-after differences; no cross-case ranking. Context from earlier initiatives must be disclosed.",
-  "measurementQualityPolicy": "Measurement readiness is separate from research activity, source identification, and diplomatic influence. The five checks must all pass before a candidate can be called a comparable outcome measurement; even then causal attribution is a separate gate."
+  "measurementQualityPolicy": "Measurement readiness is separate from research activity, source identification, and diplomatic influence. The five checks must all pass before a candidate can be called a comparable outcome measurement; even then causal attribution is a separate gate.",
+  "sourceAuditPolicy": "No URL is marked independently verified merely because it is listed. Source access, exact claim, publication date, matched definitions and reviewer must be recorded. Missing audit remains pending; no inferred influence."
 }
