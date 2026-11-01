@@ -1,0 +1,173 @@
+{
+  "version": "1.0-proposed",
+  "baselineYear": 2021,
+  "assessmentFrequency": "annual",
+  "scoreRange": [
+    -100,
+    100
+  ],
+  "status": "UNCALIBRATED_NO_COMPARABLE_COUNTRY_SCORES",
+  "dimensions": [
+    {
+      "id": "alignment",
+      "label": "Diplomatic alignment",
+      "weight": 0.25,
+      "measurement": "Change in similarity of UN General Assembly voting on a fixed comparable resolution cohort",
+      "requirements": [
+        "Same resolution cohort across actors",
+        "Published abstention/absence treatment",
+        "Baseline and annual vote-level evidence"
+      ]
+    },
+    {
+      "id": "agreements",
+      "label": "Implemented agreements",
+      "weight": 0.25,
+      "measurement": "Change in independently verified implemented cross-border agreements, not announcements",
+      "requirements": [
+        "Entry-into-force proof",
+        "Measured implementation outcome",
+        "Deduplicate multilateral agreements"
+      ]
+    },
+    {
+      "id": "leadership",
+      "label": "Institutional leadership",
+      "weight": 0.2,
+      "measurement": "Change in competitively elected leadership positions and documented voting support",
+      "requirements": [
+        "Election record and vote totals where public",
+        "Term dates and comparable eligible institutions"
+      ]
+    },
+    {
+      "id": "relations",
+      "label": "Diplomatic relationships",
+      "weight": 0.15,
+      "measurement": "Change in formal diplomatic relations established, restored, downgraded or severed",
+      "requirements": [
+        "Two-party confirmation",
+        "Effective date",
+        "No duplicate counting of embassy openings"
+      ]
+    },
+    {
+      "id": "mediation",
+      "label": "Implemented mediation outcomes",
+      "weight": 0.15,
+      "measurement": "Change in independently confirmed implemented diplomatic settlements with documented mediator role",
+      "requirements": [
+        "Documented mediation role",
+        "Agreement implementation proof",
+        "Durability check and independent corroboration"
+      ]
+    }
+  ],
+  "actors": [
+    "us",
+    "china",
+    "russia",
+    "eu",
+    "india"
+  ],
+  "countryRecords": {
+    "us": {
+      "baselineYear": 2021,
+      "componentScores": {
+        "alignment": null,
+        "agreements": null,
+        "leadership": null,
+        "relations": null,
+        "mediation": null
+      },
+      "composite": null,
+      "confidence": "Insufficient comparable evidence"
+    },
+    "china": {
+      "baselineYear": 2021,
+      "componentScores": {
+        "alignment": null,
+        "agreements": null,
+        "leadership": null,
+        "relations": null,
+        "mediation": null
+      },
+      "composite": null,
+      "confidence": "Insufficient comparable evidence"
+    },
+    "russia": {
+      "baselineYear": 2021,
+      "componentScores": {
+        "alignment": null,
+        "agreements": null,
+        "leadership": null,
+        "relations": null,
+        "mediation": null
+      },
+      "composite": null,
+      "confidence": "Insufficient comparable evidence"
+    },
+    "eu": {
+      "baselineYear": 2021,
+      "componentScores": {
+        "alignment": null,
+        "agreements": null,
+        "leadership": null,
+        "relations": null,
+        "mediation": null
+      },
+      "composite": null,
+      "confidence": "Insufficient comparable evidence"
+    },
+    "india": {
+      "baselineYear": 2021,
+      "componentScores": {
+        "alignment": null,
+        "agreements": null,
+        "leadership": null,
+        "relations": null,
+        "mediation": null
+      },
+      "composite": null,
+      "confidence": "Insufficient comparable evidence"
+    }
+  },
+  "scoringRules": {
+    "normalization": "Pre-register common denominators and historical materiality targets before computing any component scores; no invented 0–100 conversion",
+    "missingness": "Never redistribute weights, zero-fill missing components or calculate a composite from partial components",
+    "minimumEvidence": "All five components require compatible baseline and follow-up, verifiable sources, cost/counterevidence review and calibration",
+    "independence": "Same event may appear in evidence for multiple categories but may contribute to at most one scored category without a justified distinct outcome",
+    "attribution": "Record direct actor role and alternative explanations; partner activity does not automatically count as actor influence",
+    "sensitivity": "Compare baseline weights to equal weights and alternative weighting after component validation",
+    "scope": "EU institutional diplomacy distinguished from individual EU member-state actions",
+    "unScoredDial": "Needle hidden; never present center as zero influence"
+  },
+  "sourcePlan": [
+    {
+      "component": "alignment",
+      "source": "UN Digital Library recorded voting data",
+      "url": "https://digitallibrary.un.org/"
+    },
+    {
+      "component": "agreements",
+      "source": "UN Treaty Collection",
+      "url": "https://treaties.un.org/"
+    },
+    {
+      "component": "leadership",
+      "source": "UN election records and official organization election results",
+      "url": "https://www.un.org/en/"
+    },
+    {
+      "component": "relations",
+      "source": "Official foreign ministry diplomatic relations announcements",
+      "url": "https://www.un.org/dgacm/en/content/regional-groups"
+    },
+    {
+      "component": "mediation",
+      "source": "UN Peacemaker agreement database and independent implementation reports",
+      "url": "https://peacemaker.un.org/"
+    }
+  ],
+  "researchReadinessAdjustment": null
+}
