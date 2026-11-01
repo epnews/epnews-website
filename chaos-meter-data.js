@@ -92,6 +92,106 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "aug2026TenDemandDestinationMeasures": {
+  "title": "Ten August 2026 domestic gas-use and LNG destination observations",
+  "period": "August 2026, EIA consumption sectors and DOE LNG destinations",
+  "items": [
+    {
+      "id": "residential-deliveries",
+      "label": "Residential gas deliveries",
+      "value": 3.32,
+      "prior": 3.35,
+      "unit": "Bcf/day",
+      "source": "eiaNaturalGasMonthlyAug2026",
+      "note": "Residential deliveries fell 0.9% year over year."
+    },
+    {
+      "id": "commercial-deliveries",
+      "label": "Commercial gas deliveries",
+      "value": 4.84,
+      "prior": 4.87,
+      "unit": "Bcf/day",
+      "source": "eiaNaturalGasMonthlyAug2026",
+      "note": "Commercial deliveries fell 0.6% year over year."
+    },
+    {
+      "id": "industrial-deliveries",
+      "label": "Industrial gas deliveries",
+      "value": 22.65,
+      "prior": 22.35,
+      "unit": "Bcf/day",
+      "source": "eiaNaturalGasMonthlyAug2026",
+      "note": "Industrial deliveries rose 1.3% year over year."
+    },
+    {
+      "id": "electric-power-deliveries",
+      "label": "Electric-power gas deliveries",
+      "value": 50.19,
+      "prior": 45.68,
+      "unit": "Bcf/day",
+      "source": "eiaNaturalGasMonthlyAug2026",
+      "note": "Power-sector gas deliveries rose 9.9% year over year; weather and generation mix are confounders."
+    },
+    {
+      "id": "egypt-lng",
+      "label": "U.S. LNG shipped to Egypt",
+      "value": 55.9,
+      "prior": null,
+      "unit": "Bcf/month",
+      "source": "doeAugust2026LNGDestinations",
+      "note": "Largest single destination in August; no prior-year comparator asserted."
+    },
+    {
+      "id": "netherlands-lng",
+      "label": "U.S. LNG shipped to Netherlands",
+      "value": 53.6,
+      "prior": null,
+      "unit": "Bcf/month",
+      "source": "doeAugust2026LNGDestinations",
+      "note": "Physical destination does not establish ultimate consumption or revenue beneficiary."
+    },
+    {
+      "id": "italy-lng",
+      "label": "U.S. LNG shipped to Italy",
+      "value": 49.1,
+      "prior": null,
+      "unit": "Bcf/month",
+      "source": "doeAugust2026LNGDestinations",
+      "note": "Observed monthly delivered volume, not company profit."
+    },
+    {
+      "id": "france-lng",
+      "label": "U.S. LNG shipped to France",
+      "value": 36.5,
+      "prior": null,
+      "unit": "Bcf/month",
+      "source": "doeAugust2026LNGDestinations",
+      "note": "Observed destination volume, not an influence score."
+    },
+    {
+      "id": "germany-lng",
+      "label": "U.S. LNG shipped to Germany",
+      "value": 35.5,
+      "prior": null,
+      "unit": "Bcf/month",
+      "source": "doeAugust2026LNGDestinations",
+      "note": "Observed destination volume; contract terms and final buyers unverified."
+    },
+    {
+      "id": "mexico-pipeline",
+      "label": "U.S. pipeline and truck gas exports to Mexico",
+      "value": 239,
+      "prior": null,
+      "unit": "Bcf/month",
+      "source": "doeAugust2026LNGDestinations",
+      "note": "Pipeline and truck exports, not LNG; reported +4.2% year over year."
+    }
+  ],
+  "methodology": "Ten distinct reported measurements, not ten independent sources or causal estimates. EIA sector flows are daily averages; DOE destination and Mexico pipeline flows are monthly totals. Do not add figures with different units. DOE LNG export destinations may differ from EIA's country counts because reporting conventions differ. Domestic sector deliveries are components of total consumption and cannot be added to total gas consumption. DOE trade statistics may differ from EIA because of reporting boundaries and revisions.",
+  "causalStatus": "None of these ten observations identifies the incremental effect of geopolitical disruptions or LNG export expansion on U.S. consumer prices, producer margins or national economic welfare.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "aug2026GasSupplyDemandBalance": {
   "title": "August 2026 U.S. gas balance: supply, demand and export expansion",
   "period": "August 2026 vs August 2025, U.S. daily rates",
@@ -2055,6 +2155,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "doeAugust2026LNGDestinations":{"label":"DOE August 2026 U.S. LNG destination and Mexico pipeline trade summary","url":"https://www.energy.gov/hgeo/articles/us-natural-gas-supplying-energy-world-august-2026-summary","date":"2026-10"},
     "eiaNaturalGasMonthlyAug2026":{"label":"EIA Natural Gas Monthly, October 2026 highlights for August 2026","url":"https://www.eia.gov/naturalgas/monthly/","date":"2026-10-30"},
     "eiaSummer2026Gas":{"label":"EIA, September 25 2026 · Henry Hub natural gas prices this summer were 6% lower than last summer","url":"https://www.eia.gov/todayinenergy/detail.php?id=68204","date":"2026-09-25"},
     "doeLNGCounterfactualAppendix":{"label":"DOE LNG export economic assessment, Appendix B · Table 6 conditional 2050 delivered gas prices","url":"https://www.energy.gov/sites/default/files/2026-02/Ex.%202%20%20LNGUpdate_AppendixB_Dec2024.pdf","date":"2024-12 study, posted 2026"},
