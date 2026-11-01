@@ -1,0 +1,164 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Specify reproducible, comparable measurement protocols for all eight SOI outcome workstreams; do not treat source suggestions as extracted observations",
+  "methodology": {
+    "baseline": "At least one pre-event observation plus post-event observations, ideally 3-year comparable window",
+    "units": "Normalize units, currency base year, destination, definition and source vintage",
+    "causality": "State contemporaneous shocks, counterfactual and attribution uncertainty",
+    "economics": "Separate gross trade values, government receipts, private revenue, profit and national net benefit",
+    "strategic": "Separate legal access, physical delivery, force posture and independently verified operational outcomes",
+    "deduplication": "One underlying observation counts once across multiple workstreams",
+    "scoring": "No net influence score until independently measured outcomes, costs, attribution, counterfactual and normalization are sufficient"
+  },
+  "protocols": [
+    {
+      "id": "nato-accessions",
+      "primarySeries": [
+        "NATO defense expenditure by country, constant prices",
+        "Finland/Sweden military readiness and deployed force capabilities"
+      ],
+      "preferredSources": [
+        "https://www.nato.int/cps/en/natohq/topics_49198.htm",
+        "https://www.sipri.org/databases/milex"
+      ],
+      "comparison": "Finland and Sweden 2019–2025, compare pre/post accession, separate NATO membership count from readiness",
+      "gates": [
+        "Consistent inflation-adjusted spending",
+        "Verified force/access change",
+        "Russia response and alternative drivers"
+      ]
+    },
+    {
+      "id": "eu-china-investment-freeze",
+      "primarySeries": [
+        "Eurostat EU direct investment positions and flows with China",
+        "China MOFCOM bilateral investment flow statistics"
+      ],
+      "preferredSources": [
+        "https://ec.europa.eu/eurostat/web/balance-of-payments/database",
+        "https://unctadstat.unctad.org/"
+      ],
+      "comparison": "2017–2025 bilateral FDI stocks/flows; agreement never ratified so no foregone investment may be imputed without counterfactual",
+      "gates": [
+        "Distinguish FDI flows from stocks",
+        "Control for pandemic and Chinese regulatory changes",
+        "Avoid valuing hypothetical treaty benefits as realized losses"
+      ]
+    },
+    {
+      "id": "us-tariffs-retaliation",
+      "primarySeries": [
+        "USITC DataWeb import values by HS and country",
+        "US Treasury customs duties receipts",
+        "BLS import price indices"
+      ],
+      "preferredSources": [
+        "https://dataweb.usitc.gov/",
+        "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/",
+        "https://www.bls.gov/mxp/"
+      ],
+      "comparison": "Matched tariff implementation dates and pre/post import values with product-level counterfactual",
+      "gates": [
+        "Applied rates not announced rates",
+        "Separate tariff revenue from national net benefit",
+        "Include consumer/importer costs and retaliation"
+      ]
+    },
+    {
+      "id": "russia-sanctions",
+      "primarySeries": [
+        "Eurostat EU imports by energy product and origin",
+        "Russian export revenues with price and destination breakdown"
+      ],
+      "preferredSources": [
+        "https://ec.europa.eu/eurostat/web/international-trade-in-goods/database",
+        "https://www.iea.org/data-and-statistics"
+      ],
+      "comparison": "Matched physical volumes and unit values 2021–2025 by product and destination",
+      "gates": [
+        "Include Asian rerouting",
+        "Do not equate EU market loss with global export loss",
+        "Measure EU replacement costs"
+      ]
+    },
+    {
+      "id": "institutional-withdrawals",
+      "primarySeries": [
+        "UN/WHO assessed and voluntary contributions by year",
+        "Treaty membership and formal participation records"
+      ],
+      "preferredSources": [
+        "https://www.who.int/about/accountability/results/who-programme-budget-web-portal",
+        "https://treaties.un.org/"
+      ],
+      "comparison": "Annual participation, voting rights and actual contributions before/after effective withdrawal",
+      "gates": [
+        "Legal effective date",
+        "Comparable funding series",
+        "Verified institutional outcome versus speculation"
+      ]
+    },
+    {
+      "id": "india-china-border",
+      "primarySeries": [
+        "Official patrolling/disengagement verification",
+        "Satellite-derived deployment and construction change"
+      ],
+      "preferredSources": [
+        "https://www.mea.gov.in/",
+        "https://www.csis.org/programs/asia-program"
+      ],
+      "comparison": "Same border sectors before/after 2017 and 2024 arrangements",
+      "gates": [
+        "Independent geolocation and time series",
+        "Separate official statements from independently verified access",
+        "Avoid treating one sector as entire border"
+      ]
+    },
+    {
+      "id": "aukus-security",
+      "primarySeries": [
+        "Australian defense portfolio budget and program expenditures",
+        "Verified deliveries and deployment dates"
+      ],
+      "preferredSources": [
+        "https://www.defence.gov.au/about/accessing-information/budgets",
+        "https://www.defense.gov/Spotlights/AUKUS/"
+      ],
+      "comparison": "Announcement 2021 versus appropriated/spent/delivered outcomes through 2026",
+      "gates": [
+        "Funding announcement versus outlay",
+        "Delivery and operational capability",
+        "Opportunity costs and counterfactual"
+      ]
+    },
+    {
+      "id": "energy-dependence",
+      "primarySeries": [
+        "Eurostat import volumes by origin and product",
+        "EIA/DOE LNG export destinations, volumes and FOB prices",
+        "IEA oil and gas trade flows"
+      ],
+      "preferredSources": [
+        "https://ec.europa.eu/eurostat/web/energy/database",
+        "https://www.energy.gov/fecm/regulation",
+        "https://www.eia.gov/naturalgas/"
+      ],
+      "comparison": "Destination-specific volume, price, and matching product/time 2017–2026",
+      "gates": [
+        "FOB export prices not realized net revenue",
+        "Volume and price unit harmonization",
+        "Domestic costs and infrastructure spending"
+      ]
+    }
+  ],
+  "verifiedNewMeasurements": 0,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
