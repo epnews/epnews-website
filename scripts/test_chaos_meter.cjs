@@ -462,3 +462,8 @@ assert.equal(data.actors.india['Energy and resources'].number,0.5);
 assert.equal(data.actors.india['Energy and resources'].score,null);
 assert.match(data.actors.india['Energy and resources'].measurementCaveat,/provisional/);
 assert.ok(data.sources.ppacReadyReckonerFY2026.url.includes('ppac.gov.in'));
+
+assert.equal(data.actors.eu.Diplomatic.number,8);
+assert.equal(data.actors.eu.Diplomatic.score,null);
+assert.match(data.actors.eu.Diplomatic.measurementCaveat,/NOT the FTA's causal effect/);
+assert.ok(data.sources.euNzTradeCommittee2025);
