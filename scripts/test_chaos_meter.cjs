@@ -651,3 +651,9 @@ assert.ok(observations.russia.sources.length>=4);
 assert.equal(candidateData.cases.find(c=>c.sphere==='russia').measurementQuality.baselineDocumented,true);
 assert.equal(candidateData.cases.find(c=>c.sphere==='russia').measurementQuality.followupDocumented,false);
 assert.equal(candidateData.cases.find(c=>c.sphere==='russia').sourceAudit.status,'pending-independent-review');
+
+// Every case audit must point to a source about its actual claim, never an unrelated counterpart statement.
+assert.equal(candidateData.cases.find(c=>c.sphere==='china').sourceAudit.sourceUrl,'https://www.spa.gov.sa/en/ed7aabfefaw');
+assert.ok(candidateData.cases.find(c=>c.sphere==='eu').sourceAudit.sourceUrl.includes('eu-moldova-security-defence-partnership'));
+assert.ok(candidateData.cases.find(c=>c.sphere==='us').sourceAudit.sourceUrl.includes('3621934'));
+assert.ok(candidateData.cases.every(c=>c.sourceAudit.status==='pending-independent-review'&&!c.sourceAudit.sourceOpened&&!c.sourceAudit.claimChecked&&!c.sourceAudit.reviewer));
