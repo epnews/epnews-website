@@ -1,8 +1,8 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
-  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution.",
+  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution.",
   "scoringAuthorized": false,
   "items": [
     {
@@ -66,6 +66,14 @@
         "datedMilestone": "2023-12-19",
         "finding": "Japanese defense ministry and South Korean Yonhap reporting both confirm activation of trilateral real-time DPRK missile-warning sharing on 19 December 2023. This confirms an announced operational activation, not independently observed system performance or US causal attribution.",
         "limitations": "Public reporting corroborates a dated event or announced implementation, not independently measured operational effectiveness, causal attribution, or net influence."
+      },
+      "baselineFollowupAssessment": {
+        "baseline": "Prior separate US-Japan and US-ROK missile-warning channels",
+        "followup": "Trilateral real-time mechanism announced active 2023-12-19",
+        "metric": "operational activation status",
+        "descriptivelyComparable": false,
+        "causallyAttributable": false,
+        "reason": "No independently measured system uptime, warning speed, or common unit"
       }
     },
     {
@@ -127,6 +135,14 @@
         "datedMilestone": "2023-06-06",
         "finding": "Reuters reported the March 10 Beijing agreement and directly witnessed the Iranian embassy reopening in Riyadh on 6 June 2023. August Saudi embassy operations in Tehran separately reported by Anadolu; this establishes diplomatic mission reopening, not China-exclusive causal influence.",
         "limitations": "Public reporting corroborates a dated event or announced implementation, not independently measured operational effectiveness, causal attribution, or net influence."
+      },
+      "baselineFollowupAssessment": {
+        "baseline": "Embassies closed and diplomatic relations severed since 2016",
+        "followup": "Embassies reopened June–August 2023",
+        "metric": "bilateral diplomatic mission status",
+        "descriptivelyComparable": true,
+        "causallyAttributable": false,
+        "reason": "Comparable binary diplomatic presence, but no causal isolation or influence magnitude"
       }
     },
     {
@@ -187,6 +203,14 @@
         "finding": "Interfax contemporaneously reported Putin's statement that Russia and Belarus exchanged treaty ratification instruments and that the security guarantees treaty entered into force on 13 March 2025.",
         "scope": "News reporting corroborates a legal milestone, not independently observed additional Belarusian military behavior.",
         "attributionVerified": false
+      },
+      "baselineFollowupAssessment": {
+        "baseline": "Preexisting Belarus-Russia military integration before treaty",
+        "followup": "Security treaty entered into force 2025-03-13",
+        "metric": "different legal and military phenomena",
+        "descriptivelyComparable": false,
+        "causallyAttributable": false,
+        "reason": "Legal treaty entry is not a matched change in military cooperation"
       }
     },
     {
@@ -247,6 +271,14 @@
         "finding": "Moldova's foreign ministry confirms EUPM operated since May 2023 and identifies assistance to its crisis-management concept, cybersecurity agency and authorities; this predates or overlaps the May 2024 security partnership.",
         "scope": "Counterpart ministry documents cooperation but not incremental results attributable to the 2024 partnership.",
         "attributionVerified": false
+      },
+      "baselineFollowupAssessment": {
+        "baseline": "EUPM active since May 2023",
+        "followup": "Ministry-described assistance and 2025 renewed commitments",
+        "metric": "mission outputs",
+        "descriptivelyComparable": false,
+        "causallyAttributable": false,
+        "reason": "No matched project output quantity or separation from preexisting mission"
       }
     },
     {
@@ -307,6 +339,14 @@
         "finding": "Indian Commerce Ministry parliamentary answer reports bilateral trade USD 72.9bn FY2021-22 and USD 83.7bn FY2023-24, with exports USD 28bn and USD 35.6bn respectively; CEPA entered into force 1 May 2022.",
         "scope": "Matched nominal fiscal-year trade values are official descriptive data, not independent attribution of trade growth to CEPA.",
         "attributionVerified": false
+      },
+      "baselineFollowupAssessment": {
+        "baseline": "FY2021-22 merchandise trade USD 72.9bn",
+        "followup": "FY2023-24 merchandise trade USD 83.7bn",
+        "metric": "nominal bilateral merchandise trade USD billion",
+        "descriptivelyComparable": true,
+        "causallyAttributable": false,
+        "reason": "Same fiscal-year definition and nominal unit, but energy prices and recovery confound causal inference"
       }
     }
   ],
