@@ -36,4 +36,5 @@ jobs:
           path: |
             eia-table24-coverage-audit.json
             eia-table24-source.pdf
+            eia-table24-2025-archive.pdf
           if-no-files-found: ignore
