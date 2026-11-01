@@ -25,6 +25,21 @@ For January–September 2026, federal oil-and-gas budget receipts totaled **5,47
 
 **Critical reconciliation:** The September 688.3 billion RUB crude MET is greater than 452.4 billion RUB net federal oil-and-gas receipts because the budget series incorporates multiple tax categories and negative offset/subsidy lines. Do not interpret the difference as an extraction cost, operating loss, profit margin, or cash leakage. Fiscal receipts are observed/reported government collections, but still do not determine national net economic benefit or attributable conflict gains.
 
+## Reported shipping and price-discount evidence (not realized net cost)
+
+[The Insider, September 22, 2026](https://theins.press/en/economics/297251) describes estimated Urals freight of **approximately US$20/barrel via Suez to China**, about **US$2/barrel more** than the India route (therefore approximately **US$18/barrel to India**). These are **route-specific reported estimates**, not audited bills, a Russia-wide weighted average, or a proven incremental cost caused by sanctions. Different route, vessel, insurance, and contract terms matter.
+
+The same article reports Argus **August 21, 2026** Urals FOB discounts to Brent of approximately **US$24.8/barrel at Baltic loading ports** and **US$25.2–26.15/barrel at Novorossiysk**. A discount is a difference between market prices, **not** a freight expense, and reflects grade, market, timing, sanctions and other influences. Urals prices delivered to India include shipping, insurance and risk premia, so they cannot be compared directly to Brent FOB or spot/futures quotations without harmonizing delivery terms and date. See also [Brookings on sanctions and shadow-fleet shipping](https://www.brookings.edu/articles/stiffening-european-sanctions-against-the-russian-oil-trade/).
+
+| Indicator | Estimate | Reference | Basis | Prohibited inference |
+|---|---:|---|---|---|
+| Urals freight via Suez to China | ≈US$20/barrel | Reported September 2026 | Specific route estimate | Not verified net cost or universal Russian freight rate |
+| Urals freight to India | ≈US$18/barrel | Derived from reported US$2 difference | Route estimate | Not independently audited or a sanctions-only surcharge |
+| Urals discount vs Brent, Baltic | US$24.8/barrel | August 21, 2026 | FOB vs benchmark | Not an observed transport bill |
+| Urals discount vs Brent, Novorossiysk | US$25.2–26.15/barrel | August 21, 2026 | FOB vs benchmark | Not an observed transport bill |
+
+**Accounting rule:** Do not add freight to the Urals-Brent discount and call the sum Russia's loss; delivered prices and FOB discounts may already incorporate market expectations of shipping, insurance and buyer bargaining power. Do not multiply these route estimates by all Russian exports to claim actual company expenses or national losses. The gross-sales needle stays at €625m/day with `score:null`.
+
 ## Evidence reconciliation
 
 1. CREA's September gross export sales and September crude MET are different economic concepts: sales and a tax collection. Do **not** subtract the tax from export revenue to derive profit, or add it to sales as another export benefit.
