@@ -1,0 +1,96 @@
+{
+  "version": "2026-11-01",
+  "title": "Russia global fossil export revenue and EU total energy import costs",
+  "series": [
+    {
+      "id": "russia-global-fossil-export-revenue",
+      "measure": "CREA-estimated Russian worldwide fossil-fuel export gross revenue",
+      "unit": "billion EUR nominal per calendar year",
+      "values": [
+        {
+          "year": 2021,
+          "value": 238
+        },
+        {
+          "year": 2022,
+          "value": 342
+        },
+        {
+          "year": 2023,
+          "value": 234
+        },
+        {
+          "year": 2024,
+          "value": 228
+        }
+      ],
+      "source": "https://csd.eu/fileadmin/user_upload/events_library/files/2025_05/22_May_-_Phasing_Out_Russian_Oil_and_Gas_in_Hungary_and_Slovakia_Presentation_.pdf",
+      "originalMethod": "https://energyandcleanair.org/wp/wp-content/uploads/2025/04/CREA_Analysis_Third-year-of-invasion_24.02.2025_REVISED_10.04.2025.pdf",
+      "sourceLocator": "CSD presentation: Russian fossil-fuel exports, Export rev table 2021–2024",
+      "classification": "third-party modeled gross export revenue, not audited company cash receipts",
+      "comparison": {
+        "yearFrom": 2022,
+        "yearTo": 2024,
+        "absoluteChangeBillionEUR": -114,
+        "percentChange": -33.33
+      },
+      "caveats": [
+        "CREA estimate subject to revisions, pricing and destination methodology",
+        "Oil, gas and coal combined, all global destinations",
+        "Nominal values sensitive to commodity prices and exchange rates",
+        "No claim that sanctions caused the entire revenue decline",
+        "Gross revenue not profit or net Russian fiscal receipts"
+      ]
+    },
+    {
+      "id": "eu-total-energy-import-bill",
+      "measure": "European Commission EU total energy import bill",
+      "unit": "billion EUR nominal per calendar year",
+      "values": [
+        {
+          "year": 2021,
+          "value": 285
+        },
+        {
+          "year": 2022,
+          "value": 604
+        },
+        {
+          "year": 2024,
+          "value": 427
+        }
+      ],
+      "source": "https://energy.ec.europa.eu/data-and-analysis/energy-prices-and-costs-europe_en",
+      "baselineSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM%3A2024%3A136%3AFIN",
+      "sourceLocator": "Commission energy prices and costs report summary and 2024 State of Energy Union analysis",
+      "classification": "total EU import bill, not Russian-only purchases or substitution incremental cost",
+      "comparison": {
+        "yearFrom": 2022,
+        "yearTo": 2024,
+        "absoluteChangeBillionEUR": -177,
+        "percentChange": -29.3
+      },
+      "caveats": [
+        "2021 and 2024 values sourced from different Commission report editions; reconcile coverage before cross-year inference",
+        "2024 report revision may differ from earlier published 2023 estimate",
+        "Total bill includes all origins and fuels; cannot isolate Russian supplier substitution cost",
+        "Price, consumption, exchange rates and fuel mix all contribute"
+      ]
+    }
+  ],
+  "crossDatasetRule": "Do not subtract Russia global revenue from EU total import costs: different populations, fuels, destinations and economic concepts",
+  "sourceCorroboration": "CSD reproduces CREA modeled estimates; not independent model replication",
+  "newIndependentNumericSeries": 2,
+  "workstreams": [
+    "russia-sanctions",
+    "energy-dependence"
+  ],
+  "netInfluenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
