@@ -19,10 +19,12 @@ const assert=require('node:assert/strict');
    await page.locator('.chaos-completion-gate').first().locator('summary').click();
    assert.ok(await page.locator('.chaos-completion-gate').first().locator('li').count()>=2);
    assert.ok(await page.locator('#chaos-sphere option').count()>=5);
-   for (const country of ['china','russia','india']) {
+   for (const country of ['us','china','russia','eu','india']) {
     await page.locator('#chaos-sphere').selectOption(country);
     await page.locator('#chaos-dimension').selectOption('Diplomatic');
-    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed',country+' diplomatic needle should be active');
+    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'pending',country+' diplomatic index must remain uncalibrated');
+    assert.equal(await page.locator('#chaos-status-text').innerText(),'NOT CALIBRATED');
+    assert.match(await page.locator('#chaos-needle-note').innerText(),/Same rules for every sphere/);
     assert.ok((await page.locator('#chaos-needle-note').innerText()).length>25);
    }
    await page.locator('#chaos-sphere').selectOption('china');
@@ -31,8 +33,8 @@ const assert=require('node:assert/strict');
    assert.match(await page.locator('#chaos-needle-note').innerText(),/matched consecutive quarters/);
    await page.locator('#chaos-sphere').selectOption('us');
    await page.locator('#chaos-dimension').selectOption('Diplomatic');
-   assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
-   assert.match(await page.locator('#chaos-needle-note').innerText(),/NATO member-country change/);
+   assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'pending');
+   assert.match(await page.locator('#chaos-needle-note').innerText(),/Same rules for every sphere/);
    await page.locator('#chaos-sphere').selectOption('eu');
    await page.locator('#chaos-dimension').selectOption('Strategic');
    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
@@ -40,8 +42,8 @@ const assert=require('node:assert/strict');
    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
    assert.match(await page.locator('#chaos-needle-note').innerText(),/−33 percentage-point needle/);
    await page.locator('#chaos-dimension').selectOption('Diplomatic');
-   assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
-   assert.match(await page.locator('#chaos-needle-note').innerText(),/NOT the FTA's causal effect/);
+   assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'pending');
+   assert.match(await page.locator('#chaos-needle-note').innerText(),/Same rules for every sphere/);
    await page.locator('#chaos-sphere').selectOption('china');
    await page.locator('#chaos-dimension').selectOption('Energy and resources');
    assert.equal(await page.locator('#chaos-meter').getAttribute('data-state'),'observed');
