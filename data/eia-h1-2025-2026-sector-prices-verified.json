@@ -1,0 +1,65 @@
+{
+  "asOf": "2026-11-01",
+  "unit": "nominal USD per thousand cubic feet",
+  "sourceRelease": "2026-10-30",
+  "sectors": {
+    "residential": {
+      "2025": [
+        12.44,
+        12.97,
+        14.62,
+        16.17,
+        19.26,
+        23.21
+      ],
+      "2026": [
+        13.96,
+        14.95,
+        16.16,
+        18.04,
+        19.73,
+        24.09
+      ],
+      "source": "https://www.eia.gov/dnav/ng/hist/n3010us3m.htm",
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun"
+      ]
+    },
+    "industrial": {
+      "2025": [
+        6.03,
+        5.92,
+        5.68,
+        5.31,
+        4.69,
+        4.66
+      ],
+      "2026": [
+        7.2,
+        8.43,
+        5.27,
+        4.8,
+        4.19,
+        4.36
+      ],
+      "source": "https://www.eia.gov/dnav/ng/hist/n3035us3m.htm",
+      "months": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun"
+      ]
+    }
+  },
+  "methodology": "Published monthly national average delivered prices. Arithmetic means are unweighted descriptive statistics, not sector-volume-weighted H1 transaction prices or household bills.",
+  "domesticCostAttributableToLngExportsUsd": null,
+  "netNationalBenefitUsd": null,
+  "geopoliticalInfluenceScore": null
+}
