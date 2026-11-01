@@ -1,0 +1,94 @@
+{
+  "version": "2026-11-01",
+  "title": "EU Russian natural gas imports, official source reconciliations",
+  "newMeasurements": [
+    {
+      "id": "eu-russian-gas-imports-2021-2024",
+      "workstreams": [
+        "russia-sanctions",
+        "energy-dependence"
+      ],
+      "metric": "EU-27 imports of natural gas from Russia, pipeline plus LNG",
+      "unit": "million cubic metres",
+      "source": "https://www.eca.europa.eu/en/publications/SR-2026-21",
+      "sourceLocator": "Annex VI, Oil and gas imports from Russia (EU-27, 2021–2024), Natural gas – pipeline + LNG, EU-27 row",
+      "observations": [
+        {
+          "year": 2021,
+          "value": 153225.5
+        },
+        {
+          "year": 2022,
+          "value": 83823.9
+        },
+        {
+          "year": 2023,
+          "value": 33402.8
+        },
+        {
+          "year": 2024,
+          "value": 37843.3
+        }
+      ],
+      "calculated": {
+        "change2021to2024MillionCubicMetres": -115382.2,
+        "changePercent2021to2024": -75.3
+      },
+      "limitations": [
+        "EU imports fell sharply but rose from 2023 to 2024; not a monotonic decline",
+        "Reduced imports cannot be equated to lost Russian net revenues",
+        "Russian pipeline and LNG volumes must be separated before causal sanctions analysis",
+        "Different EU datasets may differ in coverage and revisions"
+      ],
+      "influenceScore": null
+    }
+  ],
+  "sourceReconciliations": [
+    {
+      "id": "us-customs-fy2024-fy2025",
+      "source": "https://www.fiscal.treasury.gov/files/reports-statements/combined-statement/cs2025/2025-cs-final.pdf",
+      "sourceLocator": "Receipts by Source – Summary, Customs Duties row, USD millions",
+      "observations": [
+        {
+          "fiscalYear": 2024,
+          "valueMillionsUsd": 77037
+        },
+        {
+          "fiscalYear": 2025,
+          "valueMillionsUsd": 194866
+        }
+      ],
+      "status": "exact_table_confirmed",
+      "caveat": "Treasury cash receipts; not net national benefit or tariff burden"
+    },
+    {
+      "id": "nato-2024-estimates",
+      "source": "https://www.nato.int/nato_static_fl2014/assets/pdf/2024/6/pdf/240617-def-exp-2024-en.pdf",
+      "sourceLocator": "Table 4, real defence expenditure 2014–2024e, 2015 USD and exchange rates",
+      "observations": [
+        {
+          "country": "Finland",
+          "year": 2024,
+          "valueMillion2015Usd": 6170
+        },
+        {
+          "country": "Sweden",
+          "year": 2024,
+          "valueMillion2015Usd": 12613
+        }
+      ],
+      "status": "official_primary_table_confirmed",
+      "caveat": "2024 estimates; 2014-to-2024 real change cannot be attributed to NATO membership"
+    }
+  ],
+  "deduplication": "Gas import observation linked to sanctions and energy but counted as one independent series",
+  "newIndependentNumericSeries": 1,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
