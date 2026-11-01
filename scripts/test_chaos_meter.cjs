@@ -552,4 +552,4 @@ for(const gate of influenceFramework.dimensions){assert.ok(gate.required.length>
 assert.deepEqual(influenceFramework.caseFiles,[]);
 const dashboardFrameworkSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
 assert.match(dashboardFrameworkSource,/How diplomatic influence will be verified/);
-assert.match(dashboardFrameworkSource,/influenceFramework\.influenceScoreAuthorized!==false/);
+assert.match(dashboardFrameworkSource,/d\.influenceScoreAuthorized!==false/);
