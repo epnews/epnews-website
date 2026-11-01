@@ -54,8 +54,9 @@
         "https://ec.europa.eu/eurostat",
         "https://www.consilium.europa.eu/en/press/press-releases/2022/04/08/fifth-package-of-sanctions-in-view-of-russia-s-military-aggression-against-ukraine-eu-adopts-restrictive-measures-against-russia/"
       ],
-      "status": "requires_comparable_series",
-      "score": null
+      "status": "verified_market_access_loss_revenue_impact_unmeasured",
+      "score": null,
+      "measurementPath": "data/soi-eu-russia-coal-2021-2024-outcome.json"
     },
     {
       "eventId": "2023-finland-nato",
