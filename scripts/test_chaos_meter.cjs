@@ -624,3 +624,13 @@ const syntheticAudit={status:'independently-verified',claimChecked:true,sourceOp
 assert.equal(qualityAuditor.assess({sphere:'synthetic',measurementQuality:allQualityChecks,sourceAudit:syntheticAudit}).measurementReady,true);
 assert.equal(qualityAuditor.assess({sphere:'synthetic',measurementQuality:allQualityChecks,sourceAudit:syntheticAudit}).influenceScoreAuthorized,false);
 assert.equal(qualityAuditor.verifiedSourceAudit({...syntheticAudit,reviewer:null}),false);
+
+// Actual US operational milestone is documented, but cannot be converted to influence score.
+assert.equal(observations.us.type,'documented-operational-milestone');
+assert.equal(observations.us.followup.period,'2023-12-19');
+assert.ok(observations.us.sources.length>=3);
+assert.equal(candidateData.cases.find(c=>c.sphere==='us').measurementQuality.followupDocumented,true);
+assert.equal(candidateData.cases.find(c=>c.sphere==='us').measurementQuality.independentOutcomeCorroborated,false);
+assert.equal(observations.india.preAgreementContext.value,72.9);
+assert.ok(observations.india.caveat.includes('before CEPA'));
+assert.ok(candidateData.cases.every(c=>c.influenceScore===null));
