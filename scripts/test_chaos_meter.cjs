@@ -519,6 +519,9 @@ for(const year of ['2021','2022','2023','2024']){
  assert.ok(Number.isInteger(annual.recordedResolutions)&&annual.recordedResolutions>0,'invalid resolution coverage '+year);
  assert.ok(Number.isFinite(annual.euMeanCohesionPct)&&annual.euMeanCohesionPct>=0&&annual.euMeanCohesionPct<=100,'invalid EU cohesion '+year);
  for(const pair of votingPairs)assert.ok(Number.isFinite(annual.pairAgreementPct[pair])&&annual.pairAgreementPct[pair]>=0&&annual.pairAgreementPct[pair]<=100,'invalid pair agreement '+year+' '+pair);
- if(year!=='2024')assert.equal(annual.euMajorityAlignmentPct,undefined,'historical EU proxy must not be fabricated for '+year);
+ for(const code of ['USA','CHN','RUS','IND'])assert.ok(Number.isFinite(annual.euMajorityAlignmentPct?.[code])&&annual.euMajorityAlignmentPct[code]>=0&&annual.euMajorityAlignmentPct[code]<=100,'missing verified EU proxy '+year+' '+code);
 }
 for(const code of ['USA','CHN','RUS','IND'])assert.ok(Number.isFinite(votingEvidence.annual['2024'].euMajorityAlignmentPct[code]),'missing 2024 EU majority proxy '+code);
+
+// 2024 source-file recomputation reproduces the pre-existing published EU alignment values.
+assert.deepEqual(votingEvidence.annual['2024'].euMajorityAlignmentPct,{USA:60.87,CHN:39.13,RUS:38.71,IND:44.09});
