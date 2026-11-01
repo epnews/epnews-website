@@ -1,8 +1,8 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
-  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits.",
+  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution.",
   "scoringAuthorized": false,
   "items": [
     {
@@ -148,7 +148,9 @@
         {
           "id": "verify-primary",
           "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.interfax-russia.ru/military/news/639921",
+          "scope": "News reporting corroborates a legal milestone, not independently observed additional Belarusian military behavior."
         },
         {
           "id": "verify-counterpart",
@@ -176,7 +178,16 @@
           "complete": false
         }
       ],
-      "influenceScore": null
+      "influenceScore": null,
+      "claimLevelVerification": {
+        "reviewedOn": "2026-11-01",
+        "verificationType": "directly-opened-dated-public-source",
+        "source": "https://www.interfax-russia.ru/military/news/639921",
+        "sourceDate": "2025-03-13",
+        "finding": "Interfax contemporaneously reported Putin's statement that Russia and Belarus exchanged treaty ratification instruments and that the security guarantees treaty entered into force on 13 March 2025.",
+        "scope": "News reporting corroborates a legal milestone, not independently observed additional Belarusian military behavior.",
+        "attributionVerified": false
+      }
     },
     {
       "sphere": "eu",
@@ -197,7 +208,9 @@
         {
           "id": "verify-primary",
           "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
-          "complete": false
+          "complete": true,
+          "evidence": "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027",
+          "scope": "Counterpart ministry documents cooperation but not incremental results attributable to the 2024 partnership."
         },
         {
           "id": "verify-counterpart",
@@ -225,7 +238,16 @@
           "complete": false
         }
       ],
-      "influenceScore": null
+      "influenceScore": null,
+      "claimLevelVerification": {
+        "reviewedOn": "2026-11-01",
+        "verificationType": "directly-opened-dated-public-source",
+        "source": "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027",
+        "sourceDate": "2025-05-21",
+        "finding": "Moldova's foreign ministry confirms EUPM operated since May 2023 and identifies assistance to its crisis-management concept, cybersecurity agency and authorities; this predates or overlaps the May 2024 security partnership.",
+        "scope": "Counterpart ministry documents cooperation but not incremental results attributable to the 2024 partnership.",
+        "attributionVerified": false
+      }
     },
     {
       "sphere": "india",
@@ -246,7 +268,9 @@
         {
           "id": "verify-primary",
           "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2009-dated.-11.03.2025.pdf",
+          "scope": "Matched nominal fiscal-year trade values are official descriptive data, not independent attribution of trade growth to CEPA."
         },
         {
           "id": "verify-counterpart",
@@ -274,7 +298,16 @@
           "complete": false
         }
       ],
-      "influenceScore": null
+      "influenceScore": null,
+      "claimLevelVerification": {
+        "reviewedOn": "2026-11-01",
+        "verificationType": "directly-opened-dated-public-source",
+        "source": "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2009-dated.-11.03.2025.pdf",
+        "sourceDate": "2025-03-11",
+        "finding": "Indian Commerce Ministry parliamentary answer reports bilateral trade USD 72.9bn FY2021-22 and USD 83.7bn FY2023-24, with exports USD 28bn and USD 35.6bn respectively; CEPA entered into force 1 May 2022.",
+        "scope": "Matched nominal fiscal-year trade values are official descriptive data, not independent attribution of trade growth to CEPA.",
+        "attributionVerified": false
+      }
     }
   ],
   "limitations": [

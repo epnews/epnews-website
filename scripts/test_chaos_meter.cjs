@@ -735,6 +735,17 @@ for(const item of diplomaticQueue.items){
  if(['us','china'].includes(item.sphere)){
   assert.ok(item.claimLevelVerification?.externalReporting);
   assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,true);
- }else assert.ok(item.priorityTasks.every(t=>!t.complete));
+ }else {
+  assert.equal(item.priorityTasks.find(t=>t.id==='verify-primary').complete,true);
+  assert.equal(item.claimLevelVerification?.attributionVerified,false);
+ }
  assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
+}
+
+// All five spheres now have scoped primary/event source records, but no attribution approvals.
+for(const sphere of ['russia','eu','india']){
+ const item=diplomaticQueue.items.find(x=>x.sphere===sphere);
+ assert.ok(item.claimLevelVerification?.source);
+ assert.equal(item.priorityTasks.find(t=>t.id==='verify-primary').complete,true);
+ assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,false);
 }
