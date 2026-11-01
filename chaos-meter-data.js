@@ -90,6 +90,91 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "q32026CompanyOutcomes": {
+  "title": "Cheniere 2026 third-quarter and nine-month company outcomes",
+  "status": "Reported company-level results; not Stage 3-only or national net benefit",
+  "asOf": "2026-10-28",
+  "items": [
+    {
+      "id": "q3-revenue",
+      "label": "1 · Q3 recognized revenues",
+      "value2026": 6173,
+      "value2025": 4441,
+      "unit": "USD millions",
+      "meaning": "39% reported year-on-year growth",
+      "caveat": "Consolidated Cheniere accrual revenue, not collected export cash."
+    },
+    {
+      "id": "nine-revenue",
+      "label": "2 · Nine-month recognized revenues",
+      "value2026": 17773,
+      "value2025": 14526,
+      "unit": "USD millions",
+      "meaning": "22% reported year-on-year growth",
+      "caveat": "Includes all consolidated Cheniere business; not incremental disruption gains."
+    },
+    {
+      "id": "q3-ebitda",
+      "label": "3 · Q3 adjusted EBITDA",
+      "value2026": 1900,
+      "value2025": 1608,
+      "unit": "USD millions",
+      "meaning": "18% reported growth",
+      "caveat": "Company-defined non-GAAP metric, not net income or national profit."
+    },
+    {
+      "id": "nine-ebitda",
+      "label": "4 · Nine-month adjusted EBITDA",
+      "value2026": 6037,
+      "value2025": 4896,
+      "unit": "USD millions",
+      "meaning": "23% reported growth",
+      "caveat": "Non-GAAP measure with reconciliations; cannot be equated to national welfare."
+    },
+    {
+      "id": "q3-dcf",
+      "label": "5 · Q3 distributable cash flow",
+      "value2026": 1230,
+      "value2025": null,
+      "unit": "USD millions",
+      "meaning": "Company-reported non-GAAP cash-flow metric",
+      "caveat": "Not identical to operating cash flow, tax revenue or free national economic gain."
+    },
+    {
+      "id": "nine-dcf",
+      "label": "6 · Nine-month distributable cash flow",
+      "value2026": 4070,
+      "value2025": null,
+      "unit": "USD millions",
+      "meaning": "Company-reported non-GAAP cash-flow metric",
+      "caveat": "Do not add to revenue or adjusted EBITDA: overlapping measures."
+    },
+    {
+      "id": "q3-cargoes",
+      "label": "7 · Q3 LNG cargoes exported",
+      "value2026": 188,
+      "value2025": 163,
+      "unit": "cargoes",
+      "meaning": "15% reported year-on-year growth",
+      "caveat": "Company cargo count; does not establish realized price or margin per cargo."
+    },
+    {
+      "id": "nine-volume",
+      "label": "8 · Nine-month LNG volumes exported",
+      "value2026": 2044,
+      "value2025": 1745,
+      "unit": "TBtu",
+      "meaning": "17% reported year-on-year growth",
+      "caveat": "Company LNG exported volume, not national LNG exports or realized receipts."
+    }
+  ],
+  "context": "EIA October 2026 forecasts 2026 Henry Hub average $3.48/MMBtu vs $3.53 in 2025 and 2026 LNG exports 17.6 Bcf/d vs 15.1 in 2025. These are annual forecasts, not observed household bill changes or a disruption counterfactual.",
+  "contextSource": "eiaOct2026Steo",
+  "companySource": "cheniereQ32026",
+  "limits": "Financial measures and cargo counts overlap; they must not be summed into a benefit figure. Results are corporate-level and do not isolate the 2026 Strait of Hormuz shock, Stage 3, or net U.S. welfare.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "tradeFinancialCrossChecks": {
   "title": "Eight cross-checks linking LNG flows and company accounts",
   "status": "Arithmetic derived from separately labeled published observations; NOT independent causal findings",
@@ -1506,6 +1591,8 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "cheniereQ32026": {"label":"Cheniere Energy · Third Quarter 2026 Results, reported October 28, 2026","url":"https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full","date":"2026-10-28"},
+    "eiaOct2026Steo": {"label":"EIA · October 2026 Short-Term Energy Outlook natural gas table","url":"https://www.eia.gov/outlooks/steo/marketreview/natgas.php","date":"2026-10-06"},
     "eiaH12026Exports": {"label":"EIA · U.S. LNG exports rose 23% in the first half of 2026 because of higher capacity","url":"https://www.eia.gov/todayinenergy/detail.php?id=68064","date":"2026-09-01"},
     "eiaGlobalTrade2025": {"label":"EIA · Global LNG trade volumes reached record high in 2025 (GIIGNL and Natural Gas Monthly)","url":"https://www.eia.gov/todayinenergy/detail.php?id=67864","date":"2026-07-14"},
     "eiaLNGDestinations2025": {"label":"EIA · U.S. natural gas exports to grow nearly 30% by 2027 (2024–25 observed destination flows)","url":"https://www.eia.gov/todayinenergy/detail.php?id=67484","date":"2026-04-16"},

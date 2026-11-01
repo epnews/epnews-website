@@ -108,6 +108,17 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.q32026CompanyOutcomes){const a=audit.q32026CompanyOutcomes;
+   const panel=element('section');panel.id='chaos-q3-2026-company-outcomes';panel.setAttribute('aria-label','Cheniere third-quarter 2026 reported outcomes');
+   panel.append(element('h5',a.title),element('strong',a.status));
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Cheniere reported 2026 and 2025 results');
+   const table=element('table'),head=element('thead'),hr=element('tr');for(const h of ['Measure','2025','2026','Unit']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const c of a.items){const tr=element('tr'),th=element('th',c.label);th.scope='row';tr.append(th,element('td',c.value2025===null?'Not compared':String(c.value2025)),element('td',String(c.value2026)),element('td',c.unit));body.append(tr);}
+   table.append(body);scroll.append(table);panel.append(scroll);
+   for(const c of a.items){panel.append(element('p',c.label+' · '+c.meaning+' · '+c.caveat));}
+   sourceLinks(panel,[a.companySource]);panel.append(element('p','Domestic benchmark context: '+a.context));sourceLinks(panel,[a.contextSource]);
+   panel.append(element('p',a.limits),element('p','Net national benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.tradeFinancialCrossChecks){const a=audit.tradeFinancialCrossChecks;
    const panel=element('section');panel.id='chaos-trade-financial-crosschecks';panel.setAttribute('aria-label','Eight LNG trade and financial arithmetic cross-checks');
    panel.append(element('h5',a.title),element('strong',a.status));

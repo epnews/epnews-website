@@ -1,5 +1,12 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const q3=data.evidenceAudits.us['Energy and resources'].q32026CompanyOutcomes;
+assert.equal(q3.items.length,8);
+assert.equal(new Set(q3.items.map(x=>x.id)).size,8);
+assert.deepEqual(Array.from(q3.items,x=>x.value2026),[6173,17773,1900,6037,1230,4070,188,2044]);
+assert.deepEqual(Array.from(q3.items,x=>x.value2025),[4441,14526,1608,4896,null,null,163,1745]);
+assert.ok(data.sources[q3.companySource]&&data.sources[q3.contextSource]);
+assert.equal(q3.netNationalBenefitUsd,null);assert.equal(q3.influenceScore,null);
 const readiness=data.meterReadiness;
 assert.equal(readiness.percent,45);
 assert.equal(readiness.components.length,5);
@@ -197,6 +204,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.q32026CompanyOutcomes\)/);
 assert.match(dashboard,/chaos-meter-readiness/);
 assert.match(dashboard,/readiness\.percent/);
 assert.match(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
