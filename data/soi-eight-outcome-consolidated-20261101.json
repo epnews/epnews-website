@@ -1,0 +1,198 @@
+{
+  "version": "2026-11-01",
+  "scope": "Eight coordinated 2017–2026 outcome workstreams",
+  "method": "Only verified observations count as measurements; event milestones are not net geopolitical influence scores. Source URLs are research references requiring link verification.",
+  "workstreams": [
+    {
+      "id": "nato-accessions",
+      "actors": [
+        "us",
+        "eu",
+        "russia"
+      ],
+      "verifiedMeasurements": [
+        {
+          "metric": "NATO members after Finland accession",
+          "value": 31,
+          "unit": "members",
+          "date": "2023-04-04",
+          "source": "https://www.nato.int/cps/en/natohq/news_213448.htm"
+        },
+        {
+          "metric": "NATO members after Sweden accession",
+          "value": 32,
+          "unit": "members",
+          "date": "2024-03-07",
+          "source": "https://www.nato.int/cps/en/natohq/news_223446.htm"
+        }
+      ],
+      "unresolved": [
+        "Defense spending comparable time series",
+        "Realized military access and operational readiness",
+        "Russian response and costs"
+      ],
+      "netInfluence": null
+    },
+    {
+      "id": "eu-china-investment-freeze",
+      "actors": [
+        "eu",
+        "china"
+      ],
+      "verifiedMeasurements": [],
+      "verifiedEvent": "European Parliament froze ratification consideration in May 2021; no enacted CAI market-access change",
+      "source": "https://www.europarl.europa.eu/pdfs/news/expert/2021/5/press_release/20210517IPR04123/20210517IPR04123_en.pdf",
+      "unresolved": [
+        "Bilateral FDI stock/flow comparable series",
+        "Causal attribution to frozen agreement versus broader investment controls"
+      ],
+      "netInfluence": null
+    },
+    {
+      "id": "us-tariffs-retaliation",
+      "actors": [
+        "us",
+        "china",
+        "eu",
+        "india"
+      ],
+      "verifiedMeasurements": [],
+      "verifiedEvent": "2025 U.S. tariff orders announced; orders are not a measured effective-tariff series",
+      "source": "https://www.usitc.gov/research_and_analysis/tradeshifts.htm",
+      "unresolved": [
+        "Country/product tariff implementation dates",
+        "USITC/Customs duties collected",
+        "Price pass-through and retaliatory tariff impacts"
+      ],
+      "netInfluence": null
+    },
+    {
+      "id": "russia-sanctions",
+      "actors": [
+        "russia",
+        "eu",
+        "us",
+        "china",
+        "india"
+      ],
+      "verifiedMeasurements": [
+        {
+          "metric": "Russian-origin EU hard-coal imports",
+          "value": 49,
+          "unit": "million tonnes",
+          "year": 2021,
+          "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/10441.pdf"
+        },
+        {
+          "metric": "Russian-origin EU hard-coal imports",
+          "value": 0.8,
+          "unit": "million tonnes",
+          "year": 2023,
+          "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/10441.pdf"
+        }
+      ],
+      "unresolved": [
+        "Total Russian export revenues after diversion",
+        "Sanctions attribution versus demand and prices",
+        "Domestic EU substitution costs"
+      ],
+      "netInfluence": null
+    },
+    {
+      "id": "institutional-withdrawals",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "verifiedMeasurements": [],
+      "verifiedEvent": "U.S. Human Rights Council exit, Paris exit/reentry and WHO withdrawal process require separate legal and financial milestones",
+      "source": "https://treaties.un.org/",
+      "unresolved": [
+        "Actual annual assessed/voluntary contributions",
+        "Participation rights, votes and committee positions",
+        "Counterfactual institutional influence"
+      ],
+      "netInfluence": null
+    },
+    {
+      "id": "india-china-border",
+      "actors": [
+        "india",
+        "china"
+      ],
+      "verifiedMeasurements": [],
+      "verifiedEvent": "Doklam 2017 and 2024 Depsang/Demchok patrolling agreements are distinct events",
+      "source": "https://www.mea.gov.in/",
+      "unresolved": [
+        "Geolocated comparable force deployments",
+        "Independently verified access changes",
+        "Incident trends and border infrastructure costs"
+      ],
+      "netInfluence": null
+    },
+    {
+      "id": "aukus-security",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "verifiedMeasurements": [],
+      "verifiedEvent": "AUKUS announced September 2021; announcement not delivery",
+      "source": "https://www.defense.gov/Spotlights/AUKUS/",
+      "unresolved": [
+        "Delivered submarines and advanced capabilities by date",
+        "Verified committed versus spent amounts",
+        "Australian and allied strategic access effects"
+      ],
+      "netInfluence": null
+    },
+    {
+      "id": "energy-dependence",
+      "actors": [
+        "us",
+        "eu",
+        "russia",
+        "china",
+        "india"
+      ],
+      "verifiedMeasurements": [
+        {
+          "metric": "Russian-origin EU hard-coal imports",
+          "value": 49,
+          "unit": "million tonnes",
+          "year": 2021,
+          "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/10441.pdf"
+        },
+        {
+          "metric": "Russian-origin EU hard-coal imports",
+          "value": 0.8,
+          "unit": "million tonnes",
+          "year": 2023,
+          "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/10441.pdf"
+        }
+      ],
+      "unresolved": [
+        "LNG origin-specific deliveries and prices",
+        "Oil import volumes by destination",
+        "Net exporter receipts, infrastructure costs and domestic price effects"
+      ],
+      "netInfluence": null
+    }
+  ],
+  "sharedEvidenceRule": "Coal figures reused across workstreams must count as one independent underlying observation, not two",
+  "measurementCoverage": {
+    "workstreams": 8,
+    "workstreamsWithNumericObservations": 3,
+    "distinctNumericSeries": 2
+  },
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
