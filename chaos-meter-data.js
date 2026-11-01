@@ -92,6 +92,105 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "tenGasStorageSupplyAudit": {
+  "title": "Ten new gas-system measurements: storage buffers and supply accounting",
+  "items": [
+    {
+      "id": "marketed-aug",
+      "label": "August marketed gas production",
+      "value": 3950,
+      "unit": "Bcf/month",
+      "period": "August 2026",
+      "source": "eiaMonthlySupplyDisposition2026",
+      "note": "Marketed production includes gas liquids before processing to dry gas; not additive to dry production."
+    },
+    {
+      "id": "ngpl-aug",
+      "label": "August natural-gas-plant liquids, gaseous equivalent",
+      "value": 360,
+      "unit": "Bcf/month",
+      "period": "August 2026",
+      "source": "eiaMonthlySupplyDisposition2026",
+      "note": "Accounting adjustment between marketed and dry gas; do not count as additional supply."
+    },
+    {
+      "id": "supplemental-aug",
+      "label": "August supplemental gaseous fuels",
+      "value": 9,
+      "unit": "Bcf/month",
+      "period": "August 2026",
+      "source": "eiaMonthlySupplyDisposition2026",
+      "note": "Separate supply category, not a domestic production proxy."
+    },
+    {
+      "id": "net-storage-aug",
+      "label": "August net storage withdrawals",
+      "value": -123,
+      "unit": "Bcf/month",
+      "period": "August 2026",
+      "source": "eiaMonthlySupplyDisposition2026",
+      "note": "Negative indicates net injections under EIA withdrawal sign convention."
+    },
+    {
+      "id": "balancing-aug",
+      "label": "August statistical balancing item",
+      "value": -59,
+      "unit": "Bcf/month",
+      "period": "August 2026",
+      "source": "eiaMonthlySupplyDisposition2026",
+      "note": "Measurement/timing reconciliation, not independently consumed gas."
+    },
+    {
+      "id": "east-oct2",
+      "label": "East working gas storage",
+      "value": 862,
+      "unit": "Bcf",
+      "period": "Week ending October 2, 2026",
+      "source": "eiaWeeklyStorage2026",
+      "note": "Regional inventory stock, not a flow."
+    },
+    {
+      "id": "midwest-oct2",
+      "label": "Midwest working gas storage",
+      "value": 1010,
+      "unit": "Bcf",
+      "period": "Week ending October 2, 2026",
+      "source": "eiaWeeklyStorage2026",
+      "note": "Regional inventory stock, not a flow."
+    },
+    {
+      "id": "mountain-oct2",
+      "label": "Mountain working gas storage",
+      "value": 253,
+      "unit": "Bcf",
+      "period": "Week ending October 2, 2026",
+      "source": "eiaWeeklyStorage2026",
+      "note": "Regional inventory stock, not a flow."
+    },
+    {
+      "id": "pacific-oct2",
+      "label": "Pacific working gas storage",
+      "value": 299,
+      "unit": "Bcf",
+      "period": "Week ending October 2, 2026",
+      "source": "eiaWeeklyStorage2026",
+      "note": "Regional inventory stock, not a flow."
+    },
+    {
+      "id": "southcentral-oct2",
+      "label": "South Central working gas storage",
+      "value": 1076,
+      "unit": "Bcf",
+      "period": "Week ending October 2, 2026",
+      "source": "eiaWeeklyStorage2026",
+      "note": "Regional inventory stock includes salt and nonsalt; do not double count."
+    }
+  ],
+  "methodology": "Five new monthly U.S. supply/disposition accounting fields and five regional working-gas stocks. The ten values come from two EIA datasets, not ten independent causal studies. Bcf/month flows cannot be added to Bcf storage stocks. Some monthly categories are transformations or accounting components of previously reported production, not independent economic benefits. October 2 storage values are a historical weekly snapshot, not October 31 current inventory.",
+  "causalStatus": "Storage cushions may moderate prices, but this observational snapshot does not estimate the counterfactual impact of LNG export growth or geopolitical disruptions.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "aug2026TenDemandDestinationMeasures": {
   "title": "Ten August 2026 domestic gas-use and LNG destination observations",
   "period": "August 2026, EIA consumption sectors and DOE LNG destinations",
@@ -2155,6 +2254,8 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaMonthlySupplyDisposition2026":{"label":"EIA U.S. Natural Gas Monthly Supply and Disposition Balance, August 2026","url":"https://www.eia.gov/dnav/ng/ng_sum_sndm_s1_m.htm","date":"2026-10-30"},
+    "eiaWeeklyStorage2026":{"label":"EIA Weekly Working Gas in Underground Storage, week ending October 2, 2026","url":"https://www.eia.gov/dnav/ng/ng_stor_wkly_s1_w.htm","date":"2026-10-08"},
     "doeAugust2026LNGDestinations":{"label":"DOE August 2026 U.S. LNG destination and Mexico pipeline trade summary","url":"https://www.energy.gov/hgeo/articles/us-natural-gas-supplying-energy-world-august-2026-summary","date":"2026-10"},
     "eiaNaturalGasMonthlyAug2026":{"label":"EIA Natural Gas Monthly, October 2026 highlights for August 2026","url":"https://www.eia.gov/naturalgas/monthly/","date":"2026-10-30"},
     "eiaSummer2026Gas":{"label":"EIA, September 25 2026 · Henry Hub natural gas prices this summer were 6% lower than last summer","url":"https://www.eia.gov/todayinenergy/detail.php?id=68204","date":"2026-09-25"},

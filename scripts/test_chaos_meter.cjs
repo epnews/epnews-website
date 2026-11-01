@@ -1,5 +1,10 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const storage=data.evidenceAudits.us['Energy and resources'].tenGasStorageSupplyAudit;
+assert.equal(storage.items.length,10);assert.equal(new Set(storage.items.map(x=>x.id)).size,10);
+assert.deepEqual(Array.from(storage.items,x=>x.value),[3950,360,9,-123,-59,862,1010,253,299,1076]);
+for(const x of storage.items)assert.ok(data.sources[x.source]);
+assert.equal(storage.netNationalBenefitUsd,null);assert.equal(storage.influenceScore,null);
 const ten=data.evidenceAudits.us['Energy and resources'].aug2026TenDemandDestinationMeasures;
 assert.equal(ten.items.length,10);assert.equal(new Set(ten.items.map(x=>x.id)).size,10);
 assert.deepEqual(Array.from(ten.items,x=>x.value),[3.32,4.84,22.65,50.19,55.9,53.6,49.1,36.5,35.5,239]);
@@ -247,6 +252,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.tenGasStorageSupplyAudit\)/);
 assert.match(dashboard,/if\(audit\.aug2026TenDemandDestinationMeasures\)/);
 assert.match(dashboard,/if\(audit\.aug2026GasSupplyDemandBalance\)/);
 assert.match(dashboard,/if\(audit\.lngCausalCounterfactualAudit\)/);
