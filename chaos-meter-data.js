@@ -2,6 +2,7 @@
 window.EP_CHAOS_DATA = {
   "reviewed": "2026-10-31",
   "methodologyVersion": "2.0",
+  "evidenceTableRegistry": [{"id":"southern-electricity","auditKey":"fifteenSouthernElectricityPrices","columns":[{"key":"state","label":"State"},{"key":"sector","label":"Sector"},{"key":"v2025","label":"Aug 2025"},{"key":"v2026","label":"Aug 2026"}]},{"id":"gulf-electricity","auditKey":"tenGulfElectricityConsumerPrices","columns":[{"key":"state","label":"State"},{"key":"sector","label":"Sector"},{"key":"v2025","label":"Aug 2025"},{"key":"v2026","label":"Aug 2026"}]}],
   "meterReadiness": {
   "label": "Command Meter Readiness",
   "asOf": "2026-10-31",
