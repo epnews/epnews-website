@@ -360,3 +360,14 @@ Primary source: [India Petroleum Planning & Analysis Cell, FY 2025–26 Ready Re
 ## EU diplomatic observed post-FTA bilateral trade (#240)
 
 [European Commission / New Zealand first Trade Committee joint statement (25 October 2025)](https://policy.trade.ec.europa.eu/news/joint-press-statement-following-first-trade-committee-under-eu-new-zealand-fta-2025-10-25_en) reports Stats NZ goods-and-services bilateral trade of NZ$19.913 billion in the year ending June 2024 and NZ$21.582 billion in the year ending June 2025, reported as an 8% increase. Both are matched 12-month windows in NZD nominal value; the May 2024 FTA start means the baseline includes two post-entry months and the later period covers the first year. The +8% observed trade change is NOT an estimate of treaty-attributable effects, diplomatic leverage, geopolitical influence, real volume growth or net benefit. Price, exchange-rate and underlying demand effects are not isolated. Indicator reference range ±25% is purely visual. India's Diplomatic dial remains pending independently verified realized TEPA trade, investment or employment outcomes; the US$100B / one million jobs are future targets.
+
+
+## Three diplomatic implementation indicators (#241)
+
+China: [China MFA December 2023 trilateral committee](https://www.mfa.gov.cn/eng/wjb/zygy/hd/202406/t20240603_11375395.html) confirms Saudi and Iranian embassies in Tehran and Riyadh reopened after the 2023 China-hosted talks; count=2 embassies. Iraq and Oman previously facilitated dialogue. This is a historical institutional outcome, not 2026 influence growth or durable peace.
+
+Russia: [Yonhap reporting KCNA's exchange of ratification instruments](https://en.yna.co.kr/view/AEN20241205000900315) verifies one Russia–DPRK comprehensive strategic partnership treaty entered into force on 4 December 2024; count=1 treaty. Legal status is not proof of influence, effectiveness, or net benefit.
+
+India: [Indian Ministry of Commerce, October 2026](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2320142) confirms TEPA in force and 92.2% of EFTA tariff lines covered by market-access commitments, which represent 99.6% of India's exports. 92.2% is covered tariff lines, not duty-free utilization or delivered trade/investment/jobs; some reductions are phased.
+
+All three are explicitly **implementation or coverage indicators** with independent units and display ranges. They must never be compared as influence scores or summed. All `score` fields remain null. No readiness percentage increase: the costs, counterfactual, realized benefits and influence gaps remain unresolved.
