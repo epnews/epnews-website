@@ -1,0 +1,102 @@
+{
+  "version": "2026-11-01",
+  "period": "2025-2026",
+  "method": "Historical event candidates. Source-linked claims are not substitutes for independent outcome measurements. No automatic scoring.",
+  "cases": [
+    {
+      "id": "2025-us-paris-withdrawal-notice",
+      "date": "2025-01-20",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "stage": "withdrawal_notice_initiated",
+      "event": "President Trump directed a second U.S. withdrawal from the Paris Agreement; notice and effective date are separate milestones.",
+      "source": "https://www.whitehouse.gov/presidential-actions/2025/01/putting-america-first-in-international-environmental-agreements/",
+      "outcomeNeeded": "Measure implementation, financing, diplomatic leverage and climate policy effects after effective withdrawal."
+    },
+    {
+      "id": "2025-us-who-withdrawal-notice",
+      "date": "2025-01-20",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "stage": "withdrawal_process_initiated",
+      "event": "U.S. executive order initiated withdrawal from World Health Organization; completion, obligations and institutional consequences require separate verification.",
+      "source": "https://www.whitehouse.gov/presidential-actions/2025/01/withdrawing-the-united-states-from-the-worldhealth-organization/",
+      "outcomeNeeded": "Verify legal completion, funding, access and independently measured global-health diplomacy consequences."
+    },
+    {
+      "id": "2025-eu-japan-spa",
+      "date": "2025-01-01",
+      "actors": [
+        "eu",
+        "china",
+        "us"
+      ],
+      "stage": "agreement_entered_into_force",
+      "event": "EU–Japan Strategic Partnership Agreement entered into force.",
+      "source": "https://www.consilium.europa.eu/en/press/press-releases/2025/01/01/eu-japan-strategic-partnership-framework-agreement-enters-into-force/",
+      "outcomeNeeded": "Measure subsequent implementation, trade/security cooperation and counterfactual effects."
+    },
+    {
+      "id": "2025-china-solomon-police-training",
+      "date": "2025-06-01",
+      "actors": [
+        "china",
+        "us"
+      ],
+      "stage": "training_departure_reported_month_precision",
+      "event": "Solomon Islands government reported 25 corrections officers departed for training in China in June 2025; date recorded at month precision.",
+      "source": "https://solomons.gov.sb/25-cssi-officers-depart-for-training-in-china/",
+      "outcomeNeeded": "Confirm precise date, training completion, operational effects, and whether any bilateral influence changed."
+    },
+    {
+      "id": "2025-us-canada-mexico-tariffs",
+      "date": "2025-02-01",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "stage": "tariff_orders_issued",
+      "event": "U.S. announced additional tariffs on imports from Canada, Mexico and China; orders, suspensions and effective application must be separated.",
+      "source": "https://www.whitehouse.gov/presidential-actions/2025/02/imposing-duties-to-address-the-situation-at-our-southern-border/",
+      "outcomeNeeded": "Measure actual tariffs applied, retaliation, bilateral trade, consumer costs and negotiated concessions."
+    },
+    {
+      "id": "2025-india-uk-trade-deal",
+      "date": "2025-05-06",
+      "actors": [
+        "india",
+        "eu",
+        "china"
+      ],
+      "stage": "trade_deal_concluded_in_principle",
+      "event": "India and UK announced conclusion of free trade agreement negotiations; signing, ratification and entry into force require distinct milestones.",
+      "source": "https://www.gov.uk/government/news/uk-india-trade-deal-agreed",
+      "outcomeNeeded": "Verify legal status, implemented tariff changes and realized trade outcomes."
+    },
+    {
+      "id": "2026-us-paris-withdrawal-effective",
+      "date": "2026-01-27",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "stage": "withdrawal_effective",
+      "event": "Second U.S. Paris Agreement withdrawal became effective, distinct from 2025 notice.",
+      "source": "https://unfccc.int/node/61231",
+      "outcomeNeeded": "Measure funding, participation and observed policy changes without inferring a net influence score."
+    }
+  ],
+  "influenceScore": null,
+  "readinessAdjustment": null,
+  "limitations": [
+    "Some actor lists identify comparison relevance rather than treaty parties.",
+    "Dates may be milestone or month placeholders; verify against primary source before publication.",
+    "No case is an independently measured net geopolitical gain or loss."
+  ]
+}
