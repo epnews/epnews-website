@@ -99,6 +99,17 @@ function update(){
    panel.append(element('p','Accounting boundaries: '+f.accountingRules),element('p','Still unresolved: '+f.remaining),element('p','Realized Europe-only margin: NOT ESTABLISHED · Net U.S. benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));
    worksheet.append(panel);
   }
+  if(audit.observedTradeIndicators){const a=audit.observedTradeIndicators;
+   const panel=element('section');panel.id='chaos-lng-observed-trade';panel.setAttribute('aria-label','Eight observed LNG trade indicators');
+   panel.append(element('h5',a.title),element('strong',a.status));
+   const scroll=element('div',undefined,'chaos-table-scroll');scroll.tabIndex=0;scroll.setAttribute('aria-label','Observed 2024 and 2025 LNG trade indicators');
+   const table=element('table'),head=element('thead'),hr=element('tr');
+   for(const h of ['Indicator','2024','2025','Unit']){const th=element('th',h);th.scope='col';hr.append(th);}head.append(hr);table.append(head);const body=element('tbody');
+   for(const c of a.items){const tr=element('tr'),th=element('th',c.title);th.scope='row';tr.append(th,element('td',c.baseline===null?'Not comparable':String(c.baseline)),element('td',String(c.outcome)),element('td',c.unit));body.append(tr);}
+   table.append(body);scroll.append(table);panel.append(scroll);
+   for(const c of a.items){const sec=element('section');sec.append(element('p',c.title+' · Limitation: '+c.limit));sourceLinks(sec,[c.source]);panel.append(sec);}
+   panel.append(element('p',a.interpretation),element('p','National net benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
+  }
   if(audit.evidenceQualityGates){const a=audit.evidenceQualityGates;
    const panel=element('section');panel.id='chaos-lng-evidence-quality';panel.setAttribute('aria-label','Eight LNG evidence quality safeguards');
    panel.append(element('h5',a.title),element('strong',a.status),element('p','Reviewed '+a.reviewed+' · '+a.newEmpiricalFindings+' new empirical findings'));
