@@ -120,8 +120,8 @@ function update(){
     const table=element('table'),thead=element('thead'),head=element('tr');
     for(const column of entry.columns){const th=element('th',column.label);th.scope='col';head.append(th);}thead.append(head);table.append(thead);
     const tbody=element('tbody');for(const item of record.items){const tr=element('tr');for(const column of entry.columns){const value=item[column.key];const td=element('td',value===null||value===undefined?'—':String(value));tr.append(td);}tbody.append(tr);}table.append(tbody);wrap.append(table);panel.append(wrap);
-    for(const item of record.items){if(item.note)panel.append(element('p',item.label+': '+item.note));}
-    const sourceIds=[...new Set([record.source,...record.items.map(item=>item.source)].filter(Boolean))];if(sourceIds.length)sourceLinks(panel,sourceIds);
+    for(const item of record.items){const notes=[item.note,item.caution,item.caveat,item.limit,item.meaning].filter(Boolean);if(notes.length)panel.append(element('p',(item.label||item.title||'Observation')+': '+notes.join(' · ')));}
+    const sourceIds=[...new Set([record.source,...record.items.flatMap(item=>[item.source,...(Array.isArray(item.sources)?item.sources:[])])].filter(id=>id&&data.sources[id]))];if(sourceIds.length)sourceLinks(panel,sourceIds);
     if(record.methodology)panel.append(element('p',record.methodology));
     if(record.causalStatus)panel.append(element('p',record.causalStatus));
     panel.append(element('p','National net benefit: NOT ESTABLISHED · Influence score: NOT SCORED'));worksheet.append(panel);
