@@ -1,5 +1,5 @@
 {
-  "reviewStatus": "PENDING_INDEPENDENT_REVIEW",
+  "reviewStatus": "SOURCE_PDF_MONTHLY_VERIFIED",
   "unit": "percentage of national sector deliveries included in on-system sales prices",
   "months": [
     "Jan",
@@ -51,5 +51,5 @@
       ]
     }
   },
-  "caveat": "Transcribed national Total rows from EIA Table 24 PDFs; require independent source-page validation before public publication."
+  "caveat": "Monthly national Total values independently matched to Table 24 page headers by scripts/verify_eia_table24_h1_source.py; workflow must revalidate source before calculation."
 }
