@@ -92,6 +92,89 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "aug2026GasSupplyDemandBalance": {
+  "title": "August 2026 U.S. gas balance: supply, demand and export expansion",
+  "period": "August 2026 vs August 2025, U.S. daily rates",
+  "source": "eiaNaturalGasMonthlyAug2026",
+  "items": [
+    {
+      "id": "dry-production",
+      "label": "Dry gas production",
+      "v2025": 108.65,
+      "v2026": 115.84,
+      "unit": "Bcf/day",
+      "caution": "Preliminary EIA production; higher domestic supply can offset demand pressure."
+    },
+    {
+      "id": "gross-withdrawals",
+      "label": "Gross gas withdrawals",
+      "v2025": 131.16,
+      "v2026": 139.03,
+      "unit": "Bcf/day",
+      "caution": "Gross withdrawals overlap dry production; do not add."
+    },
+    {
+      "id": "gas-consumption",
+      "label": "Domestic gas consumption",
+      "v2025": 85.39,
+      "v2026": 90.65,
+      "unit": "Bcf/day",
+      "caution": "Estimated domestic consumption, weather-sensitive."
+    },
+    {
+      "id": "net-exports",
+      "label": "Net natural-gas exports",
+      "v2025": null,
+      "v2026": 19.58,
+      "unit": "Bcf/day",
+      "caution": "2025 comparator not stated in EIA highlights; do not infer one."
+    },
+    {
+      "id": "imports",
+      "label": "Total gas imports",
+      "v2025": 7.68,
+      "v2026": 7.55,
+      "unit": "Bcf/day",
+      "caution": "Imports and exports are components of net exports, not independent additive flows."
+    },
+    {
+      "id": "exports",
+      "label": "Total gas exports",
+      "v2025": 24.58,
+      "v2026": 27.13,
+      "unit": "Bcf/day",
+      "caution": "Includes LNG and pipeline gas; not exclusively LNG."
+    },
+    {
+      "id": "lng-exports",
+      "label": "LNG exports",
+      "v2025": null,
+      "v2026": 16.61,
+      "unit": "Bcf/day",
+      "caution": "EIA highlights report +14.2% year-on-year, but do not provide an exact 2025 daily level; avoid reverse-engineered comparator."
+    },
+    {
+      "id": "lng-destinations",
+      "label": "Countries receiving U.S. LNG",
+      "v2025": null,
+      "v2026": 34,
+      "unit": "countries",
+      "caution": "Geographic breadth is not a measured influence gain."
+    }
+  ],
+  "reportedYoY": {
+    "dryProductionPercent": 6.6,
+    "grossWithdrawalsPercent": 6,
+    "consumptionPercent": 6.2,
+    "importsPercent": -1.7,
+    "exportsPercent": 10.4,
+    "lngExportsPercent": 14.2
+  },
+  "interpretation": "August 2026 domestic production grew 7.19 Bcf/day year on year while total gas exports grew 2.55 Bcf/day and domestic consumption 5.26 Bcf/day. These changes coexist but cannot be treated as a closed material-balance identity because dry gas production, gross withdrawals, consumption, trade, storage, balancing items and timing have different accounting definitions.",
+  "causality": "Observed co-movement cannot identify what Henry Hub or end-use prices would have been absent export growth, terminal maintenance, weather and production changes. Do not interpret production growth as solely export-caused or assign Hormuz-specific export gains.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "lngCausalCounterfactualAudit": {
   "title": "Domestic LNG-price causation: observed counterevidence and modeled counterfactuals",
   "findings": [
@@ -1972,6 +2055,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaNaturalGasMonthlyAug2026":{"label":"EIA Natural Gas Monthly, October 2026 highlights for August 2026","url":"https://www.eia.gov/naturalgas/monthly/","date":"2026-10-30"},
     "eiaSummer2026Gas":{"label":"EIA, September 25 2026 · Henry Hub natural gas prices this summer were 6% lower than last summer","url":"https://www.eia.gov/todayinenergy/detail.php?id=68204","date":"2026-09-25"},
     "doeLNGCounterfactualAppendix":{"label":"DOE LNG export economic assessment, Appendix B · Table 6 conditional 2050 delivered gas prices","url":"https://www.energy.gov/sites/default/files/2026-02/Ex.%202%20%20LNGUpdate_AppendixB_Dec2024.pdf","date":"2024-12 study, posted 2026"},
     "nberLNGPriceLinkage":{"label":"Stock and Zaragoza-Watkins (2024), NBER Working Paper 32228","url":"https://www.nber.org/papers/w32228","date":"2024-03"},
