@@ -1,0 +1,7 @@
+# EIA matched onsystem-sales volume and price reconciliation
+
+**Status: candidate source identifiers, first live retrieval required.** This milestone attempts monthly EIA DNav onsystem-sales volumes (candidate legacy series NG.N3010US1.M residential, NG.N3035US1.M industrial), Jan–Jun 2025 and 2026, to match the published national average onsystem prices from PR #287. Candidate source series must be verified against EIA series descriptions and XLS headers after retrieval; if they are not actually onsystem-sales volume series, discard derived totals.
+
+Onsystem volume (million cubic feet) times average price (USD per thousand cubic feet) divided by 1000 produces estimated **million USD** of onsystem gross sales. This is a price-times-volume estimate based on published averages, not audited revenues, bills, margins, profits or causal export costs. Unlike PR #291's all-deliveries sensitivity proxy, the intent is matching transaction coverage. Compare monthly observations before aggregating H1 to avoid an unweighted average.
+
+The script emits an artifact and fails closed when observations are missing or a source cannot be downloaded. First live run may expose source-ID, spreadsheet-layout or coverage problems; do not publish computed spending until reviewed. LNG-caused domestic cost, net national benefit and geopolitical influence remain null. Existing Command Meter controls and 53% readiness unchanged.
