@@ -1,8 +1,8 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
-  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review.",
+  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits.",
   "scoringAuthorized": false,
   "items": [
     {
@@ -24,12 +24,16 @@
         {
           "id": "verify-primary",
           "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html",
+          "scope": "Dated Japanese defense ministry announcement verified; not independent operational performance audit."
         },
         {
           "id": "verify-counterpart",
           "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
-          "complete": false
+          "complete": true,
+          "evidence": "https://en.yna.co.kr/view/AEN20231219001751315",
+          "scope": "Published counterpart-related outcome corroboration only; independent performance verification still pending."
         },
         {
           "id": "match-baseline",
@@ -52,7 +56,17 @@
           "complete": false
         }
       ],
-      "influenceScore": null
+      "influenceScore": null,
+      "claimLevelVerification": {
+        "reviewedOn": "2026-11-01",
+        "verificationType": "published-source-content-cross-check",
+        "primaryOrOfficialSource": "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html",
+        "externalReporting": "https://en.yna.co.kr/view/AEN20231219001751315",
+        "additionalReporting": null,
+        "datedMilestone": "2023-12-19",
+        "finding": "Japanese defense ministry and South Korean Yonhap reporting both confirm activation of trilateral real-time DPRK missile-warning sharing on 19 December 2023. This confirms an announced operational activation, not independently observed system performance or US causal attribution.",
+        "limitations": "Public reporting corroborates a dated event or announced implementation, not independently measured operational effectiveness, causal attribution, or net influence."
+      }
     },
     {
       "sphere": "china",
@@ -78,7 +92,9 @@
         {
           "id": "verify-counterpart",
           "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
-          "complete": false
+          "complete": true,
+          "evidence": "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/",
+          "scope": "Published counterpart-related outcome corroboration only; independent performance verification still pending."
         },
         {
           "id": "match-baseline",
@@ -101,7 +117,17 @@
           "complete": false
         }
       ],
-      "influenceScore": null
+      "influenceScore": null,
+      "claimLevelVerification": {
+        "reviewedOn": "2026-11-01",
+        "verificationType": "published-source-content-cross-check",
+        "primaryOrOfficialSource": "https://www.investing.com/news/commodities-news/iran-and-saudi-arabia-agree-to-resume-ties-reopen-embassies-iranian-state-media-3027583",
+        "externalReporting": "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/",
+        "additionalReporting": "https://www.aa.com.tr/en/middle-east/saudi-embassy-resumes-operations-in-tehran-after-over-7-year-hiatus-report/2965408",
+        "datedMilestone": "2023-06-06",
+        "finding": "Reuters reported the March 10 Beijing agreement and directly witnessed the Iranian embassy reopening in Riyadh on 6 June 2023. August Saudi embassy operations in Tehran separately reported by Anadolu; this establishes diplomatic mission reopening, not China-exclusive causal influence.",
+        "limitations": "Public reporting corroborates a dated event or announced implementation, not independently measured operational effectiveness, causal attribution, or net influence."
+      }
     },
     {
       "sphere": "russia",

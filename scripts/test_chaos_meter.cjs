@@ -723,8 +723,18 @@ assert.deepEqual(diplomaticQueue.items.map(x=>x.sphere),['us','china','russia','
 assert.equal(diplomaticQueue.scoringAuthorized,false);
 for(const item of diplomaticQueue.items){
  assert.equal(item.priorityTasks.length,6);
- assert.ok(item.priorityTasks.every(task=>task.complete===false));
+ assert.ok(item.priorityTasks.every(task=>typeof task.complete==='boolean'));
+ assert.ok(item.priorityTasks.filter(task=>task.complete).every(task=>task.evidence&&task.scope));
  assert.equal(item.influenceScore,null);
  assert.ok(item.priorityTasks.some(task=>task.id==='verify-counterpart'));
  assert.ok(item.priorityTasks.some(task=>task.id==='attribute'));
+}
+
+// Source verification must not silently authorize influence scoring.
+for(const item of diplomaticQueue.items){
+ if(['us','china'].includes(item.sphere)){
+  assert.ok(item.claimLevelVerification?.externalReporting);
+  assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,true);
+ }else assert.ok(item.priorityTasks.every(t=>!t.complete));
+ assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
 }
