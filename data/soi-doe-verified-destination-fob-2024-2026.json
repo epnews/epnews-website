@@ -1,0 +1,141 @@
+{
+  "title": "DOE verified annual FOB LNG export prices by destination, 2024–2025",
+  "asOf": "2026-11-01",
+  "source": {
+    "url": "https://www.energy.gov/sites/default/files/2026-09/Natural%20Gas%20Imports%20and%20Exports%20Monthly%20May%202026.pdf",
+    "table": "15b, Year-to-Date and Annual Summary: U.S.-Produced LNG Export Prices by Mode of Transport and Country of Destination",
+    "page": 32,
+    "transport": "LNG Exports by Vessel",
+    "annualColumns": [
+      "2025",
+      "2024"
+    ],
+    "unit": "USD per MMBtu",
+    "definition": "FOB at export point including commodity and liquefaction fees"
+  },
+  "countryObservations": [
+    {
+      "country": "Belgium",
+      "price2024": 6.23,
+      "price2025": 8.96,
+      "deltaUsdPerMMBtu": 2.73
+    },
+    {
+      "country": "Germany",
+      "price2024": 8.66,
+      "price2025": 8.98,
+      "deltaUsdPerMMBtu": 0.32
+    },
+    {
+      "country": "France",
+      "price2024": 6.23,
+      "price2025": 7.65,
+      "deltaUsdPerMMBtu": 1.42
+    },
+    {
+      "country": "Netherlands",
+      "price2024": 5.92,
+      "price2025": 7.59,
+      "deltaUsdPerMMBtu": 1.67
+    },
+    {
+      "country": "Italy",
+      "price2024": 5.97,
+      "price2025": 7.9,
+      "deltaUsdPerMMBtu": 1.93
+    },
+    {
+      "country": "Poland",
+      "price2024": 6.37,
+      "price2025": 7.14,
+      "deltaUsdPerMMBtu": 0.77
+    },
+    {
+      "country": "Spain",
+      "price2024": 5.99,
+      "price2025": 7.44,
+      "deltaUsdPerMMBtu": 1.45
+    },
+    {
+      "country": "India",
+      "price2024": 5.46,
+      "price2025": 6.81,
+      "deltaUsdPerMMBtu": 1.35
+    },
+    {
+      "country": "Japan",
+      "price2024": 6.09,
+      "price2025": 7.18,
+      "deltaUsdPerMMBtu": 1.09
+    },
+    {
+      "country": "South Korea",
+      "price2024": 5.78,
+      "price2025": 7.22,
+      "deltaUsdPerMMBtu": 1.44
+    },
+    {
+      "country": "China",
+      "price2024": 5.68,
+      "price2025": 5.62,
+      "deltaUsdPerMMBtu": -0.06
+    },
+    {
+      "country": "United Kingdom",
+      "price2024": 7.02,
+      "price2025": 8.02,
+      "deltaUsdPerMMBtu": 1
+    }
+  ],
+  "regionalAnnual": [
+    {
+      "region": "Europe",
+      "price2024": 6.46,
+      "price2025": 7.83
+    },
+    {
+      "region": "Asia",
+      "price2024": 5.73,
+      "price2025": 7.22
+    }
+  ],
+  "regionalSourceTable": "14b, Year-to-Date and Annual Summary, LNG Exports by Vessel",
+  "may2026SpotComparison": [
+    {
+      "country": "France",
+      "price": 9.11
+    },
+    {
+      "country": "Germany",
+      "price": 8.82
+    },
+    {
+      "country": "India",
+      "price": 6.97
+    },
+    {
+      "country": "Japan",
+      "price": 6.35
+    },
+    {
+      "country": "Belgium",
+      "price": 7.72
+    },
+    {
+      "country": "China",
+      "price": null,
+      "reason": "No May 2026 reported export price"
+    }
+  ],
+  "may2026SourceTable": "15a Monthly Summary, May 2026",
+  "limitations": [
+    "DOE FOB export price is not realized company cash receipt, operating profit, or national net economic benefit",
+    "Regional Europe includes Türkiye and United Kingdom; not EU-only",
+    "Country averages reflect cargo mix, contract structure and timing; not identical cargo prices or buyer landed costs",
+    "Annual country price comparison is not a measure of realized total revenue without matched quantities",
+    "No subtraction of regional average prices as evidence of arbitrage profit",
+    "No influence scoring or readiness change without costs, margins, domestic impacts and counterfactual"
+  ],
+  "netEconomicBenefit": null,
+  "readinessAdjustment": null
+}
