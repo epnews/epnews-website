@@ -855,10 +855,10 @@ for(const row of observedOutcomeModel.rows){
 assert.throws(()=>compileDiplomaticOutcomes({items:[]}),/Missing sphere/);
 
 // Original command meter now renders observed diplomacy in its existing evidence drawer.
-const diplomaticDashboardSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
+const liveDiplomacyDashboardSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
 const indexSource=fs.readFileSync(__dirname+'/../index.html','utf8');
-assert.match(diplomaticDashboardSource,/fetch\('data\/soi-diplomatic-audit-worklist\.json'/);
-assert.match(diplomaticDashboardSource,/VERIFICATION PROGRESS/);
-assert.match(diplomaticDashboardSource,/OBSERVED OUTCOME/);
-assert.match(diplomaticDashboardSource,/Original diplomatic influence needle remains unscored/);
+assert.match(liveDiplomacyDashboardSource,/fetch\('data\/soi-diplomatic-audit-worklist\.json'/);
+assert.match(liveDiplomacyDashboardSource,/VERIFICATION PROGRESS/);
+assert.match(liveDiplomacyDashboardSource,/OBSERVED OUTCOME/);
+assert.match(liveDiplomacyDashboardSource,/Original diplomatic influence needle remains unscored/);
 assert.match(indexSource,/chaos-dashboard\.js\?v=diplomacy-live-outcomes-v2/);
