@@ -433,7 +433,7 @@ for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(d
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
 assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
-assert.ok(html.includes('chaos-dashboard.js?v=russia-freight-247'));
+assert.ok(html.includes('chaos-dashboard.js?v=us-lng-gate-248'));
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
 assert.equal(data.actors.us.Diplomatic.number,1);
@@ -497,3 +497,13 @@ assert.match(data.actors.russia['Energy and resources'].costs,/US\$20\/barrel/);
 assert.match(data.actors.russia['Energy and resources'].costs,/US\$24\.8\/barrel/);
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/NOT additive/);
 assert.equal(data.actors.russia['Energy and resources'].score,null);
+
+const lngGate=data.evidenceAudits.us['Energy and resources'].usLNGBenefitGate;
+assert.equal(lngGate.issuerCashFlowBridge.operating2026UsdMn-lngGate.issuerCashFlowBridge.investingUsed2026UsdMn,lngGate.issuerCashFlowBridge.operatingLessInvesting2026UsdMn);
+assert.equal(lngGate.issuerCashFlowBridge.operating2025UsdMn-lngGate.issuerCashFlowBridge.investingUsed2025UsdMn,lngGate.issuerCashFlowBridge.operatingLessInvesting2025UsdMn);
+assert.equal(lngGate.issuerCashFlowBridge.operatingLessInvesting2026UsdMn-lngGate.issuerCashFlowBridge.operatingLessInvesting2025UsdMn,lngGate.issuerCashFlowBridge.changeUsdMn);
+assert.equal(lngGate.gates.filter(g=>g.status==='Reconciled').length,1);
+assert.equal(lngGate.gates.filter(g=>g.status==='Open').length,5);
+assert.equal(lngGate.netNationalBenefitUsd,null);
+assert.equal(lngGate.influenceScore,null);
+assert.equal(data.meterReadiness.percent,53);

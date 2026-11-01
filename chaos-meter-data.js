@@ -3952,7 +3952,69 @@ window.EP_CHAOS_DATA = {
           "interpretation": "Europe-bound deliveries rose while Asia-bound deliveries declined from 4.0 to 2.5 Bcf/d. This is a measured destination shift, not proof of political leverage.",
           "remaining": "Independent foreign-policy outcomes, net revenue and domestic costs, plus an ex-ante counterfactual are still required."
         },
-        "score": null
+        "score": null,
+        "usLNGBenefitGate": {
+          "title": "U.S. LNG national cost-benefit decision gate",
+          "period": "Nine months ended September 30, 2025–2026, plus 2024–2025 market-share baseline",
+          "status": "SEC consolidated cash-flow accounting reconciled; disruption attribution and net national benefit NOT identified",
+          "source": [
+            "cheniereQ32026Sec",
+            "eiaH12026Exports",
+            "eiaSummer2026Gas",
+            "doeLNGCounterfactualAppendix"
+          ],
+          "issuerCashFlowBridge": {
+            "operating2025UsdMn": 3484,
+            "operating2026UsdMn": 5124,
+            "investingUsed2025UsdMn": 2263,
+            "investingUsed2026UsdMn": 2685,
+            "operatingLessInvesting2025UsdMn": 1221,
+            "operatingLessInvesting2026UsdMn": 2439,
+            "changeUsdMn": 1218,
+            "classification": "Issuer-level cash-flow arithmetic, not free cash flow, export margin, profit, causal geopolitical benefit or national gain",
+            "workingCapitalCaveat": "SEC attributes much of operating cash-flow increase to working-capital timing; cannot count $1,640m operating-cash increase as incremental LNG export benefit"
+          },
+          "domesticPriceCheck": {
+            "observedSummer2026HenryHubUsdMmbtu": 2.93,
+            "changeVersus2025Percent": -6,
+            "causalStatus": "Observed lower summer prices do not identify the effect of LNG exports; production, weather and storage confound"
+          },
+          "gates": [
+            {
+              "id": "issuer-bridge",
+              "status": "Reconciled",
+              "rule": "SEC operating less investing cash, same issuer and nine-month period, without double counting project spending"
+            },
+            {
+              "id": "destination-receipts",
+              "status": "Open",
+              "rule": "Matched destination-level realized LNG cash receipts, contract and spot prices, freight and counterparty"
+            },
+            {
+              "id": "incremental-capital",
+              "status": "Open",
+              "rule": "Incremental, not sunk, project financing and full operating costs with public incidence"
+            },
+            {
+              "id": "consumer-counterfactual",
+              "status": "Open",
+              "rule": "Causally identified export-driven U.S. consumer price changes under matched supply/weather/storage conditions"
+            },
+            {
+              "id": "geopolitical-counterfactual",
+              "status": "Open",
+              "rule": "Precommitted 2025 capacity versus 2026 geopolitical shock; control alternative suppliers and global demand"
+            },
+            {
+              "id": "foreign-concession",
+              "status": "Open",
+              "rule": "Dated independently verified policy concession attributable to LNG rather than mere purchases"
+            }
+          ],
+          "netNationalBenefitUsd": null,
+          "influenceScore": null,
+          "readinessDecision": "No change to 53%: issuer arithmetic was already known and no new causal or incidence gate closed."
+        }
       }
     }
   },
