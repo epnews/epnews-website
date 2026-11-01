@@ -111,6 +111,12 @@ function appendVotingEvidence(actor,dimension){
  if(diplomaticCandidates){
   const entries=diplomaticCandidates.cases.filter(x=>x.sphere===actor);
   if(entries.length){const drawer=element('details');drawer.append(element('summary','Source-backed diplomatic cases to investigate ('+entries.length+')'));
+   const audited=entries.filter(x=>x.sourceAudit?.status==='independently-verified'&&x.sourceAudit?.claimChecked===true).length;
+   const attributionReady=entries.filter(x=>x.measurementQuality?.eligibleForInfluenceScoring===true).length;
+   const milestoneCount=entries.filter(x=>Boolean(x.observedEvidence?.finding)).length;
+   drawer.append(element('p','Evidence coverage: '+entries.length+' selected case(s) · '+milestoneCount+' documented milestone(s) · '+audited+' independently audited · '+attributionReady+' attribution-ready. This is research coverage, not diplomatic influence.'));
+   drawer.append(element('p','Next evidence needed: independently checked counterpart outcomes, matched baselines, alternative explanations and costs. The diplomatic influence needle remains unscored.'));
+
    drawer.append(element('p','Primary-source event reviews only. External influence remains unverified; excluded internal policy events are clearly identified. No influence score.'));
    for(const item of entries){const p=element('p');p.append(element('strong',item.title+' · '+item.stage+' ('+item.eventDate+')'),element('span',' · '+item.caveat));const a=element('a',' Source ↗');a.href=item.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';p.append(a);drawer.append(p);
     const status=element('p','Eligibility: '+item.eligibility+' · Event finding: '+item.verifiedObservation);drawer.append(status);
