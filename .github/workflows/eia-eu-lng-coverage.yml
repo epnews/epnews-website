@@ -1,0 +1,31 @@
+name: EIA EU LNG Destination Coverage Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_eia_eu_lng_coverage.py'
+      - 'scripts/test_audit_eia_eu_lng_coverage.py'
+      - '.github/workflows/eia-eu-lng-coverage.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install xlrd==2.0.2
+      - run: python -m unittest scripts.test_audit_eia_eu_lng_coverage
+      - run: python scripts/extract_eia_eu_lng_destinations.py eia-eu-lng-destinations.json
+      - run: python scripts/audit_eia_eu_lng_coverage.py eia-eu-lng-destinations.json eia-eu-lng-coverage.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eia-eu-lng-coverage
+          path: |
+            eia-eu-lng-destinations.json
+            eia-eu-lng-coverage.json
+          retention-days: 30
