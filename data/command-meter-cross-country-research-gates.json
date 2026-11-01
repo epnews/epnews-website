@@ -110,5 +110,12 @@
     "status": "evidence_only_no_score",
     "integrationRule": "Stage-based evidence may inform U.S. and India diplomatic evidence panels; no score or moving-needle changes without independently measured, attributable outcomes. China is competitive context only.",
     "lastReviewed": "2026-11-01"
+  },
+  "soiFiveSphereMeasurement": {
+    "dataset": "data/soi-five-sphere-measurement-gates.json",
+    "audit": "node scripts/audit_soi_five_sphere_gates.cjs",
+    "status": "research_gaps_only",
+    "scoringImpact": "none",
+    "note": "Do not change meter needles, geopolitical influence scores, or readiness percentage from unmeasured agreement evidence."
   }
 }
