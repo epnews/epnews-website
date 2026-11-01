@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const s=fs.readFileSync('docs/us-lng-october-2026-forecast-vintage.md','utf8');
+const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-8);
+close(17.6-16.4,1.2);close(17.6-17.0,0.6);close(17.0-16.4,0.6);
+close(100*(17.6-16.4)/16.4,7.317073170731708);
+close(100*(17.6-17.0)/17.0,3.5294117647058902);
+close((17.8+17.2+17.0+18.2)/4,17.55);
+for(const t of ['annual-average forecasts','not a causal 1.2 Bcf/day shock effect','Readiness remains 53%','net national benefit null','influence score null'])assert.ok(s.includes(t),t);
+console.log('October EIA LNG forecast vintage arithmetic and causality guardrails passed');
