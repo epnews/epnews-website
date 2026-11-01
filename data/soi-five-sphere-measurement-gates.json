@@ -75,5 +75,10 @@
   ],
   "measuredInfluence": null,
   "readinessPercent": null,
-  "implementationEvidenceDataset": "data/soi-implementation-milestones-20261101.json"
+  "implementationEvidenceDataset": "data/soi-implementation-milestones-20261101.json",
+  "bidirectionalOutcomes": {
+    "dataset": "data/soi-bidirectional-outcome-gates.json",
+    "audit": "node scripts/audit_soi_bidirectional_outcomes.cjs",
+    "rule": "Verified negative and positive outcomes both eligible for measurement, but no automatic scoring from breach allegations, withdrawal, or unfulfilled nonbinding pledges"
+  }
 }
