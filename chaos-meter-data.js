@@ -92,6 +92,97 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "tenCheniereQ3CostsCapital": {
+  "title": "Ten Cheniere Q3 2026 financial cost and capital-allocation measures",
+  "period": "Quarter and nine months ended September 30, 2026 versus 2025 where reported",
+  "source": "cheniereQ32026",
+  "items": [
+    {
+      "id": "q3-lng-revenue",
+      "label": "Q3 LNG revenues",
+      "v2025": 4302,
+      "v2026": 6099,
+      "unit": "USD millions",
+      "note": "Accrual LNG revenue, not cash receipts."
+    },
+    {
+      "id": "nine-lng-revenue",
+      "label": "Nine-month LNG revenues",
+      "v2025": 14122,
+      "v2026": 17461,
+      "unit": "USD millions",
+      "note": "Includes Q3; do not sum overlapping periods."
+    },
+    {
+      "id": "q3-cost-sales",
+      "label": "Q3 cost of sales",
+      "v2025": 1750,
+      "v2026": 3207,
+      "unit": "USD millions",
+      "note": "Excludes separately reported O&M and depreciation."
+    },
+    {
+      "id": "nine-cost-sales",
+      "label": "Nine-month cost of sales",
+      "v2025": 6438,
+      "v2026": 11964,
+      "unit": "USD millions",
+      "note": "Includes Q3; cannot infer margin from revenue alone."
+    },
+    {
+      "id": "q3-om",
+      "label": "Q3 operating and maintenance expenses",
+      "v2025": 447,
+      "v2026": 540,
+      "unit": "USD millions",
+      "note": "Consolidated operating expense."
+    },
+    {
+      "id": "nine-om",
+      "label": "Nine-month operating and maintenance expenses",
+      "v2025": 1479,
+      "v2026": 1598,
+      "unit": "USD millions",
+      "note": "Includes Q3; not incremental disruption expense."
+    },
+    {
+      "id": "q3-net-income",
+      "label": "Q3 attributable net income",
+      "v2025": 1049,
+      "v2026": 1170,
+      "unit": "USD millions",
+      "note": "Accounting income includes noncash effects and financing."
+    },
+    {
+      "id": "nine-net-income",
+      "label": "Nine-month attributable net income",
+      "v2025": 3028,
+      "v2026": 736,
+      "unit": "USD millions",
+      "note": "Accounting income; significant noncash derivative fair-value effects."
+    },
+    {
+      "id": "q3-share-repurchases",
+      "label": "Q3 common-share repurchases",
+      "v2025": null,
+      "v2026": 731,
+      "unit": "USD millions",
+      "note": "Cash allocated to shareholder buybacks, not investment or national welfare."
+    },
+    {
+      "id": "q3-growth-capital",
+      "label": "Q3 growth capital invested",
+      "v2025": null,
+      "v2026": 740,
+      "unit": "USD millions",
+      "note": "Company-reported growth capital, not solely Corpus Christi Stage 3."
+    }
+  ],
+  "methodology": "Eight matched issuer financial measurements plus two Q3 capital allocation observations, all from Cheniere's Oct 2026 earnings release. Quarter and nine-month figures overlap; revenue, costs, net income and cash allocation are different accounting categories. Q3 share buybacks and growth capital lack matched Q3 2025 comparators in the cited highlights. Costs of sales exclude O&M and depreciation; do not infer net profit from a single cost line. Figures are consolidated issuer-level, not Stage 3-only or national accounts.",
+  "causalStatus": "The 2026 conflict may have affected prices and demand, but these consolidated results also reflect contract structure, new capacity, derivatives, commodity purchases and working-capital timing. No counterfactual 2026 conflict effect is estimated.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "tenGasStorageSupplyAudit": {
   "title": "Ten new gas-system measurements: storage buffers and supply accounting",
   "items": [
