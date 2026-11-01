@@ -23,7 +23,6 @@ assert.equal(readiness.percent,51);
 assert.equal(readiness.previousPercent,49);
 assert.equal(readiness.lastEvidencePr,198);
 assert.equal(readiness.components.find(c=>c.id==='incidence').percent,45);
-assert.equal(readiness.components.find(c=>c.id==='incidence').percent,40);
 assert.equal(readiness.components.find(c=>c.id==='evidence').percent,60);
 assert.equal(readiness.components.length,5);
 assert.equal(readiness.influenceScore,null);
