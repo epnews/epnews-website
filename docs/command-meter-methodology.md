@@ -144,3 +144,8 @@ Two [EIA](https://www.eia.gov/todayinenergy/detail.php?id=67864) [reports](https
 ## Eight trade/financial arithmetic cross-checks (October 31, 2026)
 
 From previously published EIA 2024–2025 LNG flow figures and audited CCH accounts: national exports +3.2 Bcf/d (+26.9% rounded); Europe-bound exports +4.0 Bcf/d; Asia-bound exports −1.5 Bcf/d; CCH third-party recognized LNG revenue +$849m; affiliate recognized LNG revenue +$772m; consolidated operating cash flow +$224m; and magnitude of investing outflows +$476m. These are **eight arithmetic transformations of existing observations**, not eight new independent research studies. Regional trade and company accounts cover different populations; prices, volumes, accrual revenue and cash flow cannot be combined without matching shipment/contract ownership and cost data. No export-volume-times-FOB-price profit estimate, net national benefit or geopolitical influence score is inferred.
+
+
+## Editorial Command Meter Readiness tracker (baseline after PR #192)
+
+A separate readiness tracker displays an editorial **45% estimated readiness** baseline after PR #192. Technical interactions 90%; verified economic evidence 55%; costs versus benefits 35%; causation/counterfactuals 25%; defensible influence scoring 20%. These are subjective project-planning estimates, **not observed statistical probabilities, weighted influence scores or claims of completed research**. Do not automatically increment on merges. Report old percentage, new percentage and a concrete reason when a meaningful gap closes; otherwise retain the prior percentage. The readiness indicator is separate from the null geopolitical influence meter and does not activate the needle or establish national net benefit.
