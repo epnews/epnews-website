@@ -1,0 +1,47 @@
+{
+  "status": "candidate_source_not_ingested",
+  "source": {
+    "name": "UNGA-RES Voting Data and Issue Categories",
+    "publisher": "Stiftung Wissenschaft und Politik (SWP)",
+    "authors": [
+      "Daniel Voelsen",
+      "Paul Bochtler",
+      "Rebecca Majewski"
+    ],
+    "url": "https://www.swp-berlin.org/en/publication/united-nations-general-assembly-resolutions-voting-data-and-issue-categories-2025",
+    "doi": "10.7802/2855",
+    "license": "CC BY 4.0",
+    "coverageEnd": "2025-01-31",
+    "coverageStart": "1995-11-01",
+    "licenseNote": "Verify license terms on exact downloaded dataset file and required attribution before commercial republication"
+  },
+  "baselineYear": 2021,
+  "completeComparisonYears": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "partialYearExcluded": 2025,
+  "requiredData": [
+    "resolution identifier",
+    "adoption date",
+    "country code",
+    "country vote",
+    "issue category"
+  ],
+  "requiredChecks": [
+    "file license and attribution",
+    "dataset revision and checksum",
+    "country code map",
+    "vote code map",
+    "date coverage",
+    "resolution-vote uniqueness",
+    "topic categories",
+    "complete year comparison",
+    "EU derived common position",
+    "matched topic sensitivity"
+  ],
+  "observedScores": null,
+  "needleActivation": false
+}
