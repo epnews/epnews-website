@@ -566,3 +566,10 @@ assert.equal(audit.gates.length,6);
 assert.ok(audit.gates.every(g=>g.status==='missing-evidence'));
 assert.equal(caseAuditor.auditCase(influenceFramework,{...sample,sphere:'unknown'}).valid,false);
 assert.equal(influenceFramework.caseFiles.length,0);
+
+// Five source-backed research candidates are not audited influence outcomes.
+const candidateData=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-source-candidates.json','utf8'));
+assert.equal(candidateData.cases.length,5);
+assert.deepEqual(candidateData.cases.map(x=>x.sphere).sort(),['china','eu','india','russia','us']);
+for(const c of candidateData.cases){assert.equal(c.influenceScore,null);assert.equal(c.reviewStatus,'candidate-source-identified');assert.ok(/^https:\/\//.test(c.sourceUrl));assert.ok(influenceFramework.stages.includes(c.stage));assert.ok(c.caveat.length>20);}
+assert.equal(influenceFramework.caseFiles.length,0,'research candidates must not be silently promoted to audited case files');

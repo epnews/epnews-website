@@ -96,6 +96,8 @@ function sourceLinks(parent,ids){
  for(const id of ids){const src=data.sources[id];const a=element('a',src.label+' ↗');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a,element('small','Source date: '+src.date));}
  parent.append(line);
 }
+let diplomaticCandidates=null;
+fetch('data/soi-diplomatic-source-candidates.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('candidate evidence unavailable');return r.json();}).then(d=>{if(!d||!Array.isArray(d.cases)||d.cases.some(x=>x.influenceScore!==null))throw Error('invalid candidate evidence');diplomaticCandidates=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
 let influenceFramework=null;
 fetch('data/soi-diplomatic-influence-framework.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('framework unavailable');return r.json();}).then(d=>{if(!d||d.influenceScoreAuthorized!==false||!Array.isArray(d.dimensions))throw Error('invalid framework');influenceFramework=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
 let votingEvidence=null;
@@ -106,6 +108,13 @@ function appendVotingEvidence(actor,dimension){
  const panel=element('section',undefined,'chaos-indicator-card chaos-voting-evidence');
  panel.append(element('h4','UN voting agreement · recorded votes (2021–2024)'),element('p','Measured voting agreement, not diplomatic influence. Abstentions count as positions; consensus and nonvoting excluded.'));
  if(!votingEvidence){panel.append(element('p','Country voting evidence is loading or unavailable.'));cards.append(panel);return;}
+ if(diplomaticCandidates){
+  const entries=diplomaticCandidates.cases.filter(x=>x.sphere===actor);
+  if(entries.length){const drawer=element('details');drawer.append(element('summary','Source-backed diplomatic cases to investigate ('+entries.length+')'));
+   drawer.append(element('p','Events and legal stages are source-backed research candidates. Implementation beyond the cited stage, attribution, durability and net effects are not established. No influence score.'));
+   for(const item of entries){const p=element('p');p.append(element('strong',item.title+' · '+item.stage+' ('+item.eventDate+')'),element('span',' · '+item.caveat));const a=element('a',' Source ↗');a.href=item.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';p.append(a);drawer.append(p);}panel.append(drawer);
+  }
+ }
  if(influenceFramework){
   const guide=element('details');guide.append(element('summary','How diplomatic influence will be verified · 6 evidence gates'));
   guide.append(element('p','A diplomatic event is not an influence outcome. This framework applies identically to all five spheres and does not produce a score.'));
