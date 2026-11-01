@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -88,6 +88,21 @@
         "counterfactualMeasured": false,
         "netBenefitMeasured": false,
         "causalInfluenceAuthorized": false
+      },
+      "implementationObservation": {
+        "status": "source-described-milestone-not-performance-audit",
+        "observedUnit": "trilateral missile-warning data-sharing mechanism",
+        "baseline": "not yet activated before 2023-12-19",
+        "followup": "officially activated 2023-12-19",
+        "observationType": "binary activation milestone",
+        "sources": [
+          "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html"
+        ],
+        "nextIndependentMeasurement": "Obtain comparable alert delivery latency, coverage or uptime independently checked by counterpart defense agencies",
+        "quantifiedPerformance": false,
+        "independentOperationalPerformanceAudited": false,
+        "causallyAttributable": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {
@@ -171,6 +186,22 @@
         "counterfactualMeasured": false,
         "netBenefitMeasured": false,
         "causalInfluenceAuthorized": false
+      },
+      "implementationObservation": {
+        "status": "source-described-milestone-not-performance-audit",
+        "observedUnit": "reciprocal diplomatic missions",
+        "baseline": "Saudi-Iran diplomatic relations severed since 2016",
+        "followup": "Iran embassy Riyadh reopened June 2023; Saudi embassy Tehran resumed operations August 2023",
+        "observationType": "binary bilateral embassy reopening",
+        "sources": [
+          "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/",
+          "https://www.aa.com.tr/en/middle-east/saudi-embassy-resumes-operations-in-tehran-after-over-7-year-hiatus-report/2965408"
+        ],
+        "nextIndependentMeasurement": "Document sustained mission staffing and consular service delivery and evaluate earlier Iraq/Oman mediation",
+        "quantifiedPerformance": false,
+        "independentOperationalPerformanceAudited": false,
+        "causallyAttributable": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {
@@ -253,6 +284,21 @@
         "counterfactualMeasured": false,
         "netBenefitMeasured": false,
         "causalInfluenceAuthorized": false
+      },
+      "implementationObservation": {
+        "status": "source-described-milestone-not-performance-audit",
+        "observedUnit": "Russia-Belarus security guarantees treaty",
+        "baseline": "treaty not yet in force before 2025-03-13; security integration preexisting",
+        "followup": "legal entry into force 2025-03-13",
+        "observationType": "legal-status milestone, not military implementation",
+        "sources": [
+          "https://www.interfax-russia.ru/military/news/639921"
+        ],
+        "nextIndependentMeasurement": "Identify a specific Belarusian security operation initiated after entry into force and independently compare it to preexisting arrangements",
+        "quantifiedPerformance": false,
+        "independentOperationalPerformanceAudited": false,
+        "causallyAttributable": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {
@@ -335,6 +381,21 @@
         "counterfactualMeasured": false,
         "netBenefitMeasured": false,
         "causalInfluenceAuthorized": false
+      },
+      "implementationObservation": {
+        "status": "source-described-milestone-not-performance-audit",
+        "observedUnit": "EU Partnership Mission Moldova assistance",
+        "baseline": "EUPM mission already active May 2023",
+        "followup": "Moldovan ministry described crisis management, cybersecurity and equipment assistance in 2025",
+        "observationType": "qualitative program delivery, preexisting initiative",
+        "sources": [
+          "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027"
+        ],
+        "nextIndependentMeasurement": "Obtain delivered equipment counts, project completion dates and partnership-specific incremental funding separated from pre-2024 EUPM",
+        "quantifiedPerformance": false,
+        "independentOperationalPerformanceAudited": false,
+        "causallyAttributable": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {

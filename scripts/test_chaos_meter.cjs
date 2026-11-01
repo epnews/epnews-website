@@ -775,3 +775,14 @@ assert.equal(indiaCEPA.cumulativeCertificates,445000);
 assert.equal(indiaCEPA.exportProductBreadth.followupFY2025_26-indiaCEPA.exportProductBreadth.baselineFY2021_22,507);
 assert.equal(indiaCEPA.eligibleForInfluenceScoring,false);
 assert.ok(indiaCEPA.limitations.some(x=>x.includes('denominator')));
+
+// Implementation observations must never conflate activation or legal milestones with influence.
+for(const sphere of ['us','china','russia','eu']){
+ const m=diplomaticQueue.items.find(x=>x.sphere===sphere).implementationObservation;
+ assert.ok(m?.observedUnit&&m?.baseline&&m?.followup&&m?.nextIndependentMeasurement);
+ assert.ok(m.sources.length>=1);
+ assert.equal(m.quantifiedPerformance,false);
+ assert.equal(m.independentOperationalPerformanceAudited,false);
+ assert.equal(m.causallyAttributable,false);
+ assert.equal(m.eligibleForInfluenceScoring,false);
+}
