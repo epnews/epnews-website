@@ -181,3 +181,17 @@
 .chaos-completion-gate li{margin:7px 0;line-height:1.5}
 .chaos-completion-gate a{color:#9ed8ff;margin-left:6px}
 @media(max-width:600px){.chaos-completion{padding:14px}.chaos-completion-gate{padding:10px}}
+
+/* Public-first command meter: keep primary controls visible and research optional. */
+.chaos-clean-drawer{margin:18px 0;border:1px solid #3d536c;border-radius:12px;background:#152438;overflow:hidden}
+.chaos-clean-drawer>summary{cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:5px 16px;padding:17px 19px;font-size:14px;font-weight:800;letter-spacing:.025em;color:#f5f7fb;list-style:none}
+.chaos-clean-drawer>summary::-webkit-details-marker{display:none}
+.chaos-clean-drawer>summary::after{content:'+';font-size:20px;line-height:1;opacity:.85}
+.chaos-clean-drawer[open]>summary::after{content:'−'}
+.chaos-clean-drawer>summary:focus-visible{outline:3px solid #e9ad5f;outline-offset:-3px}
+.chaos-clean-hint{display:block;flex-basis:100%;font-size:12px;line-height:1.45;font-weight:400;letter-spacing:0;color:#bdcddd}
+.chaos-clean-drawer>section,.chaos-clean-drawer>.chaos-matrix,.chaos-clean-drawer>.chaos-indicators,.chaos-clean-drawer>.chaos-compare{margin:12px 16px 20px}
+.chaos-research-drawer #chaos-completion-status,.chaos-research-drawer #chaos-meter-readiness{margin:12px 16px 18px}
+.chaos-assessment-drawer{margin:12px 0;background:#13283e}
+.chaos-assessment-drawer #chaos-assessment-readiness{margin:0!important;border:0!important;border-top:1px solid #405a75!important;border-radius:0!important}
+@media(max-width:700px){.chaos-clean-drawer>summary{padding:14px}.chaos-clean-drawer>section,.chaos-research-drawer #chaos-completion-status,.chaos-research-drawer #chaos-meter-readiness{margin:10px 12px 16px}}

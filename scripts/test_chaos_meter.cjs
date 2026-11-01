@@ -425,3 +425,12 @@ assert.equal(jobs.items[7].value,null);
 assert.ok(jobs.sources.every(id=>data.sources[id]));
 assert.equal(evidenceTables.filter(x=>x.auditKey==='realizedLNGExportsVsExtractionJobs2026').length,1);
 assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
+
+// Public-facing dashboard keeps controls and articles visible while preserving all research nodes.
+const dashboardScript=fs.readFileSync('chaos-dashboard.js','utf8');
+for(const id of ['chaos-completion-status','chaos-meter-readiness','chaos-assessment-readiness'])assert.ok(dashboardScript.includes(id));
+for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(dashboardScript.includes(cls));
+assert.ok(dashboardScript.includes('chaos-research-drawer'));
+assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
+assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
+assert.ok(html.includes('chaos-dashboard.js?v=clean-layout-1'));
