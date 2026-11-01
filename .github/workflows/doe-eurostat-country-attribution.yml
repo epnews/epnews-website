@@ -1,0 +1,31 @@
+name: DOE Eurostat LNG Country Attribution Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_doe_eurostat_country_attribution.py'
+      - 'scripts/test_audit_doe_eurostat_country_attribution.py'
+      - '.github/workflows/doe-eurostat-country-attribution.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install openpyxl==3.1.5
+      - run: python -m unittest scripts.test_build_doe_lng_h1_ledger scripts.test_audit_doe_eurostat_country_attribution
+      - run: python scripts/build_doe_lng_h1_ledger.py doe-lng-h1-destination-ledger.json
+      - run: python scripts/audit_doe_eurostat_country_attribution.py doe-lng-h1-destination-ledger.json doe-eurostat-country-attribution.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: doe-eurostat-country-attribution
+          path: |
+            doe-lng-h1-destination-ledger.json
+            doe-eurostat-country-attribution.json
+          retention-days: 30
