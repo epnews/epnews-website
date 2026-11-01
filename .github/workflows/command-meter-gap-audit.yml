@@ -1,0 +1,28 @@
+name: Command Meter Gap Closure Audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'chaos-meter-data.js'
+      - 'chaos-meter-model.js'
+      - 'scripts/audit_command_meter_gaps.cjs'
+      - 'scripts/test_command_meter_gap_audit.cjs'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/test_chaos_meter.cjs
+      - run: node scripts/test_command_meter_gap_audit.cjs
+      - run: node scripts/audit_command_meter_gaps.cjs command-meter-gap-closure-audit.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: command-meter-gap-closure-audit
+          path: command-meter-gap-closure-audit.json
+          retention-days: 30
