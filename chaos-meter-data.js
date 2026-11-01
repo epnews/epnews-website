@@ -4657,6 +4657,11 @@ window.EP_CHAOS_DATA = {
       "label": "CREA · August 2026 Russian fossil export revenue analysis (updated October 16)",
       "url": "https://energyandcleanair.org/august-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
       "date": "2026-10-16"
+    },
+    "kseRussianOilTrackerOct2026": {
+      "label": "KSE Institute · Russian Oil Tracker September issue (August 2026 data)",
+      "url": "https://kse.ua/en/news/russian-oil-tracker-september-2026-russias-oil-and-oil-products-exports-fall-to-lowest-level-since-2018-as-higher-prices-add-only-0-3-billion-to-export-revenue/",
+      "date": "2026-10-05"
     }
   },
   "actors": {
@@ -4868,17 +4873,18 @@ window.EP_CHAOS_DATA = {
         "sources": [
           "creaRussiaSeptember2026",
           "creaRussiaAugust2026",
+          "kseRussianOilTrackerOct2026",
           "gas"
         ],
-        "meaning": "CREA estimates Russian fossil fuel export revenues at €625 million per day in September 2026, broadly unchanged from €604 million/day in August despite September export volumes declining 6%. Covers fossil fuels across global buyers; not just EU gas.",
-        "costs": "Gross modeled export sales value excludes extraction, shipping, insurance, discounts, financing, sanctions compliance, taxes, domestic consumer effects and military or environmental costs.",
-        "gap": "CREA estimates are not audited company cash receipts or profit. Verify destination-matched transaction prices, actual collections, margins, taxes, rerouting costs and comparable pre-disruption periods before claiming net gains or causal attribution.",
+        "meaning": "CREA estimates Russian fossil fuel export revenues at €625 million per day in September 2026, broadly unchanged from €604 million/day in August despite September export volumes declining 6%. Covers fossil fuels across global buyers; not just EU gas. KSE independently estimates August oil export revenue at US$13.9 billion (oil only; different model and period).",
+        "costs": "CREA reports 688 billion RUB of September crude mineral extraction tax receipts (a specific fiscal tax stream, not total budget oil-and-gas revenue). KSE estimates August oil export revenues US$13.9B and US$4.4B of sanctions-related revenue losses versus its modeled counterfactual. None is audited company profit or an observed cash cost. Export freight, insurance, production, discounts, financing and domestic costs remain unresolved.",
+        "gap": "Distinguish (1) CREA worldwide all-fossil modeled gross sales, (2) KSE oil-only export revenue, (3) CREA-reported crude mineral extraction tax receipts, and (4) KSE sanctions counterfactual. These are NOT additive, directly comparable or net profit. Need actual receipts, matched period/currency/product coverage, verified fiscal collections and transaction-level costs.",
         "confidence": "Moderate",
         "score": null,
         "metric": "russia-fossil-export-revenue-eur-mn-day",
         "number": 625,
         "displayPrecision": "estimated",
-        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context."
+        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context. Separately: KSE August oil-only modeled export revenue US$13.9B and sanctions counterfactual loss US$4.4B; CREA-reported September crude MET receipts 688B RUB. Different periods, scopes, currencies and models; do not add or subtract."
       }
     },
     "eu": {
