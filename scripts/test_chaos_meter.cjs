@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,21);
+assert.equal(evidenceTables.length,22);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -343,3 +343,11 @@ assert.equal(cashDrivers.items.length,4);
 assert.deepEqual(Array.from(cashDrivers.items,x=>x.v2026),[-659,-50,-219,279]);
 assert.deepEqual(Array.from(cashDrivers.items,x=>x.v2025),[286,-587,42,-672]);
 assert.equal(evidenceTables.filter(x=>x.auditKey==='q32026WorkingCapitalDrivers').length,1);
+
+const causalGate=data.evidenceAudits.us['Energy and resources'].causalGatePrecommittedCapacity;
+assert.equal(causalGate.items.length,5);
+assert.deepEqual(Array.from(causalGate.items,x=>x.value),[2022,17.4,23,410,4]);
+assert.equal(evidenceTables.filter(x=>x.auditKey==='causalGatePrecommittedCapacity').length,1);
+for(const item of causalGate.items)assert.ok(data.sources[item.source],'Missing source '+item.source);
+assert.equal(data.meterReadiness.influenceScore,null);
+assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
