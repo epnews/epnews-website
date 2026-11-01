@@ -5,10 +5,10 @@ window.EP_CHAOS_DATA = {
   "meterReadiness": {
   "label": "Command Meter Readiness",
   "asOf": "2026-10-31",
-  "percent": 49,
-  "previousPercent": 47,
-  "lastEvidencePr": 196,
-  "changeReason": "SEC nine-month 2026 operating, investing and financing cash flows plus project capital spending, cash interest and taxes provide better evidence of company cash generation and cost incidence. Working-capital timing and causal attribution remain unresolved.",
+  "percent": 51,
+  "previousPercent": 49,
+  "lastEvidencePr": 198,
+  "changeReason": "EIA January–August 2026 retail electricity prices and utility revenue establish newer observed domestic cost indicators alongside producer financial gains. They do not establish LNG export causation or incremental national welfare costs.",
   "baselinePr": 192,
   "kind": "Editorial planning estimate; not a measured statistical percentage",
   "components": [
@@ -25,7 +25,7 @@ window.EP_CHAOS_DATA = {
     {
       "id": "incidence",
       "label": "Costs versus benefits",
-      "percent": 40
+      "percent": 45
     },
     {
       "id": "causation",
