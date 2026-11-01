@@ -1,0 +1,1 @@
+const fs=require('fs'),assert=require('assert');const p=fs.readFileSync('docs/europe-lng-independent-cargo-origin-crosscheck.md','utf8');for(const s of ['4.020376','3.187868','16.441131','25.838331','96%','62 from US','H1 2025','H1 2026','not yet'])assert(p.includes(s),s);assert(p.includes('53% readiness'));console.log('Independent origin cross-check evidence assertions passed');
