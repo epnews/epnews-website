@@ -4757,8 +4757,6 @@ window.EP_CHAOS_DATA = {
         "costs": "Importers and users face price and supply risks; lower imports may reflect inventory changes or reduced refinery activity.",
         "gap": "No quantified net national benefit. Require matched-quarter volumes, inventory draws and realized costs before inferring vulnerability or leverage.",
         "confidence": "Moderate",
-        "metric": "oil-import-change-mbd",
-        "number": -3.5,
         "score": null
       }
     },
@@ -4827,8 +4825,6 @@ window.EP_CHAOS_DATA = {
         "costs": "Lost market access, price changes, rerouting costs and alternative buyers affect net receipts.",
         "gap": "Council text says over 150 bcm for 2021; no false precision or derived index. Global net revenue remains unquantified.",
         "confidence": "Moderate",
-        "metric": "pipeline-gas-change-bcm",
-        "number": -114,
         "score": null
       }
     },
