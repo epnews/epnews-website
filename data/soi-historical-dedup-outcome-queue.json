@@ -43,8 +43,9 @@
         "https://ustr.gov/phase-one",
         "https://www.piie.com/research/piie-charts/2022/china-bought-none-extra-200-billion-us-exports-trumps-trade-deal"
       ],
-      "status": "requires_reconciliation",
-      "score": null
+      "status": "measured_commitment_shortfall_not_net_influence",
+      "score": null,
+      "measurementPath": "data/soi-phase-one-2020-2021-measured-outcome.json"
     },
     {
       "eventId": "2022-eu-russian-coal-embargo",
