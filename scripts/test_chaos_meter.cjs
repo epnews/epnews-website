@@ -8,7 +8,10 @@ assert.deepEqual(Array.from(q3.items,x=>x.value2025),[4441,14526,1608,4896,null,
 assert.ok(data.sources[q3.companySource]&&data.sources[q3.contextSource]);
 assert.equal(q3.netNationalBenefitUsd,null);assert.equal(q3.influenceScore,null);
 const readiness=data.meterReadiness;
-assert.equal(readiness.percent,45);
+assert.equal(readiness.percent,47);
+assert.equal(readiness.previousPercent,45);
+assert.equal(readiness.lastEvidencePr,194);
+assert.equal(readiness.components.find(c=>c.id==='evidence').percent,60);
 assert.equal(readiness.components.length,5);
 assert.equal(readiness.influenceScore,null);
 assert.equal(readiness.netNationalBenefitUsd,null);
