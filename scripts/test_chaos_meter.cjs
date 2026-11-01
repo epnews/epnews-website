@@ -488,6 +488,6 @@ assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/do no
 
 assert.ok(data.actors.russia['Energy and resources'].sources.includes('russiaMinfinSeptember2026'));
 assert.match(data.actors.russia['Energy and resources'].costs,/452.4 billion RUB/);
-assert.match(data.actors.russia['Energy and resources'].costs,/−22.3% YoY/);
+assert.match(data.actors.russia['Energy and resources'].costs,/22\.3% year-over-year/);
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/Separate fiscal series/);
 assert.equal(data.actors.russia['Energy and resources'].number,625);
