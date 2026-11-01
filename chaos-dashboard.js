@@ -105,6 +105,10 @@ function appendVotingEvidence(actor,dimension){
  panel.append(element('h4','UN voting agreement · recorded votes (2021–2024)'),element('p','Measured voting agreement, not diplomatic influence. Abstentions count as positions; consensus and nonvoting excluded.'));
  if(!votingEvidence){panel.append(element('p','Country voting evidence is loading or unavailable.'));cards.append(panel);return;}
  const code=voteActor[actor];
+ const years=['2021','2022','2023','2024'];
+ const trendKey=code==='USA'?'USA_CHN':code==='CHN'?'USA_CHN':code==='RUS'?'USA_RUS':code==='IND'?'USA_IND':null;
+ if(trendKey){const first=votingEvidence.annual['2021']?.pairAgreementPct?.[trendKey],last=votingEvidence.annual['2024']?.pairAgreementPct?.[trendKey];if(Number.isFinite(first)&&Number.isFinite(last))panel.append(element('p','Standardized reference trend ('+trendKey.replace('_',' / ')+'): '+first.toFixed(2)+'% (2021) → '+last.toFixed(2)+'% (2024); change '+(last-first).toFixed(2)+' percentage points. Descriptive agreement only; not an influence score.'));}
+ if(actor==='eu'){const first=votingEvidence.annual['2021']?.euMeanCohesionPct,last=votingEvidence.annual['2024']?.euMeanCohesionPct;if(Number.isFinite(first)&&Number.isFinite(last))panel.append(element('p','EU27 member cohesion: '+first.toFixed(2)+'% (2021) → '+last.toFixed(2)+'% (2024); change '+(last-first).toFixed(2)+' percentage points. Cohesion is not external influence.'));}
  const table=element('table');const head=element('tr');for(const name of ['Year','Comparison','Agreement'])head.append(element('th',name));table.append(head);
  for(const year of ['2021','2022','2023','2024']){
   const annual=votingEvidence.annual[year];if(!annual)continue;
