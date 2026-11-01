@@ -1,5 +1,5 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -98,7 +98,9 @@
         "matchedDefinitionChecked": false,
         "reviewer": null,
         "reviewedOn": null,
-        "notes": "US and Japanese defense ministry releases and US Pacific Command statements located and reviewed for dated operational activation claim. Full independent claim-level audit (reviewer, publication-date check, definition reconciliation) remains pending. Source-anchor reconciliation: Anchor December 2023 operational activation claim to dated trilateral defense joint statement rather than August Camp David announcement; source still requires claim-level independent audit."
+        "notes": "US and Japanese defense ministry releases and US Pacific Command statements located and reviewed for dated operational activation claim. Full independent claim-level audit (reviewer, publication-date check, definition reconciliation) remains pending. Source-anchor reconciliation: Anchor December 2023 operational activation claim to dated trilateral defense joint statement rather than August Camp David announcement; source still requires claim-level independent audit. Audit scope explicitly restricted to the event or descriptive series; no influence inference.",
+        "claimScope": "December 2023 trilateral missile-warning mechanism operational activation",
+        "verificationLimit": "Primary or official reporting of event only; independent outcome, attribution, and net influence unverified."
       }
     },
     {
@@ -194,7 +196,9 @@
         "matchedDefinitionChecked": false,
         "reviewer": null,
         "reviewedOn": null,
-        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: Corrected stale US-GCC statement as unrelated to Saudi-Iran diplomatic restoration; primary source is Saudi Press Agency Beijing joint statement."
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: Corrected stale US-GCC statement as unrelated to Saudi-Iran diplomatic restoration; primary source is Saudi Press Agency Beijing joint statement. Audit scope explicitly restricted to the event or descriptive series; no influence inference.",
+        "claimScope": "March 2023 Saudi–Iran agreement in Beijing",
+        "verificationLimit": "Primary or official reporting of event only; independent outcome, attribution, and net influence unverified."
       }
     },
     {
@@ -290,7 +294,9 @@
         "matchedDefinitionChecked": false,
         "reviewer": null,
         "reviewedOn": null,
-        "notes": "Cross-checked treaty date against published treaty, Interfax, CRS and European Parliament background. Claim-level audit remains pending because an independently measured behavioral outcome and reviewer sign-off are absent. Source-anchor reconciliation: Russian treaty publication supports legal milestone only, not post-treaty military behavior."
+        "notes": "Cross-checked treaty date against published treaty, Interfax, CRS and European Parliament background. Claim-level audit remains pending because an independently measured behavioral outcome and reviewer sign-off are absent. Source-anchor reconciliation: Russian treaty publication supports legal milestone only, not post-treaty military behavior. Audit scope explicitly restricted to the event or descriptive series; no influence inference.",
+        "claimScope": "March 2025 security treaty legal entry into force",
+        "verificationLimit": "Primary or official reporting of event only; independent outcome, attribution, and net influence unverified."
       }
     },
     {
@@ -388,7 +394,9 @@
         "matchedDefinitionChecked": false,
         "reviewer": null,
         "reviewedOn": null,
-        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: Corrected source anchor from earlier EUPM mission background to actual EU–Moldova Security and Defence Partnership announcement; earlier EUPM source retained as baseline context."
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: Corrected source anchor from earlier EUPM mission background to actual EU–Moldova Security and Defence Partnership announcement; earlier EUPM source retained as baseline context. Audit scope explicitly restricted to the event or descriptive series; no influence inference.",
+        "claimScope": "May 2024 EU–Moldova partnership signature",
+        "verificationLimit": "Primary or official reporting of event only; independent outcome, attribution, and net influence unverified."
       }
     },
     {
@@ -488,7 +496,9 @@
         "matchedDefinitionChecked": false,
         "reviewer": null,
         "reviewedOn": null,
-        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: India nominal trade series is government-reported and descriptive, not an independent causal estimate."
+        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: India nominal trade series is government-reported and descriptive, not an independent causal estimate. Audit scope explicitly restricted to the event or descriptive series; no influence inference.",
+        "claimScope": "India–UAE nominal merchandise trade series, not causal CEPA effect",
+        "verificationLimit": "Primary or official reporting of event only; independent outcome, attribution, and net influence unverified."
       }
     }
   ],
