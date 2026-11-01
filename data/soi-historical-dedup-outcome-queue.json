@@ -1,0 +1,111 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Canonical event indexing and measurable-outcome research queue; no inference of influence scores",
+  "sourceFiles": [
+    "data/soi-historical-agreement-events-2017-2026.json",
+    "data/soi-historical-batch-2017-2020.json",
+    "data/soi-historical-batch-2021-2024.json",
+    "data/soi-historical-batch-2025-2026.json"
+  ],
+  "rawEventCount": 30,
+  "canonicalEventCount": 29,
+  "duplicateClusters": [
+    {
+      "canonicalId": "2026-us-paris-second-exit",
+      "duplicateIds": [
+        "2026-us-paris-withdrawal-effective"
+      ],
+      "reason": "Same second U.S. Paris Agreement withdrawal effective milestone on 2026-01-27; retain both source records but count once"
+    }
+  ],
+  "relatedButDistinct": [
+    {
+      "ids": [
+        "2025-us-paris-withdrawal-notice",
+        "2026-us-paris-second-exit"
+      ],
+      "reason": "Notice and legal effective date are distinct milestones, not duplicates"
+    },
+    {
+      "ids": [
+        "2020-us-paris-exit",
+        "2021-us-paris-reentry",
+        "2026-us-paris-second-exit"
+      ],
+      "reason": "First exit, subsequent reentry and second exit are different legal events"
+    }
+  ],
+  "priorityOutcomeQueue": [
+    {
+      "eventId": "2020-us-china-phase-one",
+      "metric": "Actual U.S. goods exports to China versus product-specific purchase commitments",
+      "sources": [
+        "https://ustr.gov/phase-one",
+        "https://www.piie.com/research/piie-charts/2022/china-bought-none-extra-200-billion-us-exports-trumps-trade-deal"
+      ],
+      "status": "requires_reconciliation",
+      "score": null
+    },
+    {
+      "eventId": "2022-eu-russian-coal-embargo",
+      "metric": "EU coal imports by Russian origin before and after sanctions; costs and substitute sources",
+      "sources": [
+        "https://ec.europa.eu/eurostat",
+        "https://www.consilium.europa.eu/en/press/press-releases/2022/04/08/fifth-package-of-sanctions-in-view-of-russia-s-military-aggression-against-ukraine-eu-adopts-restrictive-measures-against-russia/"
+      ],
+      "status": "requires_comparable_series",
+      "score": null
+    },
+    {
+      "eventId": "2023-finland-nato",
+      "metric": "Verified alliance accession and defense spending changes, with attributable security outcome separate",
+      "sources": [
+        "https://www.nato.int/cps/en/natohq/news_213448.htm"
+      ],
+      "status": "accession_verified_outcome_unmeasured",
+      "score": null
+    },
+    {
+      "eventId": "2024-sweden-nato",
+      "metric": "Verified alliance accession and force posture changes, with costs and counterfactual",
+      "sources": [
+        "https://www.nato.int/cps/en/natohq/news_223446.htm"
+      ],
+      "status": "accession_verified_outcome_unmeasured",
+      "score": null
+    },
+    {
+      "eventId": "2021-eu-china-cai-freeze",
+      "metric": "Investment agreement ratification remained frozen; investment flows and counterfactual",
+      "sources": [
+        "https://www.europarl.europa.eu/pdfs/news/expert/2021/5/press_release/20210517IPR04123/20210517IPR04123_en.pdf"
+      ],
+      "status": "ratification_status_verified_impact_unmeasured",
+      "score": null
+    },
+    {
+      "eventId": "2025-us-canada-mexico-tariffs",
+      "metric": "Effective tariff rates, retaliation, bilateral trade and consumer/importer costs",
+      "sources": [
+        "https://www.whitehouse.gov/presidential-actions/2025/02/imposing-duties-to-address-the-situation-at-our-southern-border/"
+      ],
+      "status": "orders_identified_implementation_unreconciled",
+      "score": null
+    }
+  ],
+  "policy": {
+    "noZeroSumInference": true,
+    "requireComparableUnitsAndPeriods": true,
+    "requireCostsAndCounterfactual": true,
+    "doNotScoreEventCounts": true,
+    "doNotAlterEditorialReadinessWithoutEvidence": true
+  },
+  "influenceScores": {
+    "us": null,
+    "china": null,
+    "russia": null,
+    "eu": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
