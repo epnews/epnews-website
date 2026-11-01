@@ -3,6 +3,103 @@ window.EP_CHAOS_DATA = {
   "reviewed": "2026-10-31",
   "methodologyVersion": "2.0",
   "evidenceTableRegistry": [{"id":"southern-electricity","auditKey":"fifteenSouthernElectricityPrices","columns":[{"key":"state","label":"State"},{"key":"sector","label":"Sector"},{"key":"v2025","label":"Aug 2025"},{"key":"v2026","label":"Aug 2026"}]},{"id":"gulf-electricity","auditKey":"tenGulfElectricityConsumerPrices","columns":[{"key":"state","label":"State"},{"key":"sector","label":"Sector"},{"key":"v2025","label":"Aug 2025"},{"key":"v2026","label":"Aug 2026"}]},{"id":"border-gas-prices","auditKey":"tenBorderGasPriceComparisons","columns":[{"key":"label","label":"Trade measure"},{"key":"period","label":"Period"},{"key":"earlier","label":"Earlier"},{"key":"later","label":"Later"}]},{"id":"sabine-cash-flows","auditKey":"tenSabinePassCashFlows","columns":[{"key":"label","label":"Cash flow"},{"key":"v2025","label":"2025 ($M)"},{"key":"v2026","label":"2026 ($M)"}]},{"id":"sabine-financial-costs","auditKey":"tenSabinePassPartnershipCosts","columns":[{"key":"label","label":"Financial measure"},{"key":"v2025","label":"2025 ($M)"},{"key":"v2026","label":"2026 ($M)"}]},{"id":"domestic-electricity","auditKey":"domesticElectricity2026","columns":[{"key":"label","label":"National retail electricity"},{"key":"v2025","label":"2025"},{"key":"v2026","label":"2026"}]},{"id":"cheniere-q3-capital","auditKey":"tenCheniereQ3CostsCapital","columns":[{"key":"label","label":"Measure"},{"key":"v2025","label":"2025"},{"key":"v2026","label":"2026"},{"key":"unit","label":"Units"}]},{"id":"gas-storage-supply","auditKey":"tenGasStorageSupplyAudit","columns":[{"key":"label","label":"Measurement"},{"key":"value","label":"Observed value"},{"key":"unit","label":"Unit"},{"key":"period","label":"Period"}]},{"id":"gas-demand-destinations","auditKey":"aug2026TenDemandDestinationMeasures","columns":[{"key":"label","label":"Measure"},{"key":"prior","label":"Aug 2025"},{"key":"value","label":"Aug 2026"},{"key":"unit","label":"Unit"}]},{"id":"gas-supply-balance","auditKey":"aug2026GasSupplyDemandBalance","columns":[{"key":"label","label":"Measure"},{"key":"v2025","label":"2025"},{"key":"v2026","label":"2026"},{"key":"unit","label":"Unit"}]},{"id":"domestic-gas-prices","auditKey":"domesticGasPricesAug2026","columns":[{"key":"label","label":"Measure"},{"key":"value","label":"Value"},{"key":"unit","label":"Unit"},{"key":"type","label":"Type"}]},{"id":"sec-cash-costs","auditKey":"q32026SecCashAndCosts","columns":[{"key":"label","label":"Measure"},{"key":"v2025","label":"2025"},{"key":"v2026","label":"2026"},{"key":"unit","label":"Unit"}]},{"id":"h1-market-observations","auditKey":"h12026MarketObservations","columns":[{"key":"label","label":"Measure"},{"key":"value","label":"Value"},{"key":"unit","label":"Unit"},{"key":"comparison","label":"Comparison"}]},{"id":"q3-company-outcomes","auditKey":"q32026CompanyOutcomes","columns":[{"key":"label","label":"Measure"},{"key":"value2025","label":"2025"},{"key":"value2026","label":"2026"},{"key":"unit","label":"Unit"}]},{"id":"trade-financial-crosschecks","auditKey":"tradeFinancialCrossChecks","columns":[{"key":"title","label":"Comparison"},{"key":"value","label":"Calculated difference"},{"key":"unit","label":"Unit"},{"key":"formula","label":"Formula"}]},{"id":"observed-trade-indicators","auditKey":"observedTradeIndicators","columns":[{"key":"title","label":"Indicator"},{"key":"baseline","label":"Baseline"},{"key":"outcome","label":"Outcome"},{"key":"unit","label":"Unit"}]},{"id":"eight-point-audit","auditKey":"eightPointAudit","columns":[{"key":"title","label":"Measure"},{"key":"baseline","label":"Baseline"},{"key":"outcome","label":"Outcome"},{"key":"unit","label":"Unit"}]},{"id":"q3-liquidity-ownership","auditKey":"q32026LiquidityOwnership2026","columns":[{"key":"label","label":"Measure"},{"key":"value","label":"Value"},{"key":"unit","label":"Unit"}]},{"id":"q3-earnings-reconciliation","auditKey":"q32026EarningsReconciliation","columns":[{"key":"label","label":"Metric"},{"key":"v2025","label":"2025"},{"key":"v2026","label":"2026"},{"key":"unit","label":"Unit"}]},{"id":"q3-cash-flow-bridge","auditKey":"q32026CashFlowBridge","columns":[{"key":"label","label":"Cash-flow calculation"},{"key":"v2025","label":"2025"},{"key":"v2026","label":"2026"},{"key":"unit","label":"Unit"}]},{"id":"q3-working-capital-drivers","auditKey":"q32026WorkingCapitalDrivers","columns":[{"key":"label","label":"Operating cash-flow component"},{"key":"v2025","label":"2025"},{"key":"v2026","label":"2026"},{"key":"unit","label":"Unit"}]},{"id":"causal-precommitted-capacity","auditKey":"causalGatePrecommittedCapacity","columns":[{"key":"label","label":"Causal test"},{"key":"value","label":"Value"},{"key":"unit","label":"Definition"}]},{"id":"eu-lng-dependence-2026","auditKey":"euLNGDependence2026","columns":[{"key":"label","label":"EU LNG sourcing / cost measure"},{"key":"value","label":"Observed"},{"key":"unit","label":"Definition"}]},{"id":"eu-trade-commitment-implementation","auditKey":"euTradeCommitmentVsImplementation","columns":[{"key":"label","label":"Agreement / policy test"},{"key":"value","label":"Reported result"},{"key":"stage","label":"Stage"}]},{"id":"aug-2026-domestic-incidence","auditKey":"aug2026DomesticSupplyDemandIncidence","columns":[{"key":"label","label":"U.S. supply / demand"},{"key":"value","label":"Observed"},{"key":"unit","label":"Unit / comparison"}]}],
+  "completionSprint": {
+  "technicalDefinition": "Technical readiness measures implementation and verified interaction coverage only; it is not an economic finding.",
+  "publicationRule": "The functional meter may be published with withheld influence and net-benefit scores. Do not raise readiness merely for adding datasets or completing a PR.",
+  "researchGates": [
+    {
+      "id": "causation",
+      "title": "Attributable economic effects of geopolitical disruption",
+      "requirements": [
+        {
+          "label": "Pre-disruption investment and capacity baseline",
+          "status": "Verified",
+          "source": "ieaFID2025"
+        },
+        {
+          "label": "Observed LNG export changes",
+          "status": "Verified",
+          "source": "eia2026H1Capacity"
+        },
+        {
+          "label": "Shock-attributable incremental exports under credible counterfactual",
+          "status": "Insufficient evidence"
+        }
+      ],
+      "nextAction": "Construct matched capacity/utilization and demand counterfactual; do not treat precommitted capacity as conflict-induced.",
+      "caveat": "Observed exports are not an estimate of disruption-caused exports."
+    },
+    {
+      "id": "costs",
+      "title": "National costs and benefits on a comparable accounting boundary",
+      "requirements": [
+        {
+          "label": "Issuer revenues and cash flows",
+          "status": "Verified",
+          "source": "cheniereQ32026Sec"
+        },
+        {
+          "label": "Domestic price and demand observations",
+          "status": "Verified",
+          "source": "eiaNaturalGasMonthlyAug2026"
+        },
+        {
+          "label": "Export-caused household and industrial price effect",
+          "status": "Insufficient evidence"
+        },
+        {
+          "label": "Non-duplicative project, public and environmental cost incidence",
+          "status": "Insufficient evidence"
+        }
+      ],
+      "nextAction": "Estimate export-driven domestic price counterfactual, reconcile project costs, public subsidies and benefits without double counting.",
+      "caveat": "Company cash flow is not national net benefit."
+    },
+    {
+      "id": "dependence",
+      "title": "Foreign energy dependence and concessions",
+      "requirements": [
+        {
+          "label": "EU supplier share and import values",
+          "status": "Verified",
+          "source": "eurostatQ22026Energy"
+        },
+        {
+          "label": "Agreement and tariff implementation stage",
+          "status": "Verified",
+          "source": "euTariffImplemented2026"
+        },
+        {
+          "label": "Independently identified LNG-caused policy concession",
+          "status": "Insufficient evidence"
+        }
+      ],
+      "nextAction": "Match dated concessions to negotiated conditions, competing causes and actual delivered/contracted energy.",
+      "caveat": "Supplier concentration does not prove coercive leverage."
+    },
+    {
+      "id": "scoring",
+      "title": "Defensible geopolitical influence assessment",
+      "requirements": [
+        {
+          "label": "Documented source-linked measured indicators",
+          "status": "Verified",
+          "source": "eurostatQ22026Energy"
+        },
+        {
+          "label": "Two independent attributable outcomes and predeclared normalization",
+          "status": "Insufficient evidence"
+        },
+        {
+          "label": "Counterfactual and complete cost accounting",
+          "status": "Insufficient evidence"
+        }
+      ],
+      "nextAction": "Keep influence and net-benefit scores withheld until model gate criteria are met.",
+      "caveat": "No numerical influence score is currently justified."
+    }
+  ]
+},
   "meterReadiness": {
   "label": "Command Meter Readiness",
   "asOf": "2026-10-31",

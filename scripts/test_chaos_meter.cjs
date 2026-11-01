@@ -373,3 +373,22 @@ assert.deepEqual(Array.from(incidence.items,x=>x.value),[115.84,6.6,90.65,6.2,16
 assert.ok(data.sources[incidence.source]);
 assert.equal(evidenceTables.filter(x=>x.auditKey==='aug2026DomesticSupplyDemandIncidence').length,1);
 assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
+
+
+// Completion sprint: evidence sufficiency is separate from meter functionality and influence scoring.
+const completionSandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-completion-model.js','utf8'),completionSandbox);
+const completion=completionSandbox.window.EPCompletionModel;
+assert.equal(completion.classify({requirements:[{status:'Verified'},{status:'Verified'}]}),'Verified');
+assert.equal(completion.classify({requirements:[{status:'Verified'},{status:'Insufficient evidence'}]}),'Partially verified');
+assert.equal(completion.classify({requirements:[{status:'Insufficient evidence'}]}),'Insufficient evidence');
+assert.equal(completion.classify({requirements:[]}), 'Insufficient evidence');
+assert.equal(data.completionSprint.researchGates.length,4);
+assert.deepEqual(Array.from(completion.audit(data.completionSprint.researchGates),g=>g.status),['Partially verified','Partially verified','Partially verified','Partially verified']);
+for(const gate of data.completionSprint.researchGates){assert.ok(gate.nextAction);assert.ok(gate.caveat);for(const req of gate.requirements){assert.ok(completion.statuses.includes(req.status));if(req.source)assert.ok(data.sources[req.source], 'Missing gate source: '+req.source);}}
+assert.ok(html.includes('chaos-completion-model.js?v=completion-sprint-1'));
+assert.ok(html.indexOf('chaos-completion-model.js')<html.indexOf('chaos-dashboard.js'));
+assert.match(dashboard,/chaos-completion-status/);
+assert.match(dashboard,/completionModel\.audit\(sprint\.researchGates\)/);
+assert.equal(data.meterReadiness.components.find(c=>c.id==='technical').percent,90);
+assert.equal(data.meterReadiness.influenceScore,null);
+assert.equal(data.meterReadiness.netNationalBenefitUsd,null);

@@ -42,6 +42,28 @@ if(readiness){const section=element('section');section.id='chaos-meter-readiness
  section.append(element('p','Influence score: NOT SCORED · National net benefit: NOT ESTABLISHED'));
  root.prepend(section);
 }
+const sprint=data.completionSprint,completionModel=window.EPCompletionModel;
+if(sprint&&completionModel){
+ const section=element('section',undefined,'chaos-completion');
+ section.id='chaos-completion-status';section.setAttribute('aria-label','Completion and evidence sufficiency');
+ section.append(element('h4','Command meter completion tracker'));
+ section.append(element('p',sprint.technicalDefinition));
+ section.append(element('p','Technical readiness: '+(readiness.components.find(c=>c.id==='technical')||{}).percent+'% · Investigation readiness: '+readiness.percent+'% (editorial estimate)'));
+ section.append(element('p',sprint.publicationRule));
+ const list=element('div',undefined,'chaos-completion-gates');
+ for(const gate of completionModel.audit(sprint.researchGates)){
+  const detail=element('details',undefined,'chaos-completion-gate');
+  const summary=element('summary',gate.title+' — '+gate.status);
+  detail.append(summary);
+  const ul=element('ul');
+  for(const req of gate.requirements){const li=element('li',req.status+': '+req.label);if(req.source&&data.sources[req.source]){const a=element('a',' Source ↗');a.href=data.sources[req.source].url;a.target='_blank';a.rel='noopener noreferrer';li.append(a);}ul.append(li);}
+  detail.append(ul,element('p','Next evidence: '+gate.nextAction));
+  if(gate.caveat)detail.append(element('p',gate.caveat));
+  list.append(detail);
+ }
+ section.append(list);
+ root.prepend(section);
+}
 const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
 function sourceLinks(parent,ids){
  const line=element('p',undefined,'chaos-source-links');

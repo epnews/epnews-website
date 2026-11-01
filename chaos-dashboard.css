@@ -169,3 +169,15 @@
 @media(max-width:720px){.chaos-indicator-cards{grid-template-columns:1fr}.chaos-dashboard{padding:16px}.chaos-methodology{padding:12px}.chaos-dial-zones{font-size:10px}.chaos-research-archive .chaos-methodology{padding:10px}.chaos-indicator-card{padding:15px}}
 .chaos-matrix{margin:20px 0}.chaos-matrix-button{width:100%;border:1px solid #53728d;background:#213b53;color:#f4d298;border-radius:5px;padding:9px;font:inherit;text-align:left;cursor:pointer}.chaos-matrix-button:hover{background:#304e68}.chaos-matrix-button:focus-visible{outline:3px solid #ffd38b;outline-offset:2px}
 #chaos-compare-dimension{display:block;width:100%;background:#f7f9fc;color:#152238;border:0;border-radius:6px;padding:11px;margin:6px 0 14px}.chaos-command-dial[data-state="coverage"] .chaos-dial-segment{stroke:#648eab;opacity:.8}
+
+/* Command meter completion sprint: readable, expandable evidence gates. */
+.chaos-completion{margin:0 0 20px;padding:20px;border:1px solid #58718e;border-radius:10px;background:#102235;color:#f3f6fa}
+.chaos-completion h4{margin:0 0 10px;font-size:1.15rem}
+.chaos-completion p{line-height:1.5;color:#d3dfed}
+.chaos-completion-gates{display:grid;gap:9px;margin-top:14px}
+.chaos-completion-gate{border:1px solid #4b607a;border-radius:8px;padding:12px;background:#182d45}
+.chaos-completion-gate summary{cursor:pointer;font-weight:700;line-height:1.4}
+.chaos-completion-gate summary:focus-visible{outline:3px solid #f0b768;outline-offset:3px}
+.chaos-completion-gate li{margin:7px 0;line-height:1.5}
+.chaos-completion-gate a{color:#9ed8ff;margin-left:6px}
+@media(max-width:600px){.chaos-completion{padding:14px}.chaos-completion-gate{padding:10px}}
