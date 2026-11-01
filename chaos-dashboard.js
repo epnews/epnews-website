@@ -109,6 +109,15 @@ function appendVotingEvidence(actor,dimension){
  const trendKey=code==='USA'?'USA_CHN':code==='CHN'?'USA_CHN':code==='RUS'?'USA_RUS':code==='IND'?'USA_IND':null;
  if(trendKey){const first=votingEvidence.annual['2021']?.pairAgreementPct?.[trendKey],last=votingEvidence.annual['2024']?.pairAgreementPct?.[trendKey];if(Number.isFinite(first)&&Number.isFinite(last))panel.append(element('p','Standardized reference trend ('+trendKey.replace('_',' / ')+'): '+first.toFixed(2)+'% (2021) → '+last.toFixed(2)+'% (2024); change '+(last-first).toFixed(2)+' percentage points. Descriptive agreement only; not an influence score.'));}
  if(actor==='eu'){const first=votingEvidence.annual['2021']?.euMeanCohesionPct,last=votingEvidence.annual['2024']?.euMeanCohesionPct;if(Number.isFinite(first)&&Number.isFinite(last))panel.append(element('p','EU27 member cohesion: '+first.toFixed(2)+'% (2021) → '+last.toFixed(2)+'% (2024); change '+(last-first).toFixed(2)+' percentage points. Cohesion is not external influence.'));}
+ const base=votingEvidence.annual['2021'],recent=votingEvidence.annual['2024'];
+ if(base&&recent){
+  const trendTable=element('table'),trendHead=element('tr');for(const name of ['Relationship','2021','2024','Change (pp)'])trendHead.append(element('th',name));trendTable.append(trendHead);
+  const relationships=[];
+  if(code){for(const other of Object.keys(voteNames)){if(other===code)continue;const key=[code,other].sort((a,b)=>['USA','CHN','RUS','IND'].indexOf(a)-['USA','CHN','RUS','IND'].indexOf(b)).join('_');relationships.push([voteNames[other],base.pairAgreementPct?.[key],recent.pairAgreementPct?.[key]]);}relationships.push(['EU majority proxy',base.euMajorityAlignmentPct?.[code],recent.euMajorityAlignmentPct?.[code]]);}
+  else if(actor==='eu'){for(const other of Object.keys(voteNames))relationships.push([voteNames[other],base.euMajorityAlignmentPct?.[other],recent.euMajorityAlignmentPct?.[other]]);relationships.push(['EU member cohesion',base.euMeanCohesionPct,recent.euMeanCohesionPct]);}
+  let available=0;for(const [name,first,last] of relationships){if(!Number.isFinite(first)||!Number.isFinite(last))continue;const row=element('tr');for(const value of [name,first.toFixed(2)+'%',last.toFixed(2)+'%',(last-first>0?'+':'')+(last-first).toFixed(2)])row.append(element('td',value));trendTable.append(row);available++;}
+  if(available){panel.append(element('h5','Matched 2021–2024 relationships'),trendTable);}else panel.append(element('p','No matched 2021 and 2024 relationship comparison available; missing EU proxy years are not estimated.'));
+ }
  const table=element('table');const head=element('tr');for(const name of ['Year','Comparison','Agreement'])head.append(element('th',name));table.append(head);
  for(const year of ['2021','2022','2023','2024']){
   const annual=votingEvidence.annual[year];if(!annual)continue;
