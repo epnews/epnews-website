@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,26);
+assert.equal(evidenceTables.length,27);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -400,4 +400,12 @@ assert.equal(weather.items[3].value,weather.items[4].value);
 assert.equal(weather.items[5].value,null);
 assert.ok(data.sources[weather.source]);
 assert.equal(evidenceTables.filter(x=>x.auditKey==='henryHubWeatherConfounder2026').length,1);
+assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
+
+const doeHousehold=data.evidenceAudits.us['Energy and resources'].doe2050HouseholdCostCounterfactual;
+assert.equal(doeHousehold.items.length,9);
+assert.deepEqual(Array.from(doeHousehold.items.slice(0,8),r=>r.value),[5,34,6,47,15,75,20,90]);
+assert.equal(doeHousehold.items[8].value,null);
+assert.ok(data.sources[doeHousehold.source]);
+assert.equal(evidenceTables.filter(x=>x.auditKey==='doe2050HouseholdCostCounterfactual').length,1);
 assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
