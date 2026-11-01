@@ -291,9 +291,9 @@ assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'
 
 
 
-assert.match(dashboard,/if\(audit\.tenCheniereQ3CostsCapital\)/);
-assert.match(dashboard,/if\(audit\.tenGasStorageSupplyAudit\)/);
-assert.match(dashboard,/if\(audit\.aug2026TenDemandDestinationMeasures\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.tenCheniereQ3CostsCapital\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.tenGasStorageSupplyAudit\)/);
+assert.doesNotMatch(dashboard,/if\(audit\.aug2026TenDemandDestinationMeasures\)/);
 assert.match(dashboard,/if\(audit\.aug2026GasSupplyDemandBalance\)/);
 assert.match(dashboard,/if\(audit\.lngCausalCounterfactualAudit\)/);
 assert.match(dashboard,/if\(audit\.domesticGasMatched2025to2026\)/);
