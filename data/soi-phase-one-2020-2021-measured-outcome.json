@@ -1,0 +1,32 @@
+{
+  "version": "2026-11-01",
+  "eventId": "2020-us-china-phase-one",
+  "period": "2020-01-01/2021-12-31",
+  "metric": "Covered U.S. goods and services exports to China against Phase One commitments",
+  "unit": "USD billions nominal",
+  "basis": "U.S. export statistics including services",
+  "commitment": 502.4,
+  "actual": 290.8,
+  "shortfall": 211.6,
+  "fulfillmentPercent": 57.9,
+  "source": "https://www.piie.com/blogs/realtime-economics/2022/china-bought-none-extra-200-billion-us-exports-trumps-trade-deal",
+  "corroboration": "https://www.everycrsreport.com/reports/IF12125.html",
+  "agreement": "https://ustr.gov/phase-one",
+  "finding": "Purchases fell materially short of agreement commitments; does not by itself establish an attributable net U.S. geopolitical loss or equivalent Chinese gain.",
+  "limitations": [
+    "Measured trade values are not company profits, tax receipts or national economic benefits.",
+    "COVID-19, tariffs, prices, supplier diversification and export capacity complicate attribution.",
+    "PIIE publication versions differ slightly due to services revisions; use cited current webpage vintage for this measurement.",
+    "Covered goods and services only; do not compare to total bilateral exports or Chinese customs goods imports.",
+    "No automatic zero-sum score."
+  ],
+  "classification": "verified_commitment_shortfall_not_net_influence",
+  "influenceScores": {
+    "us": null,
+    "china": null,
+    "russia": null,
+    "eu": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
