@@ -1,0 +1,110 @@
+{
+  "version": "2026-11-01",
+  "startDate": "2017-01-20",
+  "endDate": "2026-11-01",
+  "historicalBaselineRule": "Earlier evidence allowed for pre-event baseline; only changes from 2017-01-20 included in event timeline",
+  "scoringRule": "Signed, withdrawn, disputed, violated, and implemented events do not alone determine positive or negative influence; establish independently measured consequences, costs, attribution and counterfactual",
+  "events": [
+    {
+      "id": "2018-us-iran-jcpoa-exit",
+      "date": "2018-05-08",
+      "actors": [
+        "us",
+        "eu",
+        "china",
+        "russia"
+      ],
+      "type": "ceased_participation_nonbinding_political_commitment",
+      "finding": "U.S. ceased JCPOA implementation and reimposed suspended sanctions; JCPOA was a nonbinding political commitment, not automatically a treaty breach",
+      "source": "https://www.everycrsreport.com/reports/R44942.html",
+      "impact": null
+    },
+    {
+      "id": "2020-us-paris-exit",
+      "date": "2020-11-04",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "type": "treaty_withdrawal_effective",
+      "finding": "First U.S. Paris Agreement withdrawal took effect following treaty withdrawal procedure",
+      "source": "https://www.everycrsreport.com/reports/R48504.html",
+      "impact": null
+    },
+    {
+      "id": "2021-us-paris-reentry",
+      "date": "2021-02-19",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "type": "treaty_reentry_effective",
+      "finding": "U.S. rejoined Paris Agreement",
+      "source": "https://www.un.org/sg/en/content/sg/notes-correspondents/2021-01-20/note-correspondents-the-united-states-return-the-paris-agreement",
+      "impact": null
+    },
+    {
+      "id": "2021-eu-china-cai-freeze",
+      "date": "2021-05-20",
+      "actors": [
+        "eu",
+        "china"
+      ],
+      "type": "ratification_frozen",
+      "finding": "European Parliament froze consideration of EU-China investment agreement after Chinese countersanctions; agreement in principle was never ratified",
+      "source": "https://www.europarl.europa.eu/pdfs/news/expert/2021/5/press_release/20210517IPR04123/20210517IPR04123_en.pdf",
+      "impact": null
+    },
+    {
+      "id": "2023-russia-new-start",
+      "date": "2023-02-28",
+      "actors": [
+        "russia",
+        "us"
+      ],
+      "type": "disputed_suspension_and_compliance",
+      "finding": "Russia announced suspension of New START; U.S. assessed suspension legally invalid and found notification/inspection noncompliance. Treaty expired February 2026.",
+      "source": "https://2021-2025.state.gov/report-on-the-reasons-that-continued-implementation-of-the-new-start-treaty-is-in-the-national-security-interest-of-the-united-states/",
+      "impact": null
+    },
+    {
+      "id": "2024-india-china-lac-patrolling",
+      "date": "2024-10-21",
+      "actors": [
+        "india",
+        "china"
+      ],
+      "type": "patrolling_agreement_implementation_reported",
+      "finding": "India reported agreement and implementation of disengagement/patrolling arrangements in Depsang and Demchok; requires independent outcome assessment",
+      "source": "https://www.mea.gov.in/lok-sabha.htm?dtl/39008/QUESTION_NO_843_INDOCHINA_AGREEMENT_ON_BORDERRELATED_ISSUES",
+      "impact": null
+    },
+    {
+      "id": "2026-us-paris-second-exit",
+      "date": "2026-01-27",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "type": "treaty_withdrawal_effective",
+      "finding": "Second U.S. withdrawal from Paris Agreement became effective",
+      "source": "https://unfccc.int/node/61231",
+      "impact": null
+    }
+  ],
+  "spheres": [
+    "us",
+    "china",
+    "russia",
+    "eu",
+    "india"
+  ],
+  "influenceScores": {
+    "us": null,
+    "china": null,
+    "russia": null,
+    "eu": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
