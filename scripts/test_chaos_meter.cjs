@@ -697,3 +697,15 @@ for(const sphere of ['us','china']){
  assert.equal(c.externalSourceCrossCheck.eligibleForInfluenceScoring,false);
  assert.equal(c.influenceScore,null);
 }
+
+// Russia, EU and India diplomatic cases must not mistake baseline or trade recovery for influence.
+const diplomaticGapCases=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-diplomatic-source-candidates.json','utf8')).cases;
+for(const sphere of ['russia','eu','india']){
+ const item=diplomaticGapCases.find(c=>c.sphere===sphere);
+ assert.equal(item.outcomeAttributionAudit.measuredIncrementalInfluence,false);
+ assert.equal(item.outcomeAttributionAudit.eligibleForInfluenceScoring,false);
+ assert.equal(item.outcomeAttributionAudit.independentClaimLevelAuditComplete,false);
+ assert.ok(item.outcomeAttributionAudit.sourceAnchors.length>=2);
+ assert.ok(item.outcomeAttributionAudit.nextVerification.length>30);
+ assert.equal(item.influenceScore,null);
+}

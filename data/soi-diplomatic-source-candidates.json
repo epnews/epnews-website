@@ -1,5 +1,5 @@
 {
-  "version": "2.2",
+  "version": "2.3",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -339,6 +339,20 @@
         "reviewer": null,
         "reviewedOn": null,
         "notes": "Cross-checked treaty date against published treaty, Interfax, CRS and European Parliament background. Claim-level audit remains pending because an independently measured behavioral outcome and reviewer sign-off are absent. Source-anchor reconciliation: Russian treaty publication supports legal milestone only, not post-treaty military behavior."
+      },
+      "outcomeAttributionAudit": {
+        "status": "source-anchors-recorded-attribution-unresolved",
+        "reviewedOn": "2026-11-01",
+        "claim": "Treaty entry into force is a legal milestone; prior Belarus-Russia security integration cannot be counted as a treaty-induced outcome.",
+        "baselineConfounder": "Russian access to Belarusian territory and joint military activities existed before December 2024.",
+        "nextVerification": "Locate a dated post-13-March-2025 Belarusian policy or operational change with pre-treaty comparator and independent corroboration.",
+        "sourceAnchors": [
+          "https://base.garant.ru/411209091/",
+          "https://www.congress.gov/crs_external_products/IF/PDF/IF10814/IF10814.31.pdf"
+        ],
+        "independentClaimLevelAuditComplete": false,
+        "measuredIncrementalInfluence": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {
@@ -437,6 +451,20 @@
         "reviewer": null,
         "reviewedOn": null,
         "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: Corrected source anchor from earlier EUPM mission background to actual EU–Moldova Security and Defence Partnership announcement; earlier EUPM source retained as baseline context."
+      },
+      "outcomeAttributionAudit": {
+        "status": "source-anchors-recorded-attribution-unresolved",
+        "reviewedOn": "2026-11-01",
+        "claim": "May 2024 partnership followed an EU mission already operating in Moldova since 2023; later assistance cannot automatically be attributed to the partnership.",
+        "baselineConfounder": "EU Partnership Mission and Moldovan cyber institution-building predate the partnership.",
+        "nextVerification": "Match specific post-partnership Moldovan implementation outputs to dated commitments and separate pre-existing mission deliverables.",
+        "sourceAnchors": [
+          "https://www.eeas.europa.eu/eeas/eu-moldova-security-defence-partnership_en",
+          "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027"
+        ],
+        "independentClaimLevelAuditComplete": false,
+        "measuredIncrementalInfluence": false,
+        "eligibleForInfluenceScoring": false
       }
     },
     {
@@ -537,6 +565,20 @@
         "reviewer": null,
         "reviewedOn": null,
         "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded. Source-anchor reconciliation: India nominal trade series is government-reported and descriptive, not an independent causal estimate."
+      },
+      "outcomeAttributionAudit": {
+        "status": "source-anchors-recorded-attribution-unresolved",
+        "reviewedOn": "2026-11-01",
+        "claim": "India-UAE merchandise trade comparison is descriptive, and the pandemic-affected FY2020-21 baseline exaggerates apparent post-agreement growth.",
+        "baselineConfounder": "Pre-CEPA FY2021-22 nominal trade had already recovered to USD 72.9 billion from USD 43.3 billion in FY2020-21.",
+        "nextVerification": "Obtain tariff-line or product-level pre/post CEPA utilization and quantities; separate price and energy effects from policy effects.",
+        "sourceAnchors": [
+          "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48",
+          "https://www.trade.gov.ae/uae-india-comprehensive-economic-partnership-agreement"
+        ],
+        "independentClaimLevelAuditComplete": false,
+        "measuredIncrementalInfluence": false,
+        "eligibleForInfluenceScoring": false
       }
     }
   ],
