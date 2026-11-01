@@ -553,3 +553,16 @@ assert.deepEqual(influenceFramework.caseFiles,[]);
 const dashboardFrameworkSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
 assert.match(dashboardFrameworkSource,/How diplomatic influence will be verified/);
 assert.match(dashboardFrameworkSource,/d\.influenceScoreAuthorized!==false/);
+
+// Case audit: absent evidence is explicitly missing, never a numerical influence score.
+const caseAuditor=require('./soi_diplomatic_case_audit.cjs');
+assert.deepEqual(caseAuditor.auditAll(influenceFramework),[]);
+const sample={id:'synthetic-test-only',sphere:'us',counterpart:'Test state',title:'Synthetic diplomatic case',stage:'announced',lastReviewed:'2026-11-01',fields:{actor:'US',actionDate:'2026-11-01'}};
+const audit=caseAuditor.auditCase(influenceFramework,sample);
+assert.equal(audit.valid,true);
+assert.equal(audit.score,null);
+assert.equal(audit.influenceScoreAuthorized,false);
+assert.equal(audit.gates.length,6);
+assert.ok(audit.gates.every(g=>g.status==='missing-evidence'));
+assert.equal(caseAuditor.auditCase(influenceFramework,{...sample,sphere:'unknown'}).valid,false);
+assert.equal(influenceFramework.caseFiles.length,0);
