@@ -3,6 +3,9 @@ const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-
 const evidenceTables=data.evidenceTableRegistry;
 assert.equal(evidenceTables.length,13);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
+assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
+for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
+
 for(const entry of evidenceTables){assert.ok(entry.id&&entry.auditKey);assert.ok(entry.columns.length);const record=data.evidenceAudits.us['Energy and resources'][entry.auditKey];assert.ok(record&&record.items.length);assert.ok(record.source||record.items.every(item=>item.source));for(const item of record.items)if(item.source)assert.ok(data.sources[item.source]);if(record.source)assert.ok(data.sources[record.source]);for(const column of entry.columns)for(const item of record.items)assert.ok(Object.hasOwn(item,column.key));}
 const southernFifteen=data.evidenceAudits.us['Energy and resources'].fifteenSouthernElectricityPrices;
 assert.equal(southernFifteen.items.length,15);assert.equal(new Set(southernFifteen.items.map(x=>x.id)).size,15);
