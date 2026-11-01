@@ -92,6 +92,123 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "fifteenSouthernElectricityPrices": {
+  "title": "Fifteen Southern-state residential and business electricity prices",
+  "period": "August 2025 versus August 2026",
+  "unit": "US cents per kilowatthour",
+  "source": "eiaStateElectricityAugust2026",
+  "items": [
+    {
+      "id": "arkansas-residential",
+      "state": "Arkansas",
+      "sector": "Residential",
+      "v2025": 13.33,
+      "v2026": 14.37
+    },
+    {
+      "id": "arkansas-commercial",
+      "state": "Arkansas",
+      "sector": "Commercial",
+      "v2025": 10.75,
+      "v2026": 11.73
+    },
+    {
+      "id": "arkansas-industrial",
+      "state": "Arkansas",
+      "sector": "Industrial",
+      "v2025": 7.32,
+      "v2026": 7.85
+    },
+    {
+      "id": "mississippi-residential",
+      "state": "Mississippi",
+      "sector": "Residential",
+      "v2025": 13.61,
+      "v2026": 14.43
+    },
+    {
+      "id": "mississippi-commercial",
+      "state": "Mississippi",
+      "sector": "Commercial",
+      "v2025": 12.88,
+      "v2026": 13.45
+    },
+    {
+      "id": "mississippi-industrial",
+      "state": "Mississippi",
+      "sector": "Industrial",
+      "v2025": 7.38,
+      "v2026": 7.57
+    },
+    {
+      "id": "alabama-residential",
+      "state": "Alabama",
+      "sector": "Residential",
+      "v2025": 16.26,
+      "v2026": 16.33
+    },
+    {
+      "id": "alabama-commercial",
+      "state": "Alabama",
+      "sector": "Commercial",
+      "v2025": 14.53,
+      "v2026": 14.98
+    },
+    {
+      "id": "alabama-industrial",
+      "state": "Alabama",
+      "sector": "Industrial",
+      "v2025": 7.76,
+      "v2026": 8.11
+    },
+    {
+      "id": "tennessee-residential",
+      "state": "Tennessee",
+      "sector": "Residential",
+      "v2025": 13.09,
+      "v2026": 13.42
+    },
+    {
+      "id": "tennessee-commercial",
+      "state": "Tennessee",
+      "sector": "Commercial",
+      "v2025": 12.86,
+      "v2026": 13.13
+    },
+    {
+      "id": "tennessee-industrial",
+      "state": "Tennessee",
+      "sector": "Industrial",
+      "v2025": 6.85,
+      "v2026": 6.92
+    },
+    {
+      "id": "kentucky-residential",
+      "state": "Kentucky",
+      "sector": "Residential",
+      "v2025": 13.1,
+      "v2026": 13.8
+    },
+    {
+      "id": "kentucky-commercial",
+      "state": "Kentucky",
+      "sector": "Commercial",
+      "v2025": 11.81,
+      "v2026": 12.09
+    },
+    {
+      "id": "kentucky-industrial",
+      "state": "Kentucky",
+      "sector": "Industrial",
+      "v2025": 7.01,
+      "v2026": 7.37
+    }
+  ],
+  "methodology": "Fifteen nonduplicate state-sector observations: residential, commercial and industrial prices in Arkansas, Mississippi, Alabama, Tennessee and Kentucky. EIA Electric Power Monthly Table 5.6.A, August 2025 and August 2026, cents/kWh. These states expand the geographic comparison beyond the previous Texas/Louisiana/Oklahoma panel. State-sector prices are sales-weighted averages (revenues/sales), not a household's tariff or bill; 2026 preliminary. Fifteen matched comparisons are not fifteen independent causal studies, and should not be added or interpreted as separate national costs.",
+  "causalStatus": "Prices reflect utility rates, generation fuel mix, weather, demand, regulation and infrastructure; no identified causal portion from LNG exports or Middle East disruptions. Net national benefit and influence remain unscored.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "tenGulfElectricityConsumerPrices": {
   "title": "Ten Gulf-region household and business electricity-price comparisons",
   "period": "August 2025 versus August 2026",

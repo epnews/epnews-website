@@ -1,5 +1,10 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const southernFifteen=data.evidenceAudits.us['Energy and resources'].fifteenSouthernElectricityPrices;
+assert.equal(southernFifteen.items.length,15);assert.equal(new Set(southernFifteen.items.map(x=>x.id)).size,15);
+assert.deepEqual(Array.from(southernFifteen.items,x=>x.v2026),[14.37,11.73,7.85,14.43,13.45,7.57,16.33,14.98,8.11,13.42,13.13,6.92,13.80,12.09,7.37]);
+assert.deepEqual(Array.from(southernFifteen.items,x=>x.v2025),[13.33,10.75,7.32,13.61,12.88,7.38,16.26,14.53,7.76,13.09,12.86,6.85,13.10,11.81,7.01]);
+assert.ok(data.sources[southernFifteen.source]);assert.equal(southernFifteen.netNationalBenefitUsd,null);assert.equal(southernFifteen.influenceScore,null);
 const gulfRetail=data.evidenceAudits.us['Energy and resources'].tenGulfElectricityConsumerPrices;
 assert.equal(gulfRetail.items.length,10);assert.equal(new Set(gulfRetail.items.map(x=>x.id)).size,10);
 assert.deepEqual(Array.from(gulfRetail.items,x=>x.v2026),[15.91,8.96,7.21,12.87,11.09,6.10,14.82,10.90,8.16,11.23]);
@@ -277,6 +282,7 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/if\(audit\.fifteenSouthernElectricityPrices\)/);
 assert.match(dashboard,/if\(audit\.tenGulfElectricityConsumerPrices\)/);
 assert.match(dashboard,/if\(audit\.tenBorderGasPriceComparisons\)/);
 assert.match(dashboard,/if\(audit\.tenSabinePassCashFlows\)/);
