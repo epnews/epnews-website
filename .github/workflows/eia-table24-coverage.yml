@@ -18,6 +18,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install 'pdfplumber>=0.11,<1'
       - run: python -m py_compile scripts/audit_eia_table24_coverage.py
+      - run: python -m unittest scripts.test_eia_table24_coverage
       - run: python scripts/audit_eia_table24_coverage.py
       - run: |
           python - <<'PY'
@@ -36,4 +37,5 @@ jobs:
           path: |
             eia-table24-coverage-audit.json
             eia-table24-source.pdf
+            eia-table24-2025-archive.pdf
           if-no-files-found: ignore
