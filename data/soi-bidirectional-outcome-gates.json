@@ -1,0 +1,46 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Capture positive and negative diplomatic outcomes, without assigning unsupported scores",
+  "outcomeTypes": [
+    "fulfilled_binding_commitment",
+    "verified_agreement_breach",
+    "withdrawal_or_termination",
+    "missed_nonbinding_pledge",
+    "partner_realignment",
+    "loss_or_gain_of_access",
+    "verified_delivery",
+    "measured_dependence_change"
+  ],
+  "requiredFields": [
+    "actor",
+    "counterparty",
+    "agreementOrCommitment",
+    "obligationType",
+    "baselineDate",
+    "eventDate",
+    "verificationSources",
+    "observedConsequence",
+    "affectedParty",
+    "costs",
+    "counterfactual",
+    "attribution",
+    "independentMeasuredOutcomes",
+    "normalization"
+  ],
+  "signPolicy": {
+    "positive": "Only when verified net attributable gain is established",
+    "negative": "Only when verified net attributable loss is established",
+    "neutral": "When impact is mixed, unknown, or not independently measured",
+    "breachNotAutomaticallyNegative": true,
+    "nonbindingPledgeNotAutomaticallyBreach": true,
+    "doNotInferZeroSum": true
+  },
+  "countryImpactScores": {
+    "us": null,
+    "india": null,
+    "china": null,
+    "russia": null,
+    "eu": null
+  },
+  "records": []
+}
