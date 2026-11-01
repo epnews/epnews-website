@@ -92,6 +92,97 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "tenSabinePassCashFlows": {
+  "title": "Ten Sabine Pass actual cash flow and capital allocation measurements",
+  "period": "Nine months ended September 30: 2025 versus 2026",
+  "source": "sabine2026SEC10Q",
+  "items": [
+    {
+      "id": "operating-cash",
+      "label": "Net operating cash provided",
+      "v2025": 1881,
+      "v2026": 2550,
+      "unit": "USD millions",
+      "note": "Cash from operations; includes working-capital timing."
+    },
+    {
+      "id": "ppe-cash",
+      "label": "Cash used for property, plant and equipment",
+      "v2025": -176,
+      "v2026": -526,
+      "unit": "USD millions",
+      "note": "Capital cash outlay; cash outflow signed negative."
+    },
+    {
+      "id": "investing-cash",
+      "label": "Net cash used in investing activities",
+      "v2025": -180,
+      "v2026": -531,
+      "unit": "USD millions",
+      "note": "Includes property/equipment spending; do not add to it."
+    },
+    {
+      "id": "debt-proceeds",
+      "label": "Debt issuances and borrowing proceeds",
+      "v2025": 1262,
+      "v2026": 1903,
+      "unit": "USD millions",
+      "note": "Borrowing inflow is financing, not earned export revenue."
+    },
+    {
+      "id": "debt-repayment",
+      "label": "Debt repayments and redemptions",
+      "v2025": -1617,
+      "v2026": -1967,
+      "unit": "USD millions",
+      "note": "Financing outflow, not a domestic welfare loss."
+    },
+    {
+      "id": "distributions",
+      "label": "Cash distributions",
+      "v2025": -1539,
+      "v2026": -1521,
+      "unit": "USD millions",
+      "note": "Payments to unitholders, not necessarily U.S.-resident beneficiaries."
+    },
+    {
+      "id": "financing-cash",
+      "label": "Net cash used in financing activities",
+      "v2025": -1916,
+      "v2026": -1616,
+      "unit": "USD millions",
+      "note": "Includes debt proceeds, repayments and distributions."
+    },
+    {
+      "id": "net-cash-change",
+      "label": "Net change in cash and restricted cash",
+      "v2025": -215,
+      "v2026": 403,
+      "unit": "USD millions",
+      "note": "Sum of operating, investing and financing cash flow; not additive."
+    },
+    {
+      "id": "derivative-cash",
+      "label": "Net cash derivative settlements",
+      "v2025": 6,
+      "v2026": -22,
+      "unit": "USD millions",
+      "note": "Cash settlement, unlike noncash derivative fair-value adjustments."
+    },
+    {
+      "id": "interest-paid",
+      "label": "Cash interest paid, net of capitalized amounts",
+      "v2025": 575,
+      "v2026": 527,
+      "unit": "USD millions",
+      "note": "Financing cash expense; do not add to interest expense as a second cost."
+    }
+  ],
+  "methodology": "Ten reported cash flow fields from Cheniere Energy Partners SEC 10-Q, including one supplemental cash-interest disclosure. Outflows are signed negative. Operating, investing and financing cash flows sum into net cash change; investing includes PP&E, financing includes debt proceeds/repayments/distributions. They are not ten independent economic gains. Cash interest paid may be included in operating cash flow under U.S. GAAP. 2025/2026 nine-month periods match, but payments and working-capital timing differ. This partnership is consolidated by parent Cheniere, so its cash flows cannot be added to parent consolidated cash flows.",
+  "causalStatus": "Cash flows quantify actual financing, reinvestment and distribution channels, not a causal impact of Middle East disruptions or net U.S. welfare. Unitholder residence, suppliers, tax incidence and counterfactual flows are unresolved.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "tenSabinePassPartnershipCosts": {
   "title": "Ten Sabine Pass partnership financial beneficiaries and costs",
   "period": "Nine months ended September 30: 2025 versus 2026",
@@ -2436,6 +2527,7 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "sabine2026SEC10Q":{"label":"SEC Cheniere Energy Partners Form 10-Q, September 30 2026, consolidated cash flows and supplemental interest","url":"https://www.sec.gov/Archives/edgar/data/1383650/000138365026000038/cqp-20260930.htm","date":"2026-10-29"},
     "chenierePartnersQ32026":{"label":"Cheniere Energy Partners Q3 2026 earnings release, nine-month GAAP statement","url":"https://cqpir.cheniere.com/sec-filings/all-sec-filings/content/0001383650-26-000040/cqp20263rdqtrerex991.htm","date":"2026-10-29"},
     "eiaMonthlySupplyDisposition2026":{"label":"EIA U.S. Natural Gas Monthly Supply and Disposition Balance, August 2026","url":"https://www.eia.gov/dnav/ng/ng_sum_sndm_s1_m.htm","date":"2026-10-30"},
     "eiaWeeklyStorage2026":{"label":"EIA Weekly Working Gas in Underground Storage, week ending October 2, 2026","url":"https://www.eia.gov/dnav/ng/ng_stor_wkly_s1_w.htm","date":"2026-10-08"},
