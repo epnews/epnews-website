@@ -525,3 +525,19 @@ for(const code of ['USA','CHN','RUS','IND'])assert.ok(Number.isFinite(votingEvid
 
 // 2024 source-file recomputation reproduces the pre-existing published EU alignment values.
 assert.deepEqual(votingEvidence.annual['2024'].euMajorityAlignmentPct,{USA:60.87,CHN:39.13,RUS:38.71,IND:44.09});
+
+// Descriptive diplomatic profile must use four counterpart relationships, not an influence score.
+const profilePeers=['USA','CHN','RUS','IND','EU'];
+for(const year of ['2021','2022','2023','2024']){
+ const a=votingEvidence.annual[year];
+ for(const actor of profilePeers){
+  const counterparts=profilePeers.filter(p=>p!==actor);
+  const values=counterparts.map(peer=>actor==='EU'?a.euMajorityAlignmentPct[peer]:peer==='EU'?a.euMajorityAlignmentPct[actor]:a.pairAgreementPct[[actor,peer].sort((x,y)=>profilePeers.indexOf(x)-profilePeers.indexOf(y)).join('_')]);
+  assert.equal(values.length,4);
+  assert.ok(values.every(Number.isFinite),'incomplete four-counterpart diplomatic profile '+year+' '+actor);
+  assert.ok(values.reduce((s,n)=>s+n,0)/4<=100);
+ }
+}
+const dashboardSource=fs.readFileSync(__dirname+'/../chaos-dashboard.js','utf8');
+assert.match(dashboardSource,/Compare standardized diplomatic voting profile/);
+assert.match(dashboardSource,/No meter needle or score uses this calculation/);
