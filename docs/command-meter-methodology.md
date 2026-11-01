@@ -279,3 +279,8 @@ Four additional existing eight-record datasets (32 observations) migrate to the 
 ## New issuer evidence batch #220
 
 Five additional September 30, 2026 Cheniere issuer observations: consolidated cash $1,663 million; restricted cash $393 million; available credit commitments $6,023 million; $569 million of consolidated cash held by Cheniere Partners; and 48.6% limited-partner ownership. Cheniere owns the general-partner interest. Subsidiary cash is included in consolidated cash, and credit capacity is not cash. Source: https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full . These are financial-boundary measures, not export profit or national net benefit. No readiness or influence score change.
+
+
+## Earnings reconciliation #221
+
+Cheniere issuer-reported nine-month 2026 consolidated revenues ($17,773 million versus $14,526 million), GAAP attributable income ($736 million versus $3,028 million), and rounded non-GAAP adjusted attributable income (approximately $2,390 million versus $1,880 million). The adjusted figures are approximate and not GAAP cash receipts. Derivative fair-value changes materially complicate GAAP year-over-year interpretation. Source: https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full . Do not add overlapping earnings measures or infer national net benefit. No readiness score change.
