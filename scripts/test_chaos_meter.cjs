@@ -433,7 +433,7 @@ for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(d
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
 assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
-assert.ok(html.includes('chaos-dashboard.js?v=russia-ledger-245'));
+assert.ok(html.includes('chaos-dashboard.js?v=russia-fiscal-246'));
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
 assert.equal(data.actors.us.Diplomatic.number,1);
@@ -485,3 +485,9 @@ assert.ok(data.actors.russia['Energy and resources'].sources.includes('kseRussia
 assert.match(data.actors.russia['Energy and resources'].costs,/688 billion RUB/);
 assert.match(data.actors.russia['Energy and resources'].costs,/US\$4.4B/);
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/do not add or subtract/);
+
+assert.ok(data.actors.russia['Energy and resources'].sources.includes('russiaMinfinSeptember2026'));
+assert.match(data.actors.russia['Energy and resources'].costs,/452.4 billion RUB/);
+assert.match(data.actors.russia['Energy and resources'].costs,/−22.3% YoY/);
+assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/Separate fiscal series/);
+assert.equal(data.actors.russia['Energy and resources'].number,625);
