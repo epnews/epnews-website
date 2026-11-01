@@ -1,0 +1,20 @@
+name: Command Meter Cross Country Evidence Gates
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/command-meter-cross-country-research-gates.json'
+      - 'scripts/validate_command_meter_cross_country.py'
+      - '.github/workflows/command-meter-cross-country-gates.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_command_meter_cross_country.py
