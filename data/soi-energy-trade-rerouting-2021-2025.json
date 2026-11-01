@@ -1,0 +1,141 @@
+{
+  "version": "2026-11-01",
+  "title": "EU gas supplier replacement and Russian crude trade redirection",
+  "measurements": [
+    {
+      "id": "eu-gas-suppliers-2021-2025",
+      "metric": "EU natural gas imports by supplier, pipeline and LNG combined",
+      "unit": "billion cubic metres per calendar year",
+      "observations": [
+        {
+          "supplier": "Russia",
+          "year": 2021,
+          "value": 153,
+          "approximate": true
+        },
+        {
+          "supplier": "Russia",
+          "year": 2025,
+          "value": 36
+        },
+        {
+          "supplier": "United States",
+          "year": 2021,
+          "value": 18.9
+        },
+        {
+          "supplier": "United States",
+          "year": 2025,
+          "value": 75.6
+        },
+        {
+          "supplier": "Norway",
+          "year": 2021,
+          "value": 79.5
+        },
+        {
+          "supplier": "Norway",
+          "year": 2025,
+          "value": 89.3
+        }
+      ],
+      "source": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
+      "method": "European Commission calculations based on LSEG (Refinitiv) and ENTSO-G",
+      "scope": "EU-27; all natural gas, not LNG-only",
+      "caveats": [
+        "2021 Russia figure is approximate; 2025 36 bcm rounded",
+        "Different data vintage and method from ECA 2021–2024 dataset; don't splice without reconciliation",
+        "EU gas demand declined over 19% 2021–2024, so not all reduced Russian volume was replaced",
+        "US gas receipts, net profit and domestic costs not measured"
+      ]
+    },
+    {
+      "id": "russian-crude-export-destinations-2020-2024",
+      "metric": "Russian crude oil and condensate export destination",
+      "unit": "million barrels per day and percent share",
+      "observations": [
+        {
+          "destination": "China",
+          "year": 2024,
+          "value": 2.2,
+          "unit": "million barrels per day"
+        },
+        {
+          "destination": "India",
+          "year": 2020,
+          "value": 0.05,
+          "unit": "million barrels per day",
+          "approximate": true
+        },
+        {
+          "destination": "India",
+          "year": 2024,
+          "value": 1.7,
+          "unit": "million barrels per day"
+        },
+        {
+          "destination": "Europe incl Türkiye",
+          "year": 2020,
+          "value": 51,
+          "unit": "percent of Russian exports"
+        },
+        {
+          "destination": "Europe incl Türkiye",
+          "year": 2024,
+          "value": 12,
+          "unit": "percent of Russian exports"
+        },
+        {
+          "destination": "Asia and Oceania",
+          "year": 2020,
+          "value": 41,
+          "unit": "percent of Russian exports"
+        },
+        {
+          "destination": "Asia and Oceania",
+          "year": 2024,
+          "value": 81,
+          "unit": "percent of Russian exports"
+        }
+      ],
+      "source": "https://www.eia.gov/todayinenergy/detail.php?id=65885",
+      "method": "EIA analysis based on Global Trade Tracker, Argus and Vortexa",
+      "scope": "Russian crude and condensate, not all petroleum products",
+      "caveats": [
+        "Europe category includes Türkiye; not EU-only",
+        "China and India volumes are estimates, not Russian net receipts",
+        "Shifting export destinations does not demonstrate sanction-free trade or equal pricing",
+        "Regional shares rounded"
+      ]
+    },
+    {
+      "id": "us-lng-europe-2022",
+      "metric": "U.S. LNG exports to Europe (EU-27 plus UK)",
+      "unit": "billion cubic feet per day",
+      "observations": [
+        {
+          "year": 2022,
+          "value": 6.8
+        }
+      ],
+      "growth2021to2022Percent": 141,
+      "source": "https://www.eia.gov/todayinenergy/detail.php?id=55920",
+      "scope": "EU-27 plus UK; not identical to EU-only import figures",
+      "caveats": [
+        "Do not combine directly with EU-only bcm series",
+        "Export destination not company realized margin",
+        "2022 price surge influences export revenue independently of volumes"
+      ]
+    }
+  ],
+  "deduplication": "Russian gas 2021–2024 series from prior PR remains separate due to source methodology; repeated workstream links count once",
+  "newIndependentSeries": 3,
+  "netInfluenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  },
+  "readinessAdjustment": null
+}
