@@ -64,6 +64,32 @@ if(sprint&&completionModel){
  section.append(list);
  root.prepend(section);
 }
+// Progressive disclosure: the public meter leads; research administration stays available on demand.
+const makeDrawer=(title,description,cls)=>{
+ const drawer=element('details',undefined,'chaos-clean-drawer '+cls);
+ const summary=element('summary',title);
+ const hint=element('span',description,'chaos-clean-hint');
+ summary.append(hint);drawer.append(summary);return drawer;
+};
+const technicalDrawer=makeDrawer('RESEARCH PROGRESS & METHODOLOGY','Readiness, scoring gates, source checks and unresolved questions','chaos-research-drawer');
+for(const id of ['chaos-completion-status','chaos-meter-readiness']){
+ const section=root.querySelector('#'+id);if(section)technicalDrawer.append(section);
+}
+if(technicalDrawer.children.length>1)root.append(technicalDrawer);
+const assessment=root.querySelector('#chaos-assessment-readiness');
+if(assessment){
+ const assessmentDrawer=makeDrawer('WHY IS INFLUENCE NOT SCORED?','Review the evidence and scoring requirements','chaos-assessment-drawer');
+ assessment.parentNode.insertBefore(assessmentDrawer,assessment);
+ assessmentDrawer.append(assessment);
+}
+const explorationDrawer=makeDrawer('EXPLORE COMPARISONS & SUPPORTING EVIDENCE','Country matrix, indicator sources and side-by-side comparisons','chaos-exploration-drawer');
+for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare']){
+ const section=root.querySelector('.'+cls);if(section)explorationDrawer.append(section);
+}
+if(explorationDrawer.children.length>1){
+ const archive=root.querySelector('.chaos-research-archive');
+ if(archive)root.insertBefore(explorationDrawer,archive);else root.append(explorationDrawer);
+}
 const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
 function sourceLinks(parent,ids){
  const line=element('p',undefined,'chaos-source-links');
