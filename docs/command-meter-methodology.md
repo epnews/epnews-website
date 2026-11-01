@@ -274,3 +274,8 @@ The shared renderer now retains per-item note, caution, caveat, limit and meanin
 ## Shared renderer batch #219
 
 Four additional existing eight-record datasets (32 observations) migrate to the common registry: Q3 company outcomes, trade financial cross-checks, observed LNG trade indicators and the eight-point LNG evidence audit. No new source claims or readiness increase. The shared renderer retains caveats and links sources, but this migration does not itself establish national net benefit or geopolitical influence. Baseline and outcome fields are displayed without implying causal attribution.
+
+
+## New issuer evidence batch #220
+
+Five additional September 30, 2026 Cheniere issuer observations: consolidated cash $1,663 million; restricted cash $393 million; available credit commitments $6,023 million; $569 million of consolidated cash held by Cheniere Partners; and 48.6% limited-partner ownership. Cheniere owns the general-partner interest. Subsidiary cash is included in consolidated cash, and credit capacity is not cash. Source: https://lngir.cheniere.com/news-events/press-releases/detail/349/cheniere-reports-third-quarter-2026-results-raises-full . These are financial-boundary measures, not export profit or national net benefit. No readiness or influence score change.
