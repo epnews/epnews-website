@@ -7,10 +7,10 @@ Each source must contain 12 monthly observations. Missing is not zero.
 import argparse,csv,io,json,re,urllib.request,zipfile
 from pathlib import Path
 SERIES={
- 'dry_production':('NG.N9070US2.M','Bcf','https://www.eia.gov/dnav/ng/hist/n9070us2m.htm'),
- 'residential_deliveries':('NG.N3010US2.M','Bcf','https://www.eia.gov/dnav/ng/hist/n3010us2m.htm'),
- 'industrial_deliveries':('NG.N3035US2.M','Bcf','https://www.eia.gov/dnav/ng/hist/n3035us2m.htm'),
- 'lng_exports':('NG.N9133US2.M','Bcf','https://www.eia.gov/dnav/ng/hist/n9133us2m.htm')
+ 'dry_production':('NG.N9070US2.M','MMcf','https://www.eia.gov/dnav/ng/hist/n9070us2m.htm'),
+ 'residential_deliveries':('NG.N3010US2.M','MMcf','https://www.eia.gov/dnav/ng/hist/n3010us2m.htm'),
+ 'industrial_deliveries':('NG.N3035US2.M','MMcf','https://www.eia.gov/dnav/ng/hist/n3035us2m.htm'),
+ 'lng_exports':('NG.N9133US2.M','MMcf','https://www.eia.gov/dnav/ng/hist/n9133us2m.htm')
 }
 MONTHS=[f'{y}-{m:02d}' for y in (2025,2026) for m in range(1,7)]
 def fetch_legacy(series_id):
