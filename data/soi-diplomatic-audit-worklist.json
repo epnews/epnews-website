@@ -1,0 +1,259 @@
+{
+  "version": "1.0",
+  "asOf": "2026-11-01",
+  "status": "research-worklist-not-verified-outcomes",
+  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review.",
+  "scoringAuthorized": false,
+  "items": [
+    {
+      "sphere": "us",
+      "caseId": "soi-dip-candidate-1",
+      "title": "2023 Camp David trilateral cooperation commitments",
+      "sourceAuditStatus": "pending-independent-review",
+      "stage": "announced",
+      "knownObservation": "August 18, 2023: US, Japan and South Korea committed to activate trilateral real-time DPRK missile-warning data sharing. November 2023: ministers reported final-stage testing. December 19, 2023: all three governments announced full activation following operational tests. This is a documented change from prior separate US bilateral data-sharing arrangements, not proof of unilateral US influence.",
+      "missingGates": [
+        "activity",
+        "commitment",
+        "implementation",
+        "attribution",
+        "durability",
+        "costs"
+      ],
+      "priorityTasks": [
+        {
+          "id": "verify-primary",
+          "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
+          "complete": false
+        },
+        {
+          "id": "verify-counterpart",
+          "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
+          "complete": false
+        },
+        {
+          "id": "match-baseline",
+          "requirement": "Document pre-August-2023 information-sharing arrangements and operational limits.",
+          "complete": false
+        },
+        {
+          "id": "match-followup",
+          "requirement": "Find dated US/Japan/ROK defense ministry reports of operational exchanges, exercises, and continuity.",
+          "complete": false
+        },
+        {
+          "id": "attribute",
+          "requirement": "Pre-existing US bilateral alliances and independent Japan-ROK reconciliation.",
+          "complete": false
+        },
+        {
+          "id": "costs",
+          "requirement": "Identify direct defense coordination costs and concessions in comparable units.",
+          "complete": false
+        }
+      ],
+      "influenceScore": null
+    },
+    {
+      "sphere": "china",
+      "caseId": "soi-dip-candidate-2",
+      "title": "2023 Beijing agreement to resume Saudi-Iran diplomatic relations",
+      "sourceAuditStatus": "pending-independent-review",
+      "stage": "signed",
+      "knownObservation": "Saudi Arabia and Iran agreed in Beijing on 10 March 2023 to resume diplomatic ties and reopen missions within two months. Iran reopened its embassy in Riyadh in June 2023; Saudi Arabia's embassy in Tehran resumed operations in August 2023. The embassy reopening milestones occurred after the agreement, but beyond its initial two-month target.",
+      "missingGates": [
+        "activity",
+        "commitment",
+        "implementation",
+        "attribution",
+        "durability",
+        "costs"
+      ],
+      "priorityTasks": [
+        {
+          "id": "verify-primary",
+          "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
+          "complete": false
+        },
+        {
+          "id": "verify-counterpart",
+          "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
+          "complete": false
+        },
+        {
+          "id": "match-baseline",
+          "requirement": "Document diplomatic representation and negotiation milestones before March 2023.",
+          "complete": false
+        },
+        {
+          "id": "match-followup",
+          "requirement": "Find dated embassy reopening records and subsequent bilateral meetings from Saudi and Iranian foreign ministries.",
+          "complete": false
+        },
+        {
+          "id": "attribute",
+          "requirement": "Earlier Iraqi/Omani mediation and Saudi-Iranian strategic interests.",
+          "complete": false
+        },
+        {
+          "id": "costs",
+          "requirement": "Identify concessions, security outcomes and any costs attributable to mediation.",
+          "complete": false
+        }
+      ],
+      "influenceScore": null
+    },
+    {
+      "sphere": "russia",
+      "caseId": "soi-dip-candidate-3",
+      "title": "Russia-Belarus Union State security guarantees treaty",
+      "sourceAuditStatus": "pending-independent-review",
+      "stage": "implemented",
+      "knownObservation": "Treaty signed 6 December 2024, ratified by Russia in February 2025 and entered into force 13 March 2025. Prior to signature, Belarus had already supported Russia's 2022 invasion, hosted Russian forces and missile systems, and engaged in Union State security cooperation. The treaty codifies security commitments; it does not establish that these earlier behaviors resulted from the treaty.",
+      "missingGates": [
+        "activity",
+        "commitment",
+        "implementation",
+        "attribution",
+        "durability",
+        "costs"
+      ],
+      "priorityTasks": [
+        {
+          "id": "verify-primary",
+          "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
+          "complete": false
+        },
+        {
+          "id": "verify-counterpart",
+          "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
+          "complete": false
+        },
+        {
+          "id": "match-baseline",
+          "requirement": "Document pre-March-2025 Belarus-Russia military integration and commitments.",
+          "complete": false
+        },
+        {
+          "id": "match-followup",
+          "requirement": "Find dated Belarusian government implementation orders and independently corroborated operational changes.",
+          "complete": false
+        },
+        {
+          "id": "attribute",
+          "requirement": "Pre-existing Union State obligations and Belarus's own security choices.",
+          "complete": false
+        },
+        {
+          "id": "costs",
+          "requirement": "Identify financing, sovereignty concessions, and sanctions-related consequences.",
+          "complete": false
+        }
+      ],
+      "influenceScore": null
+    },
+    {
+      "sphere": "eu",
+      "caseId": "soi-dip-candidate-eu-moldova-2024",
+      "title": "EU–Moldova Security and Defence Partnership",
+      "sourceAuditStatus": "pending-independent-review",
+      "stage": "signed",
+      "knownObservation": "EU–Moldova Security and Defence Partnership signed May 2024. Moldova's foreign ministry confirmed in May 2025 that EUPM assistance included contributions to a crisis-management center concept, cybersecurity agency assistance and equipment; mission began in May 2023. A November 2025 joint dialogue recommitted to cybersecurity and hybrid-threat cooperation. These are operational cooperation observations, not demonstrated incremental outcomes caused by the 2024 partnership.",
+      "missingGates": [
+        "activity",
+        "commitment",
+        "implementation",
+        "attribution",
+        "durability",
+        "costs"
+      ],
+      "priorityTasks": [
+        {
+          "id": "verify-primary",
+          "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
+          "complete": false
+        },
+        {
+          "id": "verify-counterpart",
+          "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
+          "complete": false
+        },
+        {
+          "id": "match-baseline",
+          "requirement": "Document Moldova-EU cooperation and assistance already underway before May 2024.",
+          "complete": false
+        },
+        {
+          "id": "match-followup",
+          "requirement": "Find Moldovan government implementation decisions and EU mission delivery reports with dates and measurable outputs.",
+          "complete": false
+        },
+        {
+          "id": "attribute",
+          "requirement": "Russia's invasion of Ukraine, Moldovan domestic choices, and pre-existing EU missions.",
+          "complete": false
+        },
+        {
+          "id": "costs",
+          "requirement": "Track EU budget commitments and Moldovan co-financing separately from disbursements.",
+          "complete": false
+        }
+      ],
+      "influenceScore": null
+    },
+    {
+      "sphere": "india",
+      "caseId": "soi-dip-candidate-5",
+      "title": "India-UAE Comprehensive Economic Partnership Agreement enters into force",
+      "sourceAuditStatus": "pending-independent-review",
+      "stage": "implemented",
+      "knownObservation": "Descriptive numeric comparison only; no attributable policy effect established",
+      "missingGates": [
+        "activity",
+        "commitment",
+        "implementation",
+        "attribution",
+        "durability",
+        "costs"
+      ],
+      "priorityTasks": [
+        {
+          "id": "verify-primary",
+          "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
+          "complete": false
+        },
+        {
+          "id": "verify-counterpart",
+          "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
+          "complete": false
+        },
+        {
+          "id": "match-baseline",
+          "requirement": "Collect matched pre-CEPA product-level trade, tariff, and demand data.",
+          "complete": false
+        },
+        {
+          "id": "match-followup",
+          "requirement": "Collect comparable customs tariff utilization and trade quantities for 2022 onward.",
+          "complete": false
+        },
+        {
+          "id": "attribute",
+          "requirement": "Energy prices, global trade rebound, exchange rates and UAE demand.",
+          "complete": false
+        },
+        {
+          "id": "costs",
+          "requirement": "Measure tariff revenue forgone, adjustment costs and bilateral distributional effects.",
+          "complete": false
+        }
+      ],
+      "influenceScore": null
+    }
+  ],
+  "limitations": [
+    "Not a representative sample or cross-sphere ranking",
+    "Research task completion is not influence magnitude",
+    "Unknown or missing evidence must never be zero-filled"
+  ]
+}
