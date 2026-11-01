@@ -5,8 +5,10 @@ window.EP_CHAOS_DATA = {
   "meterReadiness": {
   "label": "Command Meter Readiness",
   "asOf": "2026-10-31",
-  "percent": 45,
-  "previousPercent": null,
+  "percent": 47,
+  "previousPercent": 45,
+  "lastEvidencePr": 194,
+  "changeReason": "Q3 2026 Cheniere recognized revenue, non-GAAP adjusted EBITDA and distributable cash flow, and exported cargo/volume provide more recent issuer-reported outcomes; causal and national accounting gaps remain.",
   "baselinePr": 192,
   "kind": "Editorial planning estimate; not a measured statistical percentage",
   "components": [
@@ -18,7 +20,7 @@ window.EP_CHAOS_DATA = {
     {
       "id": "evidence",
       "label": "Verified economic evidence",
-      "percent": 55
+      "percent": 60
     },
     {
       "id": "incidence",
