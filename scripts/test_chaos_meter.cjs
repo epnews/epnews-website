@@ -482,7 +482,7 @@ assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/NOT c
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/September 2026/);
 
 assert.ok(data.actors.russia['Energy and resources'].sources.includes('kseRussianOilTrackerOct2026'));
-assert.match(data.actors.russia['Energy and resources'].costs,/688 billion RUB/);
+assert.match(data.actors.russia['Energy and resources'].costs,/688\.3 billion RUB/);
 assert.match(data.actors.russia['Energy and resources'].costs,/US\$4.4B/);
 assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/do not add or subtract/);
 
