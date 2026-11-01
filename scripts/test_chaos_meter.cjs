@@ -812,7 +812,7 @@ for(const item of diplomaticQueue.items){
  assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
  assert.equal(item.priorityTasks.find(t=>t.id==='costs').complete,false);
 }
-assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),6);
+assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),8);
 
 // Additional operational-use and resource evidence remains distinct from influence.
 const usOperational=diplomaticQueue.items.find(x=>x.sphere==='us').additionalOperationalEvidence;
@@ -827,7 +827,7 @@ assert.equal(euResources.eligibleForInfluenceScoring,false);
 
 // Audit progress must exactly reflect scoped completed tasks, not count source links as causal evidence.
 const auditProgress=diplomaticQueue.auditProgressSummary;
-assert.equal(auditProgress.completedScopedChecks,6);
+assert.equal(auditProgress.completedScopedChecks,8);
 assert.equal(auditProgress.requiredChecks,30);
 assert.equal(auditProgress.independentlyAuditedPerformanceCases,0);
 assert.equal(auditProgress.attributionValidatedCases,0);
@@ -841,7 +841,7 @@ for(const item of diplomaticQueue.items){
 const {compileDiplomaticOutcomes,SPHERES}=require('../soi-diplomatic-outcomes-model.js');
 const observedOutcomeModel=compileDiplomaticOutcomes(diplomaticQueue);
 assert.deepEqual(observedOutcomeModel.rows.map(x=>x.sphere),SPHERES);
-assert.equal(observedOutcomeModel.checksCompleted,6);
+assert.equal(observedOutcomeModel.checksCompleted,8);
 assert.equal(observedOutcomeModel.checksRequired,30);
 assert.equal(observedOutcomeModel.scoringAuthorized,false);
 assert.equal(observedOutcomeModel.outcomeClassesComparable,false);
@@ -862,3 +862,11 @@ assert.match(liveDiplomacyDashboardSource,/VERIFICATION PROGRESS/);
 assert.match(liveDiplomacyDashboardSource,/OBSERVED OUTCOME/);
 assert.match(liveDiplomacyDashboardSource,/Original diplomatic influence needle remains unscored/);
 assert.match(indexSource,/chaos-dashboard\.js\?v=diplomacy-live-outcomes-v2/);
+
+// US before/after institution status now has independently dated official sources, not causal attribution.
+const usMatched=diplomaticQueue.items.find(x=>x.sphere==='us');
+assert.equal(usMatched.baselineFollowupAssessment.descriptivelyComparable,true);
+assert.equal(usMatched.baselineFollowupAssessment.causallyAttributable,false);
+assert.equal(usMatched.auditProgress.completedScopedChecks,4);
+assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-baseline').complete);
+assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-followup').complete);
