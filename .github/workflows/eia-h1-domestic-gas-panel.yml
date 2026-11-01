@@ -1,0 +1,44 @@
+name: EIA H1 Domestic Gas Panel
+on:
+  workflow_dispatch:
+    inputs:
+      series_json:
+        description: 'JSON map of six verified EIA v2 series IDs; leave blank to run completeness tests only'
+        required: false
+        default: ''
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_eia_h1_domestic_gas_panel.py'
+      - 'scripts/test_build_eia_h1_domestic_gas_panel.py'
+      - '.github/workflows/eia-h1-domestic-gas-panel.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest scripts.test_build_eia_h1_domestic_gas_panel
+      - name: Fetch selected EIA series
+        if: inputs.series_json != ''
+        env:
+          SERIES_JSON: ${{ inputs.series_json }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          config=json.loads(os.environ['SERIES_JSON'])
+          args=['python','scripts/build_eia_h1_domestic_gas_panel.py']
+          for name,series_id in config.items():args.extend(['--series',name+'='+series_id])
+          raise SystemExit(subprocess.call(args))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eia-h1-domestic-gas-panel
+          path: eia-h1-domestic-gas-panel.json
+          if-no-files-found: ignore
