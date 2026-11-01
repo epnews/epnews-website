@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -58,6 +58,12 @@
         "costRequirement": "Identify direct defense coordination costs and concessions in comparable units.",
         "completionStatus": "planned-not-measured",
         "priority": "high"
+      },
+      "observedEvidence": {
+        "type": "implementation-followup",
+        "finding": "August 2023 Pentagon statement committed to real-time trilateral missile-warning data sharing; subsequent operational verification requires a distinct dated source.",
+        "source": "https://www.defense.gov/News/Releases/Release/Article/3498219/statement-from-secretary-of-defense-lloyd-j-austin-iii-on-united-states-trilate/",
+        "caveat": "Announcement alone is not proof of operational implementation."
       }
     },
     {
@@ -114,6 +120,12 @@
         "costRequirement": "Identify concessions, security outcomes and any costs attributable to mediation.",
         "completionStatus": "planned-not-measured",
         "priority": "high"
+      },
+      "observedEvidence": {
+        "type": "contextual-corroboration",
+        "finding": "June 2023 US-GCC joint statement welcomed the Saudi-Iran decision to resume diplomatic relations.",
+        "source": "https://2021-2025.state.gov/joint-statement-following-the-ministerial-meeting-of-the-united-states-and-the-gulf-cooperation-council-gcc/",
+        "caveat": "Third-party acknowledgment of agreement is not evidence of exclusive Chinese causation or embassy operations."
       }
     },
     {
@@ -169,6 +181,12 @@
         "costRequirement": "Identify financing, sovereignty concessions, and sanctions-related consequences.",
         "completionStatus": "planned-not-measured",
         "priority": "high"
+      },
+      "observedEvidence": {
+        "type": "legal-baseline",
+        "finding": "Russia-Belarus security guarantees treaty signed December 2024 and entered into force March 13 2025.",
+        "source": "https://base.garant.ru/411209091/",
+        "caveat": "Treaty effectiveness does not establish incremental Belarusian behavior versus existing integration."
       }
     },
     {
@@ -227,6 +245,15 @@
         "costRequirement": "Track EU budget commitments and Moldovan co-financing separately from disbursements.",
         "completionStatus": "planned-not-measured",
         "priority": "high"
+      },
+      "observedEvidence": {
+        "type": "baseline-confounder",
+        "finding": "EU Partnership Mission in Moldova launched in May 2023, before May 2024 security partnership; EU Commission reports Moldova cybersecurity agency and cyber institute launched February 2024, also before partnership.",
+        "sources": [
+          "https://www.eeas.europa.eu/eupm-moldova/about-eu-partnership-mission-republic-moldova_en",
+          "https://enlargement.ec.europa.eu/document/download/858717b3-f8ef-4514-89fe-54a6aa15ef69_en?filename=Moldova+Report+2024.pdf"
+        ],
+        "caveat": "Do not attribute pre-partnership actions to May 2024 partnership."
       }
     },
     {
@@ -283,6 +310,21 @@
         "costRequirement": "Measure tariff revenue forgone, adjustment costs and bilateral distributional effects.",
         "completionStatus": "planned-not-measured",
         "priority": "high"
+      },
+      "observedEvidence": {
+        "type": "matched-before-after",
+        "metric": "India-UAE bilateral merchandise trade",
+        "unit": "USD billion",
+        "baseline": {
+          "period": "FY2020-21",
+          "value": 43.3
+        },
+        "followup": {
+          "period": "FY2023-24",
+          "value": 83.7
+        },
+        "source": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48",
+        "caveat": "Indian fiscal-year figures; FY2020-21 was pandemic-affected, and trade prices/volumes and broader recovery confound attribution. This is nominal gross trade, not net benefit."
       }
     }
   ],
@@ -307,5 +349,6 @@
     }
   ],
   "evidenceAuditMethodology": "Source-identified event records are not independently verified causal influence. Gate statuses indicate research coverage, not outcomes or influence. Empty gate means unassessed, not zero. Each sphere is reviewed against the same six gates.",
-  "researchPlanMethodology": "Pre-registered research questions and source categories. Planned research is not a completed evidence audit. Never promote planned outcomes into measurements."
+  "researchPlanMethodology": "Pre-registered research questions and source categories. Planned research is not a completed evidence audit. Never promote planned outcomes into measurements.",
+  "observationPolicy": "Documented observation is not attributable influence. Only matched periods/definitions may support before-after differences; no cross-case ranking. Context from earlier initiatives must be disclosed."
 }

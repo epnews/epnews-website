@@ -597,3 +597,12 @@ for(const item of candidateData.cases){
  for(const key of ['outcomeQuestion','baselineRequirement','followupRequirement','attributionAlternatives','costRequirement'])assert.ok(typeof plan[key]==='string'&&plan[key].length>30);
  assert.equal(item.influenceScore,null);
 }
+
+// Source-backed baseline observations are not causal diplomatic influence scores.
+const observations=Object.fromEntries(candidateData.cases.map(c=>[c.sphere,c.observedEvidence]));
+assert.equal(observations.india.baseline.value,43.3);
+assert.equal(observations.india.followup.value,83.7);
+assert.equal(Number((observations.india.followup.value-observations.india.baseline.value).toFixed(1)),40.4);
+assert.equal(observations.eu.type,'baseline-confounder');
+assert.ok(observations.eu.finding.includes('before'));
+assert.ok(candidateData.cases.every(c=>c.influenceScore===null&&c.observedEvidence.caveat.length>30));
