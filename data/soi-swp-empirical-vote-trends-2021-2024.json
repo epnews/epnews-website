@@ -1,0 +1,111 @@
+{
+  "source": "SWP UNGA-RES resolution-level CSV uploaded 2026-11-01",
+  "years": [
+    {
+      "year": 2021,
+      "resolutions": 334,
+      "recordedVotes": 86,
+      "withoutVote": 248,
+      "recordedVoteSharePct": 25.75,
+      "yes": 12203,
+      "no": 1159,
+      "abstentions": 1801,
+      "topVotedIssueCodes": [
+        [
+          "600",
+          33
+        ],
+        [
+          "129",
+          32
+        ],
+        [
+          "112",
+          18
+        ]
+      ]
+    },
+    {
+      "year": 2022,
+      "resolutions": 335,
+      "recordedVotes": 89,
+      "withoutVote": 246,
+      "recordedVoteSharePct": 26.57,
+      "yes": 12177,
+      "no": 1362,
+      "abstentions": 1969,
+      "topVotedIssueCodes": [
+        [
+          "600",
+          38
+        ],
+        [
+          "129",
+          33
+        ],
+        [
+          "605",
+          24
+        ]
+      ]
+    },
+    {
+      "year": 2023,
+      "resolutions": 338,
+      "recordedVotes": 88,
+      "withoutVote": 250,
+      "recordedVoteSharePct": 26.04,
+      "yes": 12198,
+      "no": 1314,
+      "abstentions": 1911,
+      "topVotedIssueCodes": [
+        [
+          "600",
+          32
+        ],
+        [
+          "129",
+          32
+        ],
+        [
+          "605",
+          20
+        ]
+      ]
+    },
+    {
+      "year": 2024,
+      "resolutions": 342,
+      "recordedVotes": 95,
+      "withoutVote": 247,
+      "recordedVoteSharePct": 27.78,
+      "yes": 13312,
+      "no": 1454,
+      "abstentions": 2107,
+      "topVotedIssueCodes": [
+        [
+          "129",
+          38
+        ],
+        [
+          "600",
+          35
+        ],
+        [
+          "605",
+          27
+        ]
+      ]
+    }
+  ],
+  "methodology": [
+    "Calendar year determined from SWP year column",
+    "Recorded vote share = resolutions with adopted_without_vote=0 / all resolutions in calendar year",
+    "Yes/no/abstentions are aggregate per-resolution tallies, not positions of any individual country",
+    "Issue codes from comma-separated main_category; a resolution can belong to multiple categories",
+    "Issue category counts overlap and must not be summed as distinct resolutions",
+    "No country alignment or influence score is implied"
+  ],
+  "countryAlignmentAvailable": false,
+  "influenceScoreAuthorized": false
+}
