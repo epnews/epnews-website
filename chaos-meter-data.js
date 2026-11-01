@@ -4617,6 +4617,11 @@ window.EP_CHAOS_DATA = {
       "label": "India Commerce Ministry · TEPA objectives",
       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2173968&lang=2&reg=48",
       "date": "2025-10-01"
+    },
+    "euCommissionGasShare2026": {
+      "label": "European Commission DG Energy, Russian gas share of EU imports in 2021 and 2025",
+      "url": "https://energy.ec.europa.eu/topics/energy-security/security-gas-supply_en",
+      "date": "2026"
     }
   },
   "actors": {
@@ -4891,20 +4896,22 @@ window.EP_CHAOS_DATA = {
       },
       "Energy and resources": {
         "title": "Russian gas exposure reduced",
-        "value": "36 bcm from Russia in 2025",
-        "period": "2021 → 2025",
+        "value": "45% → 12% Russian share of EU gas imports",
+        "period": "2021 → 2025 (annual shares)",
         "stage": "Observed statistic",
         "kind": "Dependency outcome",
         "sources": [
+          "euCommissionGasShare2026",
           "gas"
         ],
-        "meaning": "Russian deliveries fell from over 150 bcm. Diversification and lower demand both contributed; this mirrors the Russian record, not independent evidence.",
+        "meaning": "European Commission: Russian gas share of total EU gas imports fell from 45% in 2021 to 12% in 2025, a 33 percentage-point decline. This is an observed change in import composition, not an influence or resilience score.",
         "costs": "Replacement LNG, terminals and demand reduction carry costs; lower dependency on one supplier can increase another.",
-        "gap": "The 2027 prohibition is a future legal schedule, not a completed cessation. Net affordability and resilience need measurement.",
+        "gap": "A reduced Russian supplier share does not establish lower overall import dependence or greater geopolitical influence; quantify replacement supply costs and vulnerability to new supplier concentration.",
         "confidence": "Moderate",
-        "metric": null,
-        "number": null,
-        "score": null
+        "metric": "eu-russian-gas-import-share-pp",
+        "number": -33,
+        "score": null,
+        "measurementCaveat": "The −33 percentage-point needle measures Russian supplier share, not total gas import dependence or EU geopolitical influence. Gas demand fell and non-Russian suppliers replaced volumes; affordability, substitution costs and geopolitical effects remain unresolved."
       }
     },
     "india": {
