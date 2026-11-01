@@ -1,0 +1,24 @@
+name: EIA Verified H1 Sector Prices
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/eia-h1-2025-2026-sector-prices-verified.json'
+      - 'scripts/audit_eia_h1_sector_prices.py'
+      - '.github/workflows/eia-verified-h1-sector-prices.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/audit_eia_h1_sector_prices.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eia-verified-h1-sector-prices
+          path: eia-h1-sector-price-audit.json
