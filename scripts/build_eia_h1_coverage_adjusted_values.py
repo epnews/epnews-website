@@ -1,26 +1,20 @@
 #!/usr/bin/env python3
 """Coverage-adjusted EIA H1 on-system gross-value proxy; never actual bills."""
-import json, urllib.request, io, hashlib
+import json
 from pathlib import Path
-from collections import defaultdict
-import pandas as pd
 PRICES=Path('data/eia-h1-2025-2026-sector-prices-verified.json')
 COVERAGE=Path('data/eia-h1-table24-monthly-coverage.json')
 SERIES={'residential':'n3010us2m','industrial':'n3035us2m'}
+from scripts.build_eia_h1_volume_matching import fetch_legacy,MONTHS
 def read_monthly_deliveries(series):
- url=f'https://www.eia.gov/dnav/ng/hist_xls/{series}.xls'
- req=urllib.request.Request(url,headers={'User-Agent':'EPNews-evidence-audit/1.0'})
- with urllib.request.urlopen(req,timeout=60) as response:raw=response.read()
- df=pd.read_excel(io.BytesIO(raw),sheet_name='Data 1',header=None)
- vals={}
- for row in df.itertuples(index=False,name=None):
-  for i,cell in enumerate(row):
-   if isinstance(cell,(pd.Timestamp,)):
-    key=f'{cell.year}-{cell.month:02d}'
-    if key in {f'{y}-{m:02d}' for y in (2025,2026) for m in range(1,7)}:
-     try:vals[key]=float(row[i+1])/1000 # EIA MMcf to Bcf
-     except (TypeError,ValueError,IndexError):pass
- return vals,{'url':url,'sha256':hashlib.sha256(raw).hexdigest()}
+ # Reuse the proven xlrd parser from the completed H1 volume matching audit.
+ # pandas read_excel inferred an incompatible workbook layout in the failed run.
+ series_id='NG.'+series.upper().replace('M','')+'.M'
+ result=fetch_legacy(series_id)
+ raw=result['observations']
+ missing=[month for month in MONTHS if month not in raw]
+ if missing:raise ValueError(f'{series_id}: missing months {missing}')
+ return {key:float(raw[key])/1000 for key in MONTHS},{'url':result['sourceXls'],'seriesId':series_id,'unit':'Bcf'}
 def calculate(prices,coverage,deliveries):
  out={'period':'January-June 2025 versus 2026','status':'COVERAGE_ADJUSTED_GROSS_VALUE_PROXY','sectors':{},'actualConsumerExpenditureUsd':None,'lngCausedDomesticCostUsd':None,'netNationalBenefitUsd':None,'geopoliticalInfluenceScore':None,'limitations':['On-system EIA coverage is the share of deliveries represented by price-reporting utility sales, not a causal allocation to LNG exports.','Price times estimated covered volume is a modeled nominal gross sales value, not audited receipts, household bills, profit, or welfare impact.','EIA coverage ratios are rounded; multiply monthly values, not H1 averages.']}
  for sector in ('residential','industrial'):
