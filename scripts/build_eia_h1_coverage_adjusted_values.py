@@ -43,7 +43,7 @@ def calculate(prices,coverage,deliveries):
  return out
 def main():
  prices=json.loads(PRICES.read_text());coverage=json.loads(COVERAGE.read_text())
- assert coverage['reviewStatus']=='SOURCE_PDF_MONTHLY_VERIFIED'
+ assert coverage['reviewStatus'] in ('PENDING_INDEPENDENT_REVIEW','SOURCE_PDF_MONTHLY_VERIFIED')
  deliveries={};sources={}
  for sector,series in SERIES.items():
   deliveries[sector],sources[sector]=read_monthly_deliveries(series)
@@ -51,6 +51,9 @@ def main():
  out=calculate(prices,coverage,deliveries)
  out['sourceDeliveries']=sources
  out['sourceCoverage']=coverage['sources']
+ out['reviewStatus']=coverage['reviewStatus']
+ out['publishable']=coverage['reviewStatus']=='SOURCE_PDF_MONTHLY_VERIFIED'
+ if not out['publishable']:out['status']='PROVISIONAL_NOT_FOR_PUBLICATION'
  Path('eia-h1-coverage-adjusted-gross-values.json').write_text(json.dumps(out,indent=2)+'\n')
  print(json.dumps({'status':out['status'],'grossValueChangeMillionUsd':{k:v['changeMillionUsd'] for k,v in out['sectors'].items()}},indent=2))
 if __name__=='__main__':main()
