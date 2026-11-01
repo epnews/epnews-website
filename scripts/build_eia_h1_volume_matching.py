@@ -14,7 +14,7 @@ SERIES={
 }
 MONTHS=[f'{y}-{m:02d}' for y in (2025,2026) for m in range(1,7)]
 def fetch_legacy(series_id):
- url='https://www.eia.gov/dnav/ng/hist_xls/'+series_id.lower().replace('.','_')+'.xls'
+ url='https://www.eia.gov/dnav/ng/hist_xls/'+series_id.split('.')[1].lower()+'m.xls'
  req=urllib.request.Request(url,headers={'User-Agent':'EPNews-research/1.0'})
  with urllib.request.urlopen(req,timeout=45) as f: blob=f.read()
  import xlrd
