@@ -51,6 +51,87 @@ window.EP_CHAOS_DATA = {
                   "Documented foreign policy concessions or bargaining changes plausibly attributable to incremental U.S. LNG supply.",
                   "Predeclared influence unit, baseline, materiality threshold and independent editorial approval."
             ],
+            "observedTradeIndicators": {
+  "title": "Eight observed LNG trade indicators · 2024 to 2025",
+  "status": "Observed EIA/GIIGNL trade quantities and shares · not revenues or national benefit",
+  "items": [
+    {
+      "id": "us-exports",
+      "title": "1 · U.S. total LNG exports",
+      "baseline": 11.9,
+      "outcome": 15.1,
+      "unit": "Bcf/day",
+      "source": "eiaGlobalTrade2025",
+      "limit": "National annual averages; not Stage 3-specific."
+    },
+    {
+      "id": "global-share",
+      "title": "2 · U.S. share of global LNG exports",
+      "baseline": 21,
+      "outcome": 26,
+      "unit": "percent",
+      "source": "eiaGlobalTrade2025",
+      "limit": "Global market share is not geopolitical control or profit."
+    },
+    {
+      "id": "us-to-europe",
+      "title": "3 · U.S. LNG shipped to Europe",
+      "baseline": 6.3,
+      "outcome": 10.3,
+      "unit": "Bcf/day",
+      "source": "eiaLNGDestinations2025",
+      "limit": "Europe includes Türkiye; exports are destination volumes, not realized receipts."
+    },
+    {
+      "id": "europe-share",
+      "title": "4 · Europe share of U.S. LNG exports",
+      "baseline": 53,
+      "outcome": 68,
+      "unit": "percent",
+      "source": "eiaLNGDestinations2025",
+      "limit": "Rounded shares; not Europe's dependence on the U.S. as a share of all its energy."
+    },
+    {
+      "id": "us-to-asia",
+      "title": "5 · U.S. LNG shipped to Asia",
+      "baseline": 4,
+      "outcome": 2.5,
+      "unit": "Bcf/day",
+      "source": "eiaLNGDestinations2025",
+      "limit": "Trade reallocation is not automatically a U.S. net economic gain."
+    },
+    {
+      "id": "us-to-china",
+      "title": "6 · U.S. LNG shipped to China",
+      "baseline": 0.6,
+      "outcome": 0,
+      "unit": "Bcf/day",
+      "source": "eiaLNGDestinations2025",
+      "limit": "EIA attributes resale patterns to trade tensions; zero is a reported 2025 flow, not a permanent forecast."
+    },
+    {
+      "id": "us-to-egypt",
+      "title": "7 · U.S. LNG shipped to Egypt",
+      "baseline": 0.3,
+      "outcome": 1.2,
+      "unit": "Bcf/day",
+      "source": "eiaLNGDestinations2025",
+      "limit": "A destination flow, not evidence of a particular buyer's long-term dependency."
+    },
+    {
+      "id": "europe-all-suppliers",
+      "title": "8 · European LNG imports from all suppliers",
+      "baseline": null,
+      "outcome": 29,
+      "unit": "percent year-on-year growth in 2025",
+      "source": "eiaGlobalTrade2025",
+      "limit": "2025 percentage change only, not Bcf/day or U.S.-specific market share; no 2024 percentage baseline."
+    }
+  ],
+  "interpretation": "Eight distinct observed trade indicators, primarily from two EIA articles drawing on Natural Gas Monthly and GIIGNL. These are related measures from overlapping datasets, not eight independent causal studies. 2025 predates the 2026 Hormuz disruption; no post-disruption causation is inferred.",
+  "netNationalBenefitUsd": null,
+  "influenceScore": null
+},
             "evidenceQualityGates": {
   "title": "Eight evidence-quality gates for the LNG investigation",
   "status": "Methodological safeguards · no new empirical outcomes",
@@ -1213,6 +1294,8 @@ window.EP_CHAOS_DATA = {
     }
   },
   "sources": {
+    "eiaGlobalTrade2025": {"label":"EIA · Global LNG trade volumes reached record high in 2025 (GIIGNL and Natural Gas Monthly)","url":"https://www.eia.gov/todayinenergy/detail.php?id=67864","date":"2026-07-14"},
+    "eiaLNGDestinations2025": {"label":"EIA · U.S. natural gas exports to grow nearly 30% by 2027 (2024–25 observed destination flows)","url":"https://www.eia.gov/todayinenergy/detail.php?id=67484","date":"2026-04-16"},
     "doeLngEconomic2025": {"label":"DOE · Energy, Economic, and Environmental Assessment of U.S. LNG Exports (model scenarios)","url":"https://www.energy.gov/sites/default/files/2025-10/ENERGY%2C%20ECONOMIC%2C%20AND%20ENVIRONMENTAL%20ASSESSMENT%20OF%20U.S.%20LNG%20EXPORTS_0.pdf","date":"2025-10; 2050 scenario projections"},
     "cch2025Sec": {"label":"Cheniere Corpus Christi Holdings · FY2025 SEC Form 10-K, construction costs and EPC commitments","url":"https://www.sec.gov/Archives/edgar/data/1693317/000169331726000003/cch-20251231.htm","date":"2026-02-26; FY2024–FY2025 figures"},
     "eiaCorpusStartup": {"label":"EIA · Corpus Christi Stage 3 first cargo","url":"https://www.eia.gov/todayinenergy/detail.php?id=64704","date":"2025-03-11"},
