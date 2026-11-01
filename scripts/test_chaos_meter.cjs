@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,22);
+assert.equal(evidenceTables.length,23);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -351,3 +351,10 @@ assert.equal(evidenceTables.filter(x=>x.auditKey==='causalGatePrecommittedCapaci
 for(const item of causalGate.items)assert.ok(data.sources[item.source],'Missing source '+item.source);
 assert.equal(data.meterReadiness.influenceScore,null);
 assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
+
+const euDependence=data.evidenceAudits.us['Energy and resources'].euLNGDependence2026;
+assert.equal(euDependence.items.length,6);
+assert.deepEqual(Array.from(euDependence.items,x=>x.value),[57.4,63.2,17.3,-5.6,4.1,58]);
+for(const item of euDependence.items)assert.ok(data.sources[item.source],'Missing source '+item.source);
+assert.equal(evidenceTables.filter(x=>x.auditKey==='euLNGDependence2026').length,1);
+assert.equal(data.meterReadiness.influenceScore,null);
