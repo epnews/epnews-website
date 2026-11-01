@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "status": "source-backed-research-candidates-not-scored",
   "reviewedOn": "2026-11-01",
   "methodology": "Five eligible external diplomatic event candidates. One excluded internal EU regulation case retained separately for audit history. Signed and follow-up events are not equivalent to attributed influence.",
@@ -60,21 +60,34 @@
         "priority": "high"
       },
       "observedEvidence": {
-        "type": "implementation-followup",
-        "finding": "August 2023 Pentagon statement committed to real-time trilateral missile-warning data sharing; subsequent operational verification requires a distinct dated source.",
-        "source": "https://www.defense.gov/News/Releases/Release/Article/3498219/statement-from-secretary-of-defense-lloyd-j-austin-iii-on-united-states-trilate/",
-        "caveat": "Announcement alone is not proof of operational implementation."
+        "type": "documented-operational-milestone",
+        "finding": "August 18, 2023: US, Japan and South Korea committed to activate trilateral real-time DPRK missile-warning data sharing. November 2023: ministers reported final-stage testing. December 19, 2023: all three governments announced full activation following operational tests. This is a documented change from prior separate US bilateral data-sharing arrangements, not proof of unilateral US influence.",
+        "baseline": {
+          "period": "Before December 2023",
+          "description": "United States shared DPRK missile-warning information separately with Japan and South Korea; the new trilateral real-time mechanism had not yet been fully activated."
+        },
+        "followup": {
+          "period": "2023-12-19",
+          "description": "Trilateral real-time missile-warning mechanism fully activated according to US and Japanese defense ministries."
+        },
+        "sources": [
+          "https://www.defense.gov/News/Releases/Release/Article/3498219/statement-from-secretary-of-defense-lloyd-j-austin-iii-on-united-states-trilate/",
+          "https://www.pacom.mil/Media/News/News-Articles/Article/3591836/united-states-japan-republic-of-korea-trilateral-ministerial-meeting-unilateral/",
+          "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html",
+          "https://www.pacom.mil/Media/News/News-Articles/Article/3621934/united-states-japan-republic-of-korea-trilateral-ministerial-joint-press-statem/"
+        ],
+        "caveat": "Official ministry statements corroborate activation but are not independent operational performance data. Shared Japanese and Korean agency, duration of operation, costs and counterfactual remain unresolved."
       },
       "measurementQuality": {
         "outcomeDefined": true,
-        "baselineDocumented": false,
-        "followupDocumented": false,
+        "baselineDocumented": true,
+        "followupDocumented": true,
         "matchedDefinitions": false,
         "confoundersAddressed": false,
         "independentOutcomeCorroborated": false,
         "eligibleForInfluenceScoring": false,
         "qualityStatus": "not-measured",
-        "reason": "No matching pre/post quantitative outcome series for the specific counterpart behavior has been established."
+        "reason": "Qualitative pre/post operational activation documented by multiple governments, but not a matched quantitative outcome series or independently validated operational performance."
       },
       "sourceAudit": {
         "status": "pending-independent-review",
@@ -85,7 +98,7 @@
         "matchedDefinitionChecked": false,
         "reviewer": null,
         "reviewedOn": null,
-        "notes": "Source citation recorded in prior milestone; independent claim-by-claim verification not yet recorded."
+        "notes": "US and Japanese defense ministry releases and US Pacific Command statements located and reviewed for dated operational activation claim. Full independent claim-level audit (reviewer, publication-date check, definition reconciliation) remains pending."
       }
     },
     {
@@ -412,7 +425,14 @@
           "value": 83.7
         },
         "source": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48",
-        "caveat": "Indian fiscal-year figures; FY2020-21 was pandemic-affected, and trade prices/volumes and broader recovery confound attribution. This is nominal gross trade, not net benefit."
+        "caveat": "Indian fiscal-year figures; FY2020-21 was pandemic-affected, and trade prices/volumes and broader recovery confound attribution. This is nominal gross trade, not net benefit. FY2021-22 pre-agreement trade was already USD 72.9 billion, showing substantial recovery before CEPA entered into force; avoid treating FY2020-21 as a representative unaffected baseline.",
+        "preAgreementContext": {
+          "period": "FY2021-22",
+          "value": 72.9,
+          "unit": "USD billion",
+          "source": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48",
+          "note": "This fiscal year preceded CEPA entry into force on May 1, 2022; nominal bilateral trade had already recovered sharply from pandemic-era FY2020-21."
+        }
       },
       "measurementQuality": {
         "outcomeDefined": true,
