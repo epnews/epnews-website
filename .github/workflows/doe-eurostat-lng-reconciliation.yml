@@ -1,0 +1,32 @@
+name: DOE Eurostat LNG H1 Reconciliation
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_doe_lng_h1_ledger.py'
+      - 'scripts/reconcile_doe_eurostat_lng.py'
+      - 'scripts/test_reconcile_doe_eurostat_lng.py'
+      - '.github/workflows/doe-eurostat-lng-reconciliation.yml'
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install openpyxl==3.1.5
+      - run: python -m unittest scripts.test_build_doe_lng_h1_ledger scripts.test_reconcile_doe_eurostat_lng
+      - run: python scripts/build_doe_lng_h1_ledger.py doe-lng-h1-destination-ledger.json
+      - run: python scripts/reconcile_doe_eurostat_lng.py doe-lng-h1-destination-ledger.json doe-eurostat-lng-h1-reconciliation.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: doe-eurostat-lng-h1-reconciliation
+          path: |
+            doe-lng-h1-destination-ledger.json
+            doe-eurostat-lng-h1-reconciliation.json
+          retention-days: 30
