@@ -1,0 +1,121 @@
+{
+  "version": "2026-11-01",
+  "period": "2021-2024",
+  "method": "Documented historical diplomatic and security events, not automatically influence outcomes. Distinguish agreement, allegation, legal breach, implementation and economic consequences.",
+  "cases": [
+    {
+      "id": "2021-aukus-announcement",
+      "date": "2021-09-15",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "stage": "security_partnership_announced",
+      "event": "Australia, UK and US announced AUKUS security partnership; French submarine contract cancellation was a separate Australian decision.",
+      "source": "https://www.whitehouse.gov/briefing-room/statements-releases/2021/09/15/joint-leaders-statement-on-aukus/",
+      "outcomeNeeded": "Verify delivered capabilities, costs, alliance friction and regional deterrence outcomes."
+    },
+    {
+      "id": "2021-us-afghanistan-withdrawal",
+      "date": "2021-08-30",
+      "actors": [
+        "us",
+        "russia",
+        "china",
+        "india",
+        "eu"
+      ],
+      "stage": "military_withdrawal_completed",
+      "event": "U.S. completed military withdrawal from Afghanistan; Afghan government collapsed during withdrawal.",
+      "source": "https://www.defense.gov/News/News-Stories/Article/Article/2756930/last-us-troops-depart-afghanistan/",
+      "outcomeNeeded": "Compare regional access, security costs, partner trust and independently measured influence."
+    },
+    {
+      "id": "2022-russia-ukraine-invasion",
+      "date": "2022-02-24",
+      "actors": [
+        "russia",
+        "us",
+        "eu",
+        "china",
+        "india"
+      ],
+      "stage": "invasion_international_law_violation",
+      "event": "Russia launched full-scale invasion of Ukraine; UN General Assembly demanded Russian withdrawal.",
+      "source": "https://press.un.org/en/2022/ga12407.doc.htm",
+      "outcomeNeeded": "Measure sanctions, territorial control, costs, alliance changes and trade diversion independently."
+    },
+    {
+      "id": "2022-eu-russian-coal-embargo",
+      "date": "2022-08-10",
+      "actors": [
+        "eu",
+        "russia",
+        "us",
+        "china",
+        "india"
+      ],
+      "stage": "sanctions_implementation",
+      "event": "EU prohibition on Russian coal imports took effect following April 2022 sanctions package.",
+      "source": "https://www.consilium.europa.eu/en/press/press-releases/2022/04/08/fifth-package-of-sanctions-in-view-of-russia-s-military-aggression-against-ukraine-eu-adopts-restrictive-measures-against-russia/",
+      "outcomeNeeded": "Compare origin-specific physical energy flows, costs and substitutions."
+    },
+    {
+      "id": "2023-finland-nato",
+      "date": "2023-04-04",
+      "actors": [
+        "eu",
+        "us",
+        "russia"
+      ],
+      "stage": "alliance_accession_effective",
+      "event": "Finland became NATO's 31st member.",
+      "source": "https://www.nato.int/cps/en/natohq/news_213448.htm",
+      "outcomeNeeded": "Measure alliance capabilities, defense expenditure and Russia's response, without treating membership as numeric influence."
+    },
+    {
+      "id": "2023-india-middle-east-europe-corridor",
+      "date": "2023-09-09",
+      "actors": [
+        "india",
+        "eu",
+        "us",
+        "china",
+        "russia"
+      ],
+      "stage": "memorandum_of_understanding",
+      "event": "India, US, EU and partners announced an economic corridor memorandum; announcement did not establish a completed transport route.",
+      "source": "https://www.whitehouse.gov/briefing-room/statements-releases/2023/09/09/memorandum-of-understanding-on-the-principles-of-an-india-middle-east-europe-economic-corridor/",
+      "outcomeNeeded": "Verify financing, construction, trade throughput and competing route effects."
+    },
+    {
+      "id": "2024-sweden-nato",
+      "date": "2024-03-07",
+      "actors": [
+        "eu",
+        "us",
+        "russia"
+      ],
+      "stage": "alliance_accession_effective",
+      "event": "Sweden became NATO's 32nd member.",
+      "source": "https://www.nato.int/cps/en/natohq/news_223446.htm",
+      "outcomeNeeded": "Measure force posture and realized security outcomes."
+    },
+    {
+      "id": "2024-eu-russia-lng-transshipment",
+      "date": "2024-06-24",
+      "actors": [
+        "eu",
+        "russia",
+        "us"
+      ],
+      "stage": "sanctions_adopted_with_transition",
+      "event": "EU 14th sanctions package included restrictions on transshipment of Russian LNG in EU ports, subject to transition; not a general ban on EU Russian LNG imports.",
+      "source": "https://www.consilium.europa.eu/en/press/press-releases/2024/06/24/russia-s-war-of-aggression-against-ukraine-eu-adopts-14th-package-of-economic-and-individual-sanctions/",
+      "outcomeNeeded": "Measure affected volumes, enforcement and price changes."
+    }
+  ],
+  "influenceScore": null,
+  "readinessAdjustment": null
+}
