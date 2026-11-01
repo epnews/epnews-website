@@ -1,0 +1,112 @@
+{
+  "asOf": "2026-11-01",
+  "title": "2024–2025 SEC LNG producer financial change and operating margins",
+  "sourceFile": "data/soi-lng-sec-company-financials-2024-2025.json",
+  "unit": "USD millions except percentages",
+  "companies": [
+    {
+      "company": "Cheniere Energy Inc",
+      "source": "https://www.sec.gov/Archives/edgar/data/3570/000000357026000005/lng-20251231.htm",
+      "metrics": {
+        "lngRevenue": {
+          "year2024": 14899,
+          "year2025": 19435,
+          "change": 4536,
+          "percentChange": 30.44
+        },
+        "totalRevenue": {
+          "year2024": 15703,
+          "year2025": 19976,
+          "change": 4273,
+          "percentChange": 27.21
+        },
+        "costOfSales": {
+          "year2024": 6021,
+          "year2025": 7150,
+          "change": 1129,
+          "percentChange": 18.75
+        },
+        "operatingAndMaintenance": {
+          "year2024": 1857,
+          "year2025": 1966,
+          "change": 109,
+          "percentChange": 5.87
+        },
+        "totalOperatingExpenses": {
+          "year2024": 9575,
+          "year2025": 10864,
+          "change": 1289,
+          "percentChange": 13.46
+        },
+        "operatingIncome": {
+          "year2024": 6128,
+          "year2025": 9112,
+          "change": 2984,
+          "percentChange": 48.69
+        }
+      },
+      "operatingMargin": {
+        "year2024Percent": 39.02,
+        "year2025Percent": 45.61,
+        "changePercentagePoints": 6.59
+      }
+    },
+    {
+      "company": "Venture Global Inc",
+      "source": "https://www.sec.gov/Archives/edgar/data/2007855/000200785526000030/vg-annualreporttosharehold.pdf",
+      "metrics": {
+        "totalRevenue": {
+          "year2024": 4972,
+          "year2025": 13769,
+          "change": 8797,
+          "percentChange": 176.93
+        },
+        "costOfSales": {
+          "year2024": 1351,
+          "year2025": 5920,
+          "change": 4569,
+          "percentChange": 338.19
+        },
+        "operatingAndMaintenance": {
+          "year2024": 589,
+          "year2025": 975,
+          "change": 386,
+          "percentChange": 65.53
+        },
+        "totalOperatingExpenses": {
+          "year2024": 3209,
+          "year2025": 8613,
+          "change": 5404,
+          "percentChange": 168.4
+        },
+        "operatingIncome": {
+          "year2024": 1763,
+          "year2025": 5156,
+          "change": 3393,
+          "percentChange": 192.46
+        }
+      },
+      "operatingMargin": {
+        "year2024Percent": 35.46,
+        "year2025Percent": 37.45,
+        "changePercentagePoints": 1.99
+      }
+    }
+  ],
+  "interpretation": [
+    "These are derived changes from company filings already recorded; no new primary observations",
+    "Operating margin is operating income divided by consolidated total revenue; not LNG destination margin or net profit",
+    "Venture Global commissioning and ramp-up is a major confounder; revenue growth is not evidence of sanctions-driven gains",
+    "Cheniere and Venture Global cannot represent the entire US LNG sector or be attributed to May 2026 DOE shipments",
+    "No country-by-country realized receipts, LNG shipping costs, infrastructure capital returns, tax effects, domestic price impacts or counterfactual are established"
+  ],
+  "newPrimaryNumericSeries": 0,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
