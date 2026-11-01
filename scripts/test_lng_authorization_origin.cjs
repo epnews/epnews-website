@@ -1,0 +1,3 @@
+const assert=require('node:assert/strict');const fs=require('node:fs');const s=fs.readFileSync('docs/us-lng-authorization-origin-audit.md','utf8');const near=(a,b)=>assert.ok(Math.abs(a-b)<0.001);
+near(1405.33-1240,165.33);near(1873-1405.33,467.67);near(158.25-130,28.25);near(165.33/365,0.453);near(28.25/365,0.0774);near(165.33+28.25,193.58);
+for(const p of ['March 11, 2022','March 5, 2026','not** the 165.33','not acted on the non-FTA','not** extra gas shipped','readiness remains 53%'])assert.ok(s.includes(p),p);console.log('Authorization provenance and separate application arithmetic passed');
