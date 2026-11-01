@@ -510,7 +510,7 @@ assert.equal(data.meterReadiness.percent,53);
 
 
 // Verified UN voting data integrity: measured agreement is not geopolitical influence.
-const votingEvidence=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/soi-swp-verified-country-vote-alignment-2021-2024.json'),'utf8'));
+const votingEvidence=JSON.parse(fs.readFileSync(__dirname+'/../data/soi-swp-verified-country-vote-alignment-2021-2024.json','utf8'));
 assert.equal(votingEvidence.influenceScoreAuthorized,false,'UN voting evidence must not authorize an influence score');
 const votingPairs=['USA_CHN','USA_RUS','USA_IND','CHN_RUS','CHN_IND','RUS_IND'];
 for(const year of ['2021','2022','2023','2024']){
