@@ -7,7 +7,7 @@ const assert=require('node:assert/strict');
    const page=await browser.newPage({viewport});
    const errors=[];
    page.on('pageerror',e=>errors.push(e.message));
-   await page.goto('http://127.0.0.1:8765/',{waitUntil:'domcontentloaded'});
+   await page.goto(process.env.EPNEWS_TEST_URL||'http://127.0.0.1:8765/',{waitUntil:'domcontentloaded',timeout:45000});
    await page.locator('#chaos-hub > summary').click();
    await page.locator('#chaos-dashboard').waitFor({state:'visible'});
    await page.locator('#chaos-completion-status').waitFor({state:'visible'});
