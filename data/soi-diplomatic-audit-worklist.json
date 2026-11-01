@@ -1,8 +1,8 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
-  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution.",
+  "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
   "scoringAuthorized": false,
   "items": [
     {
@@ -74,6 +74,20 @@
         "descriptivelyComparable": false,
         "causallyAttributable": false,
         "reason": "No independently measured system uptime, warning speed, or common unit"
+      },
+      "causalAttributionPlan": {
+        "status": "hypotheses-not-verified",
+        "counterpartAgency": "Japan and South Korea independently chose deeper DPRK warning coordination",
+        "alternatives": [
+          "North Korean missile activity",
+          "Preexisting bilateral US intelligence links",
+          "Japanese and South Korean domestic defense policy"
+        ],
+        "discriminatingEvidence": "Dated Japanese and Korean implementation orders and independent system-performance measures compared with pre-activation channels",
+        "costEvidence": "Separate budgeted integration costs and counterpart security trade-offs",
+        "counterfactualMeasured": false,
+        "netBenefitMeasured": false,
+        "causalInfluenceAuthorized": false
       }
     },
     {
@@ -143,6 +157,20 @@
         "descriptivelyComparable": true,
         "causallyAttributable": false,
         "reason": "Comparable binary diplomatic presence, but no causal isolation or influence magnitude"
+      },
+      "causalAttributionPlan": {
+        "status": "hypotheses-not-verified",
+        "counterpartAgency": "Iran and Saudi Arabia agreed to restore relations; Iraq and Oman had hosted earlier talks",
+        "alternatives": [
+          "Iraq and Oman mediation",
+          "Saudi and Iranian incentives to de-escalate",
+          "Regional economic and security calculations"
+        ],
+        "discriminatingEvidence": "Contemporaneous counterpart records explaining why Beijing talks changed an otherwise stalled process, plus sustained mission operation",
+        "costEvidence": "Track concessions, diplomatic commitments, and post-agreement security incidents",
+        "counterfactualMeasured": false,
+        "netBenefitMeasured": false,
+        "causalInfluenceAuthorized": false
       }
     },
     {
@@ -211,6 +239,20 @@
         "descriptivelyComparable": false,
         "causallyAttributable": false,
         "reason": "Legal treaty entry is not a matched change in military cooperation"
+      },
+      "causalAttributionPlan": {
+        "status": "hypotheses-not-verified",
+        "counterpartAgency": "Belarus had preexisting defense cooperation and retained its own formal treaty decisions",
+        "alternatives": [
+          "Existing Union State framework",
+          "Russia's invasion of Ukraine",
+          "Belarusian leadership security incentives"
+        ],
+        "discriminatingEvidence": "Post-March-2025 Belarusian operational decision not already mandated or underway before the treaty",
+        "costEvidence": "Track sovereignty concessions, Russian funding and Belarus sanctions costs",
+        "counterfactualMeasured": false,
+        "netBenefitMeasured": false,
+        "causalInfluenceAuthorized": false
       }
     },
     {
@@ -279,6 +321,20 @@
         "descriptivelyComparable": false,
         "causallyAttributable": false,
         "reason": "No matched project output quantity or separation from preexisting mission"
+      },
+      "causalAttributionPlan": {
+        "status": "hypotheses-not-verified",
+        "counterpartAgency": "Moldovan authorities requested and implemented security-sector assistance",
+        "alternatives": [
+          "EUPM initiated in 2023",
+          "Russia's war and hybrid threats",
+          "Moldovan domestic institutional reforms"
+        ],
+        "discriminatingEvidence": "Partnership-specific project delivery dates and quantities distinct from pre-May-2024 EUPM work",
+        "costEvidence": "EU commitments versus disbursements and Moldova cofinancing",
+        "counterfactualMeasured": false,
+        "netBenefitMeasured": false,
+        "causalInfluenceAuthorized": false
       }
     },
     {
@@ -347,6 +403,20 @@
         "descriptivelyComparable": true,
         "causallyAttributable": false,
         "reason": "Same fiscal-year definition and nominal unit, but energy prices and recovery confound causal inference"
+      },
+      "causalAttributionPlan": {
+        "status": "hypotheses-not-verified",
+        "counterpartAgency": "UAE and India negotiated and implemented bilateral tariff changes",
+        "alternatives": [
+          "Global pandemic trade rebound",
+          "Oil prices and hydrocarbon trade mix",
+          "Exchange rates and UAE domestic demand"
+        ],
+        "discriminatingEvidence": "Tariff-line preference utilization and quantities versus matched unaffected products and pre-2022 trends",
+        "costEvidence": "Tariff revenue forgone and sectoral adjustment costs; do not treat gross trade as net benefit",
+        "counterfactualMeasured": false,
+        "netBenefitMeasured": false,
+        "causalInfluenceAuthorized": false
       }
     }
   ],

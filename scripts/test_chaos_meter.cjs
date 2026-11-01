@@ -758,3 +758,13 @@ for(const item of diplomaticQueue.items){
  assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
 }
 assert.equal(diplomaticQueue.items.filter(x=>x.baselineFollowupAssessment.descriptivelyComparable).length,2);
+
+// Causal plans must include counterpart agency, multiple alternatives and cost evidence.
+for(const item of diplomaticQueue.items){
+ const plan=item.causalAttributionPlan;
+ assert.ok(plan.counterpartAgency&&plan.discriminatingEvidence&&plan.costEvidence);
+ assert.ok(plan.alternatives.length>=3);
+ assert.equal(plan.counterfactualMeasured,false);
+ assert.equal(plan.netBenefitMeasured,false);
+ assert.equal(plan.causalInfluenceAuthorized,false);
+}
