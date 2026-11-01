@@ -1,0 +1,448 @@
+{
+  "source_positions_zip": "2025-03-09_unga-res_un_resolutions_positions.zip",
+  "source_positions_sha256": "04e2a0df74df61ca07e157871578e53effe4f130932d71a3298852b7c5180522",
+  "source_resolutions_csv": "2025-03-09_unga-res-un_resolutions.csv",
+  "source_resolutions_sha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "scope": "2021–2024 UNGA recorded votes",
+  "methodology": "Same position (y/n/a) on the same recorded-vote resolution, excluding consensus and non-voting. Identical abstentions count as agreement. EU is a proxy majority of at least 14 recorded EU27 member states, not an EU UNGA vote. Counts do not measure geopolitical influence.",
+  "validation": "For every resolution in 2021–2024, exactly 193 source country rows were found. On every recorded-vote resolution, summed y/n/a rows exactly matched the original resolution-level yes/no/abstentions tallies; zero discrepancies. Synthetic multiline/consensus/nonvoting regression test passed.",
+  "annual": {
+    "2021": {
+      "resolutions": 334,
+      "recorded_vote_resolutions": 86,
+      "consensus_resolutions_excluded": 248,
+      "source_country_rows": 64462,
+      "nonvoting_rows_excluded": 1435,
+      "actors": {
+        "USA": {
+          "recorded": 85,
+          "yes": 24,
+          "no": 52,
+          "abstain": 9,
+          "not_recorded": 1
+        },
+        "CHN": {
+          "recorded": 86,
+          "yes": 67,
+          "no": 12,
+          "abstain": 7,
+          "not_recorded": 0
+        },
+        "RUS": {
+          "recorded": 86,
+          "yes": 52,
+          "no": 21,
+          "abstain": 13,
+          "not_recorded": 0
+        },
+        "IND": {
+          "recorded": 85,
+          "yes": 60,
+          "no": 5,
+          "abstain": 20,
+          "not_recorded": 1
+        }
+      },
+      "pairwise": {
+        "USA_CHN": {
+          "same": 14,
+          "both_recorded": 85,
+          "different": 71,
+          "agreement_pct": 16.47
+        },
+        "USA_RUS": {
+          "same": 18,
+          "both_recorded": 85,
+          "different": 67,
+          "agreement_pct": 21.18
+        },
+        "USA_IND": {
+          "same": 16,
+          "both_recorded": 84,
+          "different": 68,
+          "agreement_pct": 19.05
+        },
+        "CHN_RUS": {
+          "same": 66,
+          "both_recorded": 86,
+          "different": 20,
+          "agreement_pct": 76.74
+        },
+        "CHN_IND": {
+          "same": 62,
+          "both_recorded": 85,
+          "different": 23,
+          "agreement_pct": 72.94
+        },
+        "RUS_IND": {
+          "same": 54,
+          "both_recorded": 85,
+          "different": 31,
+          "agreement_pct": 63.53
+        }
+      },
+      "eu_majority": {
+        "eligible_resolutions": 84,
+        "mean_cohesion_pct": 94.18,
+        "alignment": {
+          "USA": {
+            "same": 45,
+            "both_recorded": 83,
+            "different": 38,
+            "agreement_pct": 54.22
+          },
+          "CHN": {
+            "same": 41,
+            "both_recorded": 84,
+            "different": 43,
+            "agreement_pct": 48.81
+          },
+          "RUS": {
+            "same": 42,
+            "both_recorded": 84,
+            "different": 42,
+            "agreement_pct": 50
+          },
+          "IND": {
+            "same": 38,
+            "both_recorded": 83,
+            "different": 45,
+            "agreement_pct": 45.78
+          }
+        }
+      },
+      "validation": {
+        "country_row_count_mismatches": 0,
+        "aggregate_vote_tally_mismatches": 0
+      }
+    },
+    "2022": {
+      "resolutions": 335,
+      "recorded_vote_resolutions": 89,
+      "consensus_resolutions_excluded": 246,
+      "source_country_rows": 64655,
+      "nonvoting_rows_excluded": 1669,
+      "actors": {
+        "USA": {
+          "recorded": 89,
+          "yes": 33,
+          "no": 47,
+          "abstain": 9,
+          "not_recorded": 0
+        },
+        "CHN": {
+          "recorded": 88,
+          "yes": 63,
+          "no": 14,
+          "abstain": 11,
+          "not_recorded": 1
+        },
+        "RUS": {
+          "recorded": 89,
+          "yes": 49,
+          "no": 23,
+          "abstain": 17,
+          "not_recorded": 0
+        },
+        "IND": {
+          "recorded": 89,
+          "yes": 61,
+          "no": 4,
+          "abstain": 24,
+          "not_recorded": 0
+        }
+      },
+      "pairwise": {
+        "USA_CHN": {
+          "same": 14,
+          "both_recorded": 88,
+          "different": 74,
+          "agreement_pct": 15.91
+        },
+        "USA_RUS": {
+          "same": 17,
+          "both_recorded": 89,
+          "different": 72,
+          "agreement_pct": 19.1
+        },
+        "USA_IND": {
+          "same": 20,
+          "both_recorded": 89,
+          "different": 69,
+          "agreement_pct": 22.47
+        },
+        "CHN_RUS": {
+          "same": 62,
+          "both_recorded": 88,
+          "different": 26,
+          "agreement_pct": 70.45
+        },
+        "CHN_IND": {
+          "same": 57,
+          "both_recorded": 88,
+          "different": 31,
+          "agreement_pct": 64.77
+        },
+        "RUS_IND": {
+          "same": 48,
+          "both_recorded": 89,
+          "different": 41,
+          "agreement_pct": 53.93
+        }
+      },
+      "eu_majority": {
+        "eligible_resolutions": 87,
+        "mean_cohesion_pct": 95.1,
+        "alignment": {
+          "USA": {
+            "same": 56,
+            "both_recorded": 87,
+            "different": 31,
+            "agreement_pct": 64.37
+          },
+          "CHN": {
+            "same": 35,
+            "both_recorded": 87,
+            "different": 52,
+            "agreement_pct": 40.23
+          },
+          "RUS": {
+            "same": 36,
+            "both_recorded": 87,
+            "different": 51,
+            "agreement_pct": 41.38
+          },
+          "IND": {
+            "same": 37,
+            "both_recorded": 87,
+            "different": 50,
+            "agreement_pct": 42.53
+          }
+        }
+      },
+      "validation": {
+        "country_row_count_mismatches": 0,
+        "aggregate_vote_tally_mismatches": 0
+      }
+    },
+    "2023": {
+      "resolutions": 338,
+      "recorded_vote_resolutions": 88,
+      "consensus_resolutions_excluded": 250,
+      "source_country_rows": 65234,
+      "nonvoting_rows_excluded": 1561,
+      "actors": {
+        "USA": {
+          "recorded": 88,
+          "yes": 30,
+          "no": 49,
+          "abstain": 9,
+          "not_recorded": 0
+        },
+        "CHN": {
+          "recorded": 87,
+          "yes": 62,
+          "no": 11,
+          "abstain": 14,
+          "not_recorded": 1
+        },
+        "RUS": {
+          "recorded": 88,
+          "yes": 45,
+          "no": 31,
+          "abstain": 12,
+          "not_recorded": 0
+        },
+        "IND": {
+          "recorded": 87,
+          "yes": 61,
+          "no": 5,
+          "abstain": 21,
+          "not_recorded": 1
+        }
+      },
+      "pairwise": {
+        "USA_CHN": {
+          "same": 14,
+          "both_recorded": 87,
+          "different": 73,
+          "agreement_pct": 16.09
+        },
+        "USA_RUS": {
+          "same": 14,
+          "both_recorded": 88,
+          "different": 74,
+          "agreement_pct": 15.91
+        },
+        "USA_IND": {
+          "same": 20,
+          "both_recorded": 87,
+          "different": 67,
+          "agreement_pct": 22.99
+        },
+        "CHN_RUS": {
+          "same": 58,
+          "both_recorded": 87,
+          "different": 29,
+          "agreement_pct": 66.67
+        },
+        "CHN_IND": {
+          "same": 60,
+          "both_recorded": 86,
+          "different": 26,
+          "agreement_pct": 69.77
+        },
+        "RUS_IND": {
+          "same": 47,
+          "both_recorded": 87,
+          "different": 40,
+          "agreement_pct": 54.02
+        }
+      },
+      "eu_majority": {
+        "eligible_resolutions": 88,
+        "mean_cohesion_pct": 94.09,
+        "alignment": {
+          "USA": {
+            "same": 53,
+            "both_recorded": 88,
+            "different": 35,
+            "agreement_pct": 60.23
+          },
+          "CHN": {
+            "same": 35,
+            "both_recorded": 87,
+            "different": 52,
+            "agreement_pct": 40.23
+          },
+          "RUS": {
+            "same": 32,
+            "both_recorded": 88,
+            "different": 56,
+            "agreement_pct": 36.36
+          },
+          "IND": {
+            "same": 39,
+            "both_recorded": 87,
+            "different": 48,
+            "agreement_pct": 44.83
+          }
+        }
+      },
+      "validation": {
+        "country_row_count_mismatches": 0,
+        "aggregate_vote_tally_mismatches": 0
+      }
+    },
+    "2024": {
+      "resolutions": 342,
+      "recorded_vote_resolutions": 95,
+      "consensus_resolutions_excluded": 247,
+      "source_country_rows": 66006,
+      "nonvoting_rows_excluded": 1462,
+      "actors": {
+        "USA": {
+          "recorded": 94,
+          "yes": 32,
+          "no": 51,
+          "abstain": 11,
+          "not_recorded": 1
+        },
+        "CHN": {
+          "recorded": 94,
+          "yes": 68,
+          "no": 11,
+          "abstain": 15,
+          "not_recorded": 1
+        },
+        "RUS": {
+          "recorded": 95,
+          "yes": 53,
+          "no": 33,
+          "abstain": 9,
+          "not_recorded": 0
+        },
+        "IND": {
+          "recorded": 95,
+          "yes": 66,
+          "no": 4,
+          "abstain": 25,
+          "not_recorded": 0
+        }
+      },
+      "pairwise": {
+        "USA_CHN": {
+          "same": 17,
+          "both_recorded": 93,
+          "different": 76,
+          "agreement_pct": 18.28
+        },
+        "USA_RUS": {
+          "same": 17,
+          "both_recorded": 94,
+          "different": 77,
+          "agreement_pct": 18.09
+        },
+        "USA_IND": {
+          "same": 23,
+          "both_recorded": 94,
+          "different": 71,
+          "agreement_pct": 24.47
+        },
+        "CHN_RUS": {
+          "same": 63,
+          "both_recorded": 94,
+          "different": 31,
+          "agreement_pct": 67.02
+        },
+        "CHN_IND": {
+          "same": 63,
+          "both_recorded": 94,
+          "different": 31,
+          "agreement_pct": 67.02
+        },
+        "RUS_IND": {
+          "same": 50,
+          "both_recorded": 95,
+          "different": 45,
+          "agreement_pct": 52.63
+        }
+      },
+      "eu_majority": {
+        "eligible_resolutions": 93,
+        "mean_cohesion_pct": 92.38,
+        "alignment": {
+          "USA": {
+            "same": 56,
+            "both_recorded": 92,
+            "different": 36,
+            "agreement_pct": 60.87
+          },
+          "CHN": {
+            "same": 36,
+            "both_recorded": 92,
+            "different": 56,
+            "agreement_pct": 39.13
+          },
+          "RUS": {
+            "same": 36,
+            "both_recorded": 93,
+            "different": 57,
+            "agreement_pct": 38.71
+          },
+          "IND": {
+            "same": 41,
+            "both_recorded": 93,
+            "different": 52,
+            "agreement_pct": 44.09
+          }
+        }
+      },
+      "validation": {
+        "country_row_count_mismatches": 0,
+        "aggregate_vote_tally_mismatches": 0
+      }
+    }
+  },
+  "influence_score_authorized": false
+}
