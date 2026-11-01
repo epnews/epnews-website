@@ -31,6 +31,7 @@ if(segmentRoot&&tickRoot){
 }
 const data=window.EP_CHAOS_DATA,model=window.EPChaosModel;
 if(!data||!model){const e=root.querySelector('#chaos-evidence');if(e)e.textContent='Evidence could not load. Reload this page; scores remain withheld.';return;}
+const element=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
 const readiness=data.meterReadiness;
 if(readiness){const section=element('section');section.id='chaos-meter-readiness';section.setAttribute('aria-label','Command Meter readiness, not influence score');
  section.append(element('h4',readiness.label+' · '+readiness.percent+'%'),element('p',readiness.kind));
@@ -42,7 +43,6 @@ if(readiness){const section=element('section');section.id='chaos-meter-readiness
  root.prepend(section);
 }
 const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
-const element=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
 function sourceLinks(parent,ids){
  const line=element('p',undefined,'chaos-source-links');
  for(const id of ids){const src=data.sources[id];const a=element('a',src.label+' ↗');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a,element('small','Source date: '+src.date));}
