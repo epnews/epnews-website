@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "status": "methodology-proposal-not-calibrated",
   "scope": [
     "us",
@@ -92,5 +92,22 @@
     "Preserve all existing moving needle and selector functionality."
   ],
   "influenceScoreAuthorized": false,
-  "caseFiles": []
+  "caseFiles": [],
+  "caseSchema": {
+    "id": "Unique stable case ID",
+    "sphere": "One of scope",
+    "counterpart": "Named state or institution",
+    "title": "Neutral verifiable event description",
+    "stage": "One of stages",
+    "fields": "Evidence values keyed by the six gates' required field names",
+    "sources": "Array of source URLs with publisher and access date",
+    "lastReviewed": "ISO date",
+    "caveats": "Document uncertainties, alternative explanations, and missing evidence"
+  },
+  "auditRules": [
+    "A gate is complete only when every required field is present and nonempty.",
+    "A source URL alone does not establish that a claim is true; human/source verification remains required.",
+    "Missing evidence is not a zero outcome and never authorizes a score.",
+    "No cases are included until source verification is complete."
+  ]
 }
