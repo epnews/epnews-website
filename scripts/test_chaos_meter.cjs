@@ -612,6 +612,15 @@ const qualityAuditor=require('./soi_diplomatic_measurement_quality.cjs');
 const qualityResults=qualityAuditor.assessAll(candidateData);
 assert.equal(qualityResults.length,5);
 assert.ok(qualityResults.every(x=>!x.measurementReady&&x.score===null&&!x.influenceScoreAuthorized));
-assert.deepEqual(qualityResults.find(x=>x.sphere==='india').missing,['confoundersAddressed','independentOutcomeCorroborated']);
+assert.deepEqual(qualityResults.find(x=>x.sphere==='india').missing,['confoundersAddressed','independentOutcomeCorroborated','independentSourceAudit']);
 assert.ok(candidateData.cases.every(x=>x.measurementQuality.eligibleForInfluenceScoring===false));
 assert.equal(qualityAuditor.assess({sphere:'test',measurementQuality:Object.fromEntries(qualityAuditor.CHECKS.map(k=>[k,true]))}).influenceScoreAuthorized,false);
+
+// A fully checked measurement checklist is insufficient without a claim-level source audit.
+for(const item of candidateData.cases){assert.equal(item.sourceAudit.status,'pending-independent-review');assert.equal(item.sourceAudit.claimChecked,false);assert.ok(qualityAuditor.assess(item).missing.includes('independentSourceAudit'));}
+const allQualityChecks=Object.fromEntries(qualityAuditor.CHECKS.map(k=>[k,true]));
+assert.equal(qualityAuditor.assess({sphere:'synthetic',measurementQuality:allQualityChecks}).measurementReady,false);
+const syntheticAudit={status:'independently-verified',claimChecked:true,sourceOpened:true,publicationDateChecked:true,matchedDefinitionChecked:true,reviewer:'test reviewer',reviewedOn:'2026-11-01'};
+assert.equal(qualityAuditor.assess({sphere:'synthetic',measurementQuality:allQualityChecks,sourceAudit:syntheticAudit}).measurementReady,true);
+assert.equal(qualityAuditor.assess({sphere:'synthetic',measurementQuality:allQualityChecks,sourceAudit:syntheticAudit}).influenceScoreAuthorized,false);
+assert.equal(qualityAuditor.verifiedSourceAudit({...syntheticAudit,reviewer:null}),false);
