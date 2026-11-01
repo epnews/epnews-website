@@ -264,3 +264,8 @@ Three further existing datasets (30 records) migrate to the shared registry: Che
 ## Shared renderer batch #217
 
 Four existing source-backed datasets (32 records) migrate to the shared evidence registry: August gas supply/demand, domestic gas prices, SEC cash and costs, and first-half market observations. This is not new research and does not change 53% readiness or assign national benefit/influence scores. Original evidence remains in the source dataset; legacy rendering blocks are replaced by the shared table. Regression tests assert registry membership and removal of the old renderers.
+
+
+## Shared renderer hardening #218
+
+The shared renderer now retains per-item note, caution, caveat, limit and meaning fields where supplied, and recognizes both individual source IDs and arrays of source IDs. Regression checks reject duplicate dataset registrations and column keys. This is infrastructure quality work only: no new observations, no changes to source measurements, no readiness increase and no influence score.
