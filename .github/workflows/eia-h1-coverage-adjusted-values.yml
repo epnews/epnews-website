@@ -19,7 +19,24 @@ jobs:
       - run: python -m pip install xlrd
       - run: python -m py_compile scripts/build_eia_h1_coverage_adjusted_values.py
       - run: python -m unittest scripts.test_eia_h1_coverage_adjusted_values
-      - run: python scripts/build_eia_h1_coverage_adjusted_values.py
+      - name: Run audit and preserve full traceback
+        shell: bash
+        run: |
+          set +e
+          python scripts/build_eia_h1_coverage_adjusted_values.py > eia-h1-audit-run.log 2>&1
+          code=$?
+          cat eia-h1-audit-run.log
+          python - "$code" <<'PY'
+          import json,sys
+          from pathlib import Path
+          code=int(sys.argv[1])
+          Path('eia-h1-audit-diagnostics.json').write_text(json.dumps({
+            'exitCode':code,
+            'calculationArtifactExists':Path('eia-h1-coverage-adjusted-gross-values.json').exists(),
+            'lastLogLines':Path('eia-h1-audit-run.log').read_text()[-12000:]
+          },indent=2)+'\\n')
+          PY
+          exit "$code"
       - run: |
           python - <<'PY'
           import json
@@ -34,4 +51,7 @@ jobs:
         if: always()
         with:
           name: eia-h1-coverage-adjusted-audit
-          path: eia-h1-coverage-adjusted-gross-values.json
+          path: |
+            eia-h1-coverage-adjusted-gross-values.json
+            eia-h1-audit-run.log
+            eia-h1-audit-diagnostics.json
