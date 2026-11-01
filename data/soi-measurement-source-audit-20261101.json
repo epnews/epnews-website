@@ -1,0 +1,105 @@
+{
+  "version": "2026-11-01",
+  "purpose": "Prevent incomplete or uncorroborated observations from being presented as measured geopolitical influence",
+  "sourcePolicy": "Source URLs alone do not verify numeric values. Store retrieval date, table, period, revision, units, method and independent corroboration.",
+  "records": [
+    {
+      "id": "nato-defense-spending",
+      "dataset": "data/soi-primary-measurements-20261101.json",
+      "nextSource": "NATO annual Defence Expenditure of NATO Countries tables",
+      "missing": [
+        "Official NATO table and page references",
+        "Historical estimate revisions",
+        "Inflation-adjusted real spending comparison"
+      ],
+      "measurementReady": false
+    },
+    {
+      "id": "eu-china-fdi",
+      "dataset": "data/soi-primary-measurements-20261101.json",
+      "nextSource": "Eurostat BPM6 direct investment position and flow series",
+      "missing": [
+        "Bilateral investment time series",
+        "Stocks vs flows definition",
+        "Counterfactual for CAI freeze"
+      ],
+      "measurementReady": false
+    },
+    {
+      "id": "us-tariff-receipts",
+      "dataset": "data/soi-primary-measurements-20261101.json",
+      "nextSource": "Treasury Combined Statement and Monthly Treasury Statement",
+      "missing": [
+        "Exact Treasury table and line items",
+        "FY vs calendar-year matching",
+        "Importers and consumer cost comparison"
+      ],
+      "measurementReady": false
+    },
+    {
+      "id": "russia-sanctions",
+      "dataset": "data/soi-five-remaining-outcomes-20261101.json",
+      "nextSource": "Eurostat COMEXT physical quantity and value by origin and product",
+      "missing": [
+        "Matching trade value and tonnage",
+        "Asian rerouting and Russian revenue",
+        "EU replacement price"
+      ],
+      "measurementReady": false
+    },
+    {
+      "id": "institutional-withdrawals",
+      "dataset": "data/soi-five-remaining-outcomes-20261101.json",
+      "nextSource": "UN/WHO audited assessed and voluntary contributions",
+      "missing": [
+        "Disbursement by fiscal year",
+        "Legal effective withdrawal date",
+        "Participation and voting change"
+      ],
+      "measurementReady": false
+    },
+    {
+      "id": "india-china-border",
+      "dataset": "data/soi-five-remaining-outcomes-20261101.json",
+      "nextSource": "Geolocated satellite and official border sector reporting",
+      "missing": [
+        "Before-after same-sector deployment",
+        "Independent access verification",
+        "Incident and infrastructure series"
+      ],
+      "measurementReady": false
+    },
+    {
+      "id": "aukus-deliveries",
+      "dataset": "data/soi-five-remaining-outcomes-20261101.json",
+      "nextSource": "Australian Submarine Agency and defense portfolio budget statements",
+      "missing": [
+        "Submarine delivery evidence",
+        "Appropriations vs spending",
+        "Rotations versus ownership and readiness"
+      ],
+      "measurementReady": false
+    },
+    {
+      "id": "energy-trade",
+      "dataset": "data/soi-five-remaining-outcomes-20261101.json",
+      "nextSource": "DOE LNG export reports and EIA/Eurostat volume/value series",
+      "missing": [
+        "Matched destinations and units",
+        "FOB vs company realized receipts",
+        "Infrastructure and domestic costs"
+      ],
+      "measurementReady": false
+    }
+  ],
+  "publicationRule": "Only show a numerical outcome as independently verified once its exact original table and corroboration are recorded; otherwise display provisional, not influence score.",
+  "newNumericalOutcomes": 0,
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
