@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
 const evidenceTables=data.evidenceTableRegistry;
-assert.equal(evidenceTables.length,24);
+assert.equal(evidenceTables.length,25);
 assert.equal(new Set(evidenceTables.map(x=>x.id)).size,evidenceTables.length);
 assert.equal(new Set(evidenceTables.map(x=>x.auditKey)).size,evidenceTables.length,'duplicate dataset registration');
 for(const entry of evidenceTables){assert.match(entry.id,/^[a-z0-9-]+$/);assert.equal(new Set(entry.columns.map(x=>x.key)).size,entry.columns.length,'duplicate column keys');for(const col of entry.columns)assert.ok(col.label&&col.key);}
@@ -366,3 +366,10 @@ assert.equal(euPolicy.items[3].value,'2026-07-01');
 for(const item of euPolicy.items)assert.ok(data.sources[item.source],'Missing source '+item.source);
 assert.equal(evidenceTables.filter(x=>x.auditKey==='euTradeCommitmentVsImplementation').length,1);
 assert.equal(data.meterReadiness.influenceScore,null);
+
+const incidence=data.evidenceAudits.us['Energy and resources'].aug2026DomesticSupplyDemandIncidence;
+assert.equal(incidence.items.length,9);
+assert.deepEqual(Array.from(incidence.items,x=>x.value),[115.84,6.6,90.65,6.2,16.61,14.2,9.9,1.3,19.58]);
+assert.ok(data.sources[incidence.source]);
+assert.equal(evidenceTables.filter(x=>x.auditKey==='aug2026DomesticSupplyDemandIncidence').length,1);
+assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
