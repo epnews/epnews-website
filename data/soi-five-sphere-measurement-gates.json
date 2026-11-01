@@ -80,5 +80,12 @@
     "dataset": "data/soi-bidirectional-outcome-gates.json",
     "audit": "node scripts/audit_soi_bidirectional_outcomes.cjs",
     "rule": "Verified negative and positive outcomes both eligible for measurement, but no automatic scoring from breach allegations, withdrawal, or unfulfilled nonbinding pledges"
+  },
+  "historicalTimeline": {
+    "startDate": "2017-01-20",
+    "dataset": "data/soi-historical-agreement-events-2017-2026.json",
+    "audit": "node scripts/audit_soi_historical_timeline.cjs",
+    "baselinePolicy": "Use pre-2017 records for baseline, not event counts",
+    "scoringImpact": "none"
   }
 }
