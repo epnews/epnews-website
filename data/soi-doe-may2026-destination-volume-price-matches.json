@@ -1,0 +1,85 @@
+{
+  "asOf": "2026-11-01",
+  "title": "DOE May 2026 LNG destination volumes matched with FOB price observations",
+  "source": "https://www.energy.gov/hgeo/articles/us-natural-gas-supplying-energy-world-may-2026-summary-1",
+  "pdfSource": "https://www.energy.gov/sites/default/files/2026-09/Natural%20Gas%20Imports%20and%20Exports%20Monthly%20May%202026.pdf",
+  "priceSourceFile": "data/soi-doe-verified-destination-fob-2024-2026.json",
+  "period": "2026-05",
+  "observations": [
+    {
+      "destination": "Netherlands",
+      "volumeBcf": 63.6,
+      "sharePercent": 12.7,
+      "may2026FobUsdPerMMBtu": null,
+      "reason": "May 2026 Netherlands FOB not independently checked in prior dataset"
+    },
+    {
+      "destination": "South Korea",
+      "volumeBcf": 49.5,
+      "sharePercent": 9.9,
+      "may2026FobUsdPerMMBtu": null,
+      "reason": "May 2026 South Korea FOB not independently checked in prior dataset"
+    },
+    {
+      "destination": "Italy",
+      "volumeBcf": 46.7,
+      "sharePercent": 9.3,
+      "may2026FobUsdPerMMBtu": null,
+      "reason": "May 2026 Italy FOB not independently checked in prior dataset"
+    },
+    {
+      "destination": "Japan",
+      "volumeBcf": 42.5,
+      "sharePercent": 8.5,
+      "may2026FobUsdPerMMBtu": 6.35,
+      "priceSourceTable": "15a, May 2026"
+    },
+    {
+      "destination": "Egypt",
+      "volumeBcf": 36.2,
+      "sharePercent": 7.2,
+      "may2026FobUsdPerMMBtu": null,
+      "reason": "May 2026 Egypt FOB not independently checked in prior dataset"
+    }
+  ],
+  "regional": [
+    {
+      "destination": "Europe",
+      "volumeBcf": 232,
+      "sharePercent": 46.1
+    },
+    {
+      "destination": "Asia",
+      "volumeBcf": 207.6,
+      "sharePercent": 41.3
+    },
+    {
+      "destination": "Africa",
+      "volumeBcf": 36.2,
+      "sharePercent": 7.2
+    },
+    {
+      "destination": "Latin America and Caribbean",
+      "volumeBcf": 27.1,
+      "sharePercent": 5.4
+    }
+  ],
+  "total": {
+    "allLNGExportsBcf": 502.8,
+    "may2025LNGByVesselBcf": 435.2,
+    "may2026LNGByVesselBcf": 502.7,
+    "apr2026LNGByVesselBcf": 537.8,
+    "explanation": "502.8 Bcf broad LNG total and 502.7 Bcf LNG-by-vessel table use different reporting scope/rounding; do not conflate"
+  },
+  "matchedPriceVolumePairs": 1,
+  "estimatedGrossValueUsd": null,
+  "conversionRule": "No volume-times-FOB multiplication without exact gas energy content conversion and shipment-matched weighted price; any eventual result hypothetical gross export value, not realized cash or profit",
+  "readinessAdjustment": null,
+  "influenceScores": {
+    "us": null,
+    "eu": null,
+    "russia": null,
+    "china": null,
+    "india": null
+  }
+}
