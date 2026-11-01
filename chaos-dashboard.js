@@ -113,6 +113,20 @@ function appendVotingEvidence(actor,dimension){
  panel.append(coverage);
  if(actor==='eu')panel.append(element('p','EU majority-alignment comparisons cover 2021–2024, calculated from member-state recorded votes. EU member cohesion is a distinct measure.'));
  else panel.append(element('p','EU majority proxy covers 2021–2024 using at least 14 EU27 recorded votes per resolution. Agreement is not diplomatic influence.'));
+ const peerCodes=['USA','CHN','RUS','IND'];
+ const pairKey=(a,b)=>[a,b].sort((x,y)=>peerCodes.indexOf(x)-peerCodes.indexOf(y)).join('_');
+ const peers=code?peerCodes.filter(other=>other!==code).map(other=>({label:voteNames[other],value:year=>votingEvidence.annual[year]?.pairAgreementPct?.[pairKey(code,other)]})).concat([{label:'EU27 majority proxy',value:year=>votingEvidence.annual[year]?.euMajorityAlignmentPct?.[code]}]):peerCodes.map(other=>({label:voteNames[other],value:year=>votingEvidence.annual[year]?.euMajorityAlignmentPct?.[other]}));
+ // Four equal counterpart relationships, identical four-year window for every sphere.
+ // This is a descriptive agreement profile, not an influence index or a meter input.
+ const profile=element('details');profile.append(element('summary','Compare standardized diplomatic voting profile (4 counterparts)'));
+ const profileTable=element('table'),profileHead=element('tr');for(const label of ['Year',...peers.map(p=>p.label),'Mean of 4 (%)'])profileHead.append(element('th',label));profileTable.append(profileHead);
+ for(const year of ['2021','2022','2023','2024']){
+  const values=peers.map(p=>p.value(year));const row=element('tr');
+  const complete=values.length===4&&values.every(Number.isFinite);
+  for(const value of [year,...values.map(v=>Number.isFinite(v)?v.toFixed(2)+'%':'Unavailable'),complete?(values.reduce((a,b)=>a+b,0)/4).toFixed(2)+'%':'Unavailable'])row.append(element('td',value));
+  profileTable.append(row);
+ }
+ profile.append(element('p','Each sphere is compared against the other four spheres using the same years and four equally weighted counterpart relationships. EU27 is represented by member-state majority, not an EU vote. The mean is descriptive, not calibrated influence; issue mix and eligible resolution counts can differ across relationships and years. No meter needle or score uses this calculation.'),profileTable);panel.append(profile);
  const years=['2021','2022','2023','2024'];
  const trendKey=code==='USA'?'USA_CHN':code==='CHN'?'USA_CHN':code==='RUS'?'USA_RUS':code==='IND'?'USA_IND':null;
  if(trendKey){const first=votingEvidence.annual['2021']?.pairAgreementPct?.[trendKey],last=votingEvidence.annual['2024']?.pairAgreementPct?.[trendKey];if(Number.isFinite(first)&&Number.isFinite(last))panel.append(element('p','Standardized reference trend ('+trendKey.replace('_',' / ')+'): '+first.toFixed(2)+'% (2021) → '+last.toFixed(2)+'% (2024); change '+(last-first).toFixed(2)+' percentage points. Descriptive agreement only; not an influence score.'));}
