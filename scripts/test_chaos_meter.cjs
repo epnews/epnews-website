@@ -433,7 +433,7 @@ for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(d
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
 assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
-assert.ok(html.includes('chaos-dashboard.js?v=energy-dials-1'));
+assert.ok(html.includes('chaos-dashboard.js?v=diplomatic-implementation-241'));
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
 assert.equal(data.actors.us.Diplomatic.number,1);
