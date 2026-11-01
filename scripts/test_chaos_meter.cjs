@@ -1,5 +1,11 @@
 const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
 const {assessment,dimensionScore,missingRequirements,weights}=require('../chaos-meter-model.js');const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('chaos-meter-data.js','utf8'),sandbox);const data=sandbox.window.EP_CHAOS_DATA;
+const readiness=data.meterReadiness;
+assert.equal(readiness.percent,45);
+assert.equal(readiness.components.length,5);
+assert.equal(readiness.influenceScore,null);
+assert.equal(readiness.netNationalBenefitUsd,null);
+assert.match(readiness.changePolicy,/merged PR alone/);
 const cross=data.evidenceAudits.us['Energy and resources'].tradeFinancialCrossChecks;
 assert.equal(cross.items.length,8);
 assert.equal(new Set(cross.items.map(x=>x.id)).size,8);
@@ -191,6 +197,8 @@ const html=fs.readFileSync('index.html','utf8');const ids=[...html.matchAll(/\bi
 const dashboard=fs.readFileSync('chaos-dashboard.js','utf8');
 assert.equal((dashboard.match(/function init\(\)/g)||[]).length,1,'duplicate initialization');
 assert.equal((dashboard.match(/if\(audit\.financialEvidence\)/g)||[]).length,1,'duplicate financial renderer');
+assert.match(dashboard,/chaos-meter-readiness/);
+assert.match(dashboard,/readiness\.percent/);
 assert.match(dashboard,/if\(audit\.tradeFinancialCrossChecks\)/);
 assert.match(dashboard,/if\(audit\.h12026MarketObservations\)/);
 assert.match(dashboard,/if\(audit\.observedTradeIndicators\)/);
