@@ -1,0 +1,39 @@
+name: EIA Table 24 Coverage Evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_eia_table24_coverage.py'
+      - '.github/workflows/eia-table24-coverage.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'pdfplumber>=0.11,<1'
+      - run: python -m py_compile scripts/audit_eia_table24_coverage.py
+      - run: python scripts/audit_eia_table24_coverage.py
+      - run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('eia-table24-coverage-audit.json'))
+          assert x['reviewStatus']=='NOT_VERIFIED'
+          assert x['onsystemGrossSalesValueUsd'] is None
+          assert x['lngCausedCostUsd'] is None
+          assert x['netNationalBenefitUsd'] is None
+          assert x['geopoliticalInfluenceScore'] is None
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eia-table24-coverage-evidence
+          path: |
+            eia-table24-coverage-audit.json
+            eia-table24-source.pdf
+          if-no-files-found: ignore
