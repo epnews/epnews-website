@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-02",
+  "version": "2026-11-02-gap04-sync",
   "status": "independent-evidence-required",
   "auditCompleted": 20,
   "auditTotal": 30,
@@ -50,9 +50,24 @@
       "sourceTarget": "UN treaty depositary and institution records",
       "gate": "date-indexed representation status",
       "confounder": "announcement not legal effect",
-      "primarySourceRetrieved": false,
-      "independentVerification": false,
-      "gateClosed": false
+      "primarySourceRetrieved": true,
+      "independentVerification": true,
+      "gateClosed": false,
+      "evidenceFiles": [
+        "data/soi-us-climate-treaty-effective-status-20261102.json",
+        "data/soi-us-cop-cma-decision-rights-20261102.json"
+      ],
+      "verifiedSubquestions": [
+        "Paris Agreement US withdrawal effective 2026-01-27",
+        "UNFCCC withdrawal scheduled effective 2027-02-27",
+        "US Paris CMA Party decision rights ended; UNFCCC COP Party rights retained as of 2026-11-01"
+      ],
+      "unresolvedSubquestions": [
+        "Other institutions covered by US withdrawal announcements",
+        "Dated institutional voting and representation changes beyond climate COP/CMA",
+        "Actual voting and meeting participation if available"
+      ],
+      "status": "partially_verified_primary_sources"
     },
     {
       "id": "SOI-GAP-05",
