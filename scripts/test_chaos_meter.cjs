@@ -747,7 +747,7 @@ for(const sphere of ['russia','eu','india']){
  const item=diplomaticQueue.items.find(x=>x.sphere===sphere);
  assert.ok(item.claimLevelVerification?.source);
  assert.equal(item.priorityTasks.find(t=>t.id==='verify-primary').complete,true);
- assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,false);
+ assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,sphere==='eu');
 }
 
 // Baseline/follow-up matrix distinguishes descriptive comparability from causal attribution.
@@ -812,7 +812,7 @@ for(const item of diplomaticQueue.items){
  assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
  assert.equal(item.priorityTasks.find(t=>t.id==='costs').complete,false);
 }
-assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),8);
+assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),9);
 
 // Additional operational-use and resource evidence remains distinct from influence.
 const usOperational=diplomaticQueue.items.find(x=>x.sphere==='us').additionalOperationalEvidence;
@@ -827,7 +827,7 @@ assert.equal(euResources.eligibleForInfluenceScoring,false);
 
 // Audit progress must exactly reflect scoped completed tasks, not count source links as causal evidence.
 const auditProgress=diplomaticQueue.auditProgressSummary;
-assert.equal(auditProgress.completedScopedChecks,8);
+assert.equal(auditProgress.completedScopedChecks,9);
 assert.equal(auditProgress.requiredChecks,30);
 assert.equal(auditProgress.independentlyAuditedPerformanceCases,0);
 assert.equal(auditProgress.attributionValidatedCases,0);
@@ -841,7 +841,7 @@ for(const item of diplomaticQueue.items){
 const {compileDiplomaticOutcomes,SPHERES}=require('../soi-diplomatic-outcomes-model.js');
 const observedOutcomeModel=compileDiplomaticOutcomes(diplomaticQueue);
 assert.deepEqual(observedOutcomeModel.rows.map(x=>x.sphere),SPHERES);
-assert.equal(observedOutcomeModel.checksCompleted,8);
+assert.equal(observedOutcomeModel.checksCompleted,9);
 assert.equal(observedOutcomeModel.checksRequired,30);
 assert.equal(observedOutcomeModel.scoringAuthorized,false);
 assert.equal(observedOutcomeModel.outcomeClassesComparable,false);
@@ -905,7 +905,7 @@ for(const row of observedOutcomeModel.rows){
 // Verification gate statuses are standardized, but not geopolitical scores.
 assert.equal(observedOutcomeModel.fullySourceReviewedCases,1);
 assert.equal(observedOutcomeModel.attributionReviewedCases,0);
-assert.equal(observedOutcomeModel.rows.reduce((n,r)=>n+r.verifiedGateCount,0),8);
+assert.equal(observedOutcomeModel.rows.reduce((n,r)=>n+r.verifiedGateCount,0),9);
 for(const row of observedOutcomeModel.rows){
  assert.equal(Object.keys(row.verification).length,6);
  assert.equal(row.verifiedGateCount,row.checksCompleted);
@@ -916,3 +916,9 @@ for(const row of observedOutcomeModel.rows){
 assert.match(liveDiplomacyDashboardSource,/SIX-GATE AUDIT/);
 assert.match(liveDiplomacyDashboardSource,/Counterpart evidence/);
 assert.match(liveDiplomacyDashboardSource,/Gate completion tracks documented research checks/);
+
+// Moldova counterpart ministry verification adds one scoped audit check.
+const euCounterpart=diplomaticQueue.items.find(x=>x.sphere==='eu');
+assert.equal(euCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,true);
+assert.equal(euCounterpart.auditProgress.completedScopedChecks,2);
+assert.match(euCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').verification.sourceOwner,/Moldova/);

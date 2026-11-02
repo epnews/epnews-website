@@ -1,5 +1,5 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -397,7 +397,16 @@
         {
           "id": "verify-counterpart",
           "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
-          "complete": false
+          "complete": true,
+          "verification": {
+            "reviewedOn": "2026-11-01",
+            "source": "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027",
+            "sourceOwner": "Republic of Moldova Ministry of Foreign Affairs (counterpart, not EU mission)",
+            "finding": "Moldovan government confirms mission mandate renewal and describes operational cooperation in cybersecurity, crisis management and equipment support; mission began in 2023.",
+            "limitation": "Counterpart statement confirms cooperation and renewal, not independently audited mission output, additional outcomes attributable to May 2024 partnership or net geopolitical influence."
+          },
+          "evidence": "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027",
+          "scope": "Counterpart-side official confirmation of mission renewal and described assistance only; not independent performance auditing, attribution, or net benefit."
         },
         {
           "id": "match-baseline",
@@ -489,7 +498,7 @@
         "followupSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D0943"
       },
       "auditProgress": {
-        "completedScopedChecks": 1,
+        "completedScopedChecks": 2,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
           "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027"
@@ -497,7 +506,6 @@
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
-          "verify-counterpart",
           "match-baseline",
           "match-followup",
           "attribute",
@@ -642,7 +650,7 @@
     "Unknown or missing evidence must never be zero-filled"
   ],
   "auditProgressSummary": {
-    "completedScopedChecks": 8,
+    "completedScopedChecks": 9,
     "requiredChecks": 30,
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
