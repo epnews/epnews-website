@@ -44,7 +44,7 @@ def report(operator, snapshot):
         key=v.get("status","unknown")
         operator_quality[key]=operator_quality.get(key,0)+1
     return {"source_operator":operator.get("facility_api_url"),"source_gaspeil":"https://www.gaspeil.nl/api/v1/lng/lossingen?terminal=gate&from=2026-10-01&to=2026-10-31",
-            "operator_days":len(days),"operator_quality":operator_quality,"vessel_arrivals":len(vessels),
+            "operator_days":len(days),"october_operator_days":sum(k.startswith("2026-10-") for k in days),"baseline_operator_days":sum(k < "2026-10-01" for k in days),"operator_quality":operator_quality,"vessel_arrivals":len(vessels),
             "vessel_quality":quality,"distinct_measured_days":len(by_day),"exceptions":exceptions,
             "missing_september_30_baseline":"2026-09-30" not in days,
             "independent_cargo_certifications":0 if quality.get("bevestigd",0)==0 else None,
