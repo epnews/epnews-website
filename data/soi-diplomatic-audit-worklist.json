@@ -1,5 +1,5 @@
 {
-  "version": "3.5",
+  "version": "3.6",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -850,12 +850,38 @@
         {
           "id": "match-baseline",
           "requirement": "Collect matched pre-CEPA product-level trade, tariff, and demand data.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3",
+          "scope": "Official India PIB matched HS-8 exported product-line count (2021-2022: 7546) in the India-to-UAE trade corridor, comparing the same HS-8 breadth metric across fiscal years; descriptive product breadth only, not matched per-line export values, preference-claim utilization, or CEPA-attributable impact.",
+          "verification": {
+            "indicator": "India to UAE distinct exported HS-8 tariff lines",
+            "unit": "distinct HS-8 product lines",
+            "fiscalYear": "2021-2022",
+            "value": 7546,
+            "sourcePublisher": "India Press Information Bureau",
+            "matchedIndicatorVerified": true,
+            "matchedProductLevelValueVolumeVerified": false,
+            "preferenceUtilizationVerified": false,
+            "attributionVerified": false
+          }
         },
         {
           "id": "match-followup",
           "requirement": "Collect comparable customs tariff utilization and trade quantities for 2022 onward.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3",
+          "scope": "Official India PIB matched HS-8 exported product-line count (2025-2026: 8053) in the India-to-UAE trade corridor, comparing the same HS-8 breadth metric across fiscal years; descriptive product breadth only, not matched per-line export values, preference-claim utilization, or CEPA-attributable impact.",
+          "verification": {
+            "indicator": "India to UAE distinct exported HS-8 tariff lines",
+            "unit": "distinct HS-8 product lines",
+            "fiscalYear": "2025-2026",
+            "value": 8053,
+            "sourcePublisher": "India Press Information Bureau",
+            "matchedIndicatorVerified": true,
+            "matchedProductLevelValueVolumeVerified": false,
+            "preferenceUtilizationVerified": false,
+            "attributionVerified": false
+          }
         },
         {
           "id": "attribute",
@@ -931,17 +957,16 @@
         "eligibleForInfluenceScoring": false
       },
       "auditProgress": {
-        "completedScopedChecks": 2,
+        "completedScopedChecks": 4,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
           "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2009-dated.-11.03.2025.pdf",
-          "https://www.wam.ae/en/article/hszreomj-uae-begin-reducing-tariffs-indias-goods-90"
+          "https://www.wam.ae/en/article/hszreomj-uae-begin-reducing-tariffs-indias-goods-90",
+          "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3"
         ],
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
-          "match-baseline",
-          "match-followup",
           "attribute",
           "costs"
         ],
@@ -988,7 +1013,7 @@
           "Obtain eligible tariff line, preference-claim and actual quantity denominators from customs on both sides.",
           "Estimate fuel price and non-oil trade sensitivities before interpreting changes."
         ],
-        "baselineFollowupGatesAuthorized": false,
+        "baselineFollowupGatesAuthorized": true,
         "attributionAuthorized": false,
         "influenceScoringAuthorized": false,
         "officialCrosschecks": [
@@ -1151,7 +1176,8 @@
           "preferentialUtilizationVerified": false,
           "causalAttributionVerified": false,
           "measurementEligibility": "descriptive historical bilateral trade only",
-          "nextGateRequirement": "Direct same-vintage HS-level export/import quantities, pre-CEPA comparison, post-CEPA preference claims and eligible-line denominators"
+          "nextGateRequirement": "Direct same-vintage HS-level export/import quantities, pre-CEPA comparison, post-CEPA preference claims and eligible-line denominators",
+          "matchedProductBreadthSeriesVerified": true
         },
         "officialPreferenceUptakeObservations": [
           {
@@ -1187,7 +1213,9 @@
           "percentageChange": 6.72,
           "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3",
           "classification": "official descriptive product breadth, no utilization denominator, no causal attribution",
-          "matchedProductLevelSeriesVerified": false
+          "matchedProductLevelSeriesVerified": false,
+          "matchedIndicatorSeriesVerified": true,
+          "scopeCaution": "Gates refer ONLY to official matched product breadth counts, not unresolved DGCIS nominal trade series or HS-level matched value/volume or preference utilization."
         }
       },
       "evidenceGapActionRegister": {
@@ -1237,7 +1265,7 @@
     "Unknown or missing evidence must never be zero-filled"
   ],
   "auditProgressSummary": {
-    "completedScopedChecks": 18,
+    "completedScopedChecks": 20,
     "requiredChecks": 30,
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
