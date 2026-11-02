@@ -1,0 +1,170 @@
+{
+  "schema": "soi-cross-sphere-measured-outcomes-v1",
+  "asOf": "2026-11-02",
+  "purpose": "Cross-sphere descriptive measurement dashboard source, not influence scoring",
+  "series": [
+    {
+      "id": "nato-membership",
+      "sphere": "security",
+      "metric": "NATO member states",
+      "unit": "members",
+      "points": [
+        {
+          "date": "2023-04-04",
+          "value": 31
+        },
+        {
+          "date": "2024-03-07",
+          "value": 32
+        }
+      ],
+      "sourceIds": [
+        "soi-eight-outcome-consolidated-20261101:nato-accessions"
+      ],
+      "interpretation": "Membership milestones, not US/EU causal influence or alliance readiness."
+    },
+    {
+      "id": "finland-defense-gdp",
+      "sphere": "security",
+      "metric": "Finland defense spending share of GDP",
+      "unit": "percentage points of GDP",
+      "points": [
+        {
+          "year": 2022,
+          "value": 1.7
+        },
+        {
+          "year": 2024,
+          "value": 2.4,
+          "estimate": true
+        }
+      ],
+      "delta": 0.7,
+      "sourceIds": [
+        "soi-primary-measurements-20261101:finland-defense-share"
+      ],
+      "interpretation": "2024 estimate; not solely caused by NATO accession."
+    },
+    {
+      "id": "sweden-defense-gdp",
+      "sphere": "security",
+      "metric": "Sweden defense spending share of GDP",
+      "unit": "percentage points of GDP",
+      "points": [
+        {
+          "year": 2022,
+          "value": 1.5
+        },
+        {
+          "year": 2024,
+          "value": 2.1,
+          "estimate": true
+        }
+      ],
+      "delta": 0.6,
+      "sourceIds": [
+        "soi-primary-measurements-20261101:sweden-defense-share"
+      ],
+      "interpretation": "2024 estimate; not solely caused by NATO accession."
+    },
+    {
+      "id": "eu-russian-coal",
+      "sphere": "energy",
+      "metric": "EU Russian-origin hard-coal imports",
+      "unit": "million tonnes",
+      "points": [
+        {
+          "year": 2021,
+          "value": 49
+        },
+        {
+          "year": 2023,
+          "value": 0.8
+        }
+      ],
+      "delta": -48.2,
+      "percentChange": -98.36734693877551,
+      "sourceIds": [
+        "soi-eight-outcome-consolidated-20261101:russia-sanctions",
+        "soi-eight-outcome-consolidated-20261101:energy-dependence"
+      ],
+      "deduplicatedUnderlyingObservation": true,
+      "interpretation": "One underlying Eurostat series, referenced by two workstreams; not a net sanctions benefit or total Russian export loss."
+    },
+    {
+      "id": "us-customs-receipts",
+      "sphere": "trade",
+      "metric": "US Treasury customs duty receipts",
+      "unit": "USD billions nominal per federal fiscal year",
+      "points": [
+        {
+          "year": 2024,
+          "value": 77.037
+        },
+        {
+          "year": 2025,
+          "value": 194.866
+        }
+      ],
+      "delta": 117.829,
+      "sourceIds": [
+        "soi-primary-measurements-20261101:us-customs-duties-fy"
+      ],
+      "interpretation": "Federal receipts, not tariff-attributable net economic gain."
+    },
+    {
+      "id": "eu-fdi-stock-china",
+      "sphere": "investment",
+      "metric": "EU outward FDI stock in China",
+      "unit": "EUR billions",
+      "points": [
+        {
+          "year": 2024,
+          "value": 239.3
+        }
+      ],
+      "sourceIds": [
+        "soi-primary-measurements-20261101:eu-investment-stock-china"
+      ],
+      "interpretation": "Stock, not annual flow or CAI-freeze impact."
+    },
+    {
+      "id": "china-fdi-stock-eu",
+      "sphere": "investment",
+      "metric": "China outward FDI stock in EU",
+      "unit": "EUR billions",
+      "points": [
+        {
+          "year": 2024,
+          "value": 79.8
+        }
+      ],
+      "sourceIds": [
+        "soi-primary-measurements-20261101:china-investment-stock-eu"
+      ],
+      "interpretation": "Stock, not annual flow or CAI-freeze impact."
+    }
+  ],
+  "coverage": {
+    "independentSeries": 7,
+    "domains": [
+      "security",
+      "energy",
+      "trade",
+      "investment"
+    ],
+    "actorsReferenced": [
+      "us",
+      "eu",
+      "russia",
+      "china"
+    ],
+    "notYetComparable": [
+      "india"
+    ],
+    "missingCausalAndCostGates": 10
+  },
+  "scoreEligible": false,
+  "compositeInfluenceScore": null,
+  "needleChangeAuthorized": false
+}
