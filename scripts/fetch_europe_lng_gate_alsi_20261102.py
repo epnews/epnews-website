@@ -172,6 +172,8 @@ def fetch_all_pages(base_url, key, fetch=request_json):
             raise ValueError("Inconsistent or unsafe GIE pagination")
         expected_pages = last_page
         rows = response["data"]
+        if any(not isinstance(row, dict) for row in rows):
+            raise ValueError(f"Non-object GIE observation on page {page}")
         if not rows:
             raise ValueError(f"Empty GIE page {page}; refusing incomplete evidence")
         all_rows.extend(rows)
@@ -211,6 +213,8 @@ def validate_operator_evidence(rows, from_date, to_date):
     """Reject non-facility or mixed-facility records; flag data quality separately."""
     if not rows:
         raise ValueError("No ALSI facility observations")
+    if any(not isinstance(row, dict) for row in rows):
+        raise ValueError("Non-object ALSI facility observation")
     coverage = audit_observation_coverage(rows, from_date, to_date)
     if coverage["rows_missing_gas_day"] or coverage["out_of_window_gas_days"]:
         raise ValueError("ALSI records missing gas day or outside requested period")
