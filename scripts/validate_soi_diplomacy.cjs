@@ -50,7 +50,11 @@ for(const item of worklist.items){
  }
  if(item.sphere==='russia'){
   assert.equal(item.counterpartResearch.influenceScoringAuthorized,false);
-  assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,false,'Russia operational implementation still unverified');
+  const counterpart=item.priorityTasks.find(t=>t.id==='verify-counterpart');
+  assert.equal(counterpart.complete,true,'Belarus counterpart ratification documented');
+  assert.equal(counterpart.verification.policyRatificationVerified,true);
+  assert.equal(counterpart.verification.operationalImplementationVerified,false,'Treaty ratification does not prove operational change');
+  assert.equal(counterpart.verification.attributionVerified,false);
  }
  assert.equal(item.auditProgress.completedScopedChecks,completed.length,item.sphere+' count');
  assert.deepEqual(item.auditProgress.remainingChecks,item.priorityTasks.filter(t=>!t.complete).map(t=>t.id),item.sphere+' remaining');
