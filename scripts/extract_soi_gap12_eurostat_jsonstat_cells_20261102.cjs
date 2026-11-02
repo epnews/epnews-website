@@ -8,8 +8,11 @@ const fs=require('node:fs'),assert=require('node:assert/strict');
 if(process.argv.length!==4){console.error('Supply original official electricity and gas JSON-stat files');process.exit(2)}
 const specs=[{commodity:'electricity',dataset:'nrg_pc_204',band:'KWH2500-4999',geos:['IE','DE','BE','HU','MT','BG']},{commodity:'natural gas',dataset:'nrg_pc_202',band:'GJ20-199',geos:['SE','NL','HU','HR','RO']}];
 const cells=[];
+const retrievedAt=process.env.EUROSTAT_RETRIEVED_AT;
+assert(typeof retrievedAt==='string'&&/^\\d{4}-\\d{2}-\\d{2}T/.test(retrievedAt),'Set EUROSTAT_RETRIEVED_AT to actual retrieval timestamp (ISO 8601)');
 function parse(json,spec){
  assert(json.class==='dataset','Not Eurostat JSON-stat dataset');
+ assert(typeof json.source==='string'&&/Eurostat/i.test(json.source),'Official Eurostat source metadata required');
  assert(Array.isArray(json.id)&&Array.isArray(json.size)&&json.id.length===json.size.length);
  assert(json.dimension&&json.value,'Missing dimensions or values');
  const keys=json.id.map((id,i)=>{const d=json.dimension[id];assert(d&&d.category&&d.category.index,'Missing index '+id);const pairs=Object.entries(d.category.index).map(([k,v])=>[k,Number(v)]);assert(pairs.length===json.size[i]);return new Map(pairs)});
@@ -22,7 +25,7 @@ function parse(json,spec){
  let offset=0;for(let i=0;i<coords.length;i++)offset=offset*json.size[i]+coords[i];
  const value=Array.isArray(json.value)?json.value[offset]:json.value[String(offset)];
  assert(Number.isFinite(value)&&value>0,'Missing official observation '+g);
- cells.push({geo:g,commodity:spec.commodity,period:'2026-S1',valueEURkWh:value,dataset:spec.dataset,unit:'KWH',currency:'EUR',consumptionBand:spec.band,taxes:'I_TAX',sourceUrl:'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'+spec.dataset,retrievedAt:json.updated||json.extension?.updated||'SOURCE_RETRIEVAL_DATE_REQUIRED'});
+ cells.push({geo:g,commodity:spec.commodity,period:'2026-S1',valueEURkWh:value,dataset:spec.dataset,unit:'KWH',currency:'EUR',consumptionBand:spec.band,taxes:'I_TAX',sourceUrl:'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'+spec.dataset,retrievedAt});
  }
 }
 specs.forEach((spec,i)=>parse(JSON.parse(fs.readFileSync(process.argv[i+2],'utf8')),spec));
