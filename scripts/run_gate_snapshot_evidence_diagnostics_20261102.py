@@ -15,6 +15,7 @@ AUDITS={
     "ttf_value_sensitivity":"audit_gate_ttf_proxy_value_sensitivity_20261102.py",
     "unmeasured_exposure":"audit_gate_unmeasured_exposure_20261102.py",
     "gasday_concentration":"audit_gate_gasday_attribution_concentration_20261102.py",
+    "gasday_offset_hours":"audit_gate_gasday_offset_hour_patterns_20261102.py",
 }
 def run(snapshot):
     if not isinstance(snapshot,dict) or not isinstance(snapshot.get("data"),dict):
@@ -39,7 +40,8 @@ def run(snapshot):
     for name,field in (("gasday_utc_offsets","measured_arrival_records"),
                        ("estimate_stock_variance","measured_records"),
                        ("proxy_cancellation","measured_records"),
-                       ("gasday_concentration","measured_arrival_records")):
+                       ("gasday_concentration","measured_arrival_records"),
+                       ("gasday_offset_hours","measured_arrival_records")):
         if results[name][field]!=measured:
             raise ValueError(f"{name} measured record count mismatch")
     return {"source_snapshot_retrieved_at_utc":snapshot.get("retrievedAtUtc"),
