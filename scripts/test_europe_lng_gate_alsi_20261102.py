@@ -63,13 +63,13 @@ for bad in (
         raise AssertionError(f"Non-Gate facility/aggregate query accepted: {bad}")
 print("ALSI Netherlands facility-level identity checks passed")
 
-listing = [{"name": "Gate Terminal B.V.", "eic": "21X-TEST", "facilities": [
-    {"name": "Gate LNG", "country": "NL", "company": "21X-TEST", "eic": "21W-TEST", "url": "/api?country=NL&company=21X-TEST&facility=21W-TEST"},
+listing = [{"name": "Gate Terminal B.V.", "eic": "21X000000001063H", "facilities": [
+    {"name": "Gate LNG", "country": "NL", "company": "21X000000001063H", "eic": "21W-TEST", "url": "/api?country=NL&company=21X000000001063H&facility=21W-TEST"},
     {"name": "Other terminal", "country": "NL", "eic": "21W-OTHER"}]}]
-url = "https://alsi.gie.eu/api?country=NL&company=21X-TEST&facility=21W-TEST"
+url = "https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST"
 assert mod.verify_against_listing(url, listing)["facility_name"] == "Gate LNG"
 for bad in (
-    "https://alsi.gie.eu/api?country=NL&company=21X-TEST&facility=21W-OTHER",
+    "https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-OTHER",
     "https://alsi.gie.eu/api?country=NL&company=21X-OTHER&facility=21W-TEST",
 ):
     try:
@@ -80,7 +80,7 @@ for bad in (
         raise AssertionError("Unlisted or mismatched Gate identity accepted")
 print("Authenticated GIE listing cross-check tests passed")
 
-spoofed = [{"name": "Gate Terminal B.V.", "eic": "21X-TEST", "facilities": [
+spoofed = [{"name": "Gate Terminal B.V.", "eic": "21X000000001063H", "facilities": [
     {"name": "Gate LNG", "country": "NL", "company": "21X-DIFFERENT", "eic": "21W-TEST"}]}]
 try:
     mod.verify_against_listing(url, spoofed)
@@ -125,3 +125,14 @@ for bad in ([{"gasDayStart": "2026-09-30"}], [{"status": "C"}], []):
     else:
         raise AssertionError("Invalid ALSI observation set was accepted")
 print("ALSI gas-day evidence bounds checks passed")
+
+unrelated = [{"name": "Gate Other Operator", "eic": "21X-UNRELATED", "facilities": [
+    {"name": "Gate LNG", "country": "NL", "company": "21X-UNRELATED", "eic": "21W-TEST"}]}]
+assert mod.find_gate_facilities(unrelated) == []
+try:
+    mod.verify_against_listing("https://alsi.gie.eu/api?country=NL&company=21X-UNRELATED&facility=21W-TEST", unrelated)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Unrelated Gate-named operator accepted")
+print("Gate operator primary EIC registry pin tests passed")
