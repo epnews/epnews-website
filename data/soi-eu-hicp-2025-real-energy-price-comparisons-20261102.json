@@ -1,0 +1,120 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-12",
+  "index": {
+    "dataset": "Eurostat prc_hicp_minr (attributed secondary mirror)",
+    "geo": "EU27_2020",
+    "classification": "all-items HICP",
+    "base": "2025=100",
+    "source": "https://pactinel.com/indices/eu-hicp",
+    "originalPublisher": "https://ec.europa.eu/eurostat/web/hicp/information-data",
+    "sourceCaveat": "Monthly observations retrieved from third-party site attributing Eurostat, not direct machine-readable Eurostat API; verify against direct Eurostat before labeling independently primary-source verified",
+    "observations": [
+      {
+        "month": "2025-01",
+        "index": 98.43
+      },
+      {
+        "month": "2025-02",
+        "index": 98.88
+      },
+      {
+        "month": "2025-03",
+        "index": 99.38
+      },
+      {
+        "month": "2025-04",
+        "index": 99.86
+      },
+      {
+        "month": "2025-05",
+        "index": 99.85
+      },
+      {
+        "month": "2025-06",
+        "index": 100.14
+      },
+      {
+        "month": "2025-07",
+        "index": 100.3
+      },
+      {
+        "month": "2025-08",
+        "index": 100.48
+      },
+      {
+        "month": "2025-09",
+        "index": 100.56
+      },
+      {
+        "month": "2025-10",
+        "index": 100.81
+      },
+      {
+        "month": "2025-11",
+        "index": 100.58
+      },
+      {
+        "month": "2025-12",
+        "index": 100.73
+      }
+    ],
+    "meanS1": 99.42333333333333,
+    "meanS2": 100.57666666666667,
+    "deflatorS2ToS1": 0.988532794219998,
+    "semesterInflationPercent": 1.160022798135918
+  },
+  "energyPrices": {
+    "sourceFile": "data/soi-eu-eurostat-household-industry-energy-prices-2025s2-20261102.json",
+    "unit": "EUR per 100 kWh",
+    "comparisons": [
+      {
+        "consumer": "household",
+        "commodity": "electricity",
+        "nominal2025S1": 28.79,
+        "nominal2025S2": 28.96,
+        "real2025S2InS1Euros": 28.6279,
+        "realChangePercent": -0.563
+      },
+      {
+        "consumer": "household",
+        "commodity": "natural gas",
+        "nominal2025S1": 11.43,
+        "nominal2025S2": 12.28,
+        "real2025S2InS1Euros": 12.1392,
+        "realChangePercent": 6.205
+      },
+      {
+        "consumer": "non-household",
+        "commodity": "electricity",
+        "nominal2025S1": 19.03,
+        "nominal2025S2": 18.37,
+        "real2025S2InS1Euros": 18.1593,
+        "realChangePercent": -4.575
+      },
+      {
+        "consumer": "non-household",
+        "commodity": "natural gas",
+        "nominal2025S1": 6.6,
+        "nominal2025S2": 6.05,
+        "real2025S2InS1Euros": 5.9806,
+        "realChangePercent": -9.384
+      }
+    ]
+  },
+  "interpretation": [
+    "Inflation-deflated using EU-wide all-items HICP, not a dedicated industrial price deflator.",
+    "Household and non-household energy series use different tax/consumption conventions; compare within category across semesters only.",
+    "Semestral deflation uses simple six-month mean HICP, not household-specific expenditure-weighted consumption timing.",
+    "Source is secondary reproduction of Eurostat series; direct API confirmation remains outstanding.",
+    "Changes are not causal evidence about Russia, LNG substitution, national economic benefit, or geopolitical influence."
+  ],
+  "gateClosed": false,
+  "remaining": [
+    "Direct Eurostat API confirmation of all 12 monthly HICP values",
+    "Country-consistent energy price and deflator panel for geographic attribution"
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
