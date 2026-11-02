@@ -98,6 +98,19 @@
         "Supported is not net-new employment.",
         "No independent causal estimate."
       ]
+    },
+    {
+      "id": "US-DFC-2024-ENERGY-JOBS-WOMEN-SHARE",
+      "amount": 22,
+      "unit": "percent",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_job_composition",
+      "source": "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+      "limitations": [
+        "Share of supported jobs held by women, not a separate job count.",
+        "No independently measured causal impact."
+      ]
     }
   ],
   "pendingNext": [
