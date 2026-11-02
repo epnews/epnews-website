@@ -1,5 +1,5 @@
 {
-  "version": "4.2",
+  "version": "4.3",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -1321,6 +1321,12 @@
           "matchedProductLevelSeriesVerified": false,
           "matchedIndicatorSeriesVerified": true,
           "scopeCaution": "Gates refer ONLY to official matched product breadth counts, not unresolved DGCIS nominal trade series or HS-level matched value/volume or preference utilization."
+        },
+        "materialityAssessment": {
+          "status": "cross-source-definition-review-still-required",
+          "comparisonRule": "Use midpoint-relative percent difference only for same-period, same-unit, same-concept values.",
+          "note": "Historical $83.64bn vs $83.65bn official totals are broadly consistent; the $82.42bn revised-source report can be flagged for vintage differences without blocking unrelated CEPA research. FY2025–26 UAE ministry data cannot be compared directly with FY2023–24 Indian DGCIS totals.",
+          "scoringAuthorized": false
         }
       },
       "evidenceGapActionRegister": {
@@ -1664,5 +1670,38 @@
         "scoreAuthorized": false
       }
     ]
+  },
+  "financialReconciliationMateriality": {
+    "version": "1.0",
+    "purpose": "Avoid disproportionate research effort reconciling minor numerical differences across otherwise comparable official financial series.",
+    "denominator": "absolute midpoint of two nonzero comparable amounts",
+    "bands": [
+      {
+        "maxPercent": 2,
+        "action": "broadly-consistent-proceed",
+        "review": "Record both values and source vintages; no need to resolve trivial rounding/revision differences before continuing."
+      },
+      {
+        "maxPercent": 5,
+        "action": "flag-and-proceed",
+        "review": "Record discrepancy, check if it changes substantive conclusions, continue unrelated work."
+      },
+      {
+        "maxPercent": null,
+        "action": "investigate-if-decision-relevant",
+        "review": "Investigate if discrepancy affects trend, gate decision, or published conclusion."
+      }
+    ],
+    "hardStops": [
+      "Different currencies without documented conversion",
+      "Different time periods or units not normalized",
+      "Exports versus imports versus total trade",
+      "FOB prices versus revenues versus profits",
+      "Budget authorizations versus executed expenditures",
+      "Material trend reversal or policy conclusion reversal even below 2 percent"
+    ],
+    "noCausalInferenceFromNumericalAgreement": true,
+    "noAutomaticAttributionGateCompletion": true,
+    "noAutomaticCostGateCompletion": true
   }
 }
