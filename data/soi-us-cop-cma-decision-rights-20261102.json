@@ -1,0 +1,64 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-04",
+  "asOf": "2026-11-01",
+  "sourceDataset": "data/soi-us-climate-treaty-effective-status-20261102.json",
+  "legalBasis": [
+    {
+      "id": "PARIS-ARTICLE-16",
+      "url": "https://unfccc.int/sites/default/files/english_paris_agreement.pdf",
+      "rule": "Paris Agreement Article 16 establishes Conference of Parties serving as meeting of Parties to Paris Agreement (CMA); Convention parties not Paris parties participate as observers in CMA proceedings; CMA decisions taken only by Paris Parties."
+    },
+    {
+      "id": "UNFCCC-ARTICLE-7",
+      "url": "https://unfccc.int/resource/docs/convkp/conveng.pdf",
+      "rule": "UNFCCC Article 7 establishes Convention COP and membership/representation of Convention Parties."
+    },
+    {
+      "id": "UNFCCC-PARIS-WITHDRAWAL",
+      "url": "https://treaties.un.org/Pages/showDetails.aspx?objid=0800000280458f37",
+      "rule": "US Paris withdrawal effective 2026-01-27."
+    },
+    {
+      "id": "UNFCCC-CONVENTION-WITHDRAWAL",
+      "url": "https://treaties.un.org/doc/Publication/CN/2026/CN.102.2026-Eng.pdf",
+      "rule": "US UNFCCC withdrawal notified 2026-02-27, effective 2027-02-27."
+    }
+  ],
+  "bodyStatuses": [
+    {
+      "body": "CMA",
+      "fullName": "Conference of the Parties serving as meeting of the Parties to the Paris Agreement",
+      "usTreatyParty": false,
+      "participation": "observer as Convention Party",
+      "decisionRight": "not a Paris Party; cannot take CMA decisions as a Party",
+      "effectiveFrom": "2026-01-27",
+      "sourceIds": [
+        "PARIS-ARTICLE-16",
+        "UNFCCC-PARIS-WITHDRAWAL"
+      ]
+    },
+    {
+      "body": "COP",
+      "fullName": "Conference of the Parties to the UNFCCC",
+      "usTreatyParty": true,
+      "participation": "Convention Party",
+      "decisionRight": "retains Convention Party rights while UNFCCC membership effective",
+      "effectiveUntil": "2027-02-27 unless legal status changes",
+      "sourceIds": [
+        "UNFCCC-ARTICLE-7",
+        "UNFCCC-CONVENTION-WITHDRAWAL"
+      ]
+    }
+  ],
+  "limitations": [
+    "Formal Party decision rights do not establish the number of actual roll-call votes; climate COP processes frequently seek consensus.",
+    "COP and CMA can meet at the same venue but have different legal membership and decision authority.",
+    "No attendance records, roll-call actions, or quantified influence score inferred.",
+    "This closes the legal-body status subquestion only; full Gap 04 still requires other institutions."
+  ],
+  "gapClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
