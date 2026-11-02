@@ -106,6 +106,14 @@ def verify_against_listing(facility_url, listing):
             return item
     raise ValueError("Facility EIC and company do not match a Gate entry in the authenticated GIE listing")
 
+def enforce_listed_facility_url(requested_url, facility):
+    """Only allow the exact authenticated registry URL, modulo parameter ordering."""
+    requested = validate_facility_identity(requested_url)
+    listed = validate_facility_identity(facility["verified_facility_url"])
+    if urllib.parse.parse_qs(requested.query) != urllib.parse.parse_qs(listed.query):
+        raise ValueError("Requested facility URL differs from authenticated GIE listing")
+    return facility["verified_facility_url"]
+
 def validate_reporting_window(facility, from_date, to_date):
     """Do not interpret dates outside the facility's published operating coverage."""
     requested_start = date.fromisoformat(from_date)
@@ -229,8 +237,9 @@ def main():
         parser.error("--facility-url is required (resolve Gate EIC via --list-facilities first)")
     listing = request_json(HOST + "/api/about?show=listing", key)
     verified_facility = verify_against_listing(args.facility_url, listing)
+    listed_url = enforce_listed_facility_url(args.facility_url, verified_facility)
     validate_reporting_window(verified_facility, args.from_date, args.to_date)
-    parsed = validate_facility_identity(args.facility_url)
+    parsed = validate_facility_identity(listed_url)
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
     params.update({"from": args.from_date, "to": args.to_date})
     url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
