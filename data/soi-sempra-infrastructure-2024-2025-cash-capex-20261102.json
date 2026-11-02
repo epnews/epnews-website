@@ -1,0 +1,39 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-11",
+  "company": "Sempra",
+  "source": "https://www.sec.gov/Archives/edgar/data/1032208/000103220826000010/sre-20251231.htm",
+  "sourceType": "FY2025 SEC Form 10-K, capital expenditures for PP&E by segment",
+  "currency": "USD millions",
+  "observations": [
+    {
+      "year": 2024,
+      "sempraInfrastructureCashPPandE": 3459,
+      "sempraCaliforniaCashPPandE": 4753,
+      "parentAndOtherCashPPandE": 3,
+      "totalSempraCashPPandE": 8215,
+      "sempraInfrastructureEquityMethodInvestmentCapex": 12
+    },
+    {
+      "year": 2025,
+      "sempraInfrastructureCashPPandE": 6063,
+      "sempraCaliforniaCashPPandE": 4543,
+      "parentAndOtherCashPPandE": 6,
+      "totalSempraCashPPandE": 10612,
+      "sempraInfrastructureEquityMethodInvestmentCapex": 2
+    }
+  ],
+  "scope": "Sempra Infrastructure business segment includes LNG development and construction but is not exclusively LNG export terminal capex",
+  "comparability": [
+    "Exclude Sempra California utilities segment from LNG proxy.",
+    "Sempra Infrastructure includes non-LNG assets; do not call segment PP&E LNG-only.",
+    "Equity-method investments are separately presented and are not added to cash PP&E segment line.",
+    "2026-2030 capital plan is forecast, not observed spending.",
+    "No full industry total or national net benefit from this panel.",
+    "Port Arthur LNG loan draws are financing flows, not capital expenditures."
+  ],
+  "gateClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
