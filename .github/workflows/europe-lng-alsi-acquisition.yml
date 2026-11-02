@@ -2,9 +2,17 @@ name: Gate ALSI authenticated operator acquisition
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: 'Discover Gate facility EICs or acquire operator observations'
+        required: true
+        type: choice
+        options:
+          - discover
+          - acquire
+        default: discover
       facility_url:
         description: 'Exact authenticated GIE Gate facility URL (/api?country=NL&company=...&facility=...)'
-        required: true
+        required: false
         type: string
       from_date:
         description: 'Start gas day YYYY-MM-DD'
@@ -37,7 +45,24 @@ jobs:
             echo "::error::Set GIE_ALSI_API_KEY as a repository Actions secret before dispatch."
             exit 1
           fi
+      - name: Discover authenticated Gate facility identifiers
+        if: inputs.mode == 'discover'
+        env:
+          GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
+        run: |
+          python scripts/fetch_europe_lng_gate_alsi_20261102.py --list-facilities > gate-alsi-facility-candidates.json
+          python -m json.tool gate-alsi-facility-candidates.json > /dev/null
+      - name: Require facility URL for acquisition
+        if: inputs.mode == 'acquire'
+        env:
+          FACILITY_URL: ${{ inputs.facility_url }}
+        run: |
+          if [ -z "$FACILITY_URL" ]; then
+            echo '::error::Facility URL is required in acquire mode; run discover first.'
+            exit 1
+          fi
       - name: Retrieve authenticated Gate facility measurements
+        if: inputs.mode == 'acquire'
         env:
           GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
           FACILITY_URL: ${{ inputs.facility_url }}
@@ -51,7 +76,9 @@ jobs:
       - name: Upload restricted research artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gate-alsi-operator-observations
-          path: gate-alsi-operator-october-2026.json
+          name: gate-alsi-${{ inputs.mode }}-research
+          path: |
+            gate-alsi-facility-candidates.json
+            gate-alsi-operator-october-2026.json
           retention-days: 14
           if-no-files-found: error
