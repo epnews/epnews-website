@@ -13,6 +13,7 @@ AUDITS={
     "estimate_stock_variance":"audit_gate_estimate_stock_variance_20261102.py",
     "proxy_cancellation":"audit_gate_proxy_variance_cancellation_20261102.py",
     "ttf_value_sensitivity":"audit_gate_ttf_proxy_value_sensitivity_20261102.py",
+    "unmeasured_exposure":"audit_gate_unmeasured_exposure_20261102.py",
 }
 def run(snapshot):
     if not isinstance(snapshot,dict) or not isinstance(snapshot.get("data"),dict):
