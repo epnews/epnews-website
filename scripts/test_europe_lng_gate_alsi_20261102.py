@@ -237,3 +237,16 @@ except ValueError:
 else:
     raise AssertionError("Oversized ALSI page accepted")
 print("ALSI pagination row-count integrity tests passed")
+
+assert mod.select_unique_gate_facility(listing)["facility_eic"] == "21W-TEST"
+second = {"name": "Gate LNG 2", "country": "NL", "company": mod.GATE_OPERATOR_EIC,
+          "eic": "21W-SECOND", "url": "/api?country=NL&company=21X000000001063H&facility=21W-SECOND"}
+ambiguous = [{"name": "Gate Terminal B.V.", "eic": mod.GATE_OPERATOR_EIC,
+              "facilities": [listing[0]["facilities"][0], second]}]
+try:
+    mod.select_unique_gate_facility(ambiguous)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Ambiguous Gate facility auto-selected")
+print("Unique authenticated Gate facility auto-selection tests passed")

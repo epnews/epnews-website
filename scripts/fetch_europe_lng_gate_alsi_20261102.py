@@ -106,6 +106,13 @@ def verify_against_listing(facility_url, listing):
             return item
     raise ValueError("Facility EIC and company do not match a Gate entry in the authenticated GIE listing")
 
+def select_unique_gate_facility(listing):
+    """Auto-select only when authenticated GIE lists exactly one Gate facility."""
+    candidates = assert_unique_gate_facility(listing)
+    if len(candidates) != 1:
+        raise ValueError(f"Found {len(candidates)} distinct Gate facilities; specify an exact facility URL")
+    return candidates[0]
+
 def enforce_listed_facility_url(requested_url, facility):
     """Only allow the exact authenticated registry URL, modulo parameter ordering."""
     requested = validate_facility_identity(requested_url)
@@ -241,11 +248,13 @@ def main():
         result = request_json(HOST + "/api/about?show=listing", key)
         print(json.dumps({"gate_candidates": assert_unique_gate_facility(result)}, indent=2))
         return
-    if not args.facility_url:
-        parser.error("--facility-url is required (resolve Gate EIC via --list-facilities first)")
     listing = request_json(HOST + "/api/about?show=listing", key)
-    verified_facility = verify_against_listing(args.facility_url, listing)
-    listed_url = enforce_listed_facility_url(args.facility_url, verified_facility)
+    if args.facility_url:
+        verified_facility = verify_against_listing(args.facility_url, listing)
+        listed_url = enforce_listed_facility_url(args.facility_url, verified_facility)
+    else:
+        verified_facility = select_unique_gate_facility(listing)
+        listed_url = verified_facility["verified_facility_url"]
     validate_reporting_window(verified_facility, args.from_date, args.to_date)
     parsed = validate_facility_identity(listed_url)
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
