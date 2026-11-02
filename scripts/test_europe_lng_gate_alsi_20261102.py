@@ -163,3 +163,15 @@ except ValueError:
 else:
     raise AssertionError("Gate candidate without EIC accepted")
 print("GIE listing schema completeness checks passed")
+
+assert mod.assert_unique_gate_facility(listing)[0]["verified_facility_url"].startswith("https://alsi.gie.eu/api?")
+tampered = [{"name": "Gate Terminal B.V.", "eic": mod.GATE_OPERATOR_EIC, "facilities": [
+    {"name": "Gate LNG", "country": "NL", "company": mod.GATE_OPERATOR_EIC, "eic": "21W-TEST",
+     "url": "/api?country=NL&company=21X-UNRELATED&facility=21W-TEST"}]}]
+try:
+    mod.assert_unique_gate_facility(tampered)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Inconsistent GIE facility URL was accepted")
+print("GIE listed URL identity consistency checks passed")
