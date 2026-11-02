@@ -1,0 +1,30 @@
+name: SOI EU national HICP real energy verification
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 7 * * 1'
+permissions:
+  contents: read
+jobs:
+  verify-national-hicp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify synthetic JSON-stat parser
+        run: node scripts/test_soi_eu_gap12_national_hicp_parser_20261102.cjs
+      - name: Fetch official national HICP and calculate real energy-price changes
+        run: node scripts/audit_soi_eu_gap12_national_hicp_fetch_20261102.cjs
+      - name: Validate all national index observations and calculated changes
+        run: node scripts/audit_soi_eu_gap12_national_real_output_20261102.cjs
+      - name: Preserve Eurostat national observations and calculated comparisons
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: soi-eurostat-national-hicp-real-energy-2025s2-2026s1
+          path: data/soi-eu-gap12-national-real-energy-price-changes-20261102.json
+          if-no-files-found: warn
+          retention-days: 30
