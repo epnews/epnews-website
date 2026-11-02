@@ -10,8 +10,17 @@ def fail(message):
 
 errors = []
 base = os.environ.get("GITHUB_BASE_REF", "main")
-subprocess.run(["git", "fetch", "--no-tags", "origin", base, "--depth=1"], check=True)
-changed = subprocess.check_output(["git", "diff", "--name-only", "origin/" + base + "...HEAD"], text=True).splitlines()
+# Checkout uses fetch-depth: 0. Do not shallow-fetch the base branch here:
+# depth=1 can remove the merge base during fast-moving research PR merges.
+subprocess.run(["git", "fetch", "--no-tags", "origin", f"+refs/heads/{base}:refs/remotes/origin/{base}"], check=True)
+merge_base = subprocess.run(
+    ["git", "merge-base", f"origin/{base}", "HEAD"],
+    capture_output=True, text=True
+)
+if merge_base.returncode != 0:
+    print("::error::Publishing gate cannot find PR merge base; checkout must retain full history")
+    sys.exit(1)
+changed = subprocess.check_output(["git", "diff", "--name-only", f"origin/{base}...HEAD"], text=True).splitlines()
 articles = [p for p in changed if re.fullmatch(r"content/[a-z0-9-]+\.js", p) and p not in ("content/editorial.js", "content/stories.js")]
 manifest = json.loads(Path("content/image-imports.json").read_text())
 imports = {entry["path"]: entry["url"] for entry in manifest}
