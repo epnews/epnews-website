@@ -1,0 +1,78 @@
+{
+  "source_sha256": "40a42af4c96b638f87a93476aec385a26be24e599cd0fa69d21a7750ea19f931",
+  "period": "2026-01 through 2026-08",
+  "total_rows": 15,
+  "vessel_counts": {
+    "HUASHAN": 4,
+    "RIBERA DEL DUERO KNUTSEN": 4,
+    "VENTURE GATOR": 7
+  },
+  "reported_destinations": {
+    "Belgium": {
+      "departures": 2,
+      "total_reported_volume_mmcf": 7294.91
+    },
+    "Egypt": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3594.16
+    },
+    "France": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3682.4
+    },
+    "Germany": {
+      "departures": 2,
+      "total_reported_volume_mmcf": 7329.22
+    },
+    "Italy": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3714.04
+    },
+    "Japan": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3520.61
+    },
+    "Lithuania": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3665.22
+    },
+    "Netherlands": {
+      "departures": 2,
+      "total_reported_volume_mmcf": 7240.46
+    },
+    "Poland": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3619.42
+    },
+    "Singapore": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3676.86
+    },
+    "Spain": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3156.74
+    },
+    "United Kingdom": {
+      "departures": 1,
+      "total_reported_volume_mmcf": 3681.29
+    }
+  },
+  "netherlands_records": [
+    {
+      "vessel": "RIBERA DEL DUERO KNUTSEN",
+      "departure_date": "2026-06-06",
+      "export_terminal": "Corpus Christi, TX",
+      "reported_destination": "Netherlands",
+      "volume_mmcf": 3564.06
+    },
+    {
+      "vessel": "HUASHAN",
+      "departure_date": "2026-07-24",
+      "export_terminal": "Cameron, LA",
+      "reported_destination": "Netherlands",
+      "volume_mmcf": 3676.4
+    }
+  ],
+  "measurement_boundary": "DOE reported destination on U.S. export departure; not certified discharge or October Rotterdam delivery",
+  "scope_warning": "Four selected vessel leads only; not a country-level DOE export total or a representative sample"
+}
