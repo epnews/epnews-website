@@ -1,5 +1,5 @@
 {
-  "version": "2.9",
+  "version": "3.0",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -304,7 +304,17 @@
         {
           "id": "verify-counterpart",
           "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.vedomosti.ru/politics/news/2025/03/04/1095964-belorussiya-ratifitsirovala",
+          "scope": "Belarusian President signed the Belarus-side ratification law on 4 March 2025, independently reported by Vedomosti citing the Belarus presidency. This verifies dated counterpart policy ratification, not military implementation, behavioral change or causal Russian influence.",
+          "verification": {
+            "sourceOwner": "Belarusian presidency ratification act reported by Vedomosti",
+            "sourceDate": "2025-03-04",
+            "finding": "Belarusian President signed the Belarus-side ratification law on 4 March 2025, independently reported by Vedomosti citing the Belarus presidency. This verifies dated counterpart policy ratification, not military implementation, behavioral change or causal Russian influence.",
+            "policyRatificationVerified": true,
+            "operationalImplementationVerified": false,
+            "attributionVerified": false
+          }
         },
         {
           "id": "match-baseline",
@@ -393,30 +403,30 @@
         "eligibleForInfluenceScoring": false
       },
       "auditProgress": {
-        "completedScopedChecks": 3,
+        "completedScopedChecks": 4,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
           "https://www.interfax-russia.ru/military/news/639921",
           "https://base.garant.ru/411209091/",
-          "https://www.kontur-extern.ru/info/normativ/document/1/490726-dogovor-mezhdu-rossiyskoy-federatsiey-i-respublikoy-belarus-o-garantiyakh-bezopasnosti-v"
+          "https://www.kontur-extern.ru/info/normativ/document/1/490726-dogovor-mezhdu-rossiyskoy-federatsiey-i-respublikoy-belarus-o-garantiyakh-bezopasnosti-v",
+          "https://www.vedomosti.ru/politics/news/2025/03/04/1095964-belorussiya-ratifitsirovala"
         ],
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
-          "verify-counterpart",
           "attribute",
           "costs"
         ],
         "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
       },
       "counterpartResearch": {
-        "status": "corroborated-belarus-ratification-but-no-independent-operational-effect",
-        "belarusRatificationReport": "https://www.vedomosti.ru/politics/news/2025/03/04/1095964-belorussiya-ratifitsirovala//",
+        "status": "belarus-ratification-verified-operational-effects-unverified",
+        "belarusRatificationReport": "https://www.vedomosti.ru/politics/news/2025/03/04/1095964-belorussiya-ratifitsirovala",
         "belarusRatificationDate": "2025-03-04",
         "legalEffect": "https://base.garant.ru/411209091/",
         "preexistingIntegration": "https://www.congress.gov/crs_external_products/IF/PDF/IF10814/IF10814.30.pdf",
-        "finding": "Belarusian president ratified treaty 4 March 2025; exchange of instruments made treaty legally effective 13 March. CRS documents extensive preexisting Russian-Belarusian security integration. Counterpart verification gate stays pending because independent post-entry operational implementation is not yet demonstrated.",
-        "nextEvidence": "Belarus-side dated implementing order or independently verified behavioral change after 13 March 2025.",
+        "finding": "Belarusian presidential ratification act of 4 March 2025 establishes counterpart-side dated policy adoption, verified via independent reporting. Treaty entered into force 13 March 2025; no independent post-treaty military behavioral change or Russia-specific influence effect is established.",
+        "nextEvidence": "Independent post-13 March 2025 behavioral outcome with preexisting security integration controlled, and financial/sovereignty costs.",
         "influenceScoringAuthorized": false
       }
     },
@@ -931,7 +941,7 @@
     "Unknown or missing evidence must never be zero-filled"
   ],
   "auditProgressSummary": {
-    "completedScopedChecks": 17,
+    "completedScopedChecks": 18,
     "requiredChecks": 30,
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
