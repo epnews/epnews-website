@@ -16,3 +16,13 @@ for bad in ("http://alsi.gie.eu/api/abc", "https://evil.example/api/abc", "https
     else:
         raise AssertionError(f"Unsafe URL accepted: {bad}")
 print("ALSI URL safety checks passed")
+
+assert mod.validate_response({"data": [{"gasDayStart": "2026-10-01"}], "last_page": 1})[0]["gasDayStart"] == "2026-10-01"
+for invalid in ({"data": [], "last_page": 1}, {"data": [1], "last_page": 2}, {"data": [1], "last_page": "unknown"}, {"error": "invalid key"}):
+    try:
+        mod.validate_response(invalid)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Incomplete or malformed response accepted: {invalid}")
+print("ALSI pagination and completeness checks passed")
