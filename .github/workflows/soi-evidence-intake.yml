@@ -1,0 +1,26 @@
+name: SOI evidence intake validation
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/validate_soi_evidence_intake.cjs'
+      - 'scripts/test_soi_evidence_intake.cjs'
+      - 'data/soi-research-evidence-intake.json'
+      - '.github/workflows/soi-evidence-intake.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence-intake:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check scripts/validate_soi_evidence_intake.cjs && node --check scripts/test_soi_evidence_intake.cjs
+      - run: node scripts/validate_soi_evidence_intake.cjs soi-evidence-intake-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: soi-evidence-intake-report
+          path: soi-evidence-intake-report.json
