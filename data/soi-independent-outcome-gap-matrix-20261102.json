@@ -149,9 +149,24 @@
       "sourceTarget": "SEC 10-K and 10-Q",
       "gate": "audited capex",
       "confounder": "shared project costs",
-      "primarySourceRetrieved": false,
-      "independentVerification": false,
-      "gateClosed": false
+      "primarySourceRetrieved": true,
+      "independentVerification": true,
+      "gateClosed": false,
+      "status": "verified_two_company_cash_capex_partial_sector",
+      "evidenceFiles": [
+        "data/soi-lng-audited-cash-capex-2024-2025-20261102.json",
+        "data/soi-lng-capex-cashflow-evidence-gate-20261102.json"
+      ],
+      "verifiedSubquestions": [
+        "Cheniere FY2024 and FY2025 cash PP&E expenditures from filed 10-K",
+        "Venture Global FY2024 and FY2025 cash capital expenditures from filed 10-K",
+        "Venture Global project/category cash capex sums reconcile to annual reported amounts"
+      ],
+      "unresolvedSubquestions": [
+        "Compare same definition: Cheniere cash PP&E net of commissioning sales versus Venture Global broader capex categories",
+        "Expand coverage beyond two firms and distinguish LNG terminal, pipeline, tanker and capitalized interest cash costs",
+        "Reconcile project-level construction expenditures and economic benefits without treating capex as net national benefit"
+      ]
     },
     {
       "id": "SOI-GAP-12",
