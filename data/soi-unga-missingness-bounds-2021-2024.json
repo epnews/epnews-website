@@ -1,0 +1,208 @@
+{
+  "sourceArchiveSha256": "04e2a0df74df61ca07e157871578e53effe4f130932d71a3298852b7c5180522",
+  "method": "Worst-case missing-partner vote bounds: all missing votes disagree (lower) or agree (upper); not a confidence interval",
+  "rows": [
+    {
+      "year": "2021",
+      "actor": "us",
+      "agree": 3217,
+      "shared": 12216,
+      "missing": 1384,
+      "coveragePct": 89.82,
+      "lowerBoundPct": 23.65,
+      "upperBoundPct": 33.83
+    },
+    {
+      "year": "2021",
+      "actor": "china",
+      "agree": 8846,
+      "shared": 12350,
+      "missing": 1410,
+      "coveragePct": 89.75,
+      "lowerBoundPct": 64.29,
+      "upperBoundPct": 74.53
+    },
+    {
+      "year": "2021",
+      "actor": "russia",
+      "agree": 7106,
+      "shared": 12350,
+      "missing": 1410,
+      "coveragePct": 89.75,
+      "lowerBoundPct": 51.64,
+      "upperBoundPct": 61.89
+    },
+    {
+      "year": "2021",
+      "actor": "india",
+      "agree": 8287,
+      "shared": 12245,
+      "missing": 1355,
+      "coveragePct": 90.04,
+      "lowerBoundPct": 60.93,
+      "upperBoundPct": 70.9
+    },
+    {
+      "year": "2021",
+      "actor": "eu",
+      "agree": 6652,
+      "shared": 11008,
+      "missing": 1312,
+      "coveragePct": 89.35,
+      "lowerBoundPct": 53.99,
+      "upperBoundPct": 64.64
+    },
+    {
+      "year": "2022",
+      "actor": "us",
+      "agree": 4369,
+      "shared": 12688,
+      "missing": 1552,
+      "coveragePct": 89.1,
+      "lowerBoundPct": 30.68,
+      "upperBoundPct": 41.58
+    },
+    {
+      "year": "2022",
+      "actor": "china",
+      "agree": 8134,
+      "shared": 12544,
+      "missing": 1536,
+      "coveragePct": 89.09,
+      "lowerBoundPct": 57.77,
+      "upperBoundPct": 68.68
+    },
+    {
+      "year": "2022",
+      "actor": "russia",
+      "agree": 6534,
+      "shared": 12688,
+      "missing": 1552,
+      "coveragePct": 89.1,
+      "lowerBoundPct": 45.88,
+      "upperBoundPct": 56.78
+    },
+    {
+      "year": "2022",
+      "actor": "india",
+      "agree": 8303,
+      "shared": 12688,
+      "missing": 1552,
+      "coveragePct": 89.1,
+      "lowerBoundPct": 58.31,
+      "upperBoundPct": 69.21
+    },
+    {
+      "year": "2022",
+      "actor": "eu",
+      "agree": 6973,
+      "shared": 11380,
+      "missing": 1420,
+      "coveragePct": 88.91,
+      "lowerBoundPct": 54.48,
+      "upperBoundPct": 65.57
+    },
+    {
+      "year": "2023",
+      "actor": "us",
+      "agree": 3927,
+      "shared": 12652,
+      "missing": 1428,
+      "coveragePct": 89.86,
+      "lowerBoundPct": 27.89,
+      "upperBoundPct": 38.03
+    },
+    {
+      "year": "2023",
+      "actor": "china",
+      "agree": 8161,
+      "shared": 12517,
+      "missing": 1403,
+      "coveragePct": 89.92,
+      "lowerBoundPct": 58.63,
+      "upperBoundPct": 68.71
+    },
+    {
+      "year": "2023",
+      "actor": "russia",
+      "agree": 6195,
+      "shared": 12652,
+      "missing": 1428,
+      "coveragePct": 89.86,
+      "lowerBoundPct": 44,
+      "upperBoundPct": 54.14
+    },
+    {
+      "year": "2023",
+      "actor": "india",
+      "agree": 8214,
+      "shared": 12562,
+      "missing": 1358,
+      "coveragePct": 90.24,
+      "lowerBoundPct": 59.01,
+      "upperBoundPct": 68.76
+    },
+    {
+      "year": "2023",
+      "actor": "eu",
+      "agree": 6643,
+      "shared": 11301,
+      "missing": 1339,
+      "coveragePct": 89.41,
+      "lowerBoundPct": 52.56,
+      "upperBoundPct": 63.15
+    },
+    {
+      "year": "2024",
+      "actor": "us",
+      "agree": 4427,
+      "shared": 13795,
+      "missing": 1245,
+      "coveragePct": 91.72,
+      "lowerBoundPct": 29.43,
+      "upperBoundPct": 37.71
+    },
+    {
+      "year": "2024",
+      "actor": "china",
+      "agree": 9123,
+      "shared": 13777,
+      "missing": 1263,
+      "coveragePct": 91.6,
+      "lowerBoundPct": 60.66,
+      "upperBoundPct": 69.06
+    },
+    {
+      "year": "2024",
+      "actor": "russia",
+      "agree": 7170,
+      "shared": 13933,
+      "missing": 1267,
+      "coveragePct": 91.66,
+      "lowerBoundPct": 47.17,
+      "upperBoundPct": 55.51
+    },
+    {
+      "year": "2024",
+      "actor": "india",
+      "agree": 9197,
+      "shared": 13933,
+      "missing": 1267,
+      "coveragePct": 91.66,
+      "lowerBoundPct": 60.51,
+      "upperBoundPct": 68.84
+    },
+    {
+      "year": "2024",
+      "actor": "eu",
+      "agree": 6999,
+      "shared": 11873,
+      "missing": 1087,
+      "coveragePct": 91.61,
+      "lowerBoundPct": 54,
+      "upperBoundPct": 62.39
+    }
+  ],
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
