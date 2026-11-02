@@ -1,0 +1,40 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-12",
+  "status": "national inflation retrieval pending official workflow run",
+  "requiredCountries": [
+    "BE",
+    "BG",
+    "DE",
+    "HR",
+    "HU",
+    "IE",
+    "MT",
+    "NL",
+    "RO",
+    "SE"
+  ],
+  "countryCount": 10,
+  "monthCountPerCountry": 12,
+  "requiredCountryMonthObservations": 120,
+  "pricePairs": 11,
+  "pricePeriodStart": "2025-S2",
+  "pricePeriodEnd": "2026-S1",
+  "requiredEurostatSeries": "prc_hicp_minr",
+  "unit": "I25",
+  "coicop18": "TOTAL",
+  "periodStart": "2025-07",
+  "periodEnd": "2026-06",
+  "runWorkflow": ".github/workflows/soi-eu-national-hicp-real-verify.yml",
+  "evidenceRules": [
+    "No national inflation-adjusted claim until official workflow succeeds and artifact is reviewed.",
+    "All 120 country-month observations must be present and positive; missing values fail verification.",
+    "Country-specific deflators must not be replaced with EU27 averages.",
+    "11 calculated changes must be reproducible from 2025-S2/2026-S1 nominal prices and national HICP means.",
+    "No influence score or audit promotion from price correlations alone."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "gapClosed": false,
+  "scoreAuthorized": false
+}
