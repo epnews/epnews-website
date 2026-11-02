@@ -1,7 +1,7 @@
 {
   "version": "2026-11-02",
   "targetGap": "SOI-GAP-12",
-  "status": "new direct Eurostat published price observations; rounded household electricity figures cross-checked against published rankings but not live Eurostat API",
+  "status": "20 country/aggregate observations from Eurostat official publications, with documented rounding and periods",
   "observations": [
     {
       "commodity": "electricity",
@@ -10,8 +10,8 @@
       "value": 38.71,
       "period": "2026-S1",
       "unit": "EUR per 100 kWh",
-      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261030-2",
-      "sourceType": "Eurostat official publication",
+      "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf",
+      "sourceType": "Eurostat Statistics Explained PDF, 2026-S1 country series",
       "dataset": "nrg_pc_204",
       "taxBasis": "including taxes and levies"
     },
@@ -22,8 +22,8 @@
       "value": 36.18,
       "period": "2026-S1",
       "unit": "EUR per 100 kWh",
-      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261030-2",
-      "sourceType": "Eurostat official publication",
+      "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf",
+      "sourceType": "Eurostat Statistics Explained PDF, 2026-S1 country series",
       "dataset": "nrg_pc_204",
       "taxBasis": "including taxes and levies"
     },
@@ -34,8 +34,8 @@
       "value": 35.75,
       "period": "2026-S1",
       "unit": "EUR per 100 kWh",
-      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261030-2",
-      "sourceType": "Eurostat official publication",
+      "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf",
+      "sourceType": "Eurostat Statistics Explained PDF, 2026-S1 country series",
       "dataset": "nrg_pc_204",
       "taxBasis": "including taxes and levies"
     },
@@ -46,8 +46,8 @@
       "value": 11.39,
       "period": "2026-S1",
       "unit": "EUR per 100 kWh",
-      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261030-2",
-      "sourceType": "Eurostat official publication",
+      "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf",
+      "sourceType": "Eurostat Statistics Explained PDF, 2026-S1 country series",
       "dataset": "nrg_pc_204",
       "taxBasis": "including taxes and levies"
     },
@@ -58,8 +58,8 @@
       "value": 12.68,
       "period": "2026-S1",
       "unit": "EUR per 100 kWh",
-      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261030-2",
-      "sourceType": "Eurostat official publication",
+      "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf",
+      "sourceType": "Eurostat Statistics Explained PDF, 2026-S1 country series",
       "dataset": "nrg_pc_204",
       "taxBasis": "including taxes and levies"
     },
@@ -70,8 +70,8 @@
       "value": 13.41,
       "period": "2026-S1",
       "unit": "EUR per 100 kWh",
-      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261030-2",
-      "sourceType": "Eurostat official publication",
+      "source": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf",
+      "sourceType": "Eurostat Statistics Explained PDF, 2026-S1 country series",
       "dataset": "nrg_pc_204",
       "taxBasis": "including taxes and levies"
     },
@@ -248,7 +248,7 @@
     "2026-S1 and 2025-S2 are different periods: do not compare them as same-period national price levels.",
     "Non-household gas 2025-S2 band 10000-100000 GJ; household gas 2026-S1 band 20-199 GJ; household electricity band 2500-4999 kWh.",
     "Values are nominal, not national HICP-adjusted. Do not infer geopolitical influence, causality or welfare from these observations.",
-    "Household electricity values recorded to two decimal places from official Eurostat release and accompanying published tables; exact official API extraction is still needed.",
+    "Household electricity national values use two decimal EUR/100 kWh precision as published in Eurostat country tables; verify dataset revisions before operational use.",
     "Gas missing-country coverage and confidentiality remain as documented by Eurostat."
   ],
   "gapClosed": false,
