@@ -1,0 +1,71 @@
+{
+  "as_of": "2026-11-02",
+  "provenance": "Gaspeil ship logbooks; berth dates are local-day labels, not independently verified port records",
+  "records": [
+    {
+      "imo": "9968932",
+      "ship": "BW NIVALIS",
+      "logbook_berth_date": "2026-10-01",
+      "jetty": "STG 1",
+      "assigned_gas_day": "2026-10-01",
+      "reported_gwh": 970,
+      "issue": "duplicate-970",
+      "logbook_source": "https://www.gaspeil.nl/radar/schip/9968932",
+      "independent_port_record": "not_obtained",
+      "terminal_discharge_record": "not_obtained",
+      "voyage_loading_record": "not_obtained"
+    },
+    {
+      "imo": "9864667",
+      "ship": "VIVIT AMERICAS LNG",
+      "logbook_berth_date": "2026-10-02",
+      "jetty": "STG 2",
+      "assigned_gas_day": "2026-10-01",
+      "reported_gwh": 970,
+      "issue": "duplicate-970",
+      "logbook_source": "https://www.gaspeil.nl/radar/schip/9864667",
+      "independent_port_record": "not_obtained",
+      "terminal_discharge_record": "not_obtained",
+      "voyage_loading_record": "not_obtained"
+    },
+    {
+      "imo": "9854375",
+      "ship": "MINERVA LIMNOS",
+      "logbook_berth_date": "2026-10-12",
+      "jetty": "STG 1",
+      "assigned_gas_day": "2026-10-11",
+      "reported_gwh": 877,
+      "issue": "pre-berth-gas-day",
+      "logbook_source": "https://www.gaspeil.nl/radar/schip/9854375",
+      "independent_port_record": "not_obtained",
+      "terminal_discharge_record": "not_obtained",
+      "voyage_loading_record": "not_obtained"
+    },
+    {
+      "imo": "9750658",
+      "ship": "VLADIMIR VIZE",
+      "logbook_berth_date": "2026-10-23",
+      "jetty": "STG 1",
+      "assigned_gas_day": "2026-10-21",
+      "reported_gwh": 1037,
+      "issue": "pre-berth-gas-day",
+      "logbook_source": "https://www.gaspeil.nl/radar/schip/9750658",
+      "independent_port_record": "not_obtained",
+      "terminal_discharge_record": "not_obtained",
+      "voyage_loading_record": "not_obtained"
+    },
+    {
+      "imo": "9956599",
+      "ship": "VENTURE GATOR",
+      "logbook_berth_date": "2026-10-30",
+      "jetty": "STG 1",
+      "assigned_gas_day": "2026-10-29",
+      "reported_gwh": 943,
+      "issue": "pre-berth-gas-day",
+      "logbook_source": "https://www.gaspeil.nl/radar/schip/9956599",
+      "independent_port_record": "not_obtained",
+      "terminal_discharge_record": "not_obtained",
+      "voyage_loading_record": "not_obtained"
+    }
+  ]
+}
