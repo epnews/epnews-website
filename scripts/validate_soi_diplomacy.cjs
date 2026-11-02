@@ -33,6 +33,19 @@ for(const item of worklist.items){
   assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
   assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,false);
   assert.equal(rec.preferenceLineResearch.coveredProductExportsUsdBillion,8.37);
+  const hist=rec.officialHistoricalMatchedSeries;
+  assert.equal(hist.status,'official-descriptive-aggregate-only');
+  assert.equal(hist.periods.length,2);
+  for(const period of hist.periods){
+   assert.ok(Math.abs(period.exportsUsdMillion+period.importsUsdMillion-period.totalUsdMillion)<0.02,'India historical trade arithmetic');
+  }
+  assert.ok(hist.derived.totalYearOverYearPercent<0,'India FY2023-24 trade fell versus FY2022-23');
+  assert.equal(hist.productLevelGatesSatisfied,false);
+  assert.equal(rec.sourceIntegrityPolicy.liveRevisionReconciled,false);
+  assert.equal(rec.sourceIntegrityPolicy.preferentialUtilizationVerified,false);
+  assert.equal(rec.sourceIntegrityPolicy.causalAttributionVerified,false);
+  assert.equal(rec.liveSources.length,3);
+
   assert.ok(rec.preferenceLineResearch.notMeasure.includes('Preference utilization rate'));
  }
  if(item.sphere==='russia'){
