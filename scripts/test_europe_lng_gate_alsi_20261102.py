@@ -64,12 +64,12 @@ for bad in (
 print("ALSI Netherlands facility-level identity checks passed")
 
 listing = [{"name": "Gate Terminal B.V.", "eic": "21X000000001063H", "facilities": [
-    {"name": "Gate LNG", "country": "NL", "company": "21X000000001063H", "eic": "21W-TEST", "url": "/api?country=NL&company=21X-TEST&facility=21W-TEST"},
+    {"name": "Gate LNG", "country": "NL", "company": "21X000000001063H", "eic": "21W-TEST", "url": "/api?country=NL&company=21X000000001063H&facility=21W-TEST"},
     {"name": "Other terminal", "country": "NL", "eic": "21W-OTHER"}]}]
-url = "https://alsi.gie.eu/api?country=NL&company=21X-TEST&facility=21W-TEST"
+url = "https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST"
 assert mod.verify_against_listing(url, listing)["facility_name"] == "Gate LNG"
 for bad in (
-    "https://alsi.gie.eu/api?country=NL&company=21X-TEST&facility=21W-OTHER",
+    "https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-OTHER",
     "https://alsi.gie.eu/api?country=NL&company=21X-OTHER&facility=21W-TEST",
 ):
     try:
