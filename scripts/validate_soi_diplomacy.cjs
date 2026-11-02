@@ -101,6 +101,13 @@ for(const item of worklist.items){
   assert.ok(Math.abs(uaetrade.periods[1].value-uaetrade.periods[0].value-uaetrade.differenceUsdBillion)<0.001);
   assert.equal(uaetrade.tradeDefinitionReconciledWithDgcis,false);
   assert.equal(uaetrade.causalAttributionVerified,false);
+  const joint=item.bilateralJointCommitteeEvidence;
+  assert.equal(joint.meetingDate,'2024-10-10');
+  assert.equal(joint.confirmedImplementation[0].measurement.minimumImporterCountExclusive,800);
+  assert.equal(joint.confirmedImplementation.length,3);
+  assert.equal(joint.preferenceUtilizationRateVerified,false);
+  assert.equal(joint.causalAttributionVerified,false);
+  assert.equal(joint.costsGateComplete,false);
   const fiscal=item.costEvidenceResearch.fiscalMateriality;
   for(const y of [fiscal.fy2024_25,fiscal.fy2025_26]){
     assert.ok(Math.abs(y.uaeCepaCrore/y.allAgreementConcessionsCrore*100-y.sharePercent)<0.01);
