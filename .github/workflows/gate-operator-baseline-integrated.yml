@@ -36,6 +36,7 @@ jobs:
           python scripts/test_check_gate_cross_diagnostic_consistency_20261102.py
           python scripts/test_audit_gate_measured_operator_quality_segments_20261102.py
           python scripts/test_audit_gate_vessel_claim_evidence_gates_20261102.py
+          python scripts/test_audit_gate_source_independence_20261102.py
       - name: Verify GIE key
         env:
           GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
@@ -82,6 +83,9 @@ jobs:
       - name: Apply vessel-level claim evidence restrictions
         run: |
           python scripts/audit_gate_vessel_claim_evidence_gates_20261102.py --operator gate-alsi-operator-october-2026.json --snapshot gate-gaspeil-october-2026-snapshot.json --output gate-october-vessel-claim-evidence-gates.json
+      - name: Audit independent evidence source lineage
+        run: |
+          python scripts/audit_gate_source_independence_20261102.py --operator gate-alsi-operator-october-2026.json --snapshot gate-gaspeil-october-2026-snapshot.json --output gate-october-source-independence.json
       - name: Archive source snapshots and reconciliations
         uses: actions/upload-artifact@v4
         with:
@@ -97,5 +101,6 @@ jobs:
             gate-october-cross-diagnostic-consistency.json
             gate-october-operator-quality-segments.json
             gate-october-vessel-claim-evidence-gates.json
+            gate-october-source-independence.json
           retention-days: 14
           if-no-files-found: error
