@@ -1,0 +1,143 @@
+{
+  "schema": "soi-unga-six-code-restricted-results-v1",
+  "sourceArchiveSha256": "04e2a0df74df61ca07e157871578e53effe4f130932d71a3298852b7c5180522",
+  "sourceTopicCsvSha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "eligibleResolutions": [
+    74,
+    77,
+    75,
+    83
+  ],
+  "policyCodes": [
+    "102",
+    "110",
+    "111",
+    "112",
+    "118",
+    "129"
+  ],
+  "externalPartners": 160,
+  "results": {
+    "us": [
+      [
+        73,
+        10589,
+        2501
+      ],
+      [
+        77,
+        11074,
+        3458
+      ],
+      [
+        75,
+        10892,
+        2925
+      ],
+      [
+        82,
+        12156,
+        3360
+      ]
+    ],
+    "china": [
+      [
+        74,
+        10723,
+        7358
+      ],
+      [
+        76,
+        10930,
+        7341
+      ],
+      [
+        74,
+        10757,
+        7137
+      ],
+      [
+        82,
+        12138,
+        8256
+      ]
+    ],
+    "russia": [
+      [
+        74,
+        10723,
+        5906
+      ],
+      [
+        77,
+        11074,
+        6015
+      ],
+      [
+        75,
+        10892,
+        5638
+      ],
+      [
+        83,
+        12294,
+        6667
+      ]
+    ],
+    "india": [
+      [
+        73,
+        10618,
+        6799
+      ],
+      [
+        77,
+        11074,
+        7276
+      ],
+      [
+        74,
+        10802,
+        6954
+      ],
+      [
+        83,
+        12294,
+        8064
+      ]
+    ],
+    "eu": [
+      [
+        65,
+        9381,
+        5245
+      ],
+      [
+        68,
+        9766,
+        5769
+      ],
+      [
+        66,
+        9541,
+        5342
+      ],
+      [
+        69,
+        10234,
+        5768
+      ]
+    ]
+  },
+  "rowFormat": "[actorEligibleResolutions,matchedCountryVotePairs,agreements]",
+  "representativeOfAllUNGA": false,
+  "topicAdjustedFullAgenda": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
