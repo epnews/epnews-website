@@ -15,6 +15,10 @@ on:
       - 'soi-diplomatic-outcomes-model.js'
       - 'scripts/smoke_chaos_meter.cjs'
       - '.github/workflows/command-meter.yml'
+      - 'scripts/audit_soi_*.cjs'
+      - 'scripts/test_soi_*.cjs'
+      - 'data/soi-*.json'
+      - 'docs/soi-*.md'
 permissions:
   contents: read
 jobs:
