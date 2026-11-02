@@ -429,3 +429,13 @@ for invalid_identity in (
     else:
         raise AssertionError(f"Invalid Gate identity accepted: {invalid_identity}")
 print("ALSI paginated facility identity validation tests passed")
+
+outside_window = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-02", "status": "C"},
+    {"gasDayStart": "2026-09-30", "status": "C"},
+], "2026-10-01", "2026-10-02")
+assert outside_window["usable_reporting_coverage_percent"] == 100.0
+assert outside_window["complete_daily_coverage"] is False
+assert mod.summarize_evidence_quality(outside_window)["has_full_usable_reporting"] is False
+print("ALSI full usable reporting requires clean reporting window")

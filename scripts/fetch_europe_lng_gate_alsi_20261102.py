@@ -295,6 +295,7 @@ def summarize_evidence_quality(coverage):
         "duplicate_gas_day_count": len(coverage["duplicate_gas_days"]),
         "missing_gas_day_count": len(coverage["missing_gas_days"]),
         "has_full_usable_reporting": coverage["usable_reporting_coverage_percent"] == 100.0
+            and coverage["complete_daily_coverage"]
             and not coverage["duplicate_gas_days"] and not coverage["conflicting_status_gas_days"],
         "no_data_day_count": coverage["no_data_gas_days"],
         "certified_vessel_discharge": False,
