@@ -62,3 +62,20 @@ for bad in (
     else:
         raise AssertionError(f"Non-Gate facility/aggregate query accepted: {bad}")
 print("ALSI Netherlands facility-level identity checks passed")
+
+listing = [{"name": "Gate Terminal B.V.", "eic": "21X-TEST", "facilities": [
+    {"name": "Gate LNG", "country": "NL", "eic": "21W-TEST", "url": "/api?country=NL&company=21X-TEST&facility=21W-TEST"},
+    {"name": "Other terminal", "country": "NL", "eic": "21W-OTHER"}]}]
+url = "https://alsi.gie.eu/api?country=NL&company=21X-TEST&facility=21W-TEST"
+assert mod.verify_against_listing(url, listing)["facility_name"] == "Gate LNG"
+for bad in (
+    "https://alsi.gie.eu/api?country=NL&company=21X-TEST&facility=21W-OTHER",
+    "https://alsi.gie.eu/api?country=NL&company=21X-OTHER&facility=21W-TEST",
+):
+    try:
+        mod.verify_against_listing(bad, listing)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Unlisted or mismatched Gate identity accepted")
+print("Authenticated GIE listing cross-check tests passed")
