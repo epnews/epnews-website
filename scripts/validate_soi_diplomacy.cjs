@@ -16,6 +16,14 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const realized=worklist.crossSphereRealizedVsAllocated2026;
+assert.equal(realized.records.length,14);
+assert.equal(realized.records.length,realized.recordCount);
+assert.deepEqual([...new Set(realized.records.map(r=>r.sphere))].sort(),['china','eu','india','russia','us']);
+assert.equal(realized.auditGatesCompleted,0);
+assert.equal(realized.scoreAuthorized,false);
+for(const r of realized.records){assert.ok(r.source.startsWith('https://'));assert.ok(r.limitation.length>40);assert.equal(r.caseSpecificCostVerified,false);assert.equal(r.causalAttributionVerified,false);}
+assert.ok(realized.criticalDistinction.includes('not EUPM Moldova mission disbursements'));
 const nextBundle=worklist.crossSphereAttributionCostResearchBundle;
 assert.equal(nextBundle.records.length,18);
 assert.equal(nextBundle.records.length,nextBundle.recordCount);
