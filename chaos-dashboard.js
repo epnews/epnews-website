@@ -108,6 +108,7 @@ fetch('data/soi-diplomatic-audit-worklist.json',{cache:'no-store'}).then(r=>{if(
 let influenceFramework=null;
 fetch('data/soi-diplomatic-influence-framework.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('framework unavailable');return r.json();}).then(d=>{if(!d||d.influenceScoreAuthorized!==false||!Array.isArray(d.dimensions))throw Error('invalid framework');influenceFramework=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
 let votingEvidence=null;
+let commonCohortVoting=null;
 const voteActor={us:'USA',china:'CHN',russia:'RUS',india:'IND'};
 const voteNames={USA:'United States',CHN:'China',RUS:'Russia',IND:'India'};
 function appendVotingEvidence(actor,dimension){
@@ -180,6 +181,22 @@ function appendVotingEvidence(actor,dimension){
   guide.append(element('p','A diplomatic event is not an influence outcome. This framework applies identically to all five spheres and does not produce a score.'));
   const list=element('ol');for(const gate of influenceFramework.dimensions){const li=element('li');li.append(element('strong',gate.question),element('p',gate.note));list.append(li);}guide.append(list,element('p','Evidence stages: '+influenceFramework.stages.join(' → ')+'. No calibrated influence score is authorized.'),element('p','Auditable case register: '+influenceFramework.caseFiles.filter(item=>item.sphere===actor).length+' verified entries for this sphere. Empty means no case has passed source review, not zero diplomatic activity.'));panel.append(guide);
  }
+ if(commonCohortVoting&&commonCohortVoting.agreementPercent?.[actor]){
+  const values=commonCohortVoting.agreementPercent[actor];
+  const baseline=values['2021'],latest=values['2024'];
+  if(Number.isFinite(baseline)&&Number.isFinite(latest)){
+   const cohort=element('section',undefined,'chaos-common-cohort-voting');
+   cohort.append(element('h4','STANDARDIZED EXTERNAL UN VOTING · PRELIMINARY'));
+   cohort.append(element('p','Same frozen '+commonCohortVoting.frozenExternalPartners+'-country external partner universe for all five spheres · recorded UNGA votes · 2021–2024.'));
+   const track=element('div');track.setAttribute('role','meter');track.setAttribute('aria-label','2024 preliminary external-partner UN voting agreement, not influence');track.setAttribute('aria-valuemin','0');track.setAttribute('aria-valuemax','100');track.setAttribute('aria-valuenow',latest.toFixed(2));track.style.cssText='height:16px;border-radius:9px;background:#9ca3af;overflow:hidden;margin:12px 0;';
+   const fill=element('span');fill.style.cssText='display:block;height:100%;width:'+Math.max(0,Math.min(100,latest)).toFixed(2)+'%;background:#2563eb;transition:width .4s ease;';track.append(fill);
+   cohort.append(track,element('p',latest.toFixed(2)+'% (2024) · '+(latest>=baseline?'+':'')+(latest-baseline).toFixed(2)+' percentage points vs 2021.'));
+   const detail=element('details');detail.append(element('summary','Compare all four annual readings'));
+   const table=element('table');for(const year of ['2021','2022','2023','2024']){const tr=element('tr');tr.append(element('th',year),element('td',values[year].toFixed(2)+'%'));table.append(tr);}detail.append(table);cohort.append(detail);
+   cohort.append(element('p','PRELIMINARY: independent reproduction and abstention, issue-mix, missing-vote and EU-threshold sensitivity tests remain outstanding. Voting agreement is not causal diplomatic influence. This does not change the original influence needle.'));
+   panel.append(cohort);
+  }
+ }
  const code=voteActor[actor];
  const coverage=element('p',undefined,'chaos-voting-coverage');
  const annualYears=['2021','2022','2023','2024'];
@@ -247,6 +264,7 @@ function appendVotingEvidence(actor,dimension){
  cards.append(panel);
 }
 fetch('data/soi-swp-verified-country-vote-alignment-2021-2024.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('voting data unavailable');return r.json();}).then(d=>{if(!d||!d.annual||d.influenceScoreAuthorized!==false)throw Error('invalid voting evidence');votingEvidence=d;const actor=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(actor&&dim&&actor.value&&dim.value)renderCards(actor.value,dim.value);}).catch(()=>{});
+fetch('data/soi-unga-frozen-external-partner-2021-2024.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('external voting data unavailable');return r.json();}).then(d=>{if(!d||d.schema!=='soi-unga-frozen-external-partner-v1'||d.frozenExternalPartners!==160||d.influenceScoreAuthorized!==false||d.canActivateInfluenceNeedle!==false||d.status!=='PRELIMINARY_REQUIRES_INDEPENDENT_REPRODUCTION_AND_SENSITIVITY')throw Error('unreviewed external voting data');for(const sphere of ['us','china','russia','india','eu'])for(const year of ['2021','2022','2023','2024'])if(!Number.isFinite(d.agreementPercent?.[sphere]?.[year]))throw Error('incomplete external voting data');commonCohortVoting=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
 function renderCards(actor,dimension){
  cards.replaceChildren();
  appendVotingEvidence(actor,dimension);
