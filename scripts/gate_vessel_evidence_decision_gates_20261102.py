@@ -11,9 +11,9 @@ from pathlib import Path
 def classify(item):
     evidence=item.get("evidence",[])
     if not isinstance(evidence,list): raise ValueError("evidence must be a list")
+    if any(not isinstance(x,dict) for x in evidence): raise ValueError("invalid evidence item")
     kinds={x.get("kind") for x in evidence}
     ids={x.get("source_id") for x in evidence if x.get("source_id")}
-    if any(not isinstance(x,dict) for x in evidence): raise ValueError("invalid evidence item")
     if "terminal_discharge_certificate" in kinds and "independent_port_berth_record" in kinds and len(ids)>=2:
         discharge="certified_vessel_discharge"
     elif "independent_port_berth_record" in kinds:
