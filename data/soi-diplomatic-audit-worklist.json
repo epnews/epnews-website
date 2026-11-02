@@ -1,5 +1,5 @@
 {
-  "version": "4.6",
+  "version": "4.7",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -1791,6 +1791,132 @@
       "preferential utilization",
       "geopolitical influence scoring"
     ],
+    "scoreAuthorized": false
+  },
+  "crossSpherePrimaryEvidenceBatch": {
+    "version": "1.0",
+    "researchCutoff": "2026-11-01",
+    "records": [
+      {
+        "sphere": "us",
+        "title": "Freedom Edge 2026 completed 7–11 September 2026",
+        "source": "https://www.cpf.navy.mil/Newsroom/News/Article/4599379/freedom-edge-26-concludes-advancing-trilateral-readiness-across-indo-pacific/",
+        "finding": "Operationally completed five-day US-Japan-ROK multi-domain exercise; not causal deterrence proof or verified cost.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "us",
+        "title": "Freedom Edge 2026 added cyber and medical training",
+        "source": "https://www.cpf.navy.mil/Newsroom/News/Article/4599379/freedom-edge-26-concludes-advancing-trilateral-readiness-across-indo-pacific/",
+        "finding": "US Pacific Fleet describes maritime, air, missile defense, cyber and medical exercise components; training outputs only.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "us",
+        "title": "ROK counterpart confirmed 2026 exercise",
+        "source": "https://en.yna.co.kr/view/AEN20260907002352315",
+        "finding": "ROK JCS described five-day exercise; fourth iteration since June 2024, providing continuity rather than measured readiness effect.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "us",
+        "title": "Japan 2024 institutionalization agreement",
+        "source": "https://www.mod.go.jp/en/article/2024/07/67ea7647966dfa85d96fb0d25deacf3ce69eedb0.html",
+        "finding": "Japan defense ministry confirms July 2024 trilateral framework memorandum and intended missile-warning sharing.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "china",
+        "title": "March 2023 joint statement acknowledges earlier mediation",
+        "source": "https://www.spa.gov.sa/en/ed7aabfefaw",
+        "finding": "Saudi official text explicitly credits Iraq and Oman for 2021–22 dialogue, material counterfactual evidence against China-only credit.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "china",
+        "title": "December 2023 trilateral implementation committee",
+        "source": "https://www.mfa.gov.cn/eng/wjb/zygy/hd/202406/t20240603_11375395.html",
+        "finding": "First joint committee in Beijing reports embassy reopenings and reciprocal ministerial visits.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "china",
+        "title": "November 2024 second committee in Riyadh",
+        "source": "https://www.mfa.gov.cn/eng/xw/wjbxw/202411/t20241120_11529928.html",
+        "finding": "Official 2024 follow-up hosted by Saudi Arabia; evidence of ongoing counterpart participation.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "china",
+        "title": "December 2025 third committee in Tehran",
+        "source": "https://www.fmprc.gov.cn/mfa_eng/xw/wjbxw/202512/t20251210_11770309.html",
+        "finding": "Official 2025 follow-up chaired by Iran; three-country diplomatic process continued.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "china",
+        "title": "2025 Iran-Saudi pilgrimage cooperation outputs",
+        "source": "https://www.fmprc.gov.cn/mfa_eng/xw/wjbxw/202512/t20251210_11770309.html",
+        "finding": "Joint statement reports >85,000 Iranian Hajj and >210,000 Umrah pilgrims in 2025; reported facilitated travel, not proven China-caused increment.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "russia",
+        "title": "Russia-Belarus security guarantees treaty in force March 13 2025",
+        "source": "https://base.garant.ru/411209091/",
+        "finding": "Legal record confirms treaty effective 13 March 2025; separate from Russian ratification 28 February and Belarus ratification.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "india",
+        "title": "Gold quota moved to competitive auction procedure",
+        "source": "https://content.dgft.gov.in/Website/dgftprod/82e2fb81-6db1-42d6-93ba-c47b5c7ecadc/Public%20Notice%20no.%2045%20dated%2023.01.2026.pdf",
+        "finding": "Indian DGFT January 2026 tender formalizes e-auction allocation; allocation is not customs-cleared utilization.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "india",
+        "title": "India–UAE gold quota authorization extended to September 2026",
+        "source": "https://taxguru.in/dgft/dgft-extends-fy-2025-26-india-uae-cepa-gold-trq-authorisations-30-sept-2026.html",
+        "finding": "Published reproduction of July 2026 DGFT notice extends FY2025–26 authorization validity; secondary copy, not import utilization proof.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      },
+      {
+        "sphere": "eu",
+        "title": "EU mission procurement register confirmed at EEAS source",
+        "source": "https://www.eeas.europa.eu/eupm-moldova/eupm-moldova-list-contracts-above-1500000-eur-signed-01072025-30062026_en",
+        "finding": "EEAS published contracts >€15,000 signed July 2025–June 2026; commitments cannot be called cash payments.",
+        "evidenceType": "official-or-attributed-descriptive",
+        "causalAttributionVerified": false,
+        "actualNetCostVerified": false
+      }
+    ],
+    "researchPolicy": "Evidence records do not independently authorize attribution, costs, composite influence or completed audit gates.",
+    "totalRecords": 13,
     "scoreAuthorized": false
   }
 }
