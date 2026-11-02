@@ -1,6 +1,12 @@
 name: Gate Gaspeil public October snapshot
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch_gate_gaspeil_snapshot_20261102.py'
+      - 'scripts/reconcile_gate_alsi_gaspeil_20261102.py'
+      - '.github/workflows/gate-gaspeil-october-snapshot.yml'
 permissions:
   contents: read
 jobs:
@@ -13,7 +19,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Offline regression
-        run: python scripts/test_gate_gaspeil_snapshot_20261102.py
+        run: |
+          python scripts/test_gate_gaspeil_snapshot_20261102.py
+          python scripts/test_reconcile_gate_alsi_gaspeil_20261102.py
       - name: Fetch October public API snapshot and exception summary
         run: python scripts/fetch_gate_gaspeil_snapshot_20261102.py
       - name: Upload dated raw snapshot and audit
