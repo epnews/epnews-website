@@ -747,7 +747,7 @@ for(const sphere of ['russia','eu','india']){
  const item=diplomaticQueue.items.find(x=>x.sphere===sphere);
  assert.ok(item.claimLevelVerification?.source);
  assert.equal(item.priorityTasks.find(t=>t.id==='verify-primary').complete,true);
- assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,false);
+ assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,sphere==='eu');
 }
 
 // Baseline/follow-up matrix distinguishes descriptive comparability from causal attribution.
