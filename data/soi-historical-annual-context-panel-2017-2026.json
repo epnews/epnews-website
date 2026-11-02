@@ -1,0 +1,1080 @@
+{
+  "schema": "soi-historical-annual-context-panel-v1",
+  "asOf": "2026-11-02",
+  "sourceFiles": [
+    "data/soi-historical-agreement-events-2017-2026.json",
+    "data/soi-historical-batch-2017-2020.json",
+    "data/soi-historical-batch-2021-2024.json",
+    "data/soi-historical-batch-2025-2026.json"
+  ],
+  "rawEventCount": 30,
+  "canonicalEventCount": 29,
+  "deduplication": {
+    "2026-us-paris-withdrawal-effective": "2026-us-paris-second-exit"
+  },
+  "actors": [
+    "us",
+    "china",
+    "russia",
+    "eu",
+    "india"
+  ],
+  "years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "events": [
+    {
+      "id": "2018-us-iran-jcpoa-exit",
+      "year": 2018,
+      "date": "2018-05-08",
+      "stage": "ceased_participation_nonbinding_political_commitment",
+      "actors": [
+        "us",
+        "eu",
+        "china",
+        "russia"
+      ],
+      "source": "https://www.everycrsreport.com/reports/R44942.html",
+      "sourceFile": "data/soi-historical-agreement-events-2017-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2020-us-paris-exit",
+      "year": 2020,
+      "date": "2020-11-04",
+      "stage": "treaty_withdrawal_effective",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "source": "https://www.everycrsreport.com/reports/R48504.html",
+      "sourceFile": "data/soi-historical-agreement-events-2017-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2021-us-paris-reentry",
+      "year": 2021,
+      "date": "2021-02-19",
+      "stage": "treaty_reentry_effective",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "source": "https://www.un.org/sg/en/content/sg/notes-correspondents/2021-01-20/note-correspondents-the-united-states-return-the-paris-agreement",
+      "sourceFile": "data/soi-historical-agreement-events-2017-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2021-eu-china-cai-freeze",
+      "year": 2021,
+      "date": "2021-05-20",
+      "stage": "ratification_frozen",
+      "actors": [
+        "eu",
+        "china"
+      ],
+      "source": "https://www.europarl.europa.eu/pdfs/news/expert/2021/5/press_release/20210517IPR04123/20210517IPR04123_en.pdf",
+      "sourceFile": "data/soi-historical-agreement-events-2017-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2023-russia-new-start",
+      "year": 2023,
+      "date": "2023-02-28",
+      "stage": "disputed_suspension_and_compliance",
+      "actors": [
+        "russia",
+        "us"
+      ],
+      "source": "https://2021-2025.state.gov/report-on-the-reasons-that-continued-implementation-of-the-new-start-treaty-is-in-the-national-security-interest-of-the-united-states/",
+      "sourceFile": "data/soi-historical-agreement-events-2017-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2024-india-china-lac-patrolling",
+      "year": 2024,
+      "date": "2024-10-21",
+      "stage": "patrolling_agreement_implementation_reported",
+      "actors": [
+        "india",
+        "china"
+      ],
+      "source": "https://www.mea.gov.in/lok-sabha.htm?dtl/39008/QUESTION_NO_843_INDOCHINA_AGREEMENT_ON_BORDERRELATED_ISSUES",
+      "sourceFile": "data/soi-historical-agreement-events-2017-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2026-us-paris-second-exit",
+      "year": 2026,
+      "date": "2026-01-27",
+      "stage": "treaty_withdrawal_effective",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "source": "https://unfccc.int/node/61231",
+      "sourceFile": "data/soi-historical-agreement-events-2017-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2017-us-tpp-withdrawal",
+      "year": 2017,
+      "date": "2017-01-23",
+      "stage": "withdrawal_from_unsigned_ratification_process",
+      "actors": [
+        "us",
+        "china"
+      ],
+      "source": "https://trumpwhitehouse.archives.gov/presidential-actions/presidential-memorandum-regarding-withdrawal-united-states-trans-pacific-partnership-negotiations-agreement/",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2017-india-china-doklam-disengagement",
+      "year": 2017,
+      "date": "2017-08-28",
+      "stage": "announced_disengagement",
+      "actors": [
+        "india",
+        "china"
+      ],
+      "source": "https://www.mea.gov.in/press-releases.htm?dtl/28893/Press_Statement_on_Doklam_disengagement_understanding",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2018-us-un-human-rights-council",
+      "year": 2018,
+      "date": "2018-06-19",
+      "stage": "withdrawal_from_institution",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "source": "https://2017-2021.state.gov/remarks-on-the-un-human-rights-council/",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2018-usmca-signed",
+      "year": 2018,
+      "date": "2018-11-30",
+      "stage": "signed_not_yet_effective",
+      "actors": [
+        "us"
+      ],
+      "source": "https://ustr.gov/trade-agreements/free-trade-agreements/united-states-mexico-canada-agreement",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2019-russia-inf-termination",
+      "year": 2019,
+      "date": "2019-08-02",
+      "stage": "treaty_termination_disputed_compliance",
+      "actors": [
+        "us",
+        "russia",
+        "eu"
+      ],
+      "source": "https://www.nato.int/cps/en/natohq/news_168177.htm",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2020-eu-uk-withdrawal",
+      "year": 2020,
+      "date": "2020-01-31",
+      "stage": "member_state_withdrawal_effective",
+      "actors": [
+        "eu"
+      ],
+      "source": "https://www.consilium.europa.eu/en/policies/brexit/",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2020-us-china-phase-one",
+      "year": 2020,
+      "date": "2020-01-15",
+      "stage": "agreement_signed",
+      "actors": [
+        "us",
+        "china"
+      ],
+      "source": "https://ustr.gov/phase-one",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2020-india-china-galwan",
+      "year": 2020,
+      "date": "2020-06-15",
+      "stage": "border_conflict_after_prior_confidence_measures",
+      "actors": [
+        "india",
+        "china"
+      ],
+      "source": "https://www.mea.gov.in/press-releases.htm?dtl/32770/Statement_by_Official_Spokesperson_on_the_situation_in_the_IndiaChina_border_areas",
+      "sourceFile": "data/soi-historical-batch-2017-2020.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2021-aukus-announcement",
+      "year": 2021,
+      "date": "2021-09-15",
+      "stage": "security_partnership_announced",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "source": "https://www.whitehouse.gov/briefing-room/statements-releases/2021/09/15/joint-leaders-statement-on-aukus/",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2021-us-afghanistan-withdrawal",
+      "year": 2021,
+      "date": "2021-08-30",
+      "stage": "military_withdrawal_completed",
+      "actors": [
+        "us",
+        "russia",
+        "china",
+        "india",
+        "eu"
+      ],
+      "source": "https://www.defense.gov/News/News-Stories/Article/Article/2756930/last-us-troops-depart-afghanistan/",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2022-russia-ukraine-invasion",
+      "year": 2022,
+      "date": "2022-02-24",
+      "stage": "invasion_international_law_violation",
+      "actors": [
+        "russia",
+        "us",
+        "eu",
+        "china",
+        "india"
+      ],
+      "source": "https://press.un.org/en/2022/ga12407.doc.htm",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2022-eu-russian-coal-embargo",
+      "year": 2022,
+      "date": "2022-08-10",
+      "stage": "sanctions_implementation",
+      "actors": [
+        "eu",
+        "russia",
+        "us",
+        "china",
+        "india"
+      ],
+      "source": "https://www.consilium.europa.eu/en/press/press-releases/2022/04/08/fifth-package-of-sanctions-in-view-of-russia-s-military-aggression-against-ukraine-eu-adopts-restrictive-measures-against-russia/",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2023-finland-nato",
+      "year": 2023,
+      "date": "2023-04-04",
+      "stage": "alliance_accession_effective",
+      "actors": [
+        "eu",
+        "us",
+        "russia"
+      ],
+      "source": "https://www.nato.int/cps/en/natohq/news_213448.htm",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2023-india-middle-east-europe-corridor",
+      "year": 2023,
+      "date": "2023-09-09",
+      "stage": "memorandum_of_understanding",
+      "actors": [
+        "india",
+        "eu",
+        "us",
+        "china",
+        "russia"
+      ],
+      "source": "https://www.whitehouse.gov/briefing-room/statements-releases/2023/09/09/memorandum-of-understanding-on-the-principles-of-an-india-middle-east-europe-economic-corridor/",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2024-sweden-nato",
+      "year": 2024,
+      "date": "2024-03-07",
+      "stage": "alliance_accession_effective",
+      "actors": [
+        "eu",
+        "us",
+        "russia"
+      ],
+      "source": "https://www.nato.int/cps/en/natohq/news_223446.htm",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2024-eu-russia-lng-transshipment",
+      "year": 2024,
+      "date": "2024-06-24",
+      "stage": "sanctions_adopted_with_transition",
+      "actors": [
+        "eu",
+        "russia",
+        "us"
+      ],
+      "source": "https://www.consilium.europa.eu/en/press/press-releases/2024/06/24/russia-s-war-of-aggression-against-ukraine-eu-adopts-14th-package-of-economic-and-individual-sanctions/",
+      "sourceFile": "data/soi-historical-batch-2021-2024.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2025-us-paris-withdrawal-notice",
+      "year": 2025,
+      "date": "2025-01-20",
+      "stage": "withdrawal_notice_initiated",
+      "actors": [
+        "us",
+        "eu"
+      ],
+      "source": "https://www.whitehouse.gov/presidential-actions/2025/01/putting-america-first-in-international-environmental-agreements/",
+      "sourceFile": "data/soi-historical-batch-2025-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2025-us-who-withdrawal-notice",
+      "year": 2025,
+      "date": "2025-01-20",
+      "stage": "withdrawal_process_initiated",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "source": "https://www.whitehouse.gov/presidential-actions/2025/01/withdrawing-the-united-states-from-the-worldhealth-organization/",
+      "sourceFile": "data/soi-historical-batch-2025-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2025-eu-japan-spa",
+      "year": 2025,
+      "date": "2025-01-01",
+      "stage": "agreement_entered_into_force",
+      "actors": [
+        "eu",
+        "china",
+        "us"
+      ],
+      "source": "https://www.consilium.europa.eu/en/press/press-releases/2025/01/01/eu-japan-strategic-partnership-framework-agreement-enters-into-force/",
+      "sourceFile": "data/soi-historical-batch-2025-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2025-china-solomon-police-training",
+      "year": 2025,
+      "date": "2025-06-01",
+      "stage": "training_departure_reported_month_precision",
+      "actors": [
+        "china",
+        "us"
+      ],
+      "source": "https://solomons.gov.sb/25-cssi-officers-depart-for-training-in-china/",
+      "sourceFile": "data/soi-historical-batch-2025-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2025-us-canada-mexico-tariffs",
+      "year": 2025,
+      "date": "2025-02-01",
+      "stage": "tariff_orders_issued",
+      "actors": [
+        "us",
+        "eu",
+        "china"
+      ],
+      "source": "https://www.whitehouse.gov/presidential-actions/2025/02/imposing-duties-to-address-the-situation-at-our-southern-border/",
+      "sourceFile": "data/soi-historical-batch-2025-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    },
+    {
+      "id": "2025-india-uk-trade-deal",
+      "year": 2025,
+      "date": "2025-05-06",
+      "stage": "trade_deal_concluded_in_principle",
+      "actors": [
+        "india",
+        "eu",
+        "china"
+      ],
+      "source": "https://www.gov.uk/government/news/uk-india-trade-deal-agreed",
+      "sourceFile": "data/soi-historical-batch-2025-2026.json",
+      "category": "historical-context-unclassified",
+      "roleStatus": "listed-in-context-not-attributed",
+      "countableDiplomacyOutcome": false,
+      "causalInfluence": null,
+      "netCost": null
+    }
+  ],
+  "panel": [
+    {
+      "year": 2017,
+      "actor": "us",
+      "contextEventIds": [
+        "2017-us-tpp-withdrawal"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2017,
+      "actor": "china",
+      "contextEventIds": [
+        "2017-us-tpp-withdrawal",
+        "2017-india-china-doklam-disengagement"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2017,
+      "actor": "russia",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2017,
+      "actor": "eu",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2017,
+      "actor": "india",
+      "contextEventIds": [
+        "2017-india-china-doklam-disengagement"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2018,
+      "actor": "us",
+      "contextEventIds": [
+        "2018-us-iran-jcpoa-exit",
+        "2018-us-un-human-rights-council",
+        "2018-usmca-signed"
+      ],
+      "contextEventCount": 3,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2018,
+      "actor": "china",
+      "contextEventIds": [
+        "2018-us-iran-jcpoa-exit"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2018,
+      "actor": "russia",
+      "contextEventIds": [
+        "2018-us-iran-jcpoa-exit"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2018,
+      "actor": "eu",
+      "contextEventIds": [
+        "2018-us-iran-jcpoa-exit",
+        "2018-us-un-human-rights-council"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2018,
+      "actor": "india",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2019,
+      "actor": "us",
+      "contextEventIds": [
+        "2019-russia-inf-termination"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2019,
+      "actor": "china",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2019,
+      "actor": "russia",
+      "contextEventIds": [
+        "2019-russia-inf-termination"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2019,
+      "actor": "eu",
+      "contextEventIds": [
+        "2019-russia-inf-termination"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2019,
+      "actor": "india",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2020,
+      "actor": "us",
+      "contextEventIds": [
+        "2020-us-paris-exit",
+        "2020-us-china-phase-one"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2020,
+      "actor": "china",
+      "contextEventIds": [
+        "2020-us-china-phase-one",
+        "2020-india-china-galwan"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2020,
+      "actor": "russia",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2020,
+      "actor": "eu",
+      "contextEventIds": [
+        "2020-us-paris-exit",
+        "2020-eu-uk-withdrawal"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2020,
+      "actor": "india",
+      "contextEventIds": [
+        "2020-india-china-galwan"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2021,
+      "actor": "us",
+      "contextEventIds": [
+        "2021-us-paris-reentry",
+        "2021-aukus-announcement",
+        "2021-us-afghanistan-withdrawal"
+      ],
+      "contextEventCount": 3,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2021,
+      "actor": "china",
+      "contextEventIds": [
+        "2021-eu-china-cai-freeze",
+        "2021-aukus-announcement",
+        "2021-us-afghanistan-withdrawal"
+      ],
+      "contextEventCount": 3,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2021,
+      "actor": "russia",
+      "contextEventIds": [
+        "2021-us-afghanistan-withdrawal"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2021,
+      "actor": "eu",
+      "contextEventIds": [
+        "2021-us-paris-reentry",
+        "2021-eu-china-cai-freeze",
+        "2021-aukus-announcement",
+        "2021-us-afghanistan-withdrawal"
+      ],
+      "contextEventCount": 4,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2021,
+      "actor": "india",
+      "contextEventIds": [
+        "2021-us-afghanistan-withdrawal"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2022,
+      "actor": "us",
+      "contextEventIds": [
+        "2022-russia-ukraine-invasion",
+        "2022-eu-russian-coal-embargo"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2022,
+      "actor": "china",
+      "contextEventIds": [
+        "2022-russia-ukraine-invasion",
+        "2022-eu-russian-coal-embargo"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2022,
+      "actor": "russia",
+      "contextEventIds": [
+        "2022-russia-ukraine-invasion",
+        "2022-eu-russian-coal-embargo"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2022,
+      "actor": "eu",
+      "contextEventIds": [
+        "2022-russia-ukraine-invasion",
+        "2022-eu-russian-coal-embargo"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2022,
+      "actor": "india",
+      "contextEventIds": [
+        "2022-russia-ukraine-invasion",
+        "2022-eu-russian-coal-embargo"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2023,
+      "actor": "us",
+      "contextEventIds": [
+        "2023-russia-new-start",
+        "2023-finland-nato",
+        "2023-india-middle-east-europe-corridor"
+      ],
+      "contextEventCount": 3,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2023,
+      "actor": "china",
+      "contextEventIds": [
+        "2023-india-middle-east-europe-corridor"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2023,
+      "actor": "russia",
+      "contextEventIds": [
+        "2023-russia-new-start",
+        "2023-finland-nato",
+        "2023-india-middle-east-europe-corridor"
+      ],
+      "contextEventCount": 3,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2023,
+      "actor": "eu",
+      "contextEventIds": [
+        "2023-finland-nato",
+        "2023-india-middle-east-europe-corridor"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2023,
+      "actor": "india",
+      "contextEventIds": [
+        "2023-india-middle-east-europe-corridor"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2024,
+      "actor": "us",
+      "contextEventIds": [
+        "2024-sweden-nato",
+        "2024-eu-russia-lng-transshipment"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2024,
+      "actor": "china",
+      "contextEventIds": [
+        "2024-india-china-lac-patrolling"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2024,
+      "actor": "russia",
+      "contextEventIds": [
+        "2024-sweden-nato",
+        "2024-eu-russia-lng-transshipment"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2024,
+      "actor": "eu",
+      "contextEventIds": [
+        "2024-sweden-nato",
+        "2024-eu-russia-lng-transshipment"
+      ],
+      "contextEventCount": 2,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2024,
+      "actor": "india",
+      "contextEventIds": [
+        "2024-india-china-lac-patrolling"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2025,
+      "actor": "us",
+      "contextEventIds": [
+        "2025-us-paris-withdrawal-notice",
+        "2025-us-who-withdrawal-notice",
+        "2025-eu-japan-spa",
+        "2025-china-solomon-police-training",
+        "2025-us-canada-mexico-tariffs"
+      ],
+      "contextEventCount": 5,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2025,
+      "actor": "china",
+      "contextEventIds": [
+        "2025-us-who-withdrawal-notice",
+        "2025-eu-japan-spa",
+        "2025-china-solomon-police-training",
+        "2025-us-canada-mexico-tariffs",
+        "2025-india-uk-trade-deal"
+      ],
+      "contextEventCount": 5,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2025,
+      "actor": "russia",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2025,
+      "actor": "eu",
+      "contextEventIds": [
+        "2025-us-paris-withdrawal-notice",
+        "2025-us-who-withdrawal-notice",
+        "2025-eu-japan-spa",
+        "2025-us-canada-mexico-tariffs",
+        "2025-india-uk-trade-deal"
+      ],
+      "contextEventCount": 5,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2025,
+      "actor": "india",
+      "contextEventIds": [
+        "2025-india-uk-trade-deal"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2026,
+      "actor": "us",
+      "contextEventIds": [
+        "2026-us-paris-second-exit"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2026,
+      "actor": "china",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2026,
+      "actor": "russia",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2026,
+      "actor": "eu",
+      "contextEventIds": [
+        "2026-us-paris-second-exit"
+      ],
+      "contextEventCount": 1,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    },
+    {
+      "year": 2026,
+      "actor": "india",
+      "contextEventIds": [],
+      "contextEventCount": 0,
+      "attributedDiplomacyOutcomeCount": null,
+      "influenceScore": null
+    }
+  ],
+  "policy": {
+    "eventCountsAreNotInfluence": true,
+    "contextActorsAreNotBeneficiaries": true,
+    "doNotCountSharedEventAsSeparateDiplomaticSuccess": true,
+    "missingDataNotZero": true,
+    "sourceLinksAreNotIndependentVerification": true
+  },
+  "scoringAuthorized": false,
+  "needleAuthorized": false
+}
