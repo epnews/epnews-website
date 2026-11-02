@@ -1,0 +1,61 @@
+{
+  "schema": "soi-china-russia-implementation-evidence-v1",
+  "asOf": "2026-11-02",
+  "cases": [
+    {
+      "sphere": "china",
+      "caseId": "soi-dip-candidate-2",
+      "milestones": [
+        {
+          "date": "2023-03-10",
+          "status": "agreement-signed",
+          "source": "https://www.spa.gov.sa/en/ed7aabfefaw"
+        },
+        {
+          "date": "2023-06-06",
+          "status": "iranian-embassy-in-riyadh-reopened",
+          "source": "https://wsau.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/"
+        },
+        {
+          "date": "2023-08-06",
+          "status": "saudi-embassy-in-tehran-reported-resumed-operations",
+          "source": "https://www.aa.com.tr/en/middle-east/saudi-embassy-resumes-operations-in-tehran-after-over-7-year-hiatus-report/2965408"
+        },
+        {
+          "date": "2023-09-05",
+          "status": "ambassadors-arrived-at-respective-posts",
+          "source": "https://saudigazette.com.sa/article/635547/SAUDI-ARABIA/New-Saudi-Ambassador-Al-Enezi-arrives-in-Tehran"
+        }
+      ],
+      "observedOutcome": "Both diplomatic missions reopened and ambassadors took up posts in 2023",
+      "limitation": "Reopenings were not both within the two-month target; earlier Iraq/Oman mediation and bilateral incentives prevent exclusive China attribution; no verified net cost."
+    },
+    {
+      "sphere": "russia",
+      "caseId": "soi-dip-candidate-3",
+      "milestones": [
+        {
+          "date": "2024-12-06",
+          "status": "security-guarantees-treaty-signed",
+          "source": "https://base.garant.ru/411209091/"
+        },
+        {
+          "date": "2025-02-28",
+          "status": "russian-ratification-law-signed",
+          "source": "https://base.garant.ru/411574105/"
+        },
+        {
+          "date": "2025-03-13",
+          "status": "treaty-entered-into-force",
+          "source": "https://www.interfax.ru/amp/1013530"
+        }
+      ],
+      "observedOutcome": "Treaty legally in force; article 8 calls for special representatives to meet at least twice yearly; article 5 permits installations under separate agreements",
+      "limitation": "Legal entry into force and treaty clauses are not measured new deployments, fulfilled meetings, fiscal outlays or net Russian influence; prior bilateral defense arrangements predate treaty."
+    }
+  ],
+  "attributionGatesClosed": 0,
+  "costGatesClosed": 0,
+  "influenceScoresAuthorized": false,
+  "needleAuthorized": false
+}
