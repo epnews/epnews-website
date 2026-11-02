@@ -16,6 +16,29 @@ for(const item of worklist.items){
   assert.match(t.evidence||'',/^https:\/\//,item.sphere+'/'+t.id+' evidence must be URL');
   assert.ok(typeof t.scope==='string'&&t.scope.length>=25,item.sphere+'/'+t.id+' scope required');
  }
+ const links=item.auditProgress.verifiedEvidenceLinks;
+ assert.ok(Array.isArray(links),item.sphere+' verified evidence links must be array');
+ for(const t of completed){
+  assert.ok(links.includes(t.evidence),item.sphere+'/'+t.id+' completed source must be indexed');
+  assert.ok(t.evidence.length>35,item.sphere+'/'+t.id+' source must be specific');
+ }
+ assert.equal(new Set(links).size,links.length,item.sphere+' duplicate evidence links');
+ assert.ok(links.every(x=>typeof x==='string'&&/^https:\/\//.test(x)),item.sphere+' invalid evidence link');
+ assert.ok(item.priorityTasks.filter(t=>!t.complete).every(t=>!t.verification||t.verification.attributionVerified!==true),item.sphere+' pending gate cannot claim attribution verified');
+ if(item.sphere==='india'){
+  const rec=item.tradeSeriesReconciliation;
+  assert.equal(rec.baselineFollowupGatesAuthorized,false,'India unresolved series cannot authorize matched gates');
+  assert.equal(rec.influenceScoringAuthorized,false,'India influence scoring blocked');
+  assert.equal(rec.directDatabase.status.includes('pending'),true,'India revised series requires direct extraction');
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,false);
+  assert.equal(rec.preferenceLineResearch.coveredProductExportsUsdBillion,8.37);
+  assert.ok(rec.preferenceLineResearch.notMeasure.includes('Preference utilization rate'));
+ }
+ if(item.sphere==='russia'){
+  assert.equal(item.counterpartResearch.influenceScoringAuthorized,false);
+  assert.equal(item.priorityTasks.find(t=>t.id==='verify-counterpart').complete,false,'Russia operational implementation still unverified');
+ }
  assert.equal(item.auditProgress.completedScopedChecks,completed.length,item.sphere+' count');
  assert.deepEqual(item.auditProgress.remainingChecks,item.priorityTasks.filter(t=>!t.complete).map(t=>t.id),item.sphere+' remaining');
  assert.equal(item.influenceScore,null);
