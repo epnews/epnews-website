@@ -1,5 +1,5 @@
 {
-  "version": "4.4",
+  "version": "4.5",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -1454,6 +1454,40 @@
         "interpretation": "Counterpart-reported aggregate trade trend, not CEPA incremental causal effect, tariff utilization, or fiscal cost.",
         "tradeDefinitionReconciledWithDgcis": false,
         "causalAttributionVerified": false
+      },
+      "bilateralJointCommitteeEvidence": {
+        "source": "https://www.commerce.gov.in/wp-content/uploads/2026/02/Agreed-Minutes-of-2nd-JC-meeting-under-India-UAE-CEPA_Oct-2024-1.pdf",
+        "document": "Agreed Minutes of the Second Joint Committee meeting under India-UAE CEPA",
+        "meetingDate": "2024-10-10",
+        "publisher": "India Ministry of Commerce and Industry, joint committee agreed minutes",
+        "confirmedImplementation": [
+          {
+            "topic": "Gold tariff-rate quota",
+            "finding": "Indian side reported more than 800 importers had received gold TRQ allocations for FY2024–25.",
+            "measurement": {
+              "minimumImporterCountExclusive": 800,
+              "period": "FY2024-25",
+              "unit": "allocated importers"
+            },
+            "limitation": "Allocations are not proof of imported quantities, customs preference claims or realized economic value."
+          },
+          {
+            "topic": "Tariff-rate quota administration",
+            "finding": "Parties agreed to improve technical exchange of tariff-rate quota data.",
+            "limitation": "Administrative agreement is not evidence that data exchange or utilization subsequently improved."
+          },
+          {
+            "topic": "Market-access friction",
+            "finding": "UAE raised concern that importer qualification restrictions could impede gold TRQ use; India stated any manufacturer, trader, distributor or processor can apply.",
+            "limitation": "Disputed interpretation is evidence of implementation friction, not proof of a measurable trade loss."
+          }
+        ],
+        "sourceType": "bilateral-primary-agreed-minutes",
+        "independentlyVerifiedTradeOutcome": false,
+        "preferenceUtilizationRateVerified": false,
+        "causalAttributionVerified": false,
+        "costsGateComplete": false,
+        "scoreAuthorized": false
       }
     }
   ],
