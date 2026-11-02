@@ -1,0 +1,89 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-04",
+  "measurement": "Effective-dated US treaty representation and legal participation, distinguishing Paris Agreement from parent UNFCCC",
+  "sources": [
+    {
+      "id": "UN-DEPOSITARY-PARIS",
+      "url": "https://treaties.un.org/Pages/showDetails.aspx?objid=0800000280458f37",
+      "authority": "UN Secretary-General treaty depositary"
+    },
+    {
+      "id": "UN-DEPOSITARY-UNFCCC",
+      "url": "https://treaties.un.org/doc/Publication/CN/2026/CN.102.2026-Eng.pdf",
+      "authority": "UN Secretary-General depositary notification"
+    },
+    {
+      "id": "UNFCCC-PARIS-PARTY",
+      "url": "https://unfccc.int/node/61231",
+      "authority": "UNFCCC country party profile"
+    },
+    {
+      "id": "UNFCCC-NDC-REGISTRY",
+      "url": "https://unfccc.int/NDCREG",
+      "authority": "UNFCCC registry"
+    }
+  ],
+  "events": [
+    {
+      "instrument": "Paris Agreement",
+      "event": "US withdrawal notified",
+      "date": "2025-01-27",
+      "status": "notification only",
+      "sourceId": "UN-DEPOSITARY-PARIS"
+    },
+    {
+      "instrument": "Paris Agreement",
+      "event": "US withdrawal effective",
+      "date": "2026-01-27",
+      "status": "effective",
+      "sourceId": "UN-DEPOSITARY-PARIS"
+    },
+    {
+      "instrument": "UN Framework Convention on Climate Change",
+      "event": "US withdrawal notified",
+      "date": "2026-02-27",
+      "status": "notification only",
+      "sourceId": "UN-DEPOSITARY-UNFCCC"
+    },
+    {
+      "instrument": "UN Framework Convention on Climate Change",
+      "event": "US withdrawal scheduled effective",
+      "date": "2027-02-27",
+      "status": "future as of 2026-11-01",
+      "sourceId": "UN-DEPOSITARY-UNFCCC"
+    }
+  ],
+  "asOf": "2026-11-01",
+  "statusAsOf": [
+    {
+      "instrument": "Paris Agreement",
+      "usParty": false,
+      "effectiveFrom": "2026-01-27",
+      "basis": "withdrawal effective"
+    },
+    {
+      "instrument": "UN Framework Convention on Climate Change",
+      "usParty": true,
+      "scheduledWithdrawal": "2027-02-27",
+      "basis": "withdrawal notice not yet effective"
+    }
+  ],
+  "gateAssessment": {
+    "primarySourceRetrieved": true,
+    "legalStatusVerified": true,
+    "fullRepresentationVotingCoverage": false,
+    "gateClosed": false,
+    "reason": "Verified treaty membership change for Paris and parent Convention, but gap requires wider institution-by-institution voting/representation mapping."
+  },
+  "limitations": [
+    "Party status is not proof of any quantified diplomatic influence gain or loss.",
+    "Treaty membership does not establish attendance or voting behavior at specific COP meetings.",
+    "No financial outlay or avoided-cost effect is measured.",
+    "Paris Agreement withdrawal and parent UNFCCC withdrawal have separate legal clocks.",
+    "A future-effective withdrawal must not be reported as already effective."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
