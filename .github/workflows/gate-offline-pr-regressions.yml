@@ -41,6 +41,7 @@ jobs:
           python scripts/test_audit_gate_vessel_claim_evidence_gates_20261102.py
           python scripts/test_audit_gate_source_independence_20261102.py
           python scripts/test_audit_gate_attribution_stock_delta_eligibility_20261102.py
+          python scripts/test_audit_gate_independent_document_acquisition_20261102.py
       - name: Validate integrated workflow Bash continuation syntax
         run: |
           python scripts/test_gate_integrated_workflow_shell_20261102.py
