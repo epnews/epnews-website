@@ -949,7 +949,8 @@ assert.equal(indiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart')
 assert.match(indiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').verification.sourceOwner,/United Arab Emirates/);
 assert.equal(indiaCounterpart.counterpartResearch.influenceScoringAuthorized,false);
 const russiaCounterpart=diplomaticQueue.items.find(x=>x.sphere==='russia');
-assert.equal(russiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,false);
+assert.equal(russiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,true);
+assert.equal(russiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').verification.operationalImplementationVerified,false);
 assert.equal(russiaCounterpart.counterpartResearch.influenceScoringAuthorized,false);
 
 // Conflicting published India-UAE trade series cannot authorize product-level matched gates.
