@@ -111,6 +111,86 @@
         "Share of supported jobs held by women, not a separate job count.",
         "No independently measured causal impact."
       ]
+    },
+    {
+      "id": "EU-ERA-OTHER-G7-2025-PAID",
+      "value": 12.8,
+      "unit": "EUR billion",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Other G7 cumulative disbursements as of 2025-11-13, excluding EU 18.1bn; not another EU payment.",
+      "gatePromotion": false
+    },
+    {
+      "id": "EU-UKRAINE-FACILITY-2025-NOVEMBER",
+      "value": 1.8,
+      "unit": "EUR billion (over)",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Separate Ukraine Facility payment, not part of EU ERA loan.",
+      "gatePromotion": false
+    },
+    {
+      "id": "EU-ERA-2025-COMBINED-G7-PAID",
+      "value": 30.9,
+      "unit": "EUR billion",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Derived cumulative EU 18.1bn plus other G7 12.8bn, not a third transfer or independent observation.",
+      "gatePromotion": false
+    },
+    {
+      "id": "EU-UKRAINE-FACILITY-REFORMS-NOVEMBER",
+      "value": 10,
+      "unit": "reform steps",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Nine steps from fifth installment and one outstanding step from prior installment; conditions not proof of causal influence.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-THREE-YEAR-RIDERS",
+      "value": 18.2,
+      "unit": "million journeys",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "KCIC operator-reported cumulative October 2023 to October 16 2026, overlaps annual counts.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-2026-PARTIAL-YEAR-RIDERS",
+      "value": 4.86,
+      "unit": "million journeys",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "KCIC operator-reported Jan 1–Oct 16 2026; not full-year comparable.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-DAILY-TRAIN-TRIPS-2026",
+      "value": 62,
+      "unit": "trips per day",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Operator-reported frequency, up from 14 at launch; scheduled supply not passenger benefit.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-THREE-YEAR-PUNCTUALITY",
+      "value": 99.4,
+      "unit": "percent",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Operator-reported punctuality; on-time threshold and independent audit unavailable.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-THREE-YEAR-CUSTOMER-SATISFACTION",
+      "value": 95.95,
+      "unit": "percent",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Operator-reported satisfaction with unspecified sample/method.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-FOREIGN-RIDERS-CUMULATIVE",
+      "value": 1,
+      "unit": "million journeys (over)",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Foreign passengers over first three years, subset of total 18.2m; do not add.",
+      "gatePromotion": false
     }
   ],
   "pendingNext": [
@@ -126,5 +206,5 @@
     "gatePromotion": false,
     "influenceScores": null
   },
-  "note": "Staging only; do not open PR until consolidated 10–15 distinct substantive verified improvements are accumulated."
+  "note": "17 staged entries, including derived and overlapping measures; PR must explicitly flag nonindependent records and not imply 17 independent outcomes."
 }
