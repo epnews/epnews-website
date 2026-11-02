@@ -74,6 +74,14 @@ for(const item of worklist.items){
   assert.ok(rec.officialPreferenceUptakeObservations[1].certificatesOfOriginIssuedApprox>rec.officialPreferenceUptakeObservations[0].certificatesOfOriginIssuedApprox);
   assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,true);
   assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,true);
+  const indiaCost=item.costEvidenceResearch;
+  assert.equal(indiaCost.observations[0].amountCrore,6231);
+  assert.equal(indiaCost.observations[0].classification,'reported actuals');
+  assert.equal(indiaCost.observations[1].amountCrore,9267);
+  assert.equal(indiaCost.observations[1].classification,'estimated');
+  assert.equal(indiaCost.observations[1].amountCrore-indiaCost.observations[0].amountCrore,indiaCost.arithmetic.differenceCrore);
+  assert.equal(indiaCost.verification.bilateralCostsComplete,false);
+  assert.equal(indiaCost.verification.costsGateComplete,false);
   const hist=rec.officialHistoricalMatchedSeries;
   assert.equal(hist.status,'official-descriptive-aggregate-only');
   assert.equal(hist.periods.length,2);
@@ -96,6 +104,9 @@ for(const item of worklist.items){
  if(item.sphere==='eu'){
   assert.equal(item.newPrimaryOutcomeResearch.length,1);
   const cost=item.costEvidenceResearch;
+  assert.equal(cost.primaryLegalConsolidation.periods.length,2);
+  assert.equal(cost.primaryLegalConsolidation.periods[0].referenceEuros,cost.evidence[0].amount);
+  assert.equal(cost.primaryLegalConsolidation.periods[1].referenceEuros,cost.evidence[1].amount);
   assert.equal(cost.evidence.length,2);
   assert.ok(Math.abs(cost.evidence[1].amount-cost.evidence[0].amount-cost.arithmetic.differenceEuros)<0.02);
   assert.equal(cost.verification.authorizedBudgetsIdentified,true);
