@@ -8,6 +8,7 @@ This script intentionally does not infer ship discharge or origin.
 import argparse
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -212,8 +213,8 @@ def audit_observation_coverage(rows, from_date, to_date):
             missing_date_field += 1
             continue
         raw_day = row["gasDayStart"]
-        if not isinstance(raw_day, str) or len(raw_day) < 10:
-            raise ValueError("ALSI gasDayStart must be a valid ISO date string")
+        if not isinstance(raw_day, str) or not re.match(r"^\d{4}-\d{2}-\d{2}(?:$|T)", raw_day):
+            raise ValueError("ALSI gasDayStart must begin with YYYY-MM-DD or YYYY-MM-DDT")
         try:
             day = date.fromisoformat(raw_day[:10])
         except ValueError:
