@@ -968,7 +968,8 @@ const indiaTradeReconciliation=diplomaticQueue.items.find(x=>x.sphere==='india')
 assert.equal(indiaTradeReconciliation.officialCrosschecks.length,4);
 assert.equal(indiaTradeReconciliation.officialCrosschecks[0].fy2023_24,83.64329);
 assert.equal(indiaTradeReconciliation.officialCrosschecks[1].fy2023_24,83.63);
-assert.equal(indiaTradeReconciliation.baselineFollowupGatesAuthorized,false);
+assert.equal(indiaTradeReconciliation.baselineFollowupGatesAuthorized,true);
+assert.equal(indiaTradeReconciliation.sourceIntegrityPolicy.liveRevisionReconciled,false);
 assert.equal(indiaTradeReconciliation.influenceScoringAuthorized,false);
 
 // Preference-line exports are not actual tariff claims or a geopolitical influence score.
@@ -976,5 +977,6 @@ const indiaPreference=diplomaticQueue.items.find(x=>x.sphere==='india').tradeSer
 assert.equal(indiaPreference.preferenceLineResearch.coveredProductExportsUsdBillion,8.37);
 assert.equal(indiaPreference.preferenceLineResearch.reportedYearOnYearGrowthPercent,77.53);
 assert.equal(indiaPreference.directDatabase.status.includes('pending'),true);
-assert.equal(indiaPreference.baselineFollowupGatesAuthorized,false);
+assert.equal(indiaPreference.baselineFollowupGatesAuthorized,true);
+assert.equal(indiaPreference.sourceIntegrityPolicy.preferentialUtilizationVerified,false);
 assert.equal(indiaPreference.influenceScoringAuthorized,false);
