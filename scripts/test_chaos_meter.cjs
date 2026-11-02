@@ -931,3 +931,14 @@ assert.equal(chinaAudited.priorityTasks.find(t=>t.id==='attribute').complete,fal
 
 // Shared source-gate preflight also runs in the command-meter CI job.
 require('./validate_soi_diplomacy.cjs');
+
+// EU legal mandate comparison and Russia treaty legal-status comparison are source-backed but noncausal.
+for(const sphere of ['eu','russia']){
+ const item=diplomaticQueue.items.find(x=>x.sphere===sphere);
+ for(const id of ['match-baseline','match-followup']){
+  const task=item.priorityTasks.find(t=>t.id===id);
+  assert.equal(task.complete,true);
+  assert.match(task.evidence,/^https:\/\//);
+  assert.equal(task.verification.causalAttributionAuthorized,false);
+ }
+}
