@@ -63,6 +63,15 @@ for(const item of worklist.items){
 
   assert.ok(rec.preferenceLineResearch.notMeasure.includes('Preference utilization rate'));
  }
+ if(item.sphere==='eu'){
+  const cost=item.costEvidenceResearch;
+  assert.equal(cost.evidence.length,2);
+  assert.ok(Math.abs(cost.evidence[1].amount-cost.evidence[0].amount-cost.arithmetic.differenceEuros)<0.02);
+  assert.equal(cost.verification.authorizedBudgetsIdentified,true);
+  assert.equal(cost.verification.actualDisbursementsVerified,false);
+  assert.equal(cost.verification.costsGateComplete,false);
+  assert.equal(item.priorityTasks.find(t=>t.id==='costs').complete,false);
+ }
  if(item.sphere==='russia'){
   assert.equal(item.counterpartResearch.influenceScoringAuthorized,false);
   const counterpart=item.priorityTasks.find(t=>t.id==='verify-counterpart');
