@@ -1,0 +1,102 @@
+{
+  "version": "2026-11-02",
+  "status": "cross-source-comparability-review",
+  "linkedDatasets": [
+    "data/soi-eu-aukus-delivered-outcomes-20261102.json",
+    "data/soi-eu-q2-2026-energy-trade-outcomes-20261102.json",
+    "data/soi-russian-export-revenue-eu-energy-costs.json"
+  ],
+  "threeComparableSeries": [
+    {
+      "id": "LNG-US-SHARE",
+      "annualId": "EU-2025-LNG-US-SUPPLIER-SHARE",
+      "quarterId": "EU-Q2-2026-LNG-US-SHARE",
+      "limitation": "same product, annual vs quarter; descriptive shift only",
+      "causalInferenceAllowed": false
+    },
+    {
+      "id": "LNG-RUSSIA-SHARE",
+      "annualId": "EU-2025-LNG-RUSSIA-SUPPLIER-SHARE",
+      "quarterId": "EU-Q2-2026-LNG-RUSSIA-SHARE",
+      "limitation": "same product, annual vs quarter; no attribution",
+      "causalInferenceAllowed": false
+    },
+    {
+      "id": "PIPE-RUSSIA-SHARE",
+      "annualId": "EU-2025-PIPE-GAS-RUSSIA-SHARE",
+      "quarterId": "EU-Q2-2026-PIPE-RUSSIA-SHARE",
+      "limitation": "gaseous state imports, annual vs quarter; supplier shares not absolute volume",
+      "causalInferenceAllowed": false
+    }
+  ],
+  "twelveForbiddenConflations": [
+    {
+      "id": "DENOMINATOR-01",
+      "issue": "Eurostat CN petroleum imports versus SITC energy trade balance",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-02",
+      "issue": "EU energy import customs bill versus Commission broader energy bill",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-03",
+      "issue": "Eurostat mass in tonnes versus gas energy-equivalent bcm",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-04",
+      "issue": "US share of EU LNG versus US share of all EU gas",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-05",
+      "issue": "Russia LNG share versus Russia pipeline gas share",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-06",
+      "issue": "EU LNG imports versus US total LNG exports",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-07",
+      "issue": "Quarterly 2026 shares versus annual 2025 shares",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-08",
+      "issue": "EU total energy deficit versus Russia-specific replacement costs",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-09",
+      "issue": "Supplier share changes versus diplomatic influence",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-10",
+      "issue": "Reported AUKUS hours versus delivered submarines",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-11",
+      "issue": "Reported AUKUS components versus operational deployment",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    },
+    {
+      "id": "DENOMINATOR-12",
+      "issue": "CREA Russian global fossil gross revenues versus EU import costs",
+      "requires": "matching period, product, currency, denominator, provenance and independent causal evidence"
+    }
+  ],
+  "notes": [
+    "Three comparisons are only descriptive annual-to-quarter supplier-share contrasts.",
+    "The twelve forbidden conflations are guardrails, not twelve new economic observations.",
+    "All source values remain in their original files; this register creates no new independent source."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
