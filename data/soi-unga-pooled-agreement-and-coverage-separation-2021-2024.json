@@ -1,0 +1,59 @@
+{
+  "schema": "soi-unga-pooled-agreement-and-coverage-separation-v1",
+  "sourceVoteResults": "data/soi-unga-six-code-restricted-results-2021-2024.json",
+  "sourceCoverage": "data/soi-unga-four-year-denominator-diagnostics-2021-2024.json",
+  "period": "2021–2024",
+  "rows": [
+    {
+      "actor": "us",
+      "observedMatchedPairs": 44711,
+      "agreementPairs": 12244,
+      "disagreementPairs": 32467,
+      "pooledAgreementPercent": 27.3848,
+      "pooledPartnerPairCoveragePercent": 91.024,
+      "interpretation": "Voting agreement is descriptive similarity, not proof of geopolitical influence."
+    },
+    {
+      "actor": "china",
+      "observedMatchedPairs": 44548,
+      "agreementPairs": 30092,
+      "disagreementPairs": 14456,
+      "pooledAgreementPercent": 67.5496,
+      "pooledPartnerPairCoveragePercent": 90.9886,
+      "interpretation": "Voting agreement is descriptive similarity, not proof of geopolitical influence."
+    },
+    {
+      "actor": "russia",
+      "observedMatchedPairs": 44983,
+      "agreementPairs": 24226,
+      "disagreementPairs": 20757,
+      "pooledAgreementPercent": 53.8559,
+      "pooledPartnerPairCoveragePercent": 90.985,
+      "interpretation": "Voting agreement is descriptive similarity, not proof of geopolitical influence."
+    },
+    {
+      "actor": "india",
+      "observedMatchedPairs": 44788,
+      "agreementPairs": 29093,
+      "disagreementPairs": 15695,
+      "pooledAgreementPercent": 64.9571,
+      "pooledPartnerPairCoveragePercent": 91.1808,
+      "interpretation": "Voting agreement is descriptive similarity, not proof of geopolitical influence."
+    },
+    {
+      "actor": "eu",
+      "observedMatchedPairs": 38922,
+      "agreementPairs": 22124,
+      "disagreementPairs": 16798,
+      "pooledAgreementPercent": 56.8419,
+      "pooledPartnerPairCoveragePercent": 90.7696,
+      "interpretation": "Voting agreement is descriptive similarity, not proof of geopolitical influence."
+    }
+  ],
+  "method": "Pooled voting agreement = sum agreements / sum observed matched vote pairs. Partner-pair coverage = sum matched pairs / sum actor-eligible resolutions × 160 partners. Denominators differ; neither is a measure of influence.",
+  "avoidUnweightedAnnualAverage": true,
+  "euIsProxy": true,
+  "descriptiveOnly": true,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
