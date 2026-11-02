@@ -120,6 +120,15 @@ for(const item of worklist.items){
   assert.equal(cost.primaryLegalConsolidation.periods.length,2);
   assert.equal(cost.primaryLegalConsolidation.periods[0].referenceEuros,cost.evidence[0].amount);
   assert.equal(cost.primaryLegalConsolidation.periods[1].referenceEuros,cost.evidence[1].amount);
+  const register=item.costEvidenceResearch.contractRegister;
+  assert.equal(register.examples.length,6);
+  assert.equal(register.examples[0].amount,2532212.16);
+  assert.equal(register.examples[1].amount,1971606);
+  assert.equal(register.examples[4].currency,'MDL');
+  assert.equal(register.methodology.noCrossCurrencySummation,true);
+  assert.equal(register.methodology.noContractToCashInference,true);
+  assert.equal(register.actualDisbursementsVerified,false);
+  assert.equal(register.costsGateComplete,false);
   const counterpart=item.moldovaIndependentCounterpartImplementation;
   assert.equal(counterpart.observedActivities.length,3);
   assert.equal(counterpart.evidenceType,'counterpart-attested-outputs');
