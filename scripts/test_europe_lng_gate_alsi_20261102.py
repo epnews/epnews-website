@@ -388,3 +388,16 @@ for bad_day in ("2026-10-01garbage", "2026-10-01 12:00:00", "2026-1-01", "2026-1
     else:
         raise AssertionError(f"Malformed gas-day prefix accepted: {bad_day!r}")
 print("ALSI strict date-prefix tests passed")
+
+for bad_timestamp in ("2026-10-01Tgarbage", "2026-10-01T25:00:00Z", "2026-10-01T12:70:00Z"):
+    try:
+        mod.validate_operator_evidence([{"gasDayStart": bad_timestamp, "status": "C"}],
+                                       "2026-10-01", "2026-10-31")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Malformed timestamp accepted: {bad_timestamp!r}")
+assert mod.validate_operator_evidence(
+    [{"gasDayStart": "2026-10-01T06:00:00Z", "status": "C"}],
+    "2026-10-01", "2026-10-01")["confirmed_gas_days"] == 1
+print("ALSI complete timestamp validation tests passed")
