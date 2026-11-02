@@ -34,6 +34,7 @@ jobs:
           python scripts/test_audit_gate_gasday_attribution_concentration_20261102.py
           python scripts/test_audit_gate_gasday_offset_hour_patterns_20261102.py
           python scripts/test_check_gate_cross_diagnostic_consistency_20261102.py
+          python scripts/test_audit_gate_measured_operator_quality_segments_20261102.py
       - name: Verify GIE key
         env:
           GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
@@ -74,6 +75,9 @@ jobs:
           python scripts/check_gate_cross_diagnostic_consistency_20261102.py \
             --report gate-october-crosschecked-evidence-diagnostics.json \
             --output gate-october-cross-diagnostic-consistency.json
+      - name: Segment attributed vessels by authenticated operator-day quality
+        run: |
+          python scripts/audit_gate_measured_operator_quality_segments_20261102.py --operator gate-alsi-operator-october-2026.json --snapshot gate-gaspeil-october-2026-snapshot.json --output gate-october-operator-quality-segments.json
       - name: Archive source snapshots and reconciliations
         uses: actions/upload-artifact@v4
         with:
@@ -87,5 +91,6 @@ jobs:
             gate-october-alsi-gaspeil-reconciliation.json
             gate-october-crosschecked-evidence-diagnostics.json
             gate-october-cross-diagnostic-consistency.json
+            gate-october-operator-quality-segments.json
           retention-days: 14
           if-no-files-found: error
