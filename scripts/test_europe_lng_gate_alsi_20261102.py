@@ -64,7 +64,7 @@ for bad in (
 print("ALSI Netherlands facility-level identity checks passed")
 
 listing = [{"name": "Gate Terminal B.V.", "eic": "21X-TEST", "facilities": [
-    {"name": "Gate LNG", "country": "NL", "eic": "21W-TEST", "url": "/api?country=NL&company=21X-TEST&facility=21W-TEST"},
+    {"name": "Gate LNG", "country": "NL", "company": "21X-TEST", "eic": "21W-TEST", "url": "/api?country=NL&company=21X-TEST&facility=21W-TEST"},
     {"name": "Other terminal", "country": "NL", "eic": "21W-OTHER"}]}]
 url = "https://alsi.gie.eu/api?country=NL&company=21X-TEST&facility=21W-TEST"
 assert mod.verify_against_listing(url, listing)["facility_name"] == "Gate LNG"
@@ -79,3 +79,13 @@ for bad in (
     else:
         raise AssertionError("Unlisted or mismatched Gate identity accepted")
 print("Authenticated GIE listing cross-check tests passed")
+
+spoofed = [{"name": "Gate Terminal B.V.", "eic": "21X-TEST", "facilities": [
+    {"name": "Gate LNG", "country": "NL", "company": "21X-DIFFERENT", "eic": "21W-TEST"}]}]
+try:
+    mod.verify_against_listing(url, spoofed)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Facility/company mismatch in official listing was accepted")
+print("GIE facility company cross-reference tests passed")
