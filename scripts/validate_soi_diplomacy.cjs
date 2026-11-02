@@ -16,6 +16,13 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const postShock=worklist.indiaSilverPostShockCrosscheck;
+assert.equal(postShock.evidence.length,11);
+assert.equal(postShock.gateCompleted,false);
+assert.equal(postShock.scoreAuthorized,false);
+assert.equal(postShock.evidence.find(x=>x.indicator==='India total silver imports').value,7222);
+assert.equal(postShock.evidence.find(x=>x.indicator==='Silver grain share of India silver imports'&&x.period==='2025').value,8);
+for(const r of postShock.evidence){assert.ok(r.source.startsWith('https://'));assert.ok(r.limitation.length>30);}
 const silver=worklist.indiaSilverTariffShockStudy;
 assert.equal(silver.records.length,21);
 assert.equal(silver.recordCount,21);
