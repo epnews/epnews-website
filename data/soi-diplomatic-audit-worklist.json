@@ -1,5 +1,5 @@
 {
-  "version": "2.2",
+  "version": "2.3",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -158,7 +158,15 @@
         {
           "id": "verify-primary",
           "requirement": "Open primary source, confirm publication date and exact claim; record reviewer and matching quote/page reference",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.fmprc.gov.cn/eng/gjhdq_665435/2675_665437/2878_663746/2879_663748/202303/t20230311_11039241.html",
+          "scope": "Signed March 10 2023 trilateral statement records agreement to resume Saudi-Iran diplomatic relations and reopen embassies; the signed text also acknowledges Iraq and Oman prior mediation. Verifies agreement, not China's sole causal contribution.",
+          "verification": {
+            "reviewedOn": "2026-11-01",
+            "source": "https://www.fmprc.gov.cn/eng/gjhdq_665435/2675_665437/2878_663746/2879_663748/202303/t20230311_11039241.html",
+            "finding": "Signed March 10 2023 trilateral statement records agreement to resume Saudi-Iran diplomatic relations and reopen embassies; the signed text also acknowledges Iraq and Oman prior mediation. Verifies agreement, not China's sole causal contribution.",
+            "causalAttributionAuthorized": false
+          }
         },
         {
           "id": "verify-counterpart",
@@ -170,12 +178,28 @@
         {
           "id": "match-baseline",
           "requirement": "Document diplomatic representation and negotiation milestones before March 2023.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.spa.gov.sa/en/ed7aabfefaw",
+          "scope": "Saudi Press Agency reproduces signed March 2023 joint statement committing to reopening missions; coupled with June Reuters report of embassy reopening for first time in seven years, establishes previously closed baseline, not a quantified influence level.",
+          "verification": {
+            "reviewedOn": "2026-11-01",
+            "source": "https://www.spa.gov.sa/en/ed7aabfefaw",
+            "finding": "Saudi Press Agency reproduces signed March 2023 joint statement committing to reopening missions; coupled with June Reuters report of embassy reopening for first time in seven years, establishes previously closed baseline, not a quantified influence level.",
+            "causalAttributionAuthorized": false
+          }
         },
         {
           "id": "match-followup",
           "requirement": "Find dated embassy reopening records and subsequent bilateral meetings from Saudi and Iranian foreign ministries.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/",
+          "scope": "Reuters June 6 2023 on-site coverage documents Iranian embassy reopening in Riyadh; August 2023 Saudi embassy operation in Tehran reported separately. Confirms diplomatic presence, not sustained diplomatic effectiveness.",
+          "verification": {
+            "reviewedOn": "2026-11-01",
+            "source": "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/",
+            "finding": "Reuters June 6 2023 on-site coverage documents Iranian embassy reopening in Riyadh; August 2023 Saudi embassy operation in Tehran reported separately. Confirms diplomatic presence, not sustained diplomatic effectiveness.",
+            "causalAttributionAuthorized": false
+          }
         },
         {
           "id": "attribute",
@@ -238,17 +262,16 @@
         "eligibleForInfluenceScoring": false
       },
       "auditProgress": {
-        "completedScopedChecks": 1,
+        "completedScopedChecks": 4,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
-          "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/"
+          "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/",
+          "https://www.fmprc.gov.cn/eng/gjhdq_665435/2675_665437/2878_663746/2879_663748/202303/t20230311_11039241.html",
+          "https://www.spa.gov.sa/en/ed7aabfefaw"
         ],
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
-          "verify-primary",
-          "match-baseline",
-          "match-followup",
           "attribute",
           "costs"
         ],
@@ -650,7 +673,7 @@
     "Unknown or missing evidence must never be zero-filled"
   ],
   "auditProgressSummary": {
-    "completedScopedChecks": 9,
+    "completedScopedChecks": 12,
     "requiredChecks": 30,
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
