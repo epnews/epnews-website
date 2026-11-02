@@ -1,0 +1,13 @@
+'use strict';
+const assert=require('node:assert/strict');
+const d=require('../data/europe-lng-doe-august-2026-destination-summary.json');
+const sum=xs=>xs.reduce((a,x)=>a+x.bcf,0);
+assert.equal(d.source.reportingPeriod,'2026-08');
+assert.equal(d.source.unit,'Bcf');
+assert.equal(d.source.scope,'U.S. LNG vessel exports by reported destination');
+assert(Math.abs(sum(d.regions)-d.totalBcf)<0.11,'Region totals must reconcile within published rounding');
+assert(d.topDestinations.every(x=>x.bcf>0&&x.bcf<=d.totalBcf));
+assert(d.source.limitations.some(x=>x.includes('Türkiye')));
+assert.equal(d.physicalCargoOriginVerified,false);
+assert.equal(d.scoreAuthorized,false);
+console.log('DOE August LNG destination evidence reconciliation passed');
