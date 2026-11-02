@@ -15,6 +15,7 @@ import urllib.request
 from datetime import date
 
 HOST = "https://alsi.gie.eu"
+GATE_OPERATOR_EIC = "21X000000001063H"  # ENTSOG EIC registry: Gate Terminal B.V.
 
 def validate_facility_url(value):
     parsed = urllib.parse.urlsplit(value)
@@ -39,6 +40,8 @@ def find_gate_facilities(listing):
     found = []
     for operator in listing:
         if not isinstance(operator, dict):
+            continue
+        if operator.get("eic") != GATE_OPERATOR_EIC:
             continue
         for facility in operator.get("facilities", []):
             if not isinstance(facility, dict):
