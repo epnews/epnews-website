@@ -1,0 +1,40 @@
+name: SOI GAP-12 official Eurostat source capture
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch original official Eurostat JSON-stat (both semesters)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence
+          base='https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data'
+          for dataset in nrg_pc_204 nrg_pc_202; do
+            url="${base}/${dataset}?sinceTimePeriod=2025-S2&untilTimePeriod=2026-S1&lang=EN"
+            printf '%s\n' "$url" > "evidence/${dataset}.url.txt"
+            curl --fail --location --show-error --retry 3 --retry-delay 3 --max-time 90 --output "evidence/${dataset}.json" "$url"
+            node -e 'const fs=require("fs");const x=JSON.parse(fs.readFileSync(process.argv[1]));if(x.class!=="dataset"||!Array.isArray(x.id)||!x.dimension)process.exit(1)' "evidence/${dataset}.json"
+            sha256sum "evidence/${dataset}.json" >> evidence/SHA256SUMS.txt
+          done
+          date -u +%Y-%m-%dT%H:%M:%SZ > evidence/retrieved-at.txt
+      - name: Extract and reconcile exact official cells (fail closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          export EUROSTAT_RETRIEVED_AT="$(cat evidence/retrieved-at.txt)"
+          node scripts/extract_soi_gap12_eurostat_jsonstat_cells_20261102.cjs evidence/nrg_pc_204.json evidence/nrg_pc_202.json > evidence/extracted-22-cells.json
+          node scripts/audit_soi_gap12_exact_eurostat_nominal_prices_20261102.cjs evidence/extracted-22-cells.json > evidence/reconciliation-report.json
+      - name: Preserve raw responses and audit artifacts for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: soi-gap12-eurostat-official-raw-and-audit
+          path: evidence/
+          if-no-files-found: warn
+          retention-days: 30
