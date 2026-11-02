@@ -1,0 +1,48 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-12",
+  "title": "Official Eurostat HICP deflator specification for EU energy-price comparisons",
+  "primarySources": [
+    "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en",
+    "https://ec.europa.eu/eurostat/web/hicp/information-data",
+    "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_midx/default/table?lang=en"
+  ],
+  "officialDataset": "prc_hicp_minr",
+  "legacyDataset": "prc_hicp_midx",
+  "legacyStatus": "discontinued/replaced by prc_hicp_minr",
+  "geography": "EU27_2020",
+  "classification": "All-items HICP",
+  "targetMonths": [
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "semesterAggregation": "arithmetic mean of six monthly HICP index observations in each semester; explicitly disclose approximation vs weighted period consumption",
+  "referenceSemester": "2025-S1",
+  "formula": "realPrice2025S2InS1Euros = nominalPrice2025S2 * meanHICP2025S1 / meanHICP2025S2",
+  "inflationRateFormula": "(meanHICP2025S2 / meanHICP2025S1 - 1) * 100",
+  "requiredChecks": [
+    "Same EU27_2020 geographic aggregate and HICP classification for all 12 months",
+    "Same HICP index reference base for all observations; never mix 2015=100 and 2025=100",
+    "Reject missing, suppressed or provisional observations until explicit handling documented",
+    "Do not substitute euro-area EA20 for EU27",
+    "Do not use HICP household inflation as an industrial-sector-specific deflator without labeling this proxy",
+    "Use matched nominal energy price units and same time period as deflator"
+  ],
+  "monthlyHicpValues": null,
+  "deflatedPrices": null,
+  "gateClosed": false,
+  "reasonNotClosed": "No verified official twelve-month EU27 HICP index vector in this artifact; cannot compute defensible real-price changes",
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
