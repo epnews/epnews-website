@@ -1,5 +1,5 @@
 {
-  "version": "4.9",
+  "version": "5.0",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -2320,5 +2320,63 @@
     "criticalDistinction": "EU Growth Facility paid sums are genuine disbursements but not EUPM Moldova mission disbursements; never merge with EUPM budgets, procurement or EPF allocations.",
     "auditGatesCompleted": 0,
     "scoreAuthorized": false
+  },
+  "indiaCepaGoldUtilizationAudit": {
+    "version": "1.0",
+    "sourcePriority": "Official primary customs/IFSCA/DGFT records > official-attributed PTI reporting > independent IMF analysis",
+    "observations": [
+      {
+        "period": "FY2023-24",
+        "metric": "CEPA gold TRQ actual utilization",
+        "tonnes": 40,
+        "shareOfTotalPercent": 5,
+        "source": "https://money.rediff.com/news/market/india-uae-fta-gold-imports-remain-modest/47053320260514",
+        "evidenceType": "PTI report citing Indian government official",
+        "status": "provisional-secondary-official-attributed"
+      },
+      {
+        "period": "FY2024-25",
+        "metric": "CEPA gold TRQ actual utilization",
+        "tonnes": 140,
+        "shareOfTotalPercent": 18,
+        "source": "https://money.rediff.com/news/market/india-uae-fta-gold-imports-remain-modest/47053320260514",
+        "evidenceType": "PTI report citing Indian government official",
+        "status": "provisional-secondary-official-attributed"
+      },
+      {
+        "period": "FY2025-26",
+        "metric": "CEPA gold TRQ allocation",
+        "tonnes": 8.58,
+        "source": "https://money.rediff.com/news/market/india-uae-fta-gold-imports-remain-modest/47053320260514",
+        "evidenceType": "PTI report citing Indian government official",
+        "status": "allocated-not-utilized"
+      },
+      {
+        "period": "through FY2024-25",
+        "metric": "All gold imported via IIBX since launch",
+        "tonnesLowerBound": 100,
+        "source": "https://ifsca.gov.in/CommonDirect/ViewFile?fileName=IFSCA_Annual_Report_2024_25___English_20250818_1222.pdf&id=21626bde60601ef44a0ed022017f5ec4",
+        "evidenceType": "IFSCA annual report",
+        "status": "all-origin-all-schemes-not-CEPA-specific"
+      }
+    ],
+    "methodology": [
+      {
+        "topic": "IMF price confounding",
+        "source": "https://www.imf.org/-/media/files/publications/cr/2025/english/1areea2025002-source-pdf.pdf",
+        "finding": "IMF cautions that gold price appreciation partly explains higher nominal India-UAE trade value; do not interpret nominal increase as incremental real volumes."
+      },
+      {
+        "topic": "DGFT tender distinction",
+        "source": "https://content.dgft.gov.in/Website/dgftprod/82e2fb81-6db1-42d6-93ba-c47b5c7ecadc/Public%20Notice%20no.%2045%20dated%2023.01.2026.pdf",
+        "finding": "Quota auction authorizations provide access to preferential tariffs but do not establish physical imports or actual customs duty forgone."
+      }
+    ],
+    "sourceReconciliation": "IFSCA 100+ tonnes cumulative all-origin IIBX gold is not a subset bound on CEPA gold utilization reported by PTI; pathways, years, and reporting scope differ. Do not compare or subtract.",
+    "actualPreferentialDutyRevenueImpact": null,
+    "incrementalRealTradeVolume": null,
+    "causalAttributionVerified": false,
+    "caseSpecificNetCostsVerified": false,
+    "scoringAuthorized": false
   }
 }

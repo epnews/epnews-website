@@ -16,6 +16,17 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const gold=worklist.indiaCepaGoldUtilizationAudit;
+assert.equal(gold.observations.length,4);
+assert.equal(gold.observations[0].tonnes,40);
+assert.equal(gold.observations[1].tonnes,140);
+assert.equal(gold.observations[2].status,'allocated-not-utilized');
+assert.equal(gold.observations[3].status,'all-origin-all-schemes-not-CEPA-specific');
+assert.equal(gold.actualPreferentialDutyRevenueImpact,null);
+assert.equal(gold.incrementalRealTradeVolume,null);
+assert.equal(gold.causalAttributionVerified,false);
+assert.equal(gold.scoringAuthorized,false);
+for(const r of [...gold.observations,...gold.methodology]) assert.ok(r.source.startsWith('https://'));
 const realized=worklist.crossSphereRealizedVsAllocated2026;
 assert.equal(realized.records.length,14);
 assert.equal(realized.records.length,realized.recordCount);
