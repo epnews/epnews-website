@@ -35,12 +35,16 @@ def inspect(path):
             joined = [normalize(v) for v in cells]
             for vessel, imo in TARGETS.items():
                 key = normalize(vessel)
-                if any(key == cell for cell in joined):
+                name_hit = any(key == cell for cell in joined)
+                imo_hit = any(imo == cell for cell in joined)
+                if name_hit or imo_hit:
                     result["matches"].append({"sheet": ws.title, "row": row_idx,
-                        "vessel_name_match": vessel, "imo_reference_only": imo,
-                        "raw_values": cells, "verification_status": "name_match_only"})
+                        "vessel_target": vessel, "imo_reference_only": imo,
+                        "match_type": "exact_name" if name_hit else "exact_imo",
+                        "raw_values": cells, "verification_status": "candidate_only_not_discharge_verified"})
                     sheet["matched_rows"] += 1
         result["sheets"].append(sheet)
+    wb.close()
     return result
 
 if __name__ == "__main__":

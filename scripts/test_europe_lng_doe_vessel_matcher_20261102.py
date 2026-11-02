@@ -26,15 +26,18 @@ class VesselMatcherTests(unittest.TestCase):
         ws.append(["CORAL ENERGY EXTENDED", "Unknown", 30])
         ws.append(["NO VESSEL", "Venture Gator-like string", 40])
         ws.append(["VENTURE GATOR", "Unknown", None])
+        ws.append(["Unknown ship", "9617698", 50])
+        ws.append(["Unknown ship", "IMO 9617698 extra", 60])
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp) / "synthetic.xlsx"
             wb.save(p)
             out = matcher.inspect(p)
-        self.assertEqual(out["sheets"][0]["matched_rows"], 3)
-        self.assertEqual(len(out["matches"]), 3)
-        self.assertEqual({m["vessel_name_match"] for m in out["matches"]},
-            {"HUASHAN", "RIBERA DEL DUERO KNUTSEN", "VENTURE GATOR"})
-        self.assertTrue(all(m["verification_status"] == "name_match_only" for m in out["matches"]))
+        self.assertEqual(out["sheets"][0]["matched_rows"], 4)
+        self.assertEqual(len(out["matches"]), 4)
+        self.assertEqual({m["vessel_target"] for m in out["matches"]},
+            {"HUASHAN", "RIBERA DEL DUERO KNUTSEN", "VENTURE GATOR", "CORAL ENERGY"})
+        self.assertEqual(sum(m["match_type"] == "exact_imo" for m in out["matches"]), 1)
+        self.assertTrue(all(m["verification_status"] == "candidate_only_not_discharge_verified" for m in out["matches"]))
 
 if __name__ == "__main__":
     unittest.main()
