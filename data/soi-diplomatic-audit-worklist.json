@@ -1,5 +1,5 @@
 {
-  "version": "4.8",
+  "version": "4.9",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -2142,6 +2142,183 @@
     ],
     "recordCount": 18,
     "comparabilityGuard": "Do not sum different currencies, fiscal periods, budget commitments, cost obligations, host contributions or aggregate development assistance as if they were incremental case-specific costs.",
+    "scoreAuthorized": false
+  },
+  "crossSphereRealizedVsAllocated2026": {
+    "version": "1.0",
+    "records": [
+      {
+        "sphere": "eu",
+        "classification": "realized-disbursement-other-program",
+        "title": "EU Moldova Growth Facility latest payment",
+        "source": "https://www.eeas.europa.eu/delegations/moldova/european-union-and-moldova-reiterate-their-strong-partnership-and-announce-disbursement-eur157_en",
+        "unit": "EUR million",
+        "value": 157,
+        "period": "2026-10-05",
+        "limitation": "Commission confirmed €157m paid after 18 reforms; Growth Facility payment, not EUPM mission expenditure.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "eu",
+        "classification": "realized-disbursement-other-program",
+        "title": "EU Moldova Growth Facility cumulative performance payments",
+        "source": "https://www.eeas.europa.eu/delegations/moldova/european-union-and-moldova-reiterate-their-strong-partnership-and-announce-disbursement-eur157_en",
+        "unit": "EUR million",
+        "value": 661,
+        "period": "through 2026-10-05",
+        "limitation": "Approximate cumulative paid Growth Facility performance financing, not additional to latest €157m and not EUPM cost.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "eu",
+        "classification": "authorized-assistance-other-program",
+        "title": "EU European Peace Facility Moldova assistance",
+        "source": "https://www.eeas.europa.eu/delegations/moldova/european-union-and-moldova-reiterate-their-strong-partnership-and-announce-disbursement-eur157_en",
+        "unit": "EUR million",
+        "value": 317,
+        "period": "2021–2026",
+        "limitation": "EU reports EPF allocations, distinct from EUPM and Growth Facility; not necessarily paid.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "eu",
+        "classification": "nonmission-outcome-confounder",
+        "title": "EU Growth Facility 18 reforms latest cycle",
+        "source": "https://www.eeas.europa.eu/delegations/moldova/european-union-and-moldova-reiterate-their-strong-partnership-and-announce-disbursement-eur157_en",
+        "unit": "reforms",
+        "value": 18,
+        "period": "2026-10-05",
+        "limitation": "Reported reforms tied to Growth Facility, not causally attributable to EUPM Moldova.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "eu",
+        "classification": "nonmission-outcome-confounder",
+        "title": "EU March 2026 Growth Facility payment",
+        "source": "https://enlargement.ec.europa.eu/countries/moldova_en",
+        "unit": "EUR million",
+        "value": 189,
+        "period": "2026-03",
+        "limitation": "Commission reports €189m Growth Facility payment following 24 reform indicators; do not double count with €661m cumulative.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "eu",
+        "classification": "nonmission-outcome-confounder",
+        "title": "EU March 2026 reform indicators",
+        "source": "https://enlargement.ec.europa.eu/countries/moldova_en",
+        "unit": "indicators",
+        "value": 24,
+        "period": "2026-03",
+        "limitation": "Reform indicators include cybersecurity and emergency response, but EUPM effect cannot be isolated from parallel EU funding.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "russia",
+        "classification": "broader-cost-context",
+        "title": "Russia 2025 war and military spending",
+        "source": "https://www.sipri.org/publications/2026/sipri-insights-peace-and-security/budget-fifth-year-war-military-spending-russias-budget-2026",
+        "unit": "RUB trillion",
+        "value": 16,
+        "period": "2025",
+        "limitation": "SIPRI estimates Russian federal war and other military spending ~16trn roubles, NOT costs of Belarus security treaty.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "russia",
+        "classification": "broader-cost-context",
+        "title": "Russia 2025 military burden GDP",
+        "source": "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
+        "unit": "percent GDP",
+        "value": 7.5,
+        "period": "2025",
+        "limitation": "SIPRI estimated 7.5% of GDP military expenditure; not incremental Belarus treaty cost.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "russia",
+        "classification": "transparency-constraint",
+        "title": "Russian classified residual defense budget",
+        "source": "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
+        "unit": "percent",
+        "value": 79,
+        "period": "2025",
+        "limitation": "SIPRI estimates 79% classified residual in National Defence budget; limits confidence in bilateral attribution.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "india",
+        "classification": "reciprocal-concession-scope",
+        "title": "UAE CEPA access for UAE exports to India",
+        "source": "https://www.trade.gov.ae/uae-india-comprehensive-economic-partnership-agreement",
+        "unit": "percent products",
+        "value": 80,
+        "period": "from 2022-05-01",
+        "limitation": "UAE government says tariffs reduced or removed on more than 80% of products for UAE exporters; market access not actual preference use.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "india",
+        "classification": "reciprocal-concession-scope",
+        "title": "UAE CEPA services market access",
+        "source": "https://www.trade.gov.ae/uae-india-comprehensive-economic-partnership-agreement",
+        "unit": "sectors",
+        "value": 11,
+        "period": "from 2022-05-01",
+        "limitation": "UAE government says its providers gained access across 11 sectors and over 100 subsectors; no realized service receipts proven.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "india",
+        "classification": "reciprocal-concession-scope",
+        "title": "UAE government procurement price preference",
+        "source": "https://www.trade.gov.ae/uae-india-comprehensive-economic-partnership-agreement",
+        "unit": "percent",
+        "value": 10,
+        "period": "from 2022-05-01",
+        "limitation": "UAE government states 10% price preference in UAE government procurement tenders; eligibility is not contract wins.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "china",
+        "classification": "attribution-constraint",
+        "title": "Prior mediation acknowledged in official trilateral agreement",
+        "source": "https://www.spa.gov.sa/en/ed7aabfefaw",
+        "unit": "qualitative",
+        "value": null,
+        "period": "2021–2023",
+        "limitation": "Saudi source recognizes Iraq/Oman mediation prior to China, so causal credit cannot be assigned exclusively to Beijing.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      },
+      {
+        "sphere": "us",
+        "classification": "cost-baseline-constraint",
+        "title": "Existing Japan and ROK host-nation arrangements",
+        "source": "https://www.gao.gov/products/gao-21-270",
+        "unit": "qualitative",
+        "value": null,
+        "period": "2016–2019",
+        "limitation": "GAO obligations and host contributions predate Camp David; not valid as incremental trilateral exercise spending.",
+        "caseSpecificCostVerified": false,
+        "causalAttributionVerified": false
+      }
+    ],
+    "recordCount": 14,
+    "criticalDistinction": "EU Growth Facility paid sums are genuine disbursements but not EUPM Moldova mission disbursements; never merge with EUPM budgets, procurement or EPF allocations.",
+    "auditGatesCompleted": 0,
     "scoreAuthorized": false
   }
 }
