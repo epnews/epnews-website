@@ -31,6 +31,8 @@ def validate_facility_identity(value):
         raise ValueError("ALSI facility data requires /api?country=...&company=...&facility=... from official listing")
     if query["country"][0].upper() != "NL":
         raise ValueError("Gate terminal facility must be in Netherlands (country=NL)")
+    if set(query) != {"country", "company", "facility"}:
+        raise ValueError("Gate facility URL must contain only country, company and facility identifiers")
     return parsed
 
 def find_gate_facilities(listing):
@@ -143,6 +145,8 @@ def fetch_all_pages(base_url, key, fetch=request_json):
     """Fetch every GIE page and reject inconsistent or incomplete responses."""
     parsed = validate_facility_url(base_url)
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
+    if not {"from", "to"}.issubset(params) or set(params) != {"country", "company", "facility", "from", "to"}:
+        raise ValueError("Paged ALSI query must contain only facility identity and gas-day bounds")
     params["size"] = "300"
     all_rows = []
     expected_pages = None
