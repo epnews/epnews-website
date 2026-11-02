@@ -1,0 +1,36 @@
+{
+  "schema": "soi-unga-authoritative-codebook-taxonomy-v1",
+  "codebookUrl": "https://access.gesis.org/sharing/2702/5478",
+  "datasetDoi": "10.7802/2855",
+  "ranges": [
+    {
+      "start": 100,
+      "end": 134,
+      "meaning": "substantive issue categories",
+      "eligibleForIssueStandardization": true
+    },
+    {
+      "start": 201,
+      "end": 223,
+      "meaning": "regional codes",
+      "eligibleForIssueStandardization": false
+    },
+    {
+      "start": 300,
+      "end": 547,
+      "meaning": "country codes",
+      "eligibleForIssueStandardization": false
+    },
+    {
+      "start": 600,
+      "end": 605,
+      "meaning": "categories not used for analysis",
+      "eligibleForIssueStandardization": false
+    }
+  ],
+  "requiredTreatment": "Filter issue codes 100-134; exclude geographic and nonanalytic codes from issue-mix weights. Audit issue-less resolutions separately.",
+  "previousFiveFamilyGroupingInvalidForIssueStandardization": true,
+  "adjustedScoresAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
