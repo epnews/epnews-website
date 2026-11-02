@@ -1,0 +1,68 @@
+{
+  "version": "2026-11-02",
+  "caseId": "eu-member-state-diplomatic-attribution",
+  "policy": {
+    "influenceScore": null,
+    "auditGatePromotion": false,
+    "causalAttribution": "not_established"
+  },
+  "legalFramework": [
+    {
+      "id": "eu-exclusive-common-commercial-policy",
+      "category": "exclusive_eu_competence",
+      "description": "Common commercial policy is an EU exclusive competence under TFEU Article 3(1)(e), subject to treaty-specific limits and mixed-agreement distinctions.",
+      "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A12012E003"
+    },
+    {
+      "id": "eu-shared-competence",
+      "category": "shared_competence",
+      "description": "Shared competence includes areas enumerated in TFEU Article 4; classify each instrument by legal basis rather than broad policy labels.",
+      "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A12012E004"
+    },
+    {
+      "id": "eu-external-action",
+      "category": "external_action",
+      "description": "TFEU Article 216 provides the basis for EU international agreements in specified circumstances; existence of authority does not mean every bilateral member-state action is an EU action.",
+      "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A12012E216"
+    },
+    {
+      "id": "eu-japan-spa",
+      "category": "eu_and_member_states_agreement",
+      "description": "EU–Japan Strategic Partnership Agreement is a mixed agreement involving the EU and its member states; full entry into force January 2025.",
+      "source": "https://www.consilium.europa.eu/en/documents/treaties-agreements/agreement/?doclanguage=en&id=2018023"
+    }
+  ],
+  "attributionRules": [
+    {
+      "rule": "EU_only",
+      "test": "EU institution acted within its competence and the instrument is attributable to the Union; report Union-level action only."
+    },
+    {
+      "rule": "member_state_only",
+      "test": "National government bilateral instrument without EU co-signature or delegated EU competence; attribute to named country, not automatically to EU."
+    },
+    {
+      "rule": "mixed_agreement",
+      "test": "EU and member states are parties; retain mixed scope, avoid duplicating the event as multiple independent geopolitical outcomes."
+    },
+    {
+      "rule": "implementation",
+      "test": "Separate legal entry into force, financial disbursement, national implementation, and independent partner outcome."
+    },
+    {
+      "rule": "non_additivity",
+      "test": "Do not add EU institution totals to member-state totals without eliminating overlap and harmonizing units."
+    }
+  ],
+  "openGaps": [
+    "Identify treaty-specific EU and national competences in implementation instruments",
+    "Gather EU and national expenditure on matching time and cost definitions",
+    "Find independently measured partner policy outcomes and counterfactual",
+    "Separate formal EU external policy from national bilateral diplomacy"
+  ],
+  "limitations": [
+    "Legal competence classification does not establish political leverage or influence.",
+    "EU-wide and member-state-only agreements are not interchangeable samples.",
+    "No diplomatic influence scores or audit gate promotion."
+  ]
+}
