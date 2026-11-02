@@ -1,0 +1,154 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-12",
+  "comparisonType": "consecutive-semester nominal household price changes by country",
+  "pairs": [
+    {
+      "geo": "IE",
+      "commodity": "electricity",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 40.42,
+      "endEUR100kWh": 38.71,
+      "nominalChangePercent": -4.231,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf"
+    },
+    {
+      "geo": "DE",
+      "commodity": "electricity",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 38.69,
+      "endEUR100kWh": 36.18,
+      "nominalChangePercent": -6.487,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf"
+    },
+    {
+      "geo": "BE",
+      "commodity": "electricity",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 34.99,
+      "endEUR100kWh": 35.75,
+      "nominalChangePercent": 2.172,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf"
+    },
+    {
+      "geo": "HU",
+      "commodity": "electricity",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 10.82,
+      "endEUR100kWh": 11.39,
+      "nominalChangePercent": 5.268,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf"
+    },
+    {
+      "geo": "MT",
+      "commodity": "electricity",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 12.82,
+      "endEUR100kWh": 12.68,
+      "nominalChangePercent": -1.092,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf"
+    },
+    {
+      "geo": "BG",
+      "commodity": "electricity",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 13.55,
+      "endEUR100kWh": 13.41,
+      "nominalChangePercent": -1.033,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf"
+    },
+    {
+      "geo": "SE",
+      "commodity": "natural gas",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 20.92,
+      "endEUR100kWh": 22.01,
+      "nominalChangePercent": 5.21,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45229.pdf"
+    },
+    {
+      "geo": "NL",
+      "commodity": "natural gas",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 17.19,
+      "endEUR100kWh": 16.22,
+      "nominalChangePercent": -5.643,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45229.pdf"
+    },
+    {
+      "geo": "HU",
+      "commodity": "natural gas",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 3.4,
+      "endEUR100kWh": 3.3,
+      "nominalChangePercent": -2.941,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45229.pdf"
+    },
+    {
+      "geo": "HR",
+      "commodity": "natural gas",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 5.43,
+      "endEUR100kWh": 5.02,
+      "nominalChangePercent": -7.551,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45229.pdf"
+    },
+    {
+      "geo": "RO",
+      "commodity": "natural gas",
+      "consumer": "household",
+      "periodStart": "2025-S2",
+      "periodEnd": "2026-S1",
+      "startEUR100kWh": 5.66,
+      "endEUR100kWh": 5.94,
+      "nominalChangePercent": 4.947,
+      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45229.pdf"
+    }
+  ],
+  "sourceFiles": [
+    "data/soi-eu-gap12-country-energy-price-extremes-2025s2-20261102.json",
+    "data/soi-eu-gap12-2026s1-household-2025s2-industry-gas-new-observations-20261102.json"
+  ],
+  "methodology": [
+    "Same geo, same commodity, same consumer class, nominal EUR/100 kWh; consecutive 2025-S2 and 2026-S1 semesters.",
+    "Household electricity standard band 2500-4999 kWh annual; household gas D2 20-199 GJ annual; source releases use taxes and levies included.",
+    "Changes are nominal and NOT inflation-adjusted: national monthly HICP 2025-S2 and 2026-S1 not yet ingested.",
+    "Country-level household bill impacts cannot be inferred without matched consumption and subsidy/tax context.",
+    "Country differences and changes do not establish geopolitical causation or influence."
+  ],
+  "gapClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
