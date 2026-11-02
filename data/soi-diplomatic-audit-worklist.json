@@ -1,5 +1,5 @@
 {
-  "version": "4.3",
+  "version": "4.4",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -871,6 +871,13 @@
           "financialAmountsVerified": false,
           "secondmentPersonnelCountsAndCostsMatched": false,
           "missionAllInCostVerified": false
+        },
+        "missionScaleCrosscheck": {
+          "source": "https://www.eeas.europa.eu/eupm-moldova/about-eu-partnership-mission-republic-moldova_en",
+          "staffCeiling": 72,
+          "mandate": "2025–2027",
+          "estimatedBudgetEuros": 19817594.7,
+          "limitation": "Up to 72 international and local permanent staff is a ceiling, not verified payroll or all-in secondment cost; do not divide budget by headcount as a per-staff cost."
         }
       },
       "comparableOutcomeObservation": {
@@ -1405,6 +1412,25 @@
           "causalAttributionVerified": false,
           "costsGateComplete": false,
           "scoringAuthorized": false
+        },
+        "fiscalMateriality": {
+          "source": "https://www.indiabudget.gov.in/doc/rec/allrec.pdf",
+          "table": "Receipt Budget 2026–27 Table II, revenue impact on account of FTA/PTA/CEPA/CECA",
+          "fy2024_25": {
+            "uaeCepaCrore": 6231,
+            "allAgreementConcessionsCrore": 98569,
+            "sharePercent": 6.32,
+            "dataType": "final actuals"
+          },
+          "fy2025_26": {
+            "uaeCepaCrore": 9267,
+            "allAgreementConcessionsCrore": 101453,
+            "sharePercent": 9.13,
+            "dataType": "estimated"
+          },
+          "interpretation": "Share of recorded India basic-customs-duty concession revenue impact attributable to UAE CEPA within all trade-agreement concessions; not share of total tax revenue, net loss, trade growth or diplomatic influence.",
+          "causalAttributionVerified": false,
+          "netEconomicBenefitVerified": false
         }
       },
       "uaeCounterpartTradeObservation": {
