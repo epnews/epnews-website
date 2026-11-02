@@ -161,7 +161,10 @@ def validate_response(result):
 def fetch_all_pages(base_url, key, fetch=request_json):
     """Fetch every GIE page and reject inconsistent or incomplete responses."""
     parsed = validate_facility_url(base_url)
-    params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
+    pairs = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+    params = dict(pairs)
+    if len(pairs) != len(params):
+        raise ValueError("Paged ALSI query contains duplicate parameters")
     if not {"from", "to"}.issubset(params) or set(params) != {"country", "company", "facility", "from", "to"}:
         raise ValueError("Paged ALSI query must contain only facility identity and gas-day bounds")
     start_date, end_date = date.fromisoformat(params["from"]), date.fromisoformat(params["to"])

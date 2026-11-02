@@ -401,3 +401,15 @@ assert mod.validate_operator_evidence(
     [{"gasDayStart": "2026-10-01T06:00:00Z", "status": "C"}],
     "2026-10-01", "2026-10-01")["confirmed_gas_days"] == 1
 print("ALSI complete timestamp validation tests passed")
+
+for duplicate_param in ("&from=2026-09-01", "&to=2026-11-01", "&facility=OTHER"):
+    try:
+        mod.fetch_all_pages(
+            "https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST"
+            "&from=2026-10-01&to=2026-10-31" + duplicate_param, "dummy",
+            lambda url, key: (_ for _ in ()).throw(AssertionError("Unexpected network request")))
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Duplicate query parameter accepted: {duplicate_param}")
+print("ALSI duplicate query parameter rejection tests passed")
