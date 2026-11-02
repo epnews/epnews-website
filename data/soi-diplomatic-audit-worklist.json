@@ -1,5 +1,5 @@
 {
-  "version": "3.2",
+  "version": "3.3",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -674,6 +674,43 @@
           "attributionComplete": false,
           "costsComplete": false,
           "scoreAuthorized": false
+        }
+      },
+      "costEvidenceResearch": {
+        "status": "legal-financial-reference-amounts-identified-disbursement-unverified",
+        "currency": "EUR",
+        "instrument": "EU Partnership Mission in Moldova (EUPM Moldova), Council Decision (CFSP) 2023/993 as amended",
+        "evidence": [
+          {
+            "kind": "financial-reference-amount",
+            "amount": 13356508.08,
+            "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32023D0993",
+            "limitation": "Budget authorization reference, not cash expenditure or actual economic cost."
+          },
+          {
+            "kind": "financial-reference-amount",
+            "amount": 19817594.7,
+            "source": "https://eur-lex.europa.eu/eli/dec/2025/943/oj/eng",
+            "limitation": "Legal financial reference amount for later period, not incremental spending or evidence of disbursement."
+          }
+        ],
+        "arithmetic": {
+          "differenceEuros": 6461086.62,
+          "comparisonCaution": "Different budget periods and legal decisions: not a comparable spending growth rate, not summed as actual total paid."
+        },
+        "missingEvidence": [
+          "Audited disbursement records by fiscal year and activity",
+          "Moldovan co-financing and in-kind contributions",
+          "Actual procurement, personnel, travel and overhead spending",
+          "Domestic and opportunity costs",
+          "Evidence linking any measured mission outcome to incremental spending"
+        ],
+        "verification": {
+          "authorizedBudgetsIdentified": true,
+          "actualDisbursementsVerified": false,
+          "costsGateComplete": false,
+          "causalAttributionVerified": false,
+          "scoringAuthorized": false
         }
       }
     },
