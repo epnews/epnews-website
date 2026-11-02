@@ -1,0 +1,128 @@
+{
+  "sourceArchiveSha256": "04e2a0df74df61ca07e157871578e53effe4f130932d71a3298852b7c5180522",
+  "frozenExternalPartners": 160,
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "actors": {
+    "us": {
+      "baseline": [
+        26.3343,
+        34.4341,
+        31.0386,
+        32.0913
+      ],
+      "noJoint": [
+        25.4309,
+        33.5967,
+        30.2391,
+        31.1075
+      ],
+      "yesNo": [
+        31.2589,
+        null,
+        null,
+        38.9288
+      ]
+    },
+    "china": {
+      "baseline": [
+        71.6275,
+        64.8438,
+        65.1993,
+        66.2191
+      ],
+      "noJoint": [
+        71.2481,
+        64.1609,
+        64.2863,
+        65.4825
+      ],
+      "yesNo": [
+        85.1943,
+        null,
+        null,
+        85.3126
+      ]
+    },
+    "russia": {
+      "baseline": [
+        57.5385,
+        51.4975,
+        48.9646,
+        51.4606
+      ],
+      "noJoint": [
+        56.7398,
+        50.403,
+        47.9106,
+        50.8396
+      ],
+      "yesNo": [
+        73.2403,
+        null,
+        null,
+        62.3907
+      ]
+    },
+    "india": {
+      "baseline": [
+        67.6766,
+        65.4398,
+        65.3877,
+        66.0088
+      ],
+      "noJoint": [
+        66.3264,
+        63.2439,
+        63.6394,
+        64.1728
+      ],
+      "yesNo": [
+        90.3046,
+        null,
+        null,
+        89.0791
+      ]
+    },
+    "eu": {
+      "baseline": [
+        60.4288,
+        61.2742,
+        58.7824,
+        58.9489
+      ],
+      "noJoint": [
+        59.2478,
+        60.4966,
+        57.7506,
+        57.8009
+      ],
+      "yesNo": [
+        74.7698,
+        null,
+        null,
+        72.7709
+      ],
+      "strict90": [
+        65.588,
+        null,
+        null,
+        62.0802
+      ],
+      "all27": [
+        56.9153,
+        null,
+        null,
+        58.1149
+      ]
+    }
+  },
+  "canActivateInfluenceNeedle": false,
+  "influenceScoreAuthorized": false,
+  "issueMixSensitivityPending": true,
+  "missingnessSensitivityPending": true
+}
