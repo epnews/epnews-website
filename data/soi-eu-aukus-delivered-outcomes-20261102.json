@@ -1,0 +1,143 @@
+{
+  "version": "2026-11-02",
+  "count": 14,
+  "status": "official-reported-measurements-not-independent-audit",
+  "observations": [
+    {
+      "id": "EU-2025-ENERGY-IMPORT-BILL",
+      "value": 336.7,
+      "unit": "EUR billion",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitation": "2025 EU extra-EU imported energy product value; Eurostat CN product basket, not comparable to Commission broader 427bn 2024 series without reconciliation.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-ENERGY-IMPORT-MASS",
+      "value": 723.3,
+      "unit": "million tonnes",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitation": "All energy products Eurostat basket; mass does not equal energy content.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-ENERGY-IMPORT-VALUE-YOY",
+      "value": -11.1,
+      "unit": "percent",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitation": "Year-on-year nominal customs value, price and volume confounded.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-ENERGY-IMPORT-MASS-YOY",
+      "value": -0.6,
+      "unit": "percent",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitation": "Year-on-year imported net mass, not gas volume.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-LNG-US-SUPPLIER-SHARE",
+      "value": 56,
+      "unit": "percent",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitation": "US share of EU imported LNG, not total EU gas supply or US LNG exports.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-LNG-RUSSIA-SUPPLIER-SHARE",
+      "value": 13.9,
+      "unit": "percent",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitation": "Russian share of EU LNG imports, not all gas imports.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-PIPE-GAS-RUSSIA-SHARE",
+      "value": 10.4,
+      "unit": "percent",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitation": "Russian share of gaseous-state imports, not LNG.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-RUSSIA-GAS-VOLUME",
+      "value": 36,
+      "unit": "bcm",
+      "source": "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+      "limitation": "All Russian-origin EU gas; down from 52 bcm 2024; not LNG-only.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-PIPELINE-IMPORT-VOLUME",
+      "value": 158,
+      "unit": "bcm",
+      "source": "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+      "limitation": "EU total pipeline gas imports; not all gas imports.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "EU-2025-LNG-IMPORT-VOLUME",
+      "value": 131,
+      "unit": "bcm",
+      "source": "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+      "limitation": "EU LNG imports; 45% of total gas imports.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "AUKUS-ANSON-AUSTRALIAN-INDUSTRY-WORK",
+      "value": 2500,
+      "unit": "person-hours (over)",
+      "source": "https://www.gov.uk/government/publications/australia-uk-ministerial-consultations-joint-statement-june-2026/australia-uk-ministerial-consultations-joint-statement-june-2026",
+      "limitation": "HMS Anson 2026 submarine maintenance period, not annual submarine deployment days.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "AUKUS-ANSON-AUSTRALIAN-SUPPLIERS",
+      "value": 17,
+      "unit": "businesses",
+      "source": "https://www.gov.uk/government/publications/australia-uk-ministerial-consultations-joint-statement-june-2026/australia-uk-ministerial-consultations-joint-statement-june-2026",
+      "limitation": "Businesses supporting maintenance period, not long-term awarded contracts.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "AUKUS-ANSON-LOCAL-COMPONENTS",
+      "value": 34,
+      "unit": "manufactured components",
+      "source": "https://www.gov.uk/government/publications/australia-uk-ministerial-consultations-joint-statement-june-2026/australia-uk-ministerial-consultations-joint-statement-june-2026",
+      "limitation": "Components locally produced to support maintenance, not submarines delivered.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    },
+    {
+      "id": "AUKUS-ANSON-TRILATERAL-UNIFORMED-WORK",
+      "value": 620,
+      "unit": "hours",
+      "source": "https://www.gov.uk/government/publications/australia-uk-ministerial-consultations-joint-statement-june-2026/australia-uk-ministerial-consultations-joint-statement-june-2026",
+      "limitation": "Uniformed work reported in maintenance period; not civilian industry hours.",
+      "evidence": "official-statistics-or-official-operational-report",
+      "gatePromoted": false
+    }
+  ],
+  "constraints": [
+    "Eurostat energy-product customs basket differs from broader EU Commission energy import bill; do not combine 336.7bn and 427bn into one time series.",
+    "Supplier shares are product-specific and do not represent diplomatic influence.",
+    "AUKUS maintenance activity is delivered work, not Australian nuclear-powered submarine ownership.",
+    "Official self-reported operational counts lack independent audit.",
+    "No influence score, no change to 20/30 audit."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoringAuthorized": false
+}
