@@ -1,0 +1,29 @@
+name: SOI EU HICP official source verification
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 10 * * 1'
+permissions:
+  contents: read
+jobs:
+  verify-eurostat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch official Eurostat 2025 EU27 all-items HICP
+        run: node scripts/fetch_soi_eurostat_hicp_2025_20261102.cjs
+      - name: Compare direct Eurostat indices against provisional secondary reproduction
+        run: node scripts/audit_soi_eurostat_hicp_official_match_20261102.cjs
+      - name: Preserve original official data and comparison report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: soi-eurostat-eu27-hicp-official-2025
+          if-no-files-found: warn
+          path: |
+            data/soi-eu-hicp-2025-verified-index-20261102.json
+            data/soi-eu-hicp-2025-official-comparison-20261102.json
