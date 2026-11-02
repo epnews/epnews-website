@@ -1,0 +1,32 @@
+name: DOE LNG vessel workbook acquisition
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire-and-inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install XLSX reader
+        run: python -m pip install 'openpyxl>=3.1,<4'
+      - name: Download official DOE workbook with provenance
+        run: node scripts/fetch_europe_lng_doe_workbook_20261102.cjs "$RUNNER_TEMP/doe-lng-exports.xlsx"
+      - name: Extract vessel candidate rows (not verified discharges)
+        run: python scripts/match_europe_lng_doe_vessels_20261102.py "$RUNNER_TEMP/doe-lng-exports.xlsx" > "$RUNNER_TEMP/doe-vessel-candidates.json"
+      - name: Run synthetic regression
+        run: python scripts/test_europe_lng_doe_vessel_matcher_20261102.py
+      - name: Upload provenance and candidates
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: doe-lng-vessel-research-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/doe-lng-exports.xlsx.manifest.json
+            ${{ runner.temp }}/doe-vessel-candidates.json
+          if-no-files-found: warn
+          retention-days: 14
