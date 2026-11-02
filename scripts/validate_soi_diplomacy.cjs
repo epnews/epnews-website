@@ -24,6 +24,13 @@ for(const item of worklist.items){
   assert.match(t.evidence||'',/^https:\/\//,item.sphere+'/'+t.id+' evidence must be URL');
   assert.ok(typeof t.scope==='string'&&t.scope.length>=25,item.sphere+'/'+t.id+' scope required');
  }
+ const observation=item.comparableOutcomeObservation;
+ assert.equal(observation.status,'measurement-specification-only-not-verified-impact');
+ assert.equal(observation.verifiedCausalEffect,null);
+ assert.equal(observation.measuredChange,null);
+ assert.equal(observation.scoreAuthorized,false);
+ assert.ok(observation.alternativeExplanations.length>=3);
+ assert.ok(observation.normalizationPolicy.includes('do not aggregate'));
  const gap=item.evidenceGapActionRegister;
  assert.equal(gap.status,'research-required-no-new-gates-completed');
  assert.equal(gap.requiredDeliverables.length,5);

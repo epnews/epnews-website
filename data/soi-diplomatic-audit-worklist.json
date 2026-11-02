@@ -1,5 +1,5 @@
 {
-  "version": "3.3",
+  "version": "3.4",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -159,6 +159,23 @@
           "costsComplete": false,
           "scoreAuthorized": false
         }
+      },
+      "comparableOutcomeObservation": {
+        "status": "measurement-specification-only-not-verified-impact",
+        "indicator": "Observed trilateral security cooperation activities",
+        "unit": "dated verified activities",
+        "baselineRequirement": "Pre-Camp David bilateral and trilateral activity counts",
+        "followupRequirement": "Post-Camp David activity counts for matched windows",
+        "missingEvidence": "Dated comparable operational event series with independently confirmed activities",
+        "alternativeExplanations": [
+          "Existing US bilateral alliance obligations",
+          "Japan–ROK diplomatic rapprochement",
+          "North Korean missile and nuclear developments"
+        ],
+        "normalizationPolicy": "Only compare within-indicator matched windows and units; do not aggregate cross-sphere outcomes into influence scores.",
+        "verifiedCausalEffect": null,
+        "measuredChange": null,
+        "scoreAuthorized": false
       }
     },
     {
@@ -320,6 +337,23 @@
           "costsComplete": false,
           "scoreAuthorized": false
         }
+      },
+      "comparableOutcomeObservation": {
+        "status": "measurement-specification-only-not-verified-impact",
+        "indicator": "Saudi–Iran diplomatic mission operation",
+        "unit": "verified embassy operating status by date",
+        "baselineRequirement": "Pre-Beijing diplomatic mission closure and restoration negotiations",
+        "followupRequirement": "Post-Beijing verified reciprocal mission openings",
+        "missingEvidence": "Independent operational status series and counterfactual mediation attribution",
+        "alternativeExplanations": [
+          "Iraqi and Omani mediation",
+          "Saudi–Iran security incentives",
+          "Regional economic normalization"
+        ],
+        "normalizationPolicy": "Only compare within-indicator matched windows and units; do not aggregate cross-sphere outcomes into influence scores.",
+        "verifiedCausalEffect": null,
+        "measuredChange": null,
+        "scoreAuthorized": false
       }
     },
     {
@@ -494,6 +528,23 @@
           "costsComplete": false,
           "scoreAuthorized": false
         }
+      },
+      "comparableOutcomeObservation": {
+        "status": "measurement-specification-only-not-verified-impact",
+        "indicator": "Post-treaty Belarus–Russia security implementation",
+        "unit": "independently verified dated operational changes",
+        "baselineRequirement": "Pre-March 2025 joint military and security arrangements",
+        "followupRequirement": "Post-March 2025 treaty-linked independently verified actions",
+        "missingEvidence": "Operational implementation not explained by pre-existing Union State arrangements",
+        "alternativeExplanations": [
+          "Pre-existing military basing and exercises",
+          "Belarusian independent policy preferences",
+          "Ukraine war developments"
+        ],
+        "normalizationPolicy": "Only compare within-indicator matched windows and units; do not aggregate cross-sphere outcomes into influence scores.",
+        "verifiedCausalEffect": null,
+        "measuredChange": null,
+        "scoreAuthorized": false
       }
     },
     {
@@ -712,6 +763,23 @@
           "causalAttributionVerified": false,
           "scoringAuthorized": false
         }
+      },
+      "comparableOutcomeObservation": {
+        "status": "measurement-specification-only-not-verified-impact",
+        "indicator": "EUPM Moldova mission outputs",
+        "unit": "verified completed mission activities or operational outputs",
+        "baselineRequirement": "Earlier authorized mission phase outputs for matched duration",
+        "followupRequirement": "Later phase mission outputs for matched duration",
+        "missingEvidence": "Independently auditable activity series, actual costs and outcome evaluation",
+        "alternativeExplanations": [
+          "Russian invasion spillovers",
+          "Moldovan domestic reforms",
+          "Other EU and partner assistance"
+        ],
+        "normalizationPolicy": "Only compare within-indicator matched windows and units; do not aggregate cross-sphere outcomes into influence scores.",
+        "verifiedCausalEffect": null,
+        "measuredChange": null,
+        "scoreAuthorized": false
       }
     },
     {
@@ -1079,6 +1147,23 @@
           "costsComplete": false,
           "scoreAuthorized": false
         }
+      },
+      "comparableOutcomeObservation": {
+        "status": "measurement-specification-only-not-verified-impact",
+        "indicator": "CEPA preferential trade utilization and product-level change",
+        "unit": "HS-level trade volume and verified preference-claim share",
+        "baselineRequirement": "Same-product pre-CEPA quantities, tariff eligibility and utilization",
+        "followupRequirement": "Same-product post-CEPA quantities and preference claims",
+        "missingEvidence": "Direct same-vintage DGCIS extraction and UAE/India preference-claim denominators",
+        "alternativeExplanations": [
+          "Oil prices and commodity mix",
+          "Exchange rates",
+          "UAE re-exports and demand"
+        ],
+        "normalizationPolicy": "Only compare within-indicator matched windows and units; do not aggregate cross-sphere outcomes into influence scores.",
+        "verifiedCausalEffect": null,
+        "measuredChange": null,
+        "scoreAuthorized": false
       }
     }
   ],
