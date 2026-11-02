@@ -261,3 +261,17 @@ assert window["observed_in_window_gas_days"] == 1
 assert window["daily_coverage_percent"] == 25.0
 assert window["out_of_window_gas_days"] == ["2026-10-05"]
 print("ALSI in-window coverage percentage tests passed")
+
+quality = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-02", "status": "E"},
+    {"gasDayStart": "2026-10-03", "status": "N"},
+    {"gasDayStart": "2026-10-05", "status": "C"},
+], "2026-10-01", "2026-10-04")
+assert quality["daily_coverage_percent"] == 75.0
+assert quality["confirmed_gas_days"] == 1
+assert quality["estimated_gas_days"] == 1
+assert quality["no_data_gas_days"] == 1
+assert quality["confirmed_coverage_percent"] == 25.0
+print("ALSI status-specific in-window reporting coverage tests passed")
