@@ -1,5 +1,5 @@
 {
-  "version": "3.7",
+  "version": "3.8",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -782,6 +782,23 @@
           "costsGateComplete": false,
           "causalAttributionVerified": false,
           "scoringAuthorized": false
+        },
+        "primaryLegalConsolidation": {
+          "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023D0855-20250520",
+          "legalBasis": "Council Decision (CFSP) 2023/855, consolidated 20 May 2025, Article 13",
+          "periods": [
+            {
+              "start": "2023-04-24",
+              "end": "2025-05-21",
+              "referenceEuros": 13356508.08
+            },
+            {
+              "start": "2025-05-22",
+              "end": "2027-05-31",
+              "referenceEuros": 19817594.7
+            }
+          ],
+          "limitation": "Legally distinct financial reference periods; not actual paid costs."
         }
       },
       "comparableOutcomeObservation": {
@@ -1256,6 +1273,51 @@
         "verifiedCausalEffect": null,
         "measuredChange": null,
         "scoreAuthorized": false
+      },
+      "costEvidenceResearch": {
+        "status": "official-india-customs-duty-revenue-impact-reported-other-costs-pending",
+        "source": "https://www.indiabudget.gov.in/doc/rec/allrec.pdf",
+        "publication": "Union Budget 2026–27, Receipt Budget, Statement of Revenue Impact of Tax Incentives, Table II",
+        "sourceInstitution": "Government of India, Ministry of Finance",
+        "indicator": "Revenue impact of concessional customs duties for specified goods imported from UAE under CEPA",
+        "unit": "INR crore",
+        "observations": [
+          {
+            "fiscalYear": "2024-2025",
+            "amountCrore": 6231,
+            "classification": "reported actuals"
+          },
+          {
+            "fiscalYear": "2025-2026",
+            "amountCrore": 9267,
+            "classification": "estimated"
+          }
+        ],
+        "arithmetic": {
+          "differenceCrore": 3036,
+          "percentChange": 48.72,
+          "warning": "Do not label an estimate as an actual increase; figures are modeled customs duty revenue impact, not cash spending or CEPA net economic cost."
+        },
+        "comparison": {
+          "allTradeAgreementRevenueImpactCroreFY2024_25": 98569,
+          "allTradeAgreementRevenueImpactCroreFY2025_26Estimated": 101453,
+          "warning": "Aggregate includes multiple countries and agreements; do not attribute it to UAE CEPA."
+        },
+        "missingEvidence": [
+          "UAE-side customs revenue impact and reciprocal concessions",
+          "India sectoral adjustment costs and distributional incidence",
+          "Alternative tariff and trade-volume counterfactual",
+          "Fiscal incidence net of import and production responses",
+          "Independent bilateral net economic cost and benefit estimates"
+        ],
+        "verification": {
+          "indiaSpecificCustomsRevenueImpactVerified": true,
+          "actualFiscalExpenditureVerified": false,
+          "bilateralCostsComplete": false,
+          "causalAttributionVerified": false,
+          "costsGateComplete": false,
+          "scoringAuthorized": false
+        }
       }
     }
   ],
