@@ -162,6 +162,9 @@ def fetch_all_pages(base_url, key, fetch=request_json):
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
     if not {"from", "to"}.issubset(params) or set(params) != {"country", "company", "facility", "from", "to"}:
         raise ValueError("Paged ALSI query must contain only facility identity and gas-day bounds")
+    start_date, end_date = date.fromisoformat(params["from"]), date.fromisoformat(params["to"])
+    if start_date > end_date:
+        raise ValueError("Paged ALSI date bounds must be in ascending order")
     params["size"] = "300"
     all_rows = []
     expected_pages = None
