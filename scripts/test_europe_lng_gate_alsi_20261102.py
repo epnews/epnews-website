@@ -250,3 +250,14 @@ except ValueError:
 else:
     raise AssertionError("Ambiguous Gate facility auto-selected")
 print("Unique authenticated Gate facility auto-selection tests passed")
+
+window = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-05", "status": "E"},
+], "2026-10-01", "2026-10-04")
+assert window["observed_unique_gas_days"] == 2
+assert window["observed_in_window_gas_days"] == 1
+assert window["daily_coverage_percent"] == 25.0
+assert window["out_of_window_gas_days"] == ["2026-10-05"]
+print("ALSI in-window coverage percentage tests passed")
