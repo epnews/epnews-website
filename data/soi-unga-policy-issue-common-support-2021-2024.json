@@ -1,0 +1,391 @@
+{
+  "schema": "soi-unga-policy-issue-common-support-v1",
+  "sourceCsvSha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "codeSupport": [
+    {
+      "code": "101",
+      "annualDistinctResolutions": [
+        4,
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "code": "102",
+      "annualDistinctResolutions": [
+        9,
+        6,
+        5,
+        7
+      ]
+    },
+    {
+      "code": "103",
+      "annualDistinctResolutions": [
+        4,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "code": "104",
+      "annualDistinctResolutions": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "code": "105",
+      "annualDistinctResolutions": [
+        5,
+        6,
+        3,
+        5
+      ]
+    },
+    {
+      "code": "106",
+      "annualDistinctResolutions": [
+        4,
+        5,
+        5,
+        4
+      ]
+    },
+    {
+      "code": "107",
+      "annualDistinctResolutions": [
+        3,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "code": "108",
+      "annualDistinctResolutions": [
+        9,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "code": "109",
+      "annualDistinctResolutions": [
+        3,
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "code": "110",
+      "annualDistinctResolutions": [
+        10,
+        15,
+        16,
+        11
+      ]
+    },
+    {
+      "code": "111",
+      "annualDistinctResolutions": [
+        12,
+        14,
+        13,
+        16
+      ]
+    },
+    {
+      "code": "112",
+      "annualDistinctResolutions": [
+        18,
+        17,
+        16,
+        19
+      ]
+    },
+    {
+      "code": "113",
+      "annualDistinctResolutions": [
+        0,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "code": "114",
+      "annualDistinctResolutions": [
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "code": "115",
+      "annualDistinctResolutions": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "code": "116",
+      "annualDistinctResolutions": [
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "code": "117",
+      "annualDistinctResolutions": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "code": "118",
+      "annualDistinctResolutions": [
+        8,
+        10,
+        8,
+        11
+      ]
+    },
+    {
+      "code": "119",
+      "annualDistinctResolutions": [
+        5,
+        5,
+        7,
+        4
+      ]
+    },
+    {
+      "code": "120",
+      "annualDistinctResolutions": [
+        4,
+        5,
+        5,
+        4
+      ]
+    },
+    {
+      "code": "121",
+      "annualDistinctResolutions": [
+        2,
+        3,
+        6,
+        4
+      ]
+    },
+    {
+      "code": "122",
+      "annualDistinctResolutions": [
+        2,
+        4,
+        4,
+        3
+      ]
+    },
+    {
+      "code": "123",
+      "annualDistinctResolutions": [
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "code": "124",
+      "annualDistinctResolutions": [
+        4,
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "code": "127",
+      "annualDistinctResolutions": [
+        0,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "code": "128",
+      "annualDistinctResolutions": [
+        3,
+        3,
+        3,
+        4
+      ]
+    },
+    {
+      "code": "129",
+      "annualDistinctResolutions": [
+        32,
+        33,
+        32,
+        38
+      ]
+    },
+    {
+      "code": "130",
+      "annualDistinctResolutions": [
+        1,
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "code": "131",
+      "annualDistinctResolutions": [
+        1,
+        4,
+        1,
+        2
+      ]
+    },
+    {
+      "code": "134",
+      "annualDistinctResolutions": [
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
+  "commonSupportAtLeastFive": [
+    "102",
+    "110",
+    "111",
+    "112",
+    "118",
+    "129"
+  ],
+  "commonSupportAtLeastThree": [
+    "102",
+    "105",
+    "106",
+    "110",
+    "111",
+    "112",
+    "118",
+    "119",
+    "120",
+    "128",
+    "129"
+  ],
+  "supportThresholdStatus": "EXPLORATORY_NOT_APPROVED",
+  "issueLessResolutions": [
+    {
+      "year": 2022,
+      "resolution": "R/ES/11/1"
+    },
+    {
+      "year": 2021,
+      "resolution": "R/75/250B"
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/235"
+    },
+    {
+      "year": 2023,
+      "resolution": "R/78/230"
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/62"
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/7"
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/134"
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/135"
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/10"
+    },
+    {
+      "year": 2023,
+      "resolution": "R/78/7"
+    },
+    {
+      "year": 2023,
+      "resolution": "R/77/284"
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/7"
+    },
+    {
+      "year": 2023,
+      "resolution": "R/77/272"
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/19"
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/13"
+    },
+    {
+      "year": 2021,
+      "resolution": "R/75/289"
+    },
+    {
+      "year": 2021,
+      "resolution": "R/76/245"
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/263A"
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/249"
+    }
+  ],
+  "limitations": [
+    "Common-support subsets are not representative of all 30 policy categories",
+    "Threshold selected after exploratory inspection; must be pre-registered before confirmatory claims",
+    "Resolution-level support is not independent matched actor-partner support",
+    "Issue-less resolutions excluded from policy-code analysis; raw descriptive baseline retains all recorded resolutions"
+  ],
+  "adjustedScoresAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
