@@ -208,7 +208,13 @@ def audit_observation_coverage(rows, from_date, to_date):
         if not isinstance(row, dict) or not row.get("gasDayStart"):
             missing_date_field += 1
             continue
-        day = date.fromisoformat(str(row["gasDayStart"])[:10])
+        raw_day = row["gasDayStart"]
+        if not isinstance(raw_day, str) or len(raw_day) < 10:
+            raise ValueError("ALSI gasDayStart must be a valid ISO date string")
+        try:
+            day = date.fromisoformat(raw_day[:10])
+        except ValueError:
+            raise ValueError(f"Invalid ALSI gasDayStart date: {raw_day!r}") from None
         counts[day.isoformat()] = counts.get(day.isoformat(), 0) + 1
         if not start <= day <= end:
             outside.append(day.isoformat())
