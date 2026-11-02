@@ -24,6 +24,13 @@ for(const item of worklist.items){
   assert.match(t.evidence||'',/^https:\/\//,item.sphere+'/'+t.id+' evidence must be URL');
   assert.ok(typeof t.scope==='string'&&t.scope.length>=25,item.sphere+'/'+t.id+' scope required');
  }
+ const gap=item.evidenceGapActionRegister;
+ assert.equal(gap.status,'research-required-no-new-gates-completed');
+ assert.equal(gap.requiredDeliverables.length,5);
+ assert.ok(gap.researchEntryPoints.every(url=>url.startsWith('https://')));
+ assert.equal(gap.verification.attributionComplete,false);
+ assert.equal(gap.verification.costsComplete,false);
+ assert.equal(gap.verification.scoreAuthorized,false);
  const links=item.auditProgress.verifiedEvidenceLinks;
  assert.ok(Array.isArray(links),item.sphere+' verified evidence links must be array');
  for(const t of completed){
