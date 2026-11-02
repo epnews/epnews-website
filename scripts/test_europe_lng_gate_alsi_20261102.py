@@ -46,3 +46,19 @@ except ValueError:
 else:
     raise AssertionError("Inconsistent page count was accepted")
 print("ALSI full-pagination checks passed")
+
+good = "https://alsi.gie.eu/api?country=NL&company=21X-EXAMPLE&facility=21Z-EXAMPLE"
+assert mod.validate_facility_identity(good).path == "/api"
+for bad in (
+    "https://alsi.gie.eu/api?country=NL",
+    "https://alsi.gie.eu/api?country=NL&company=21X-EXAMPLE",
+    "https://alsi.gie.eu/api?country=BE&company=21X-EXAMPLE&facility=21Z-EXAMPLE",
+    "https://alsi.gie.eu/api?country=NL&company=21X-EXAMPLE&facility=",
+):
+    try:
+        mod.validate_facility_identity(bad)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Non-Gate facility/aggregate query accepted: {bad}")
+print("ALSI Netherlands facility-level identity checks passed")
