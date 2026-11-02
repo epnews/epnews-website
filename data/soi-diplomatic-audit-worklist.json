@@ -1,5 +1,5 @@
 {
-  "version": "3.1",
+  "version": "3.2",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -137,6 +137,28 @@
           "costs"
         ],
         "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
+      },
+      "evidenceGapActionRegister": {
+        "status": "research-required-no-new-gates-completed",
+        "outcomeToMeasure": "Trilateral Camp David coordination and follow-up security activities",
+        "primaryAlternativeExplanations": "Japan–ROK rapprochement predating the summit, North Korean missile activity, and existing bilateral US alliances",
+        "costsToMeasure": "Distinguish trilateral summit commitments from incremental funded exercises and defense spending",
+        "researchEntryPoints": [
+          "https://www.whitehouse.gov/briefing-room/statements-releases/2023/08/18/the-spirit-of-camp-david-joint-statement-of-japan-the-republic-of-korea-and-the-united-states/",
+          "https://www.defense.gov/News/"
+        ],
+        "requiredDeliverables": [
+          "Archive primary source and independent counterpart observation with dates",
+          "Construct same-unit before/after series with explicitly recorded data vintage",
+          "Identify credible comparison/counterfactual and sensitivity to competing explanations",
+          "Separate commitments, authorizations, actual outlays, and nonmonetary concessions",
+          "Document source limitations and uncertainty; preserve null influence score"
+        ],
+        "verification": {
+          "attributionComplete": false,
+          "costsComplete": false,
+          "scoreAuthorized": false
+        }
       }
     },
     {
@@ -276,6 +298,28 @@
           "costs"
         ],
         "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
+      },
+      "evidenceGapActionRegister": {
+        "status": "research-required-no-new-gates-completed",
+        "outcomeToMeasure": "Saudi–Iran diplomatic restoration and independently observed embassy operation",
+        "primaryAlternativeExplanations": "Iraq/Oman pre-Beijing mediation and Saudi/Iran incentives to restore diplomatic relations",
+        "costsToMeasure": "Separate Chinese mediation resources from Saudi/Iran concessions and subsequent security costs",
+        "researchEntryPoints": [
+          "https://www.fmprc.gov.cn/eng/",
+          "https://www.mofa.gov.sa/en/"
+        ],
+        "requiredDeliverables": [
+          "Archive primary source and independent counterpart observation with dates",
+          "Construct same-unit before/after series with explicitly recorded data vintage",
+          "Identify credible comparison/counterfactual and sensitivity to competing explanations",
+          "Separate commitments, authorizations, actual outlays, and nonmonetary concessions",
+          "Document source limitations and uncertainty; preserve null influence score"
+        ],
+        "verification": {
+          "attributionComplete": false,
+          "costsComplete": false,
+          "scoreAuthorized": false
+        }
       }
     },
     {
@@ -428,6 +472,28 @@
         "finding": "Belarusian presidential ratification act of 4 March 2025 establishes counterpart-side dated policy adoption, verified via independent reporting. Treaty entered into force 13 March 2025; no independent post-treaty military behavioral change or Russia-specific influence effect is established.",
         "nextEvidence": "Independent post-13 March 2025 behavioral outcome with preexisting security integration controlled, and financial/sovereignty costs.",
         "influenceScoringAuthorized": false
+      },
+      "evidenceGapActionRegister": {
+        "status": "research-required-no-new-gates-completed",
+        "outcomeToMeasure": "Belarus–Russia treaty ratification and post-entry-into-force security operations",
+        "primaryAlternativeExplanations": "Preexisting Union State integration and 2022–24 military deployments",
+        "costsToMeasure": "Separate public financing and deployments from unquantified Belarus sovereignty tradeoffs",
+        "researchEntryPoints": [
+          "https://www.congress.gov/crs_external_products/IF/PDF/IF10814/IF10814.30.pdf",
+          "https://www.vedomosti.ru/politics/news/2025/03/04/1095964-belorussiya-ratifitsirovala"
+        ],
+        "requiredDeliverables": [
+          "Archive primary source and independent counterpart observation with dates",
+          "Construct same-unit before/after series with explicitly recorded data vintage",
+          "Identify credible comparison/counterfactual and sensitivity to competing explanations",
+          "Separate commitments, authorizations, actual outlays, and nonmonetary concessions",
+          "Document source limitations and uncertainty; preserve null influence score"
+        ],
+        "verification": {
+          "attributionComplete": false,
+          "costsComplete": false,
+          "scoreAuthorized": false
+        }
       }
     },
     {
@@ -587,6 +653,28 @@
           "costs"
         ],
         "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
+      },
+      "evidenceGapActionRegister": {
+        "status": "research-required-no-new-gates-completed",
+        "outcomeToMeasure": "EUPM Moldova budget authorization and operational outputs",
+        "primaryAlternativeExplanations": "Russian invasion effects, domestic Moldovan policy, and pre-existing EU advisory support",
+        "costsToMeasure": "Legal financial reference amounts versus actual disbursements and Moldova-side expenditures",
+        "researchEntryPoints": [
+          "https://eur-lex.europa.eu/eli/dec/2025/943/oj/eng",
+          "https://www.eeas.europa.eu/"
+        ],
+        "requiredDeliverables": [
+          "Archive primary source and independent counterpart observation with dates",
+          "Construct same-unit before/after series with explicitly recorded data vintage",
+          "Identify credible comparison/counterfactual and sensitivity to competing explanations",
+          "Separate commitments, authorizations, actual outlays, and nonmonetary concessions",
+          "Document source limitations and uncertainty; preserve null influence score"
+        ],
+        "verification": {
+          "attributionComplete": false,
+          "costsComplete": false,
+          "scoreAuthorized": false
+        }
       }
     },
     {
@@ -931,6 +1019,28 @@
           "causalAttributionVerified": false,
           "measurementEligibility": "descriptive historical bilateral trade only",
           "nextGateRequirement": "Direct same-vintage HS-level export/import quantities, pre-CEPA comparison, post-CEPA preference claims and eligible-line denominators"
+        }
+      },
+      "evidenceGapActionRegister": {
+        "status": "research-required-no-new-gates-completed",
+        "outcomeToMeasure": "CEPA product-level preferential utilization and matched export/import quantity changes",
+        "primaryAlternativeExplanations": "Energy price swings, FX, re-exports, UAE demand, and global recovery",
+        "costsToMeasure": "Tariff revenue foregone and sectoral adjustment by country, not gross export value",
+        "researchEntryPoints": [
+          "https://tradestat.commerce.gov.in/eidb/country_wise_ttrade",
+          "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf"
+        ],
+        "requiredDeliverables": [
+          "Archive primary source and independent counterpart observation with dates",
+          "Construct same-unit before/after series with explicitly recorded data vintage",
+          "Identify credible comparison/counterfactual and sensitivity to competing explanations",
+          "Separate commitments, authorizations, actual outlays, and nonmonetary concessions",
+          "Document source limitations and uncertainty; preserve null influence score"
+        ],
+        "verification": {
+          "attributionComplete": false,
+          "costsComplete": false,
+          "scoreAuthorized": false
         }
       }
     }
