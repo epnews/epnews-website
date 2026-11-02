@@ -1,0 +1,49 @@
+{
+  "schema": "soi-three-implementation-observations-v1",
+  "asOf": "2026-11-02",
+  "observations": [
+    {
+      "sphere": "india",
+      "caseId": "soi-dip-candidate-5",
+      "metric": "CEPA preferential certificates of origin issued since May 2022",
+      "value": 240000,
+      "qualifier": "approximately",
+      "unit": "certificates",
+      "relatedExportValueUSD": 19870000000,
+      "periodEnd": "2025-01",
+      "source": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48",
+      "sourceType": "Indian government reported administrative utilization",
+      "limitation": "Certificates and associated exports do not measure incremental trade, tariffs forgone, profit or net welfare."
+    },
+    {
+      "sphere": "us",
+      "caseId": "soi-dip-candidate-1",
+      "metric": "Freedom Edge 24-2 exercise participation",
+      "value": 7000,
+      "qualifier": "approximately",
+      "unit": "personnel",
+      "ships": 7,
+      "aircraftLowerBoundExclusive": 20,
+      "period": "2024-11-13/2024-11-15",
+      "source": "https://www.pacom.mil/Media/NEWS/Article/3966576/japan-rok-and-us-conclude-freedom-edge-24-2/",
+      "sourceType": "US Indo-Pacific Command exercise report",
+      "limitation": "Multinational exercise activity does not establish a causal US diplomacy effect, unique personnel, or incremental operating cost."
+    },
+    {
+      "sphere": "eu",
+      "caseId": "soi-dip-candidate-eu-moldova-2024",
+      "metric": "Moldovan officials participating in EUPM trainings or events over three years",
+      "value": 6000,
+      "qualifier": "more than",
+      "unit": "official participation count as described by mission",
+      "period": "three years through 2026",
+      "source": "https://www.eeas.europa.eu/eupm-moldova/three-years-eupm-moldova-strengthening-security-and-resilience_en?s=410318",
+      "sourceType": "EU mission self-reported cumulative activity",
+      "limitation": "May include repeated participation; mission predates 2024 partnership and does not isolate partnership-attributable capability or spending."
+    }
+  ],
+  "attributionGatesClosed": 0,
+  "costGatesClosed": 0,
+  "scoringAuthorized": false,
+  "needleAuthorized": false
+}
