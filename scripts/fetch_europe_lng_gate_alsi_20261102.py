@@ -10,6 +10,7 @@ import json
 import os
 import re
 import sys
+from datetime import datetime
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -217,8 +218,10 @@ def audit_observation_coverage(rows, from_date, to_date):
             raise ValueError("ALSI gasDayStart must begin with YYYY-MM-DD or YYYY-MM-DDT")
         try:
             day = date.fromisoformat(raw_day[:10])
+            if len(raw_day) > 10:
+                datetime.fromisoformat(raw_day.replace("Z", "+00:00"))
         except ValueError:
-            raise ValueError(f"Invalid ALSI gasDayStart date: {raw_day!r}") from None
+            raise ValueError(f"Invalid ALSI gasDayStart date or timestamp: {raw_day!r}") from None
         counts[day.isoformat()] = counts.get(day.isoformat(), 0) + 1
         if not start <= day <= end:
             outside.append(day.isoformat())
