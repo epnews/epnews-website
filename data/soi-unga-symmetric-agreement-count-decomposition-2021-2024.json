@@ -1,0 +1,70 @@
+{
+  "schema": "soi-unga-symmetric-agreement-count-decomposition-v1",
+  "source": "data/soi-unga-six-code-restricted-results-2021-2024.json",
+  "rows": [
+    {
+      "actor": "us",
+      "startPairs": 10589,
+      "endPairs": 12156,
+      "startAgreementPairs": 2501,
+      "endAgreementPairs": 3360,
+      "changeAgreementPairs": 859,
+      "symmetricCountComponent": 401.6183,
+      "symmetricRateComponent": 457.3817,
+      "decomposition": "Symmetric midpoint (Shapley-equivalent for product) arithmetic decomposition",
+      "causalAttributionAuthorized": false
+    },
+    {
+      "actor": "china",
+      "startPairs": 10723,
+      "endPairs": 12138,
+      "startAgreementPairs": 7358,
+      "endAgreementPairs": 8256,
+      "changeAgreementPairs": 898,
+      "symmetricCountComponent": 966.7043,
+      "symmetricRateComponent": -68.7043,
+      "decomposition": "Symmetric midpoint (Shapley-equivalent for product) arithmetic decomposition",
+      "causalAttributionAuthorized": false
+    },
+    {
+      "actor": "russia",
+      "startPairs": 10723,
+      "endPairs": 12294,
+      "startAgreementPairs": 5906,
+      "endAgreementPairs": 6667,
+      "changeAgreementPairs": 761,
+      "symmetricCountComponent": 858.611,
+      "symmetricRateComponent": -97.611,
+      "decomposition": "Symmetric midpoint (Shapley-equivalent for product) arithmetic decomposition",
+      "causalAttributionAuthorized": false
+    },
+    {
+      "actor": "india",
+      "startPairs": 10618,
+      "endPairs": 12294,
+      "startAgreementPairs": 6799,
+      "endAgreementPairs": 8064,
+      "changeAgreementPairs": 1265,
+      "symmetricCountComponent": 1086.2638,
+      "symmetricRateComponent": 178.7362,
+      "decomposition": "Symmetric midpoint (Shapley-equivalent for product) arithmetic decomposition",
+      "causalAttributionAuthorized": false
+    },
+    {
+      "actor": "eu",
+      "startPairs": 9381,
+      "endPairs": 10234,
+      "startAgreementPairs": 5245,
+      "endAgreementPairs": 5768,
+      "changeAgreementPairs": 523,
+      "symmetricCountComponent": 478.8402,
+      "symmetricRateComponent": 44.1598,
+      "decomposition": "Symmetric midpoint (Shapley-equivalent for product) arithmetic decomposition",
+      "causalAttributionAuthorized": false
+    }
+  ],
+  "method": "For A = N×p, delta A = delta N × (p0+p1)/2 + delta p × (N0+N1)/2. Symmetric components average the two baseline orders and sum exactly to the observed count change.",
+  "causalAttributionAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
