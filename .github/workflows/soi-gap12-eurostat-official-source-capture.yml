@@ -9,6 +9,10 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+      - name: Check Eurostat extractor and reconciliation syntax
+        run: |
+          node --check scripts/extract_soi_gap12_eurostat_jsonstat_cells_20261102.cjs
+          node --check scripts/audit_soi_gap12_exact_eurostat_nominal_prices_20261102.cjs
       - name: Fetch original official Eurostat JSON-stat (both semesters)
         shell: bash
         run: |
