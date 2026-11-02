@@ -1,5 +1,5 @@
 {
-  "version": "1.9",
+  "version": "2.0",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -315,12 +315,14 @@
         "attributionVerified": false
       },
       "baselineFollowupAssessment": {
-        "baseline": "Preexisting Belarus-Russia military integration before treaty",
-        "followup": "Security treaty entered into force 2025-03-13",
-        "metric": "different legal and military phenomena",
-        "descriptivelyComparable": false,
+        "baseline": "Russia–Belarus bilateral security guarantees treaty signed December 6, 2024 but not yet legally in force",
+        "followup": "Russia–Belarus bilateral security guarantees treaty entered into force March 13, 2025",
+        "metric": "binary legal status of the same bilateral treaty (not-in-force vs in-force)",
+        "descriptivelyComparable": true,
         "causallyAttributable": false,
-        "reason": "Legal treaty entry is not a matched change in military cooperation"
+        "reason": "Matched treaty legal status is a narrow diplomatic implementation milestone, not evidence of incremental military integration, operational performance or Russia-only causal influence.",
+        "baselineSource": "https://www.president.gov.by/en/events/podpisanie-dokumentov-po-itogam-zasedania-vysshego-gosudarstvennogo-soveta-souznogo-gosudarstva-1733500048",
+        "followupSource": "https://www.interfax-russia.ru/military/news/639921"
       },
       "causalAttributionPlan": {
         "status": "hypotheses-not-verified",
@@ -339,8 +341,8 @@
       "implementationObservation": {
         "status": "source-described-milestone-not-performance-audit",
         "observedUnit": "Russia-Belarus security guarantees treaty",
-        "baseline": "treaty not yet in force before 2025-03-13; security integration preexisting",
-        "followup": "legal entry into force 2025-03-13",
+        "baseline": "bilateral treaty signed December 6, 2024, not yet in force; preexisting security integration remains separate",
+        "followup": "same treaty entered into legal force March 13, 2025; no independently verified incremental military outcomes",
         "observationType": "legal-status milestone, not military implementation",
         "sources": [
           "https://www.interfax-russia.ru/military/news/639921"
