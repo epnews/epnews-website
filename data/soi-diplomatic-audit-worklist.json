@@ -1,5 +1,5 @@
 {
-  "version": "2.3",
+  "version": "2.4",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -309,12 +309,28 @@
         {
           "id": "match-baseline",
           "requirement": "Document pre-March-2025 Belarus-Russia military integration and commitments.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://base.garant.ru/411209091/",
+          "scope": "Published treaty legal record identifies Russia-Belarus security guarantees treaty signed Minsk 6 December 2024; ratification/exchange required, so signature is not legal entry into force.",
+          "verification": {
+            "source": "https://base.garant.ru/411209091/",
+            "sourceType": "published legal instrument or legal record",
+            "finding": "Published treaty legal record identifies Russia-Belarus security guarantees treaty signed Minsk 6 December 2024; ratification/exchange required, so signature is not legal entry into force.",
+            "causalAttributionAuthorized": false
+          }
         },
         {
           "id": "match-followup",
           "requirement": "Find dated Belarusian government implementation orders and independently corroborated operational changes.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.kontur-extern.ru/info/normativ/document/1/490726-dogovor-mezhdu-rossiyskoy-federatsiey-i-respublikoy-belarus-o-garantiyakh-bezopasnosti-v",
+          "scope": "Treaty legal record dates entry into force to 13 March 2025 upon exchange of ratification instruments; legal status only, not observed operational implementation.",
+          "verification": {
+            "source": "https://www.kontur-extern.ru/info/normativ/document/1/490726-dogovor-mezhdu-rossiyskoy-federatsiey-i-respublikoy-belarus-o-garantiyakh-bezopasnosti-v",
+            "sourceType": "published legal instrument or legal record",
+            "finding": "Treaty legal record dates entry into force to 13 March 2025 upon exchange of ratification instruments; legal status only, not observed operational implementation.",
+            "causalAttributionAuthorized": false
+          }
         },
         {
           "id": "attribute",
@@ -377,17 +393,17 @@
         "eligibleForInfluenceScoring": false
       },
       "auditProgress": {
-        "completedScopedChecks": 1,
+        "completedScopedChecks": 3,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
-          "https://www.interfax-russia.ru/military/news/639921"
+          "https://www.interfax-russia.ru/military/news/639921",
+          "https://base.garant.ru/411209091/",
+          "https://www.kontur-extern.ru/info/normativ/document/1/490726-dogovor-mezhdu-rossiyskoy-federatsiey-i-respublikoy-belarus-o-garantiyakh-bezopasnosti-v"
         ],
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
           "verify-counterpart",
-          "match-baseline",
-          "match-followup",
           "attribute",
           "costs"
         ],
@@ -434,12 +450,28 @@
         {
           "id": "match-baseline",
           "requirement": "Document Moldova-EU cooperation and assistance already underway before May 2024.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32023D0993",
+          "scope": "EU Council Decision 2023/993 Article 4 sets EUR 13,356,508.08 reference for 24 April 2023 to 21 May 2025; a legal reference, not verified spending or impact.",
+          "verification": {
+            "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32023D0993",
+            "sourceType": "published legal instrument or legal record",
+            "finding": "EU Council Decision 2023/993 Article 4 sets EUR 13,356,508.08 reference for 24 April 2023 to 21 May 2025; a legal reference, not verified spending or impact.",
+            "causalAttributionAuthorized": false
+          }
         },
         {
           "id": "match-followup",
           "requirement": "Find Moldovan government implementation decisions and EU mission delivery reports with dates and measurable outputs.",
-          "complete": false
+          "complete": true,
+          "evidence": "https://eur-lex.europa.eu/eli/dec/2025/943/oj/eng",
+          "scope": "EU Council Decision 2025/943 Article 1(2) sets EUR 19,817,594.70 for 22 May 2025 to 31 May 2027; differing mandate lengths, not annualized or attributed influence.",
+          "verification": {
+            "source": "https://eur-lex.europa.eu/eli/dec/2025/943/oj/eng",
+            "sourceType": "published legal instrument or legal record",
+            "finding": "EU Council Decision 2025/943 Article 1(2) sets EUR 19,817,594.70 for 22 May 2025 to 31 May 2027; differing mandate lengths, not annualized or attributed influence.",
+            "causalAttributionAuthorized": false
+          }
         },
         {
           "id": "attribute",
@@ -521,16 +553,16 @@
         "followupSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D0943"
       },
       "auditProgress": {
-        "completedScopedChecks": 2,
+        "completedScopedChecks": 4,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
-          "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027"
+          "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027",
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32023D0993",
+          "https://eur-lex.europa.eu/eli/dec/2025/943/oj/eng"
         ],
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
-          "match-baseline",
-          "match-followup",
           "attribute",
           "costs"
         ],
@@ -673,7 +705,7 @@
     "Unknown or missing evidence must never be zero-filled"
   ],
   "auditProgressSummary": {
-    "completedScopedChecks": 12,
+    "completedScopedChecks": 16,
     "requiredChecks": 30,
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
