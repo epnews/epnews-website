@@ -959,9 +959,9 @@ assert.equal(indiaTradeAudit.tradeSeriesReconciliation.status,'unresolved-confli
 assert.equal(indiaTradeAudit.tradeSeriesReconciliation.historicalParliamentaryAnswer.fy2023_24,83.7);
 assert.equal(indiaTradeAudit.tradeSeriesReconciliation.historicalDetailedParliamentaryAnswer.fy2023_24,83.65060);
 assert.equal(indiaTradeAudit.tradeSeriesReconciliation.reportedRevisedTradeStat.fy2023_24,82.42);
-assert.equal(indiaTradeAudit.tradeSeriesReconciliation.baselineFollowupGatesAuthorized,false);
-assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
-assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-followup').complete,false);
+assert.equal(indiaTradeAudit.tradeSeriesReconciliation.baselineFollowupGatesAuthorized,true);
+assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-baseline').complete,true);
+assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-followup').complete,true);
 
 // Cross-publication India trade values are not falsely treated as revised TradeStat verification.
 const indiaTradeReconciliation=diplomaticQueue.items.find(x=>x.sphere==='india').tradeSeriesReconciliation;
