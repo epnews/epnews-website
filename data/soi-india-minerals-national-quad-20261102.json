@@ -1,0 +1,98 @@
+{
+  "version": "2026-11-02",
+  "caseId": "india-critical-minerals-national-versus-quad",
+  "influenceScore": null,
+  "auditGatePromotion": false,
+  "observations": [
+    {
+      "id": "quad-2026-framework-ceiling",
+      "date": "2026-05-26",
+      "actor": "quad",
+      "metric": "intended government and private capital mobilization ceiling",
+      "value": 20,
+      "unit": "USD billion",
+      "status": "framework_intention_not_disbursement",
+      "source": "https://www.mofa.go.jp/mofaj/files/101034344.pdf",
+      "note": "Up to $20 billion across new and existing efforts; not an appropriation, expenditure or India allocation."
+    },
+    {
+      "id": "india-national-mission-outlay",
+      "date": "2025-01-29",
+      "actor": "india_national",
+      "metric": "approved National Critical Mineral Mission total planned outlay",
+      "value": 16300,
+      "unit": "INR crore",
+      "status": "approved_multiyear_outlay_not_spending",
+      "source": "https://www.pib.gov.in/FaqDetails.aspx?ModuleId=4&NoteId=159647&id=159647&lang=1&reg=44",
+      "note": "Indian domestic program; no evidence all funds disbursed or that Quad caused it."
+    },
+    {
+      "id": "india-national-budgetary-support",
+      "date": "2025-01-29",
+      "actor": "india_national",
+      "metric": "budgetary support component of planned mission outlay",
+      "value": 2600,
+      "unit": "INR crore",
+      "status": "approved_component_not_additive",
+      "source": "https://www.pib.gov.in/FaqDetails.aspx?ModuleId=4&NoteId=159647&id=159647&lang=1&reg=44",
+      "note": "Included within INR 16,300 crore mission outlay, do not sum."
+    },
+    {
+      "id": "india-recycling-scheme-outlay",
+      "date": "2025-09-08",
+      "actor": "india_national",
+      "metric": "critical mineral recycling incentive scheme planned six-year outlay",
+      "value": 1500,
+      "unit": "INR crore",
+      "status": "scheme_outlay_not_disbursement",
+      "source": "https://ncmm.jnarddc.gov.in/",
+      "note": "Scheme notified September 2025; do not treat six-year total as paid to firms."
+    },
+    {
+      "id": "india-recycling-entities",
+      "date": "2026-04-01",
+      "datePrecision": "month",
+      "actor": "india_national",
+      "metric": "entities reported with pledged recycling capacity",
+      "value": 58,
+      "unit": "entities",
+      "status": "pledged_capacity_not_operating_output",
+      "source": "https://www.pib.gov.in/FaqDetails.aspx?ModuleId=4&NoteId=159647&id=159647&lang=1&reg=44"
+    },
+    {
+      "id": "india-recycling-pledged-capacity",
+      "date": "2026-04-01",
+      "datePrecision": "month",
+      "actor": "india_national",
+      "metric": "recycling capacity pledged by participating entities",
+      "value": 850,
+      "unit": "thousand tonnes per year",
+      "status": "pledged_capacity_not_operating_output",
+      "source": "https://www.pib.gov.in/FaqDetails.aspx?ModuleId=4&NoteId=159647&id=159647&lang=1&reg=44",
+      "note": "Not actual throughput or critical mineral output; separate from 270 kt target."
+    },
+    {
+      "id": "india-exploration-sanctions",
+      "date": "2026-03-25",
+      "actor": "india_national",
+      "metric": "critical mineral exploration projects sanctioned FY 2025-26",
+      "value": 76,
+      "unit": "projects",
+      "status": "sanctioned_not_completed",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2245301&lang=1&reg=3",
+      "note": "Administrative sanctions do not establish exploration completion or deposits found."
+    }
+  ],
+  "attribution": "India's national schemes and Quad multilateral framework are separate; neither national spending nor outputs can be causally assigned to Quad without project-level tracing.",
+  "missing": [
+    "Actual disbursement per recipient and project",
+    "Facility commissioning records and audited recovered tonnage",
+    "Matching import-origin and dependency series before/after",
+    "Counterfactual and subsidy costs"
+  ],
+  "noDoubleCounting": [
+    "INR 2,600 crore budgetary support is part of INR 16,300 crore mission outlay",
+    "Do not add pledged 850 ktpa to actual recovered mineral tonnage",
+    "USD 20 billion is a multi-partner mobilization ceiling, not an India funding amount"
+  ]
+}
