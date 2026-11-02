@@ -55,6 +55,14 @@ for(const item of worklist.items){
   assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
   assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,false);
   assert.equal(rec.preferenceLineResearch.coveredProductExportsUsdBillion,8.37);
+  const breadth=rec.productBreadthObserved;
+  assert.equal(breadth.followup-breadth.baseline,breadth.absoluteChange);
+  assert.ok(Math.abs((breadth.absoluteChange/breadth.baseline)*100-breadth.percentageChange)<0.02);
+  assert.equal(breadth.matchedProductLevelSeriesVerified,false);
+  assert.equal(rec.officialPreferenceUptakeObservations.length,2);
+  assert.ok(rec.officialPreferenceUptakeObservations[1].certificatesOfOriginIssuedApprox>rec.officialPreferenceUptakeObservations[0].certificatesOfOriginIssuedApprox);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,false);
   const hist=rec.officialHistoricalMatchedSeries;
   assert.equal(hist.status,'official-descriptive-aggregate-only');
   assert.equal(hist.periods.length,2);
@@ -70,7 +78,12 @@ for(const item of worklist.items){
 
   assert.ok(rec.preferenceLineResearch.notMeasure.includes('Preference utilization rate'));
  }
+ if(item.sphere==='us'){
+  assert.equal(item.newPrimaryOutcomeResearch.length,3);
+  assert.ok(item.newPrimaryOutcomeResearch.every(x=>x.source.startsWith('https://')));
+ }
  if(item.sphere==='eu'){
+  assert.equal(item.newPrimaryOutcomeResearch.length,1);
   const cost=item.costEvidenceResearch;
   assert.equal(cost.evidence.length,2);
   assert.ok(Math.abs(cost.evidence[1].amount-cost.evidence[0].amount-cost.arithmetic.differenceEuros)<0.02);
