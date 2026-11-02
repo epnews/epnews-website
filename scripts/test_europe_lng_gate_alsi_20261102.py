@@ -456,3 +456,14 @@ for bad_bound in ("20261001", "2026-10-01T00:00:00Z"):
     else:
         raise AssertionError(f"Coverage accepted invalid date bound: {bad_bound!r}")
 print("ALSI canonical gas-day bounds regression passed")
+
+mixed_status_coverage = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "E"},
+    {"gasDayStart": "2026-10-02", "status": "C"},
+], "2026-10-01", "2026-10-02")
+assert mixed_status_coverage["confirmed_gas_days"] == 2
+assert mixed_status_coverage["unambiguous_confirmed_gas_days"] == 1
+assert mixed_status_coverage["confirmed_coverage_percent"] == 50.0
+assert mixed_status_coverage["unambiguous_confirmed_coverage_percent"] == 50.0
+print("ALSI confirmed coverage excludes mixed C/E status days")
