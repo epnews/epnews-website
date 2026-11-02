@@ -203,6 +203,20 @@ function appendVotingEvidence(actor,dimension){
   profileTable.append(row);
  }
  profile.append(element('p','Each sphere is compared against the other four spheres using the same years and four equally weighted counterpart relationships. EU27 is represented by member-state majority, not an EU vote. The mean is descriptive, not calibrated influence; issue mix and eligible resolution counts can differ across relationships and years. No meter needle or score uses this calculation.'),profileTable);panel.append(profile);
+ // Separate observed-vote needle: descriptive UNGA agreement only, never the influence needle.
+ const observedYears=['2021','2022','2023','2024'];
+ const observedValues=observedYears.map(year=>{const vals=peers.map(p=>p.value(year));return vals.length===4&&vals.every(Number.isFinite)?vals.reduce((a,b)=>a+b,0)/4:null;});
+ if(observedValues.every(Number.isFinite)){
+  const latest=observedValues[3],baseline=observedValues[0];
+  const observed=element('section',undefined,'chaos-observed-vote-needle');
+  observed.append(element('h4','OBSERVED UN VOTE AGREEMENT · NOT INFLUENCE'));
+  const gauge=element('div');gauge.setAttribute('role','meter');gauge.setAttribute('aria-label','2024 mean recorded UN voting agreement with four counterparts');gauge.setAttribute('aria-valuemin','0');gauge.setAttribute('aria-valuemax','100');gauge.setAttribute('aria-valuenow',latest.toFixed(2));
+  gauge.style.cssText='position:relative;height:18px;border-radius:9px;background:linear-gradient(90deg,#9ca3af,#e5e7eb);margin:12px 0;overflow:hidden;';
+  const fill=element('span');fill.style.cssText='display:block;height:100%;background:#2563eb;width:'+Math.max(0,Math.min(100,latest)).toFixed(2)+'%;transition:width .4s ease;';gauge.append(fill);
+  observed.append(gauge,element('p',latest.toFixed(2)+'% agreement in 2024 · '+(latest-baseline>=0?'+':'')+(latest-baseline).toFixed(2)+' percentage points since 2021.'));
+  observed.append(element('p','Four equal counterpart relationships, including the EU27 majority proxy. This is a descriptive, pairwise voting profile—not the standardized external-partner cohort, diplomatic influence, persuasion, or a geopolitical Command Meter score. Resolution mix and vote availability differ; the influence needle remains gated.'));
+  panel.append(observed);
+ }
  const years=['2021','2022','2023','2024'];
  const trendKey=code==='USA'?'USA_CHN':code==='CHN'?'USA_CHN':code==='RUS'?'USA_RUS':code==='IND'?'USA_IND':null;
  if(trendKey){const first=votingEvidence.annual['2021']?.pairAgreementPct?.[trendKey],last=votingEvidence.annual['2024']?.pairAgreementPct?.[trendKey];if(Number.isFinite(first)&&Number.isFinite(last))panel.append(element('p','Standardized reference trend ('+trendKey.replace('_',' / ')+'): '+first.toFixed(2)+'% (2021) → '+last.toFixed(2)+'% (2024); change '+(last-first).toFixed(2)+' percentage points. Descriptive agreement only; not an influence score.'));}
