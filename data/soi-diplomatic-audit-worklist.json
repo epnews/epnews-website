@@ -408,6 +408,16 @@
           "costs"
         ],
         "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
+      },
+      "counterpartResearch": {
+        "status": "corroborated-belarus-ratification-but-no-independent-operational-effect",
+        "belarusRatificationReport": "https://www.vedomosti.ru/politics/news/2025/03/04/1095964-belorussiya-ratifitsirovala//",
+        "belarusRatificationDate": "2025-03-04",
+        "legalEffect": "https://base.garant.ru/411209091/",
+        "preexistingIntegration": "https://www.congress.gov/crs_external_products/IF/PDF/IF10814/IF10814.30.pdf",
+        "finding": "Belarusian president ratified treaty 4 March 2025; exchange of instruments made treaty legally effective 13 March. CRS documents extensive preexisting Russian-Belarusian security integration. Counterpart verification gate stays pending because independent post-entry operational implementation is not yet demonstrated.",
+        "nextEvidence": "Belarus-side dated implementing order or independently verified behavioral change after 13 March 2025.",
+        "influenceScoringAuthorized": false
       }
     },
     {
@@ -705,6 +715,16 @@
           "costs"
         ],
         "interpretation": "Scoped evidence checks are not a complete independent outcome audit or a diplomatic influence score."
+      },
+      "counterpartResearch": {
+        "status": "dated-UAE-confirmation-not-causal-effect",
+        "uaeMinisterReport": "https://www.wam.ae/en/article/hszreomj-uae-begin-reducing-tariffs-indias-goods-90",
+        "uaeMinistryAgreement": "https://www.moec.gov.ae/en/cepa_india",
+        "wtoTreatyRecord": "https://rtais.wto.org/UI/PublicShowRTAIDCard.aspx?rtaid=1198",
+        "indiaImplementation": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1821785&lang=2&reg=48",
+        "finding": "UAE economy minister confirmed first exempt imports and May 1 2022 CEPA implementation, corroborated by UAE Ministry, WTO and India. This does not validate matched tariff utilization, real trade volume gains or counterfactual influence.",
+        "nextEvidence": "Match UAE customs preference claims and eligible tariff-line denominators by fiscal period.",
+        "influenceScoringAuthorized": false
       }
     }
   ],
