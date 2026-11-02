@@ -1,5 +1,5 @@
 {
-  "version": "5.0",
+  "version": "5.1",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -2377,6 +2377,107 @@
     "incrementalRealTradeVolume": null,
     "causalAttributionVerified": false,
     "caseSpecificNetCostsVerified": false,
+    "scoringAuthorized": false
+  },
+  "indiaCepaGoldPrimaryCrosscheck": {
+    "version": "1.0",
+    "records": [
+      {
+        "type": "primary-exchange-record",
+        "period": "FY2023-24",
+        "source": "https://www.ifsca.gov.in/Pages/Contents/Metals%20and%20Commodities",
+        "contract": "UAEGD TRQ 1kg Gold 995",
+        "tradedKilograms": 3957,
+        "tradedUSD": 252908499.79,
+        "limitation": "Exchange-traded contract volume; not verified customs clearance, and only IIBX venue."
+      },
+      {
+        "type": "primary-exchange-record",
+        "period": "FY2023-24",
+        "source": "https://www.ifsca.gov.in/Pages/Contents/Metals%20and%20Commodities",
+        "contract": "UAEGD TRQ 100gm Gold 999",
+        "tradedKilograms": 3747.4,
+        "tradedUSD": 238382167.68,
+        "limitation": "Exchange-traded contract volume; not verified customs clearance, and only IIBX venue."
+      },
+      {
+        "type": "primary-exchange-derived",
+        "period": "FY2023-24",
+        "source": "https://www.ifsca.gov.in/Pages/Contents/Metals%20and%20Commodities",
+        "contract": "Sum of two UAEGD TRQ gold contracts",
+        "tradedKilograms": 7704.4,
+        "tradedUSD": 491290667.47,
+        "limitation": "Sum of two exchange contracts; neither total CEPA import utilization nor duty foregone."
+      },
+      {
+        "type": "official-attributed-secondary",
+        "period": "FY2023-24",
+        "source": "https://money.rediff.com/news/market/india-uae-fta-gold-imports-remain-modest/47053320260514",
+        "reportedActualCEPAImportsTonnes": 40,
+        "limitation": "PTI quoting government official; wider import measure than IIBX trading, not directly comparable."
+      },
+      {
+        "type": "official-attributed-secondary",
+        "period": "FY2024-25",
+        "source": "https://money.rediff.com/news/market/india-uae-fta-gold-imports-remain-modest/47053320260514",
+        "reportedActualCEPAImportsTonnes": 140,
+        "limitation": "PTI quoting government official; must not confuse with FY2023-24 140t quota notification."
+      },
+      {
+        "type": "official-attributed-secondary",
+        "period": "FY2023-24",
+        "source": "https://economictimes.indiatimes.com/news/economy/foreign-trade/government-notifies-160-tons-of-gold-import-from-uae-at-concessional-rate-this-fiscal-under-trade-pact/articleshow/112840602.cms",
+        "notifiedQuotaTonnes": 140,
+        "limitation": "140t is government-notified eligible quota, NOT actual utilized volume (PTI reports 40t)."
+      },
+      {
+        "type": "official-attributed-secondary",
+        "period": "FY2024-25",
+        "source": "https://economictimes.indiatimes.com/news/economy/foreign-trade/government-notifies-160-tons-of-gold-import-from-uae-at-concessional-rate-this-fiscal-under-trade-pact/articleshow/112840602.cms",
+        "notifiedQuotaTonnes": 160,
+        "limitation": "160t is government-notified eligible quota, NOT actual utilized volume (PTI reports ~140t)."
+      },
+      {
+        "type": "primary-government-minutes",
+        "period": "2024-10-10",
+        "source": "https://www.commerce.gov.in/wp-content/uploads/2026/02/Agreed-Minutes-of-2nd-JC-meeting-under-India-UAE-CEPA_Oct-2024-1.pdf",
+        "allocatedImportersLowerBound": 800,
+        "limitation": "Joint committee states more than 800 gold TRQ importers allocated; number of beneficiaries does not measure tonnes imported."
+      },
+      {
+        "type": "primary-government-annual-report",
+        "period": "FY2024-25",
+        "source": "https://ifsca.gov.in/CommonDirect/ViewFile?fileName=IFSCA_Annual_Report_2024_25___English_20250818_1222.pdf&id=21626bde60601ef44a0ed022017f5ec4",
+        "notifiedEligibleEntities": 441,
+        "limitation": "IFSCA-notified IIBX-eligible entities, different population/date than DGFT >800 quota recipients."
+      },
+      {
+        "type": "primary-government-budget",
+        "period": "FY2022-23",
+        "source": "https://www.indiabudget.gov.in/budget2024-25/doc/rec/allrec.pdf",
+        "uaeCepaRevenueImpactCroreINR": 713,
+        "limitation": "Customs concessional duty revenue impact, not total CEPA economic cost or gold-only subsidy."
+      },
+      {
+        "type": "primary-government-budget",
+        "period": "FY2023-24",
+        "source": "https://www.indiabudget.gov.in/budget2024-25/doc/rec/allrec.pdf",
+        "uaeCepaRevenueImpactCroreINR": 1847,
+        "limitation": "Customs concessional duty revenue impact, not total CEPA economic cost or gold-only subsidy."
+      }
+    ],
+    "calculation": {
+      "fy2023_24IibxGoldTRQContractVolumeTonnes": 7.7044,
+      "fy2023_24IibxGoldTRQContractValueUSD": 491290667.47,
+      "fy2023_24NotifiedQuotaTonnes": 140,
+      "fy2023_24ReportedUtilizationTonnes": 40,
+      "fy2024_25NotifiedQuotaTonnes": 160,
+      "fy2024_25ReportedUtilizationTonnes": 140
+    },
+    "reconciliation": "2023–24 140 tonnes is notified quota, whereas 40 tonnes is reported actual imports. 2024–25 160 tonnes is notified quota, whereas ~140 tonnes is reported actual imports. IIBX FY2023–24 7.7044 tonnes is traded contracts at one venue, not all customs-cleared imports. The 441 IFSCA venue-eligible entities are not the same denominator as >800 DGFT recipients.",
+    "sourceValidation": "Public source URLs require continued link checks; do not elevate a venue's trades to nationwide realized import volume.",
+    "causalAttributionVerified": false,
+    "netEconomicBenefit": null,
     "scoringAuthorized": false
   }
 }
