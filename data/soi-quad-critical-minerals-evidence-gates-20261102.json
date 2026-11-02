@@ -1,0 +1,65 @@
+{
+  "version": "2026-11-02",
+  "caseId": "quad-critical-minerals-delivery-and-finance",
+  "policy": {
+    "influenceScore": null,
+    "auditGatePromotion": false,
+    "causalAttribution": "not_established"
+  },
+  "referenceEvents": [
+    {
+      "date": "2025-07-01",
+      "event": "quad_foreign_ministers_critical_minerals_initiative",
+      "claim": "Quad foreign ministers launched a critical minerals initiative to strengthen supply chains.",
+      "source": "https://www.state.gov/quad-foreign-ministers-meeting-joint-statement/"
+    },
+    {
+      "date": "2024-09-21",
+      "event": "quad_leaders_wilmington_declaration",
+      "claim": "Quad leaders set out cooperation commitments covering technology and supply chains, distinct from verified project disbursements.",
+      "source": "https://www.whitehouse.gov/briefing-room/statements-releases/2024/09/21/the-wilmington-declaration-joint-statement-from-the-leaders-of-australia-india-japan-and-the-united-states/"
+    }
+  ],
+  "measurementProtocol": {
+    "unitOfObservation": "named project and legal financing instrument, not a summit announcement",
+    "fields": [
+      "project_identifier",
+      "recipient_country",
+      "named_financier",
+      "commitment_date",
+      "committed_amount_and_currency",
+      "contracted_amount",
+      "actual_disbursement_date_and_amount",
+      "facility_commissioning_date",
+      "independently_verified_output_and_units",
+      "counterfactual_supply_chain_baseline",
+      "public_subsidy_or_cost",
+      "beneficiaries_and_externalities"
+    ],
+    "statusStages": [
+      "announcement",
+      "legally_committed",
+      "disbursed",
+      "commissioned",
+      "verified_output"
+    ],
+    "comparability": [
+      "Do not treat a signed memorandum or announced financing ceiling as cash transferred.",
+      "Do not add project financing commitments from multiple Quad partners when they finance the same project.",
+      "Keep USD and local-currency amounts separate until exchange-rate date and methodology are specified.",
+      "For India-specific outcome attribution, verify physical recovery/processing in India, not merely Quad participation."
+    ],
+    "missing": [
+      "primary financing contract or official loan-disbursement statement for each named project",
+      "commissioning or independent operating report",
+      "dated production or recovery quantities",
+      "baseline supply-chain origin shares and plausible counterfactual",
+      "government cost and recipient benefit estimates"
+    ]
+  },
+  "limitations": [
+    "Official announcements document intent but not realized implementation.",
+    "No verified India-specific mineral recovery output is included in this batch.",
+    "No influence score or audit-gate promotion is justified."
+  ]
+}
