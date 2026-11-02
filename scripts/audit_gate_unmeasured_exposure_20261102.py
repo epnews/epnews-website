@@ -14,8 +14,8 @@ def audit(data):
             raise ValueError("unknown Gaspeil cargo status")
         if x.get("cargoGwh") is None:raise ValueError("missing cargoGwh")
         buckets[x["status"]].append(x)
-    total_gwh=sum(Decimal(str(x["cargoGwh"])) for x in records)
-    total_eur=sum(Decimal(str(x["valueEur"])) for x in records if x.get("valueEur") is not None)
+    total_gwh=sum((Decimal(str(x["cargoGwh"])) for x in records),Decimal(0))
+    total_eur=sum((Decimal(str(x["valueEur"])) for x in records if x.get("valueEur") is not None),Decimal(0))
     def show(v):return int(v) if v==v.to_integral_value() else str(v)
     def percent(a,b):return round(100*float(a/b),3) if b else None
     status={}
