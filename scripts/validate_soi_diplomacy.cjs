@@ -16,6 +16,19 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const ledger=worklist.unresolvedGateEvidenceLedger;
+assert.equal(ledger.totalUnresolved,10);
+assert.equal(ledger.items.length,10);
+for(const entry of ledger.items){
+  const item=worklist.items.find(x=>x.sphere===entry.sphere);
+  assert.ok(item);
+  assert.equal(item.priorityTasks.find(t=>t.id===entry.gate).complete,entry.complete);
+  assert.equal(entry.complete,false);
+  assert.equal(entry.scoreAuthorized,false);
+  assert.ok(entry.blockingQuestion.length>50);
+  assert.ok(entry.primaryResearchEntryPoint.startsWith('https://'));
+  assert.equal(entry.minimumEvidence.length,4);
+}
 const integrity=worklist.influenceMeasurementIntegrity;
 assert.equal(integrity.researchReadiness.completedGates,20);
 assert.equal(integrity.researchReadiness.requiredGates,30);
