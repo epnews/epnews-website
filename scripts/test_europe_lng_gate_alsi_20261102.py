@@ -219,3 +219,21 @@ except ValueError:
 else:
     raise AssertionError("Non-object ALSI export evidence accepted")
 print("ALSI observation object integrity tests passed")
+
+def short_intermediate(_url, _key):
+    return {"data": [{"gasDayStart": "2026-10-01"}], "last_page": 2}
+try:
+    mod.fetch_all_pages(url + "&from=2026-10-01&to=2026-10-31", "dummy", short_intermediate)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Short intermediate ALSI page accepted")
+def oversized(_url, _key):
+    return {"data": [{"gasDayStart": "2026-10-01"}] * 301, "last_page": 1}
+try:
+    mod.fetch_all_pages(url + "&from=2026-10-01&to=2026-10-31", "dummy", oversized)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Oversized ALSI page accepted")
+print("ALSI pagination row-count integrity tests passed")
