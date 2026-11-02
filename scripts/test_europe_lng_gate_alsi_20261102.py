@@ -301,3 +301,15 @@ for valid_status in ("C", "E", "N"):
                                            "2026-10-01", "2026-10-01")
     assert audit["status_counts"][valid_status] == 1
 print("ALSI reporting status whitelist tests passed")
+
+for bad_day in (20261001, "2026-99-01", "2026-10", "not-a-date", None):
+    try:
+        mod.validate_operator_evidence([{"gasDayStart": bad_day, "status": "C"}],
+                                       "2026-10-01", "2026-10-31")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Malformed gas-day accepted: {bad_day!r}")
+assert mod.validate_operator_evidence([{"gasDayStart": "2026-10-01T06:00:00Z", "status": "C"}],
+                                      "2026-10-01", "2026-10-01")["confirmed_gas_days"] == 1
+print("ALSI strict gas-day date validation tests passed")
