@@ -16,6 +16,16 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const silver=worklist.indiaSilverTariffShockStudy;
+assert.equal(silver.records.length,21);
+assert.equal(silver.recordCount,21);
+assert.equal(silver.design.eventDate,'2024-07-23');
+assert.equal(silver.design.causalEstimate,null);
+assert.equal(silver.design.attributionGateComplete,false);
+assert.equal(silver.gateProgressUnchanged,true);
+assert.equal(silver.scoringAuthorized,false);
+assert.deepEqual([...new Set(silver.records.map(r=>r.sphere))].sort(),['eu','india','us']);
+for(const r of silver.records){assert.ok(r.source.startsWith('https://'));assert.ok(r.limitation.length>35);}
 const readiness=worklist.remainingGateReadiness2026;
 assert.equal(readiness.checks.length,10);
 assert.equal(readiness.gateCount,10);
