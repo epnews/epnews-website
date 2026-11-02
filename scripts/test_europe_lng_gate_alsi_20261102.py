@@ -203,3 +203,19 @@ except ValueError:
 else:
     raise AssertionError("Non-listed facility URL accepted")
 print("GIE authenticated facility URL source-of-truth tests passed")
+
+def malformed_page(_url, _key):
+    return {"data": [{"gasDayStart": "2026-10-01"}, "bad-row"], "last_page": 1}
+try:
+    mod.fetch_all_pages(url + "&from=2026-10-01&to=2026-10-31", "dummy", malformed_page)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Non-object ALSI API observation accepted")
+try:
+    mod.validate_operator_evidence([{"gasDayStart": "2026-10-01"}, None], "2026-10-01", "2026-10-01")
+except ValueError:
+    pass
+else:
+    raise AssertionError("Non-object ALSI export evidence accepted")
+print("ALSI observation object integrity tests passed")
