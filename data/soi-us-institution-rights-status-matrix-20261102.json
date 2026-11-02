@@ -1,0 +1,77 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-04",
+  "asOf": "2026-11-01",
+  "purpose": "Normalize verified institution-specific legal membership, governing-body decision rights and disputed or future effective status; prevent treating nonattendance as lost votes",
+  "entries": [
+    {
+      "institution": "Paris Agreement CMA",
+      "sourceFile": "data/soi-us-cop-cma-decision-rights-20261102.json",
+      "usParty": false,
+      "decisionRight": "no Party decision rights",
+      "status": "effective loss of Party status",
+      "effectiveDate": "2026-01-27",
+      "verified": true
+    },
+    {
+      "institution": "UNFCCC COP",
+      "sourceFile": "data/soi-us-cop-cma-decision-rights-20261102.json",
+      "usParty": true,
+      "decisionRight": "retained Convention Party rights",
+      "status": "pending withdrawal",
+      "effectiveDate": "2027-02-27",
+      "verified": true
+    },
+    {
+      "institution": "WHO",
+      "sourceFile": "data/soi-us-who-unesco-unhrc-participation-20261102.json",
+      "usParty": null,
+      "decisionRight": "unresolved institution-specific legal question",
+      "status": "US declares exit complete; WHO qualification outstanding",
+      "effectiveDate": "2026-01-22",
+      "verified": false
+    },
+    {
+      "institution": "UNESCO",
+      "sourceFile": "data/soi-us-who-unesco-unhrc-participation-20261102.json",
+      "usParty": true,
+      "decisionRight": "member rights remain until scheduled withdrawal",
+      "status": "pending withdrawal",
+      "effectiveDate": "2026-12-31",
+      "verified": true
+    },
+    {
+      "institution": "UN Human Rights Council",
+      "sourceFile": "data/soi-us-who-unesco-unhrc-participation-20261102.json",
+      "usParty": false,
+      "decisionRight": "no elected 2026 Council member seat; cannot count as forfeited seat",
+      "status": "nonmember; nonparticipation policy",
+      "effectiveDate": null,
+      "verified": true
+    }
+  ],
+  "derived": {
+    "effectiveParisPartyLossCount": 1,
+    "pendingWithdrawalInstitutions": [
+      "UNFCCC COP",
+      "UNESCO"
+    ],
+    "disputedLegalStatusInstitutions": [
+      "WHO"
+    ],
+    "nonElectedSeatInstitutions": [
+      "UN Human Rights Council"
+    ]
+  },
+  "doNotInfer": [
+    "Number of votes lost from COP/CMA membership status alone",
+    "WHO legal status uncontested",
+    "UNESCO withdrawal already effective",
+    "UNHRC 2026 seat surrendered",
+    "Numerical influence score from membership statuses"
+  ],
+  "gapClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
