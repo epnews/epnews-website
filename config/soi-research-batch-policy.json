@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "batchSize": 40,
+  "priorities": {
+    "crossCountry": 85,
+    "independentCases": 75,
+    "implementation": 60
+  },
+  "rules": {
+    "noScoreFromUnverifiedEvidence": true,
+    "noAutomaticNeedleActivation": true,
+    "doNotClaimSourceAcquisition": true,
+    "retainInactiveSlotsInDenominator": true,
+    "requireHumanReviewedAttributionAndNormalization": true
+  },
+  "notes": "Priority is research ordering, never a geopolitical influence score."
+}
