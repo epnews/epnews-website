@@ -1,5 +1,5 @@
 {
-  "version": "2.6",
+  "version": "2.7",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -759,7 +759,55 @@
         ],
         "baselineFollowupGatesAuthorized": false,
         "attributionAuthorized": false,
-        "influenceScoringAuthorized": false
+        "influenceScoringAuthorized": false,
+        "officialCrosschecks": [
+          {
+            "source": "https://www.itj.dgciskol.gov.in/GxAWYFanYaQq9YPuBWwN4vkfDVQ4vpCLlrAP9tkQ.pdf",
+            "publisher": "Directorate General of Commercial Intelligence and Statistics (Indian Trade Journal)",
+            "fy2023_24": 83.64329,
+            "unit": "USD billion",
+            "status": "official alternative release; differs by $0.00731bn from 17 Dec 2024 parliamentary total"
+          },
+          {
+            "source": "https://www.commerce.gov.in/ministryofcommerce/sites/default/files/2025-04/Annual-Report-English-Lower-Resolution-1.pdf",
+            "publisher": "Indian Ministry of Commerce annual report 2023-24",
+            "fy2023_24": 83.63,
+            "unit": "USD billion rounded",
+            "status": "official annual-report series, differs modestly from parliamentary and Indian Trade Journal series"
+          },
+          {
+            "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf",
+            "publisher": "Indian Ministry of Commerce parliamentary response",
+            "fy2022_23": {
+              "exports": 31.60879,
+              "imports": 53.23155,
+              "total": 84.84034
+            },
+            "fy2023_24": {
+              "exports": 35.62502,
+              "imports": 48.02558,
+              "total": 83.6506
+            },
+            "unit": "USD billion, originally USD million",
+            "status": "published export/import decomposition verified"
+          },
+          {
+            "source": "https://epicuae.org/research/india-corridor",
+            "publisher": "EPIC independent secondary analysis",
+            "fy2023_24": 82.42,
+            "unit": "USD billion",
+            "status": "claimed revised TradeStat series, not yet independently reproduced; warns TradeStat total row may double chapter sum"
+          }
+        ],
+        "reconciliationFinding": "Multiple official historical series cluster at USD 83.63–83.65bn FY2023-24, but the independently reported revised TradeStat USD 82.42bn remains unverified from the source database. The ~USD 1.22bn difference is not explained by rounding; do not equate different vintages or infer CEPA impact.",
+        "sourceVersionRule": "Retain each dated publication and its vintage; avoid silently substituting updated TradeStat figures. Use same-vintage India DGCIS export+import decomposition for any descriptive series; validate current TradeStat with raw chapter rows before updating.",
+        "methodologyCautions": [
+          "India fiscal year April-March, not UAE calendar-year series",
+          "Bilateral nominal USD merchandise values, not physical volumes or real trade",
+          "FY2022-23 includes April 2022 pre-CEPA month; CEPA effective May 1 2022",
+          "Separate mineral fuels, precious stones and non-oil products before attributing shifts",
+          "Trade in eligible preference lines is not actual tariff-preference utilization without claims/denominator"
+        ]
       }
     }
   ],
