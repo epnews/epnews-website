@@ -1,0 +1,39 @@
+{
+  "schema": "soi-diplomacy-verified-source-findings-v1",
+  "asOf": "2026-11-02",
+  "findings": [
+    {
+      "sphere": "china",
+      "caseId": "soi-dip-candidate-2",
+      "claim": "The March 10, 2023 trilateral statement identifies China as host/sponsor of March 6–10 Beijing talks and explicitly credits Iraq and Oman with earlier 2021–22 dialogue rounds.",
+      "source": "https://www.spa.gov.sa/en/ed7aabfefaw",
+      "crossCheck": "https://www.mfa.gov.cn/eng/wjb/zzjg_663340/xybfs_663590/xwlb_663592/202303/t20230311_11039241.html",
+      "evidenceClass": "signed primary trilateral statement with explicit alternative mediation history",
+      "verifiedScope": "Documented host role and earlier third-party mediation",
+      "attributionFinding": "China participated in and hosted the concluding talks; exclusive or incremental causal contribution cannot be isolated from this statement.",
+      "attributionGateComplete": false,
+      "costGateComplete": false,
+      "netCost": null,
+      "influenceScore": null
+    },
+    {
+      "sphere": "eu",
+      "caseId": "soi-dip-candidate-eu-moldova-2024",
+      "claim": "EUPM Moldova's EU legal framework specifies financial reference amounts EUR 13,356,508.08 (24 Apr 2023–21 May 2025) and EUR 19,817,594.70 (22 May 2025–31 May 2027).",
+      "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A02023D0855-20250520",
+      "crossCheck": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32025D0943",
+      "evidenceClass": "official EU legal financial reference amounts",
+      "verifiedScope": "Nominal planned financial reference amounts for two distinct mission mandate periods",
+      "attributionFinding": "The mission predates the EU-Moldova partnership; reference amounts do not demonstrate partnership-caused outcomes.",
+      "attributionGateComplete": false,
+      "costGateComplete": false,
+      "netCost": null,
+      "influenceScore": null,
+      "nominalReferenceDifferenceEUR": 6461086.62,
+      "disbursementEvidence": false
+    }
+  ],
+  "newlyClosedGates": 0,
+  "scoringAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
