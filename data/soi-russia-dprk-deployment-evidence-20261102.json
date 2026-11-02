@@ -1,0 +1,68 @@
+{
+  "version": "2026-11-02",
+  "caseId": "russia-dprk-treaty-implementation",
+  "policy": {
+    "influenceScore": null,
+    "auditGatePromotion": false,
+    "causalAttribution": "not_established"
+  },
+  "observations": [
+    {
+      "date": "2024-06-19",
+      "event": "treaty_signed",
+      "measurement": "signed comprehensive strategic partnership treaty",
+      "source": "https://en.yna.co.kr/view/AEN20240620004852315"
+    },
+    {
+      "date": "2024-12-04",
+      "event": "treaty_entered_into_force",
+      "measurement": "ratification instruments exchanged",
+      "source": "https://en.yna.co.kr/view/AEN20241205000900315"
+    },
+    {
+      "date": "2025-03-27",
+      "event": "us_dia_estimate",
+      "value": 12000,
+      "qualifier": "approximately",
+      "unit": "DPRK troops deployed to Russia during 2024",
+      "source": "https://media.defense.gov/2025/May/15/2003715467/-1/-1/1/OAR_Q2_MAR2025_FINAL.PDF"
+    },
+    {
+      "date": "2025-03-27",
+      "event": "us_dia_combat_estimate",
+      "value": 8000,
+      "qualifier": "at_least",
+      "unit": "DPRK troops engaged in Kursk combat as of March 2025",
+      "source": "https://media.defense.gov/2025/May/15/2003715467/-1/-1/1/OAR_Q2_MAR2025_FINAL.PDF"
+    },
+    {
+      "date": "2025-03-27",
+      "event": "us_dia_casualty_estimate",
+      "value": 4000,
+      "qualifier": "approximately",
+      "unit": "DPRK casualties reported through March 2025",
+      "source": "https://media.defense.gov/2025/May/15/2003715467/-1/-1/1/OAR_Q2_MAR2025_FINAL.PDF"
+    },
+    {
+      "date": "2025-04-28",
+      "event": "dprk_public_acknowledgment",
+      "measurement": "DPRK acknowledged troop deployment under treaty and combat in Kursk",
+      "source": "https://en.yna.co.kr/view/AEN20250428000552315"
+    },
+    {
+      "date": "2025-06-01",
+      "event": "multilateral_sanctions_monitoring_report",
+      "measurement": "Multilateral Sanctions Monitoring Team reported combat deployment and assessed Russia-provided military training against UNSC sanctions",
+      "source": "https://www.mofa.go.jp/mofaj/files/100853978.pdf",
+      "datePrecision": "month_only"
+    }
+  ],
+  "limitations": [
+    "Troops deployed in 2024 predate treaty entry into force on December 4; do not attribute the start of deployment to treaty activation.",
+    "DIA figures are estimates and 8,000 combat participants are a subset of roughly 12,000 deployed, not an additional force.",
+    "Casualties are a cost estimate, not a benefit or geopolitical influence measure.",
+    "DPRK and Russia confirmation is participant acknowledgment; DIA and MSMT supply external corroboration but not an independent causal counterfactual.",
+    "June 2025 MSMT report month is approximate metadata; use the PDF itself for report-date precision.",
+    "Do not infer sanctions compliance, strategic gains, or military effectiveness from troop counts alone."
+  ]
+}
