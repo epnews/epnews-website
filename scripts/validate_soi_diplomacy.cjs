@@ -16,6 +16,15 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const materiality=worklist.crossSphereFinancialReconciliationPolicy;
+assert.equal(materiality.thresholds[0].relativeDifferencePercentMax,2);
+assert.equal(materiality.thresholds[1].relativeDifferencePercentMax,5);
+assert.equal(materiality.thresholds[2].disposition,'investigate-if-material');
+assert.equal(materiality.comparisonPrerequisites.length,5);
+assert.ok(materiality.override.includes('regardless of percentage'));
+assert.ok(materiality.notApplicableTo.includes('causal attribution'));
+assert.ok(materiality.notApplicableTo.includes('geopolitical influence scoring'));
+assert.equal(materiality.scoreAuthorized,false);
 const ledger=worklist.unresolvedGateEvidenceLedger;
 assert.equal(ledger.totalUnresolved,10);
 assert.equal(ledger.items.length,10);
