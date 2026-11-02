@@ -901,3 +901,13 @@ for(const row of observedOutcomeModel.rows){
  assert.ok(row.comparison.metric&&row.comparison.baseline&&row.comparison.followup);
  assert.equal(row.influenceScore,null);
 }
+
+// Verification gate statuses are standardized, but not geopolitical scores.
+assert.equal(observedOutcomeModel.fullySourceReviewedCases,1);
+assert.equal(observedOutcomeModel.attributionReviewedCases,0);
+assert.equal(observedOutcomeModel.rows.reduce((n,r)=>n+r.verifiedGateCount,0),8);
+for(const row of observedOutcomeModel.rows){
+ assert.equal(Object.keys(row.verification).length,6);
+ assert.equal(row.verifiedGateCount,row.checksCompleted);
+ assert.equal(row.influenceScore,null);
+}
