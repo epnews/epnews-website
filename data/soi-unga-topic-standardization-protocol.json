@@ -1,0 +1,21 @@
+{
+  "schema": "soi-unga-topic-standardization-protocol-v1",
+  "period": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "frozenExternalPartners": 160,
+  "weightBasis": "pooled_2021_2024_recorded_resolutions",
+  "missingTopicPolicy": "not_estimable",
+  "missingActorTopicPolicy": "not_estimable",
+  "sensitivity": [
+    "equal_topic_weights",
+    "exclude_joint_abstentions"
+  ],
+  "status": "PENDING_VERIFIED_RESOLUTION_TOPIC_METADATA",
+  "topicAdjustedValues": null,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
