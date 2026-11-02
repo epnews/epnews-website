@@ -1,0 +1,95 @@
+{
+  "version": "2026-11-02",
+  "caseId": "china-solomon-islands-police-training-2022-2025",
+  "sourceDataset": "data/soi-china-eu-verified-implementation-20261102.json",
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoringAuthorized": false,
+  "observations": [
+    {
+      "id": "SI-TRAINING-MALAITA-18",
+      "value": 18,
+      "unit": "participants",
+      "date": "2025-03-27",
+      "sourceType": "Solomon Islands government",
+      "independentFromPartner": false
+    },
+    {
+      "id": "SI-TRAINING-CHINA-RETURN-24",
+      "value": 24,
+      "unit": "correctional officers",
+      "date": "2025-07-10",
+      "sourceType": "Solomon Islands government",
+      "independentFromPartner": false
+    },
+    {
+      "id": "SI-TRAINING-PROGRAMS-70",
+      "value": 70,
+      "qualifier": "at least",
+      "unit": "publicly announced programs",
+      "date": "2025-12-11",
+      "sourceType": "IISS analytical compilation",
+      "independentFromPartner": true
+    },
+    {
+      "id": "SI-TRAINING-ATTENDANCE-1170",
+      "value": 1170,
+      "qualifier": "over",
+      "unit": "officer course-attendances",
+      "date": "2025-12-11",
+      "sourceType": "IISS analytical compilation",
+      "independentFromPartner": true
+    }
+  ],
+  "evidenceControls": [
+    {
+      "id": "NO-ADD-18-24-1170",
+      "rule": "IISS aggregate may include 18 Malaita and 24 China course attendees; no addition."
+    },
+    {
+      "id": "UNIQUE-PERSONS-UNKNOWN",
+      "rule": "Over 1,170 course attendees is not a count of distinct officers."
+    },
+    {
+      "id": "PROGRAMS-NOT-PARTICIPANTS",
+      "rule": "At least 70 programs are events, not officers or effectiveness."
+    },
+    {
+      "id": "GOVERNMENT-IS-PRIMARY-NOT-INDEPENDENT",
+      "rule": "Solomon Islands government releases are direct recipient reports, not independent audits."
+    },
+    {
+      "id": "IISS-SYNTHESIS-SECONDARY",
+      "rule": "IISS compiles public announcements; its total is not independent verification of every attendee."
+    },
+    {
+      "id": "NO-TRAINING-OUTCOME",
+      "rule": "Attendance does not measure improved police outcomes."
+    },
+    {
+      "id": "NO-POLICY-CAUSALITY",
+      "rule": "No before-after Solomon Islands policy decision linked to training."
+    },
+    {
+      "id": "AUSTRALIA-BASELINE-MISSING",
+      "rule": "No same-period Australian training counts with matched definition."
+    },
+    {
+      "id": "COSTS-MISSING",
+      "rule": "No audited per-course expenditure or opportunity cost."
+    },
+    {
+      "id": "DUPLICATE-ATTENDANCE-RISK",
+      "rule": "Officers may attend multiple courses; repeated attendance unknown."
+    },
+    {
+      "id": "CROSS-COUNTRY-COMPARISON-NOT-READY",
+      "rule": "Cannot compare Chinese training events with Russian deployments or EU trade volumes."
+    },
+    {
+      "id": "GATE-NOT-PROMOTED",
+      "rule": "No independent effectiveness/cost/counterfactual; leave audit at 20/30."
+    }
+  ],
+  "independentNewNumericSeries": 0
+}
