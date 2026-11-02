@@ -298,3 +298,6 @@ assert.equal(model.rows.reduce((n,r)=>n+r.verifiedGateCount,0),total);
 assert.equal(model.scoringAuthorized,false);
 for(const row of model.rows){assert.equal(row.influenceScore,null);assert.equal(row.verification.attribution,false);assert.equal(row.verification.costs,false);}
 console.log('PASS SOI preflight: '+total+'/'+(SPHERES.length*GATES.length)+' scoped checks; '+reviewed+' source-reviewed cases; scoring blocked.');
+
+// TEMPORARY CI ALERT TEST ONLY — never merge this branch.
+if (process.env.GITHUB_ACTIONS === 'true') { throw new Error('EPNEWS_CI_ALERT_CONTROLLED_TEST_FAILURE'); }
