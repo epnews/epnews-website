@@ -1,4 +1,39 @@
 {
   "schemaVersion": 1,
-  "records": []
+  "records": [
+    {
+      "id": "INTAKE-CHINA-SOLOMONS-CSSI-2025",
+      "taskId": "case:china-solomons",
+      "status": "retrieved",
+      "sourceUrl": "https://solomons.gov.sb/cssi-officers-return-safely-after-completing-training-in-china/",
+      "sourceOrganization": "Solomon Islands Government / Correctional Service",
+      "sourcePublicationDate": "2025-07-10",
+      "claim": "24 Solomon Islands correctional officers completed a one-month training course in China and returned June 26, 2025",
+      "methodology": "Official government account of completed training; participant count is not unique longitudinal training coverage",
+      "period": "June 2025",
+      "unit": "officers (24)",
+      "independentVerifier": "",
+      "documentHash": "",
+      "counterfactual": "Australian and other external policing assistance and preexisting bilateral cooperation remain unmeasured",
+      "costsAndIncidence": "Training cost, funding and institutional effectiveness not established",
+      "scoreAuthorized": false
+    },
+    {
+      "id": "INTAKE-EU-EUROSTAT-ENERGY-Q2-2026",
+      "taskId": "case:eu-russia-energy",
+      "status": "retrieved",
+      "sourceUrl": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "sourceOrganization": "Eurostat",
+      "sourcePublicationDate": "2026-08-25",
+      "claim": "EU SITC energy products trade deficit was EUR 101.1 billion in Q2 2026 versus EUR 71.3 billion in Q1 2026",
+      "methodology": "Eurostat extra-EU SITC category 3 goods balance, not bilateral Russian import attribution",
+      "period": "2026 Q1 and Q2",
+      "unit": "EUR billion",
+      "independentVerifier": "",
+      "documentHash": "",
+      "counterfactual": "Weather, global prices, demand, contracts and supplier substitution not causally isolated",
+      "costsAndIncidence": "Aggregate trade balance is not realized consumer cost or geopolitical leverage",
+      "scoreAuthorized": false
+    }
+  ]
 }
