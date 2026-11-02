@@ -33,9 +33,9 @@ def mock_fetch(url, key):
     assert q["size"] == ["300"]
     assert q["to"] == ["2026-10-31"]
     n = int(q["page"][0])
-    return {"last_page": 2, "data": [{"gasDayStart": "2026-10-0" + str(n)}]}
+    return {"last_page": 2, "data": [{"gasDayStart": "2026-10-0" + str(n)}] * (300 if n == 1 else 1)}
 rows, pages = mod.fetch_all_pages("https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST&from=2026-10-01&to=2026-10-31", "dummy", mock_fetch)
-assert pages == 2 and len(rows) == 2
+assert pages == 2 and len(rows) == 301
 def bad_fetch(url, key):
     n = int(parse_qs(urlsplit(url).query)["page"][0])
     return {"last_page": 2 if n == 1 else 3, "data": [1]}
@@ -219,3 +219,21 @@ except ValueError:
 else:
     raise AssertionError("Non-object ALSI export evidence accepted")
 print("ALSI observation object integrity tests passed")
+
+def short_intermediate(_url, _key):
+    return {"data": [{"gasDayStart": "2026-10-01"}], "last_page": 2}
+try:
+    mod.fetch_all_pages(url + "&from=2026-10-01&to=2026-10-31", "dummy", short_intermediate)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Short intermediate ALSI page accepted")
+def oversized(_url, _key):
+    return {"data": [{"gasDayStart": "2026-10-01"}] * 301, "last_page": 1}
+try:
+    mod.fetch_all_pages(url + "&from=2026-10-01&to=2026-10-31", "dummy", oversized)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Oversized ALSI page accepted")
+print("ALSI pagination row-count integrity tests passed")

@@ -176,6 +176,10 @@ def fetch_all_pages(base_url, key, fetch=request_json):
             raise ValueError(f"Non-object GIE observation on page {page}")
         if not rows:
             raise ValueError(f"Empty GIE page {page}; refusing incomplete evidence")
+        if len(rows) > 300:
+            raise ValueError(f"GIE page {page} exceeds requested 300-row limit")
+        if page < expected_pages and len(rows) != 300:
+            raise ValueError(f"GIE non-final page {page} is incomplete")
         all_rows.extend(rows)
         if page == expected_pages:
             return all_rows, expected_pages
