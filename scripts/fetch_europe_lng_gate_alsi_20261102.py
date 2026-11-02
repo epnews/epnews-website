@@ -269,6 +269,8 @@ def audit_observation_coverage(rows, from_date, to_date):
             "usable_reporting_gas_days": len(usable_days),
             "usable_reporting_coverage_percent": round(100 * len(usable_days) / len(expected), 2) if expected else 0,
             "unavailable_reporting_gas_days": len(unavailable_days),
+            "ambiguous_reporting_gas_days": len(conflicting_days),
+            "ambiguous_reporting_coverage_percent": round(100 * len(conflicting_days) / len(expected), 2) if expected else 0,
             "confirmed_coverage_percent": round(100 * len(unambiguous_confirmed) / len(expected), 2) if expected else 0,
             "unambiguous_confirmed_coverage_percent": round(100 * len(unambiguous_confirmed) / len(expected), 2) if expected else 0,
             "missing_gas_days": [day for day in expected if day not in counts],
@@ -301,6 +303,7 @@ def summarize_evidence_quality(coverage):
         "usable_reporting_coverage_percent": coverage["usable_reporting_coverage_percent"],
         "unambiguous_confirmed_coverage_percent": coverage["unambiguous_confirmed_coverage_percent"],
         "conflicting_status_day_count": len(coverage["conflicting_status_gas_days"]),
+        "ambiguous_reporting_coverage_percent": coverage["ambiguous_reporting_coverage_percent"],
         "duplicate_gas_day_count": len(coverage["duplicate_gas_days"]),
         "missing_gas_day_count": len(coverage["missing_gas_days"]),
         "has_full_usable_reporting": coverage["usable_reporting_coverage_percent"] == 100.0
