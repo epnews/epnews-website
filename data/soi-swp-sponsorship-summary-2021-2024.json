@@ -1,0 +1,60 @@
+{
+  "source": "2025-03-09_unga-res-un_resolutions.csv",
+  "field": "author_iso",
+  "years": {
+    "2021": {
+      "total": 334,
+      "unknown": 126,
+      "usa": 45,
+      "china": 49,
+      "russia": 45,
+      "india": 54,
+      "euAny": 106,
+      "euMajority": 57,
+      "euAll27": 24
+    },
+    "2022": {
+      "total": 335,
+      "unknown": 122,
+      "usa": 52,
+      "china": 56,
+      "russia": 34,
+      "india": 35,
+      "euAny": 118,
+      "euMajority": 71,
+      "euAll27": 26
+    },
+    "2023": {
+      "total": 338,
+      "unknown": 116,
+      "usa": 42,
+      "china": 66,
+      "russia": 34,
+      "india": 45,
+      "euAny": 122,
+      "euMajority": 78,
+      "euAll27": 20
+    },
+    "2024": {
+      "total": 342,
+      "unknown": 93,
+      "usa": 34,
+      "china": 81,
+      "russia": 36,
+      "india": 63,
+      "euAny": 121,
+      "euMajority": 60,
+      "euAll27": 13
+    }
+  },
+  "method": "Unique semicolon-delimited ISO3 sponsors per resolution; unknown/NA treated as missing. EU any, 14+ members, all 27 are distinct descriptive thresholds.",
+  "cautions": [
+    "Sponsorship does not establish vote choice or diplomatic influence",
+    "Missing authorship coverage varies by year",
+    "EU does not cast a UN General Assembly vote as one actor",
+    "Co-sponsorship is not proof of leadership",
+    "Counts include adopted-without-vote resolutions"
+  ],
+  "eligibleForInfluenceScore": false,
+  "canActivateNeedle": false
+}
