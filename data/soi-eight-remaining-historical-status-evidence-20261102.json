@@ -1,0 +1,90 @@
+{
+  "schema": "soi-eight-remaining-historical-status-evidence-v1",
+  "asOf": "2026-11-02",
+  "sourceReviewLevel": "official-source-documentary-leads-with-limited-claims-not-independent-outcome-audit",
+  "cases": [
+    {
+      "eventId": "2017-us-tpp-withdrawal",
+      "date": "2017-01-23",
+      "status": "presidential-direction-to-withdraw-from-tpp-negotiations",
+      "limit": "US executive action, not termination of an in-force US treaty",
+      "officialSource": "https://trumpwhitehouse.archives.gov/presidential-actions/presidential-memorandum-regarding-withdrawal-united-states-trans-pacific-partnership-negotiations-agreement/",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    },
+    {
+      "eventId": "2018-us-un-human-rights-council",
+      "date": "2018-06-19",
+      "status": "us-announced-withdrawal-from-unhrc",
+      "limit": "US institutional participation decision, not UN membership withdrawal",
+      "officialSource": "https://2017-2021.state.gov/remarks-on-the-un-human-rights-council/",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    },
+    {
+      "eventId": "2020-india-china-galwan",
+      "date": "2020-06-15",
+      "status": "fatal-india-china-border-clash",
+      "limit": "Conflict event; government statements do not prove agreed diplomatic settlement",
+      "officialSource": "https://www.mea.gov.in/press-releases.htm?dtl/32770/Statement_by_Official_Spokesperson_on_the_situation_in_the_IndiaChina_border_areas",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    },
+    {
+      "eventId": "2021-us-afghanistan-withdrawal",
+      "date": "2021-08-30",
+      "status": "last-us-military-forces-departed-afghanistan",
+      "limit": "Military withdrawal completed, not independently measured regional stability gain",
+      "officialSource": "https://www.defense.gov/News/News-Stories/Article/Article/2756930/last-us-troops-depart-afghanistan/",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    },
+    {
+      "eventId": "2022-russia-ukraine-invasion",
+      "date": "2022-02-24",
+      "status": "russian-full-scale-invasion-began",
+      "limit": "War initiation, not a negotiated diplomatic agreement or positive influence outcome",
+      "officialSource": "https://press.un.org/en/2022/ga12407.doc.htm",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    },
+    {
+      "eventId": "2022-eu-russian-coal-embargo",
+      "date": "2022-04-08",
+      "status": "eu-adopted-fifth-sanctions-package-including-russian-coal-ban",
+      "limit": "Adoption is distinct from phased implementation and measured import/revenue effects",
+      "officialSource": "https://www.consilium.europa.eu/en/press/press-releases/2022/04/08/fifth-package-of-sanctions-in-view-of-russia-s-military-aggression-against-ukraine-eu-adopts-restrictive-measures-against-russia/",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    },
+    {
+      "eventId": "2025-us-paris-withdrawal-notice",
+      "date": "2025-01-20",
+      "status": "us-presidential-direction-to-withdraw-from-paris-agreement",
+      "limit": "Instruction/notice process is distinct from effective Paris withdrawal on 2026-01-27",
+      "officialSource": "https://www.whitehouse.gov/presidential-actions/2025/01/putting-america-first-in-international-environmental-agreements/",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    },
+    {
+      "eventId": "2025-us-who-withdrawal-notice",
+      "date": "2025-01-20",
+      "status": "us-presidential-direction-to-withdraw-from-who",
+      "limit": "Executive direction is not itself proof of completed withdrawal or all financial obligations",
+      "officialSource": "https://www.whitehouse.gov/presidential-actions/2025/01/withdrawing-the-united-states-from-the-worldhealth-organization/",
+      "verifiedNetBenefit": null,
+      "causalInfluence": null,
+      "scoreEligible": false
+    }
+  ],
+  "caseCount": 8,
+  "scoreAuthorized": false,
+  "needleAuthorized": false
+}
