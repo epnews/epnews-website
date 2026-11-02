@@ -1,0 +1,258 @@
+{
+  "schema": "soi-unga-six-code-annual-agreement-changes-v1",
+  "source": "data/soi-unga-six-code-restricted-results-2021-2024.json",
+  "period": "2021–2024",
+  "rows": [
+    {
+      "actor": "us",
+      "years": [
+        {
+          "year": 2021,
+          "matchedPairs": 10589,
+          "agreementPairs": 2501,
+          "agreementPercent": 23.6188
+        },
+        {
+          "year": 2022,
+          "matchedPairs": 11074,
+          "agreementPairs": 3458,
+          "agreementPercent": 31.2263
+        },
+        {
+          "year": 2023,
+          "matchedPairs": 10892,
+          "agreementPairs": 2925,
+          "agreementPercent": 26.8546
+        },
+        {
+          "year": 2024,
+          "matchedPairs": 12156,
+          "agreementPairs": 3360,
+          "agreementPercent": 27.6407
+        }
+      ],
+      "yearOverYearDescriptiveChanges": [
+        {
+          "from": 2021,
+          "to": 2022,
+          "changePercentagePoints": 7.6075
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "changePercentagePoints": -4.3717
+        },
+        {
+          "from": 2023,
+          "to": 2024,
+          "changePercentagePoints": 0.7861
+        }
+      ],
+      "firstToLastPercentagePointChange": 4.0219,
+      "pooledAgreementPercent": 27.3848,
+      "trendInterpretation": "Descriptive change in six-code voting agreement; not an influence trend or causal estimate."
+    },
+    {
+      "actor": "china",
+      "years": [
+        {
+          "year": 2021,
+          "matchedPairs": 10723,
+          "agreementPairs": 7358,
+          "agreementPercent": 68.6189
+        },
+        {
+          "year": 2022,
+          "matchedPairs": 10930,
+          "agreementPairs": 7341,
+          "agreementPercent": 67.1638
+        },
+        {
+          "year": 2023,
+          "matchedPairs": 10757,
+          "agreementPairs": 7137,
+          "agreementPercent": 66.3475
+        },
+        {
+          "year": 2024,
+          "matchedPairs": 12138,
+          "agreementPairs": 8256,
+          "agreementPercent": 68.0178
+        }
+      ],
+      "yearOverYearDescriptiveChanges": [
+        {
+          "from": 2021,
+          "to": 2022,
+          "changePercentagePoints": -1.4551
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "changePercentagePoints": -0.8163
+        },
+        {
+          "from": 2023,
+          "to": 2024,
+          "changePercentagePoints": 1.6703
+        }
+      ],
+      "firstToLastPercentagePointChange": -0.6011,
+      "pooledAgreementPercent": 67.5496,
+      "trendInterpretation": "Descriptive change in six-code voting agreement; not an influence trend or causal estimate."
+    },
+    {
+      "actor": "russia",
+      "years": [
+        {
+          "year": 2021,
+          "matchedPairs": 10723,
+          "agreementPairs": 5906,
+          "agreementPercent": 55.0779
+        },
+        {
+          "year": 2022,
+          "matchedPairs": 11074,
+          "agreementPairs": 6015,
+          "agreementPercent": 54.3164
+        },
+        {
+          "year": 2023,
+          "matchedPairs": 10892,
+          "agreementPairs": 5638,
+          "agreementPercent": 51.7628
+        },
+        {
+          "year": 2024,
+          "matchedPairs": 12294,
+          "agreementPairs": 6667,
+          "agreementPercent": 54.2297
+        }
+      ],
+      "yearOverYearDescriptiveChanges": [
+        {
+          "from": 2021,
+          "to": 2022,
+          "changePercentagePoints": -0.7615
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "changePercentagePoints": -2.5536
+        },
+        {
+          "from": 2023,
+          "to": 2024,
+          "changePercentagePoints": 2.4669
+        }
+      ],
+      "firstToLastPercentagePointChange": -0.8482,
+      "pooledAgreementPercent": 53.8559,
+      "trendInterpretation": "Descriptive change in six-code voting agreement; not an influence trend or causal estimate."
+    },
+    {
+      "actor": "india",
+      "years": [
+        {
+          "year": 2021,
+          "matchedPairs": 10618,
+          "agreementPairs": 6799,
+          "agreementPercent": 64.0328
+        },
+        {
+          "year": 2022,
+          "matchedPairs": 11074,
+          "agreementPairs": 7276,
+          "agreementPercent": 65.7034
+        },
+        {
+          "year": 2023,
+          "matchedPairs": 10802,
+          "agreementPairs": 6954,
+          "agreementPercent": 64.377
+        },
+        {
+          "year": 2024,
+          "matchedPairs": 12294,
+          "agreementPairs": 8064,
+          "agreementPercent": 65.593
+        }
+      ],
+      "yearOverYearDescriptiveChanges": [
+        {
+          "from": 2021,
+          "to": 2022,
+          "changePercentagePoints": 1.6706
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "changePercentagePoints": -1.3264
+        },
+        {
+          "from": 2023,
+          "to": 2024,
+          "changePercentagePoints": 1.216
+        }
+      ],
+      "firstToLastPercentagePointChange": 1.5602,
+      "pooledAgreementPercent": 64.9571,
+      "trendInterpretation": "Descriptive change in six-code voting agreement; not an influence trend or causal estimate."
+    },
+    {
+      "actor": "eu",
+      "years": [
+        {
+          "year": 2021,
+          "matchedPairs": 9381,
+          "agreementPairs": 5245,
+          "agreementPercent": 55.9109
+        },
+        {
+          "year": 2022,
+          "matchedPairs": 9766,
+          "agreementPairs": 5769,
+          "agreementPercent": 59.0723
+        },
+        {
+          "year": 2023,
+          "matchedPairs": 9541,
+          "agreementPairs": 5342,
+          "agreementPercent": 55.9899
+        },
+        {
+          "year": 2024,
+          "matchedPairs": 10234,
+          "agreementPairs": 5768,
+          "agreementPercent": 56.3611
+        }
+      ],
+      "yearOverYearDescriptiveChanges": [
+        {
+          "from": 2021,
+          "to": 2022,
+          "changePercentagePoints": 3.1614
+        },
+        {
+          "from": 2022,
+          "to": 2023,
+          "changePercentagePoints": -3.0824
+        },
+        {
+          "from": 2023,
+          "to": 2024,
+          "changePercentagePoints": 0.3712
+        }
+      ],
+      "firstToLastPercentagePointChange": 0.4502,
+      "pooledAgreementPercent": 56.8419,
+      "trendInterpretation": "Descriptive change in six-code voting agreement; not an influence trend or causal estimate."
+    }
+  ],
+  "method": "Annual agreement = annual agreement pairs / annual matched pairs. Changes are differences in annual percentages; pooled values are matched-pair weighted. Different resolutions and partner-vote availability across years prevent causal or like-for-like interpretation.",
+  "matchedResolutionPanel": false,
+  "constantIssueMix": false,
+  "causalTrendAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
