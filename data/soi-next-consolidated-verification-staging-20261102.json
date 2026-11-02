@@ -1,0 +1,210 @@
+{
+  "version": "2026-11-02",
+  "status": "staging-research-not-ready-for-pr",
+  "baseDataset": "data/soi-five-sphere-verified-outcomes-batch15-20261102.json",
+  "verifiedCorrections": [
+    {
+      "id": "EU-ERA-2025-FINAL-DISBURSEMENT",
+      "supersedes": "EU-ERA-2025-LOANS-PAID",
+      "amount": 18.1,
+      "unit": "EUR billion",
+      "period": "2025",
+      "status": "fully_disbursed",
+      "lastTranche": 4.1,
+      "lastTrancheDate": "2025-11-13",
+      "sources": [
+        "https://mof.gov.ua/en/news/ukraine_received_41_billion_from_the_eu__the_final_tranche_under_the_era_loans_financed_by_revenues_from_frozen_russian_assets-5413",
+        "https://www.eeas.europa.eu/delegations/ukraine/eu-steps-support-ukraine-almost-%E2%82%AC6-billion-cover-its-financial-needs_en"
+      ],
+      "limitations": [
+        "Earlier EUR 7bn figure was an interim cumulative balance, not additional money.",
+        "This is a loan, not a grant or confiscated Russian sovereign principal.",
+        "Funds received are not proof of downstream policy influence."
+      ]
+    },
+    {
+      "id": "US-DFC-ENERGY-REPORTING-YEAR-CORRECTION",
+      "supersedes": "US-DFC-2025-ENERGY-OUTPUT",
+      "amount": 9400,
+      "qualifier": "over in annual report; nearly on DFC energy webpage",
+      "unit": "GWh",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_output",
+      "sources": [
+        "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+        "https://www.dfc.gov/our-work/energy"
+      ],
+      "limitations": [
+        "FY2025 reporting describes 2024 energy-sector impacts, not production occurring in calendar 2025.",
+        "DFC-supported client production not independently audited and not solely attributable to DFC."
+      ]
+    },
+    {
+      "id": "US-DFC-TRANSMISSION-REPORTING-YEAR-CORRECTION",
+      "supersedes": "US-DFC-2025-GRID-CONSTRUCTION",
+      "amount": 3800,
+      "unit": "km",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_constructed_or_improved",
+      "sources": [
+        "https://www.dfc.gov/our-work/energy",
+        "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf"
+      ],
+      "limitations": [
+        "Check annual report exact year and combined constructed-or-improved definition before publishing.",
+        "Not necessarily new grid capacity or independent verified benefit."
+      ]
+    },
+    {
+      "id": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT-SOURCE-DEPENDENCE",
+      "supersedes": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT",
+      "amount": 5.46,
+      "unit": "million tonnes",
+      "period": 2025,
+      "status": "operator_reported_crossborder_freight",
+      "sources": [
+        "https://english.www.gov.cn/archive/statistics/202603/11/content_WS69b181b3c6d00ca5f9a09cf8.html",
+        "https://kpl.gov.la/detail.aspx?id=97361"
+      ],
+      "limitations": [
+        "Lao and Chinese publications reproduce the same China Railway Kunming Group operator statement, so they are not independent confirmations.",
+        "Cross-border freight differs from all cargo carried on the railway.",
+        "Does not establish profitability or Laos net national benefit."
+      ]
+    },
+    {
+      "id": "US-DFC-2024-INSTALLED-GENERATION-CAPACITY",
+      "amount": 4100,
+      "qualifier": "over",
+      "unit": "MW",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_installed_capacity",
+      "source": "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+      "limitation": "Installed capacity is not actual annual energy production or attributable geopolitical influence."
+    },
+    {
+      "id": "US-DFC-2024-ENERGY-JOBS-SUPPORTED",
+      "amount": 40000,
+      "qualifier": "over",
+      "unit": "jobs supported",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported",
+      "source": "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+      "limitations": [
+        "Supported is not net-new employment.",
+        "No independent causal estimate."
+      ]
+    },
+    {
+      "id": "US-DFC-2024-ENERGY-JOBS-WOMEN-SHARE",
+      "amount": 22,
+      "unit": "percent",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_job_composition",
+      "source": "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+      "limitations": [
+        "Share of supported jobs held by women, not a separate job count.",
+        "No independently measured causal impact."
+      ]
+    },
+    {
+      "id": "EU-ERA-OTHER-G7-2025-PAID",
+      "value": 12.8,
+      "unit": "EUR billion",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Other G7 cumulative disbursements as of 2025-11-13, excluding EU 18.1bn; not another EU payment.",
+      "gatePromotion": false
+    },
+    {
+      "id": "EU-UKRAINE-FACILITY-2025-NOVEMBER",
+      "value": 1.8,
+      "unit": "EUR billion (over)",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Separate Ukraine Facility payment, not part of EU ERA loan.",
+      "gatePromotion": false
+    },
+    {
+      "id": "EU-ERA-2025-COMBINED-G7-PAID",
+      "value": 30.9,
+      "unit": "EUR billion",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Derived cumulative EU 18.1bn plus other G7 12.8bn, not a third transfer or independent observation.",
+      "gatePromotion": false
+    },
+    {
+      "id": "EU-UKRAINE-FACILITY-REFORMS-NOVEMBER",
+      "value": 10,
+      "unit": "reform steps",
+      "source": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en",
+      "limitation": "Nine steps from fifth installment and one outstanding step from prior installment; conditions not proof of causal influence.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-THREE-YEAR-RIDERS",
+      "value": 18.2,
+      "unit": "million journeys",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "KCIC operator-reported cumulative October 2023 to October 16 2026, overlaps annual counts.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-2026-PARTIAL-YEAR-RIDERS",
+      "value": 4.86,
+      "unit": "million journeys",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "KCIC operator-reported Jan 1–Oct 16 2026; not full-year comparable.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-DAILY-TRAIN-TRIPS-2026",
+      "value": 62,
+      "unit": "trips per day",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Operator-reported frequency, up from 14 at launch; scheduled supply not passenger benefit.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-THREE-YEAR-PUNCTUALITY",
+      "value": 99.4,
+      "unit": "percent",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Operator-reported punctuality; on-time threshold and independent audit unavailable.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-THREE-YEAR-CUSTOMER-SATISFACTION",
+      "value": 95.95,
+      "unit": "percent",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Operator-reported satisfaction with unspecified sample/method.",
+      "gatePromotion": false
+    },
+    {
+      "id": "CHINA-WHOOSH-FOREIGN-RIDERS-CUMULATIVE",
+      "value": 1,
+      "unit": "million journeys (over)",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Foreign passengers over first three years, subset of total 18.2m; do not add.",
+      "gatePromotion": false
+    }
+  ],
+  "pendingNext": [
+    "Confirm DFC 3,800km impact period in annual report table",
+    "Reconcile China-Laos cargo with Lao customs independent series",
+    "Reconcile EU 2025 ERA cash receipts against recipient treasury statement",
+    "Find audited disbursements and actual project outputs for India minerals",
+    "Add comparable costs and independent source for Indonesian Whoosh ridership"
+  ],
+  "scoring": {
+    "auditCompleted": 20,
+    "auditTotal": 30,
+    "gatePromotion": false,
+    "influenceScores": null
+  },
+  "note": "17 staged entries, including derived and overlapping measures; PR must explicitly flag nonindependent records and not imply 17 independent outcomes."
+}
