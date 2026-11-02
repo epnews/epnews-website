@@ -1,5 +1,5 @@
 {
-  "version": "2.7",
+  "version": "2.8",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -807,7 +807,53 @@
           "FY2022-23 includes April 2022 pre-CEPA month; CEPA effective May 1 2022",
           "Separate mineral fuels, precious stones and non-oil products before attributing shifts",
           "Trade in eligible preference lines is not actual tariff-preference utilization without claims/denominator"
-        ]
+        ],
+        "preferenceLineResearch": {
+          "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/Annual-Report-English-Lower-Resolution.pdf",
+          "report": "Ministry of Commerce and Industry Annual Report 2023-24",
+          "period": "FY2023-24",
+          "coveredProductExportsUsdBillion": 8.37,
+          "reportedYearOnYearGrowthPercent": 77.53,
+          "measure": "Indian exports on preferential lines of bilateral CEPA, nominal US dollars",
+          "notMeasure": [
+            "Actual certificates used at UAE customs",
+            "Tariff preference claims",
+            "Preference utilization rate",
+            "Causal export growth due to CEPA",
+            "Geopolitical influence"
+          ],
+          "evidenceStatus": "official report; descriptive covered-product exports only",
+          "methodologicalRequirement": "Match 8-digit HS product lists and UAE tariff schedules, claims and eligible-import denominators before estimating utilization."
+        },
+        "directDatabase": {
+          "source": "https://tradestat.commerce.gov.in/eidb/country_wise_ttrade",
+          "publisher": "India Department of Commerce DGCIS TradeStat",
+          "lastUpdated": "2026-08-07",
+          "status": "interactive country-year extraction pending; do not treat secondary 82.42bn claim as directly replicated",
+          "requestedExtraction": {
+            "country": "U ARAB EMTS",
+            "fiscalYears": [
+              "2021-2022",
+              "2022-2023",
+              "2023-2024",
+              "2024-2025",
+              "2025-2026"
+            ],
+            "tradeTypes": [
+              "exports",
+              "imports",
+              "total trade"
+            ],
+            "unit": "USD million",
+            "controls": [
+              "Same vintage across all fiscal years",
+              "Exports plus imports equal total",
+              "Record download timestamp and database update date",
+              "Compare country-wise totals with chapter-wise aggregate without double-counting total row"
+            ]
+          }
+        },
+        "nextMilestone": "Download and archive timestamped DGCIS UAE export/import and HS-level extracts, reconcile 82.42 vs 83.64, then assess product-level pre/post comparisons; do not mark match-baseline or match-followup until completed."
       }
     }
   ],
