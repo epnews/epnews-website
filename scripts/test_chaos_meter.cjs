@@ -942,3 +942,12 @@ for(const sphere of ['eu','russia']){
   assert.equal(task.verification.causalAttributionAuthorized,false);
  }
 }
+
+// UAE counterpart entry into force is verified; Russia operational counterpart remains unresolved.
+const indiaCounterpart=diplomaticQueue.items.find(x=>x.sphere==='india');
+assert.equal(indiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,true);
+assert.match(indiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').verification.sourceOwner,/United Arab Emirates/);
+assert.equal(indiaCounterpart.counterpartResearch.influenceScoringAuthorized,false);
+const russiaCounterpart=diplomaticQueue.items.find(x=>x.sphere==='russia');
+assert.equal(russiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,false);
+assert.equal(russiaCounterpart.counterpartResearch.influenceScoringAuthorized,false);
