@@ -1,0 +1,133 @@
+{
+  "version": "2026-11-02",
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false,
+  "sourceDatasets": [
+    "data/soi-russia-dprk-deployment-evidence-20261102.json",
+    "data/soi-india-minerals-national-quad-20261102.json"
+  ],
+  "classification": [
+    {
+      "id": "RUS-DPRK-TROOPS-DEPLOYED",
+      "sourceEvent": "us_dia_estimate",
+      "metric": "DPRK troops deployed to Russia 2024",
+      "value": 12000,
+      "qualifier": "approximately",
+      "type": "estimated deployment",
+      "independentActor": "US DIA",
+      "period": "2024",
+      "additive": false
+    },
+    {
+      "id": "RUS-DPRK-KURSK-COMBAT",
+      "sourceEvent": "us_dia_combat_estimate",
+      "metric": "DPRK troops in Kursk combat",
+      "value": 8000,
+      "qualifier": "at least",
+      "type": "subset of deployed",
+      "independentActor": "US DIA",
+      "period": "as of March 2025",
+      "additive": false
+    },
+    {
+      "id": "RUS-DPRK-CASUALTIES-MARCH",
+      "sourceEvent": "us_dia_casualty_estimate",
+      "metric": "DPRK casualties",
+      "value": 4000,
+      "qualifier": "approximately",
+      "type": "superseded cumulative estimate",
+      "independentActor": "US DIA",
+      "period": "through March 2025",
+      "additive": false
+    },
+    {
+      "id": "RUS-DPRK-CASUALTIES-JUNE",
+      "sourceEvent": "us_dia_casualty_estimate_q3",
+      "metric": "DPRK casualties",
+      "value": 6000,
+      "qualifier": "approximately",
+      "type": "later cumulative estimate",
+      "independentActor": "US DIA",
+      "period": "through June 2025",
+      "additive": false
+    },
+    {
+      "id": "RUS-DPRK-ARTILLERY-ROUNDS",
+      "sourceEvent": "us_dia_ammunition_transfer_estimate",
+      "metric": "DPRK artillery rounds transferred since 2023",
+      "value": 9000000,
+      "qualifier": "up to",
+      "type": "upper-bound cumulative estimate",
+      "independentActor": "US DIA",
+      "period": "since 2023",
+      "additive": false
+    },
+    {
+      "id": "INDIA-MINERALS-QUAD-CEILING",
+      "sourceId": "quad-2026-framework-ceiling",
+      "value": 20,
+      "unit": "USD billion",
+      "type": "multi-country intended ceiling",
+      "additive": false
+    },
+    {
+      "id": "INDIA-MINERALS-MISSION-OUTLAY",
+      "sourceId": "india-national-mission-outlay",
+      "value": 16300,
+      "unit": "INR crore",
+      "type": "planned Indian national program outlay",
+      "additive": false
+    },
+    {
+      "id": "INDIA-MINERALS-BUDGET-SUBSET",
+      "sourceId": "india-national-budgetary-support",
+      "value": 2600,
+      "unit": "INR crore",
+      "type": "subset of Indian national planned outlay",
+      "additive": false
+    },
+    {
+      "id": "INDIA-MINERALS-RECYCLING-SCHEME",
+      "sourceId": "india-recycling-scheme-outlay",
+      "value": 1500,
+      "unit": "INR crore",
+      "type": "planned incentive program not paid",
+      "additive": false
+    },
+    {
+      "id": "INDIA-MINERALS-ENTITIES",
+      "sourceId": "india-recycling-entities",
+      "value": 58,
+      "unit": "entities",
+      "type": "pledged participants not operational facilities",
+      "additive": false
+    },
+    {
+      "id": "INDIA-MINERALS-CAPACITY",
+      "sourceId": "india-recycling-pledged-capacity",
+      "value": 850,
+      "unit": "thousand tonnes per year",
+      "type": "pledged capacity not actual throughput",
+      "additive": false
+    },
+    {
+      "id": "INDIA-MINERALS-PROJECTS",
+      "sourceId": "india-exploration-sanctions",
+      "value": 76,
+      "unit": "projects",
+      "type": "sanctioned not completed",
+      "additive": false
+    }
+  ],
+  "rules": [
+    "Russia-DPRK troops, combat participants and casualties are overlapping populations or costs, not additive benefits.",
+    "March and June casualty counts are cumulative estimates of different dates, not independent increments.",
+    "The artillery rounds figure is an upper bound since 2023, not post-treaty delivered rounds.",
+    "Quad $20bn mobilization intention and Indian national mission outlay are not a common pool.",
+    "Indian budgetary support is a subset of mission outlay; national and Quad financing require named-project tracing.",
+    "Pledged recycling capacity and sanctioned exploration projects are not commissioned or operating outputs.",
+    "Classification references previously sourced observations; no newly retrieved numeric series."
+  ],
+  "newIndependentSeries": 0
+}
