@@ -1,5 +1,5 @@
 {
-  "version": "4.0",
+  "version": "4.1",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -800,7 +800,69 @@
           ],
           "limitation": "Legally distinct financial reference periods; not actual paid costs."
         },
-        "counterpartImplementationCaution": "Moldovan government corroborates assistance and equipment, but supplies neither an expenditure ledger nor an independent outcome evaluation; do not complete costs or attribution."
+        "counterpartImplementationCaution": "Moldovan government corroborates assistance and equipment, but supplies neither an expenditure ledger nor an independent outcome evaluation; do not complete costs or attribution.",
+        "contractRegister": {
+          "source": "https://www.eeas.europa.eu/sites/default/files/2026/documents/List%20of%20Contracts%20POs%20OFs%20and%20SCs%20above%2015000%20EUR-%20-%20EUPM%20Moldova-01%20July%202025%20to%2030%20June%202026_F.pdf",
+          "publisher": "EEAS / EUPM Moldova",
+          "published": "2026-07-28",
+          "coverage": "2025-07-01 to 2026-06-30",
+          "threshold": "contracts and purchase orders above EUR 15000",
+          "evidenceClass": "signed contract and aggregated purchase-order value, not paid invoices or executed expenditure",
+          "examples": [
+            {
+              "category": "TETRA radio equipment",
+              "contractor": "Motorola Solutions Germany GmbH",
+              "amount": 2532212.16,
+              "currency": "EUR",
+              "reference": "EUPM/2024/032"
+            },
+            {
+              "category": "IT equipment",
+              "contractor": "ARKTIS IT Solutions GmbH",
+              "amount": 1971606,
+              "currency": "EUR",
+              "reference": "EUPM/2024/022.1"
+            },
+            {
+              "category": "headquarters lease",
+              "contractor": "PRIMPROF Construct SRL",
+              "amount": 431556,
+              "currency": "EUR",
+              "reference": "EUPM/2023/004"
+            },
+            {
+              "category": "software licences",
+              "contractor": "SoftwareONE BE BV",
+              "amount": 461288.49,
+              "currency": "EUR",
+              "reference": "SIDE III -s-003 DI0830"
+            },
+            {
+              "category": "English training",
+              "contractor": "Technical University of Moldova",
+              "amount": 5172854.4,
+              "currency": "MDL",
+              "reference": "EUPM/2025/038"
+            },
+            {
+              "category": "events",
+              "contractor": "Proimagine S.R.L.",
+              "amount": 5642780,
+              "currency": "MDL",
+              "reference": "EUPM/2025/042"
+            }
+          ],
+          "methodology": {
+            "noCrossCurrencySummation": true,
+            "noContractToCashInference": true,
+            "noFullBudgetReconciliation": true,
+            "noDoubleCountFrameworkAndPO": true,
+            "coverageExcludesSmallContractsAndUnlistedStaffCosts": true
+          },
+          "verifiedSignedContractAmounts": true,
+          "actualDisbursementsVerified": false,
+          "costsGateComplete": false
+        }
       },
       "comparableOutcomeObservation": {
         "status": "measurement-specification-only-not-verified-impact",
