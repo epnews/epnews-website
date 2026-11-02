@@ -1,0 +1,39 @@
+{
+  "version": "2026-11-02",
+  "caseId": "us-lng-consolidated-operating-income",
+  "sourceDataset": "data/soi-lng-sec-financial-change-2024-2025.json",
+  "policy": {
+    "influenceScore": null,
+    "auditGatePromotion": false,
+    "causalAttribution": "not_established"
+  },
+  "companies": [
+    {
+      "company": "Cheniere Energy Inc",
+      "revenue2024": 15703,
+      "revenue2025": 19976,
+      "operatingIncome2024": 6128,
+      "operatingIncome2025": 9112,
+      "operatingMargin2024Pct": 39.02,
+      "operatingMargin2025Pct": 45.61
+    },
+    {
+      "company": "Venture Global Inc",
+      "revenue2024": 4972,
+      "revenue2025": 13769,
+      "operatingIncome2024": 1763,
+      "operatingIncome2025": 5156,
+      "operatingMargin2024Pct": 35.46,
+      "operatingMargin2025Pct": 37.45
+    }
+  ],
+  "limitations": [
+    "Consolidated revenue and operating income are company financial measures, not LNG destination-specific cash receipts or export FOB values.",
+    "These two firms do not cover the entire US LNG sector; totals are only a two-company panel.",
+    "Operating income is not net profit, free cash flow, national net benefit, or geopolitical influence.",
+    "Venture Global capacity ramp and contract mix confound year-over-year changes.",
+    "No causality to sanctions, war, diplomacy, or partner dependence can be inferred from annual consolidated accounts.",
+    "Underlying SEC dataset must be verified against filings before public publication."
+  ],
+  "independentOutcomeGate": "not_satisfied"
+}
