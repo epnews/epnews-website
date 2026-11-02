@@ -16,6 +16,12 @@ function compileDiplomaticOutcomes(worklist){
   const observed=item.additionalOperationalEvidence||item.directPolicyUptake||item.implementationObservation||null;
   const sources=observed?[...(Array.isArray(observed.sources)?observed.sources:[]),...(observed.source?[observed.source]:[])]:[];
   const completed=item.priorityTasks.filter(x=>x.complete).length;
+  const taskComplete=id=>item.priorityTasks.some(x=>x.id===id&&x.complete===true);
+  const verification={primary:taskComplete('verify-primary'),counterpart:taskComplete('verify-counterpart'),
+   baseline:taskComplete('match-baseline'),followup:taskComplete('match-followup'),
+   attribution:taskComplete('attribute'),costs:taskComplete('costs')};
+  const verifiedGateCount=Object.values(verification).filter(Boolean).length;
+  const verificationStage=verification.primary&&verification.counterpart&&verification.baseline&&verification.followup?'matched-source-review':'incomplete-source-review';
   const matched=item.baselineFollowupAssessment||{};
   const comparison={metric:matched.metric||null,baseline:matched.baseline||null,followup:matched.followup||null,
    baselineSource:matched.baselineSource||null,followupSource:matched.followupSource||null,
@@ -24,7 +30,7 @@ function compileDiplomaticOutcomes(worklist){
    comparisonClass:'within-case descriptive observation',
    limitation:'Within-case baseline and follow-up only. No shared geopolitical influence unit or causal attribution.'};
   return {sphere,caseId:item.caseId,title:item.title,observationClass:OBSERVATION_CLASSES[sphere],
-   observation:observed,comparison,sourceUrls:[...new Set(sources)],
+   observation:observed,comparison,verification,verifiedGateCount,verificationStage,sourceUrls:[...new Set(sources)],
    checksCompleted:completed,checksRequired:item.priorityTasks.length,
    independentlyAuditedPerformance:false,attributedInfluence:null,
    influenceScore:null,comparableInfluenceScore:false,
@@ -34,6 +40,7 @@ function compileDiplomaticOutcomes(worklist){
   rows,checksCompleted:rows.reduce((s,x)=>s+x.checksCompleted,0),
   checksRequired:rows.reduce((s,x)=>s+x.checksRequired,0),
   outcomeClassesComparable:false,matchedWithinCaseComparisons:rows.filter(x=>x.comparison.descriptivelyComparable).length,
-  crossSphereInfluenceComparable:false};
+  crossSphereInfluenceComparable:false,fullySourceReviewedCases:rows.filter(x=>x.verificationStage==='matched-source-review').length,
+  attributionReviewedCases:rows.filter(x=>x.verification.attribution).length};
 }
 module.exports={compileDiplomaticOutcomes,SPHERES};
