@@ -2,13 +2,13 @@
   "version": "2026-11-02",
   "targetGap": "SOI-GAP-12",
   "index": {
-    "dataset": "Eurostat prc_hicp_minr (attributed secondary mirror)",
+    "dataset": "Eurostat prc_hicp_minr (direct official API cross-check passed)",
     "geo": "EU27_2020",
     "classification": "all-items HICP",
     "base": "2025=100",
-    "source": "https://pactinel.com/indices/eu-hicp",
+    "source": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?geo=EU27_2020&coicop18=TOTAL&unit=I25&sinceTimePeriod=2025-01&untilTimePeriod=2025-12",
     "originalPublisher": "https://ec.europa.eu/eurostat/web/hicp/information-data",
-    "sourceCaveat": "Monthly observations retrieved from third-party site attributing Eurostat, not direct machine-readable Eurostat API; verify against direct Eurostat before labeling independently primary-source verified",
+    "sourceCaveat": "All 12 monthly index values matched direct Eurostat API in GitHub Actions run 41388562829 on 2026-11-02; direct machine-readable artifact is retained in that run, not committed to repository. Eurostat may revise the data.",
     "observations": [
       {
         "month": "2025-01",
@@ -62,7 +62,18 @@
     "meanS1": 99.42333333333333,
     "meanS2": 100.57666666666667,
     "deflatorS2ToS1": 0.988532794219998,
-    "semesterInflationPercent": 1.160022798135918
+    "semesterInflationPercent": 1.160022798135918,
+    "verification": {
+      "status": "passed",
+      "verifiedAt": "2026-11-02",
+      "workflowRun": "https://github.com/epnews/epnews-website/actions/runs/41388562829",
+      "artifact": "https://github.com/epnews/epnews-website/actions/runs/41388562829/artifacts/13116352849",
+      "monthsMatched": 12,
+      "monthsTotal": 12,
+      "classification": "coicop18=TOTAL",
+      "unit": "I25",
+      "scope": "EU27_2020 2025 monthly HICP"
+    }
   },
   "energyPrices": {
     "sourceFile": "data/soi-eu-eurostat-household-industry-energy-prices-2025s2-20261102.json",
@@ -106,13 +117,13 @@
     "Inflation-deflated using EU-wide all-items HICP, not a dedicated industrial price deflator.",
     "Household and non-household energy series use different tax/consumption conventions; compare within category across semesters only.",
     "Semestral deflation uses simple six-month mean HICP, not household-specific expenditure-weighted consumption timing.",
-    "Source is secondary reproduction of Eurostat series; direct API confirmation remains outstanding.",
+    "All 12 EU27 monthly HICP values independently matched direct Eurostat API in verified GitHub Actions run 41388562829; official data may subsequently be revised.",
     "Changes are not causal evidence about Russia, LNG substitution, national economic benefit, or geopolitical influence."
   ],
   "gateClosed": false,
   "remaining": [
-    "Direct Eurostat API confirmation of all 12 monthly HICP values",
-    "Country-consistent energy price and deflator panel for geographic attribution"
+    "Country-consistent energy price and deflator panel for geographic attribution",
+    "Country-specific HICP deflators and matched national electricity/gas price panels for geographic attribution"
   ],
   "auditCompleted": 20,
   "auditTotal": 30,
