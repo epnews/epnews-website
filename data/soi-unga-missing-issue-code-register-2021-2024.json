@@ -1,0 +1,243 @@
+{
+  "schema": "soi-unga-missing-issue-code-register-v1",
+  "source": "data/soi-unga-source-topics-2021-2024.json",
+  "sourceCsvSha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "recordedResolutions": 358,
+  "issueCodeRange": "100–134",
+  "missingCount": 19,
+  "missingByYear": {
+    "2021": 3,
+    "2022": 5,
+    "2023": 4,
+    "2024": 7
+  },
+  "records": [
+    {
+      "year": 2021,
+      "resolution": "R/75/250B",
+      "observedNonIssueCodes": [
+        "600"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2021,
+      "resolution": "R/75/289",
+      "observedNonIssueCodes": [
+        "203",
+        "204",
+        "369",
+        "600",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2021,
+      "resolution": "R/76/245",
+      "observedNonIssueCodes": [
+        "600",
+        "601"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/13",
+      "observedNonIssueCodes": [
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/19",
+      "observedNonIssueCodes": [
+        "601",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/263A",
+      "observedNonIssueCodes": [
+        "601"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2022,
+      "resolution": "R/77/7",
+      "observedNonIssueCodes": [
+        "203",
+        "204",
+        "369",
+        "600",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2022,
+      "resolution": "R/ES/11/1",
+      "observedNonIssueCodes": [
+        "211",
+        "475",
+        "477",
+        "600"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2023,
+      "resolution": "R/77/272",
+      "observedNonIssueCodes": [
+        "210",
+        "211",
+        "464",
+        "477",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2023,
+      "resolution": "R/77/284",
+      "observedNonIssueCodes": [
+        "601",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2023,
+      "resolution": "R/78/230",
+      "observedNonIssueCodes": [
+        "600",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2023,
+      "resolution": "R/78/7",
+      "observedNonIssueCodes": [
+        "203",
+        "204",
+        "369",
+        "600",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/10",
+      "observedNonIssueCodes": [
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/134",
+      "observedNonIssueCodes": [
+        "210",
+        "211",
+        "464",
+        "477",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/135",
+      "observedNonIssueCodes": [
+        "601",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/235",
+      "observedNonIssueCodes": [
+        "600",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/249",
+      "observedNonIssueCodes": [
+        "600",
+        "601"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/62",
+      "observedNonIssueCodes": [
+        "600"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    },
+    {
+      "year": 2024,
+      "resolution": "R/79/7",
+      "observedNonIssueCodes": [
+        "203",
+        "204",
+        "369",
+        "600",
+        "605"
+      ],
+      "issueCodeStatus": "MISSING_FROM_SOURCE_METADATA",
+      "eligibleForIssueStandardization": false,
+      "manualIssueAssignmentAuthorized": false
+    }
+  ],
+  "policy": "Retain all missing-issue resolutions in full-agenda descriptive baseline; exclude from issue-standardized analyses unless independently verified official issue metadata is added. Do not infer policy issues from regional, country or 600-series labels.",
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
