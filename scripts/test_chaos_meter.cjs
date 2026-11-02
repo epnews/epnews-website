@@ -827,7 +827,7 @@ assert.equal(euResources.eligibleForInfluenceScoring,false);
 
 // Audit progress must exactly reflect scoped completed tasks, not count source links as causal evidence.
 const auditProgress=diplomaticQueue.auditProgressSummary;
-assert.equal(auditProgress.completedScopedChecks,9);
+assert.equal(auditProgress.completedScopedChecks,12);
 assert.equal(auditProgress.requiredChecks,30);
 assert.equal(auditProgress.independentlyAuditedPerformanceCases,0);
 assert.equal(auditProgress.attributionValidatedCases,0);
@@ -841,7 +841,7 @@ for(const item of diplomaticQueue.items){
 const {compileDiplomaticOutcomes,SPHERES}=require('../soi-diplomatic-outcomes-model.js');
 const observedOutcomeModel=compileDiplomaticOutcomes(diplomaticQueue);
 assert.deepEqual(observedOutcomeModel.rows.map(x=>x.sphere),SPHERES);
-assert.equal(observedOutcomeModel.checksCompleted,9);
+assert.equal(observedOutcomeModel.checksCompleted,12);
 assert.equal(observedOutcomeModel.checksRequired,30);
 assert.equal(observedOutcomeModel.scoringAuthorized,false);
 assert.equal(observedOutcomeModel.outcomeClassesComparable,false);
@@ -903,9 +903,9 @@ for(const row of observedOutcomeModel.rows){
 }
 
 // Verification gate statuses are standardized, but not geopolitical scores.
-assert.equal(observedOutcomeModel.fullySourceReviewedCases,1);
+assert.equal(observedOutcomeModel.fullySourceReviewedCases,2);
 assert.equal(observedOutcomeModel.attributionReviewedCases,0);
-assert.equal(observedOutcomeModel.rows.reduce((n,r)=>n+r.verifiedGateCount,0),9);
+assert.equal(observedOutcomeModel.rows.reduce((n,r)=>n+r.verifiedGateCount,0),12);
 for(const row of observedOutcomeModel.rows){
  assert.equal(Object.keys(row.verification).length,6);
  assert.equal(row.verifiedGateCount,row.checksCompleted);
@@ -922,3 +922,9 @@ const euCounterpart=diplomaticQueue.items.find(x=>x.sphere==='eu');
 assert.equal(euCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,true);
 assert.equal(euCounterpart.auditProgress.completedScopedChecks,2);
 assert.match(euCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').verification.sourceOwner,/Moldova/);
+
+// China signed agreement, Saudi baseline and Reuters embassy reopening establish four source/timeline checks.
+const chinaAudited=diplomaticQueue.items.find(x=>x.sphere==='china');
+assert.equal(chinaAudited.auditProgress.completedScopedChecks,4);
+assert.deepEqual(chinaAudited.priorityTasks.filter(t=>t.complete).map(t=>t.id),['verify-primary','verify-counterpart','match-baseline','match-followup']);
+assert.equal(chinaAudited.priorityTasks.find(t=>t.id==='attribute').complete,false);
