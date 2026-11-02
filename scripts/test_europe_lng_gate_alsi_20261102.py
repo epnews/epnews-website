@@ -413,3 +413,19 @@ for duplicate_param in ("&from=2026-09-01", "&to=2026-11-01", "&facility=OTHER")
     else:
         raise AssertionError(f"Duplicate query parameter accepted: {duplicate_param}")
 print("ALSI duplicate query parameter rejection tests passed")
+
+for invalid_identity in (
+    "country=BE&company=21X000000001063H&facility=21W-TEST",
+    "country=NL&company=&facility=21W-TEST",
+    "country=NL&company=21X000000001063H&facility=",
+):
+    try:
+        mod.fetch_all_pages(
+            "https://alsi.gie.eu/api?" + invalid_identity +
+            "&from=2026-10-01&to=2026-10-31", "dummy",
+            lambda url, key: (_ for _ in ()).throw(AssertionError("Unexpected network request")))
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Invalid Gate identity accepted: {invalid_identity}")
+print("ALSI paginated facility identity validation tests passed")
