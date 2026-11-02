@@ -29,6 +29,7 @@ jobs:
           python scripts/test_audit_gate_estimate_stock_variance_20261102.py
           python scripts/test_audit_gate_proxy_variance_cancellation_20261102.py
           python scripts/test_run_gate_snapshot_evidence_diagnostics_20261102.py
+          python scripts/test_audit_gate_ttf_proxy_value_sensitivity_20261102.py
       - name: Verify GIE key
         env:
           GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
@@ -59,7 +60,7 @@ jobs:
           python scripts/reconcile_gate_alsi_gaspeil_20261102.py \
             --alsi gate-alsi-operator-october-2026.json \
             --gaspeil gate-gaspeil-october-2026-snapshot.json
-      - name: Produce six cross-checked research diagnostics from archived Gaspeil snapshot
+      - name: Produce seven cross-checked research diagnostics from archived Gaspeil snapshot
         run: |
           python scripts/run_gate_snapshot_evidence_diagnostics_20261102.py \
             --snapshot gate-gaspeil-october-2026-snapshot.json \
