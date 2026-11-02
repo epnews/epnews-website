@@ -167,6 +167,9 @@ def fetch_all_pages(base_url, key, fetch=request_json):
         raise ValueError("Paged ALSI query contains duplicate parameters")
     if not {"from", "to"}.issubset(params) or set(params) != {"country", "company", "facility", "from", "to"}:
         raise ValueError("Paged ALSI query must contain only facility identity and gas-day bounds")
+    identity_url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path,
+        urllib.parse.urlencode({k: params[k] for k in ("country", "company", "facility")}), ""))
+    validate_facility_identity(identity_url)
     start_date, end_date = date.fromisoformat(params["from"]), date.fromisoformat(params["to"])
     if start_date > end_date:
         raise ValueError("Paged ALSI date bounds must be in ascending order")
