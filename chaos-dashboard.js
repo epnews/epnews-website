@@ -123,6 +123,17 @@ function appendVotingEvidence(actor,dimension){
    const milestoneCount=entries.filter(x=>Boolean(x.observedEvidence?.finding)).length;
    drawer.append(element('p','Evidence coverage: '+entries.length+' selected case(s) · '+milestoneCount+' documented milestone(s) · '+audited+' independently audited · '+attributionReady+' attribution-ready. This is research coverage, not diplomatic influence.'));
    drawer.append(element('p','Next evidence needed: independently checked counterpart outcomes, matched baselines, alternative explanations and costs. The diplomatic influence needle remains unscored.'));
+   if(diplomaticWorklist){
+    const verified=diplomaticWorklist.items.filter(x=>x.baselineFollowupAssessment?.descriptivelyComparable===true);
+    drawer.append(element('p','FIVE-SPHERE BASELINE COMPARABILITY · '+verified.length+' / 5 cases have a documented before/after metric. This measures comparability only, not diplomatic influence.'));
+    const comparisons=element('p');
+    for(const item of diplomaticWorklist.items){
+     const label=spheres.find(x=>x.id===item.sphere)?.name||item.sphere;
+     const matched=item.baselineFollowupAssessment?.descriptivelyComparable===true;
+     comparisons.append(element('span',label+': '+(matched?'matched descriptive measure':'not yet matched')+' · '));
+    }
+    drawer.append(comparisons);
+   }
    const liveAudit=diplomaticWorklist?.items.find(x=>x.sphere===actor);
    if(liveAudit){
     const completed=liveAudit.priorityTasks.filter(x=>x.complete).length;
