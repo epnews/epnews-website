@@ -18,9 +18,13 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest scripts.test_eurostat_lng_all_partners
+      - run: node scripts/test_europe_lng_full_partner_residual_20261102.cjs
       - run: python scripts/extract_eurostat_lng_all_partners.py europe-lng-all-partners.json
+      - run: node scripts/audit_europe_lng_full_partner_residual_20261102.cjs europe-lng-all-partners.json europe-lng-full-partner-reconciliation.json
       - uses: actions/upload-artifact@v4
         with:
           name: europe-lng-all-partners
-          path: europe-lng-all-partners.json
+          path: |
+            europe-lng-all-partners.json
+            europe-lng-full-partner-reconciliation.json
           retention-days: 30
