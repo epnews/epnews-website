@@ -14,12 +14,12 @@ jobs:
           python-version: '3.12'
       - name: Install XLSX reader
         run: python -m pip install 'openpyxl>=3.1,<4'
+      - name: Run synthetic matcher regression before external fetch
+        run: python scripts/test_europe_lng_doe_vessel_matcher_20261102.py
       - name: Download official DOE workbook with provenance
         run: node scripts/fetch_europe_lng_doe_workbook_20261102.cjs "$RUNNER_TEMP/doe-lng-exports.xlsx"
       - name: Extract vessel candidate rows (not verified discharges)
         run: python scripts/match_europe_lng_doe_vessels_20261102.py "$RUNNER_TEMP/doe-lng-exports.xlsx" > "$RUNNER_TEMP/doe-vessel-candidates.json"
-      - name: Run synthetic regression
-        run: python scripts/test_europe_lng_doe_vessel_matcher_20261102.py
       - name: Upload provenance and candidates
         uses: actions/upload-artifact@v4
         if: always()
