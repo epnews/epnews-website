@@ -68,6 +68,40 @@
       "counterfactual": "India domestic policy and private capital; Quad causal link unestablished",
       "costsAndIncidence": "Auction payments, capex, operational output, environmental and fiscal costs not quantified here",
       "scoreAuthorized": false
+    },
+    {
+      "id": "INTAKE-US-JAPAN-ROK-MISSILE-WARNING-2023",
+      "taskId": "case:us-japan-korea",
+      "status": "retrieved",
+      "sourceUrl": "https://www.mod.go.jp/en/article/2023/12/67e3c202e8d82c24e6ec3f85308f233509da8c35.html",
+      "sourceOrganization": "Japan Ministry of Defense / trilateral ministerial statement",
+      "sourcePublicationDate": "2023-12-19",
+      "claim": "United States Japan and Republic of Korea announced full activation of real-time DPRK missile warning data-sharing mechanism after operational tests and a multi-year exercise plan",
+      "methodology": "Official joint statement corroborated by US Department of Defense; activation is reported, performance not independently measured",
+      "period": "December 2023",
+      "unit": "operational activation milestone",
+      "independentVerifier": "",
+      "documentHash": "",
+      "counterfactual": "Existing US bilateral warning channels and independent allied responses predate trilateral activation",
+      "costsAndIncidence": "System costs, response effectiveness and allied burdens unmeasured",
+      "scoreAuthorized": false
+    },
+    {
+      "id": "INTAKE-RUSSIA-DPRK-DEPLOYMENT-JAPAN-MOD-2025",
+      "taskId": "case:russia-dprk",
+      "status": "retrieved",
+      "sourceUrl": "https://www.mod.go.jp/en/d_policy/defense-capability-transformation/images/2nd_21-nov-2025a.pdf",
+      "sourceOrganization": "Japan Ministry of Defense",
+      "sourcePublicationDate": "2025-11-21",
+      "claim": "Japanese defense briefing reports more than 11,000 North Korean soldiers dispatched to Russia in late 2024, another 3,000 Jan-Mar 2025, and at least 100 ballistic missiles supplied during 2024; figures rely on cited MSMT and other reporting",
+      "methodology": "Third-party government intelligence synthesis with underlying source dependence; reported estimates, not independently counted by EP News",
+      "period": "2024 through March 2025",
+      "unit": "reported personnel and missiles (not summed into score)",
+      "independentVerifier": "",
+      "documentHash": "",
+      "counterfactual": "War demand and pre-treaty military cooperation cannot be separated from treaty impact",
+      "costsAndIncidence": "Casualties, equipment transfers, sanctions, procurement costs and Russian reciprocal transfers not quantified here",
+      "scoreAuthorized": false
     }
   ]
 }
