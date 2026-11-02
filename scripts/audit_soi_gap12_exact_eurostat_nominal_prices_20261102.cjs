@@ -19,7 +19,8 @@ for(const x of data.cells){
  assert.equal(x.taxes,'I_TAX');
  assert(typeof x.sourceUrl==='string'&&x.sourceUrl.startsWith('https://ec.europa.eu/eurostat/'));
  assert(typeof x.retrievedAt==='string'&&x.retrievedAt.length>=10);
- assert(Number.isFinite(x.valueEURkWh)&&x.valueEURkWh>0);\n const normalized=Number((x.valueEURkWh*100).toFixed(4));
+ assert(Number.isFinite(x.valueEURkWh)&&x.valueEURkWh>0);
+ const normalized=Number((x.valueEURkWh*100).toFixed(4));
  const original=expected.get(key);const delta=Number((normalized-original.endEUR100kWh).toFixed(4));
  const match=Math.abs(delta)<0.005;evidence.push({key,original:original.endEUR100kWh,verified:normalized,delta,match,sourceUrl:x.sourceUrl});
  if(!match)mismatches.push(key);
