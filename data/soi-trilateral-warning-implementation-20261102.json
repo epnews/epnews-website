@@ -1,0 +1,105 @@
+{
+  "version": "1.0",
+  "asOf": "2026-11-02",
+  "caseId": "us-japan-korea",
+  "status": "independently-sourced-implementation-evidence-not-influence",
+  "scoringAuthorized": false,
+  "auditGateCompleted": false,
+  "gateProgressUnchanged": true,
+  "claim": "Dated pre-activation trilateral exercise, operational activation and later joint exercises are documented; independent performance and causal influence remain unmeasured.",
+  "observations": [
+    {
+      "id": "baseline-2022-pacific-dragon",
+      "date": "2022-08-15",
+      "period": "2022-08-08/2022-08-14",
+      "type": "pre_activation_exercise",
+      "observed": "US, Japan and ROK naval participants shared tactical data-link information in a missile-warning and search-and-tracking exercise.",
+      "sourcePublisher": "US Department of Defense",
+      "source": "https://www.defense.gov/News/Releases/Release/Article/3128442/",
+      "measurement": "one documented pre-activation exercise; not an absence-of-cooperation baseline",
+      "status": "completed_reported"
+    },
+    {
+      "id": "activation-2023",
+      "date": "2023-12-19",
+      "type": "operational_activation",
+      "observed": "Three defense ministries announced full activation of a continuous real-time DPRK missile-warning data-sharing mechanism after operational tests.",
+      "sourcePublisher": "Japan Ministry of Defense, joint trilateral statement",
+      "source": "https://www.mod.go.jp/en/article/2023/12/67e3c202e8d82c24e6ec3f85308f233509da8c35.html",
+      "measurement": "activation date, not measured interception or response performance",
+      "status": "completed_reported"
+    },
+    {
+      "id": "freedom-edge-2024-1",
+      "date": "2024-06-27",
+      "period": "2024-06-27/2024-06-29",
+      "type": "joint_exercise",
+      "observed": "First Freedom Edge trilateral multi-domain exercise commenced with ships and aircraft from all three countries, including ballistic missile defense training.",
+      "sourcePublisher": "US Pacific Fleet / Indo-Pacific Command",
+      "source": "https://www.cpf.navy.mil/Newsroom/News/Article/3820138/trilateral-statement-first-execution-of-multi-domain-japan-rok-us-exercise-free/",
+      "measurement": "one named multi-domain exercise commenced; not quantified warning-system performance",
+      "status": "commenced_reported"
+    },
+    {
+      "id": "framework-2024",
+      "date": "2024-07-28",
+      "type": "institutional_framework",
+      "observed": "Defense ministers signed trilateral security cooperation framework, reaffirming continuation of missile-warning data sharing and exercises.",
+      "sourcePublisher": "Japan Ministry of Defense",
+      "source": "https://www.mod.go.jp/en/article/2024/07/67ea7647966dfa85d96fb0d25deacf3ce69eedb0.html",
+      "measurement": "signed cooperation framework, not independent policy change",
+      "status": "signed_reported"
+    },
+    {
+      "id": "freedom-edge-2024-2",
+      "date": "2024-11-13",
+      "type": "joint_exercise",
+      "observed": "Second Freedom Edge exercise commenced with specified ships and aircraft from all three countries.",
+      "sourcePublisher": "US 7th Fleet / Indo-Pacific Command",
+      "source": "https://www.c7f.navy.mil/media/news/display/article/3964360/japan-rok-us-conduct-second-exercise-freedom-edge/",
+      "measurement": "second named iteration commenced; not a second independent warning-network performance test",
+      "status": "commenced_reported"
+    },
+    {
+      "id": "routine-use-2024",
+      "date": "2024-12-05",
+      "dateQualifier": "date of 2024 Korea Society Van Fleet speech; verify publication date before treating as a daily usage series",
+      "type": "operational_use_statement",
+      "observed": "US defense official said the real-time early-warning mechanism was used on a regular basis.",
+      "sourcePublisher": "US Department of Defense, official speech",
+      "source": "https://www.defense.gov/News/Speeches/Speech/Article/3983625/principal-deputy-assistant-secretary-of-defense-for-indo-pacific-security-affai/",
+      "measurement": "qualitative official-use assertion; no independently audited usage frequency or latency",
+      "status": "official_statement"
+    },
+    {
+      "id": "freedom-edge-2025-plan",
+      "date": "2025-09-05",
+      "period": "2025-09-15/2025-09-19",
+      "type": "planned_exercise",
+      "observed": "Japan Joint Staff announced third Freedom Edge iteration and approximately 700 Japanese personnel expected to participate.",
+      "sourcePublisher": "Japan Joint Staff",
+      "source": "https://www.mod.go.jp/js/pdf/2025/p20250905_01e.pdf",
+      "measurement": "planned Japanese participant count only, not verified attendance or a three-country total",
+      "status": "planned_not_confirmed"
+    }
+  ],
+  "comparison": {
+    "baseline": "2022 exercise shows pre-existing trilateral information sharing; avoid treating 2023 as the beginning of all cooperation.",
+    "observedPostActivation": "Two named 2024 Freedom Edge iterations and a qualitative official statement of regular warning-network use.",
+    "notComparable": "Exercise counts are not direct warning-system usage, intercept success, latency or lives saved; announcements are not performance audits.",
+    "independentCounterpartVerification": "Japanese and US official sources independently document institutional milestones but are participants, not independent evaluators.",
+    "alternativeExplanations": [
+      "DPRK launch tempo and changing regional threats",
+      "prior 2014 information-sharing arrangement and bilateral systems",
+      "broader defense modernization and pre-existing exercises"
+    ],
+    "missing": [
+      "machine-readable network alert logs with incident timestamps",
+      "detection and dissemination latency before/after activation",
+      "independent verification of 2025 exercise completion and participants",
+      "per-country operating costs and partner policy counterfactual"
+    ]
+  },
+  "influenceScore": null,
+  "causalAttribution": "not_established"
+}
