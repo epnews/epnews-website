@@ -1,5 +1,5 @@
 {
-  "version": "2.4",
+  "version": "2.5",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -595,7 +595,16 @@
         {
           "id": "verify-counterpart",
           "requirement": "Verify counterpart-side dated policy or operational implementation from a source not controlled by initiating actor",
-          "complete": false
+          "complete": true,
+          "evidence": "https://www.wam.ae/en/article/hszreomj-uae-begin-reducing-tariffs-indias-goods-90",
+          "scope": "UAE Emirates News Agency 11 May 2022 quotes UAE economy minister confirming CEPA implementation on 1 May and arrival of first tariff-exempt imports. Counterpart-side evidence of entry into force, not independently audited tariff-utilization rates or attributable trade growth.",
+          "verification": {
+            "sourceOwner": "United Arab Emirates, Emirates News Agency reporting UAE Minister of Economy",
+            "sourceDate": "2022-05-11",
+            "source": "https://www.wam.ae/en/article/hszreomj-uae-begin-reducing-tariffs-indias-goods-90",
+            "finding": "UAE Emirates News Agency 11 May 2022 quotes UAE economy minister confirming CEPA implementation on 1 May and arrival of first tariff-exempt imports. Counterpart-side evidence of entry into force, not independently audited tariff-utilization rates or attributable trade growth.",
+            "attributionVerified": false
+          }
         },
         {
           "id": "match-baseline",
@@ -681,15 +690,15 @@
         "eligibleForInfluenceScoring": false
       },
       "auditProgress": {
-        "completedScopedChecks": 1,
+        "completedScopedChecks": 2,
         "requiredChecks": 6,
         "verifiedEvidenceLinks": [
-          "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2009-dated.-11.03.2025.pdf"
+          "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2009-dated.-11.03.2025.pdf",
+          "https://www.wam.ae/en/article/hszreomj-uae-begin-reducing-tariffs-indias-goods-90"
         ],
         "independentOperationalPerformanceAudited": false,
         "attributionValidated": false,
         "remainingChecks": [
-          "verify-counterpart",
           "match-baseline",
           "match-followup",
           "attribute",
@@ -705,7 +714,7 @@
     "Unknown or missing evidence must never be zero-filled"
   ],
   "auditProgressSummary": {
-    "completedScopedChecks": 16,
+    "completedScopedChecks": 17,
     "requiredChecks": 30,
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
