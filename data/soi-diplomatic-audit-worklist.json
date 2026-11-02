@@ -1,5 +1,5 @@
 {
-  "version": "4.2",
+  "version": "4.3",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -1664,5 +1664,43 @@
         "scoreAuthorized": false
       }
     ]
+  },
+  "crossSphereFinancialReconciliationPolicy": {
+    "version": "1.0",
+    "purpose": "Prevent low-materiality source revisions from blocking research while preserving definitions and auditability",
+    "scope": "Comparable official bilateral nominal trade aggregates and other same-definition same-period financial totals only",
+    "thresholds": [
+      {
+        "relativeDifferencePercentMax": 2,
+        "disposition": "broadly-consistent-proceed",
+        "note": "Retain source vintages and do not silently replace reported values."
+      },
+      {
+        "relativeDifferencePercentMax": 5,
+        "disposition": "flag-and-proceed",
+        "note": "Note discrepancy; escalate only if it changes a conclusion or gate decision."
+      },
+      {
+        "relativeDifferencePercentMax": null,
+        "disposition": "investigate-if-material",
+        "note": "Review source definitions and impact on substantive conclusions before reliance."
+      }
+    ],
+    "comparisonPrerequisites": [
+      "same period",
+      "same currency and unit",
+      "same trade flow or economic concept",
+      "same geographical scope",
+      "comparable valuation basis"
+    ],
+    "override": "Investigate any definitional mismatch or discrepancy that changes a substantive finding, regardless of percentage.",
+    "notApplicableTo": [
+      "causal attribution",
+      "realized expenditures vs budget authorization",
+      "net economic benefit",
+      "preferential utilization",
+      "geopolitical influence scoring"
+    ],
+    "scoreAuthorized": false
   }
 }
