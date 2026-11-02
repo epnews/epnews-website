@@ -1,0 +1,126 @@
+{
+  "source": "U.S. DOE LNG Exports and Re-Exports Details (Jan 2016-Aug 2026)",
+  "source_url": "https://www.energy.gov/sites/default/files/2026-10/3.%20U.S.%20LNG%20Exports%20and%20Re-Exports%20Details%20%28Jan%202016%20-%20Aug%202026%29.xlsx",
+  "source_sha256": "40a42af4c96b638f87a93476aec385a26be24e599cd0fa69d21a7750ea19f931",
+  "retrieved_at": "2026-11-02T07:34:14.253Z",
+  "github_actions_run": "https://github.com/epnews/epnews-website/actions/runs/41407130331",
+  "artifact_id": 13123593722,
+  "historical_exact_name_match_counts": {
+    "RIBERA DEL DUERO KNUTSEN": 78,
+    "VENTURE GATOR": 18,
+    "HUASHAN": 13,
+    "CORAL ENERGY": 0
+  },
+  "records_2026_jan_aug": [
+    {
+      "vessel": "VENTURE GATOR",
+      "departure_date": "2026-01-02",
+      "export_terminal": "Plaquemines, LA",
+      "reported_destination": "Germany",
+      "volume_mmcf": 3609.13
+    },
+    {
+      "vessel": "HUASHAN",
+      "departure_date": "2026-01-18",
+      "export_terminal": "Sabine Pass, LA",
+      "reported_destination": "United Kingdom",
+      "volume_mmcf": 3681.29
+    },
+    {
+      "vessel": "VENTURE GATOR",
+      "departure_date": "2026-02-16",
+      "export_terminal": "Plaquemines, LA",
+      "reported_destination": "Germany",
+      "volume_mmcf": 3720.09
+    },
+    {
+      "vessel": "RIBERA DEL DUERO KNUTSEN",
+      "departure_date": "2026-02-17",
+      "export_terminal": "Corpus Christi, TX",
+      "reported_destination": "Spain",
+      "volume_mmcf": 3156.74
+    },
+    {
+      "vessel": "HUASHAN",
+      "departure_date": "2026-03-05",
+      "export_terminal": "Cameron, LA",
+      "reported_destination": "Egypt",
+      "volume_mmcf": 3594.16
+    },
+    {
+      "vessel": "RIBERA DEL DUERO KNUTSEN",
+      "departure_date": "2026-03-16",
+      "export_terminal": "Cameron (Calcasieu Pass), LA",
+      "reported_destination": "Poland",
+      "volume_mmcf": 3619.42
+    },
+    {
+      "vessel": "VENTURE GATOR",
+      "departure_date": "2026-03-27",
+      "export_terminal": "Plaquemines, LA",
+      "reported_destination": "Italy",
+      "volume_mmcf": 3714.04
+    },
+    {
+      "vessel": "HUASHAN",
+      "departure_date": "2026-04-24",
+      "export_terminal": "Sabine Pass, LA",
+      "reported_destination": "Singapore",
+      "volume_mmcf": 3676.86
+    },
+    {
+      "vessel": "VENTURE GATOR",
+      "departure_date": "2026-04-29",
+      "export_terminal": "Plaquemines, LA",
+      "reported_destination": "France",
+      "volume_mmcf": 3682.4
+    },
+    {
+      "vessel": "VENTURE GATOR",
+      "departure_date": "2026-06-02",
+      "export_terminal": "Plaquemines, LA",
+      "reported_destination": "Belgium",
+      "volume_mmcf": 3671.49
+    },
+    {
+      "vessel": "RIBERA DEL DUERO KNUTSEN",
+      "departure_date": "2026-06-06",
+      "export_terminal": "Corpus Christi, TX",
+      "reported_destination": "Netherlands",
+      "volume_mmcf": 3564.06
+    },
+    {
+      "vessel": "RIBERA DEL DUERO KNUTSEN",
+      "departure_date": "2026-07-09",
+      "export_terminal": "Sabine Pass, LA",
+      "reported_destination": "Japan",
+      "volume_mmcf": 3520.61
+    },
+    {
+      "vessel": "VENTURE GATOR",
+      "departure_date": "2026-07-10",
+      "export_terminal": "Plaquemines, LA",
+      "reported_destination": "Lithuania",
+      "volume_mmcf": 3665.22
+    },
+    {
+      "vessel": "HUASHAN",
+      "departure_date": "2026-07-24",
+      "export_terminal": "Cameron, LA",
+      "reported_destination": "Netherlands",
+      "volume_mmcf": 3676.4
+    },
+    {
+      "vessel": "VENTURE GATOR",
+      "departure_date": "2026-08-13",
+      "export_terminal": "Plaquemines, LA",
+      "reported_destination": "Belgium",
+      "volume_mmcf": 3623.42
+    }
+  ],
+  "limitations": [
+    "DOE export departure records and reported destinations are not independently verified receiving-terminal discharges",
+    "Dataset ends August 2026 and cannot establish October Rotterdam vessel cargo origins",
+    "IMO numbers not independently verified by DOE workbook name match"
+  ]
+}
