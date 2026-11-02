@@ -1,0 +1,90 @@
+{
+  "version": "2026-11-02",
+  "caseId": "aukus-rotational-force-west-delivered-readiness",
+  "policy": {
+    "influenceScore": null,
+    "auditGatePromotion": false,
+    "causalAttribution": "not_established"
+  },
+  "observations": [
+    {
+      "date": "2024-08-23",
+      "event": "uss-hawaii-tendered-maintenance",
+      "status": "commenced_confirmed",
+      "metric": "first joint US nuclear submarine tendered maintenance period at HMAS Stirling",
+      "value": 1,
+      "unit": "named activity",
+      "source": "https://www.minister.defence.gov.au/statements/2024-08-23/joint-statement-submarine-tendered-maintenance-period"
+    },
+    {
+      "date": "2025-06-30",
+      "event": "asa-performance-target-maintenance",
+      "status": "annual_report_achieved",
+      "metric": "Australian ability to conduct intermediate maintenance of US and UK SSNs at HMAS Stirling",
+      "value": 1,
+      "unit": "performance target achieved",
+      "source": "https://www.transparency.gov.au/publications/defence/australian_submarine_agency/australian-submarine-agency-annual-report-2024-25/chapter-3---performance-reporting/key-activity-1"
+    },
+    {
+      "date": "2025-06-30",
+      "event": "asa-performance-target-personnel",
+      "status": "annual_report_achieved",
+      "metric": "personnel and family support requirements for rotation",
+      "value": 1,
+      "unit": "performance target achieved",
+      "source": "https://www.transparency.gov.au/publications/defence/australian_submarine_agency/australian-submarine-agency-annual-report-2024-25/chapter-3---performance-reporting/key-activity-1"
+    },
+    {
+      "date": "2025-06-30",
+      "event": "asa-performance-target-infrastructure",
+      "status": "annual_report_substantially_achieved",
+      "metric": "infrastructure and equipment for UK and US rotational presence",
+      "value": 1,
+      "unit": "performance target substantially achieved",
+      "source": "https://www.transparency.gov.au/publications/defence/australian_submarine_agency/australian-submarine-agency-annual-report-2024-25/chapter-3---performance-reporting/key-activity-1"
+    },
+    {
+      "date": "2025-10-29",
+      "event": "uss-vermont-maintenance",
+      "status": "commenced_confirmed",
+      "metric": "US Virginia class submarine maintenance period without tender ship",
+      "value": 13,
+      "unit": "Royal Australian Navy personnel in 134-person crew",
+      "source": "https://www.defence.gov.au/news-events/releases/2025-10-29/australia-getting-set-submarine-rotational-force-west"
+    },
+    {
+      "date": "2026-02-22",
+      "event": "hms-anson-maintenance",
+      "status": "arrived_for_maintenance",
+      "metric": "first UK nuclear submarine maintenance activity in Australia",
+      "value": 100,
+      "qualifier": "approximately",
+      "unit": "combined personnel expected to contribute",
+      "source": "https://www.minister.defence.gov.au/media-releases/2026-02-22/aukus-enters-new-era-arrival-uk-submarine-into-western-australia"
+    },
+    {
+      "date": "2026-11-01",
+      "event": "australian-owned-ssn-deliveries",
+      "status": "not_yet_delivered",
+      "metric": "sovereign nuclear powered submarines delivered to Australia",
+      "value": 0,
+      "unit": "submarines",
+      "source": "https://www.asa.gov.au/aukus/submarine-rotational-force-west"
+    }
+  ],
+  "comparability": [
+    "Maintenance milestones measure training and support capability, not sovereign submarine ownership or delivery.",
+    "Annual report achieved/substantially achieved ratings are Australian agency self-assessments, not independently audited operational performance.",
+    "A planned 2027 rotational force is not yet a delivered permanent force; visiting boats do not become Australian fleet assets.",
+    "Personnel numbers for separate events are not additive as unique trained individuals.",
+    "No quantitative measure of deterrence, net economic benefit, cost per capability or causal geopolitical influence."
+  ],
+  "nextEvidence": [
+    "Audited maintenance work packages completed, hours and outcomes",
+    "Australian and US submarine industrial-base cash disbursements vs commitments",
+    "Australian sovereign workforce skill certifications and unique trainee counts",
+    "2027 operational rotation actual vessel-days compared with plans",
+    "Independent cost and strategic counterfactual"
+  ],
+  "influenceScore": null
+}
