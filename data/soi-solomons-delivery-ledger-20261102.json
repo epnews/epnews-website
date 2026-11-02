@@ -1,0 +1,76 @@
+{
+  "version": "2026-11-02",
+  "scope": "China–Solomon Islands police cooperation: delivered activities, equipment and denominators",
+  "policy": {
+    "influenceScore": null,
+    "auditGatePromotion": false,
+    "causalAttribution": "not_established"
+  },
+  "observations": [
+    {
+      "date": "2022-11-08",
+      "metric": "rsipf_training_completed",
+      "value": 32,
+      "unit": "officers",
+      "period": "October–November 2022",
+      "source": "https://solomons.gov.sb/rsipf-officers-completed-training-in-china/"
+    },
+    {
+      "date": "2024-03-05",
+      "metric": "joint_public_order_training_completed",
+      "value": 42,
+      "unit": "RSIPF and CSSI officers",
+      "period": "four-day course",
+      "source": "https://solomons.gov.sb/rsipf-and-cssi-officers-awarded-with-certificates-in-completion-of-four-days-pom-training-in-western-province/"
+    },
+    {
+      "date": "2025-07-10",
+      "metric": "cssi_china_training_completed",
+      "value": 24,
+      "unit": "correctional officers",
+      "period": "2025-06-02 through 2025-06-26",
+      "source": "https://solomons.gov.sb/cssi-officers-return-safely-after-completing-training-in-china/"
+    },
+    {
+      "date": "2025-08-30",
+      "metric": "equipment_handover_value",
+      "value": 2000000,
+      "qualifier": "less_than",
+      "currency": "SBD",
+      "unit": "Solomon Islands dollars",
+      "source": "https://solomons.gov.sb/prime-minister-manele-expresses-gratitude-for-chinas-generous-donation-of-police-assets-to-rsipf/"
+    },
+    {
+      "date": "2025-08-30",
+      "metric": "previous_equipment_donations",
+      "value": 4500000,
+      "qualifier": "over",
+      "currency": "SBD",
+      "unit": "Solomon Islands dollars",
+      "source": "https://solomons.gov.sb/prime-minister-manele-expresses-gratitude-for-chinas-generous-donation-of-police-assets-to-rsipf/"
+    },
+    {
+      "date": "2025-08-30",
+      "metric": "rsipf_china_training_and_study_tours_since_2019",
+      "value": 300,
+      "qualifier": "around",
+      "unit": "RSIPF officer participation, potentially repeated",
+      "source": "https://solomons.gov.sb/prime-minister-manele-expresses-gratitude-for-chinas-generous-donation-of-police-assets-to-rsipf/"
+    },
+    {
+      "date": "2025-11-10",
+      "metric": "rsipf_training_in_china_since_mid_2022",
+      "value": 200,
+      "qualifier": "nearly",
+      "unit": "officer participation, potentially repeated",
+      "source": "https://solomons.gov.sb/rsipf-farewell-two-cplt-members/"
+    }
+  ],
+  "methodology": [
+    "Figures refer to different cohorts, institutions and windows; do not sum or treat as unique people.",
+    "Around 300 since 2019 and nearly 200 since mid-2022 are distinct government descriptions, not necessarily conflicting.",
+    "The SBD 2 million equipment handover and SBD 4.5 million previous donations are not audited expenditures or net benefits.",
+    "Training completion and donated equipment document implementation, not an independently measured policy outcome.",
+    "A matched counterfactual, operating cost, and policy autonomy measure are missing."
+  ]
+}
