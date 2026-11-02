@@ -43,6 +43,34 @@ def validate_response(result):
         raise ValueError("GIE returned no facility observations; refusing empty evidence export")
     return result["data"]
 
+def fetch_all_pages(base_url, key, fetch=request_json):
+    """Fetch every GIE page and reject inconsistent or incomplete responses."""
+    parsed = validate_facility_url(base_url)
+    params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
+    params["size"] = "300"
+    all_rows = []
+    expected_pages = None
+    for page in range(1, 1001):
+        params["page"] = str(page)
+        url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
+        response = fetch(url, key)
+        if not isinstance(response, dict) or not isinstance(response.get("data"), list):
+            raise ValueError(f"Invalid GIE response on page {page}")
+        try:
+            last_page = int(response["last_page"])
+        except (KeyError, TypeError, ValueError):
+            raise ValueError("Missing or invalid GIE last_page metadata") from None
+        if last_page < 1 or last_page > 1000 or (expected_pages is not None and last_page != expected_pages):
+            raise ValueError("Inconsistent or unsafe GIE pagination")
+        expected_pages = last_page
+        rows = response["data"]
+        if not rows:
+            raise ValueError(f"Empty GIE page {page}; refusing incomplete evidence")
+        all_rows.extend(rows)
+        if page == expected_pages:
+            return all_rows, expected_pages
+    raise ValueError("GIE pagination exceeded safety limit")
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--facility-url", help="Exact Gate facility URL copied from authenticated /api/about?show=listing")
@@ -64,21 +92,20 @@ def main():
         parser.error("--facility-url is required (resolve Gate EIC via --list-facilities first)")
     parsed = validate_facility_url(args.facility_url)
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
-    params.update({"from": args.from_date, "till": args.to_date})
+    params.update({"from": args.from_date, "to": args.to_date})
     url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
-    result = request_json(url, key)
-    rows = validate_response(result)
+    rows, page_count = fetch_all_pages(url, key)
     output = {
         "source": "GIE ALSI+ operator-reported LNG facility daily series",
         "facility_api_url": url,
         "retrieved_date_utc": date.today().isoformat(),
         "data": rows,
-        "api_response_metadata": {k: v for k, v in result.items() if k != "data"},
+        "api_response_metadata": {"pages_retrieved": page_count, "records_retrieved": len(rows)},
         "limitations": [
             "Inventory and sendOut are not vessel-by-vessel unloading volumes",
             "Confirm facility EIC belongs to Gate terminal; never substitute country aggregate",
             "Data status C confirms reporting, not voyage cargo origin",
-            "Acquisition fails closed if API reports more than one page; no incomplete export is written",
+            "All reported API pages retrieved; inconsistent or empty pages fail closed",
         ],
     }
     with open(args.output, "w", encoding="utf-8") as f:
