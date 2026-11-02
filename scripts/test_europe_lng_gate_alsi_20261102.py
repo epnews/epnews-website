@@ -482,3 +482,16 @@ q = mod.summarize_evidence_quality(mixed_e_n)
 assert q["no_data_day_count"] == 1
 assert q["unambiguous_estimated_day_count"] == 1
 print("ALSI unambiguous estimated and no-data status quality passed")
+
+status_ambiguity = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "E"},
+    {"gasDayStart": "2026-10-02", "status": "N"},
+    {"gasDayStart": "2026-10-03", "status": "C"},
+    {"gasDayStart": "2026-10-03", "status": "N"},
+    {"gasDayStart": "2026-10-04", "status": "C"},
+], "2026-10-01", "2026-10-04")
+assert status_ambiguity["ambiguous_reporting_gas_days"] == 2
+assert status_ambiguity["ambiguous_reporting_coverage_percent"] == 50.0
+assert mod.summarize_evidence_quality(status_ambiguity)["ambiguous_reporting_coverage_percent"] == 50.0
+print("ALSI contradictory reporting share regression passed")
