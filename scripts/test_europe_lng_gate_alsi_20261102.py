@@ -336,3 +336,16 @@ assert availability["usable_reporting_gas_days"] == 2
 assert availability["usable_reporting_coverage_percent"] == 40.0
 assert availability["unavailable_reporting_gas_days"] == 1
 print("ALSI usable-vs-no-data coverage tests passed")
+
+summary_input = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-02", "status": "E"},
+    {"gasDayStart": "2026-10-03", "status": "N"},
+], "2026-10-01", "2026-10-04")
+summary = mod.summarize_evidence_quality(summary_input)
+assert summary["usable_reporting_coverage_percent"] == 50.0
+assert summary["unambiguous_confirmed_coverage_percent"] == 25.0
+assert summary["no_data_day_count"] == 1
+assert summary["certified_vessel_discharge"] is False
+assert summary["verified_cargo_origin"] is False
+print("ALSI exported evidence quality and non-attribution tests passed")

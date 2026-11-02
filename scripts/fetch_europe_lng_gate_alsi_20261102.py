@@ -275,6 +275,19 @@ def validate_operator_evidence(rows, from_date, to_date):
         raise ValueError("ALSI records missing gas day or outside requested period")
     return coverage
 
+def summarize_evidence_quality(coverage):
+    """Keep operator evidence classification explicit for downstream consumers."""
+    return {
+        "date_window_complete": coverage["complete_daily_coverage"],
+        "usable_reporting_coverage_percent": coverage["usable_reporting_coverage_percent"],
+        "unambiguous_confirmed_coverage_percent": coverage["unambiguous_confirmed_coverage_percent"],
+        "conflicting_status_day_count": len(coverage["conflicting_status_gas_days"]),
+        "no_data_day_count": coverage["no_data_gas_days"],
+        "certified_vessel_discharge": False,
+        "verified_cargo_origin": False,
+        "interpretation": "Operator inventory/sendout reporting only; not vessel discharge or cargo origin",
+    }
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--facility-url", help="Exact Gate facility URL copied from authenticated /api/about?show=listing")
@@ -306,16 +319,7 @@ def main():
     url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
     rows, page_count = fetch_all_pages(url, key)
     coverage = validate_operator_evidence(rows, args.from_date, args.to_date)
-    evidence_quality = {
-        "date_window_complete": coverage["complete_daily_coverage"],
-        "usable_reporting_coverage_percent": coverage["usable_reporting_coverage_percent"],
-        "unambiguous_confirmed_coverage_percent": coverage["unambiguous_confirmed_coverage_percent"],
-        "conflicting_status_day_count": len(coverage["conflicting_status_gas_days"]),
-        "no_data_day_count": coverage["no_data_gas_days"],
-        "certified_vessel_discharge": False,
-        "verified_cargo_origin": False,
-        "interpretation": "Operator inventory/sendout reporting only; not vessel discharge or cargo origin",
-    }
+    evidence_quality = summarize_evidence_quality(coverage)
     output = {
         "source": "GIE ALSI+ operator-reported LNG facility daily series",
         "facility_api_url": url,
