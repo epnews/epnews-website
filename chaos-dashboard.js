@@ -138,6 +138,15 @@ function appendVotingEvidence(actor,dimension){
    if(liveAudit){
     const completed=liveAudit.priorityTasks.filter(x=>x.complete).length;
     drawer.append(element('p','VERIFICATION PROGRESS · '+completed+' / '+liveAudit.priorityTasks.length+' scoped checks. Not an influence score.'));
+    const gateLabels={'verify-primary':'Primary source','verify-counterpart':'Counterpart evidence','match-baseline':'Baseline','match-followup':'Follow-up','attribute':'Attribution','costs':'Costs'};
+    const gates=element('p');
+    gates.append(document.createTextNode('SIX-GATE AUDIT · '));
+    for(const task of liveAudit.priorityTasks){
+     const status=task.complete?'verified':'pending';
+     gates.append(document.createTextNode((gateLabels[task.id]||task.id)+': '+status+' · '));
+    }
+    drawer.append(gates);
+    drawer.append(element('p','Gate completion tracks documented research checks, not proof of causal influence or geopolitical value.'));
     const observed=liveAudit.additionalOperationalEvidence||liveAudit.directPolicyUptake||liveAudit.implementationObservation;
     if(observed){
      const label=observed.event||observed.observedUnit||'Observed implementation';
