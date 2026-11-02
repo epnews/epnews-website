@@ -22,6 +22,13 @@ jobs:
           python scripts/test_gate_gaspeil_snapshot_20261102.py
           python scripts/test_gate_integrated_evidence_audit_20261102.py
           python scripts/test_audit_gate_inventory_deltas_20261102.py
+          python scripts/test_audit_gate_gaspeil_indicative_value_20261102.py
+          python scripts/test_audit_gate_arrival_collision_exposure_20261102.py
+          python scripts/test_audit_gate_origin_evidence_basis_20261102.py
+          python scripts/test_audit_gate_gasday_utc_offsets_20261102.py
+          python scripts/test_audit_gate_estimate_stock_variance_20261102.py
+          python scripts/test_audit_gate_proxy_variance_cancellation_20261102.py
+          python scripts/test_run_gate_snapshot_evidence_diagnostics_20261102.py
       - name: Verify GIE key
         env:
           GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
@@ -52,6 +59,11 @@ jobs:
           python scripts/reconcile_gate_alsi_gaspeil_20261102.py \
             --alsi gate-alsi-operator-october-2026.json \
             --gaspeil gate-gaspeil-october-2026-snapshot.json
+      - name: Produce six cross-checked research diagnostics from archived Gaspeil snapshot
+        run: |
+          python scripts/run_gate_snapshot_evidence_diagnostics_20261102.py \
+            --snapshot gate-gaspeil-october-2026-snapshot.json \
+            --output gate-october-crosschecked-evidence-diagnostics.json
       - name: Archive source snapshots and reconciliations
         uses: actions/upload-artifact@v4
         with:
@@ -63,5 +75,6 @@ jobs:
             gate-october-inventory-delta-audit.json
             gate-october-integrated-evidence-audit.json
             gate-october-alsi-gaspeil-reconciliation.json
+            gate-october-crosschecked-evidence-diagnostics.json
           retention-days: 14
           if-no-files-found: error
