@@ -1,0 +1,25 @@
+name: DOE LNG research regression
+on:
+  pull_request:
+    paths:
+      - 'scripts/*europe_lng_doe*'
+      - '.github/workflows/europe-lng-doe-*.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'openpyxl>=3.1,<4'
+      - name: Run synthetic workbook matcher test
+        run: python scripts/test_europe_lng_doe_vessel_matcher_20261102.py
+      - name: Check DOE downloader JavaScript syntax
+        run: node --check scripts/fetch_europe_lng_doe_workbook_20261102.cjs
+      - name: Compile schema audit and matcher
+        run: python -m py_compile scripts/audit_europe_lng_doe_workbook_schema_20261102.py scripts/match_europe_lng_doe_vessels_20261102.py
