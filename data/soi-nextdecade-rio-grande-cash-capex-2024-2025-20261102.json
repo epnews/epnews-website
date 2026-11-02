@@ -1,0 +1,42 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-11",
+  "company": "NextDecade Corporation",
+  "project": "Rio Grande LNG Facility",
+  "filing": "FY2025 Form 10-K, consolidated cash flows, note 3 PP&E, note 12 supplemental cash flows",
+  "source": "https://www.sec.gov/Archives/edgar/data/1612720/000161272026000009/next-20251231.htm",
+  "unit": "USD thousands",
+  "observations": [
+    {
+      "year": 2024,
+      "cashAcquisitionPPandE": 2567801,
+      "otherNoncurrentAssetsCashAcquisition": 6404,
+      "netInvestingCashOutflow": 2574205,
+      "yearEndRioGrandeConstructionPPandE": 5009239,
+      "accountsPayableForPPandE": 242057,
+      "accrualsForPPandE": 276137
+    },
+    {
+      "year": 2025,
+      "cashAcquisitionPPandE": 4846807,
+      "otherNoncurrentAssetsCashAcquisition": 6097,
+      "netInvestingCashOutflow": 4852904,
+      "yearEndRioGrandeConstructionPPandE": 10563032,
+      "accountsPayableForPPandE": 438829,
+      "accrualsForPPandE": 769137
+    }
+  ],
+  "crossCheck": "Cash PP&E acquisition + other noncurrent asset acquisitions = net investing cash outflow in each year",
+  "notes": [
+    "Actual cash acquisition of PP&E is not the same as investing cash flow, balance-sheet additions, unpaid accounts payable or project total lifetime cost.",
+    "Construction-in-progress PP&E is a balance-sheet stock, not annual cash spent.",
+    "The 2025 10-K says investing cash outflows primarily reflect Rio Grande LNG construction; cannot assume every dollar of consolidated PP&E is solely Rio Grande construction.",
+    "Noncash accounts payable and accrual balances are disclosed separately and must not be added to cash payments.",
+    "These observations add a third LNG developer to the two-company panel, but are not full US LNG sector coverage.",
+    "No score, profit or national net benefit inferred."
+  ],
+  "gateClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
