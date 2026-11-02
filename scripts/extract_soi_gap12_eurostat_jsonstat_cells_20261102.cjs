@@ -24,9 +24,9 @@ function parse(json,spec){
  for(const period of ['2025-S2','2026-S1'])for(const g of spec.geos){const chosen={...selection,[geo]:g,[time]:period};const coords=json.id.map((_,i)=>{const code=chosen[i];if(code===undefined){assert.equal(json.size[i],1,'Ambiguous dimension '+json.id[i]);return 0;}assert(keys[i].has(code),'Missing '+json.id[i]+'='+code);return keys[i].get(code)});
  let offset=0;for(let i=0;i<coords.length;i++)offset=offset*json.size[i]+coords[i];
  const value=Array.isArray(json.value)?json.value[offset]:json.value[String(offset)];
- assert(!json.status||!Object.hasOwn(json.status,String(offset)),'Source observation carries a quality/status flag '+g+' '+period);
+ const status=json.status&&Object.hasOwn(json.status,String(offset))?String(json.status[String(offset)]):null;
  assert(Number.isFinite(value)&&value>0,'Missing official observation '+g);
- cells.push({geo:g,commodity:spec.commodity,period,valueEURkWh:value,dataset:spec.dataset,unit:'KWH',currency:'EUR',consumptionBand:spec.band,taxes:'I_TAX',sourceUrl:'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'+spec.dataset,retrievedAt});
+ cells.push({geo:g,commodity:spec.commodity,period,valueEURkWh:value,dataset:spec.dataset,unit:'KWH',currency:'EUR',consumptionBand:spec.band,taxes:'I_TAX',sourceUrl:'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'+spec.dataset,retrievedAt,sourceStatus:status});
  }
 }
 specs.forEach((spec,i)=>parse(JSON.parse(fs.readFileSync(process.argv[i+2],'utf8')),spec));
