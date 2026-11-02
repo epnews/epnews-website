@@ -1,0 +1,123 @@
+{
+  "schema": "soi-unga-six-code-agenda-coverage-v1",
+  "source": "data/soi-unga-source-topics-2021-2024.json",
+  "sourceCsvSha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "policyCodes": [
+    "102",
+    "110",
+    "111",
+    "112",
+    "118",
+    "129"
+  ],
+  "years": [
+    {
+      "year": 2021,
+      "recorded": 86,
+      "withAnyIssueCode": 83,
+      "withoutIssueCode": 3,
+      "withAnySixSelectedCodes": 74,
+      "selectedShareOfAllPercent": 86.0465,
+      "selectedShareOfIssueCodedPercent": 89.1566
+    },
+    {
+      "year": 2022,
+      "recorded": 89,
+      "withAnyIssueCode": 84,
+      "withoutIssueCode": 5,
+      "withAnySixSelectedCodes": 77,
+      "selectedShareOfAllPercent": 86.5169,
+      "selectedShareOfIssueCodedPercent": 91.6667
+    },
+    {
+      "year": 2023,
+      "recorded": 88,
+      "withAnyIssueCode": 84,
+      "withoutIssueCode": 4,
+      "withAnySixSelectedCodes": 75,
+      "selectedShareOfAllPercent": 85.2273,
+      "selectedShareOfIssueCodedPercent": 89.2857
+    },
+    {
+      "year": 2024,
+      "recorded": 95,
+      "withAnyIssueCode": 88,
+      "withoutIssueCode": 7,
+      "withAnySixSelectedCodes": 83,
+      "selectedShareOfAllPercent": 87.3684,
+      "selectedShareOfIssueCodedPercent": 94.3182
+    }
+  ],
+  "codeSupport": [
+    {
+      "code": "102",
+      "yearlyResolutions": [
+        9,
+        6,
+        5,
+        7
+      ],
+      "totalDistinctResolutions": 27
+    },
+    {
+      "code": "110",
+      "yearlyResolutions": [
+        10,
+        15,
+        16,
+        11
+      ],
+      "totalDistinctResolutions": 52
+    },
+    {
+      "code": "111",
+      "yearlyResolutions": [
+        12,
+        14,
+        13,
+        16
+      ],
+      "totalDistinctResolutions": 55
+    },
+    {
+      "code": "112",
+      "yearlyResolutions": [
+        18,
+        17,
+        16,
+        19
+      ],
+      "totalDistinctResolutions": 70
+    },
+    {
+      "code": "118",
+      "yearlyResolutions": [
+        8,
+        10,
+        8,
+        11
+      ],
+      "totalDistinctResolutions": 37
+    },
+    {
+      "code": "129",
+      "yearlyResolutions": [
+        32,
+        33,
+        32,
+        38
+      ],
+      "totalDistinctResolutions": 135
+    }
+  ],
+  "totalRecorded": 358,
+  "totalIssueCoded": 339,
+  "totalMissingIssueCode": 19,
+  "totalSelectedDistinctResolutions": 309,
+  "selectionExploratory": true,
+  "representativeOfAgenda": false,
+  "allIssuesBalanced": false,
+  "issueWeightsDerivedFromVoting": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
