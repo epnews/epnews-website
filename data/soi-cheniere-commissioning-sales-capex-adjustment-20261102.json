@@ -1,0 +1,30 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-11",
+  "sourceDataset": "data/soi-lng-audited-cash-capex-2024-2025-20261102.json",
+  "currency": "USD millions",
+  "company": "Cheniere Energy Inc",
+  "fy2025": {
+    "secReportedCashPPENetCommissioningLNGSales": 3078,
+    "commissioningSalesProceeds": 174,
+    "arithmeticGrossBeforeCommissioningProceeds": 3252
+  },
+  "calculation": "3078 + 174 = 3252",
+  "sourceBasis": "Existing SEC FY2025 Form 10-K cash-flow reporting and commissioning-sales note; the $174m adjustment was recorded as source-file context in PR #477",
+  "comparisonWithVentureGlobal": {
+    "ventureGlobal2025CashCapex": 13365,
+    "ventureGlobal2025NamedTerminalProjectCapex": 10824,
+    "comparability": "Cheniere adjusted cash PP&E is still consolidated, not terminal-project-specific; cannot directly compare to Venture Global named terminal subtotal"
+  },
+  "limitations": [
+    "The $3.252bn value is a grossed-up arithmetic adjustment to the net cash PP&E line, not a separately audited gross capital spending line item.",
+    "Commissioning sales proceeds are not company profit or government revenue.",
+    "Grossed-up PP&E may still include nonterminal assets and timing differences.",
+    "Do not add net and gross adjusted values together.",
+    "No industry-wide or geopolitical score inferred."
+  ],
+  "gateClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
