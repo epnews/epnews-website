@@ -1,0 +1,111 @@
+{
+  "schema": "soi-unga-five-family-topic-coverage-v1",
+  "sourceCsvSha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "families": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "6"
+  ],
+  "allocation": "Each resolution fractionally allocated equally among unique first-digit category families",
+  "coverage": {
+    "2021": {
+      "1": {
+        "resolutionCount": 83,
+        "fractionalResolutionWeight": 48.833333
+      },
+      "2": {
+        "resolutionCount": 16,
+        "fractionalResolutionWeight": 4.833333
+      },
+      "3": {
+        "resolutionCount": 2,
+        "fractionalResolutionWeight": 0.666667
+      },
+      "4": {
+        "resolutionCount": 14,
+        "fractionalResolutionWeight": 4
+      },
+      "6": {
+        "resolutionCount": 58,
+        "fractionalResolutionWeight": 27.666667
+      }
+    },
+    "2022": {
+      "1": {
+        "resolutionCount": 84,
+        "fractionalResolutionWeight": 47.25
+      },
+      "2": {
+        "resolutionCount": 21,
+        "fractionalResolutionWeight": 6.083333
+      },
+      "3": {
+        "resolutionCount": 1,
+        "fractionalResolutionWeight": 0.333333
+      },
+      "4": {
+        "resolutionCount": 20,
+        "fractionalResolutionWeight": 5.583333
+      },
+      "6": {
+        "resolutionCount": 64,
+        "fractionalResolutionWeight": 29.75
+      }
+    },
+    "2023": {
+      "1": {
+        "resolutionCount": 84,
+        "fractionalResolutionWeight": 48.083333
+      },
+      "2": {
+        "resolutionCount": 21,
+        "fractionalResolutionWeight": 6.416667
+      },
+      "3": {
+        "resolutionCount": 3,
+        "fractionalResolutionWeight": 1
+      },
+      "4": {
+        "resolutionCount": 17,
+        "fractionalResolutionWeight": 4.916667
+      },
+      "6": {
+        "resolutionCount": 59,
+        "fractionalResolutionWeight": 27.583333
+      }
+    },
+    "2024": {
+      "1": {
+        "resolutionCount": 88,
+        "fractionalResolutionWeight": 52.583333
+      },
+      "2": {
+        "resolutionCount": 22,
+        "fractionalResolutionWeight": 6.25
+      },
+      "3": {
+        "resolutionCount": 1,
+        "fractionalResolutionWeight": 0.333333
+      },
+      "4": {
+        "resolutionCount": 20,
+        "fractionalResolutionWeight": 5.416667
+      },
+      "6": {
+        "resolutionCount": 64,
+        "fractionalResolutionWeight": 30.416667
+      }
+    }
+  },
+  "allFamiliesPresentEveryYear": true,
+  "adjustedScoresAuthorized": false,
+  "influenceScoreAuthorized": false
+}
