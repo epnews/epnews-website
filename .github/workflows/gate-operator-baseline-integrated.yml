@@ -71,8 +71,8 @@ jobs:
             --output gate-october-crosschecked-evidence-diagnostics.json
       - name: Enforce cross-diagnostic consistency gates
         run: |
-          python scripts/check_gate_cross_diagnostic_consistency_20261102.py \\
-            --report gate-october-crosschecked-evidence-diagnostics.json \\
+          python scripts/check_gate_cross_diagnostic_consistency_20261102.py \
+            --report gate-october-crosschecked-evidence-diagnostics.json \
             --output gate-october-cross-diagnostic-consistency.json
       - name: Archive source snapshots and reconciliations
         uses: actions/upload-artifact@v4
