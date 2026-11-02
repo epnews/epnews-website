@@ -9,7 +9,7 @@ if(process.argv.length!==4){console.error('Supply original official electricity 
 const specs=[{commodity:'electricity',dataset:'nrg_pc_204',band:'KWH2500-4999',geos:['IE','DE','BE','HU','MT','BG']},{commodity:'natural gas',dataset:'nrg_pc_202',band:'GJ20-199',geos:['SE','NL','HU','HR','RO']}];
 const cells=[];
 const retrievedAt=process.env.EUROSTAT_RETRIEVED_AT;
-assert(typeof retrievedAt==='string'&&/^\\d{4}-\\d{2}-\\d{2}T/.test(retrievedAt),'Set EUROSTAT_RETRIEVED_AT to actual retrieval timestamp (ISO 8601)');
+assert(typeof retrievedAt==='string'&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(retrievedAt),'Set EUROSTAT_RETRIEVED_AT to actual retrieval timestamp (ISO 8601)');
 function parse(json,spec){
  assert(json.class==='dataset','Not Eurostat JSON-stat dataset');
  assert(typeof json.source==='string'&&/Eurostat/i.test(json.source),'Official Eurostat source metadata required');
@@ -21,9 +21,10 @@ function parse(json,spec){
  const selection={};selection[time]=null;selection[unit]='KWH';selection[currency]='EUR';selection[cons]=spec.band;selection[tax]='I_TAX';
  // Explicitly fail on unaccounted multi-valued dimensions rather than choosing the first arbitrarily.
  for(let i=0;i<json.id.length;i++)if(!Object.hasOwn(selection,i)&&i!==geo)assert(json.size[i]===1,'Ambiguous unselected dimension '+json.id[i]);
- for(const period of ['2025-S2','2026-S1'])for(const g of spec.geos){const chosen={...selection,[geo]:g,[time]:period};const coords=json.id.map((_,i)=>{const code=chosen[i];if(code===undefined)return 0;assert(keys[i].has(code),'Missing '+json.id[i]+'='+code);return keys[i].get(code)});
+ for(const period of ['2025-S2','2026-S1'])for(const g of spec.geos){const chosen={...selection,[geo]:g,[time]:period};const coords=json.id.map((_,i)=>{const code=chosen[i];if(code===undefined){assert.equal(json.size[i],1,'Ambiguous dimension '+json.id[i]);return 0;}assert(keys[i].has(code),'Missing '+json.id[i]+'='+code);return keys[i].get(code)});
  let offset=0;for(let i=0;i<coords.length;i++)offset=offset*json.size[i]+coords[i];
  const value=Array.isArray(json.value)?json.value[offset]:json.value[String(offset)];
+ assert(!json.status||!Object.hasOwn(json.status,String(offset)),'Source observation carries a quality/status flag '+g+' '+period);
  assert(Number.isFinite(value)&&value>0,'Missing official observation '+g);
  cells.push({geo:g,commodity:spec.commodity,period,valueEURkWh:value,dataset:spec.dataset,unit:'KWH',currency:'EUR',consumptionBand:spec.band,taxes:'I_TAX',sourceUrl:'https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/'+spec.dataset,retrievedAt});
  }
