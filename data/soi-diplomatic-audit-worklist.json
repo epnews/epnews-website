@@ -1,5 +1,5 @@
 {
-  "version": "2.8",
+  "version": "2.9",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -853,7 +853,75 @@
             ]
           }
         },
-        "nextMilestone": "Download and archive timestamped DGCIS UAE export/import and HS-level extracts, reconcile 82.42 vs 83.64, then assess product-level pre/post comparisons; do not mark match-baseline or match-followup until completed."
+        "nextMilestone": "Download and archive timestamped DGCIS UAE export/import and HS-level extracts, reconcile 82.42 vs 83.64, then assess product-level pre/post comparisons; do not mark match-baseline or match-followup until completed.",
+        "officialHistoricalMatchedSeries": {
+          "status": "official-descriptive-aggregate-only",
+          "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf",
+          "sourceDate": "2024-12-17",
+          "publisher": "India Ministry of Commerce and Industry; DGCIS data",
+          "definition": "Nominal India-UAE bilateral merchandise trade, April–March fiscal years, USD million",
+          "periods": [
+            {
+              "fy": "2022-2023",
+              "exportsUsdMillion": 31608.79,
+              "importsUsdMillion": 53231.55,
+              "totalUsdMillion": 84840.34
+            },
+            {
+              "fy": "2023-2024",
+              "exportsUsdMillion": 35625.02,
+              "importsUsdMillion": 48025.58,
+              "totalUsdMillion": 83650.6
+            }
+          ],
+          "derived": {
+            "totalYearOverYearPercent": -1.4023,
+            "exportsYearOverYearPercent": 12.706,
+            "importsYearOverYearPercent": -9.78
+          },
+          "limitations": [
+            "2022-23 contains first month before May 1 2022 CEPA commencement",
+            "Historical publication vintage only; revised live TradeStat extraction pending",
+            "Nominal value does not establish physical quantity or non-oil composition",
+            "Same-vintage aggregate comparison is not product-level matched tariff-utilization evidence",
+            "Changes do not establish CEPA-attributable effects or diplomatic influence"
+          ],
+          "sourceVerified": true,
+          "productLevelGatesSatisfied": false
+        },
+        "independentAnnualSource": {
+          "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/Annual-Report-English-Lower-Resolution-1.pdf",
+          "finding": "Annual report confirms CEPA effective 1 May 2022, FY2023-24 nominal trade approximately $83.63bn, 2024 subcommittee discussions on origin certificates and customs implementation.",
+          "status": "corroborating official publication, different rounding or vintage"
+        },
+        "liveSources": [
+          {
+            "url": "https://tradestat.commerce.gov.in/eidb/country_wise_ttrade",
+            "type": "DGCIS EIDB annual trade",
+            "status": "interactive values not extracted",
+            "lastUpdate": "2026-08-07"
+          },
+          {
+            "url": "https://tradestat.commerce.gov.in/meidb/country_wise_export",
+            "type": "DGCIS MEIDB monthly trade",
+            "status": "interactive values not extracted",
+            "lastUpdate": "2026-10-23"
+          },
+          {
+            "url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+            "type": "DGCIS FTSPCC monthly total trade",
+            "status": "interactive values not extracted",
+            "lastUpdate": "2026-10-28"
+          }
+        ],
+        "sourceIntegrityPolicy": {
+          "historicalAggregateConfirmed": true,
+          "liveRevisionReconciled": false,
+          "preferentialUtilizationVerified": false,
+          "causalAttributionVerified": false,
+          "measurementEligibility": "descriptive historical bilateral trade only",
+          "nextGateRequirement": "Direct same-vintage HS-level export/import quantities, pre-CEPA comparison, post-CEPA preference claims and eligible-line denominators"
+        }
       }
     }
   ],
