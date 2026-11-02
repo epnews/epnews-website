@@ -1,0 +1,54 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-11",
+  "sourceDataset": "data/soi-lng-audited-cash-capex-2024-2025-20261102.json",
+  "currency": "USD millions",
+  "measurement": "Venture Global cash capital expenditures separated into named LNG terminal projects versus nonterminal and financing categories",
+  "annual": [
+    {
+      "year": 2024,
+      "terminalProjectCashCapex": 11785,
+      "nonterminalAndUnallocatedCashCapex": 1932,
+      "totalCashCapex": 13717,
+      "terminalProjects": {
+        "Plaquemines": 9414,
+        "CP2": 2334,
+        "Calcasieu": 37
+      },
+      "otherCategories": {
+        "pipelines": 509,
+        "tankers": 403,
+        "capitalizedInterest": 668,
+        "other": 352
+      }
+    },
+    {
+      "year": 2025,
+      "terminalProjectCashCapex": 10824,
+      "nonterminalAndUnallocatedCashCapex": 2541,
+      "totalCashCapex": 13365,
+      "terminalProjects": {
+        "Plaquemines": 5503,
+        "CP2": 5256,
+        "Calcasieu": 65
+      },
+      "otherCategories": {
+        "pipelines": 933,
+        "tankers": 754,
+        "capitalizedInterest": 558,
+        "other": 296
+      }
+    }
+  ],
+  "interpretation": [
+    "Named project spending is more specific than company total cash capex but may include non-construction expenses attributed to projects.",
+    "Nonterminal and unallocated bucket includes pipelines, LNG tankers, capitalized interest and other; not an estimate of waste or avoidable cost.",
+    "Cash spent on a project is not evidence that the project was completed or that the amount represents project lifetime cost.",
+    "Cheniere consolidated PP&E cash flow remains separate and is not combined into the Venture Global facility-only subtotal.",
+    "These figures are derived arithmetic from a single SEC company filing, not a new independent evidence source."
+  ],
+  "gateClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
