@@ -211,7 +211,10 @@ def audit_observation_coverage(rows, from_date, to_date):
         status = str(row.get("status", "missing"))
         statuses[status] = statuses.get(status, 0) + 1
     expected = [(start + timedelta(days=n)).isoformat() for n in range((end - start).days + 1)]
+    observed_in_window = set(counts).intersection(expected)
     return {"expected_gas_days": len(expected), "observed_unique_gas_days": len(counts),
+            "observed_in_window_gas_days": len(observed_in_window),
+            "daily_coverage_percent": round(100 * len(observed_in_window) / len(expected), 2) if expected else 0,
             "missing_gas_days": [day for day in expected if day not in counts],
             "duplicate_gas_days": {day: n for day, n in counts.items() if n > 1},
             "out_of_window_gas_days": sorted(set(outside)),
