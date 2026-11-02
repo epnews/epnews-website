@@ -1,0 +1,27 @@
+name: SOI Eurostat workflow dependency gate
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/soi-eurostat-hicp-official-verify.yml'
+      - 'scripts/fetch_soi_eurostat_hicp_2025_20261102.cjs'
+      - 'scripts/audit_soi_eurostat_hicp_official_match_20261102.cjs'
+      - 'scripts/audit_soi_eurostat_workflow_dependencies_20261102.cjs'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/soi-eurostat-hicp-official-verify.yml'
+      - 'scripts/fetch_soi_eurostat_hicp_2025_20261102.cjs'
+      - 'scripts/audit_soi_eurostat_hicp_official_match_20261102.cjs'
+      - 'scripts/audit_soi_eurostat_workflow_dependencies_20261102.cjs'
+permissions:
+  contents: read
+jobs:
+  dependency-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source dependencies for official Eurostat verification
+        run: node scripts/audit_soi_eurostat_workflow_dependencies_20261102.cjs
