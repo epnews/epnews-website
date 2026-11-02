@@ -757,7 +757,7 @@ for(const item of diplomaticQueue.items){
  assert.equal(assessment.causallyAttributable,false);
  assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
 }
-assert.equal(diplomaticQueue.items.filter(x=>x.baselineFollowupAssessment.descriptivelyComparable).length,4);
+assert.equal(diplomaticQueue.items.filter(x=>x.baselineFollowupAssessment.descriptivelyComparable).length,5);
 
 // Causal plans must include counterpart agency, multiple alternatives and cost evidence.
 for(const item of diplomaticQueue.items){
@@ -822,7 +822,7 @@ assert.equal(usOperational.eligibleForInfluenceScoring,false);
 const euResources=diplomaticQueue.items.find(x=>x.sphere==='eu').additionalOperationalEvidence;
 assert.equal(euResources.budgetEUR,19800000);
 assert.equal(euResources.staffCeiling,72);
-assert.match(euResources.budgetDefinition,/not actual spending/i);
+assert.match(euResources.budgetDefinition,/not actual (?:spending|expenditure)/i);
 assert.equal(euResources.eligibleForInfluenceScoring,false);
 
 // Audit progress must exactly reflect scoped completed tasks, not count source links as causal evidence.
@@ -882,3 +882,11 @@ const russiaLegal=diplomaticQueue.items.find(x=>x.sphere==='russia').baselineFol
 assert.equal(russiaLegal.descriptivelyComparable,true);
 assert.equal(russiaLegal.causallyAttributable,false);
 assert.match(russiaLegal.metric,/legal status/);
+
+// EU successive mandate commitments are comparable as nominal reference amounts, never as outcome scores.
+const euMandates=diplomaticQueue.items.find(x=>x.sphere==='eu').baselineFollowupAssessment;
+assert.equal(euMandates.descriptivelyComparable,true);
+assert.equal(euMandates.causallyAttributable,false);
+assert.equal(euMandates.baselineValueEUR,13356508.08);
+assert.equal(euMandates.followupValueEUR,19817594.70);
+assert.match(euMandates.reason,/not disbursements/);

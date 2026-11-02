@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -431,12 +431,16 @@
         "attributionVerified": false
       },
       "baselineFollowupAssessment": {
-        "baseline": "EUPM active since May 2023",
-        "followup": "Ministry-described assistance and 2025 renewed commitments",
-        "metric": "mission outputs",
-        "descriptivelyComparable": false,
+        "baseline": "EUPM Moldova first mandate 24 April 2023–21 May 2025: financial reference amount EUR 13,356,508.08",
+        "followup": "EUPM Moldova renewed mandate 22 May 2025–31 May 2027: financial reference amount EUR 19,817,594.70",
+        "metric": "EUR nominal financial reference amount for successive approximately two-year mandates of the same EUPM mission",
+        "baselineValueEUR": 13356508.08,
+        "followupValueEUR": 19817594.7,
+        "descriptivelyComparable": true,
         "causallyAttributable": false,
-        "reason": "No matched project output quantity or separation from preexisting mission"
+        "reason": "Official legal budget-reference amounts are comparable commitments, not disbursements, program outputs, Moldova resilience outcomes or incremental geopolitical influence. Period lengths differ; not annualized. Mission predates May 2024 security partnership.",
+        "baselineSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023D0855-20250520",
+        "followupSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D0943"
       },
       "causalAttributionPlan": {
         "status": "hypotheses-not-verified",
@@ -471,14 +475,18 @@
         "event": "EU Partnership Mission Moldova mandate extension for 2025-2027 with estimated budget of EUR 19.8 million and staffing up to 72; mission established before May 2024 partnership",
         "period": "2025-2027",
         "budgetEUR": 19800000,
-        "budgetDefinition": "estimated mission mandate budget, not actual spending or economic benefit",
+        "budgetDefinition": "EU nominal financial reference amounts for different-length mandate periods; not actual expenditure, mission performance, influence or net benefit",
         "staffCeiling": 72,
         "source": "https://www.eeas.europa.eu/eupm-moldova/about-eu-partnership-mission-republic-moldova_en",
         "sourceType": "European External Action Service official mission information",
-        "measurementType": "mission resource commitments, not outcome performance",
+        "measurementType": "matched legal financial reference amounts for successive EUPM mandates; no audited mission output",
         "independentPerformanceMeasured": false,
         "causalAttributionEstablished": false,
-        "eligibleForInfluenceScoring": false
+        "eligibleForInfluenceScoring": false,
+        "baselineMandateReferenceEUR": 13356508.08,
+        "followupMandateReferenceEUR": 19817594.7,
+        "baselineSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023D0855-20250520",
+        "followupSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D0943"
       },
       "auditProgress": {
         "completedScopedChecks": 1,
