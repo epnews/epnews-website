@@ -16,6 +16,14 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const materiality=worklist.financialReconciliationMateriality;
+assert.equal(materiality.bands[0].maxPercent,2);
+assert.equal(materiality.bands[1].maxPercent,5);
+assert.equal(materiality.bands[2].maxPercent,null);
+assert.equal(materiality.hardStops.length,6);
+assert.equal(materiality.noCausalInferenceFromNumericalAgreement,true);
+assert.equal(materiality.noAutomaticAttributionGateCompletion,true);
+assert.equal(materiality.noAutomaticCostGateCompletion,true);
 const ledger=worklist.unresolvedGateEvidenceLedger;
 assert.equal(ledger.totalUnresolved,10);
 assert.equal(ledger.items.length,10);
