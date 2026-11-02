@@ -16,6 +16,17 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const primaryGold=worklist.indiaCepaGoldPrimaryCrosscheck;
+assert.equal(primaryGold.records.length,11);
+assert.equal(primaryGold.calculation.fy2023_24IibxGoldTRQContractVolumeTonnes,7.7044);
+assert.equal(primaryGold.calculation.fy2023_24NotifiedQuotaTonnes,140);
+assert.equal(primaryGold.calculation.fy2023_24ReportedUtilizationTonnes,40);
+assert.equal(primaryGold.calculation.fy2024_25NotifiedQuotaTonnes,160);
+assert.equal(primaryGold.calculation.fy2024_25ReportedUtilizationTonnes,140);
+assert.equal(primaryGold.causalAttributionVerified,false);
+assert.equal(primaryGold.netEconomicBenefit,null);
+assert.equal(primaryGold.scoringAuthorized,false);
+for(const r of primaryGold.records){assert.ok(r.source.startsWith('https://'));assert.ok(r.limitation.length>40);}
 const gold=worklist.indiaCepaGoldUtilizationAudit;
 assert.equal(gold.observations.length,4);
 assert.equal(gold.observations[0].tonnes,40);
