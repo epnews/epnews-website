@@ -951,3 +951,13 @@ assert.equal(indiaCounterpart.counterpartResearch.influenceScoringAuthorized,fal
 const russiaCounterpart=diplomaticQueue.items.find(x=>x.sphere==='russia');
 assert.equal(russiaCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,false);
 assert.equal(russiaCounterpart.counterpartResearch.influenceScoringAuthorized,false);
+
+// Conflicting published India-UAE trade series cannot authorize product-level matched gates.
+const indiaTradeAudit=diplomaticQueue.items.find(x=>x.sphere==='india');
+assert.equal(indiaTradeAudit.tradeSeriesReconciliation.status,'unresolved-conflicting-official-series');
+assert.equal(indiaTradeAudit.tradeSeriesReconciliation.historicalParliamentaryAnswer.fy2023_24,83.7);
+assert.equal(indiaTradeAudit.tradeSeriesReconciliation.historicalDetailedParliamentaryAnswer.fy2023_24,83.65060);
+assert.equal(indiaTradeAudit.tradeSeriesReconciliation.reportedRevisedTradeStat.fy2023_24,82.42);
+assert.equal(indiaTradeAudit.tradeSeriesReconciliation.baselineFollowupGatesAuthorized,false);
+assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
+assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-followup').complete,false);
