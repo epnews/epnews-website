@@ -16,6 +16,18 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const readiness=worklist.remainingGateReadiness2026;
+assert.equal(readiness.checks.length,10);
+assert.equal(readiness.gateCount,10);
+assert.equal(readiness.readinessCounts.ready,0);
+assert.equal(readiness.readinessCounts.notReady,10);
+assert.equal(readiness.scoreAuthorized,false);
+assert.deepEqual([...new Set(readiness.checks.map(r=>r.sphere))].sort(),['china','eu','india','russia','us']);
+for(const sphere of ['us','china','russia','eu','india']){
+ const pair=readiness.checks.filter(r=>r.sphere===sphere);
+ assert.deepEqual(pair.map(r=>r.gate),['attribute','costs']);
+}
+for(const r of readiness.checks){assert.equal(r.authorizedComplete,false);assert.ok(r.minimumClosingEvidence.length>50);}
 const ops=worklist.crossSphereOperationalIndicatorBatch;
 assert.equal(ops.records.length,17);
 assert.equal(ops.records.length,ops.recordCount);
