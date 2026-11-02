@@ -1,0 +1,177 @@
+{
+  "version": "2026-11-02",
+  "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+  "sourcePublished": "2026-08-25",
+  "sourceDataset": "Eurostat ext_st_eu27_2020sitc",
+  "classification": "EU27 extra-EU merchandise trade, SITC product classifications",
+  "observations": [
+    {
+      "id": "EU-Q2-2026-GOODS-TRADE-BALANCE",
+      "value": -21.8,
+      "unit": "EUR billion",
+      "measure": "total goods balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-EXTRA-EU-IMPORTS",
+      "value": 701.8,
+      "unit": "EUR billion",
+      "measure": "extra-EU goods imports",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-EXTRA-EU-EXPORTS",
+      "value": 680,
+      "unit": "EUR billion",
+      "measure": "extra-EU goods exports",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q1-2026-ENERGY-TRADE-BALANCE",
+      "value": -71.3,
+      "unit": "EUR billion",
+      "measure": "SITC energy balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-ENERGY-TRADE-BALANCE",
+      "value": -101.1,
+      "unit": "EUR billion",
+      "measure": "SITC energy balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q1-2026-RAW-MATERIALS-BALANCE",
+      "value": -7.9,
+      "unit": "EUR billion",
+      "measure": "SITC raw materials balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-RAW-MATERIALS-BALANCE",
+      "value": -9.4,
+      "unit": "EUR billion",
+      "measure": "SITC raw materials balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q1-2026-CHEMICALS-BALANCE",
+      "value": 47.1,
+      "unit": "EUR billion",
+      "measure": "SITC chemicals balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-CHEMICALS-BALANCE",
+      "value": 54,
+      "unit": "EUR billion",
+      "measure": "SITC chemicals balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q1-2026-MACHINERY-BALANCE",
+      "value": 24.9,
+      "unit": "EUR billion",
+      "measure": "SITC machinery and vehicles balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-MACHINERY-BALANCE",
+      "value": 23.2,
+      "unit": "EUR billion",
+      "measure": "SITC machinery and vehicles balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q1-2026-FOOD-DRINK-BALANCE",
+      "value": 10.7,
+      "unit": "EUR billion",
+      "measure": "SITC food and drinks balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-FOOD-DRINK-BALANCE",
+      "value": 11.5,
+      "unit": "EUR billion",
+      "measure": "SITC food and drinks balance",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-EXPORTS-QOQ-PCT",
+      "value": 5.4,
+      "unit": "percent",
+      "measure": "exports quarter-on-quarter percent",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-IMPORTS-QOQ-PCT",
+      "value": 9.9,
+      "unit": "percent",
+      "measure": "imports quarter-on-quarter percent",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-EXPORTS-QOQ-EUR",
+      "value": 34.9,
+      "unit": "EUR billion",
+      "measure": "exports quarter-on-quarter change EUR bn",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    },
+    {
+      "id": "EU-Q2-2026-IMPORTS-QOQ-EUR",
+      "value": 63.4,
+      "unit": "EUR billion",
+      "measure": "imports quarter-on-quarter change EUR bn",
+      "source": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260825-1",
+      "verification": "Eurostat primary published statistics",
+      "scoringEligible": false
+    }
+  ],
+  "observationCount": 17,
+  "derived": {
+    "energyDeficitDeteriorationQ1ToQ2EURBillion": -29.8,
+    "shareOfQ2OverallGoodsDeficit": "not interpretable as share because category balances offset; energy deficit exceeds net overall goods deficit"
+  },
+  "limitations": [
+    "EU total goods trade deficit is net of offsetting category surpluses; energy deficit is not additive to overall goods deficit.",
+    "Eurostat SITC energy trade balance is not the Eurostat CN petroleum/gas import-value series in the separate Q2 energy report.",
+    "Quarter-on-quarter 2026 changes are not year-on-year changes.",
+    "Energy trade deficit does not isolate supplier substitution costs or establish Russia sanction causality.",
+    "Do not add product categories to total as independent economic impact or equate trade deficit to welfare loss."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoringAuthorized": false
+}
