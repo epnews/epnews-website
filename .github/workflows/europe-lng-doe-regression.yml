@@ -19,6 +19,8 @@ jobs:
       - run: python -m pip install 'openpyxl>=3.1,<4'
       - name: Run synthetic workbook matcher test
         run: python scripts/test_europe_lng_doe_vessel_matcher_20261102.py
+      - name: Reconcile primary DOE vessel destination records
+        run: python scripts/test_europe_lng_doe_destinations_20261102.py
       - name: Check DOE downloader JavaScript syntax
         run: node --check scripts/fetch_europe_lng_doe_workbook_20261102.cjs
       - name: Compile schema audit and matcher
