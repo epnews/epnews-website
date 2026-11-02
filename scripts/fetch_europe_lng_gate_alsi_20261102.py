@@ -43,7 +43,10 @@ def find_gate_facilities(listing):
             continue
         if operator.get("eic") != GATE_OPERATOR_EIC:
             continue
-        for facility in operator.get("facilities", []):
+        facilities = operator.get("facilities", [])
+        if not isinstance(facilities, list):
+            raise ValueError("Malformed Gate operator facility listing")
+        for facility in facilities:
             if not isinstance(facility, dict):
                 continue
             if str(facility.get("country", "")).upper() != "NL":
@@ -52,6 +55,9 @@ def find_gate_facilities(listing):
             if "gate" not in label:
                 continue
             if facility.get("company") != operator.get("eic"):
+                continue
+            facility_eic = facility.get("eic")
+            if not isinstance(facility_eic, str) or not facility_eic.strip():
                 continue
             found.append({"operator_name": operator.get("name"), "operator_eic": operator.get("eic"),
                           "facility_name": facility.get("name"), "facility_eic": facility.get("eic"),

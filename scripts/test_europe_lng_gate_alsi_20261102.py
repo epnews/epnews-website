@@ -146,3 +146,20 @@ for invalid_listing in ([], [listing[0], listing[0]]):
     else:
         raise AssertionError("Missing or duplicate Gate facility identity accepted")
 print("Gate authenticated discovery ambiguity checks passed")
+
+malformed = [{"name": "Gate Terminal B.V.", "eic": mod.GATE_OPERATOR_EIC, "facilities": {"bad": "shape"}}]
+try:
+    mod.assert_unique_gate_facility(malformed)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Malformed GIE facility collection accepted")
+missing_eic = [{"name": "Gate Terminal B.V.", "eic": mod.GATE_OPERATOR_EIC, "facilities": [
+    {"name": "Gate LNG", "country": "NL", "company": mod.GATE_OPERATOR_EIC, "eic": None}]}]
+try:
+    mod.assert_unique_gate_facility(missing_eic)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Gate candidate without EIC accepted")
+print("GIE listing schema completeness checks passed")
