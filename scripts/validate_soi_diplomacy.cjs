@@ -16,6 +16,13 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const ops=worklist.crossSphereOperationalIndicatorBatch;
+assert.equal(ops.records.length,17);
+assert.equal(ops.records.length,ops.recordCount);
+assert.deepEqual([...new Set(ops.records.map(r=>r.sphere))].sort(),['china','eu','india','russia','us']);
+assert.equal(ops.newGateCompletions,0);
+assert.equal(ops.scoringAuthorized,false);
+for(const r of ops.records){assert.ok(r.source.startsWith('https://'));assert.ok(r.limitation.length>30);assert.equal(r.attributionVerified,false);assert.equal(r.incrementalCostVerified,false);}
 const primaryGold=worklist.indiaCepaGoldPrimaryCrosscheck;
 assert.equal(primaryGold.records.length,11);
 assert.equal(primaryGold.calculation.fy2023_24IibxGoldTRQContractVolumeTonnes,7.7044);
