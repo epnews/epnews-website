@@ -1,0 +1,48 @@
+{
+  "version": "2026-11-02",
+  "caseId": "india-china-depsang-demchok-patrolling",
+  "policy": {
+    "influenceScore": null,
+    "auditGatePromotion": false,
+    "causalAttribution": "not_established"
+  },
+  "evidence": [
+    {
+      "date": "2024-10-21",
+      "event": "agreement_announced",
+      "claim": "India announced an agreement on patrolling arrangements along the LAC, following negotiations.",
+      "source": "https://www.mea.gov.in/media-briefings.htm?dtl/38441/Transcript_of_Special_Briefing_by_Foreign_Secretary_on_Prime_Ministers_Visit_to_Russia_October_21_2024",
+      "status": "government_statement"
+    },
+    {
+      "date": "2024-12-06",
+      "event": "implementation_reported",
+      "claim": "India's parliamentary response reported disengagement and resumption of patrolling in Depsang and Demchok.",
+      "source": "https://www.mea.gov.in/lok-sabha.htm?dtl/39008/QUESTION_NO_843_INDOCHINA_AGREEMENT_ON_BORDERRELATED_ISSUES",
+      "status": "government_statement"
+    }
+  ],
+  "comparisonProtocol": {
+    "baseline": "Use dated pre-October 2024 patrol access in the same named patrol points and sectors; do not substitute overall LAC incident totals.",
+    "postPeriod": "Match patrol access in Depsang and Demchok by patrol point, reporting window, and access definition.",
+    "unit": "verified patrol-point access by sector and observation window",
+    "verification": "Seek dated independent geospatial or on-the-ground evidence plus statements from both parties; participant statements alone are insufficient for independently verified outcomes.",
+    "confounders": [
+      "seasonal access and terrain",
+      "pre-existing bilateral military arrangements",
+      "other LAC sector incidents",
+      "local commander-level implementation differences"
+    ],
+    "missing": [
+      "independently confirmed patrol access by patrol point before and after agreement",
+      "comparable military deployment counts in identical sectors",
+      "operating costs and tradeoffs",
+      "credible no-agreement counterfactual"
+    ]
+  },
+  "limits": [
+    "Agreement and government-reported implementation are separate stages.",
+    "A diplomatic breakthrough is not automatically a positive influence score.",
+    "Do not count the same disengagement as independent outcomes for both India and China."
+  ]
+}
