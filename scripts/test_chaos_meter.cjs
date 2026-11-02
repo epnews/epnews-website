@@ -822,7 +822,7 @@ assert.equal(usOperational.eligibleForInfluenceScoring,false);
 const euResources=diplomaticQueue.items.find(x=>x.sphere==='eu').additionalOperationalEvidence;
 assert.equal(euResources.budgetEUR,19800000);
 assert.equal(euResources.staffCeiling,72);
-assert.match(euResources.budgetDefinition,/not actual spending/i);
+assert.match(euResources.budgetDefinition,/not actual (?:spending|expenditure)/i);
 assert.equal(euResources.eligibleForInfluenceScoring,false);
 
 // Audit progress must exactly reflect scoped completed tasks, not count source links as causal evidence.
