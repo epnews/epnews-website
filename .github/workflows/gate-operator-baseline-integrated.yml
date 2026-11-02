@@ -87,6 +87,9 @@ jobs:
       - name: Audit independent evidence source lineage
         run: |
           python scripts/audit_gate_source_independence_20261102.py --operator gate-alsi-operator-october-2026.json --snapshot gate-gaspeil-october-2026-snapshot.json --output gate-october-source-independence.json
+      - name: Audit adjacent confirmed inventory stock eligibility
+        run: |
+          python scripts/audit_gate_attribution_stock_delta_eligibility_20261102.py --operator gate-alsi-operator-october-2026.json --snapshot gate-gaspeil-october-2026-snapshot.json --output gate-october-attribution-stock-delta-eligibility.json
       - name: Archive source snapshots and reconciliations
         uses: actions/upload-artifact@v4
         with:
@@ -103,5 +106,6 @@ jobs:
             gate-october-operator-quality-segments.json
             gate-october-vessel-claim-evidence-gates.json
             gate-october-source-independence.json
+            gate-october-attribution-stock-delta-eligibility.json
           retention-days: 14
           if-no-files-found: error
