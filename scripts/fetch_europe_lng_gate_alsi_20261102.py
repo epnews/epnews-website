@@ -159,6 +159,15 @@ def audit_observation_coverage(rows, from_date, to_date):
             "complete_daily_coverage": (not missing_date_field and not outside and
                 not any(n > 1 for n in counts.values()) and set(counts) == set(expected))}
 
+def validate_operator_evidence(rows, from_date, to_date):
+    """Reject non-facility or mixed-facility records; flag data quality separately."""
+    if not rows:
+        raise ValueError("No ALSI facility observations")
+    coverage = audit_observation_coverage(rows, from_date, to_date)
+    if coverage["rows_missing_gas_day"] or coverage["out_of_window_gas_days"]:
+        raise ValueError("ALSI records missing gas day or outside requested period")
+    return coverage
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--facility-url", help="Exact Gate facility URL copied from authenticated /api/about?show=listing")
@@ -186,7 +195,7 @@ def main():
     params.update({"from": args.from_date, "to": args.to_date})
     url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
     rows, page_count = fetch_all_pages(url, key)
-    coverage = audit_observation_coverage(rows, args.from_date, args.to_date)
+    coverage = validate_operator_evidence(rows, args.from_date, args.to_date)
     output = {
         "source": "GIE ALSI+ operator-reported LNG facility daily series",
         "facility_api_url": url,
