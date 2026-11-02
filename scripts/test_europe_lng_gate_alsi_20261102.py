@@ -116,7 +116,7 @@ complete = mod.audit_observation_coverage([{"gasDayStart": "2026-10-01", "status
 assert complete["complete_daily_coverage"]
 print("ALSI observation coverage audit checks passed")
 
-assert mod.validate_operator_evidence([{"gasDayStart": "2026-10-01"}], "2026-10-01", "2026-10-02")["missing_gas_days"] == ["2026-10-02"]
+assert mod.validate_operator_evidence([{"gasDayStart": "2026-10-01", "status": "C"}], "2026-10-01", "2026-10-02")["missing_gas_days"] == ["2026-10-02"]
 for bad in ([{"gasDayStart": "2026-09-30"}], [{"status": "C"}], []):
     try:
         mod.validate_operator_evidence(bad, "2026-10-01", "2026-10-31")
@@ -287,3 +287,17 @@ assert conflicts["confirmed_gas_days"] == 2
 assert conflicts["unambiguous_confirmed_gas_days"] == 1
 assert conflicts["unambiguous_confirmed_coverage_percent"] == 33.33
 print("ALSI contradictory daily reporting status tests passed")
+
+for invalid_status in ("X", "confirmed", "", None):
+    try:
+        mod.validate_operator_evidence([{"gasDayStart": "2026-10-01", "status": invalid_status}],
+                                       "2026-10-01", "2026-10-01")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Unsupported GIE status accepted: {invalid_status!r}")
+for valid_status in ("C", "E", "N"):
+    audit = mod.validate_operator_evidence([{"gasDayStart": "2026-10-01", "status": valid_status}],
+                                           "2026-10-01", "2026-10-01")
+    assert audit["status_counts"][valid_status] == 1
+print("ALSI reporting status whitelist tests passed")
