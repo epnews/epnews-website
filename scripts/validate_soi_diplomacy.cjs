@@ -16,6 +16,14 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const integrity=worklist.influenceMeasurementIntegrity;
+assert.equal(integrity.researchReadiness.completedGates,20);
+assert.equal(integrity.researchReadiness.requiredGates,30);
+assert.equal(integrity.scoringPolicy.authorized,false);
+assert.equal(integrity.scoringPolicy.compositeInfluenceScore,null);
+assert.equal(integrity.qualityAssurance.neverAutoCompleteAttributionFromMatchedDescriptiveGates,true);
+assert.equal(integrity.qualityAssurance.neverAutoCompleteCostsFromAuthorizedBudget,true);
+assert.equal(integrity.qualityAssurance.neverAutoScoreFromAuditPercentage,true);
 let total=0,reviewed=0;
 for(const item of worklist.items){
  assert.deepEqual(item.priorityTasks.map(t=>t.id),GATES,item.sphere+' gate order');

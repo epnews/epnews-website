@@ -1,5 +1,5 @@
 {
-  "version": "3.6",
+  "version": "3.7",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -1315,6 +1315,35 @@
         "Sensitivity analysis for weighting, missingness, and source selection",
         "Independent validation before authorizing any common diplomatic influence score"
       ]
+    }
+  },
+  "influenceMeasurementIntegrity": {
+    "version": "1.0",
+    "scope": "All five spheres' diplomatic outcome cases",
+    "researchReadiness": {
+      "completedGates": 20,
+      "requiredGates": 30,
+      "meaning": "Evidence-gate coverage only; never percentage of geopolitical influence or proof of a causally attributable effect"
+    },
+    "scoringPolicy": {
+      "authorized": false,
+      "compositeInfluenceScore": null,
+      "reason": "Ten attribution and cost gates unresolved; heterogeneous outcomes lack validated comparable counterfactuals and normalized weights."
+    },
+    "verifiedActivityVsImpact": {
+      "rule": "Dated agreements, embassy reopenings, exercises, legal budget references and product breadth changes are descriptive outputs; do not infer incremental geopolitical influence from their existence.",
+      "requires": [
+        "Credible baseline and counterfactual",
+        "Independently measured outcome",
+        "Attribution controls",
+        "Cost accounting",
+        "Cross-sphere normalization and sensitivity checks"
+      ]
+    },
+    "qualityAssurance": {
+      "neverAutoCompleteAttributionFromMatchedDescriptiveGates": true,
+      "neverAutoCompleteCostsFromAuthorizedBudget": true,
+      "neverAutoScoreFromAuditPercentage": true
     }
   }
 }
