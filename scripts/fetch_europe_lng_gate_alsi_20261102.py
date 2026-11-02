@@ -66,11 +66,28 @@ def find_gate_facilities(listing):
                           "operational_end_date": facility.get("operational_end_date")})
     return found
 
+def validate_listed_facility_url(candidate):
+    """Ensure GIE's published facility URL agrees with the listed identifiers."""
+    url = candidate.get("url")
+    if not isinstance(url, str) or not url:
+        raise ValueError("Gate facility listing lacks API URL")
+    if url.startswith("/api?"):
+        url = HOST + url
+    parsed = validate_facility_identity(url)
+    params = urllib.parse.parse_qs(parsed.query)
+    if (params["country"][0].upper() != str(candidate["country"]).upper() or
+        params["company"][0] != candidate["operator_eic"] or
+        params["facility"][0] != candidate["facility_eic"]):
+        raise ValueError("Gate listing URL and facility/company EICs disagree")
+    return url
+
 def assert_unique_gate_facility(listing):
     """Refuse a missing or ambiguous Gate LNG discovery rather than guessing an EIC."""
     candidates = find_gate_facilities(listing)
     if not candidates:
         raise ValueError("Authenticated GIE listing contains no verified Gate LNG facility")
+    for item in candidates:
+        item["verified_facility_url"] = validate_listed_facility_url(item)
     unique = {(item["operator_eic"], item["facility_eic"]) for item in candidates}
     if len(unique) != len(candidates):
         raise ValueError("Authenticated GIE listing contains duplicate Gate facility identifiers")
