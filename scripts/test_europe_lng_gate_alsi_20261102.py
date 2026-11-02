@@ -378,3 +378,13 @@ assert mixed_status["unambiguous_confirmed_gas_days"] == 1
 assert mixed_status["conflicting_status_gas_days"]["2026-10-01"] == ["C", "E"]
 assert mod.summarize_evidence_quality(mixed_status)["has_full_usable_reporting"] is False
 print("ALSI confirmed-versus-estimated conflicting status exclusion passed")
+
+for bad_day in ("2026-10-01garbage", "2026-10-01 12:00:00", "2026-1-01", "2026-10-1"):
+    try:
+        mod.validate_operator_evidence([{"gasDayStart": bad_day, "status": "C"}],
+                                       "2026-10-01", "2026-10-31")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Malformed gas-day prefix accepted: {bad_day!r}")
+print("ALSI strict date-prefix tests passed")
