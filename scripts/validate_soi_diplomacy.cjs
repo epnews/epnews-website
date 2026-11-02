@@ -49,20 +49,23 @@ for(const item of worklist.items){
  assert.ok(item.priorityTasks.filter(t=>!t.complete).every(t=>!t.verification||t.verification.attributionVerified!==true),item.sphere+' pending gate cannot claim attribution verified');
  if(item.sphere==='india'){
   const rec=item.tradeSeriesReconciliation;
-  assert.equal(rec.baselineFollowupGatesAuthorized,false,'India unresolved series cannot authorize matched gates');
+  assert.equal(rec.baselineFollowupGatesAuthorized,true,'India official HS8 product breadth supports matched indicator gates');
   assert.equal(rec.influenceScoringAuthorized,false,'India influence scoring blocked');
   assert.equal(rec.directDatabase.status.includes('pending'),true,'India revised series requires direct extraction');
-  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
-  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,false);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,true);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,true);
   assert.equal(rec.preferenceLineResearch.coveredProductExportsUsdBillion,8.37);
   const breadth=rec.productBreadthObserved;
   assert.equal(breadth.followup-breadth.baseline,breadth.absoluteChange);
   assert.ok(Math.abs((breadth.absoluteChange/breadth.baseline)*100-breadth.percentageChange)<0.02);
   assert.equal(breadth.matchedProductLevelSeriesVerified,false);
+  assert.equal(breadth.matchedIndicatorSeriesVerified,true);
+  assert.equal(rec.sourceIntegrityPolicy.liveRevisionReconciled,false);
+  assert.equal(rec.sourceIntegrityPolicy.preferentialUtilizationVerified,false);
   assert.equal(rec.officialPreferenceUptakeObservations.length,2);
   assert.ok(rec.officialPreferenceUptakeObservations[1].certificatesOfOriginIssuedApprox>rec.officialPreferenceUptakeObservations[0].certificatesOfOriginIssuedApprox);
-  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
-  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,false);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,true);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,true);
   const hist=rec.officialHistoricalMatchedSeries;
   assert.equal(hist.status,'official-descriptive-aggregate-only');
   assert.equal(hist.periods.length,2);
