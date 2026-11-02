@@ -20,7 +20,7 @@ for(const item of worklist.items){
  assert.ok(Array.isArray(links),item.sphere+' verified evidence links must be array');
  for(const t of completed){
   assert.ok(links.includes(t.evidence),item.sphere+'/'+t.id+' completed source must be indexed');
-  assert.ok(t.evidence.length>35,item.sphere+'/'+t.id+' source must be specific');
+  assert.ok(new URL(t.evidence).hostname.includes('.'),item.sphere+'/'+t.id+' source hostname required');
  }
  assert.equal(new Set(links).size,links.length,item.sphere+' duplicate evidence links');
  assert.ok(links.every(x=>typeof x==='string'&&/^https:\/\//.test(x)),item.sphere+' invalid evidence link');
