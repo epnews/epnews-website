@@ -87,6 +87,11 @@ for(const item of worklist.items){
   assert.ok(rec.officialPreferenceUptakeObservations[1].certificatesOfOriginIssuedApprox>rec.officialPreferenceUptakeObservations[0].certificatesOfOriginIssuedApprox);
   assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,true);
   assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,true);
+  const uaetrade=item.uaeCounterpartTradeObservation;
+  assert.equal(uaetrade.periods.length,2);
+  assert.ok(Math.abs(uaetrade.periods[1].value-uaetrade.periods[0].value-uaetrade.differenceUsdBillion)<0.001);
+  assert.equal(uaetrade.tradeDefinitionReconciledWithDgcis,false);
+  assert.equal(uaetrade.causalAttributionVerified,false);
   const indiaCost=item.costEvidenceResearch;
   assert.equal(indiaCost.observations[0].amountCrore,6231);
   assert.equal(indiaCost.observations[0].classification,'reported actuals');
@@ -120,6 +125,10 @@ for(const item of worklist.items){
   assert.equal(cost.primaryLegalConsolidation.periods.length,2);
   assert.equal(cost.primaryLegalConsolidation.periods[0].referenceEuros,cost.evidence[0].amount);
   assert.equal(cost.primaryLegalConsolidation.periods[1].referenceEuros,cost.evidence[1].amount);
+  const seconded=item.costEvidenceResearch.secondedPersonnelAccounting;
+  assert.equal(seconded.provision,'Article 6(1)');
+  assert.equal(seconded.missionAllInCostVerified,false);
+  assert.equal(seconded.secondmentPersonnelCountsAndCostsMatched,false);
   const register=item.costEvidenceResearch.contractRegister;
   assert.equal(register.examples.length,6);
   assert.equal(register.examples[0].amount,2532212.16);
