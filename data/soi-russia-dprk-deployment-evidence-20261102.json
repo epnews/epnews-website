@@ -50,11 +50,32 @@
       "source": "https://en.yna.co.kr/view/AEN20250428000552315"
     },
     {
-      "date": "2025-06-01",
+      "date": "2025-05-29",
       "event": "multilateral_sanctions_monitoring_report",
       "measurement": "Multilateral Sanctions Monitoring Team reported combat deployment and assessed Russia-provided military training against UNSC sanctions",
-      "source": "https://www.mofa.go.jp/mofaj/files/100853978.pdf",
-      "datePrecision": "month_only"
+      "source": "https://msmt.info/view/save/2025/05/29/1085cade-a4b1-4405-94c0-7c980c24fd21-Unlawful_Military_Cooperation_including_Arms_Transfers_between_North_Korea_and_Russia_%28MSMT_2025_1%29.pdf",
+      "datePrecision": "day",
+      "corrobSource": "https://www.mofa.go.jp/press/release/pressite_000001_01321.html"
+    },
+    {
+      "date": "2025-06-30",
+      "datePrecision": "quarter_end",
+      "event": "us_dia_casualty_estimate_q3",
+      "value": 6000,
+      "qualifier": "approximately",
+      "unit": "DPRK killed wounded or otherwise removed from battlefield since fall 2024",
+      "source": "https://media.defense.gov/2025/Aug/15/2003781787/-1/-1/1/OAR_Q3_JUN2025_FINAL_508.PDF",
+      "note": "DIA estimate as of June 2025, not additive to March 2025 casualty estimate; same cumulative series."
+    },
+    {
+      "date": "2025-06-30",
+      "datePrecision": "quarter_end",
+      "event": "us_dia_ammunition_transfer_estimate",
+      "value": 9000000,
+      "qualifier": "up_to",
+      "unit": "artillery rounds transferred from DPRK to Russia since 2023",
+      "source": "https://media.defense.gov/2025/Aug/15/2003781787/-1/-1/1/OAR_Q3_JUN2025_FINAL_508.PDF",
+      "note": "Cumulative upper-bound estimate; cannot attribute to treaty or infer realized benefit."
     }
   ],
   "limitations": [
@@ -62,7 +83,9 @@
     "DIA figures are estimates and 8,000 combat participants are a subset of roughly 12,000 deployed, not an additional force.",
     "Casualties are a cost estimate, not a benefit or geopolitical influence measure.",
     "DPRK and Russia confirmation is participant acknowledgment; DIA and MSMT supply external corroboration but not an independent causal counterfactual.",
-    "June 2025 MSMT report month is approximate metadata; use the PDF itself for report-date precision.",
-    "Do not infer sanctions compliance, strategic gains, or military effectiveness from troop counts alone."
+    "Do not infer sanctions compliance, strategic gains, or military effectiveness from troop counts alone.",
+    "MSMT first report was released May 29, 2025; the June 3 UN circulation is a separate document publication date.",
+    "June 2025 casualty estimate of approximately 6,000 is cumulative and supersedes, not adds to, March estimate of 4,000.",
+    "Up to 9 million artillery rounds is an upper-bound estimate of cumulative transfers since 2023, not treaty-era deliveries."
   ]
 }
