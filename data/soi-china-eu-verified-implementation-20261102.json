@@ -1,0 +1,89 @@
+{
+  "version": "2026-11-02",
+  "policy": {
+    "influenceScore": null,
+    "causalAttribution": "not_established",
+    "auditGatePromotion": false
+  },
+  "records": [
+    {
+      "id": "SOI-CHINA-SOLOMONS-2025-IMPLEMENTATION",
+      "actor": "China",
+      "partner": "Solomon Islands",
+      "category": "police_cooperation",
+      "observations": [
+        {
+          "date": "2025-03-27",
+          "value": 18,
+          "unit": "RSIPF and correctional officers in Malaita tactical training",
+          "source": "https://solomons.gov.sb/rsipf-and-cplt-team-visit-to-malaita-province/"
+        },
+        {
+          "date": "2025-07-10",
+          "value": 24,
+          "unit": "correctional officers returning from June 2025 China training",
+          "source": "https://solomons.gov.sb/cssi-officers-return-safely-after-completing-training-in-china/"
+        },
+        {
+          "date": "2025-12-11",
+          "value": 70,
+          "qualifier": "at_least",
+          "unit": "publicly announced police training programmes since 2022",
+          "source": "https://www.iiss.org/online-analysis/charting-china/2025/12/chinas-evolving-approach-to-police-training-in-solomon-islands/"
+        },
+        {
+          "date": "2025-12-11",
+          "value": 1170,
+          "qualifier": "over",
+          "unit": "officers taught in publicly announced courses since 2022; may include repeat attendees",
+          "source": "https://www.iiss.org/online-analysis/charting-china/2025/12/chinas-evolving-approach-to-police-training-in-solomon-islands/"
+        }
+      ],
+      "limitations": [
+        "Course counts and attendees do not establish unique officers, effectiveness, or political alignment",
+        "IISS counts may overlap individual government releases: do not sum",
+        "No matched Australian training counterfactual or measured Solomon Islands policy change",
+        "Training volume is an implemented activity, not a causal influence score"
+      ]
+    },
+    {
+      "id": "SOI-EU-JAPAN-SPA-2025-IMPLEMENTATION",
+      "actor": "European Union",
+      "partner": "Japan",
+      "category": "treaty",
+      "observations": [
+        {
+          "date": "2018-07-17",
+          "event": "agreement_signed",
+          "source": "https://www.consilium.europa.eu/en/documents/treaties-agreements/agreement/?doclanguage=en&id=2018023"
+        },
+        {
+          "date": "2019-02-01",
+          "event": "provisional_application",
+          "source": "https://www.consilium.europa.eu/en/documents/treaties-agreements/agreement/?doclanguage=en&id=2018023"
+        },
+        {
+          "date": "2024-11-01",
+          "event": "ratification_instruments_exchanged",
+          "source": "https://www.mofa.go.jp/press/release/pressite_000001_00702.html"
+        },
+        {
+          "date": "2025-01-01",
+          "event": "full_entry_into_force",
+          "source": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A22024X03092"
+        },
+        {
+          "date": "2025-09-18",
+          "event": "consumer_policy_ministerial_dialogue",
+          "source": "https://commission.europa.eu/news-and-media/news/joint-statement-european-commissioner-michael-mcgrath-and-minister-ito-yoshitaka-japan-2025-09-18_en"
+        }
+      ],
+      "limitations": [
+        "Consumer policy dialogue began in 2024 before SPA entry into force; cannot attribute it causally to SPA",
+        "Treaty in force is a verified institutional milestone, not measured geopolitical influence",
+        "EU and member-state scope differs from individual national agreements",
+        "No quantified cost, independent outcome, or counterfactual"
+      ]
+    }
+  ]
+}
