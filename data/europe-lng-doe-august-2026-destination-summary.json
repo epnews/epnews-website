@@ -1,0 +1,60 @@
+{
+  "source": {
+    "publisher": "U.S. Department of Energy",
+    "title": "U.S. Natural Gas Is Supplying Energy to the World: August 2026 Summary",
+    "url": "https://www.energy.gov/hgeo/articles/us-natural-gas-supplying-energy-world-august-2026-summary",
+    "published": "2026-10-29",
+    "reportingPeriod": "2026-08",
+    "unit": "Bcf",
+    "scope": "U.S. LNG vessel exports by reported destination",
+    "limitations": [
+      "DOE Europe includes Türkiye; not equivalent to EU27",
+      "Reported export destination is not independently verified terminal discharge",
+      "Rounded figures; country rows are subsets of regions",
+      "No cargo IMO or physical origin established"
+    ]
+  },
+  "totalBcf": 514.6,
+  "regions": [
+    {
+      "name": "Europe",
+      "bcf": 269.3
+    },
+    {
+      "name": "Asia",
+      "bcf": 158.7
+    },
+    {
+      "name": "Africa",
+      "bcf": 55.9
+    },
+    {
+      "name": "Latin America and Caribbean",
+      "bcf": 30.7
+    }
+  ],
+  "topDestinations": [
+    {
+      "name": "Egypt",
+      "bcf": 55.9
+    },
+    {
+      "name": "Netherlands",
+      "bcf": 53.6
+    },
+    {
+      "name": "Italy",
+      "bcf": 49.1
+    },
+    {
+      "name": "France",
+      "bcf": 36.5
+    },
+    {
+      "name": "Germany",
+      "bcf": 35.5
+    }
+  ],
+  "physicalCargoOriginVerified": false,
+  "scoreAuthorized": false
+}
