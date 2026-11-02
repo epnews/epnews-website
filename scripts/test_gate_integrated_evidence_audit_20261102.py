@@ -17,6 +17,8 @@ class AuditTest(unittest.TestCase):
                                    vessel("4",None,"2026-10-30T01:00:00Z","geschat")]}}
         x=m.report(op,gas)
         self.assertEqual(x["operator_days"],2)
+        self.assertEqual(x["october_operator_days"],2)
+        self.assertEqual(x["baseline_operator_days"],0)
         self.assertEqual(x["vessel_arrivals"],4)
         self.assertEqual(x["distinct_measured_days"],2)
         self.assertEqual(x["independent_cargo_certifications"],0)
