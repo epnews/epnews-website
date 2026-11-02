@@ -1,0 +1,29 @@
+{
+  "schema": "soi-unga-topic-ontology-validation-v1",
+  "status": "NOT_AUTHORIZED",
+  "source": "SWP/GESIS UNGA main_category numeric codes",
+  "observedFamilies": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "6"
+  ],
+  "requiredBeforeAggregation": [
+    "Obtain published authoritative codebook defining all observed main_category codes and hierarchy",
+    "Verify first-digit prefixes represent meaningful compatible parent categories, rather than arbitrary numerical groupings",
+    "Check multi-label fractional allocation and sensitivity to primary-topic assignment",
+    "Pre-register minimum distinct-resolution support per actor-year-topic, not just matched country votes",
+    "Define sparse-topic treatment without post-hoc optimizing observed agreement results",
+    "Independently reproduce actor-year family cells and compare raw, equal-family, and pooled-frequency weighting"
+  ],
+  "prohibited": [
+    "Labeling numerical family prefixes as substantive topics before codebook verification",
+    "Pooling rare family 3 into another family solely to eliminate missingness",
+    "Treating country-vote pairs from a single resolution as independent resolutions",
+    "Publishing adjusted scores or activating original influence needle"
+  ],
+  "adjustedScoresAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
