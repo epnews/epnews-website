@@ -115,3 +115,13 @@ assert not audit["complete_daily_coverage"]
 complete = mod.audit_observation_coverage([{"gasDayStart": "2026-10-01", "status": "C"}], "2026-10-01", "2026-10-01")
 assert complete["complete_daily_coverage"]
 print("ALSI observation coverage audit checks passed")
+
+assert mod.validate_operator_evidence([{"gasDayStart": "2026-10-01"}], "2026-10-01", "2026-10-02")["missing_gas_days"] == ["2026-10-02"]
+for bad in ([{"gasDayStart": "2026-09-30"}], [{"status": "C"}], []):
+    try:
+        mod.validate_operator_evidence(bad, "2026-10-01", "2026-10-31")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Invalid ALSI observation set was accepted")
+print("ALSI gas-day evidence bounds checks passed")
