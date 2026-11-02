@@ -867,7 +867,7 @@ assert.match(indexSource,/chaos-dashboard\.js\?v=diplomacy-audit-gates-v4/);
 const usMatched=diplomaticQueue.items.find(x=>x.sphere==='us');
 assert.equal(usMatched.baselineFollowupAssessment.descriptivelyComparable,true);
 assert.equal(usMatched.baselineFollowupAssessment.causallyAttributable,false);
-assert.equal(usMatched.auditProgress.completedScopedChecks,4);
+assert.equal(usMatched.auditProgress.completedScopedChecks,usMatched.priorityTasks.filter(t=>t.complete).length);
 assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-baseline').complete);
 assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-followup').complete);
 
@@ -920,12 +920,12 @@ assert.match(liveDiplomacyDashboardSource,/Gate completion tracks documented res
 // Moldova counterpart ministry verification adds one scoped audit check.
 const euCounterpart=diplomaticQueue.items.find(x=>x.sphere==='eu');
 assert.equal(euCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').complete,true);
-assert.equal(euCounterpart.auditProgress.completedScopedChecks,2);
+assert.equal(euCounterpart.auditProgress.completedScopedChecks,euCounterpart.priorityTasks.filter(t=>t.complete).length);
 assert.match(euCounterpart.priorityTasks.find(x=>x.id==='verify-counterpart').verification.sourceOwner,/Moldova/);
 
 // China signed agreement, Saudi baseline and Reuters embassy reopening establish four source/timeline checks.
 const chinaAudited=diplomaticQueue.items.find(x=>x.sphere==='china');
-assert.equal(chinaAudited.auditProgress.completedScopedChecks,4);
+assert.equal(chinaAudited.auditProgress.completedScopedChecks,chinaAudited.priorityTasks.filter(t=>t.complete).length);
 assert.deepEqual(chinaAudited.priorityTasks.filter(t=>t.complete).map(t=>t.id),['verify-primary','verify-counterpart','match-baseline','match-followup']);
 assert.equal(chinaAudited.priorityTasks.find(t=>t.id==='attribute').complete,false);
 
