@@ -1,0 +1,55 @@
+{
+  "version": "2026-11-02",
+  "asOf": "2026-11-01",
+  "targetGap": "SOI-GAP-04",
+  "institutionStatuses": [
+    {
+      "institution": "WHO",
+      "usGovernmentPosition": "Withdrawal completed 2026-01-22; government ceased official participation in governance bodies and committees",
+      "institutionPosition": "WHO Jan 24 statement acknowledged notice but identified unresolved questions for Executive Board and World Health Assembly",
+      "effectiveDateClaimedByUS": "2026-01-22",
+      "statusClassification": "US-declared exit; WHO institutional/legal qualification preserved",
+      "sources": [
+        "https://www.hhs.gov/press-room/united-states-completes-who-withdrawal.html",
+        "https://www.cdc.gov/global-health/resources/us-withdrawal-who.html",
+        "https://www.who.int/news/item/24-01-2026-who-statement-on-notification-of-withdrawal-of-the-united-states"
+      ],
+      "caution": "Do not claim both parties confirmed an uncontested legal exit; no quantified voting shift inferred."
+    },
+    {
+      "institution": "UNESCO",
+      "usGovernmentPosition": "Withdrawal notified 2025-07-22, effective 2026-12-31 under Constitution Article II(6)",
+      "institutionPosition": "UNESCO Director-General acknowledges withdrawal to take effect end December 2026",
+      "statusClassification": "still full member as of 2026-11-01; withdrawal pending",
+      "effectiveWithdrawal": "2026-12-31",
+      "sources": [
+        "https://ebs.publicnow.com/view/98AAB32163A6A2A6C09F06BABEB8AA44FB75FF02",
+        "https://www.unesco.org/en/articles/withdrawal-united-states-america-unesco-statement-audrey-azoulay-director-general"
+      ],
+      "caution": "Do not prematurely remove US UNESCO member rights before 2026-12-31."
+    },
+    {
+      "institution": "UN Human Rights Council",
+      "usGovernmentPosition": "Executive order 2025-02-04 directs no participation or future election candidacy",
+      "institutionPosition": "UN 2026 elected member roster excludes United States; HRC has 47 elected seats",
+      "statusClassification": "nonmember of elected Council in 2026; nonparticipation policy distinct from withdrawal from held elected seat",
+      "sources": [
+        "https://www.whitehouse.gov/presidential-actions/2025/02/withdrawing-the-united-states-from-and-ending-funding-to-certain-united-nations-organizations-and-reviewing-united-states-support-to-all-international-organizations/",
+        "https://research.un.org/en/unmembers/hrcmembers"
+      ],
+      "caution": "Do not attribute loss of a 2026 Council vote to 2025 nonparticipation order if US had no elected 2026 seat."
+    }
+  ],
+  "limitations": [
+    "Different institutions use different legal membership and voting structures.",
+    "WHO US and WHO institutional statements are not identical legal assessments.",
+    "Membership and participation are not measured diplomatic influence outcomes.",
+    "No cash savings or funding disbursement calculated.",
+    "UNESCO scheduled effective date remains in future as of this dataset.",
+    "Further institution-by-institution coverage is required to close GAP-04."
+  ],
+  "gapClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
