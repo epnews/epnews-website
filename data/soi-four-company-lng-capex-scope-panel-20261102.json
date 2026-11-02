@@ -1,0 +1,58 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-11",
+  "purpose": "Comparable source-labeled panel of observed 2024-25 capex with explicit coverage boundaries, not a fabricated national total",
+  "currency": "USD millions",
+  "companies": [
+    {
+      "company": "Cheniere Energy Inc",
+      "source": "data/soi-lng-audited-cash-capex-2024-2025-20261102.json",
+      "scope": "consolidated cash PP&E net commissioning LNG sales",
+      "fy2024": 2238,
+      "fy2025": 3078,
+      "comparableWithOtherRows": false
+    },
+    {
+      "company": "Venture Global Inc",
+      "source": "data/soi-lng-audited-cash-capex-2024-2025-20261102.json",
+      "scope": "company cash capital expenditures including ships, pipeline, interest and other",
+      "fy2024": 13717,
+      "fy2025": 13365,
+      "comparableWithOtherRows": false
+    },
+    {
+      "company": "NextDecade Corporation",
+      "source": "data/soi-nextdecade-rio-grande-cash-capex-2024-2025-20261102.json",
+      "scope": "consolidated cash acquisitions of property and equipment, primarily Rio Grande LNG",
+      "fy2024": 2567.801,
+      "fy2025": 4846.807,
+      "comparableWithOtherRows": false
+    },
+    {
+      "company": "Sempra Infrastructure",
+      "source": "data/soi-sempra-infrastructure-2024-2025-cash-capex-20261102.json",
+      "scope": "Infrastructure segment PP&E capex, includes non-LNG assets",
+      "fy2024": 3459,
+      "fy2025": 6063,
+      "comparableWithOtherRows": false
+    }
+  ],
+  "coverage": {
+    "companies": 4,
+    "completeUSLNGSector": false,
+    "canSumAsNationalCapex": false,
+    "reason": "Different consolidation boundaries and capex definitions, Sempra non-LNG assets and Venture Global nonterminal categories"
+  },
+  "comparisonPolicy": [
+    "Display original company scope next to each amount.",
+    "Do not add rows into US LNG sector totals or use a misleading combined annual sum.",
+    "Cheniere's 2025 $3.252bn commissioning adjustment is derived and should not replace its SEC-reported $3.078bn net figure.",
+    "Venture Global's named terminal project subtotal is a narrower project-level comparison, not a replacement for company cash capex.",
+    "NextDecade PP&E is in thousands in source and converted to millions here.",
+    "Cash expenditures are costs, not profit, cash receipts, tax revenues, or national net benefit."
+  ],
+  "gateClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
