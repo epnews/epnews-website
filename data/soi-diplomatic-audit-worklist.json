@@ -1,5 +1,5 @@
 {
-  "version": "5.2",
+  "version": "5.3",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -2692,5 +2692,98 @@
     "method": "Keep source-defined units and periods; distinguish activity counts, legal allocations, modeled outcomes, and actual utilization. Repeated facts are cross-reference controls rather than independent evidence.",
     "newGateCompletions": 0,
     "scoringAuthorized": false
+  },
+  "remainingGateReadiness2026": {
+    "version": "1.0",
+    "asOf": "2026-11-01",
+    "checks": [
+      {
+        "sphere": "us",
+        "gate": "attribute",
+        "status": "not-ready",
+        "availableEvidence": "Exercise count, 700 Japanese personnel and 2024 cooperation memorandum show activity, not causal influence.",
+        "minimumClosingEvidence": "Comparable pre-2023 and post-2023 security coordination outcomes with a credible non-Camp-David counterfactual.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "us",
+        "gate": "costs",
+        "status": "not-ready",
+        "availableEvidence": "GAO 2016–2019 costs and host support predate agreement; proposed CBO interparliamentary group estimate is not spending.",
+        "minimumClosingEvidence": "Executed incremental 2023+ trilateral exercise/coordination costs, net of baseline spending and ally shares.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "china",
+        "gate": "attribute",
+        "status": "not-ready",
+        "availableEvidence": "Saudi-Iran reconciliation followed Iraq/Oman mediation and reactivated 1998/2001 agreements.",
+        "minimumClosingEvidence": "Independent counterfactual analysis of incremental Beijing contribution, sustained bilateral outcomes and rival explanations.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "china",
+        "gate": "costs",
+        "status": "not-ready",
+        "availableEvidence": "Three follow-up committee meetings document participation but no China-specific spending.",
+        "minimumClosingEvidence": "Audited Chinese diplomatic/financial costs and counterpart contributions associated with the 2023 deal.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "russia",
+        "gate": "attribute",
+        "status": "not-ready",
+        "availableEvidence": "Russia-Belarus military doctrine and integration existed before the 2025 treaty.",
+        "minimumClosingEvidence": "Independent measurable change in Belarus policy/security alignment attributable to treaty, not preexisting dependence.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "russia",
+        "gate": "costs",
+        "status": "not-ready",
+        "availableEvidence": "SIPRI nationwide military totals cannot isolate bilateral treaty obligations.",
+        "minimumClosingEvidence": "Russia and Belarus treaty-specific incremental executed spending and fiscal burden, net of preexisting Union State arrangements.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "eu",
+        "gate": "attribute",
+        "status": "not-ready",
+        "availableEvidence": "EUPM Moldova activity and reforms overlap with Growth Facility, EPF and Moldovan programs.",
+        "minimumClosingEvidence": "Matched outcomes with plausible counterfactual and mission-specific contribution for crisis response, cyber and resilience.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "eu",
+        "gate": "costs",
+        "status": "not-ready",
+        "availableEvidence": "EUPM authorized €13.36m and €19.82m, contracts and staffing ceiling are not paid mission costs; Growth Facility payments are unrelated.",
+        "minimumClosingEvidence": "Mission-level audited paid expenses, sending-state contributions and attribution of direct/indirect costs.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "india",
+        "gate": "attribute",
+        "status": "not-ready",
+        "availableEvidence": "Gold quota utilization and nominal trade values are observed but gold-price changes and macro trends confound CEPA effect.",
+        "minimumClosingEvidence": "Price/volume-adjusted bilateral product-level counterfactual using matched controls, including non-CEPA routes.",
+        "authorizedComplete": false
+      },
+      {
+        "sphere": "india",
+        "gate": "costs",
+        "status": "not-ready",
+        "availableEvidence": "Official customs-duty revenue impact is a concession measure, not agreement-wide net economic costs or benefits.",
+        "minimumClosingEvidence": "Actual fiscal concessions matched to utilization plus independent producer/consumer welfare and administrative costs.",
+        "authorizedComplete": false
+      }
+    ],
+    "gateCount": 10,
+    "readinessCounts": {
+      "ready": 0,
+      "notReady": 10
+    },
+    "policy": "Never close a gate because a related document exists; require evidence that directly meets its scope. A fiscal concession is not a net welfare loss, and an authorized budget is not a paid cost.",
+    "scoreAuthorized": false
   }
 }
