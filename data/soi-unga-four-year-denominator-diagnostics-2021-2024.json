@@ -1,0 +1,77 @@
+{
+  "schema": "soi-unga-four-year-denominator-diagnostics-v1",
+  "source": "data/soi-unga-six-code-actor-eligibility-audit-2021-2024.json",
+  "period": "2021–2024",
+  "actors": [
+    {
+      "actor": "us",
+      "years": 4,
+      "totalSubsetResolutions": 309,
+      "actorEligibleResolutions": 307,
+      "actorIneligibleResolutions": 2,
+      "pooledActorEligibilityPercent": 99.3528,
+      "observedMatchedPairs": 44711,
+      "maximumPossiblePairs": 49120,
+      "pooledPairCoveragePercent": 91.024,
+      "minimumAnnualPairCoveragePercent": 89.8864,
+      "maximumAnnualPairCoveragePercent": 92.6524
+    },
+    {
+      "actor": "china",
+      "years": 4,
+      "totalSubsetResolutions": 309,
+      "actorEligibleResolutions": 306,
+      "actorIneligibleResolutions": 3,
+      "pooledActorEligibilityPercent": 99.0291,
+      "observedMatchedPairs": 44548,
+      "maximumPossiblePairs": 48960,
+      "pooledPairCoveragePercent": 90.9886,
+      "minimumAnnualPairCoveragePercent": 89.8849,
+      "maximumAnnualPairCoveragePercent": 92.5152
+    },
+    {
+      "actor": "russia",
+      "years": 4,
+      "totalSubsetResolutions": 309,
+      "actorEligibleResolutions": 309,
+      "actorIneligibleResolutions": 0,
+      "pooledActorEligibilityPercent": 100,
+      "observedMatchedPairs": 44983,
+      "maximumPossiblePairs": 49440,
+      "pooledPairCoveragePercent": 90.985,
+      "minimumAnnualPairCoveragePercent": 89.8864,
+      "maximumAnnualPairCoveragePercent": 92.5753
+    },
+    {
+      "actor": "india",
+      "years": 4,
+      "totalSubsetResolutions": 309,
+      "actorEligibleResolutions": 307,
+      "actorIneligibleResolutions": 2,
+      "pooledActorEligibilityPercent": 99.3528,
+      "observedMatchedPairs": 44788,
+      "maximumPossiblePairs": 49120,
+      "pooledPairCoveragePercent": 91.1808,
+      "minimumAnnualPairCoveragePercent": 89.8864,
+      "maximumAnnualPairCoveragePercent": 92.5753
+    },
+    {
+      "actor": "eu",
+      "years": 4,
+      "totalSubsetResolutions": 309,
+      "actorEligibleResolutions": 268,
+      "actorIneligibleResolutions": 41,
+      "pooledActorEligibilityPercent": 86.7314,
+      "observedMatchedPairs": 38922,
+      "maximumPossiblePairs": 42880,
+      "pooledPairCoveragePercent": 90.7696,
+      "minimumAnnualPairCoveragePercent": 89.761,
+      "maximumAnnualPairCoveragePercent": 92.6993
+    }
+  ],
+  "method": "Pooled pair coverage = sum observed matched partner-vote pairs / sum (actor-eligible resolutions × 160 frozen external partners). Pooled actor eligibility = sum eligible resolutions / sum six-code subset resolutions. Do not average annual percentages unweighted.",
+  "statisticalIndependenceAssumed": false,
+  "euProxyComparabilityCaveat": true,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
