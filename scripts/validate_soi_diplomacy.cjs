@@ -64,8 +64,8 @@ for(const item of worklist.items){
   assert.equal(rec.sourceIntegrityPolicy.preferentialUtilizationVerified,false);
   assert.equal(rec.officialPreferenceUptakeObservations.length,2);
   assert.ok(rec.officialPreferenceUptakeObservations[1].certificatesOfOriginIssuedApprox>rec.officialPreferenceUptakeObservations[0].certificatesOfOriginIssuedApprox);
-  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
-  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,false);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-baseline').complete,true);
+  assert.equal(item.priorityTasks.find(t=>t.id==='match-followup').complete,true);
   const hist=rec.officialHistoricalMatchedSeries;
   assert.equal(hist.status,'official-descriptive-aggregate-only');
   assert.equal(hist.periods.length,2);
