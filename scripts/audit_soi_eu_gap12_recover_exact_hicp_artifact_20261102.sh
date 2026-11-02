@@ -16,5 +16,4 @@ if [[ "$actual" != "$expected" ]]; then
 fi
 unzip -p "$tmp/artifact.zip" "$file" > "$tmp/$file"
 node scripts/audit_soi_eu_gap12_import_official_hicp_artifact_20261102.cjs "$tmp/$file"
-node scripts/audit_soi_eu_gap12_national_real_output_20261102.cjs
 echo "Durable JSON generated and verified. Review and commit the generated data file."
