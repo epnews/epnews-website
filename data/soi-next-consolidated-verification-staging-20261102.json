@@ -1,0 +1,92 @@
+{
+  "version": "2026-11-02",
+  "status": "staging-research-not-ready-for-pr",
+  "baseDataset": "data/soi-five-sphere-verified-outcomes-batch15-20261102.json",
+  "verifiedCorrections": [
+    {
+      "id": "EU-ERA-2025-FINAL-DISBURSEMENT",
+      "supersedes": "EU-ERA-2025-LOANS-PAID",
+      "amount": 18.1,
+      "unit": "EUR billion",
+      "period": "2025",
+      "status": "fully_disbursed",
+      "lastTranche": 4.1,
+      "lastTrancheDate": "2025-11-13",
+      "sources": [
+        "https://mof.gov.ua/en/news/ukraine_received_41_billion_from_the_eu__the_final_tranche_under_the_era_loans_financed_by_revenues_from_frozen_russian_assets-5413",
+        "https://www.eeas.europa.eu/delegations/ukraine/eu-steps-support-ukraine-almost-%E2%82%AC6-billion-cover-its-financial-needs_en"
+      ],
+      "limitations": [
+        "Earlier EUR 7bn figure was an interim cumulative balance, not additional money.",
+        "This is a loan, not a grant or confiscated Russian sovereign principal.",
+        "Funds received are not proof of downstream policy influence."
+      ]
+    },
+    {
+      "id": "US-DFC-ENERGY-REPORTING-YEAR-CORRECTION",
+      "supersedes": "US-DFC-2025-ENERGY-OUTPUT",
+      "amount": 9400,
+      "qualifier": "over in annual report; nearly on DFC energy webpage",
+      "unit": "GWh",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_output",
+      "sources": [
+        "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+        "https://www.dfc.gov/our-work/energy"
+      ],
+      "limitations": [
+        "FY2025 reporting describes 2024 energy-sector impacts, not production occurring in calendar 2025.",
+        "DFC-supported client production not independently audited and not solely attributable to DFC."
+      ]
+    },
+    {
+      "id": "US-DFC-TRANSMISSION-REPORTING-YEAR-CORRECTION",
+      "supersedes": "US-DFC-2025-GRID-CONSTRUCTION",
+      "amount": 3800,
+      "unit": "km",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_constructed_or_improved",
+      "sources": [
+        "https://www.dfc.gov/our-work/energy",
+        "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf"
+      ],
+      "limitations": [
+        "Check annual report exact year and combined constructed-or-improved definition before publishing.",
+        "Not necessarily new grid capacity or independent verified benefit."
+      ]
+    },
+    {
+      "id": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT-SOURCE-DEPENDENCE",
+      "supersedes": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT",
+      "amount": 5.46,
+      "unit": "million tonnes",
+      "period": 2025,
+      "status": "operator_reported_crossborder_freight",
+      "sources": [
+        "https://english.www.gov.cn/archive/statistics/202603/11/content_WS69b181b3c6d00ca5f9a09cf8.html",
+        "https://kpl.gov.la/detail.aspx?id=97361"
+      ],
+      "limitations": [
+        "Lao and Chinese publications reproduce the same China Railway Kunming Group operator statement, so they are not independent confirmations.",
+        "Cross-border freight differs from all cargo carried on the railway.",
+        "Does not establish profitability or Laos net national benefit."
+      ]
+    }
+  ],
+  "pendingNext": [
+    "Confirm DFC 3,800km impact period in annual report table",
+    "Reconcile China-Laos cargo with Lao customs independent series",
+    "Reconcile EU 2025 ERA cash receipts against recipient treasury statement",
+    "Find audited disbursements and actual project outputs for India minerals",
+    "Add comparable costs and independent source for Indonesian Whoosh ridership"
+  ],
+  "scoring": {
+    "auditCompleted": 20,
+    "auditTotal": 30,
+    "gatePromotion": false,
+    "influenceScores": null
+  },
+  "note": "Staging only; do not open PR until consolidated 10–15 distinct substantive verified improvements are accumulated."
+}
