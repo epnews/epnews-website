@@ -175,3 +175,19 @@ except ValueError:
 else:
     raise AssertionError("Inconsistent GIE facility URL was accepted")
 print("GIE listed URL identity consistency checks passed")
+
+for injected in ("&page=2", "&size=1", "&from=2025-01-01", "&to=2027-01-01", "&show=listing", "&facility=21W-OTHER"):
+    try:
+        mod.validate_facility_identity(url + injected)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Unapproved facility query parameter accepted: " + injected)
+for injected in ("&page=2", "&size=1", "&show=listing"):
+    try:
+        mod.fetch_all_pages(url + "&from=2026-10-01&to=2026-10-31" + injected, "dummy", mock_fetch)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Unexpected paged ALSI query parameter accepted: " + injected)
+print("ALSI query parameter injection tests passed")
