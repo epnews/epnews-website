@@ -61,17 +61,6 @@
       "status": "commenced_reported"
     },
     {
-      "id": "routine-use-2024",
-      "date": "2024-12-05",
-      "dateQualifier": "date of 2024 Korea Society Van Fleet speech; verify publication date before treating as a daily usage series",
-      "type": "operational_use_statement",
-      "observed": "US defense official said the real-time early-warning mechanism was used on a regular basis.",
-      "sourcePublisher": "US Department of Defense, official speech",
-      "source": "https://www.defense.gov/News/Speeches/Speech/Article/3983625/principal-deputy-assistant-secretary-of-defense-for-indo-pacific-security-affai/",
-      "measurement": "qualitative official-use assertion; no independently audited usage frequency or latency",
-      "status": "official_statement"
-    },
-    {
       "id": "freedom-edge-2025-plan",
       "date": "2025-09-05",
       "period": "2025-09-15/2025-09-19",
@@ -85,7 +74,7 @@
   ],
   "comparison": {
     "baseline": "2022 exercise shows pre-existing trilateral information sharing; avoid treating 2023 as the beginning of all cooperation.",
-    "observedPostActivation": "Two named 2024 Freedom Edge iterations and a qualitative official statement of regular warning-network use.",
+    "observedPostActivation": "Two named 2024 Freedom Edge iterations; no independently audited warning-network usage frequency.",
     "notComparable": "Exercise counts are not direct warning-system usage, intercept success, latency or lives saved; announcements are not performance audits.",
     "independentCounterpartVerification": "Japanese and US official sources independently document institutional milestones but are participants, not independent evaluators.",
     "alternativeExplanations": [
