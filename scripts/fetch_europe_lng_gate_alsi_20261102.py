@@ -18,8 +18,18 @@ HOST = "https://alsi.gie.eu"
 
 def validate_facility_url(value):
     parsed = urllib.parse.urlsplit(value)
-    if parsed.scheme != "https" or parsed.netloc != "alsi.gie.eu" or not parsed.path.startswith("/api/"):
+    if parsed.scheme != "https" or parsed.netloc != "alsi.gie.eu" or not (parsed.path == "/api" or parsed.path.startswith("/api/")):
         raise ValueError("Facility URL must be an https://alsi.gie.eu/api/... endpoint")
+    return parsed
+
+def validate_facility_identity(value):
+    """Reject country/company aggregate endpoints masquerading as Gate facility data."""
+    parsed = validate_facility_url(value)
+    query = urllib.parse.parse_qs(parsed.query)
+    if parsed.path != "/api" or any(len(query.get(k, [])) != 1 or not query[k][0] for k in ("country", "company", "facility")):
+        raise ValueError("ALSI facility data requires /api?country=...&company=...&facility=... from official listing")
+    if query["country"][0].upper() != "NL":
+        raise ValueError("Gate terminal facility must be in Netherlands (country=NL)")
     return parsed
 
 def request_json(url, key):
@@ -90,7 +100,7 @@ def main():
         return
     if not args.facility_url:
         parser.error("--facility-url is required (resolve Gate EIC via --list-facilities first)")
-    parsed = validate_facility_url(args.facility_url)
+    parsed = validate_facility_identity(args.facility_url)
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
     params.update({"from": args.from_date, "to": args.to_date})
     url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
