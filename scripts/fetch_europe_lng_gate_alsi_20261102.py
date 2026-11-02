@@ -235,6 +235,10 @@ def audit_observation_coverage(rows, from_date, to_date):
     observed_in_window = set(counts).intersection(expected)
     conflicting_days = {day: sorted(values) for day, values in day_statuses.items() if len(values) > 1}
     unambiguous_confirmed = confirmed_days - set(conflicting_days)
+    usable_days = {day for day, values in day_statuses.items()
+                   if values and values.issubset({"C", "E"})}
+    unavailable_days = {day for day, values in day_statuses.items()
+                        if values == {"N"}}
     return {"expected_gas_days": len(expected), "observed_unique_gas_days": len(counts),
             "observed_in_window_gas_days": len(observed_in_window),
             "daily_coverage_percent": round(100 * len(observed_in_window) / len(expected), 2) if expected else 0,
@@ -243,6 +247,9 @@ def audit_observation_coverage(rows, from_date, to_date):
             "conflicting_status_gas_days": conflicting_days,
             "estimated_gas_days": len(estimated_days),
             "no_data_gas_days": len(no_data_days),
+            "usable_reporting_gas_days": len(usable_days),
+            "usable_reporting_coverage_percent": round(100 * len(usable_days) / len(expected), 2) if expected else 0,
+            "unavailable_reporting_gas_days": len(unavailable_days),
             "confirmed_coverage_percent": round(100 * len(confirmed_days) / len(expected), 2) if expected else 0,
             "unambiguous_confirmed_coverage_percent": round(100 * len(unambiguous_confirmed) / len(expected), 2) if expected else 0,
             "missing_gas_days": [day for day in expected if day not in counts],

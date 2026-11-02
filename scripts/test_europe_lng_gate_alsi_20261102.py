@@ -323,3 +323,16 @@ for from_day, to_day in (("2026-10-31", "2026-10-01"), ("2026-02-30", "2026-10-3
     else:
         raise AssertionError("Invalid paginated date bounds accepted")
 print("ALSI paginated request date bounds tests passed")
+
+availability = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-02", "status": "E"},
+    {"gasDayStart": "2026-10-03", "status": "N"},
+    {"gasDayStart": "2026-10-04", "status": "C"},
+    {"gasDayStart": "2026-10-04", "status": "N"},
+], "2026-10-01", "2026-10-05")
+assert availability["daily_coverage_percent"] == 80.0
+assert availability["usable_reporting_gas_days"] == 2
+assert availability["usable_reporting_coverage_percent"] == 40.0
+assert availability["unavailable_reporting_gas_days"] == 1
+print("ALSI usable-vs-no-data coverage tests passed")
