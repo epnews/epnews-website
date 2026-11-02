@@ -1,5 +1,5 @@
 {
-  "version": "4.1",
+  "version": "4.2",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -862,6 +862,15 @@
           "verifiedSignedContractAmounts": true,
           "actualDisbursementsVerified": false,
           "costsGateComplete": false
+        },
+        "secondedPersonnelAccounting": {
+          "source": "https://eur-lex.europa.eu/eli/dec/2023/855/2025-05-20/eng/pdf",
+          "provision": "Article 6(1)",
+          "finding": "EU Member States, EU institutions or EEAS bear salary, medical coverage, deployment travel and other specified costs for personnel they second to EUPM Moldova.",
+          "implication": "Mission financial reference amounts and procurement registers alone cannot be used as all-in mission economic cost; separately paid secondment costs must be identified and de-duplicated.",
+          "financialAmountsVerified": false,
+          "secondmentPersonnelCountsAndCostsMatched": false,
+          "missionAllInCostVerified": false
         }
       },
       "comparableOutcomeObservation": {
@@ -1397,6 +1406,28 @@
           "costsGateComplete": false,
           "scoringAuthorized": false
         }
+      },
+      "uaeCounterpartTradeObservation": {
+        "source": "https://www.mofa.gov.ae/en/Missions/New-Delhi/UAE-Relationships/Economic-Cooperation",
+        "publisher": "United Arab Emirates Ministry of Foreign Affairs",
+        "indicator": "Bilateral merchandise trade value as reported by UAE diplomatic mission",
+        "unit": "USD billion",
+        "periods": [
+          {
+            "fiscalYear": "2024-2025",
+            "value": 100.05
+          },
+          {
+            "fiscalYear": "2025-2026",
+            "value": 101.25
+          }
+        ],
+        "differenceUsdBillion": 1.2,
+        "percentChange": 1.2,
+        "reportedIndiaExportsToUaeFY2025_26UsdBillion": 37.36,
+        "interpretation": "Counterpart-reported aggregate trade trend, not CEPA incremental causal effect, tariff utilization, or fiscal cost.",
+        "tradeDefinitionReconciledWithDgcis": false,
+        "causalAttributionVerified": false
       }
     }
   ],
