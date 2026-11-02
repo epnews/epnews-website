@@ -8,6 +8,14 @@ const {compileDiplomaticOutcomes,SPHERES}=require(path.join(root,'soi-diplomatic
 const GATES=['verify-primary','verify-counterpart','match-baseline','match-followup','attribute','costs'];
 assert.deepEqual(worklist.items.map(x=>x.sphere),SPHERES);
 assert.equal(worklist.scoringAuthorized,false);
+const methodology=worklist.evidenceGateMethodology;
+assert.equal(methodology.version,'1.0');
+assert.equal(methodology.crossSphereNormalization.status,'not-authorized');
+for(const gate of ['attribution','costs']){
+ assert.ok(methodology[gate].required.length>=5,gate+' evidence checklist');
+ assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
+}
+assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
 let total=0,reviewed=0;
 for(const item of worklist.items){
  assert.deepEqual(item.priorityTasks.map(t=>t.id),GATES,item.sphere+' gate order');
