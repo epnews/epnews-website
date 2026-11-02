@@ -101,3 +101,17 @@ for start, end in (("2025-12-31", "2026-10-31"), ("2026-10-01", "2027-01-01"), (
         raise AssertionError("Out-of-coverage ALSI date range accepted")
 assert mod.validate_reporting_window({"operational_start_date": None, "operational_end_date": None}, "2026-10-01", "2026-10-31")
 print("ALSI facility reporting coverage checks passed")
+
+observations = [
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "E"},
+    {"gasDayStart": "2026-10-03", "status": "N"},
+]
+audit = mod.audit_observation_coverage(observations, "2026-10-01", "2026-10-03")
+assert audit["missing_gas_days"] == ["2026-10-02"]
+assert audit["duplicate_gas_days"] == {"2026-10-01": 2}
+assert audit["status_counts"] == {"C": 1, "E": 1, "N": 1}
+assert not audit["complete_daily_coverage"]
+complete = mod.audit_observation_coverage([{"gasDayStart": "2026-10-01", "status": "C"}], "2026-10-01", "2026-10-01")
+assert complete["complete_daily_coverage"]
+print("ALSI observation coverage audit checks passed")
