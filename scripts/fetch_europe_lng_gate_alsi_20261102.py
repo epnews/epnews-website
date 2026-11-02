@@ -27,6 +27,22 @@ def request_json(url, key):
     with urllib.request.urlopen(req, timeout=35) as response:
         return json.load(response)
 
+def validate_response(result):
+    """Fail closed on incomplete pagination and malformed facility observations."""
+    if not isinstance(result, dict) or not isinstance(result.get("data"), list):
+        raise ValueError("Unexpected GIE response: expected data array")
+    last_page = result.get("last_page")
+    if last_page is not None:
+        try:
+            pages = int(last_page)
+        except (ValueError, TypeError):
+            raise ValueError("Invalid GIE pagination metadata") from None
+        if pages != 1:
+            raise ValueError(f"GIE response spans {pages} pages; refusing incomplete one-page export")
+    if not result["data"]:
+        raise ValueError("GIE returned no facility observations; refusing empty evidence export")
+    return result["data"]
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--facility-url", help="Exact Gate facility URL copied from authenticated /api/about?show=listing")
@@ -51,11 +67,7 @@ def main():
     params.update({"from": args.from_date, "till": args.to_date})
     url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
     result = request_json(url, key)
-    if not isinstance(result, dict) or "data" not in result:
-        raise ValueError("Unexpected GIE response: no data array; refusing to write unvalidated observations")
-    rows = result["data"]
-    if not isinstance(rows, list):
-        raise ValueError("Unexpected GIE response: data is not an array")
+    rows = validate_response(result)
     output = {
         "source": "GIE ALSI+ operator-reported LNG facility daily series",
         "facility_api_url": url,
@@ -66,13 +78,13 @@ def main():
             "Inventory and sendOut are not vessel-by-vessel unloading volumes",
             "Confirm facility EIC belongs to Gate terminal; never substitute country aggregate",
             "Data status C confirms reporting, not voyage cargo origin",
-            "API may paginate; verify last_page before interpreting as complete",
+            "Acquisition fails closed if API reports more than one page; no incomplete export is written",
         ],
     }
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
         f.write("\n")
-    print(f"Wrote {len(rows)} records to {args.output}; check pagination and facility identity")
+    print(f"Wrote {len(rows)} records to {args.output}; verify facility identity")
 
 if __name__ == "__main__":
     try:
