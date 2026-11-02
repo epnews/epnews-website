@@ -1,0 +1,109 @@
+{
+  "schema": "soi-three-primary-source-actor-role-verifications-v1",
+  "asOf": "2026-11-02",
+  "cases": [
+    {
+      "eventId": "2020-us-china-phase-one",
+      "verifiedRoles": [
+        {
+          "actor": "us",
+          "role": "joint-participant"
+        },
+        {
+          "actor": "china",
+          "role": "joint-participant"
+        }
+      ],
+      "verifiedMilestones": [
+        {
+          "date": "2020-01-15",
+          "type": "signed"
+        },
+        {
+          "date": "2020-02-14",
+          "type": "entered-into-force"
+        }
+      ],
+      "sources": [
+        "https://ustr.gov/phase-one",
+        "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2020/february/ustr-announces-formation-bilateral-evaluation-and-dispute-resolution-office-pursuant-us-china-phase"
+      ],
+      "evidenceScope": "US government official record of bilateral signatories and legal implementation date",
+      "unverified": "Independent Chinese counterpart source and measurable compliance/cost effects; does not demonstrate US-only influence",
+      "influenceScore": null
+    },
+    {
+      "eventId": "2021-eu-china-cai-freeze",
+      "verifiedRoles": [
+        {
+          "actor": "eu",
+          "role": "initiator-of-parliamentary-ratification-hold"
+        },
+        {
+          "actor": "china",
+          "role": "counterparty-and-sanctions-context"
+        }
+      ],
+      "verifiedMilestones": [
+        {
+          "date": "2021-05-20",
+          "type": "european-parliament-resolution",
+          "votesFor": 599,
+          "votesAgainst": 30,
+          "abstentions": 58
+        }
+      ],
+      "sources": [
+        "https://www.europarl.europa.eu/news/en/press-room/20210517IPR04123/meps-refuse-any-agreement-with-china-whilst-sanctions-are-in-place",
+        "https://www.europarl.europa.eu/legislative-train/theme-international-trade-inta/file-eu-china-investment-agreement?sid=10401"
+      ],
+      "evidenceScope": "EU institutional resolution and ratification consideration on hold; CAI agreed in principle but not ratified",
+      "unverified": "Marginal influence, costs and independently measured impact of investment agreement freeze",
+      "influenceScore": null
+    },
+    {
+      "eventId": "2025-eu-japan-spa",
+      "verifiedRoles": [
+        {
+          "actor": "eu",
+          "role": "joint-party"
+        },
+        {
+          "actor": "china",
+          "role": "context-only-not-party"
+        },
+        {
+          "actor": "us",
+          "role": "context-only-not-party"
+        }
+      ],
+      "verifiedMilestones": [
+        {
+          "date": "2018-07-17",
+          "type": "signed"
+        },
+        {
+          "date": "2019-02-01",
+          "type": "provisional-application"
+        },
+        {
+          "date": "2025-01-01",
+          "type": "entered-into-force"
+        }
+      ],
+      "sources": [
+        "https://www.consilium.europa.eu/en/documents/treaties-agreements/agreement/?doclanguage=en&id=2018023",
+        "https://www.consilium.europa.eu/en/press/press-releases/2025/01/01/eu-japan-strategic-partnership-framework-agreement-enters-into-force/"
+      ],
+      "evidenceScope": "EU Council treaty register lists EU and Japan as treaty parties and confirms signature/provisional application/full entry into force",
+      "unverified": "Independent Japanese operational outcome evidence, attributable implementation effects and actual costs",
+      "influenceScore": null
+    }
+  ],
+  "verifiedActorRolePairs": 7,
+  "verifiedEvents": 3,
+  "attributionGateClosed": 0,
+  "costGateClosed": 0,
+  "scoreAuthorized": false,
+  "needleAuthorized": false
+}
