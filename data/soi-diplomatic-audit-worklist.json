@@ -1,5 +1,5 @@
 {
-  "version": "5.4",
+  "version": "5.5",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -3028,5 +3028,112 @@
     "crossSphereContext": "EU and US entries supply cost/operational context but do not resolve causal or net-cost checks.",
     "gateProgressUnchanged": true,
     "scoringAuthorized": false
+  },
+  "indiaSilverPostShockCrosscheck": {
+    "version": "1.0",
+    "evidence": [
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf",
+        "period": "2025",
+        "indicator": "Middle East bullion exports",
+        "value": 480,
+        "unit": "metric tonnes",
+        "change": "Estimated decline of 80% year-on-year, attributed by survey primarily to collapse of UAE silver exports to India.",
+        "limitation": "Middle East regional export estimate, not India-UAE bilateral customs quantity; silver bullion scope."
+      },
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf",
+        "period": "2025",
+        "indicator": "India total silver imports",
+        "value": 7222,
+        "unit": "metric tonnes",
+        "change": "Estimated decline of 6% from 2024, while average rupee silver prices rose 46%.",
+        "limitation": "All-origin India silver imports, not preferential UAE route."
+      },
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf",
+        "period": "2025",
+        "indicator": "UK share of India silver imports",
+        "value": 40,
+        "unit": "percent",
+        "change": "UK and Hong Kong regained import shares after CEPA UAE route dried up.",
+        "limitation": "Industry-estimated share, not causal tariff impact by itself."
+      },
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf",
+        "period": "2025",
+        "indicator": "Hong Kong share of India silver imports",
+        "value": 30,
+        "unit": "percent",
+        "change": "UK and Hong Kong regained import shares after CEPA UAE route dried up.",
+        "limitation": "Industry-estimated share, not causal tariff impact by itself."
+      },
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf",
+        "period": "2024",
+        "indicator": "Silver grain share of India silver imports",
+        "value": 38,
+        "unit": "percent",
+        "change": "Grain share dropped to 8% in 2025 as import routes shifted.",
+        "limitation": "Product-form mix is not origin-specific or customs preference use."
+      },
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf",
+        "period": "2025",
+        "indicator": "Silver grain share of India silver imports",
+        "value": 8,
+        "unit": "percent",
+        "change": "Grain share down 30 percentage points from 2024.",
+        "limitation": "Composition shift is consistent with routing changes but does not quantify causal effect."
+      },
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2024/07/World-Silver-Survey-2024.pdf",
+        "period": "2023",
+        "indicator": "Silver imported via UAE CEPA",
+        "value": 422,
+        "unit": "metric tonnes",
+        "change": "Industry research links route to tariff preference after 2023 MFN increase.",
+        "limitation": "Survey estimate, not directly comparable to India government fiscal-year import values."
+      },
+      {
+        "source": "https://silverinstitute.org/wp-content/uploads/2024/07/World-Silver-Survey-2024.pdf",
+        "period": "Jan–Feb 2024",
+        "indicator": "Silver imported via UAE CEPA",
+        "value": 1300,
+        "unit": "metric tonnes approximate",
+        "change": "Strong pre-July 2024 preferential-route inflow.",
+        "limitation": "Two-month industry estimate, not entire 2024 or post-shock."
+      },
+      {
+        "source": "https://www.reuters.com/markets/commodities/indias-duty-cut-halts-concessionary-silver-platinum-imports-uae-2024-07-25/",
+        "period": "Jan–May 2024",
+        "indicator": "Silver imports from UAE",
+        "value": 1998,
+        "unit": "metric tonnes",
+        "change": "Compared with 133 tonnes in Jan–May 2023.",
+        "limitation": "Reported UAE origin shipments, not necessarily all preference claims."
+      },
+      {
+        "source": "https://www.reuters.com/markets/commodities/indias-duty-cut-halts-concessionary-silver-platinum-imports-uae-2024-07-25/",
+        "period": "2024-07-23 to 2024-07-25",
+        "indicator": "CEPA silver customs clearances",
+        "value": 0,
+        "unit": "shipments presented per Reuters official",
+        "change": "Reported immediate cessation after MFN duty fell from 15% to 6%, below 8% CEPA rate.",
+        "limitation": "Two-day anecdotal government-official observation, not complete customs time series."
+      },
+      {
+        "source": "https://www.commerce.gov.in/wp-content/uploads/2026/02/Agreed-Minutes-of-2nd-JC-meeting-under-India-UAE-CEPA_Oct-2024-1.pdf",
+        "period": "2024-10-10",
+        "indicator": "India-UAE dispute over value addition",
+        "value": 3,
+        "unit": "percent minimum price premium observed",
+        "change": "India challenged 3% value addition; UAE defended processing and profit margin inclusion.",
+        "limitation": "Diplomatic disagreement; do not label customs fraud as proven."
+      }
+    ],
+    "causalInterpretation": "Combined pre-shock rise, immediate route cessation, 2025 source substitution, and continued overall Indian imports strongly support tariff-driven trade routing. Exact incremental causal effect and welfare impact remain unestimated pending monthly customs volumes, counterfactual and tariff schedule controls.",
+    "gateCompleted": false,
+    "scoreAuthorized": false
   }
 }
