@@ -3,7 +3,7 @@
  * Validates generated archival dataset and rejects tampered inputs.
  */
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict');
-const panel=JSON.parse(fs.readFileSync('data/soi-eu-gap12-household-national-semester-change-2025s2-2026s1-20261102.json','utf8'));
+// Revalidate on current main after publishing-gate merge-base fix (#508).\nconst panel=JSON.parse(fs.readFileSync('data/soi-eu-gap12-household-national-semester-change-2025s2-2026s1-20261102.json','utf8'));
 const prov=JSON.parse(fs.readFileSync('data/soi-eu-gap12-national-hicp-successful-run-provenance-20261102.json','utf8'));
 const geos=[...new Set(panel.pairs.map(x=>x.geo))].sort();
 const months=Array.from({length:12},(_,i)=>{const n=i+6;return String(2025+Math.floor(n/12))+'-'+String(n%12+1).padStart(2,'0')});
