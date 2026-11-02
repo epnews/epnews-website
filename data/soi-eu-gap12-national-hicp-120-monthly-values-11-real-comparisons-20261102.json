@@ -1,7 +1,7 @@
 {
   "version": "2026-11-02",
   "targetGap": "SOI-GAP-12",
-  "status": "official-hicp-observations-imported-nominal-prices-pending-independent-review",
+  "status": "official-hicp-and-nominal-prices-reconciled-qualified-provisional",
   "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?coicop18=TOTAL&unit=I25&sinceTimePeriod=2025-07&untilTimePeriod=2026-06&geo=BE&geo=BG&geo=DE&geo=HR&geo=HU&geo=IE&geo=MT&geo=NL&geo=RO&geo=SE",
   "retrievedAt": "2026-11-02T04:45:13.413Z",
   "sourcePanel": "data/soi-eu-gap12-household-national-semester-change-2025s2-2026s1-20261102.json",
@@ -632,13 +632,14 @@
       "consumer": "household",
       "periodStart": "2025-S2",
       "periodEnd": "2026-S1",
-      "startEUR100kWh": 12.82,
+      "startEUR100kWh": 12.96,
       "endEUR100kWh": 12.68,
-      "nominalChangePercent": -1.092,
-      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "nominalChangePercent": -2.16,
+      "startSource": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_204",
       "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45239.pdf",
       "realEndIn2025S2EUR100kWh": 12.73887,
-      "realChangePercent": -0.633
+      "realChangePercent": -1.706,
+      "endSourceStatus": "p"
     },
     {
       "geo": "BG",
@@ -674,13 +675,13 @@
       "consumer": "household",
       "periodStart": "2025-S2",
       "periodEnd": "2026-S1",
-      "startEUR100kWh": 17.19,
+      "startEUR100kWh": 17.14,
       "endEUR100kWh": 16.22,
-      "nominalChangePercent": -5.643,
-      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "nominalChangePercent": -5.368,
+      "startSource": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_202",
       "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45229.pdf",
       "realEndIn2025S2EUR100kWh": 16.08363,
-      "realChangePercent": -6.436
+      "realChangePercent": -6.163
     },
     {
       "geo": "HU",
@@ -688,13 +689,13 @@
       "consumer": "household",
       "periodStart": "2025-S2",
       "periodEnd": "2026-S1",
-      "startEUR100kWh": 3.4,
+      "startEUR100kWh": 3.35,
       "endEUR100kWh": 3.3,
-      "nominalChangePercent": -2.941,
-      "startSource": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "nominalChangePercent": -1.493,
+      "startSource": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_pc_202",
       "endSource": "https://ec.europa.eu/eurostat/statistics-explained/SEPDF/cache/45229.pdf",
       "realEndIn2025S2EUR100kWh": 3.25815,
-      "realChangePercent": -4.172
+      "realChangePercent": -2.742
     },
     {
       "geo": "HR",
@@ -725,7 +726,7 @@
       "realChangePercent": 1.07
     }
   ],
-  "methodology": "Eurostat national total HICP monthly I25 index; arithmetic mean of six monthly index values per semester. Deflate nominal 2026-S1 EUR/100kWh household price to 2025-S2 prices using ratio of HICP semester means. Nominal prices sourced from existing research panel, not independently validated here. Results are not company revenues, profits, or national net benefits.",
+  "methodology": "Eurostat national total HICP monthly I25 index; arithmetic mean of six monthly index values per semester. Deflate nominal 2026-S1 EUR/100kWh household price to 2025-S2 prices using ratio of HICP semester means. Nominal prices reconciled 22/22 to official Eurostat JSON-stat run 41397739756; Malta 2026-S1 provisional (p). Results are not company revenues, profits, or national net benefits.",
   "gapClosed": false,
   "auditCompleted": 20,
   "auditTotal": 30,
@@ -733,5 +734,7 @@
   "sourceArtifactId": 13116843168,
   "sourceRunId": 41390176956,
   "sourceArtifactSha256": "c84eb9bf7cb87b0f004503f9902713e8f1a52dde95bd6efe750337e52e74feaf",
-  "upstreamNominalPricesIndependentlyVerified": false
+  "upstreamNominalPricesIndependentlyVerified": true,
+  "upstreamNominalPriceVerificationQualification": "22/22 official prices matched in run 41397739756; Malta electricity 2026-S1 status p provisional, not final",
+  "upstreamNominalPriceVerificationRunId": 41397739756
 }
