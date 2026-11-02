@@ -1,0 +1,245 @@
+{
+  "schema": "soi-unga-six-code-divergence-audit-v1",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "subsetPolicyCodes": [
+    "102",
+    "110",
+    "111",
+    "112",
+    "118",
+    "129"
+  ],
+  "fullAgendaSource": "data/soi-unga-frozen-external-partner-2021-2024.json",
+  "subsetSource": "data/soi-unga-six-code-restricted-results-2021-2024.json",
+  "frozenExternalPartners": 160,
+  "rows": [
+    {
+      "actor": "us",
+      "year": 2021,
+      "fullAgendaPercent": 26.3343,
+      "sixCodePercent": 23.6188,
+      "subsetMinusFullPercentagePoints": -2.7155,
+      "actorEligibleResolutions": 73,
+      "matchedVotePairs": 10589
+    },
+    {
+      "actor": "us",
+      "year": 2022,
+      "fullAgendaPercent": 34.4341,
+      "sixCodePercent": 31.2263,
+      "subsetMinusFullPercentagePoints": -3.2078,
+      "actorEligibleResolutions": 77,
+      "matchedVotePairs": 11074
+    },
+    {
+      "actor": "us",
+      "year": 2023,
+      "fullAgendaPercent": 31.0386,
+      "sixCodePercent": 26.8546,
+      "subsetMinusFullPercentagePoints": -4.184,
+      "actorEligibleResolutions": 75,
+      "matchedVotePairs": 10892
+    },
+    {
+      "actor": "us",
+      "year": 2024,
+      "fullAgendaPercent": 32.0913,
+      "sixCodePercent": 27.6407,
+      "subsetMinusFullPercentagePoints": -4.4506,
+      "actorEligibleResolutions": 82,
+      "matchedVotePairs": 12156
+    },
+    {
+      "actor": "china",
+      "year": 2021,
+      "fullAgendaPercent": 71.6275,
+      "sixCodePercent": 68.6189,
+      "subsetMinusFullPercentagePoints": -3.0086,
+      "actorEligibleResolutions": 74,
+      "matchedVotePairs": 10723
+    },
+    {
+      "actor": "china",
+      "year": 2022,
+      "fullAgendaPercent": 64.8438,
+      "sixCodePercent": 67.1638,
+      "subsetMinusFullPercentagePoints": 2.32,
+      "actorEligibleResolutions": 76,
+      "matchedVotePairs": 10930
+    },
+    {
+      "actor": "china",
+      "year": 2023,
+      "fullAgendaPercent": 65.1993,
+      "sixCodePercent": 66.3475,
+      "subsetMinusFullPercentagePoints": 1.1482,
+      "actorEligibleResolutions": 74,
+      "matchedVotePairs": 10757
+    },
+    {
+      "actor": "china",
+      "year": 2024,
+      "fullAgendaPercent": 66.2191,
+      "sixCodePercent": 68.0178,
+      "subsetMinusFullPercentagePoints": 1.7987,
+      "actorEligibleResolutions": 82,
+      "matchedVotePairs": 12138
+    },
+    {
+      "actor": "russia",
+      "year": 2021,
+      "fullAgendaPercent": 57.5385,
+      "sixCodePercent": 55.0779,
+      "subsetMinusFullPercentagePoints": -2.4606,
+      "actorEligibleResolutions": 74,
+      "matchedVotePairs": 10723
+    },
+    {
+      "actor": "russia",
+      "year": 2022,
+      "fullAgendaPercent": 51.4975,
+      "sixCodePercent": 54.3164,
+      "subsetMinusFullPercentagePoints": 2.8189,
+      "actorEligibleResolutions": 77,
+      "matchedVotePairs": 11074
+    },
+    {
+      "actor": "russia",
+      "year": 2023,
+      "fullAgendaPercent": 48.9646,
+      "sixCodePercent": 51.7628,
+      "subsetMinusFullPercentagePoints": 2.7982,
+      "actorEligibleResolutions": 75,
+      "matchedVotePairs": 10892
+    },
+    {
+      "actor": "russia",
+      "year": 2024,
+      "fullAgendaPercent": 51.4606,
+      "sixCodePercent": 54.2297,
+      "subsetMinusFullPercentagePoints": 2.7691,
+      "actorEligibleResolutions": 83,
+      "matchedVotePairs": 12294
+    },
+    {
+      "actor": "india",
+      "year": 2021,
+      "fullAgendaPercent": 67.6766,
+      "sixCodePercent": 64.0328,
+      "subsetMinusFullPercentagePoints": -3.6438,
+      "actorEligibleResolutions": 73,
+      "matchedVotePairs": 10618
+    },
+    {
+      "actor": "india",
+      "year": 2022,
+      "fullAgendaPercent": 65.4398,
+      "sixCodePercent": 65.7034,
+      "subsetMinusFullPercentagePoints": 0.2636,
+      "actorEligibleResolutions": 77,
+      "matchedVotePairs": 11074
+    },
+    {
+      "actor": "india",
+      "year": 2023,
+      "fullAgendaPercent": 65.3877,
+      "sixCodePercent": 64.377,
+      "subsetMinusFullPercentagePoints": -1.0107,
+      "actorEligibleResolutions": 74,
+      "matchedVotePairs": 10802
+    },
+    {
+      "actor": "india",
+      "year": 2024,
+      "fullAgendaPercent": 66.0088,
+      "sixCodePercent": 65.593,
+      "subsetMinusFullPercentagePoints": -0.4158,
+      "actorEligibleResolutions": 83,
+      "matchedVotePairs": 12294
+    },
+    {
+      "actor": "eu",
+      "year": 2021,
+      "fullAgendaPercent": 60.4288,
+      "sixCodePercent": 55.9109,
+      "subsetMinusFullPercentagePoints": -4.5179,
+      "actorEligibleResolutions": 65,
+      "matchedVotePairs": 9381
+    },
+    {
+      "actor": "eu",
+      "year": 2022,
+      "fullAgendaPercent": 61.2742,
+      "sixCodePercent": 59.0723,
+      "subsetMinusFullPercentagePoints": -2.2019,
+      "actorEligibleResolutions": 68,
+      "matchedVotePairs": 9766
+    },
+    {
+      "actor": "eu",
+      "year": 2023,
+      "fullAgendaPercent": 58.7824,
+      "sixCodePercent": 55.9899,
+      "subsetMinusFullPercentagePoints": -2.7925,
+      "actorEligibleResolutions": 66,
+      "matchedVotePairs": 9541
+    },
+    {
+      "actor": "eu",
+      "year": 2024,
+      "fullAgendaPercent": 58.9489,
+      "sixCodePercent": 56.3611,
+      "subsetMinusFullPercentagePoints": -2.5878,
+      "actorEligibleResolutions": 69,
+      "matchedVotePairs": 10234
+    }
+  ],
+  "actorSummary": [
+    {
+      "actor": "us",
+      "label": "United States",
+      "meanAbsoluteDifferencePercentagePoints": 3.6395,
+      "maximumAbsoluteDifferencePercentagePoints": 4.4506,
+      "signChangesAcrossYears": false
+    },
+    {
+      "actor": "china",
+      "label": "China",
+      "meanAbsoluteDifferencePercentagePoints": 2.0689,
+      "maximumAbsoluteDifferencePercentagePoints": 3.0086,
+      "signChangesAcrossYears": true
+    },
+    {
+      "actor": "russia",
+      "label": "Russia",
+      "meanAbsoluteDifferencePercentagePoints": 2.7117,
+      "maximumAbsoluteDifferencePercentagePoints": 2.8189,
+      "signChangesAcrossYears": true
+    },
+    {
+      "actor": "india",
+      "label": "India",
+      "meanAbsoluteDifferencePercentagePoints": 1.3335,
+      "maximumAbsoluteDifferencePercentagePoints": 3.6438,
+      "signChangesAcrossYears": true
+    },
+    {
+      "actor": "eu",
+      "label": "EU voting-majority proxy",
+      "meanAbsoluteDifferencePercentagePoints": 3.025,
+      "maximumAbsoluteDifferencePercentagePoints": 4.5179,
+      "signChangesAcrossYears": false
+    }
+  ],
+  "interpretation": "Subset minus full agenda is a sampling-sensitivity difference in percentage points, not influence change or a time trend.",
+  "selectionIsExploratory": true,
+  "representativeOfFullAgenda": false,
+  "causalInferenceAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
