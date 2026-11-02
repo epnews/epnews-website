@@ -1,5 +1,5 @@
 {
-  "version": "2.5",
+  "version": "2.6",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -653,7 +653,7 @@
         "metric": "nominal bilateral merchandise trade USD billion",
         "descriptivelyComparable": true,
         "causallyAttributable": false,
-        "reason": "Same fiscal-year definition and nominal unit, but energy prices and recovery confound causal inference"
+        "reason": "Same fiscal-year definition and nominal unit, but energy prices and recovery confound causal inference Historical official FY2023-24 83.7bn figure may differ from later TradeStat revisions; direct reconciliation required before any matched product-level gate completion."
       },
       "causalAttributionPlan": {
         "status": "hypotheses-not-verified",
@@ -724,6 +724,41 @@
         "indiaImplementation": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1821785&lang=2&reg=48",
         "finding": "UAE economy minister confirmed first exempt imports and May 1 2022 CEPA implementation, corroborated by UAE Ministry, WTO and India. This does not validate matched tariff utilization, real trade volume gains or counterfactual influence.",
         "nextEvidence": "Match UAE customs preference claims and eligible tariff-line denominators by fiscal period.",
+        "influenceScoringAuthorized": false
+      },
+      "tradeSeriesReconciliation": {
+        "status": "unresolved-conflicting-official-series",
+        "measurement": "India-UAE bilateral merchandise trade, nominal USD billion, India fiscal years April-March",
+        "historicalParliamentaryAnswer": {
+          "source": "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2009-dated.-11.03.2025.pdf",
+          "fy2021_22": 72.9,
+          "fy2023_24": 83.7
+        },
+        "historicalDetailedParliamentaryAnswer": {
+          "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf",
+          "fy2022_23": 84.84034,
+          "fy2023_24": 83.6506,
+          "unit": "USD billion, derived from published USD million table"
+        },
+        "reportedRevisedTradeStat": {
+          "secondaryAnalysis": "https://epicuae.org/research/india-corridor",
+          "fy2023_24": 82.42,
+          "verification": "Secondary analysis states current TradeStat series differs from 2024/2025 parliamentary publications; independently reproduce from TradeStat before treating revision as official verified."
+        },
+        "observations": [
+          "The historical FY2023-24 parliamentary answer's 83.7 is a rounded figure of 83.65060 in a different parliamentary answer.",
+          "A more recent TradeStat extraction reportedly gives 82.42, a material series discrepancy requiring direct source verification.",
+          "Published FY2022-23 84.84034 versus FY2023-24 83.65060 shows year-on-year decline of roughly 1.4%, despite a higher FY2023-24 value than FY2021-22.",
+          "Nominal trade values mix fuel prices, volumes, composition and post-pandemic recovery; no CEPA causal effect or influence can be inferred."
+        ],
+        "pending": [
+          "Obtain timestamped direct TradeStat export and import data for FY2021-22 through FY2025-26.",
+          "Check revisions, coverage, rounding, reporting period and HS product classification changes.",
+          "Obtain eligible tariff line, preference-claim and actual quantity denominators from customs on both sides.",
+          "Estimate fuel price and non-oil trade sensitivities before interpreting changes."
+        ],
+        "baselineFollowupGatesAuthorized": false,
+        "attributionAuthorized": false,
         "influenceScoringAuthorized": false
       }
     }
