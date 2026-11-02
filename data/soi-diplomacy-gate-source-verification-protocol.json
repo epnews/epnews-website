@@ -1,0 +1,239 @@
+{
+  "schema": "soi-diplomacy-gate-source-verification-protocol-v1",
+  "sourceFiles": [
+    "data/soi-diplomatic-attribution-cost-gate-plan.json",
+    "data/soi-diplomatic-audit-worklist.json"
+  ],
+  "rows": [
+    {
+      "sphere": "us",
+      "caseId": "soi-dip-candidate-1",
+      "sourceAuditStatus": "pending-independent-review",
+      "existingMilestone": "2023-12-19",
+      "existingSourceUrls": [
+        "https://www.mod.go.jp/en/article/2023/12/c74496d9056f871004eb2983fb03d626fcc2ff94.html",
+        "https://en.yna.co.kr/view/AEN20231219001751315",
+        "https://www.mod.go.jp/en/images/b40703a6ef7d0822c278593b3172b4545b475b53.pdf",
+        "https://www.defense.gov/News/Releases/Release/Article/3852169/joint-statement-of-the-security-consultative-committee-22/"
+      ],
+      "attribution": {
+        "status": "pending-source-and-counterfactual-verification",
+        "hypotheses": [
+          "Pre-existing US-Japan and US-ROK defense alliances",
+          "Japan-ROK GSOMIA restoration and independent reconciliation",
+          "Shared DPRK missile threat"
+        ],
+        "discriminatingEvidence": [
+          "Dated trilateral negotiation records showing unique US intervention",
+          "Independent Japan/ROK operational data showing new exchange performance",
+          "Counterfactual chronology against pre-summit arrangements"
+        ],
+        "requiredEvidenceTypes": [
+          "counterpart-authored dated implementation record",
+          "independent outcome corroboration",
+          "credible alternative-explanation assessment"
+        ],
+        "verifiedCausalContribution": null
+      },
+      "costs": {
+        "status": "pending-actuals-and-concessions-verification",
+        "measurements": [
+          "Incremental integration and maintenance spending by all three governments",
+          "Technology and information-sharing concessions",
+          "Operational burden and cybersecurity safeguards"
+        ],
+        "requiredAccountingTypes": [
+          "appropriated or committed",
+          "disbursed or incurred",
+          "counterpart costs and concessions"
+        ],
+        "verifiedNetCost": null
+      },
+      "reviewStatus": "not-yet-independently-audited",
+      "scoreEligible": false
+    },
+    {
+      "sphere": "china",
+      "caseId": "soi-dip-candidate-2",
+      "sourceAuditStatus": "pending-independent-review",
+      "existingMilestone": "2023-06-06",
+      "existingSourceUrls": [
+        "https://www.investing.com/news/commodities-news/iran-and-saudi-arabia-agree-to-resume-ties-reopen-embassies-iranian-state-media-3027583",
+        "https://kelo.com/2023/06/06/irans-embassy-reopens-in-saudi-arabia-for-first-time-in-7-years/"
+      ],
+      "attribution": {
+        "status": "pending-source-and-counterfactual-verification",
+        "hypotheses": [
+          "Earlier Iraq and Oman mediation",
+          "Saudi and Iranian bilateral security/economic interests",
+          "Regional de-escalation incentives independent of Beijing"
+        ],
+        "discriminatingEvidence": [
+          "Negotiating records distinguishing Beijing's incremental role from prior talks",
+          "Independent counterpart accounts of concessions caused by Chinese intervention",
+          "Durability and security outcomes relative to earlier mediation"
+        ],
+        "requiredEvidenceTypes": [
+          "counterpart-authored dated implementation record",
+          "independent outcome corroboration",
+          "credible alternative-explanation assessment"
+        ],
+        "verifiedCausalContribution": null
+      },
+      "costs": {
+        "status": "pending-actuals-and-concessions-verification",
+        "measurements": [
+          "Documented Chinese mediation resources and guarantees",
+          "Saudi/Iranian concessions and compliance costs",
+          "Regional security outcomes and reversals"
+        ],
+        "requiredAccountingTypes": [
+          "appropriated or committed",
+          "disbursed or incurred",
+          "counterpart costs and concessions"
+        ],
+        "verifiedNetCost": null
+      },
+      "reviewStatus": "not-yet-independently-audited",
+      "scoreEligible": false
+    },
+    {
+      "sphere": "russia",
+      "caseId": "soi-dip-candidate-3",
+      "sourceAuditStatus": "pending-independent-review",
+      "existingMilestone": null,
+      "existingSourceUrls": [
+        "https://www.president.gov.by/en/events/podpisanie-dokumentov-po-itogam-zasedania-vysshego-gosudarstvennogo-soveta-souznogo-gosudarstva-1733500048",
+        "https://www.interfax-russia.ru/military/news/639921"
+      ],
+      "attribution": {
+        "status": "pending-source-and-counterfactual-verification",
+        "hypotheses": [
+          "Pre-existing Union State and CSTO obligations",
+          "Belarusian government strategic choices",
+          "Regional security escalation and sanctions"
+        ],
+        "discriminatingEvidence": [
+          "Treaty article-by-article incremental obligations versus earlier agreements",
+          "Belarusian ratification debate and independently verified implementation",
+          "Counterfactual security arrangements absent 2025 treaty"
+        ],
+        "requiredEvidenceTypes": [
+          "counterpart-authored dated implementation record",
+          "independent outcome corroboration",
+          "credible alternative-explanation assessment"
+        ],
+        "verifiedCausalContribution": null
+      },
+      "costs": {
+        "status": "pending-actuals-and-concessions-verification",
+        "measurements": [
+          "Financing and military commitments by each state",
+          "Belarusian sovereignty and basing concessions",
+          "Sanctions exposure and security externalities"
+        ],
+        "requiredAccountingTypes": [
+          "appropriated or committed",
+          "disbursed or incurred",
+          "counterpart costs and concessions"
+        ],
+        "verifiedNetCost": null
+      },
+      "reviewStatus": "not-yet-independently-audited",
+      "scoreEligible": false
+    },
+    {
+      "sphere": "eu",
+      "caseId": "soi-dip-candidate-eu-moldova-2024",
+      "sourceAuditStatus": "pending-independent-review",
+      "existingMilestone": null,
+      "existingSourceUrls": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023D0855-20250520",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025D0943"
+      ],
+      "attribution": {
+        "status": "pending-source-and-counterfactual-verification",
+        "hypotheses": [
+          "Russia's invasion of Ukraine and Moldovan threat perceptions",
+          "Moldova's domestic EU-integration decisions",
+          "EUPM mission established before partnership"
+        ],
+        "discriminatingEvidence": [
+          "Specific implemented partnership deliverables distinct from EUPM baseline",
+          "Moldovan agency reporting and independent outcome audits",
+          "Evidence separating EU inducements from Moldova's autonomous preferences"
+        ],
+        "requiredEvidenceTypes": [
+          "counterpart-authored dated implementation record",
+          "independent outcome corroboration",
+          "credible alternative-explanation assessment"
+        ],
+        "verifiedCausalContribution": null
+      },
+      "costs": {
+        "status": "pending-actuals-and-concessions-verification",
+        "measurements": [
+          "EU commitments versus appropriations versus actual disbursements",
+          "Moldovan co-financing and administrative burdens",
+          "Mission operating costs and documented outcomes"
+        ],
+        "requiredAccountingTypes": [
+          "appropriated or committed",
+          "disbursed or incurred",
+          "counterpart costs and concessions"
+        ],
+        "verifiedNetCost": null
+      },
+      "reviewStatus": "not-yet-independently-audited",
+      "scoreEligible": false
+    },
+    {
+      "sphere": "india",
+      "caseId": "soi-dip-candidate-5",
+      "sourceAuditStatus": "pending-independent-review",
+      "existingMilestone": null,
+      "existingSourceUrls": [],
+      "attribution": {
+        "status": "pending-source-and-counterfactual-verification",
+        "hypotheses": [
+          "Oil price and energy import movements",
+          "Post-pandemic trade rebound and exchange-rate shifts",
+          "UAE demand and non-CEPA policy changes"
+        ],
+        "discriminatingEvidence": [
+          "Product-level tariff-line counterfactual with untreated comparator markets",
+          "Volume versus price decomposition by product",
+          "UAE and India customs data matched by fiscal period and valuation"
+        ],
+        "requiredEvidenceTypes": [
+          "counterpart-authored dated implementation record",
+          "independent outcome corroboration",
+          "credible alternative-explanation assessment"
+        ],
+        "verifiedCausalContribution": null
+      },
+      "costs": {
+        "status": "pending-actuals-and-concessions-verification",
+        "measurements": [
+          "Tariff revenue forgone by partner and year",
+          "Domestic sector adjustment costs",
+          "Distributional gains and losses and compliance costs"
+        ],
+        "requiredAccountingTypes": [
+          "appropriated or committed",
+          "disbursed or incurred",
+          "counterpart costs and concessions"
+        ],
+        "verifiedNetCost": null
+      },
+      "reviewStatus": "not-yet-independently-audited",
+      "scoreEligible": false
+    }
+  ],
+  "asOf": "2026-11-02",
+  "gateCount": 10,
+  "verifiedNewGateCount": 0,
+  "scoringAuthorized": false,
+  "canActivateInfluenceNeedle": false,
+  "verificationRule": "No task completion or scoring until source content, measurement period, counterfactual, independent corroboration and accounting definitions are recorded and checked."
+}
