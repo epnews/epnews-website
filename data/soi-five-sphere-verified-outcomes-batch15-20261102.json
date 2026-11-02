@@ -1,0 +1,332 @@
+{
+  "version": "2026-11-02",
+  "title": "Five-sphere implementation and cost evidence — 15 distinct measurements",
+  "baseMainSha": "a04f1ff770afe35d5c0365b3cfefd3a544cbb714",
+  "policy": {
+    "researchOnly": true,
+    "measurementGatePromotion": false,
+    "auditCompleted": 20,
+    "auditTotal": 30,
+    "influenceScores": {
+      "us": null,
+      "china": null,
+      "russia": null,
+      "eu": null,
+      "india": null
+    },
+    "causalAttribution": "not_established"
+  },
+  "count": 15,
+  "observations": [
+    {
+      "id": "US-2025-LNG-EXPORT-VOLUME",
+      "sphere": "us",
+      "case": "energy-dependence",
+      "metric": "US LNG exports total annual",
+      "unit": "million cubic feet",
+      "period": "calendar year",
+      "values": [
+        {
+          "period": "2024",
+          "value": 4366563
+        },
+        {
+          "period": "2025",
+          "value": 5508984
+        }
+      ],
+      "evidence": "government_statistics",
+      "source": "https://www.eia.gov/dnav/ng/ng_move_expc_s1_a.htm",
+      "limitation": "National physical exports, not Europe-only volumes, FOB value, profit or sanction-driven benefit."
+    },
+    {
+      "id": "US-DFC-2025-ENERGY-OUTPUT",
+      "sphere": "us",
+      "case": "development-finance",
+      "metric": "Energy produced by DFC-supported clients",
+      "unit": "GWh",
+      "period": "2025",
+      "values": [
+        {
+          "period": "2025",
+          "value": 9400,
+          "qualifier": "nearly"
+        }
+      ],
+      "evidence": "client_reported_aggregate",
+      "source": "https://www.dfc.gov/our-impact/approach-to-impact",
+      "limitation": "DFC-client-reported impact, not independently audited or necessarily newly built capacity; do not attribute all output to 2025 disbursements."
+    },
+    {
+      "id": "US-DFC-2025-GRID-CONSTRUCTION",
+      "sphere": "us",
+      "case": "development-finance",
+      "metric": "Transmission lines constructed or improved by DFC-supported clients",
+      "unit": "km",
+      "period": "2025",
+      "values": [
+        {
+          "period": "2025",
+          "value": 3800
+        }
+      ],
+      "evidence": "client_reported_aggregate",
+      "source": "https://www.dfc.gov/our-impact/approach-to-impact",
+      "limitation": "Constructed or improved is a combined category; not exclusively new transmission or proof of DFC causality."
+    },
+    {
+      "id": "EU-ERA-2025-LOANS-PAID",
+      "sphere": "eu",
+      "case": "russia-sanctions",
+      "metric": "European Commission exceptional MFA ERA loans disbursed to Ukraine year-to-date",
+      "unit": "EUR billion",
+      "period": "2025 through June 13",
+      "values": [
+        {
+          "period": "2025-01-10",
+          "value": 3
+        },
+        {
+          "period": "2025-06-13",
+          "value": 7
+        }
+      ],
+      "evidence": "payer_confirmed_disbursement",
+      "source": "https://enlargement.ec.europa.eu/news/ukraine-receives-further-eu1-billion-g7-loan-initiative-2025-06-13_en",
+      "corroboratingSource": "https://enlargement.ec.europa.eu/news/commission-disburses-first-eu3-billion-ukraine-its-part-g7-loan-be-repaid-proceeds-immobilised-2025-01-10_en",
+      "limitation": "Cumulative EU ERA loan payments; do not add interim tranches to cumulative total or confuse loans with Russian principal confiscation."
+    },
+    {
+      "id": "EU-RUSSIAN-ASSET-PROCEEDS-ALLOCATED",
+      "sphere": "eu",
+      "case": "russia-sanctions",
+      "metric": "Windfall profits from immobilised Russian central-bank assets disposition",
+      "unit": "EUR billion",
+      "period": "Council reported cumulative as of 2026-11-01",
+      "values": [
+        {
+          "period": "cumulative",
+          "category": "reached_ukraine",
+          "value": 3.8
+        },
+        {
+          "period": "cumulative",
+          "category": "loan_repayment_or_reserved",
+          "value": 4.2
+        }
+      ],
+      "evidence": "official_disposition_summary",
+      "source": "https://www.consilium.europa.eu/en/policies/sanctions-against-russia-explained/",
+      "limitation": "€4.2bn includes reserved sums; €8bn aggregate is not all cash received by Ukraine and does not represent seized principal. Timing is as-of source retrieval, not annual."
+    },
+    {
+      "id": "EU-GAS-IMPORTS-2024-2025",
+      "sphere": "eu",
+      "case": "energy-dependence",
+      "metric": "EU total natural gas imports",
+      "unit": "bcm",
+      "period": "calendar year",
+      "values": [
+        {
+          "period": "2024",
+          "value": 273
+        },
+        {
+          "period": "2025",
+          "value": 289
+        }
+      ],
+      "evidence": "official_market_statistics",
+      "source": "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+      "limitation": "All suppliers and both LNG and pipeline; rising imports do not prove Russian replacement cost or influence."
+    },
+    {
+      "id": "EU-REGAS-2025-CAPACITY",
+      "sphere": "eu",
+      "case": "energy-dependence",
+      "metric": "EU LNG regasification import capacity year-on-year growth",
+      "unit": "percent",
+      "period": "2025 vs 2024",
+      "values": [
+        {
+          "period": "2025",
+          "value": 8
+        }
+      ],
+      "evidence": "official_market_statistics",
+      "source": "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+      "limitation": "Capacity increase is not utilization, import volume or return on investment; project-level capital costs not provided."
+    },
+    {
+      "id": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT",
+      "sphere": "china",
+      "case": "belt-road-delivery",
+      "metric": "China-Laos Railway actual cross-border freight transported",
+      "unit": "million metric tonnes",
+      "period": "calendar year",
+      "values": [
+        {
+          "period": "2025",
+          "value": 5.46
+        }
+      ],
+      "yearOnYearChangePercent": 14,
+      "evidence": "rail_operator_reported",
+      "source": "https://english.www.gov.cn/archive/statistics/202603/11/content_WS69b181b3c6d00ca5f9a09cf8.html",
+      "limitation": "Railway operator figures relayed by Chinese state media; not independently audited, not the railway's total domestic-plus-international cargo or net Laos fiscal gain."
+    },
+    {
+      "id": "CHINA-INDONESIA-WHOOSH-RIDERS",
+      "sphere": "china",
+      "case": "belt-road-delivery",
+      "metric": "Jakarta-Bandung Whoosh passenger journeys",
+      "unit": "million passenger journeys",
+      "period": "calendar year",
+      "values": [
+        {
+          "period": "2024",
+          "value": 6.06
+        },
+        {
+          "period": "2025",
+          "value": 6.2
+        }
+      ],
+      "evidence": "operator_reported_via_indonesian_news_agency",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitation": "Reported by operator KCIC via Indonesian ANTARA; ridership is a delivered service, not profitability or evidence of Indonesian policy alignment."
+    },
+    {
+      "id": "CHINA-INDONESIA-WHOOSH-DEBT-TERMS",
+      "sphere": "china",
+      "case": "belt-road-cost",
+      "metric": "Announced annual debt-service installment under Indonesian Whoosh restructuring plan",
+      "unit": "USD million per year approximately",
+      "period": "2026-09-08",
+      "values": [
+        {
+          "period": "announced_plan",
+          "value": 56.7
+        }
+      ],
+      "tenorYears": 80,
+      "evidence": "indonesian_finance_minister_announced_plan",
+      "source": "https://en.antaranews.com/news/430487/ri-govt-restructures-whoosh-debt-to-us56-million-annual-installments",
+      "limitation": "Announced debt restructuring terms, not a verified executed loan amendment or actual annual payment; tenor does not establish lifetime net present cost."
+    },
+    {
+      "id": "RUSSIA-2025-WARYEAR-FOSSIL-REVENUE",
+      "sphere": "russia",
+      "case": "russia-sanctions",
+      "metric": "CREA-modeled Russian worldwide fossil-fuel export gross revenues in fourth year of full-scale invasion",
+      "unit": "EUR billion",
+      "period": "2025-02-24 to 2026-02-23 approximately",
+      "values": [
+        {
+          "period": "fourth_war_year",
+          "value": 193
+        }
+      ],
+      "yearOnYearChangePercent": -19,
+      "evidence": "independent_third_party_model",
+      "source": "https://energyandcleanair.org/publication/fourth-year-of-full-scale-invasion-russian-fossil-fuel-revenues-tank-to-27-below-pre-invasion-levels/",
+      "limitation": "War-anniversary period, not calendar 2025; modeled gross revenue, not audited cash receipts, tax income or sanction-causal decline."
+    },
+    {
+      "id": "RUSSIA-2025-WARYEAR-CRUDE",
+      "sphere": "russia",
+      "case": "russia-sanctions",
+      "metric": "CREA-modeled Russian crude oil export gross revenue and volume in fourth war year",
+      "unit": "mixed explicitly labeled",
+      "period": "2025-02-24 to 2026-02-23 approximately",
+      "values": [
+        {
+          "period": "fourth_war_year",
+          "metric": "gross_revenue",
+          "value": 85.5,
+          "unit": "EUR billion"
+        },
+        {
+          "period": "fourth_war_year",
+          "metric": "physical_volume",
+          "value": 215,
+          "unit": "million metric tonnes"
+        }
+      ],
+      "evidence": "independent_third_party_model",
+      "source": "https://energyandcleanair.org/publication/fourth-year-of-full-scale-invasion-russian-fossil-fuel-revenues-tank-to-27-below-pre-invasion-levels/",
+      "limitation": "Crude subset of preceding fossil total; never add EUR 85.5bn to EUR 193bn. Modeled, not audited."
+    },
+    {
+      "id": "RUSSIA-DPRK-ROAD-BRIDGE-OPEN",
+      "sphere": "russia",
+      "case": "russia-dprk",
+      "metric": "First Russia-DPRK cross-border road bridge inaugurated",
+      "unit": "operational infrastructure event",
+      "period": "2026-09-07",
+      "values": [
+        {
+          "period": "2026-09-07",
+          "value": 1
+        }
+      ],
+      "evidence": "independent_news_report_of_official_opening",
+      "source": "https://www.reuters.com/world/asia-pacific/north-korea-russia-open-their-first-road-bridge-symbol-expanding-ties-tass-2026-09-07/",
+      "limitation": "Inauguration and reported initial cargo traffic are not verified crossing counts, military shipments, actual utilization or economic benefit."
+    },
+    {
+      "id": "INDIA-2025-CROSSBORDER-UPI",
+      "sphere": "india",
+      "case": "india-diplomacy",
+      "metric": "Reported international UPI transactions in first four months of Indian FY2025-26",
+      "unit": "transactions",
+      "period": "2025-04-01 to 2025-07-31",
+      "values": [
+        {
+          "period": "FY2025-26_Apr-Jul",
+          "value": 601000
+        }
+      ],
+      "evidence": "parliamentary_answer_reported_by_press",
+      "source": "https://indianexpress.com/article/business/international-upi-surges-transactions-fy26-10183216/",
+      "limitation": "Secondary report of Lok Sabha answer; needs direct parliamentary primary-document retrieval before independent audit gate. Cross-border UPI does not measure Indian diplomatic influence."
+    },
+    {
+      "id": "INDIA-US-2025-BILATERAL-TRADE",
+      "sphere": "india",
+      "case": "us-india-trade",
+      "metric": "US-India goods trade and US goods trade deficit",
+      "unit": "USD billion",
+      "period": "calendar year 2025",
+      "values": [
+        {
+          "period": "2025",
+          "metric": "bilateral_goods_trade",
+          "value": 149.1
+        },
+        {
+          "period": "2025",
+          "metric": "us_goods_trade_deficit",
+          "value": 58.4
+        }
+      ],
+      "evidence": "us_government_trade_statistics",
+      "source": "https://ustr.gov/countries-regions/south-central-asia/india",
+      "limitation": "Goods only, not services; a trade deficit is not national welfare or a geopolitical score. No causal attribution to 2025-26 trade negotiations."
+    }
+  ],
+  "nonAdditivity": [
+    "EU ERA loans and immobilised-asset windfall allocations are different financial instruments; do not sum as an unqualified EU contribution.",
+    "Russian crude revenues are a subset of Russian total fossil-fuel revenues.",
+    "US LNG export volumes and EU gas imports differ in geographic scope and source; do not treat one as destination invoices.",
+    "China-Laos railway freight and Whoosh passengers are separate projects and units.",
+    "DFC 2025 client output and line-construction figures are self-reported aggregates, not independently verified DFC-only incremental outcomes."
+  ],
+  "remainingGaps": [
+    "Project-level audited spending and cash disbursements",
+    "Recipient-side operating records for self-reported infrastructure results",
+    "Cost incidence, especially Indonesian Whoosh debt and EU gas substitution",
+    "Counterfactual comparisons for each geopolitical actor",
+    "Causal identification before audit gate promotion"
+  ]
+}
