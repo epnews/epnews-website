@@ -1,0 +1,82 @@
+{
+  "schema": "soi-china-russia-baseline-timing-v1",
+  "asOf": "2026-11-02",
+  "cases": [
+    {
+      "sphere": "china",
+      "caseId": "soi-dip-candidate-2",
+      "agreementDate": "2023-03-10",
+      "deadlineDate": "2023-05-10",
+      "deadlineInterpretation": "Two calendar months after signature; agreement's exact trigger/implementation wording should be independently checked.",
+      "milestones": [
+        {
+          "date": "2023-06-06",
+          "event": "Iranian embassy reopening in Riyadh",
+          "daysAfterSignature": 88,
+          "daysAfterDeadline": 27
+        },
+        {
+          "date": "2023-08-06",
+          "event": "Saudi embassy operations resumed in Tehran (reported)",
+          "daysAfterSignature": 149,
+          "daysAfterDeadline": 88
+        },
+        {
+          "date": "2023-09-05",
+          "event": "Ambassadors at respective posts",
+          "daysAfterSignature": 179,
+          "daysAfterDeadline": 118
+        }
+      ],
+      "baseline": [
+        {
+          "event": "Iraq-hosted Saudi-Iran dialogue",
+          "period": "2021-2022",
+          "status": "preexisting mediation",
+          "source": "https://www.spa.gov.sa/en/ed7aabfefaw"
+        },
+        {
+          "event": "Oman-hosted Saudi-Iran dialogue",
+          "period": "before 2023-03-10",
+          "status": "preexisting mediation acknowledged in trilateral statement",
+          "source": "https://www.spa.gov.sa/en/ed7aabfefaw"
+        }
+      ],
+      "source": "data/soi-china-russia-implementation-evidence-20261102.json",
+      "limitation": "Implementation dates measure elapsed time, not Beijing's unique causal effect or actual spending; a reported reopening may not establish full staffing or uninterrupted service."
+    },
+    {
+      "sphere": "russia",
+      "caseId": "soi-dip-candidate-3",
+      "treatyEffectiveDate": "2025-03-13",
+      "preexistingFramework": [
+        {
+          "event": "Union State framework",
+          "period": "1999 onward",
+          "status": "preexisting legal integration",
+          "source": "https://soyuz.by/dogovor-o-sozdanii-soyuznogo-gosudarstva"
+        },
+        {
+          "event": "CSTO collective-security framework",
+          "period": "before 2025",
+          "status": "preexisting multilateral security obligations",
+          "source": "https://en.odkb-csto.org/documents/documents/dogovor_o_kollektivnoy_bezopasnosti/"
+        },
+        {
+          "event": "Union State military doctrine",
+          "period": "2021",
+          "status": "preexisting military coordination",
+          "source": "https://president.gov.by/en/events/zasedanie-vysshego-gosudarstvennogo-soveta-soyuznogo-gosudarstva-1636040412"
+        }
+      ],
+      "incrementalObligationStatus": "not established by article-by-article legal comparison",
+      "newDeploymentCostRub": null,
+      "newTreatySpecificSpendingRub": null,
+      "limitation": "Preexisting frameworks cannot be attributed to the 2025 treaty; countrywide defense expenditure cannot be treated as treaty-specific cost."
+    }
+  ],
+  "attributionGatesClosed": 0,
+  "costGatesClosed": 0,
+  "influenceScoresAuthorized": false,
+  "needleAuthorized": false
+}
