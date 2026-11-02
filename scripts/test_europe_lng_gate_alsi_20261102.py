@@ -191,3 +191,15 @@ for injected in ("&page=2", "&size=1", "&show=listing"):
     else:
         raise AssertionError("Unexpected paged ALSI query parameter accepted: " + injected)
 print("ALSI query parameter injection tests passed")
+
+verified = mod.verify_against_listing(url, listing)
+assert mod.enforce_listed_facility_url(url, verified) == verified["verified_facility_url"]
+reordered = "https://alsi.gie.eu/api?facility=21W-TEST&company=21X000000001063H&country=NL"
+assert mod.enforce_listed_facility_url(reordered, verified) == verified["verified_facility_url"]
+try:
+    mod.enforce_listed_facility_url("https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-OTHER", verified)
+except ValueError:
+    pass
+else:
+    raise AssertionError("Non-listed facility URL accepted")
+print("GIE authenticated facility URL source-of-truth tests passed")
