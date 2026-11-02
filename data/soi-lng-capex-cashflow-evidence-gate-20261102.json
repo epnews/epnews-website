@@ -1,0 +1,56 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-11",
+  "measurement": "Annual actual cash capital expenditures for LNG facilities, audited by company and fiscal year",
+  "sourceAlreadyPresent": "data/soi-lng-sec-company-financials-2024-2025.json",
+  "reviewFindings": [
+    {
+      "company": "Cheniere Energy Inc",
+      "existingAnnual2025SEC": "https://www.sec.gov/Archives/edgar/data/3570/000000357026000005/lng-20251231.htm",
+      "alreadyExtracted": [
+        "consolidated revenue",
+        "cost of sales",
+        "operating income"
+      ],
+      "missing": [
+        "cash-flow statement capital expenditures paid",
+        "cash paid for construction and development by facility",
+        "capitalized interest treatment",
+        "2024 comparative cash capex",
+        "LNG versus other segment attribution"
+      ]
+    },
+    {
+      "company": "Venture Global Inc",
+      "existingAnnual2025SEC": "https://www.sec.gov/Archives/edgar/data/2007855/000200785526000030/vg-annualreporttosharehold.pdf",
+      "alreadyExtracted": [
+        "consolidated revenue",
+        "operating expenses",
+        "operating income"
+      ],
+      "missing": [
+        "cash purchases of property plant and equipment",
+        "project-specific LNG construction payments",
+        "2024 comparative cash capex",
+        "financing cash flows separated from capex"
+      ]
+    }
+  ],
+  "sourceExtractionProtocol": [
+    "Read FY2025 consolidated statements of cash flows in the exact filed SEC document.",
+    "Record the line-item label verbatim, units, fiscal-year dates, and audited versus unaudited filing status.",
+    "Distinguish cash purchases of PP&E from accrual additions, commitments, project estimates and financing proceeds.",
+    "If consolidated cash capex cannot be attributed to individual LNG facilities, label as company-wide rather than facility-specific.",
+    "Reconcile prior-year comparison in same filing; where filings differ, explain restatement.",
+    "Only then consider Gap 11 closure; do not equate revenue or operating expense with cash capex."
+  ],
+  "assessment": {
+    "existingFinancialEvidenceSufficient": false,
+    "actualCapexRetrieved": false,
+    "independentVerification": false,
+    "gateClosed": false
+  },
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
