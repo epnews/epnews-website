@@ -1,5 +1,5 @@
 {
-  "version": "3.9",
+  "version": "4.0",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -1424,5 +1424,152 @@
       "neverAutoCompleteCostsFromAuthorizedBudget": true,
       "neverAutoScoreFromAuditPercentage": true
     }
+  },
+  "unresolvedGateEvidenceLedger": {
+    "version": "1.0",
+    "policy": "Research worklist only; entries are not verified outcomes, completed gates, or influence scores.",
+    "totalUnresolved": 10,
+    "items": [
+      {
+        "sphere": "us",
+        "gate": "attribute",
+        "complete": false,
+        "blockingQuestion": "Compare Japan–ROK cooperation trajectory before and after Camp David while accounting for existing bilateral alliances and 2023 Japan–ROK reconciliation.",
+        "primaryResearchEntryPoint": "https://comptroller.defense.gov/Budget-Materials/",
+        "minimumEvidence": [
+          "dated comparable outcome",
+          "explicit counterfactual or credible quasi-experimental comparison",
+          "documented alternative explanations",
+          "uncertainty bounds"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "us",
+        "gate": "costs",
+        "complete": false,
+        "blockingQuestion": "Obtain US DoD executed trilateral exercise spending, force-hours and cost-sharing; separately identify Japan and ROK outlays.",
+        "primaryResearchEntryPoint": "https://comptroller.defense.gov/Budget-Materials/",
+        "minimumEvidence": [
+          "documented executed or realized amount",
+          "time period and currency",
+          "responsible payer and counterpart",
+          "netting and opportunity-cost treatment"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "china",
+        "gate": "attribute",
+        "complete": false,
+        "blockingQuestion": "Test timing and durability of Saudi–Iran diplomatic normalization against Iraqi/Omani negotiations and bilateral strategic incentives.",
+        "primaryResearchEntryPoint": "https://www.mfa.gov.cn/eng/",
+        "minimumEvidence": [
+          "dated comparable outcome",
+          "explicit counterfactual or credible quasi-experimental comparison",
+          "documented alternative explanations",
+          "uncertainty bounds"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "china",
+        "gate": "costs",
+        "complete": false,
+        "blockingQuestion": "Locate Chinese diplomatic mission expenditure and any separately documented incentives; distinguish host-country implementation costs.",
+        "primaryResearchEntryPoint": "https://www.mfa.gov.cn/eng/",
+        "minimumEvidence": [
+          "documented executed or realized amount",
+          "time period and currency",
+          "responsible payer and counterpart",
+          "netting and opportunity-cost treatment"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "russia",
+        "gate": "attribute",
+        "complete": false,
+        "blockingQuestion": "Separate 2025 security-treaty implementation from pre-existing Russia–Belarus Union State defense obligations and Belarusian independent policy choices.",
+        "primaryResearchEntryPoint": "https://minfin.gov.ru/en/",
+        "minimumEvidence": [
+          "dated comparable outcome",
+          "explicit counterfactual or credible quasi-experimental comparison",
+          "documented alternative explanations",
+          "uncertainty bounds"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "russia",
+        "gate": "costs",
+        "complete": false,
+        "blockingQuestion": "Find executed Russia–Belarus security-assistance transfers, military procurement and loan flows, net of repayments and sanctions costs.",
+        "primaryResearchEntryPoint": "https://minfin.gov.ru/en/",
+        "minimumEvidence": [
+          "documented executed or realized amount",
+          "time period and currency",
+          "responsible payer and counterpart",
+          "netting and opportunity-cost treatment"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "eu",
+        "gate": "attribute",
+        "complete": false,
+        "blockingQuestion": "Compare Moldovan cyber and crisis-management capacity before/after EUPM with non-mission EU support and Moldova domestic reforms controlled.",
+        "primaryResearchEntryPoint": "https://www.eeas.europa.eu/eupm-moldova_en",
+        "minimumEvidence": [
+          "dated comparable outcome",
+          "explicit counterfactual or credible quasi-experimental comparison",
+          "documented alternative explanations",
+          "uncertainty bounds"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "eu",
+        "gate": "costs",
+        "complete": false,
+        "blockingQuestion": "Retrieve EU mission budget execution and audited cash payments by period; separately record Moldova in-kind contributions and opportunity costs.",
+        "primaryResearchEntryPoint": "https://www.eeas.europa.eu/eupm-moldova_en",
+        "minimumEvidence": [
+          "documented executed or realized amount",
+          "time period and currency",
+          "responsible payer and counterpart",
+          "netting and opportunity-cost treatment"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "india",
+        "gate": "attribute",
+        "complete": false,
+        "blockingQuestion": "Estimate CEPA incremental product diversification and trade versus global demand, commodity price, exchange rate, and other policy changes.",
+        "primaryResearchEntryPoint": "https://www.indiabudget.gov.in/",
+        "minimumEvidence": [
+          "dated comparable outcome",
+          "explicit counterfactual or credible quasi-experimental comparison",
+          "documented alternative explanations",
+          "uncertainty bounds"
+        ],
+        "scoreAuthorized": false
+      },
+      {
+        "sphere": "india",
+        "gate": "costs",
+        "complete": false,
+        "blockingQuestion": "Reconcile India CEPA-specific customs revenue impact to actual tariff utilization, import volumes, UAE concessions and sectoral adjustments.",
+        "primaryResearchEntryPoint": "https://www.indiabudget.gov.in/",
+        "minimumEvidence": [
+          "documented executed or realized amount",
+          "time period and currency",
+          "responsible payer and counterpart",
+          "netting and opportunity-cost treatment"
+        ],
+        "scoreAuthorized": false
+      }
+    ]
   }
 }
