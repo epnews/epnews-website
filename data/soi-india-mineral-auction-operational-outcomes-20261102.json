@@ -78,7 +78,7 @@
       "unit": "all mineral blocks operationalised FY2025-26",
       "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
       "asOf": "2026-03-30",
-      "qualification": "includes iron ore, limestone, bauxite and manganese; NOT evidence critical mineral mines commissioned",
+      "qualification": "March 30 provisional report, later revised to 36 on May 25; 10-state breakdown belongs only to March count",
       "attribution": "Indian domestic mineral policy, not Quad implementation",
       "scoreEligible": false
     },
@@ -181,9 +181,39 @@
       "qualification": "subset of 30",
       "attribution": "Indian domestic mineral policy, not Quad implementation",
       "scoreEligible": false
+    },
+    {
+      "id": "all_minerals_fy26_operationalised_final",
+      "value": 36,
+      "unit": "all mineral blocks operationalised FY2025-26",
+      "source": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=3&relid=289212",
+      "asOf": "2026-05-25",
+      "qualification": "latest May 25 full-year report; supersedes March 30 provisional 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "all_minerals_fy26_greenfield",
+      "value": 28,
+      "unit": "greenfield mineral blocks operationalised FY2025-26",
+      "source": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=3&relid=289212",
+      "asOf": "2026-05-25",
+      "qualification": "subset of final 36",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "all_minerals_fy26_brownfield",
+      "value": 8,
+      "unit": "brownfield mineral blocks operationalised FY2025-26",
+      "source": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=3&relid=289212",
+      "asOf": "2026-05-25",
+      "qualification": "subset of final 36",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
     }
   ],
-  "observationCount": 18,
+  "observationCount": 21,
   "sourceIndependence": "Indian government official statements; other republications of same ministry release are not independent corroboration",
   "caveats": [
     "The 56 critical blocks are cumulative and 10 seventh-tranche blocks are included; do not add.",
@@ -192,9 +222,24 @@
     "State operationalisation counts are components of the national 30.",
     "Successful auction does not mean cash disbursement, extraction or recovered tonnes.",
     "Government reports are primary administrative evidence, not independent financial or production audits.",
-    "No causal connection to Quad cooperation is demonstrated."
+    "No causal connection to Quad cooperation is demonstrated.",
+    "May 25 release updates FY2025-26 all-mineral operationalised blocks from March 30 count of 30 to 36; state totals of 30 cannot be presented as final FY state breakdown."
   ],
   "auditCompleted": 20,
   "auditTotal": 30,
-  "scoringAuthorized": false
+  "scoringAuthorized": false,
+  "reconciliation": {
+    "issue": "March 30 provisional count of 30 superseded by May 25 FY2025-26 count of 36; state breakdown is March 30 only",
+    "earlyAsOf": "2026-03-30",
+    "earlyCount": 30,
+    "finalReportedAsOf": "2026-05-25",
+    "finalCount": 36,
+    "greenfield": 28,
+    "brownfield": 8,
+    "source": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=3&relid=289212",
+    "sourceMarch": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2247030&lang=2&reg=48",
+    "changeBetweenReports": 6,
+    "notNewFYOutput": "The +6 is a revision/additional reporting after March 30, not six proven mines opened after fiscal year end.",
+    "criticalMineralScope": "Both 30 and 36 cover all minerals; not critical-only."
+  }
 }
