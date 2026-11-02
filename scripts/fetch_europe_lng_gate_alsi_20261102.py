@@ -43,14 +43,18 @@ def find_gate_facilities(listing):
         for facility in operator.get("facilities", []):
             if not isinstance(facility, dict):
                 continue
-            if facility.get("country", "").upper() != "NL":
+            if str(facility.get("country", "")).upper() != "NL":
                 continue
             label = " ".join(str(x) for x in (operator.get("name", ""), facility.get("name", ""))).lower()
             if "gate" not in label:
                 continue
+            if facility.get("company") != operator.get("eic"):
+                continue
             found.append({"operator_name": operator.get("name"), "operator_eic": operator.get("eic"),
                           "facility_name": facility.get("name"), "facility_eic": facility.get("eic"),
-                          "country": facility.get("country"), "url": facility.get("url")})
+                          "country": facility.get("country"), "url": facility.get("url"),
+                          "operational_start_date": facility.get("operational_start_date"),
+                          "operational_end_date": facility.get("operational_end_date")})
     return found
 
 def verify_against_listing(facility_url, listing):
