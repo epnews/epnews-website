@@ -1,5 +1,5 @@
 {
-  "version": "3.4",
+  "version": "3.5",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -176,7 +176,27 @@
         "verifiedCausalEffect": null,
         "measuredChange": null,
         "scoreAuthorized": false
-      }
+      },
+      "newPrimaryOutcomeResearch": [
+        {
+          "date": "2024-06-27",
+          "event": "First Freedom Edge trilateral multi-domain exercise",
+          "source": "https://www.navy.mil/Press-Office/News-Stories/Article/3819224/trilateral-statement-first-execution-of-multi-domain-japan-rok-us-exercise-free/",
+          "status": "verified announced and begun, not a pre/post matched series"
+        },
+        {
+          "date": "2024-07-28",
+          "event": "Trilateral Security Cooperation Framework memorandum signed in Japan",
+          "source": "https://www.mod.go.jp/en/article/2024/07/67ea7647966dfa85d96fb0d25deacf3ce69eedb0.html",
+          "status": "verified policy institutionalization, not counterfactual effect"
+        },
+        {
+          "date": "2025-04-22",
+          "event": "US-Japan-ROK defense tabletop exercise and working group meeting in Seoul, April 22–23",
+          "source": "https://www.defense.gov/News/Releases/Release/Article/4164712/joint-press-statement-on-united-states-japan-republic-of-korea-trilateral-secur/",
+          "status": "verified joint activity, not attribution or full activity census"
+        }
+      ]
     },
     {
       "sphere": "china",
@@ -780,7 +800,15 @@
         "verifiedCausalEffect": null,
         "measuredChange": null,
         "scoreAuthorized": false
-      }
+      },
+      "newPrimaryOutcomeResearch": [
+        {
+          "date": "2025-05",
+          "source": "https://www.eeas.europa.eu/eupm-moldova/about-eu-partnership-mission-republic-moldova_en",
+          "finding": "EEAS reports 2025–27 EUPM Moldova mandate estimated budget €19.8m and up to 72 staff; corroborates legal reference amount and mission capacity, not actual disbursement or measured impact",
+          "status": "verified descriptive official mission information"
+        }
+      ]
     },
     {
       "sphere": "india",
@@ -1124,6 +1152,42 @@
           "causalAttributionVerified": false,
           "measurementEligibility": "descriptive historical bilateral trade only",
           "nextGateRequirement": "Direct same-vintage HS-level export/import quantities, pre-CEPA comparison, post-CEPA preference claims and eligible-line denominators"
+        },
+        "officialPreferenceUptakeObservations": [
+          {
+            "source": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2104450&lang=2&reg=48",
+            "publisher": "India Press Information Bureau",
+            "status": "official reported cumulative counts; not customs-verified utilization rate",
+            "reportedAsOf": "2025-02",
+            "certificatesOfOriginIssuedApprox": 240000,
+            "associatedExportValueUsdBillion": 19.87,
+            "measurementWarning": "Cumulative certificates and associated exports since CEPA; neither a share of eligible imports nor measured tariff benefit."
+          },
+          {
+            "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3",
+            "publisher": "India Press Information Bureau",
+            "status": "official reported cumulative count and product-line coverage; not causal CEPA effect",
+            "reportedAsOf": "2026",
+            "certificatesOfOriginIssuedApprox": 445000,
+            "preCepaFy": "2021-2022",
+            "preCepaHs8ExportedLines": 7546,
+            "followupFy": "2025-2026",
+            "followupHs8ExportedLines": 8053,
+            "followupExportValueUsdBillion": 37.3,
+            "measurementWarning": "HS-8 exported line count is not a matched line-level value/volume series, preference-claim denominator or causal effect; fiscal-year scope must be verified."
+          }
+        ],
+        "productBreadthObserved": {
+          "indicator": "HS8 product lines exported India to UAE",
+          "baselineFy": "2021-2022",
+          "baseline": 7546,
+          "followupFy": "2025-2026",
+          "followup": 8053,
+          "absoluteChange": 507,
+          "percentageChange": 6.72,
+          "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290437&lang=1&reg=3",
+          "classification": "official descriptive product breadth, no utilization denominator, no causal attribution",
+          "matchedProductLevelSeriesVerified": false
         }
       },
       "evidenceGapActionRegister": {
