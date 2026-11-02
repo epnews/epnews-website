@@ -131,6 +131,34 @@ def fetch_all_pages(base_url, key, fetch=request_json):
             return all_rows, expected_pages
     raise ValueError("GIE pagination exceeded safety limit")
 
+def audit_observation_coverage(rows, from_date, to_date):
+    """Report missing, repeated and out-of-window gas days; do not invent observations."""
+    from datetime import timedelta
+    start, end = date.fromisoformat(from_date), date.fromisoformat(to_date)
+    counts = {}
+    missing_date_field = 0
+    outside = []
+    statuses = {}
+    for row in rows:
+        if not isinstance(row, dict) or not row.get("gasDayStart"):
+            missing_date_field += 1
+            continue
+        day = date.fromisoformat(str(row["gasDayStart"])[:10])
+        counts[day.isoformat()] = counts.get(day.isoformat(), 0) + 1
+        if not start <= day <= end:
+            outside.append(day.isoformat())
+        status = str(row.get("status", "missing"))
+        statuses[status] = statuses.get(status, 0) + 1
+    expected = [(start + timedelta(days=n)).isoformat() for n in range((end - start).days + 1)]
+    return {"expected_gas_days": len(expected), "observed_unique_gas_days": len(counts),
+            "missing_gas_days": [day for day in expected if day not in counts],
+            "duplicate_gas_days": {day: n for day, n in counts.items() if n > 1},
+            "out_of_window_gas_days": sorted(set(outside)),
+            "rows_missing_gas_day": missing_date_field,
+            "status_counts": statuses,
+            "complete_daily_coverage": (not missing_date_field and not outside and
+                not any(n > 1 for n in counts.values()) and set(counts) == set(expected))}
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--facility-url", help="Exact Gate facility URL copied from authenticated /api/about?show=listing")
@@ -158,6 +186,7 @@ def main():
     params.update({"from": args.from_date, "to": args.to_date})
     url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(params), ""))
     rows, page_count = fetch_all_pages(url, key)
+    coverage = audit_observation_coverage(rows, args.from_date, args.to_date)
     output = {
         "source": "GIE ALSI+ operator-reported LNG facility daily series",
         "facility_api_url": url,
@@ -165,11 +194,14 @@ def main():
         "retrieved_date_utc": date.today().isoformat(),
         "data": rows,
         "api_response_metadata": {"pages_retrieved": page_count, "records_retrieved": len(rows)},
+        "daily_coverage_audit": coverage,
         "limitations": [
             "Inventory and sendOut are not vessel-by-vessel unloading volumes",
             "Confirm facility EIC belongs to Gate terminal; never substitute country aggregate",
             "Data status C confirms reporting, not voyage cargo origin",
             "All reported API pages retrieved; inconsistent or empty pages fail closed",
+            "Missing, duplicate, out-of-window, and estimated gas days are disclosed in daily_coverage_audit",
+            "Complete daily coverage does not certify LNG vessel unloading or cargo origin",
         ],
     }
     with open(args.output, "w", encoding="utf-8") as f:
