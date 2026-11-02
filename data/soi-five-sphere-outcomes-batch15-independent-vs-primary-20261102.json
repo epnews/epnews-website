@@ -1,0 +1,385 @@
+{
+  "version": "2026-11-02",
+  "batch": "five-sphere-outcomes-15-independent-vs-primary",
+  "status": "source-opened-observed-research-only",
+  "basePreviousBatch": "data/soi-five-sphere-verified-outcomes-batch15-20261102.json",
+  "count": 15,
+  "sources": {
+    "ustrChina": {
+      "url": "https://ustr.gov/countries-regions/china-mongolia-taiwan/peoples-republic-china",
+      "publisher": "Office of the United States Trade Representative",
+      "published": null,
+      "type": "official_trade_statistics",
+      "independentOfActor": false
+    },
+    "ustrIndia": {
+      "url": "https://ustr.gov/countries-regions/south-central-asia/india",
+      "publisher": "Office of the United States Trade Representative",
+      "published": null,
+      "type": "official_trade_statistics",
+      "independentOfActor": false
+    },
+    "eurostat2025": {
+      "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "publisher": "Eurostat",
+      "published": "2026-03-25",
+      "type": "official_comext_statistics",
+      "independentOfActor": false
+    },
+    "eurostat2026q1": {
+      "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260626-2",
+      "publisher": "Eurostat",
+      "published": "2026-06-26",
+      "type": "official_comext_statistics",
+      "independentOfActor": false
+    },
+    "euUkraine": {
+      "url": "https://enlargement.ec.europa.eu/news/commission-disburses-eur29-billion-under-ukraine-facility-support-financial-stability-and-reforms-2026-10-02_en",
+      "publisher": "European Commission",
+      "published": "2026-10-02",
+      "type": "official_payer_disbursement",
+      "independentOfActor": false
+    },
+    "ember2026": {
+      "url": "https://ember-energy.org/latest-insights/global-electricity-review-2026/major-countries-and-regions/",
+      "publisher": "Ember",
+      "published": "2026",
+      "type": "independent_energy_data_analysis",
+      "independentOfActor": true
+    },
+    "creaSep2026": {
+      "url": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "publisher": "Centre for Research on Energy and Clean Air",
+      "published": "2026-10-20",
+      "type": "independent_trade_flow_model",
+      "independentOfActor": true
+    },
+    "indiaPower": {
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2238921&lang=1&reg=1",
+      "publisher": "India Ministry of Power, Lok Sabha written answer",
+      "published": "2026-03-12",
+      "type": "official_parliamentary_capacity_statistics",
+      "independentOfActor": false
+    }
+  },
+  "observations": [
+    {
+      "id": "US-CHINA-2025-GOODS-IMPORTS",
+      "sphere": "us",
+      "sourceKey": "ustrChina",
+      "metric": "US merchandise imports from China",
+      "period": "CY2025",
+      "value": 308.7,
+      "unit": "USD billion",
+      "comparison": "-29.9% year-on-year (USTR); down USD 131.7bn",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "USTR estimated US import valuation; not Chinese net exports, welfare, tariff effect or a bilateral trade agreement outcome.",
+      "costGap": "Tariff incidence, landed costs and consumers' substitution spending unavailable.",
+      "counterfactualGap": "Demand, third-country rerouting and tariff changes not controlled.",
+      "causalAttribution": null
+    },
+    {
+      "id": "US-CHINA-2025-GOODS-EXPORTS",
+      "sphere": "us",
+      "sourceKey": "ustrChina",
+      "metric": "US merchandise exports to China",
+      "period": "CY2025",
+      "value": 106,
+      "unit": "USD billion",
+      "comparison": "-26.0% year-on-year (USTR); down USD 37.3bn",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "US exports and imports are distinct directions; services excluded.",
+      "costGap": "Producer margins and forgone export profits not measured.",
+      "counterfactualGap": "Exchange rates, demand and controls on exports not isolated.",
+      "causalAttribution": null
+    },
+    {
+      "id": "US-INDIA-2025-SERVICES-TRADE",
+      "sphere": "us",
+      "sourceKey": "ustrIndia",
+      "metric": "US-India bilateral services trade",
+      "period": "CY2025",
+      "value": 90.4,
+      "unit": "USD billion",
+      "comparison": "US services exports 42.9bn; imports 47.6bn; USTR rounded totals",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "USTR estimated services trade; separate from goods trade in previous batch; rounded components sum to USD 90.5bn against USD 90.4bn reported total.",
+      "costGap": "Services sector margins and net national welfare unavailable.",
+      "counterfactualGap": "Services demand and classification shifts not controlled.",
+      "causalAttribution": null,
+      "components": [
+        {
+          "label": "US exports",
+          "value": 42.9,
+          "unit": "USD billion"
+        },
+        {
+          "label": "US imports",
+          "value": 47.6,
+          "unit": "USD billion"
+        }
+      ]
+    },
+    {
+      "id": "EU-2025-ENERGY-IMPORT-VALUE",
+      "sphere": "eu",
+      "sourceKey": "eurostat2025",
+      "metric": "EU imported energy products gross trade value",
+      "period": "CY2025",
+      "value": 336.7,
+      "unit": "EUR billion",
+      "comparison": "Eurostat release states -11.1% vs 2024; cross-vintage revisions possible",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "All imported energy products, not only gas or Russia; nominal invoice value not EU net welfare. Prior 2024 release cited EUR 375.9bn; simple division gives a different rate, so do not cross-vintage recompute.",
+      "costGap": "Actual trade spending is measured; substitution premium and household incidence are not.",
+      "counterfactualGap": "Commodity price, demand and energy mix confound geopolitical effects.",
+      "causalAttribution": null,
+      "vintageMismatchFlag": true
+    },
+    {
+      "id": "EU-2025-ENERGY-IMPORT-MASS",
+      "sphere": "eu",
+      "sourceKey": "eurostat2025",
+      "metric": "EU imported energy products net mass",
+      "period": "CY2025",
+      "value": 723.3,
+      "unit": "million metric tonnes",
+      "comparison": "Eurostat release states -0.6% vs 2024; cross-vintage revisions possible",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "Aggregate mass across fuels is not energy-equivalent volume. Prior 2024 release cited 720.4 Mt, incompatible with stated -0.6% without revisions; don't splice vintages.",
+      "costGap": "Tonnes do not reveal import unit prices or consumer cost.",
+      "counterfactualGap": "Demand and product composition change; no same-fuel substitution inference.",
+      "causalAttribution": null,
+      "vintageMismatchFlag": true
+    },
+    {
+      "id": "EU-2026Q1-LNG-ORIGIN-SHARES",
+      "sphere": "eu",
+      "sourceKey": "eurostat2026q1",
+      "metric": "Reported US and Russian supplier shares of EU imported LNG",
+      "period": "2026-Q1",
+      "value": 57.4,
+      "unit": "percent US share",
+      "comparison": "Russia 17.3%; Qatar 6.6%; Eurostat Q1 report",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "Article does not explicitly define whether origin shares use value or mass; do not infer tonnes, revenue, or one-for-one replacement.",
+      "costGap": "Delivered price, regas costs, taxes and LNG contract premiums not measured.",
+      "counterfactualGap": "Country origin share not causal attribution to sanctions.",
+      "causalAttribution": null,
+      "components": [
+        {
+          "label": "US",
+          "value": 57.4,
+          "unit": "percent"
+        },
+        {
+          "label": "Russia",
+          "value": 17.3,
+          "unit": "percent"
+        },
+        {
+          "label": "Qatar",
+          "value": 6.6,
+          "unit": "percent"
+        }
+      ]
+    },
+    {
+      "id": "EU-2026-10-UKRAINE-FACILITY-CASH",
+      "sphere": "eu",
+      "sourceKey": "euUkraine",
+      "metric": "European Commission Ukraine Facility tranche released",
+      "period": "2026-10-02",
+      "value": 2.9,
+      "unit": "EUR billion",
+      "comparison": "Includes EUR 0.8bn Ukraine Support Loan component; eighth Facility payment",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "Payer-confirmed release, not recipient-side bank reconciliation; EUR 0.8bn is included, not additional; separate from 2025 ERA loans.",
+      "costGap": "Loan repayment and downstream budget incidence not established.",
+      "counterfactualGap": "Reform conditionality documented, but no causal claim that cash changed geopolitical alignment.",
+      "causalAttribution": null,
+      "components": [
+        {
+          "label": "Ukraine Support Loan included",
+          "value": 0.8,
+          "unit": "EUR billion"
+        }
+      ]
+    },
+    {
+      "id": "CHINA-2025-SOLAR-OPERATING-GENERATION",
+      "sphere": "china",
+      "sourceKey": "ember2026",
+      "metric": "Actual solar electricity generation in China",
+      "period": "CY2025",
+      "value": 1175,
+      "unit": "TWh",
+      "comparison": "+336 TWh (+40%) vs 2024 in Ember analysis",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": true,
+      "limitation": "Independent generation estimate; electricity output, not installed capacity or exports. Ember methodology differs from Chinese NEA capacity series.",
+      "costGap": "Grid integration, curtailment and investment cost not linked to this generation figure.",
+      "counterfactualGap": "No quantified coal/gas counterfactual by province.",
+      "causalAttribution": null,
+      "components": [
+        {
+          "label": "annual change",
+          "value": 336,
+          "unit": "TWh"
+        }
+      ]
+    },
+    {
+      "id": "CHINA-2025-WIND-OPERATING-GROWTH",
+      "sphere": "china",
+      "sourceKey": "ember2026",
+      "metric": "Growth in Chinese wind electricity generation",
+      "period": "CY2025",
+      "value": 138,
+      "unit": "TWh increase",
+      "comparison": "+14% vs 2024 in Ember analysis",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": true,
+      "limitation": "Annual additional output, not total generation or capacity additions; not additive to clean-generation growth without checking components.",
+      "costGap": "Wind investment and curtailment costs unmeasured.",
+      "counterfactualGap": "Weather variability and grid constraints not controlled.",
+      "causalAttribution": null
+    },
+    {
+      "id": "CHINA-2025-FOSSIL-GENERATION-CHANGE",
+      "sphere": "china",
+      "sourceKey": "ember2026",
+      "metric": "Change in Chinese fossil electricity generation",
+      "period": "CY2025",
+      "value": -56,
+      "unit": "TWh change",
+      "comparison": "-0.9% vs 2024; coal -71 TWh, gas +14 TWh",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": true,
+      "limitation": "Signed change is negative by design; coal and gas are components, not separate additive claims.",
+      "costGap": "Fuel costs and plant fixed costs not observed.",
+      "counterfactualGap": "Cannot attribute all fossil reduction to solar/wind; demand and hydro/nuclear confound.",
+      "causalAttribution": null
+    },
+    {
+      "id": "RUSSIA-2026-09-FOSSIL-EXPORT-GROSS",
+      "sphere": "russia",
+      "sourceKey": "creaSep2026",
+      "metric": "CREA-estimated Russian fossil-fuel export gross revenue per day",
+      "period": "2026-09",
+      "value": 625,
+      "unit": "EUR million/day",
+      "comparison": "Broadly unchanged month-on-month while physical export volumes fell 6%",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": true,
+      "limitation": "Independent CREA model, not audited cash receipts or Russian fiscal revenues; gross all-fuel revenue includes LNG and crude subsets.",
+      "costGap": "Production costs, shipping discounts, taxes and profits not measured.",
+      "counterfactualGap": "Global prices, demand and rerouting prevent sanctions-only causal inference.",
+      "causalAttribution": null
+    },
+    {
+      "id": "RUSSIA-2026-09-LNG-EXPORT-GROSS",
+      "sphere": "russia",
+      "sourceKey": "creaSep2026",
+      "metric": "CREA-estimated Russian LNG unloaded-cargo export gross revenue per day",
+      "period": "2026-09",
+      "value": 75,
+      "unit": "EUR million/day",
+      "comparison": "+68% month-on-month; unloaded LNG volume +48%",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": true,
+      "limitation": "Subset of Russia total fossil exports; cargo-unloading basis, not loading-month receipts. Never add to EUR625m/day total.",
+      "costGap": "Liquefaction, shipping, sanctions-compliance and netback costs unmeasured.",
+      "counterfactualGap": "LNG seasonality, prices and Arctic LNG 2 loadings confound policy attribution.",
+      "causalAttribution": null
+    },
+    {
+      "id": "RUSSIA-2026-09-SANCTIONED-SHADOW-TANKERS",
+      "sphere": "russia",
+      "sourceKey": "creaSep2026",
+      "metric": "Share of Russian seaborne oil transported by sanctioned shadow tankers",
+      "period": "2026-09",
+      "value": 57,
+      "unit": "percent of seaborne oil volume",
+      "comparison": "Additional 40% by G7+ owned or insured tankers; rest other shadow vessels",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": true,
+      "limitation": "CREA vessel classification and modeled trade flows, not verified evasion count or proof of legal breach.",
+      "costGap": "Insurance, financing and freight premiums not independently priced.",
+      "counterfactualGap": "Need vessel-level pre/post controls to isolate sanction effects.",
+      "causalAttribution": null
+    },
+    {
+      "id": "INDIA-FY2025-26-SOLAR-CAPACITY-ADDED",
+      "sphere": "india",
+      "sourceKey": "indiaPower",
+      "metric": "India solar installed generation capacity added during FY2025-26 through January",
+      "period": "FY2025-26 through 2026-01-31",
+      "value": 34955.24,
+      "unit": "MW",
+      "comparison": "Indian Ministry of Power Lok Sabha reply; FY-to-date not calendar 2025",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": false,
+      "limitation": "Official installed generation capacity additions, not electricity actually generated, project-level cash spending, or a full FY result.",
+      "costGap": "Installation cost, subsidy paid and grid balancing expenses unavailable.",
+      "counterfactualGap": "No matched comparison to no-policy scenario; do not compare directly with calendar-year Ember additions.",
+      "causalAttribution": null
+    },
+    {
+      "id": "INDIA-2025-RENEWABLE-OPERATING-GROWTH",
+      "sphere": "india",
+      "sourceKey": "ember2026",
+      "metric": "Growth in Indian renewable electricity generation",
+      "period": "CY2025",
+      "value": 98,
+      "unit": "TWh increase",
+      "comparison": "Solar +53 TWh, wind +22 TWh, hydro +21 TWh; demand +49 TWh",
+      "measurementStatus": "observed_or_reported_actual",
+      "independentThirdParty": true,
+      "limitation": "Independent Ember analysis; subcomponents overlap total. Weather drove hydro output and reduced cooling demand; not all growth is policy-caused.",
+      "costGap": "Generation costs, subsidy payments and consumer bills not estimated.",
+      "counterfactualGap": "Mild 2025 temperatures and demand slowdown require weather-normalized counterfactual.",
+      "causalAttribution": null
+    }
+  ],
+  "nonAdditivity": [
+    "Russia LNG export revenue is part of total Russian fossil export revenue, not an additional receipt.",
+    "EU LNG supplier shares are fractions of the same import market and cannot be added to energy import EUR/tonne totals.",
+    "China solar/wind growth contributes to total clean generation; fossil decline is a different outcome, not a sum.",
+    "India solar capacity additions FY-to-Jan and Ember calendar-year renewable generation measure different things.",
+    "USTR goods flows and services flows have different scopes; USTR reported services rounded components may differ from reported total by USD 0.1bn.",
+    "EU 2025 energy imports: compare only within the Eurostat 2026 release vintage; the earlier 2024 release contains a different historical mass/value baseline.",
+    "EU October 2026 EUR0.8bn Support Loan is contained within EUR2.9bn tranche, not additive.",
+    "Prior SOI 15-observation batch includes US-India goods trade, EU ERA 2025 loans and 2025 China-Laos/Whoosh figures; none are re-counted here."
+  ],
+  "policy": {
+    "researchOnly": true,
+    "auditCompleted": 20,
+    "auditTotal": 30,
+    "gatePromotion": false,
+    "influenceScores": {
+      "us": null,
+      "china": null,
+      "russia": null,
+      "eu": null,
+      "india": null
+    },
+    "independentMeasurementNotUniversal": true,
+    "causalAttribution": "not_established",
+    "uiTouched": false
+  },
+  "remainingGates": [
+    "Recipient-side confirmation of EU cash disbursement and project-level spending",
+    "Independent cross-source validation for USTR/Eurostat/India government aggregates where available",
+    "Matched geography, time, product definitions and price/volume decompositions",
+    "Project-level costs, margins and domestic consumer incidence",
+    "Credible policy counterfactuals before assigning any influence score"
+  ]
+}
