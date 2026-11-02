@@ -16,6 +16,17 @@ for(const gate of ['attribution','costs']){
  assert.ok(methodology[gate].notSufficient.length>=3,gate+' exclusions');
 }
 assert.ok(methodology.crossSphereNormalization.requirements.length>=5);
+const nextBundle=worklist.crossSphereAttributionCostResearchBundle;
+assert.equal(nextBundle.records.length,18);
+assert.equal(nextBundle.records.length,nextBundle.recordCount);
+assert.deepEqual([...new Set(nextBundle.records.map(r=>r.sphere))].sort(),['china','eu','india','russia','us']);
+for(const record of nextBundle.records){
+  assert.ok(record.source.startsWith('https://'));
+  assert.ok(record.interpretation.length>35);
+  assert.equal(record.causalAttributionVerified,false);
+  assert.equal(record.caseSpecificActualNetCostVerified,false);
+}
+assert.equal(nextBundle.scoreAuthorized,false);
 const batch=worklist.crossSpherePrimaryEvidenceBatch;
 assert.equal(batch.records.length,batch.totalRecords);
 assert.ok(batch.records.length>=10);
