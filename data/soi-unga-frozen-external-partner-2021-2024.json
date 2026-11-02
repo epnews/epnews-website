@@ -1,0 +1,49 @@
+{
+  "schema": "soi-unga-frozen-external-partner-v1",
+  "sourceArchiveSha256": "04e2a0df74df61ca07e157871578e53effe4f130932d71a3298852b7c5180522",
+  "period": "2021-2024",
+  "frozenExternalPartners": 160,
+  "euMinimumValidMemberVotes": 20,
+  "euSupermajorityThreshold": 0.75,
+  "yearlyRecordedResolutions": {
+    "2021": 86,
+    "2022": 89,
+    "2023": 88,
+    "2024": 95
+  },
+  "agreementPercent": {
+    "us": {
+      "2021": 26.3343,
+      "2022": 34.4341,
+      "2023": 31.0386,
+      "2024": 32.0913
+    },
+    "china": {
+      "2021": 71.6275,
+      "2022": 64.8438,
+      "2023": 65.1993,
+      "2024": 66.2191
+    },
+    "russia": {
+      "2021": 57.5385,
+      "2022": 51.4975,
+      "2023": 48.9646,
+      "2024": 51.4606
+    },
+    "india": {
+      "2021": 67.6766,
+      "2022": 65.4398,
+      "2023": 65.3877,
+      "2024": 66.0088
+    },
+    "eu": {
+      "2021": 60.4288,
+      "2022": 61.2742,
+      "2023": 58.7824,
+      "2024": 58.9489
+    }
+  },
+  "status": "PRELIMINARY_REQUIRES_INDEPENDENT_REPRODUCTION_AND_SENSITIVITY",
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
