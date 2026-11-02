@@ -136,3 +136,13 @@ except ValueError:
 else:
     raise AssertionError("Unrelated Gate-named operator accepted")
 print("Gate operator primary EIC registry pin tests passed")
+
+assert len(mod.assert_unique_gate_facility(listing)) == 1
+for invalid_listing in ([], [listing[0], listing[0]]):
+    try:
+        mod.assert_unique_gate_facility(invalid_listing)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Missing or duplicate Gate facility identity accepted")
+print("Gate authenticated discovery ambiguity checks passed")

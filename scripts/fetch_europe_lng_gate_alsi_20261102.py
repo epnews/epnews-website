@@ -60,11 +60,21 @@ def find_gate_facilities(listing):
                           "operational_end_date": facility.get("operational_end_date")})
     return found
 
+def assert_unique_gate_facility(listing):
+    """Refuse a missing or ambiguous Gate LNG discovery rather than guessing an EIC."""
+    candidates = find_gate_facilities(listing)
+    if not candidates:
+        raise ValueError("Authenticated GIE listing contains no verified Gate LNG facility")
+    unique = {(item["operator_eic"], item["facility_eic"]) for item in candidates}
+    if len(unique) != len(candidates):
+        raise ValueError("Authenticated GIE listing contains duplicate Gate facility identifiers")
+    return candidates
+
 def verify_against_listing(facility_url, listing):
     """Require exact facility URL parameters to match one GIE operator listing entry."""
     parsed = validate_facility_identity(facility_url)
     query = urllib.parse.parse_qs(parsed.query)
-    for item in find_gate_facilities(listing):
+    for item in assert_unique_gate_facility(listing):
         if (item["operator_eic"] == query["company"][0] and
             item["facility_eic"] == query["facility"][0] and
             item["country"].upper() == query["country"][0].upper()):
@@ -186,7 +196,7 @@ def main():
         parser.error("GIE_ALSI_API_KEY is required; register for the free GIE API and store the key as a secret")
     if args.list_facilities:
         result = request_json(HOST + "/api/about?show=listing", key)
-        print(json.dumps({"gate_candidates": find_gate_facilities(result)}, indent=2))
+        print(json.dumps({"gate_candidates": assert_unique_gate_facility(result)}, indent=2))
         return
     if not args.facility_url:
         parser.error("--facility-url is required (resolve Gate EIC via --list-facilities first)")
