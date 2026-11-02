@@ -1,0 +1,200 @@
+{
+  "version": "2026-11-02",
+  "topic": "India mineral concession auction and operationalisation evidence",
+  "observations": [
+    {
+      "id": "critical_blocks_cumulative",
+      "value": 56,
+      "unit": "critical and strategic mineral blocks auctioned",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277041&lang=2&reg=48",
+      "asOf": "2026-06-23",
+      "qualification": "cumulative auction outcomes",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "critical_blocks_offered",
+      "value": 88,
+      "unit": "unique blocks taken up for auction",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277041&lang=2&reg=48",
+      "asOf": "2026-06-23",
+      "qualification": "cumulative auction denominator",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "seventh_tranche_success",
+      "value": 10,
+      "unit": "critical blocks auctioned in seventh tranche",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277041&lang=2&reg=48",
+      "asOf": "2026-06-23",
+      "qualification": "subset of 56",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "seventh_tranche_offered",
+      "value": 19,
+      "unit": "blocks in seventh tranche tender",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277041&lang=2&reg=48",
+      "asOf": "2026-03-23",
+      "qualification": "offered not awarded",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "exploration_licence_success",
+      "value": 11,
+      "unit": "exploration licence blocks successfully auctioned",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277041&lang=2&reg=48",
+      "asOf": "2026-06-23",
+      "qualification": "different concession class",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "all_minerals_fy26_auctioned",
+      "value": 212,
+      "unit": "all mineral blocks successfully auctioned FY2025-26",
+      "source": "https://ebs.publicnow.com/view/58A297E54D91E5B366ECA45C14472C30A5B4D383",
+      "asOf": "2026-08",
+      "qualification": "all minerals, not critical-only",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "critical_fy26_auctioned",
+      "value": 22,
+      "unit": "critical and strategic blocks auctioned FY2025-26",
+      "source": "https://ebs.publicnow.com/view/58A297E54D91E5B366ECA45C14472C30A5B4D383",
+      "asOf": "2026-08",
+      "qualification": "subset of 212",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "all_minerals_fy26_operationalised",
+      "value": 30,
+      "unit": "all mineral blocks operationalised FY2025-26",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "includes iron ore, limestone, bauxite and manganese; NOT evidence critical mineral mines commissioned",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "gujarat_operationalised",
+      "value": 8,
+      "unit": "all-mineral blocks operationalised in Gujarat",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "madhya_pradesh_operationalised",
+      "value": 5,
+      "unit": "all-mineral blocks operationalised in Madhya Pradesh",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "odisha_operationalised",
+      "value": 5,
+      "unit": "all-mineral blocks operationalised in Odisha",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "goa_operationalised",
+      "value": 4,
+      "unit": "all-mineral blocks operationalised in Goa",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "karnataka_operationalised",
+      "value": 2,
+      "unit": "all-mineral blocks operationalised in Karnataka",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "rajasthan_operationalised",
+      "value": 2,
+      "unit": "all-mineral blocks operationalised in Rajasthan",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "andhra_pradesh_operationalised",
+      "value": 1,
+      "unit": "all-mineral blocks operationalised in Andhra Pradesh",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "maharashtra_operationalised",
+      "value": 1,
+      "unit": "all-mineral blocks operationalised in Maharashtra",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "chhattisgarh_operationalised",
+      "value": 1,
+      "unit": "all-mineral blocks operationalised in Chhattisgarh",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    },
+    {
+      "id": "assam_operationalised",
+      "value": 1,
+      "unit": "all-mineral blocks operationalised in Assam",
+      "source": "https://ebs.publicnow.com/view/A306FD685B852EFB0D4DAD6EA3C3CCA5500A2649",
+      "asOf": "2026-03-30",
+      "qualification": "subset of 30",
+      "attribution": "Indian domestic mineral policy, not Quad implementation",
+      "scoreEligible": false
+    }
+  ],
+  "observationCount": 18,
+  "sourceIndependence": "Indian government official statements; other republications of same ministry release are not independent corroboration",
+  "caveats": [
+    "The 56 critical blocks are cumulative and 10 seventh-tranche blocks are included; do not add.",
+    "The 22 critical FY2025-26 blocks are included within 212 all-mineral FY2025-26 auctions.",
+    "The 30 operationalised all-mineral blocks do not establish commissioning of critical-mineral processing or mining projects.",
+    "State operationalisation counts are components of the national 30.",
+    "Successful auction does not mean cash disbursement, extraction or recovered tonnes.",
+    "Government reports are primary administrative evidence, not independent financial or production audits.",
+    "No causal connection to Quad cooperation is demonstrated."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoringAuthorized": false
+}
