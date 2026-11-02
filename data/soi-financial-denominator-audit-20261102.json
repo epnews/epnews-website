@@ -1,0 +1,128 @@
+{
+  "version": "2026-11-02",
+  "status": "derived-measurement-audit",
+  "auditUnchanged": "20/30",
+  "scoreAuthorized": false,
+  "sourceDatasets": [
+    "data/soi-russian-export-revenue-eu-energy-costs.json",
+    "data/soi-five-sphere-verified-outcomes-batch15-20261102.json",
+    "data/soi-next-consolidated-verification-staging-20261102.json"
+  ],
+  "measurements": [
+    {
+      "id": "RUS-2021-2022-REVENUE-CHANGE",
+      "from": 238,
+      "to": 342,
+      "delta": 104,
+      "pct": 43.7,
+      "unit": "EUR bn nominal",
+      "interpretation": "CREA modeled global gross export revenue increase; price effects not isolated."
+    },
+    {
+      "id": "RUS-2022-2023-REVENUE-CHANGE",
+      "from": 342,
+      "to": 234,
+      "delta": -108,
+      "pct": -31.6,
+      "unit": "EUR bn nominal",
+      "interpretation": "Gross export revenue decline, not fiscal loss or sanctions-causal estimate."
+    },
+    {
+      "id": "RUS-2023-2024-REVENUE-CHANGE",
+      "from": 234,
+      "to": 228,
+      "delta": -6,
+      "pct": -2.6,
+      "unit": "EUR bn nominal",
+      "interpretation": "Modeled global gross revenue; do not imply net profit."
+    },
+    {
+      "id": "RUS-2021-2024-REVENUE-CHANGE",
+      "from": 238,
+      "to": 228,
+      "delta": -10,
+      "pct": -4.2,
+      "unit": "EUR bn nominal",
+      "interpretation": "2024 below 2021 nominal baseline, not inflation-adjusted."
+    },
+    {
+      "id": "EU-2021-2022-ENERGY-BILL-CHANGE",
+      "from": 285,
+      "to": 604,
+      "delta": 319,
+      "pct": 111.9,
+      "unit": "EUR bn nominal",
+      "interpretation": "All EU energy imports; not attributable exclusively to Russia."
+    },
+    {
+      "id": "EU-2022-2024-ENERGY-BILL-CHANGE",
+      "from": 604,
+      "to": 427,
+      "delta": -177,
+      "pct": -29.3,
+      "unit": "EUR bn nominal",
+      "interpretation": "All suppliers and fuels, not Russia-only replacement savings."
+    },
+    {
+      "id": "EU-2021-2024-ENERGY-BILL-CHANGE",
+      "from": 285,
+      "to": 427,
+      "delta": 142,
+      "pct": 49.8,
+      "unit": "EUR bn nominal",
+      "interpretation": "Commission report editions differ, coverage requires reconciliation."
+    },
+    {
+      "id": "US-2024-2025-LNG-VOLUME-CHANGE",
+      "from": 4366563,
+      "to": 5508984,
+      "delta": 1142421,
+      "pct": 26.2,
+      "unit": "million cubic feet",
+      "interpretation": "EIA national export volume, not company revenues or Europe-only exports."
+    },
+    {
+      "id": "EU-2024-2025-GAS-IMPORT-CHANGE",
+      "from": 273,
+      "to": 289,
+      "delta": 16,
+      "pct": 5.9,
+      "unit": "bcm",
+      "interpretation": "All suppliers and routes, not Russian replacement volume."
+    },
+    {
+      "id": "CHINA-WHOOSH-2024-2025-RIDERSHIP-CHANGE",
+      "from": 6.06,
+      "to": 6.2,
+      "delta": 0.14,
+      "pct": 2.3,
+      "unit": "million passenger journeys",
+      "interpretation": "Operator reported, not independently audited; 2026 partial-year excluded."
+    },
+    {
+      "id": "EU-ERA-2025-INTERIM-TO-FINAL",
+      "from": 7,
+      "to": 18.1,
+      "delta": 11.1,
+      "pct": 158.6,
+      "unit": "EUR bn cumulative",
+      "interpretation": "Snapshot increase in cumulative disbursement, not an annual growth rate or separate payment."
+    },
+    {
+      "id": "US-INDIA-2025-TRADE-DEFICIT-SHARE",
+      "numerator": 58.4,
+      "denominator": 149.1,
+      "value": 39.2,
+      "unit": "percent",
+      "interpretation": "US goods deficit divided by bilateral goods trade; descriptive accounting ratio, not welfare or influence."
+    }
+  ],
+  "nonAdditive": true,
+  "derivedNotNewSource": true,
+  "notes": [
+    "All numbers calculated from already cited series; no independent numeric evidence added.",
+    "Russia modeled gross exports and EU import bill are different denominators and must not be subtracted.",
+    "2025–26 war-year CREA 193bn not directly comparable to calendar-year CREA 228bn 2024.",
+    "No meter needle or audit gate promotion."
+  ]
+}
