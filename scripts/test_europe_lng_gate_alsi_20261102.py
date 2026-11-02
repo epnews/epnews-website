@@ -89,3 +89,15 @@ except ValueError:
 else:
     raise AssertionError("Facility/company mismatch in official listing was accepted")
 print("GIE facility company cross-reference tests passed")
+
+coverage = {"operational_start_date": "2026-01-01", "operational_end_date": "2026-12-31"}
+assert mod.validate_reporting_window(coverage, "2026-10-01", "2026-10-31")
+for start, end in (("2025-12-31", "2026-10-31"), ("2026-10-01", "2027-01-01"), ("2026-11-01", "2026-10-01")):
+    try:
+        mod.validate_reporting_window(coverage, start, end)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Out-of-coverage ALSI date range accepted")
+assert mod.validate_reporting_window({"operational_start_date": None, "operational_end_date": None}, "2026-10-01", "2026-10-31")
+print("ALSI facility reporting coverage checks passed")

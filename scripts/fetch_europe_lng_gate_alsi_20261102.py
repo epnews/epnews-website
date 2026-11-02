@@ -68,6 +68,20 @@ def verify_against_listing(facility_url, listing):
             return item
     raise ValueError("Facility EIC and company do not match a Gate entry in the authenticated GIE listing")
 
+def validate_reporting_window(facility, from_date, to_date):
+    """Do not interpret dates outside the facility's published operating coverage."""
+    requested_start = date.fromisoformat(from_date)
+    requested_end = date.fromisoformat(to_date)
+    if requested_start > requested_end:
+        raise ValueError("Invalid reporting date range")
+    start = facility.get("operational_start_date")
+    end = facility.get("operational_end_date")
+    if start and requested_start < date.fromisoformat(start[:10]):
+        raise ValueError("Requested range begins before facility reporting start")
+    if end and requested_end > date.fromisoformat(end[:10]):
+        raise ValueError("Requested range ends after facility reporting end")
+    return True
+
 def request_json(url, key):
     req = urllib.request.Request(url, headers={"x-key": key, "Accept": "application/json", "User-Agent": "EPNews-ALSI-research/1.0"})
     with urllib.request.urlopen(req, timeout=35) as response:
@@ -138,6 +152,7 @@ def main():
         parser.error("--facility-url is required (resolve Gate EIC via --list-facilities first)")
     listing = request_json(HOST + "/api/about?show=listing", key)
     verified_facility = verify_against_listing(args.facility_url, listing)
+    validate_reporting_window(verified_facility, args.from_date, args.to_date)
     parsed = validate_facility_identity(args.facility_url)
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
     params.update({"from": args.from_date, "to": args.to_date})
