@@ -1,0 +1,32 @@
+name: SOI batch-first research engine
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/soi_research_batch_engine.cjs'
+      - 'scripts/test_soi_research_batch_engine.cjs'
+      - 'config/soi-research-batch-policy.json'
+      - 'data/command-meter-cross-country-research-gates.json'
+      - 'data/soi-bulk-research-gates-20261102.json'
+      - 'data/soi-five-sphere-measurement-gates.json'
+      - 'chaos-meter-data.js'
+      - 'chaos-meter-model.js'
+      - '.github/workflows/soi-research-batch.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-batch:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check scripts/soi_research_batch_engine.cjs && node --check scripts/test_soi_research_batch_engine.cjs
+      - run: node scripts/test_soi_research_batch_engine.cjs
+      - run: node scripts/soi_research_batch_engine.cjs soi-research-batch-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: soi-research-batch-report
+          path: soi-research-batch-report.json
