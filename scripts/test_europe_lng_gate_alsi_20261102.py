@@ -34,13 +34,13 @@ def mock_fetch(url, key):
     assert q["to"] == ["2026-10-31"]
     n = int(q["page"][0])
     return {"last_page": 2, "data": [{"gasDayStart": "2026-10-0" + str(n)}]}
-rows, pages = mod.fetch_all_pages("https://alsi.gie.eu/api?facility=example&to=2026-10-31", "dummy", mock_fetch)
+rows, pages = mod.fetch_all_pages("https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST&from=2026-10-01&to=2026-10-31", "dummy", mock_fetch)
 assert pages == 2 and len(rows) == 2
 def bad_fetch(url, key):
     n = int(parse_qs(urlsplit(url).query)["page"][0])
     return {"last_page": 2 if n == 1 else 3, "data": [1]}
 try:
-    mod.fetch_all_pages("https://alsi.gie.eu/api?facility=example", "dummy", bad_fetch)
+    mod.fetch_all_pages("https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST&from=2026-10-01&to=2026-10-31", "dummy", bad_fetch)
 except ValueError:
     pass
 else:
