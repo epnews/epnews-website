@@ -961,3 +961,11 @@ assert.equal(indiaTradeAudit.tradeSeriesReconciliation.reportedRevisedTradeStat.
 assert.equal(indiaTradeAudit.tradeSeriesReconciliation.baselineFollowupGatesAuthorized,false);
 assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-baseline').complete,false);
 assert.equal(indiaTradeAudit.priorityTasks.find(t=>t.id==='match-followup').complete,false);
+
+// Cross-publication India trade values are not falsely treated as revised TradeStat verification.
+const indiaTradeReconciliation=diplomaticQueue.items.find(x=>x.sphere==='india').tradeSeriesReconciliation;
+assert.equal(indiaTradeReconciliation.officialCrosschecks.length,4);
+assert.equal(indiaTradeReconciliation.officialCrosschecks[0].fy2023_24,83.64329);
+assert.equal(indiaTradeReconciliation.officialCrosschecks[1].fy2023_24,83.63);
+assert.equal(indiaTradeReconciliation.baselineFollowupGatesAuthorized,false);
+assert.equal(indiaTradeReconciliation.influenceScoringAuthorized,false);
