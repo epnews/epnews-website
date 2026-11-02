@@ -1,0 +1,78 @@
+{
+  "schema": "soi-five-sphere-attribution-priorities-v1",
+  "asOf": "2026-11-02",
+  "scope": "Five existing audited case studies; research designs only, not newly verified effects",
+  "priorities": [
+    {
+      "sphere": "us",
+      "caseId": "soi-dip-candidate-1",
+      "verifiedStartingPoint": "Trilateral missile-warning sharing began operating December 19, 2023.",
+      "attributionTest": "Compare actual post-activation sharing latency, coverage and reliability against pre-existing bilateral arrangements, controlling for Japan-ROK normalization.",
+      "costTest": "Find agency budget execution, personnel and integration cost by country; distinguish existing bilateral systems from incremental trilateral spend.",
+      "measurableOutcome": "Quarterly operational data or publicly disclosed exercise/alert exchange counts; unavailable figures remain null.",
+      "preferredCounterpartSources": [
+        "https://www.mod.go.jp/en/",
+        "https://www.mnd.go.kr/mbshome/mbs/mndEN/"
+      ]
+    },
+    {
+      "sphere": "china",
+      "caseId": "soi-dip-candidate-2",
+      "verifiedStartingPoint": "March 2023 Beijing statement names China as host and Iraq/Oman as earlier mediators.",
+      "attributionTest": "Date Saudi-Iran embassy reopening, ambassador exchanges and security incidents; compare with prior Iraq/Oman negotiation timeline and bilateral incentives.",
+      "costTest": "Identify any public Chinese mediation outlays or commitments and Saudi/Iran implementation costs; do not substitute unknown with zero.",
+      "measurableOutcome": "Dated restoration of diplomatic missions and bilateral exchange, not China's exclusive causation.",
+      "preferredCounterpartSources": [
+        "https://www.spa.gov.sa/en/",
+        "https://www.mfa.gov.ir/"
+      ]
+    },
+    {
+      "sphere": "russia",
+      "caseId": "soi-dip-candidate-3",
+      "verifiedStartingPoint": "Russia-Belarus security treaty entered into force March 13, 2025.",
+      "attributionTest": "Compare treaty articles with pre-existing Union State/CSTO guarantees and independently documented new basing or deployment obligations.",
+      "costTest": "Find audited budget allocations, deployments, sanctions effects and Belarusian obligations; distinguish stated commitment from expenditure.",
+      "measurableOutcome": "Incremental binding clauses and verified implementation versus prior treaty baseline.",
+      "preferredCounterpartSources": [
+        "https://pravo.by/",
+        "https://publication.pravo.gov.ru/"
+      ]
+    },
+    {
+      "sphere": "eu",
+      "caseId": "soi-dip-candidate-eu-moldova-2024",
+      "verifiedStartingPoint": "EUPM Moldova financial reference amounts for two separate periods are EUR 13,356,508.08 and EUR 19,817,594.70; these are not actual expenditures.",
+      "attributionTest": "Separate 2023 EUPM pre-partnership operations from specific 2024 partnership deliverables; compare Moldovan agency outcomes and EU commitments.",
+      "costTest": "Reconcile mission reference budget, appropriations, actual disbursements and Moldovan co-financing for identical periods.",
+      "measurableOutcome": "Delivered training, institutional capacity and documented security outputs with matched period and counterfactual.",
+      "preferredCounterpartSources": [
+        "https://eur-lex.europa.eu/",
+        "https://www.mfa.gov.md/"
+      ]
+    },
+    {
+      "sphere": "india",
+      "caseId": "soi-dip-candidate-5",
+      "verifiedStartingPoint": "India-UAE CEPA entered into force in 2022; aggregate bilateral trade alone does not isolate treaty effect.",
+      "attributionTest": "Build tariff-line treated-versus-untreated comparisons with matched customs periods and control markets, decomposing price and volume.",
+      "costTest": "Estimate foregone tariff receipts, compliance and sector adjustment costs from fiscal records rather than gross trade values.",
+      "measurableOutcome": "Tariff-line volumes, unit values and customs receipts in matching fiscal years and valuation bases.",
+      "preferredCounterpartSources": [
+        "https://commerce.gov.in/",
+        "https://www.moec.gov.ae/"
+      ]
+    }
+  ],
+  "caseCount": 5,
+  "attributionGatesClosed": 0,
+  "costGatesClosed": 0,
+  "scoreAuthorized": false,
+  "needleAuthorized": false,
+  "decisionRules": [
+    "Do not equate signing, hosting, announcement, nominal budget or gross trade with realized net influence.",
+    "Require counterpart confirmation and a matched baseline/followup before promoting outcome evidence.",
+    "Require documented actual costs and plausible alternative explanations before score eligibility.",
+    "Preserve null for unknown metrics; never zero-fill or extrapolate net benefit from gross values."
+  ]
+}
