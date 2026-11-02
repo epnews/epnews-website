@@ -250,7 +250,7 @@ def audit_observation_coverage(rows, from_date, to_date):
     expected = [(start + timedelta(days=n)).isoformat() for n in range((end - start).days + 1)]
     observed_in_window = set(counts).intersection(expected)
     conflicting_days = {day: sorted(values) for day, values in day_statuses.items() if len(values) > 1}
-    unambiguous_confirmed = confirmed_days - set(conflicting_days)
+    unambiguous_confirmed = {day for day, values in day_statuses.items() if values == {"C"}}
     usable_days = {day for day, values in day_statuses.items()
                    if len(values) == 1 and values.issubset({"C", "E"})}
     unavailable_days = {day for day, values in day_statuses.items()
@@ -266,7 +266,7 @@ def audit_observation_coverage(rows, from_date, to_date):
             "usable_reporting_gas_days": len(usable_days),
             "usable_reporting_coverage_percent": round(100 * len(usable_days) / len(expected), 2) if expected else 0,
             "unavailable_reporting_gas_days": len(unavailable_days),
-            "confirmed_coverage_percent": round(100 * len(confirmed_days) / len(expected), 2) if expected else 0,
+            "confirmed_coverage_percent": round(100 * len(unambiguous_confirmed) / len(expected), 2) if expected else 0,
             "unambiguous_confirmed_coverage_percent": round(100 * len(unambiguous_confirmed) / len(expected), 2) if expected else 0,
             "missing_gas_days": [day for day in expected if day not in counts],
             "duplicate_gas_days": {day: n for day, n in counts.items() if n > 1},
