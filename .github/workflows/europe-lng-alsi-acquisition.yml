@@ -1,0 +1,57 @@
+name: Gate ALSI authenticated operator acquisition
+on:
+  workflow_dispatch:
+    inputs:
+      facility_url:
+        description: 'Exact authenticated GIE Gate facility URL (/api?country=NL&company=...&facility=...)'
+        required: true
+        type: string
+      from_date:
+        description: 'Start gas day YYYY-MM-DD'
+        required: true
+        default: '2026-10-01'
+        type: string
+      to_date:
+        description: 'End gas day YYYY-MM-DD'
+        required: true
+        default: '2026-10-31'
+        type: string
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify offline ALSI regression
+        run: python scripts/test_europe_lng_gate_alsi_20261102.py
+      - name: Require configured GIE key
+        env:
+          GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
+        run: |
+          if [ -z "$GIE_ALSI_API_KEY" ]; then
+            echo "::error::Set GIE_ALSI_API_KEY as a repository Actions secret before dispatch."
+            exit 1
+          fi
+      - name: Retrieve authenticated Gate facility measurements
+        env:
+          GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
+          FACILITY_URL: ${{ inputs.facility_url }}
+          FROM_DATE: ${{ inputs.from_date }}
+          TO_DATE: ${{ inputs.to_date }}
+        run: |
+          python scripts/fetch_europe_lng_gate_alsi_20261102.py \
+            --facility-url "$FACILITY_URL" \
+            --from-date "$FROM_DATE" --to-date "$TO_DATE" \
+            --output gate-alsi-operator-october-2026.json
+      - name: Upload restricted research artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: gate-alsi-operator-observations
+          path: gate-alsi-operator-october-2026.json
+          retention-days: 14
+          if-no-files-found: error

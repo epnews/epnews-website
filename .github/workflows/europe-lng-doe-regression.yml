@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'scripts/*europe_lng_doe*'
+      - 'scripts/*europe_lng_gate_alsi*'
       - '.github/workflows/europe-lng-doe-*.yml'
   workflow_dispatch:
 permissions:
