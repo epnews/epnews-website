@@ -1,5 +1,5 @@
 {
-  "version": "3.0",
+  "version": "3.1",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -946,5 +946,51 @@
     "independentlyAuditedPerformanceCases": 0,
     "attributionValidatedCases": 0,
     "scoreAuthorized": false
+  },
+  "evidenceGateMethodology": {
+    "version": "1.0",
+    "purpose": "Common evidence standards across all five spheres without converting unlike indicators into arbitrary geopolitical scores",
+    "attribution": {
+      "required": [
+        "Dated intervention or agreement and independent outcome measurement",
+        "Explicit pre-intervention baseline and post-intervention follow-up with matching units and geographic scope",
+        "Credible counterfactual or comparison group addressing confounding trends and parallel interventions",
+        "Alternative explanations including counterpart agency and prior commitments",
+        "Transparent uncertainty, lag, and source provenance"
+      ],
+      "notSufficient": [
+        "Signature or ratification alone",
+        "Bilateral trade value alone",
+        "A government's self-attributed success claim",
+        "Coincident post-agreement outcome without a counterfactual"
+      ],
+      "approvalRule": "Keep attribution gate incomplete until all required elements are evidenced and peer-reviewed; no causality implied by chronology."
+    },
+    "costs": {
+      "required": [
+        "Scope of government or private spending and financing obligations",
+        "Separate commitments, appropriations, disbursements and realized spending",
+        "Economic opportunity costs and domestic impacts where measurable",
+        "Counterpart costs, constraints, and potential sovereignty tradeoffs",
+        "Comparable time horizon, currency units and transparent uncertainty"
+      ],
+      "notSufficient": [
+        "Announced investment headline alone",
+        "Authorized budget treated as actual expenditure",
+        "Export FOB price treated as profit or national benefit"
+      ],
+      "approvalRule": "Keep costs gate incomplete until relevant cost categories are independently sourced; missing categories must be explicit."
+    },
+    "crossSphereNormalization": {
+      "status": "not-authorized",
+      "principle": "Compare evidence completeness and indicator-specific standardized changes, not incompatible raw measures or an unvalidated composite score",
+      "requirements": [
+        "Pre-registered comparable construct and unit for each indicator",
+        "Consistent geographic and time windows",
+        "Publicly auditable normalization, directionality and missing-data rules",
+        "Sensitivity analysis for weighting, missingness, and source selection",
+        "Independent validation before authorizing any common diplomatic influence score"
+      ]
+    }
   }
 }
