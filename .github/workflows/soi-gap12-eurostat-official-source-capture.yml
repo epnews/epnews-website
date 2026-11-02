@@ -27,13 +27,14 @@ jobs:
             sha256sum "evidence/${dataset}.json" >> evidence/SHA256SUMS.txt
           done
           date -u +%Y-%m-%dT%H:%M:%SZ > evidence/retrieved-at.txt
-      - name: Extract and reconcile exact official cells (fail closed)
+      - name: Extract and reconcile official cells (qualified provisional allowed)
         shell: bash
         run: |
           set -euo pipefail
           export EUROSTAT_RETRIEVED_AT="$(cat evidence/retrieved-at.txt)"
           node scripts/extract_soi_gap12_eurostat_jsonstat_cells_20261102.cjs evidence/nrg_pc_204.json evidence/nrg_pc_202.json > evidence/extracted-22-cells.json
           node scripts/audit_soi_gap12_exact_eurostat_nominal_prices_20261102.cjs evidence/extracted-22-cells.json > evidence/reconciliation-report.json
+          node -e 'const r=require("./evidence/reconciliation-report.json");console.log("Reconciliation status:",r.status,"; final certification:",r.finalSourceCertification,"; score authorized:",r.scoreAuthorized)'
       - name: Preserve raw responses and audit artifacts for review
         if: always()
         uses: actions/upload-artifact@v4
