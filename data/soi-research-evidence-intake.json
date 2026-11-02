@@ -34,6 +34,40 @@
       "counterfactual": "Weather, global prices, demand, contracts and supplier substitution not causally isolated",
       "costsAndIncidence": "Aggregate trade balance is not realized consumer cost or geopolitical leverage",
       "scoreAuthorized": false
+    },
+    {
+      "id": "INTAKE-EU-JAPAN-SPA-2025",
+      "taskId": "case:eu-japan",
+      "status": "retrieved",
+      "sourceUrl": "https://www.consilium.europa.eu/en/documents/treaties-agreements/agreement/?doclanguage=en&id=2018023",
+      "sourceOrganization": "Council of the European Union",
+      "sourcePublicationDate": "2025-01-01",
+      "claim": "EU-Japan Strategic Partnership Agreement entered into force on January 1 2025, after provisional application beginning February 1 2019",
+      "methodology": "Council treaty register records signature, provisional application, ratification and legal entry into force; this is institutional implementation, not independent partner-policy change",
+      "period": "2018-2025",
+      "unit": "legal milestone",
+      "independentVerifier": "",
+      "documentHash": "",
+      "counterfactual": "Prior EU-Japan cooperation and shared strategic interests precede SPA",
+      "costsAndIncidence": "Implementation costs and measured partner impacts not established",
+      "scoreAuthorized": false
+    },
+    {
+      "id": "INTAKE-INDIA-CRITICAL-MINERALS-AUCTIONS-2026",
+      "taskId": "case:india-quad",
+      "status": "retrieved",
+      "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2277041&lang=1&reg=3",
+      "sourceOrganization": "India Ministry of Mines / Press Information Bureau",
+      "sourcePublicationDate": "2026-06-23",
+      "claim": "56 critical and strategic mineral blocks successfully auctioned out of 88 unique blocks taken up for auction by the Central Government; 10 successful in seventh tranche",
+      "methodology": "Government cumulative administrative auction count, not operational mine output or Quad-financed project",
+      "period": "Cumulative as of June 23 2026",
+      "unit": "mineral blocks",
+      "independentVerifier": "",
+      "documentHash": "",
+      "counterfactual": "India domestic policy and private capital; Quad causal link unestablished",
+      "costsAndIncidence": "Auction payments, capex, operational output, environmental and fiscal costs not quantified here",
+      "scoreAuthorized": false
     }
   ]
 }
