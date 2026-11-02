@@ -10,6 +10,8 @@ on:
       - 'scripts/test_europe_lng_full_partner_residual_20261102.cjs'
       - 'scripts/compare_europe_lng_partner_vintages_20261102.cjs'
       - 'scripts/test_europe_lng_partner_vintages_20261102.cjs'
+      - 'scripts/audit_europe_lng_monthly_partner_reconciliation_20261102.cjs'
+      - 'scripts/test_europe_lng_monthly_partner_reconciliation_20261102.cjs'
       - '.github/workflows/eurostat-lng-all-partners.yml'
 jobs:
   audit:
@@ -24,12 +26,15 @@ jobs:
       - run: python -m unittest scripts.test_eurostat_lng_all_partners
       - run: node scripts/test_europe_lng_full_partner_residual_20261102.cjs
       - run: node scripts/test_europe_lng_partner_vintages_20261102.cjs
+      - run: node scripts/test_europe_lng_monthly_partner_reconciliation_20261102.cjs
       - run: python scripts/extract_eurostat_lng_all_partners.py europe-lng-all-partners.json
       - run: node scripts/audit_europe_lng_full_partner_residual_20261102.cjs europe-lng-all-partners.json europe-lng-full-partner-reconciliation.json
+      - run: node scripts/audit_europe_lng_monthly_partner_reconciliation_20261102.cjs europe-lng-all-partners.json europe-lng-monthly-partner-reconciliation.json
       - uses: actions/upload-artifact@v4
         with:
           name: europe-lng-all-partners
           path: |
             europe-lng-all-partners.json
             europe-lng-full-partner-reconciliation.json
+            europe-lng-monthly-partner-reconciliation.json
           retention-days: 30
