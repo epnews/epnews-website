@@ -1,0 +1,189 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-12",
+  "period": "2025-S2",
+  "currency": "EUR",
+  "unit": "per 100 kWh",
+  "status": "direct Eurostat release observations, selected high/low countries, not complete country panel",
+  "observations": [
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "geo": "IE",
+      "value": 40.42,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "dataset": "nrg_pc_204",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "geo": "DE",
+      "value": 38.69,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "dataset": "nrg_pc_204",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "geo": "BE",
+      "value": 34.99,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "dataset": "nrg_pc_204",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "geo": "HU",
+      "value": 10.82,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "dataset": "nrg_pc_204",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "geo": "MT",
+      "value": 12.82,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "dataset": "nrg_pc_204",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "geo": "BG",
+      "value": 13.55,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+      "dataset": "nrg_pc_204",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "geo": "SE",
+      "value": 20.92,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "dataset": "nrg_pc_202",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "geo": "NL",
+      "value": 17.19,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "dataset": "nrg_pc_202",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "geo": "IT",
+      "value": 14.81,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "dataset": "nrg_pc_202",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "geo": "HU",
+      "value": 3.4,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "dataset": "nrg_pc_202",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "geo": "HR",
+      "value": 5.43,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "dataset": "nrg_pc_202",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "geo": "RO",
+      "value": 5.66,
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+      "dataset": "nrg_pc_202",
+      "taxBasis": "including taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "non-household",
+      "geo": "IE",
+      "value": 25.52,
+      "source": "https://ebs.publicnow.com/view/DCE83800ACDEC6ABFA601A37D28027F553CF7147",
+      "dataset": "nrg_pc_205",
+      "taxBasis": "excluding VAT and other recoverable taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "non-household",
+      "geo": "CY",
+      "value": 24.29,
+      "source": "https://ebs.publicnow.com/view/DCE83800ACDEC6ABFA601A37D28027F553CF7147",
+      "dataset": "nrg_pc_205",
+      "taxBasis": "excluding VAT and other recoverable taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "non-household",
+      "geo": "DE",
+      "value": 22.64,
+      "source": "https://ebs.publicnow.com/view/DCE83800ACDEC6ABFA601A37D28027F553CF7147",
+      "dataset": "nrg_pc_205",
+      "taxBasis": "excluding VAT and other recoverable taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "non-household",
+      "geo": "FI",
+      "value": 7.48,
+      "source": "https://ebs.publicnow.com/view/DCE83800ACDEC6ABFA601A37D28027F553CF7147",
+      "dataset": "nrg_pc_205",
+      "taxBasis": "excluding VAT and other recoverable taxes and levies"
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "non-household",
+      "geo": "SE",
+      "value": 9.7,
+      "source": "https://ebs.publicnow.com/view/DCE83800ACDEC6ABFA601A37D28027F553CF7147",
+      "dataset": "nrg_pc_205",
+      "taxBasis": "excluding VAT and other recoverable taxes and levies"
+    }
+  ],
+  "sources": [
+    "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-1",
+    "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260505-2",
+    "https://ebs.publicnow.com/view/DCE83800ACDEC6ABFA601A37D28027F553CF7147"
+  ],
+  "methodology": [
+    "Source news-release high/low observations only, not all EU member states.",
+    "All reported values EUR per 100 kWh in 2025-S2; compare within consumer category, not household vs industry.",
+    "Household electricity band DC (2500-4999 kWh/year), household gas D2 (20-199 GJ/year); industrial electricity 500-2000 MWh/year.",
+    "Eurostat national price rankings do not imply equivalent household income or purchasing power.",
+    "Industrial electricity observations sourced from secondary republication of Eurostat news release, pending direct original release cross-check.",
+    "Do not derive real national price changes without matched 2025-S1 national prices and monthly national HICP."
+  ],
+  "missingness": {
+    "gasHousehold": [
+      "CY",
+      "MT",
+      "FI",
+      "PL"
+    ],
+    "reason": "CY, MT, FI do not report; PL confidential per Eurostat May 2026 release"
+  },
+  "gapClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
