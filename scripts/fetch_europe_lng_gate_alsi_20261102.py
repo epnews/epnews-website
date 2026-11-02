@@ -250,6 +250,10 @@ def validate_operator_evidence(rows, from_date, to_date):
         raise ValueError("No ALSI facility observations")
     if any(not isinstance(row, dict) for row in rows):
         raise ValueError("Non-object ALSI facility observation")
+    invalid_statuses = sorted({str(row.get("status", "missing")) for row in rows
+                               if row.get("status") not in ("C", "E", "N")})
+    if invalid_statuses:
+        raise ValueError(f"ALSI observations contain unsupported reporting statuses: {invalid_statuses}")
     coverage = audit_observation_coverage(rows, from_date, to_date)
     if coverage["rows_missing_gas_day"] or coverage["out_of_window_gas_days"]:
         raise ValueError("ALSI records missing gas day or outside requested period")
