@@ -275,3 +275,15 @@ assert quality["estimated_gas_days"] == 1
 assert quality["no_data_gas_days"] == 1
 assert quality["confirmed_coverage_percent"] == 25.0
 print("ALSI status-specific in-window reporting coverage tests passed")
+
+conflicts = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "E"},
+    {"gasDayStart": "2026-10-02", "status": "C"},
+    {"gasDayStart": "2026-10-03", "status": "N"},
+], "2026-10-01", "2026-10-03")
+assert conflicts["conflicting_status_gas_days"] == {"2026-10-01": ["C", "E"]}
+assert conflicts["confirmed_gas_days"] == 2
+assert conflicts["unambiguous_confirmed_gas_days"] == 1
+assert conflicts["unambiguous_confirmed_coverage_percent"] == 33.33
+print("ALSI contradictory daily reporting status tests passed")
