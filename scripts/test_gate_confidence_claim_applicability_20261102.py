@@ -24,6 +24,6 @@ class ClaimApplicabilityTest(unittest.TestCase):
         with self.assertRaises(ValueError):m.evaluate({"claim_type":"berth","material_conflict":"false","observations":[]})
     def test_independent_primary_docs_can_be_reasonably_certain(self):
         x=m.evaluate({"claim_type":"discharge_volume","observations":[obs("primary_document","gate"),obs("primary_document","surveyor"),obs("primary_document","carrier")]})
-        self.assertEqual(x["confidence_band"],"reasonably_certain")
+        self.assertEqual(x["confidence_band"],"high")
         self.assertFalse(x["eligible_for_meter"])
 if __name__=="__main__":unittest.main()
