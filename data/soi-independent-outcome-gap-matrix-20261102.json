@@ -1,7 +1,7 @@
 {
   "version": "2026-11-02-gap04-sync",
   "status": "independent-evidence-required",
-  "auditCompleted": 21,
+  "auditCompleted": 20,
   "auditTotal": 30,
   "scoreAuthorized": false,
   "caseCount": 15,
@@ -174,7 +174,8 @@
         "Cash capex is not evidence of national net economic benefit or geopolitical influence",
         "Facility-only allocation of all four companies is not established"
       ],
-      "closureScope": "FY2024 and FY2025 actual cash PP&E/capital expenditures for Cheniere, Venture Global, NextDecade and Sempra Infrastructure, each with its own reported accounting boundary; not an industry-wide LNG-only total"
+      "closureScope": "FY2024 and FY2025 actual cash PP&E/capital expenditures for Cheniere, Venture Global, NextDecade and Sempra Infrastructure, each with its own reported accounting boundary; not an industry-wide LNG-only total",
+      "auditPromotion": "none: independent 30-item audit is not mapped to this 15-target research matrix"
     },
     {
       "id": "SOI-GAP-12",
