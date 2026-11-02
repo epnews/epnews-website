@@ -861,7 +861,7 @@ assert.match(liveDiplomacyDashboardSource,/fetch\('data\/soi-diplomatic-audit-wo
 assert.match(liveDiplomacyDashboardSource,/VERIFICATION PROGRESS/);
 assert.match(liveDiplomacyDashboardSource,/OBSERVED OUTCOME/);
 assert.match(liveDiplomacyDashboardSource,/Original diplomatic influence needle remains unscored/);
-assert.match(indexSource,/chaos-dashboard\.js\?v=diplomacy-live-outcomes-v2/);
+assert.match(indexSource,/chaos-dashboard\.js\?v=diplomacy-comparability-v3/);
 
 // US before/after institution status now has independently dated official sources, not causal attribution.
 const usMatched=diplomaticQueue.items.find(x=>x.sphere==='us');
@@ -870,3 +870,9 @@ assert.equal(usMatched.baselineFollowupAssessment.causallyAttributable,false);
 assert.equal(usMatched.auditProgress.completedScopedChecks,4);
 assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-baseline').complete);
 assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-followup').complete);
+
+// Five-sphere comparable-outcome summary is in the original evidence drawer, never a new dial.
+assert.match(liveDiplomacyDashboardSource,/FIVE-SPHERE BASELINE COMPARABILITY/);
+assert.match(liveDiplomacyDashboardSource,/matched descriptive measure/);
+assert.match(liveDiplomacyDashboardSource,/not yet matched/);
+assert.match(fs.readFileSync(__dirname+'\/../index.html','utf8'),/chaos-dashboard\.js\?v=diplomacy-comparability-v3/);
