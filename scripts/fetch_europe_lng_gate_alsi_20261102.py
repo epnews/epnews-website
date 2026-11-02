@@ -201,6 +201,7 @@ def audit_observation_coverage(rows, from_date, to_date):
     outside = []
     statuses = {}
     confirmed_days = set()
+    day_statuses = {}
     estimated_days = set()
     no_data_days = set()
     for row in rows:
@@ -214,6 +215,7 @@ def audit_observation_coverage(rows, from_date, to_date):
         status = str(row.get("status", "missing"))
         statuses[status] = statuses.get(status, 0) + 1
         if start <= day <= end:
+            day_statuses.setdefault(day.isoformat(), set()).add(status)
             if status == "C":
                 confirmed_days.add(day.isoformat())
             elif status == "E":
@@ -222,13 +224,18 @@ def audit_observation_coverage(rows, from_date, to_date):
                 no_data_days.add(day.isoformat())
     expected = [(start + timedelta(days=n)).isoformat() for n in range((end - start).days + 1)]
     observed_in_window = set(counts).intersection(expected)
+    conflicting_days = {day: sorted(values) for day, values in day_statuses.items() if len(values) > 1}
+    unambiguous_confirmed = confirmed_days - set(conflicting_days)
     return {"expected_gas_days": len(expected), "observed_unique_gas_days": len(counts),
             "observed_in_window_gas_days": len(observed_in_window),
             "daily_coverage_percent": round(100 * len(observed_in_window) / len(expected), 2) if expected else 0,
             "confirmed_gas_days": len(confirmed_days),
+            "unambiguous_confirmed_gas_days": len(unambiguous_confirmed),
+            "conflicting_status_gas_days": conflicting_days,
             "estimated_gas_days": len(estimated_days),
             "no_data_gas_days": len(no_data_days),
             "confirmed_coverage_percent": round(100 * len(confirmed_days) / len(expected), 2) if expected else 0,
+            "unambiguous_confirmed_coverage_percent": round(100 * len(unambiguous_confirmed) / len(expected), 2) if expected else 0,
             "missing_gas_days": [day for day in expected if day not in counts],
             "duplicate_gas_days": {day: n for day, n in counts.items() if n > 1},
             "out_of_window_gas_days": sorted(set(outside)),
