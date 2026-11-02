@@ -1,5 +1,5 @@
 {
-  "version": "4.5",
+  "version": "4.6",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -1488,6 +1488,36 @@
         "causalAttributionVerified": false,
         "costsGateComplete": false,
         "scoreAuthorized": false
+      },
+      "goldTrqUtilizationResearch": {
+        "source": "https://m.economictimes.com/news/economy/foreign-trade/gold-imports-under-india-uae-fta-quota-remain-modest-official/amp_articleshow/131098144.cms",
+        "sourceType": "press reporting attributed to unnamed government official",
+        "observation": {
+          "fiscalYear": "2025-26",
+          "goldTrqAllocatedTonnes": 8.58,
+          "totalIndiaGoldImportsTonnes": 721,
+          "ratioOfAllocatedTrqToTotalImportsPercent": 1.19
+        },
+        "criticalInterpretation": "8.58 tonnes is reported allocated quota, NOT realized preferential gold imports. 721 tonnes is all-source Indian gold imports, not imports from UAE. Their ratio is context only and is NOT a quota utilization rate.",
+        "reportedQualitativeAssessment": "Official quoted as describing actual TRQ utilization as modest or marginal, without independently verified tonnage.",
+        "additionalOfficialSources": [
+          {
+            "url": "https://content.dgft.gov.in/Website/dgftprod/82e2fb81-6db1-42d6-93ba-c47b5c7ecadc/Public%20Notice%20no.%2045%20dated%2023.01.2026.pdf",
+            "finding": "DGFT shifted gold quota allocation to competitive tender/e-auction procedure."
+          },
+          {
+            "url": "https://content.dgft.gov.in/Website/dgftprod/0a2973dc-c64d-4519-9916-023ce2e74d6d/trade%20notice%20no.%2030_0001.pdf",
+            "finding": "DGFT application procedure distinguishes manufacturing and trading applicants."
+          }
+        ],
+        "verification": {
+          "governmentPrimaryQuantitiesLocated": false,
+          "realizedPreferentialImportTonnesVerified": false,
+          "tariffRevenueEffectAttributableToGoldTrqVerified": false,
+          "causalAttributionVerified": false,
+          "costsGateComplete": false,
+          "scoreAuthorized": false
+        }
       }
     }
   ],

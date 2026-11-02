@@ -101,6 +101,13 @@ for(const item of worklist.items){
   assert.ok(Math.abs(uaetrade.periods[1].value-uaetrade.periods[0].value-uaetrade.differenceUsdBillion)<0.001);
   assert.equal(uaetrade.tradeDefinitionReconciledWithDgcis,false);
   assert.equal(uaetrade.causalAttributionVerified,false);
+  const gold=item.goldTrqUtilizationResearch;
+  assert.equal(gold.observation.goldTrqAllocatedTonnes,8.58);
+  assert.equal(gold.observation.totalIndiaGoldImportsTonnes,721);
+  assert.ok(Math.abs(gold.observation.goldTrqAllocatedTonnes/gold.observation.totalIndiaGoldImportsTonnes*100-gold.observation.ratioOfAllocatedTrqToTotalImportsPercent)<0.01);
+  assert.equal(gold.verification.realizedPreferentialImportTonnesVerified,false);
+  assert.equal(gold.verification.tariffRevenueEffectAttributableToGoldTrqVerified,false);
+  assert.equal(gold.verification.costsGateComplete,false);
   const joint=item.bilateralJointCommitteeEvidence;
   assert.equal(joint.meetingDate,'2024-10-10');
   assert.equal(joint.confirmedImplementation[0].measurement.minimumImporterCountExclusive,800);
