@@ -1,0 +1,204 @@
+{
+  "version": "2026-11-02",
+  "scope": "India domestic mining outcomes; not Quad-attributable",
+  "sourceQuality": "India Ministry of Mines administrative statistics; not independent audit",
+  "observations": [
+    {
+      "id": "cumulative_operationalised",
+      "value": 101,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative 2015 to May 7 2026",
+      "scoreEligible": false
+    },
+    {
+      "id": "odisha",
+      "value": 34,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "karnataka",
+      "value": 18,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "gujarat",
+      "value": 11,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "madhya_pradesh",
+      "value": 10,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "rajasthan",
+      "value": 8,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "goa",
+      "value": 6,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "andhra_pradesh",
+      "value": 5,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "chhattisgarh",
+      "value": 5,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "maharashtra",
+      "value": 3,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "assam",
+      "value": 1,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "cumulative state subset",
+      "scoreEligible": false
+    },
+    {
+      "id": "iron_ore_blocks",
+      "value": 47,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "subset of cumulative operationalised",
+      "scoreEligible": false
+    },
+    {
+      "id": "limestone_blocks",
+      "value": 29,
+      "unit": "blocks",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258841&lang=1&reg=3",
+      "limitation": "subset of cumulative operationalised",
+      "scoreEligible": false
+    },
+    {
+      "id": "fy26_iron_ore_output",
+      "value": 313,
+      "unit": "million tonnes",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "FY2025-26 physical output, all producers, not only auctioned blocks",
+      "scoreEligible": false
+    },
+    {
+      "id": "fy26_limestone_output",
+      "value": 484,
+      "unit": "million tonnes",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "FY2025-26 physical output, all producers, not only auctioned blocks",
+      "scoreEligible": false
+    },
+    {
+      "id": "fy26_mineral_value_growth",
+      "value": 26.8,
+      "unit": "percent",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "FY2025-26 change in major-mineral production value, not physical tonnage",
+      "scoreEligible": false
+    },
+    {
+      "id": "nmedt_sanctioned_projects",
+      "value": 777,
+      "unit": "projects",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "all NMEDT sanctioned exploration projects, not completed",
+      "scoreEligible": false
+    },
+    {
+      "id": "nmedt_critical_projects",
+      "value": 255,
+      "unit": "projects",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "critical mineral subset of 777",
+      "scoreEligible": false
+    },
+    {
+      "id": "nmedt_sanctioned_amount",
+      "value": 3828.52,
+      "unit": "INR crore",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "sanctioned financing not disbursement",
+      "scoreEligible": false
+    },
+    {
+      "id": "gsi_field_projects",
+      "value": 457,
+      "unit": "projects",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "GSI field-season 2025-26 completed projects, distinct from NMEDT",
+      "scoreEligible": false
+    },
+    {
+      "id": "gsi_critical_projects",
+      "value": 230,
+      "unit": "projects",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "critical/strategic subset of 457",
+      "scoreEligible": false
+    },
+    {
+      "id": "nmedt_critical_fy25",
+      "value": 62,
+      "unit": "projects",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "NMEDT funded critical projects FY2024-25",
+      "scoreEligible": false
+    },
+    {
+      "id": "nmedt_critical_fy26",
+      "value": 84,
+      "unit": "projects",
+      "source": "https://www.pib.gov.in/FactsheetDetails.aspx?id=150952&lang=2&reg=48",
+      "limitation": "NMEDT funded critical projects FY2025-26",
+      "scoreEligible": false
+    }
+  ],
+  "count": 23,
+  "comparability": [
+    "101 cumulative blocks is not the same period as 36 FY2025-26 blocks.",
+    "47 iron ore and 29 limestone are subsets of 101, not additional blocks.",
+    "FY2025-26 iron ore and limestone output include all mines, not only newly operationalised blocks.",
+    "777 sanctioned exploration projects and INR 3,828.52 crore sanctions are not completed work or cash paid.",
+    "255 critical projects are included in 777 total; 230 GSI projects are included in 457 GSI total.",
+    "GSI and NMEDT project series represent different institutions; no cross-institution summation without deduplication.",
+    "Government claims of increased production do not prove a causal effect of auctions or Quad diplomacy."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
