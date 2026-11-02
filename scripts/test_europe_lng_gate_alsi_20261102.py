@@ -313,3 +313,13 @@ for bad_day in (20261001, "2026-99-01", "2026-10", "not-a-date", None):
 assert mod.validate_operator_evidence([{"gasDayStart": "2026-10-01T06:00:00Z", "status": "C"}],
                                       "2026-10-01", "2026-10-01")["confirmed_gas_days"] == 1
 print("ALSI strict gas-day date validation tests passed")
+
+for from_day, to_day in (("2026-10-31", "2026-10-01"), ("2026-02-30", "2026-10-31"), ("2026-10-01", "2026-13-01")):
+    try:
+        mod.fetch_all_pages("https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST"
+                            + "&from=" + from_day + "&to=" + to_day, "dummy", mock_fetch)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Invalid paginated date bounds accepted")
+print("ALSI paginated request date bounds tests passed")
