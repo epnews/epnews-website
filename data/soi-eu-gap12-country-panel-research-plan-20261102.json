@@ -1,0 +1,82 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-12",
+  "purpose": "Country-level price/deflator matching research batch; prevent false country attribution",
+  "officialVerification": {
+    "run": "https://github.com/epnews/epnews-website/actions/runs/41388562829",
+    "artifact": "https://github.com/epnews/epnews-website/actions/runs/41388562829/artifacts/13116352849",
+    "result": "12 of 12 EU27 all-items monthly HICP values matched official Eurostat",
+    "notEstablished": "Member-state HICP, member-state energy price observations, geopolitical causal effects"
+  },
+  "researchTracks": [
+    {
+      "id": 1,
+      "topic": "household electricity",
+      "dataset": "nrg_pc_204",
+      "frequency": "2025-S1 and 2025-S2",
+      "matching": "same geo, consumption band DC, tax convention, currency EUR/kWh"
+    },
+    {
+      "id": 2,
+      "topic": "nonhousehold electricity",
+      "dataset": "nrg_pc_205",
+      "frequency": "2025-S1 and 2025-S2",
+      "matching": "same geo, consumption band IC, tax convention excluding recoverable taxes"
+    },
+    {
+      "id": 3,
+      "topic": "household natural gas",
+      "dataset": "nrg_pc_202",
+      "frequency": "2025-S1 and 2025-S2",
+      "matching": "same geo, D2 consumption band, household tax convention"
+    },
+    {
+      "id": 4,
+      "topic": "nonhousehold natural gas",
+      "dataset": "nrg_pc_203",
+      "frequency": "2025-S1 and 2025-S2",
+      "matching": "same geo, I3 or documented consumption band, excluding recoverable taxes"
+    },
+    {
+      "id": 5,
+      "topic": "national inflation index",
+      "dataset": "prc_hicp_minr",
+      "frequency": "2025-01 through 2025-12",
+      "matching": "country geo, coicop18 TOTAL, unit I25, monthly means by semester"
+    },
+    {
+      "id": 6,
+      "topic": "country coverage",
+      "matching": "intersect 2025-S1/S2 and 12-month HICP; report missing national values, never impute"
+    },
+    {
+      "id": 7,
+      "topic": "deflation",
+      "matching": "real S2 in S1 EUR = nominal S2 * national mean HICP S1 / national mean HICP S2"
+    },
+    {
+      "id": 8,
+      "topic": "price revisions",
+      "matching": "retain API retrieval date, original Eurostat series values and revision caveat"
+    },
+    {
+      "id": 9,
+      "topic": "geopolitical attribution",
+      "matching": "separate descriptive national price differences from sanctions/LNG/war causal claims"
+    },
+    {
+      "id": 10,
+      "topic": "scoring policy",
+      "matching": "do not close Gap 12 or change SOI influence meter/audit gates before matched country outcomes independently verified"
+    }
+  ],
+  "sourceReferences": [
+    "https://ec.europa.eu/eurostat/web/energy/database",
+    "https://ec.europa.eu/eurostat/web/hicp/information-data",
+    "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?geo=EU27_2020&coicop18=TOTAL&unit=I25&sinceTimePeriod=2025-01&untilTimePeriod=2025-12"
+  ],
+  "countryPanelStatus": "not yet fetched or validated",
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
