@@ -349,3 +349,19 @@ assert summary["no_data_day_count"] == 1
 assert summary["certified_vessel_discharge"] is False
 assert summary["verified_cargo_origin"] is False
 print("ALSI exported evidence quality and non-attribution tests passed")
+
+duplicated = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-02", "status": "E"},
+], "2026-10-01", "2026-10-03")
+dsummary = mod.summarize_evidence_quality(duplicated)
+assert dsummary["duplicate_gas_day_count"] == 1
+assert dsummary["missing_gas_day_count"] == 1
+assert dsummary["has_full_usable_reporting"] is False
+clean = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-02", "status": "E"},
+], "2026-10-01", "2026-10-02")
+assert mod.summarize_evidence_quality(clean)["has_full_usable_reporting"] is True
+print("ALSI summary missing/duplicate completeness tests passed")
