@@ -1,0 +1,122 @@
+{
+  "schema": "soi-india-uae-cepa-observed-trade-v1",
+  "asOf": "2026-11-02",
+  "sourcePublication": "India Lok Sabha unstarred question 3492 answered 2024-12-17",
+  "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf",
+  "series": [
+    {
+      "id": "india-uae-exports",
+      "actor": "india",
+      "partner": "uae",
+      "agreement": "India–UAE CEPA",
+      "agreementEffective": "2022-05-01",
+      "unit": "USD millions, nominal merchandise, DGCIS reported",
+      "fullFiscalYear": [
+        {
+          "period": "FY2022-23",
+          "value": 31608.79
+        },
+        {
+          "period": "FY2023-24",
+          "value": 35625.02
+        }
+      ],
+      "fullYearChangePercent": 12.71,
+      "matchedHalfYear": [
+        {
+          "period": "April–September 2023",
+          "value": 15467.63
+        },
+        {
+          "period": "April–September 2024",
+          "value": 17206.58
+        }
+      ],
+      "halfYearChangePercent": 11.24,
+      "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf",
+      "limitations": [
+        "Reported trade flows are not incremental CEPA-attributable flows.",
+        "Commodity prices, energy imports, global demand and exchange rates are not isolated.",
+        "Full-year and half-year comparisons must not be conflated or counted as independent underlying measures."
+      ]
+    },
+    {
+      "id": "india-uae-imports",
+      "actor": "india",
+      "partner": "uae",
+      "agreement": "India–UAE CEPA",
+      "agreementEffective": "2022-05-01",
+      "unit": "USD millions, nominal merchandise, DGCIS reported",
+      "fullFiscalYear": [
+        {
+          "period": "FY2022-23",
+          "value": 53231.55
+        },
+        {
+          "period": "FY2023-24",
+          "value": 48025.58
+        }
+      ],
+      "fullYearChangePercent": -9.78,
+      "matchedHalfYear": [
+        {
+          "period": "April–September 2023",
+          "value": 20695.03
+        },
+        {
+          "period": "April–September 2024",
+          "value": 31458.27
+        }
+      ],
+      "halfYearChangePercent": 52.01,
+      "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf",
+      "limitations": [
+        "Reported trade flows are not incremental CEPA-attributable flows.",
+        "Commodity prices, energy imports, global demand and exchange rates are not isolated.",
+        "Full-year and half-year comparisons must not be conflated or counted as independent underlying measures."
+      ]
+    },
+    {
+      "id": "india-uae-total-merchandise-trade",
+      "actor": "india",
+      "partner": "uae",
+      "agreement": "India–UAE CEPA",
+      "agreementEffective": "2022-05-01",
+      "unit": "USD millions, nominal merchandise, DGCIS reported",
+      "fullFiscalYear": [
+        {
+          "period": "FY2022-23",
+          "value": 84840.34
+        },
+        {
+          "period": "FY2023-24",
+          "value": 83650.6
+        }
+      ],
+      "fullYearChangePercent": -1.4,
+      "matchedHalfYear": [
+        {
+          "period": "April–September 2023",
+          "value": 36162.65
+        },
+        {
+          "period": "April–September 2024",
+          "value": 48664.85
+        }
+      ],
+      "halfYearChangePercent": 34.57,
+      "source": "https://www.commerce.gov.in/wp-content/uploads/2024/12/LS-USQ-No.3492-dated.-17.12.2024.pdf",
+      "limitations": [
+        "Reported trade flows are not incremental CEPA-attributable flows.",
+        "Commodity prices, energy imports, global demand and exchange rates are not isolated.",
+        "Full-year and half-year comparisons must not be conflated or counted as independent underlying measures."
+      ]
+    }
+  ],
+  "comparisonPolicy": "Use matching time windows and original source vintage; no causal attribution or double counting of total trade versus exports plus imports.",
+  "scoreEligible": false,
+  "compositeInfluenceScore": null,
+  "needleChangeAuthorized": false,
+  "attributionGate": "open",
+  "costGate": "open"
+}
