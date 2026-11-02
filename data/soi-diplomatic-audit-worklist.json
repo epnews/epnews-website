@@ -1,5 +1,5 @@
 {
-  "version": "3.8",
+  "version": "3.9",
   "asOf": "2026-11-01",
   "status": "research-worklist-not-verified-outcomes",
   "method": "Every actor has one preselected case. Work items identify missing claim-level audit and causal evidence, not inferred influence. A completed task requires source opening, date/definition matching, independent outcome corroboration and documented review. Two cases now include explicitly sourced dated event cross-checks. Completed tasks cover source corroboration at their stated scope, not comprehensive independent claim-level audits. Russia, EU and India now have directly opened dated source confirmations for scoped milestone/baseline claims. Source opening does not establish independent performance or attribution. Five-sphere baseline/follow-up assessments are descriptive research assessments; comparable units do not imply influence attribution. Actor-specific alternative explanations and discriminating measurements are preregistered research hypotheses, not verified causal findings.",
@@ -799,7 +799,8 @@
             }
           ],
           "limitation": "Legally distinct financial reference periods; not actual paid costs."
-        }
+        },
+        "counterpartImplementationCaution": "Moldovan government corroborates assistance and equipment, but supplies neither an expenditure ledger nor an independent outcome evaluation; do not complete costs or attribution."
       },
       "comparableOutcomeObservation": {
         "status": "measurement-specification-only-not-verified-impact",
@@ -825,7 +826,23 @@
           "finding": "EEAS reports 2025–27 EUPM Moldova mandate estimated budget €19.8m and up to 72 staff; corroborates legal reference amount and mission capacity, not actual disbursement or measured impact",
           "status": "verified descriptive official mission information"
         }
-      ]
+      ],
+      "moldovaIndependentCounterpartImplementation": {
+        "source": "https://mfa.gov.md/en/content/mandate-european-union-partnership-mission-republic-moldova-has-been-extended-until-may-2027",
+        "publisher": "Ministry of Foreign Affairs of the Republic of Moldova",
+        "published": "2025-05-21",
+        "scope": "Moldovan government's own statement independently corroborates concrete EUPM cooperation and institutional outputs",
+        "observedActivities": [
+          "Contribution to National Crisis Management Center concept formulation",
+          "Technical assistance to the Cybersecurity Agency",
+          "Provision of equipment to several national authorities"
+        ],
+        "evidenceType": "counterpart-attested-outputs",
+        "outcomeEvaluationVerified": false,
+        "independentThirdPartyEffectEvaluationVerified": false,
+        "causalAttributionVerified": false,
+        "actualExpenditureVerified": false
+      }
     },
     {
       "sphere": "india",
