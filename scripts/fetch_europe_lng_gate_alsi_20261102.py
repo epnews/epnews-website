@@ -32,6 +32,38 @@ def validate_facility_identity(value):
         raise ValueError("Gate terminal facility must be in Netherlands (country=NL)")
     return parsed
 
+def find_gate_facilities(listing):
+    """Return candidate Gate entries without guessing a facility EIC."""
+    if not isinstance(listing, list):
+        raise ValueError("Expected GIE about listing array")
+    found = []
+    for operator in listing:
+        if not isinstance(operator, dict):
+            continue
+        for facility in operator.get("facilities", []):
+            if not isinstance(facility, dict):
+                continue
+            if facility.get("country", "").upper() != "NL":
+                continue
+            label = " ".join(str(x) for x in (operator.get("name", ""), facility.get("name", ""))).lower()
+            if "gate" not in label:
+                continue
+            found.append({"operator_name": operator.get("name"), "operator_eic": operator.get("eic"),
+                          "facility_name": facility.get("name"), "facility_eic": facility.get("eic"),
+                          "country": facility.get("country"), "url": facility.get("url")})
+    return found
+
+def verify_against_listing(facility_url, listing):
+    """Require exact facility URL parameters to match one GIE operator listing entry."""
+    parsed = validate_facility_identity(facility_url)
+    query = urllib.parse.parse_qs(parsed.query)
+    for item in find_gate_facilities(listing):
+        if (item["operator_eic"] == query["company"][0] and
+            item["facility_eic"] == query["facility"][0] and
+            item["country"].upper() == query["country"][0].upper()):
+            return item
+    raise ValueError("Facility EIC and company do not match a Gate entry in the authenticated GIE listing")
+
 def request_json(url, key):
     req = urllib.request.Request(url, headers={"x-key": key, "Accept": "application/json", "User-Agent": "EPNews-ALSI-research/1.0"})
     with urllib.request.urlopen(req, timeout=35) as response:
@@ -96,10 +128,12 @@ def main():
         parser.error("GIE_ALSI_API_KEY is required; register for the free GIE API and store the key as a secret")
     if args.list_facilities:
         result = request_json(HOST + "/api/about?show=listing", key)
-        print(json.dumps(result, indent=2))
+        print(json.dumps({"gate_candidates": find_gate_facilities(result)}, indent=2))
         return
     if not args.facility_url:
         parser.error("--facility-url is required (resolve Gate EIC via --list-facilities first)")
+    listing = request_json(HOST + "/api/about?show=listing", key)
+    verified_facility = verify_against_listing(args.facility_url, listing)
     parsed = validate_facility_identity(args.facility_url)
     params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
     params.update({"from": args.from_date, "to": args.to_date})
@@ -108,6 +142,7 @@ def main():
     output = {
         "source": "GIE ALSI+ operator-reported LNG facility daily series",
         "facility_api_url": url,
+        "verified_gie_listing_facility": verified_facility,
         "retrieved_date_utc": date.today().isoformat(),
         "data": rows,
         "api_response_metadata": {"pages_retrieved": page_count, "records_retrieved": len(rows)},
