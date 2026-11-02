@@ -1,0 +1,49 @@
+{
+  "retrieved_date": "2026-11-02",
+  "source": "TankerMap AIS-derived recent port calls",
+  "source_url": "https://tankermap.com/analytics/ports/gate-rotterdam",
+  "individual_source_urls": [
+    "https://tankermap.com/vessel/9956599",
+    "https://tankermap.com/vessel/9617698",
+    "https://tankermap.com/vessel/9958652",
+    "https://tankermap.com/vessel/9477593"
+  ],
+  "records": [
+    {
+      "vessel": "VENTURE GATOR",
+      "imo": "9956599",
+      "arrival_utc": "2026-10-30T18:42:00Z",
+      "departure_utc": "2026-10-30T18:57:00Z",
+      "duration_minutes": 15
+    },
+    {
+      "vessel": "CORAL ENERGY",
+      "imo": "9617698",
+      "arrival_utc": "2026-10-29T04:09:00Z",
+      "departure_utc": "2026-10-30T00:55:00Z",
+      "duration_minutes": 1246
+    },
+    {
+      "vessel": "HUASHAN",
+      "imo": "9958652",
+      "arrival_utc": "2026-10-27T09:10:00Z",
+      "departure_utc": "2026-10-28T13:28:00Z",
+      "duration_minutes": 1698
+    },
+    {
+      "vessel": "RIBERA DUERO KNUTSEN",
+      "imo": "9477593",
+      "arrival_utc": "2026-10-27T20:24:00Z",
+      "departure_utc": "2026-10-27T20:27:00Z",
+      "duration_minutes": 3
+    }
+  ],
+  "classification": "third_party_ais_port_call_not_certified_unloading",
+  "limitations": [
+    "AIS geofence event times can represent brief boundary crossings, not berth stays",
+    "15-minute and 3-minute events cannot be assumed to be LNG unloading",
+    "No unloading volumes, actual cargo-handling timestamps or cargo origin certificates",
+    "Historical DOE Jan-Aug departures are not the same October voyages",
+    "RIBERA DUERO KNUTSEN is an AIS display-name variant of DOE RIBERA DEL DUERO KNUTSEN; IMO association from TankerMap only"
+  ]
+}
