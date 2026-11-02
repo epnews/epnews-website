@@ -365,3 +365,16 @@ clean = mod.audit_observation_coverage([
 ], "2026-10-01", "2026-10-02")
 assert mod.summarize_evidence_quality(clean)["has_full_usable_reporting"] is True
 print("ALSI summary missing/duplicate completeness tests passed")
+
+mixed_status = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "C"},
+    {"gasDayStart": "2026-10-01", "status": "E"},
+    {"gasDayStart": "2026-10-02", "status": "C"},
+    {"gasDayStart": "2026-10-03", "status": "E"},
+], "2026-10-01", "2026-10-03")
+assert mixed_status["usable_reporting_gas_days"] == 2
+assert mixed_status["usable_reporting_coverage_percent"] == 66.67
+assert mixed_status["unambiguous_confirmed_gas_days"] == 1
+assert mixed_status["conflicting_status_gas_days"]["2026-10-01"] == ["C", "E"]
+assert mod.summarize_evidence_quality(mixed_status)["has_full_usable_reporting"] is False
+print("ALSI confirmed-versus-estimated conflicting status exclusion passed")
