@@ -1,0 +1,67 @@
+name: Gate October operator baseline and integrated evidence
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/gate-operator-baseline-integrated.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integrated:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test source acquisition and integrated audit
+        run: |
+          python scripts/test_europe_lng_gate_alsi_20261102.py
+          python scripts/test_gate_gaspeil_snapshot_20261102.py
+          python scripts/test_gate_integrated_evidence_audit_20261102.py
+          python scripts/test_audit_gate_inventory_deltas_20261102.py
+      - name: Verify GIE key
+        env:
+          GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
+        run: |
+          if [ -z "$GIE_ALSI_API_KEY" ]; then
+            echo "::error::GIE_ALSI_API_KEY is required for authenticated Gate operator observations"
+            exit 1
+          fi
+      - name: Fetch Gate operator September 30 to October 31
+        env:
+          GIE_ALSI_API_KEY: ${{ secrets.GIE_ALSI_API_KEY }}
+        run: |
+          python scripts/fetch_europe_lng_gate_alsi_20261102.py \
+            --from-date 2026-09-30 --to-date 2026-10-31 \
+            --output gate-alsi-operator-october-2026.json
+      - name: Fetch Gaspeil October arrival snapshot
+        run: |
+          python scripts/fetch_gate_gaspeil_snapshot_20261102.py \
+            --output gate-gaspeil-october-2026-snapshot.json \
+            --summary gate-gaspeil-october-2026-summary.json
+      - name: Produce operator delta and integrated quality reports
+        run: |
+          python scripts/audit_gate_inventory_deltas_20261102.py \
+            --operator gate-alsi-operator-october-2026.json
+          python scripts/gate_integrated_evidence_audit_20261102.py \
+            --operator gate-alsi-operator-october-2026.json \
+            --gaspeil gate-gaspeil-october-2026-snapshot.json
+          python scripts/reconcile_gate_alsi_gaspeil_20261102.py \
+            --alsi gate-alsi-operator-october-2026.json \
+            --gaspeil gate-gaspeil-october-2026-snapshot.json
+      - name: Archive source snapshots and reconciliations
+        uses: actions/upload-artifact@v4
+        with:
+          name: gate-october-integrated-operator-vessel-research
+          path: |
+            gate-alsi-operator-october-2026.json
+            gate-gaspeil-october-2026-snapshot.json
+            gate-gaspeil-october-2026-summary.json
+            gate-october-inventory-delta-audit.json
+            gate-october-integrated-evidence-audit.json
+            gate-october-alsi-gaspeil-reconciliation.json
+          retention-days: 14
+          if-no-files-found: error
