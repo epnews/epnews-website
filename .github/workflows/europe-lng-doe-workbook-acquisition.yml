@@ -1,6 +1,10 @@
 name: DOE LNG vessel workbook acquisition
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/europe-lng-doe-workbook-acquisition.yml'
 permissions:
   contents: read
 jobs:
