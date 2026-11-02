@@ -7,7 +7,7 @@
     {
       "geo": "HU",
       "householdElectricity": 10.82,
-      "householdGas": 3.4,
+      "householdGas": 3.35,
       "period": "2025-S2",
       "unit": "EUR/100 kWh",
       "note": "Two distinct delivered energy products, not substitutable; cross-commodity ratio not an energy burden or welfare measure"
@@ -50,19 +50,19 @@
       "higher": "SE",
       "lower": "HU",
       "higherPrice": 20.92,
-      "lowerPrice": 3.4,
-      "ratio": 6.153,
-      "differenceEUR100kWh": 17.52
+      "lowerPrice": 3.35,
+      "ratio": 6.245,
+      "differenceEUR100kWh": 17.57
     },
     {
       "commodity": "natural gas",
       "consumer": "household",
       "higher": "NL",
       "lower": "HR",
-      "higherPrice": 17.19,
+      "higherPrice": 17.14,
       "lowerPrice": 5.43,
-      "ratio": 3.166,
-      "differenceEUR100kWh": 11.76
+      "ratio": 3.157,
+      "differenceEUR100kWh": 11.71
     },
     {
       "commodity": "natural gas",
@@ -80,7 +80,8 @@
     "All ratios are descriptive nominal price ratios for identical commodity, consumer class, period and EUR/100 kWh unit.",
     "Tax, consumption band and national purchasing-power differences remain; no affordability, geopolitical influence or causal inference.",
     "Household electricity and household natural gas in Hungary shown side-by-side, not divided into cross-fuel burden or profit estimates.",
-    "Country-level 2025-S1 and national monthly HICP not yet available, so no national real change calculation."
+    "Country-level 2025-S1 and national monthly HICP not yet available, so no national real change calculation.",
+    "Reconciled HU and NL household gas 2025-S2 price inputs to exact official Eurostat source capture run 41397739756; comparisons recomputed."
   ],
   "gapClosed": false,
   "auditCompleted": 20,
