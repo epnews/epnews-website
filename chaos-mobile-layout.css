@@ -1,0 +1,27 @@
+/* Mobile-first progressive disclosure: preserve all original meter controls and evidence IDs. */
+@media(max-width:700px){
+ #chaos-dashboard{padding:12px!important;overflow-x:clip}
+ #chaos-dashboard *{box-sizing:border-box}
+ #chaos-dashboard .chaos-layout{display:flex!important;flex-direction:column!important;gap:10px}
+ #chaos-dashboard .chaos-gauge,#chaos-dashboard .chaos-recent{width:100%!important;min-width:0!important;max-width:100%!important}
+ #chaos-dashboard h2{font-size:1.35rem;line-height:1.25;margin:8px 0}
+ #chaos-dashboard>p{font-size:.9rem;line-height:1.45}
+ #chaos-dashboard .chaos-command-dial{max-width:100%}
+ #chaos-dashboard .chaos-dial-svg{width:100%;height:auto}
+ #chaos-dashboard select{width:100%;max-width:100%;min-height:44px;font-size:16px}
+ #chaos-dashboard .chaos-evidence-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ #chaos-dashboard .chaos-evidence-chips>*{min-width:0;font-size:11px;overflow-wrap:anywhere}
+ #chaos-dashboard .chaos-clean-drawer{margin:10px 0}
+ #chaos-dashboard .chaos-clean-drawer>summary{font-size:13px;line-height:1.35;padding:12px}
+ #chaos-dashboard .chaos-clean-hint{font-size:11px}
+ #chaos-dashboard .chaos-table-scroll{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+ #chaos-dashboard table{max-width:100%}
+ #chaos-dashboard .chaos-mobile-drawer{margin:10px 0;border:1px solid #46617d;border-radius:10px;background:#14283e;color:#f0f4fa}
+ #chaos-dashboard .chaos-mobile-drawer>summary{cursor:pointer;padding:13px 14px;font-weight:750;line-height:1.35}
+ #chaos-dashboard .chaos-mobile-drawer>summary:focus-visible{outline:3px solid #f1c16d;outline-offset:2px}
+ #chaos-dashboard .chaos-mobile-drawer>*:not(summary){margin:8px 10px 14px!important;max-width:calc(100% - 20px)}
+ #chaos-dashboard .chaos-mobile-drawer a{overflow-wrap:anywhere}
+ #chaos-dashboard #soi-unga-restricted-comparison{overflow-x:auto}
+ #chaos-dashboard #soi-unga-restricted-comparison table{min-width:360px}
+ #chaos-dashboard .chaos-research-archive{overflow-wrap:anywhere}
+}
