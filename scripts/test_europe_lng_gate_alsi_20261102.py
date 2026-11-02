@@ -439,3 +439,20 @@ assert outside_window["usable_reporting_coverage_percent"] == 100.0
 assert outside_window["complete_daily_coverage"] is False
 assert mod.summarize_evidence_quality(outside_window)["has_full_usable_reporting"] is False
 print("ALSI full usable reporting requires clean reporting window")
+
+for invalid_bound in ("20261001", "2026-1-01", "2026-10-1", "2026-10-01T00:00:00Z", "2026-02-30"):
+    try:
+        mod.parse_gas_day_bound(invalid_bound)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Noncanonical gas-day bound accepted: {invalid_bound!r}")
+assert mod.parse_gas_day_bound("2026-10-01").isoformat() == "2026-10-01"
+for bad_bound in ("20261001", "2026-10-01T00:00:00Z"):
+    try:
+        mod.audit_observation_coverage([{"gasDayStart": "2026-10-01", "status": "C"}], bad_bound, "2026-10-31")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError(f"Coverage accepted invalid date bound: {bad_bound!r}")
+print("ALSI canonical gas-day bounds regression passed")

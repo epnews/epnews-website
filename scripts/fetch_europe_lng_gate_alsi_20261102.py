@@ -123,10 +123,16 @@ def enforce_listed_facility_url(requested_url, facility):
         raise ValueError("Requested facility URL differs from authenticated GIE listing")
     return facility["verified_facility_url"]
 
+def parse_gas_day_bound(value):
+    """Accept only explicit YYYY-MM-DD bounds; Python also accepts ambiguous compact ISO dates."""
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise ValueError("Gas-day bound must use YYYY-MM-DD")
+    return date.fromisoformat(value)
+
 def validate_reporting_window(facility, from_date, to_date):
     """Do not interpret dates outside the facility's published operating coverage."""
-    requested_start = date.fromisoformat(from_date)
-    requested_end = date.fromisoformat(to_date)
+    requested_start = parse_gas_day_bound(from_date)
+    requested_end = parse_gas_day_bound(to_date)
     if requested_start > requested_end:
         raise ValueError("Invalid reporting date range")
     start = facility.get("operational_start_date")
@@ -170,7 +176,7 @@ def fetch_all_pages(base_url, key, fetch=request_json):
     identity_url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path,
         urllib.parse.urlencode({k: params[k] for k in ("country", "company", "facility")}), ""))
     validate_facility_identity(identity_url)
-    start_date, end_date = date.fromisoformat(params["from"]), date.fromisoformat(params["to"])
+    start_date, end_date = parse_gas_day_bound(params["from"]), parse_gas_day_bound(params["to"])
     if start_date > end_date:
         raise ValueError("Paged ALSI date bounds must be in ascending order")
     params["size"] = "300"
@@ -206,7 +212,7 @@ def fetch_all_pages(base_url, key, fetch=request_json):
 def audit_observation_coverage(rows, from_date, to_date):
     """Report missing, repeated and out-of-window gas days; do not invent observations."""
     from datetime import timedelta
-    start, end = date.fromisoformat(from_date), date.fromisoformat(to_date)
+    start, end = parse_gas_day_bound(from_date), parse_gas_day_bound(to_date)
     counts = {}
     missing_date_field = 0
     outside = []
@@ -311,7 +317,7 @@ def main():
     parser.add_argument("--output", default="gate-alsi-operator-october-2026.json")
     parser.add_argument("--list-facilities", action="store_true")
     args = parser.parse_args()
-    if date.fromisoformat(args.from_date) > date.fromisoformat(args.to_date):
+    if parse_gas_day_bound(args.from_date) > parse_gas_day_bound(args.to_date):
         parser.error("from-date must not exceed to-date")
     key = os.environ.get("GIE_ALSI_API_KEY")
     if not key:
