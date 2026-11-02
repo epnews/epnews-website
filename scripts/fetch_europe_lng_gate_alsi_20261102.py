@@ -255,6 +255,7 @@ def audit_observation_coverage(rows, from_date, to_date):
                    if len(values) == 1 and values.issubset({"C", "E"})}
     unavailable_days = {day for day, values in day_statuses.items()
                         if values == {"N"}}
+    unambiguous_estimated = {day for day, values in day_statuses.items() if values == {"E"}}
     return {"expected_gas_days": len(expected), "observed_unique_gas_days": len(counts),
             "observed_in_window_gas_days": len(observed_in_window),
             "daily_coverage_percent": round(100 * len(observed_in_window) / len(expected), 2) if expected else 0,
@@ -262,7 +263,9 @@ def audit_observation_coverage(rows, from_date, to_date):
             "unambiguous_confirmed_gas_days": len(unambiguous_confirmed),
             "conflicting_status_gas_days": conflicting_days,
             "estimated_gas_days": len(estimated_days),
+            "unambiguous_estimated_gas_days": len(unambiguous_estimated),
             "no_data_gas_days": len(no_data_days),
+            "unambiguous_no_data_gas_days": len(unavailable_days),
             "usable_reporting_gas_days": len(usable_days),
             "usable_reporting_coverage_percent": round(100 * len(usable_days) / len(expected), 2) if expected else 0,
             "unavailable_reporting_gas_days": len(unavailable_days),
@@ -303,7 +306,8 @@ def summarize_evidence_quality(coverage):
         "has_full_usable_reporting": coverage["usable_reporting_coverage_percent"] == 100.0
             and coverage["complete_daily_coverage"]
             and not coverage["duplicate_gas_days"] and not coverage["conflicting_status_gas_days"],
-        "no_data_day_count": coverage["no_data_gas_days"],
+        "no_data_day_count": coverage["unambiguous_no_data_gas_days"],
+        "unambiguous_estimated_day_count": coverage["unambiguous_estimated_gas_days"],
         "certified_vessel_discharge": False,
         "verified_cargo_origin": False,
         "interpretation": "Operator inventory/sendout reporting only; not vessel discharge or cargo origin",

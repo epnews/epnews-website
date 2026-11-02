@@ -467,3 +467,18 @@ assert mixed_status_coverage["unambiguous_confirmed_gas_days"] == 1
 assert mixed_status_coverage["confirmed_coverage_percent"] == 50.0
 assert mixed_status_coverage["unambiguous_confirmed_coverage_percent"] == 50.0
 print("ALSI confirmed coverage excludes mixed C/E status days")
+
+mixed_e_n = mod.audit_observation_coverage([
+    {"gasDayStart": "2026-10-01", "status": "E"},
+    {"gasDayStart": "2026-10-01", "status": "N"},
+    {"gasDayStart": "2026-10-02", "status": "E"},
+    {"gasDayStart": "2026-10-03", "status": "N"},
+], "2026-10-01", "2026-10-03")
+assert mixed_e_n["estimated_gas_days"] == 2
+assert mixed_e_n["no_data_gas_days"] == 2
+assert mixed_e_n["unambiguous_estimated_gas_days"] == 1
+assert mixed_e_n["unambiguous_no_data_gas_days"] == 1
+q = mod.summarize_evidence_quality(mixed_e_n)
+assert q["no_data_day_count"] == 1
+assert q["unambiguous_estimated_day_count"] == 1
+print("ALSI unambiguous estimated and no-data status quality passed")
