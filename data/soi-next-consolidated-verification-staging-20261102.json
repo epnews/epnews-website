@@ -84,6 +84,20 @@
       "status": "client_reported_installed_capacity",
       "source": "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
       "limitation": "Installed capacity is not actual annual energy production or attributable geopolitical influence."
+    },
+    {
+      "id": "US-DFC-2024-ENERGY-JOBS-SUPPORTED",
+      "amount": 40000,
+      "qualifier": "over",
+      "unit": "jobs supported",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported",
+      "source": "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+      "limitations": [
+        "Supported is not net-new employment.",
+        "No independent causal estimate."
+      ]
     }
   ],
   "pendingNext": [
