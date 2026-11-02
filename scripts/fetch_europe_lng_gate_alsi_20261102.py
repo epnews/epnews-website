@@ -236,7 +236,7 @@ def audit_observation_coverage(rows, from_date, to_date):
     conflicting_days = {day: sorted(values) for day, values in day_statuses.items() if len(values) > 1}
     unambiguous_confirmed = confirmed_days - set(conflicting_days)
     usable_days = {day for day, values in day_statuses.items()
-                   if values and values.issubset({"C", "E"})}
+                   if len(values) == 1 and values.issubset({"C", "E"})}
     unavailable_days = {day for day, values in day_statuses.items()
                         if values == {"N"}}
     return {"expected_gas_days": len(expected), "observed_unique_gas_days": len(counts),
