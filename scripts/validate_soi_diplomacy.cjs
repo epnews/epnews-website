@@ -107,6 +107,11 @@ for(const item of worklist.items){
   assert.equal(cost.primaryLegalConsolidation.periods.length,2);
   assert.equal(cost.primaryLegalConsolidation.periods[0].referenceEuros,cost.evidence[0].amount);
   assert.equal(cost.primaryLegalConsolidation.periods[1].referenceEuros,cost.evidence[1].amount);
+  const counterpart=item.moldovaIndependentCounterpartImplementation;
+  assert.equal(counterpart.observedActivities.length,3);
+  assert.equal(counterpart.evidenceType,'counterpart-attested-outputs');
+  assert.equal(counterpart.causalAttributionVerified,false);
+  assert.equal(counterpart.actualExpenditureVerified,false);
   assert.equal(cost.evidence.length,2);
   assert.ok(Math.abs(cost.evidence[1].amount-cost.evidence[0].amount-cost.arithmetic.differenceEuros)<0.02);
   assert.equal(cost.verification.authorizedBudgetsIdentified,true);
