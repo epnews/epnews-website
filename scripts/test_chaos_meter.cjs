@@ -890,3 +890,14 @@ assert.equal(euMandates.causallyAttributable,false);
 assert.equal(euMandates.baselineValueEUR,13356508.08);
 assert.equal(euMandates.followupValueEUR,19817594.70);
 assert.match(euMandates.reason,/not disbursements/);
+
+// Shared observation schema standardizes documentation, not geopolitical influence units.
+assert.equal(observedOutcomeModel.matchedWithinCaseComparisons,5);
+assert.equal(observedOutcomeModel.crossSphereInfluenceComparable,false);
+for(const row of observedOutcomeModel.rows){
+ assert.equal(row.comparison.descriptivelyComparable,true);
+ assert.equal(row.comparison.causallyAttributable,false);
+ assert.equal(row.comparison.commonCrossSphereUnit,false);
+ assert.ok(row.comparison.metric&&row.comparison.baseline&&row.comparison.followup);
+ assert.equal(row.influenceScore,null);
+}
