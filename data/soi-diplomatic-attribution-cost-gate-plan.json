@@ -1,0 +1,218 @@
+{
+  "schema": "soi-diplomatic-attribution-cost-gate-plan-v1",
+  "source": "data/soi-diplomatic-audit-worklist.json",
+  "asOf": "2026-11-02",
+  "scope": "Five preselected case studies, two unresolved audit gates each",
+  "caseCount": 5,
+  "openGateCount": 10,
+  "rows": [
+    {
+      "sphere": "us",
+      "caseId": "soi-dip-candidate-1",
+      "title": "2023 Camp David trilateral cooperation commitments",
+      "stage": "announced",
+      "sourceAuditStatus": "pending-independent-review",
+      "completedInitialTasks": [
+        "verify-primary",
+        "verify-counterpart",
+        "match-baseline",
+        "match-followup"
+      ],
+      "unresolvedTasks": [
+        "attribute",
+        "costs"
+      ],
+      "attribution": {
+        "status": "unverified",
+        "alternativeExplanations": [
+          "Pre-existing US-Japan and US-ROK defense alliances",
+          "Japan-ROK GSOMIA restoration and independent reconciliation",
+          "Shared DPRK missile threat"
+        ],
+        "requiredDiscriminatingEvidence": [
+          "Dated trilateral negotiation records showing unique US intervention",
+          "Independent Japan/ROK operational data showing new exchange performance",
+          "Counterfactual chronology against pre-summit arrangements"
+        ]
+      },
+      "costs": {
+        "status": "unverified",
+        "requiredMeasurements": [
+          "Incremental integration and maintenance spending by all three governments",
+          "Technology and information-sharing concessions",
+          "Operational burden and cybersecurity safeguards"
+        ],
+        "measuredNetCost": null
+      },
+      "influenceScore": null,
+      "scoreEligible": false
+    },
+    {
+      "sphere": "china",
+      "caseId": "soi-dip-candidate-2",
+      "title": "2023 Beijing agreement to resume Saudi-Iran diplomatic relations",
+      "stage": "signed",
+      "sourceAuditStatus": "pending-independent-review",
+      "completedInitialTasks": [
+        "verify-primary",
+        "verify-counterpart",
+        "match-baseline",
+        "match-followup"
+      ],
+      "unresolvedTasks": [
+        "attribute",
+        "costs"
+      ],
+      "attribution": {
+        "status": "unverified",
+        "alternativeExplanations": [
+          "Earlier Iraq and Oman mediation",
+          "Saudi and Iranian bilateral security/economic interests",
+          "Regional de-escalation incentives independent of Beijing"
+        ],
+        "requiredDiscriminatingEvidence": [
+          "Negotiating records distinguishing Beijing's incremental role from prior talks",
+          "Independent counterpart accounts of concessions caused by Chinese intervention",
+          "Durability and security outcomes relative to earlier mediation"
+        ]
+      },
+      "costs": {
+        "status": "unverified",
+        "requiredMeasurements": [
+          "Documented Chinese mediation resources and guarantees",
+          "Saudi/Iranian concessions and compliance costs",
+          "Regional security outcomes and reversals"
+        ],
+        "measuredNetCost": null
+      },
+      "influenceScore": null,
+      "scoreEligible": false
+    },
+    {
+      "sphere": "russia",
+      "caseId": "soi-dip-candidate-3",
+      "title": "Russia-Belarus Union State security guarantees treaty",
+      "stage": "implemented",
+      "sourceAuditStatus": "pending-independent-review",
+      "completedInitialTasks": [
+        "verify-primary",
+        "verify-counterpart",
+        "match-baseline",
+        "match-followup"
+      ],
+      "unresolvedTasks": [
+        "attribute",
+        "costs"
+      ],
+      "attribution": {
+        "status": "unverified",
+        "alternativeExplanations": [
+          "Pre-existing Union State and CSTO obligations",
+          "Belarusian government strategic choices",
+          "Regional security escalation and sanctions"
+        ],
+        "requiredDiscriminatingEvidence": [
+          "Treaty article-by-article incremental obligations versus earlier agreements",
+          "Belarusian ratification debate and independently verified implementation",
+          "Counterfactual security arrangements absent 2025 treaty"
+        ]
+      },
+      "costs": {
+        "status": "unverified",
+        "requiredMeasurements": [
+          "Financing and military commitments by each state",
+          "Belarusian sovereignty and basing concessions",
+          "Sanctions exposure and security externalities"
+        ],
+        "measuredNetCost": null
+      },
+      "influenceScore": null,
+      "scoreEligible": false
+    },
+    {
+      "sphere": "eu",
+      "caseId": "soi-dip-candidate-eu-moldova-2024",
+      "title": "EU–Moldova Security and Defence Partnership",
+      "stage": "signed",
+      "sourceAuditStatus": "pending-independent-review",
+      "completedInitialTasks": [
+        "verify-primary",
+        "verify-counterpart",
+        "match-baseline",
+        "match-followup"
+      ],
+      "unresolvedTasks": [
+        "attribute",
+        "costs"
+      ],
+      "attribution": {
+        "status": "unverified",
+        "alternativeExplanations": [
+          "Russia's invasion of Ukraine and Moldovan threat perceptions",
+          "Moldova's domestic EU-integration decisions",
+          "EUPM mission established before partnership"
+        ],
+        "requiredDiscriminatingEvidence": [
+          "Specific implemented partnership deliverables distinct from EUPM baseline",
+          "Moldovan agency reporting and independent outcome audits",
+          "Evidence separating EU inducements from Moldova's autonomous preferences"
+        ]
+      },
+      "costs": {
+        "status": "unverified",
+        "requiredMeasurements": [
+          "EU commitments versus appropriations versus actual disbursements",
+          "Moldovan co-financing and administrative burdens",
+          "Mission operating costs and documented outcomes"
+        ],
+        "measuredNetCost": null
+      },
+      "influenceScore": null,
+      "scoreEligible": false
+    },
+    {
+      "sphere": "india",
+      "caseId": "soi-dip-candidate-5",
+      "title": "India-UAE Comprehensive Economic Partnership Agreement enters into force",
+      "stage": "implemented",
+      "sourceAuditStatus": "pending-independent-review",
+      "completedInitialTasks": [
+        "verify-primary",
+        "verify-counterpart",
+        "match-baseline",
+        "match-followup"
+      ],
+      "unresolvedTasks": [
+        "attribute",
+        "costs"
+      ],
+      "attribution": {
+        "status": "unverified",
+        "alternativeExplanations": [
+          "Oil price and energy import movements",
+          "Post-pandemic trade rebound and exchange-rate shifts",
+          "UAE demand and non-CEPA policy changes"
+        ],
+        "requiredDiscriminatingEvidence": [
+          "Product-level tariff-line counterfactual with untreated comparator markets",
+          "Volume versus price decomposition by product",
+          "UAE and India customs data matched by fiscal period and valuation"
+        ]
+      },
+      "costs": {
+        "status": "unverified",
+        "requiredMeasurements": [
+          "Tariff revenue forgone by partner and year",
+          "Domestic sector adjustment costs",
+          "Distributional gains and losses and compliance costs"
+        ],
+        "measuredNetCost": null
+      },
+      "influenceScore": null,
+      "scoreEligible": false
+    }
+  ],
+  "scoringAuthorized": false,
+  "canActivateInfluenceNeedle": false,
+  "rule": "A research plan is not a verified outcome. Do not mark gates complete until sources, measurement definitions, counterpart behavior, counterfactual and cost evidence are independently audited."
+}
