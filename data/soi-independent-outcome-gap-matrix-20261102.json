@@ -137,9 +137,28 @@
       "sourceTarget": "DOE LNG monthly reports",
       "gate": "matched volume/price with conversion",
       "confounder": "FOB not company receipts",
-      "primarySourceRetrieved": false,
-      "independentVerification": false,
-      "gateClosed": false
+      "primarySourceRetrieved": true,
+      "independentVerification": true,
+      "gateClosed": true,
+      "status": "closed_bounded_five_destination_may2026_doe_volume_fob_matches",
+      "closureScope": "DOE May 2026 matched physical LNG-by-vessel destination volumes (Bcf) and FOB prices (USD/MMBtu) for Netherlands, South Korea, Italy, Japan and Egypt; monthly country observations, not all destinations or annual series",
+      "evidenceFiles": [
+        "data/soi-doe-may2026-destination-volume-price-matches.json",
+        "data/soi-doe-verified-destination-fob-2024-2026.json"
+      ],
+      "verifiedSubquestions": [
+        "Five matched country-month May 2026 physical LNG export volumes and FOB prices",
+        "Total LNG-by-vessel volume 502.7 Bcf distinct from broader 502.8 Bcf LNG total",
+        "Matched destination volume is a subset, not full global or regional coverage",
+        "FOB prices are not realized cash receipts or national net economic benefit"
+      ],
+      "unresolvedSubquestions": [
+        "Expand matched country-month pairs to full destination and time coverage",
+        "Validate original DOE table-level values and revisions before public-facing aggregate claims",
+        "No cargo-level price and energy-content matching for a defensible gross-value estimate",
+        "No profit, net economic benefit, or influence inference"
+      ],
+      "auditPromotion": "none: separate 30-item audit remains 20/30"
     },
     {
       "id": "SOI-GAP-11",
