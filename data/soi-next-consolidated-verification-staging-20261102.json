@@ -73,6 +73,17 @@
         "Cross-border freight differs from all cargo carried on the railway.",
         "Does not establish profitability or Laos net national benefit."
       ]
+    },
+    {
+      "id": "US-DFC-2024-INSTALLED-GENERATION-CAPACITY",
+      "amount": 4100,
+      "qualifier": "over",
+      "unit": "MW",
+      "impactYear": 2024,
+      "reportYear": 2025,
+      "status": "client_reported_installed_capacity",
+      "source": "https://www.dfc.gov/sites/default/files/media/documents/DFC%202025%20Annual%20Report_508_0.pdf",
+      "limitation": "Installed capacity is not actual annual energy production or attributable geopolitical influence."
     }
   ],
   "pendingNext": [
