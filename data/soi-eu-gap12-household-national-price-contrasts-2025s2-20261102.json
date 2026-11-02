@@ -1,0 +1,89 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-12",
+  "scope": "Matched 2025-S2 country comparisons within household energy category, selected sample only",
+  "sourceFile": "data/soi-eu-gap12-country-energy-price-extremes-2025s2-20261102.json",
+  "pairs": [
+    {
+      "geo": "HU",
+      "householdElectricity": 10.82,
+      "householdGas": 3.4,
+      "period": "2025-S2",
+      "unit": "EUR/100 kWh",
+      "note": "Two distinct delivered energy products, not substitutable; cross-commodity ratio not an energy burden or welfare measure"
+    }
+  ],
+  "comparisons": [
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "higher": "IE",
+      "lower": "HU",
+      "higherPrice": 40.42,
+      "lowerPrice": 10.82,
+      "ratio": 3.736,
+      "differenceEUR100kWh": 29.6
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "higher": "DE",
+      "lower": "HU",
+      "higherPrice": 38.69,
+      "lowerPrice": 10.82,
+      "ratio": 3.576,
+      "differenceEUR100kWh": 27.87
+    },
+    {
+      "commodity": "electricity",
+      "consumer": "household",
+      "higher": "BE",
+      "lower": "BG",
+      "higherPrice": 34.99,
+      "lowerPrice": 13.55,
+      "ratio": 2.582,
+      "differenceEUR100kWh": 21.44
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "higher": "SE",
+      "lower": "HU",
+      "higherPrice": 20.92,
+      "lowerPrice": 3.4,
+      "ratio": 6.153,
+      "differenceEUR100kWh": 17.52
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "higher": "NL",
+      "lower": "HR",
+      "higherPrice": 17.19,
+      "lowerPrice": 5.43,
+      "ratio": 3.166,
+      "differenceEUR100kWh": 11.76
+    },
+    {
+      "commodity": "natural gas",
+      "consumer": "household",
+      "higher": "IT",
+      "lower": "RO",
+      "higherPrice": 14.81,
+      "lowerPrice": 5.66,
+      "ratio": 2.617,
+      "differenceEUR100kWh": 9.15
+    }
+  ],
+  "methodology": [
+    "Derived only from existing country-specific price observations; no newly fetched countries or historical data.",
+    "All ratios are descriptive nominal price ratios for identical commodity, consumer class, period and EUR/100 kWh unit.",
+    "Tax, consumption band and national purchasing-power differences remain; no affordability, geopolitical influence or causal inference.",
+    "Household electricity and household natural gas in Hungary shown side-by-side, not divided into cross-fuel burden or profit estimates.",
+    "Country-level 2025-S1 and national monthly HICP not yet available, so no national real change calculation."
+  ],
+  "gapClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
