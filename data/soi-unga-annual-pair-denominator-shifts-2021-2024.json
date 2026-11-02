@@ -1,0 +1,191 @@
+{
+  "schema": "soi-unga-annual-pair-denominator-shifts-v1",
+  "source": "data/soi-unga-six-code-restricted-results-2021-2024.json",
+  "rows": [
+    {
+      "actor": "us",
+      "yearly": [
+        {
+          "year": 2021,
+          "actorEligibleResolutions": 73,
+          "matchedPairs": 10589,
+          "pairsPerEligibleResolution": 145.0548,
+          "agreementPairs": 2501
+        },
+        {
+          "year": 2022,
+          "actorEligibleResolutions": 77,
+          "matchedPairs": 11074,
+          "pairsPerEligibleResolution": 143.8182,
+          "agreementPairs": 3458
+        },
+        {
+          "year": 2023,
+          "actorEligibleResolutions": 75,
+          "matchedPairs": 10892,
+          "pairsPerEligibleResolution": 145.2267,
+          "agreementPairs": 2925
+        },
+        {
+          "year": 2024,
+          "actorEligibleResolutions": 82,
+          "matchedPairs": 12156,
+          "pairsPerEligibleResolution": 148.2439,
+          "agreementPairs": 3360
+        }
+      ],
+      "firstToLastMatchedPairChange": 1567,
+      "firstToLastPairsPerResolutionChange": 3.1891,
+      "warning": "Changes in pair counts and agenda composition may affect annual voting-agreement comparisons."
+    },
+    {
+      "actor": "china",
+      "yearly": [
+        {
+          "year": 2021,
+          "actorEligibleResolutions": 74,
+          "matchedPairs": 10723,
+          "pairsPerEligibleResolution": 144.9054,
+          "agreementPairs": 7358
+        },
+        {
+          "year": 2022,
+          "actorEligibleResolutions": 76,
+          "matchedPairs": 10930,
+          "pairsPerEligibleResolution": 143.8158,
+          "agreementPairs": 7341
+        },
+        {
+          "year": 2023,
+          "actorEligibleResolutions": 74,
+          "matchedPairs": 10757,
+          "pairsPerEligibleResolution": 145.3649,
+          "agreementPairs": 7137
+        },
+        {
+          "year": 2024,
+          "actorEligibleResolutions": 82,
+          "matchedPairs": 12138,
+          "pairsPerEligibleResolution": 148.0244,
+          "agreementPairs": 8256
+        }
+      ],
+      "firstToLastMatchedPairChange": 1415,
+      "firstToLastPairsPerResolutionChange": 3.119,
+      "warning": "Changes in pair counts and agenda composition may affect annual voting-agreement comparisons."
+    },
+    {
+      "actor": "russia",
+      "yearly": [
+        {
+          "year": 2021,
+          "actorEligibleResolutions": 74,
+          "matchedPairs": 10723,
+          "pairsPerEligibleResolution": 144.9054,
+          "agreementPairs": 5906
+        },
+        {
+          "year": 2022,
+          "actorEligibleResolutions": 77,
+          "matchedPairs": 11074,
+          "pairsPerEligibleResolution": 143.8182,
+          "agreementPairs": 6015
+        },
+        {
+          "year": 2023,
+          "actorEligibleResolutions": 75,
+          "matchedPairs": 10892,
+          "pairsPerEligibleResolution": 145.2267,
+          "agreementPairs": 5638
+        },
+        {
+          "year": 2024,
+          "actorEligibleResolutions": 83,
+          "matchedPairs": 12294,
+          "pairsPerEligibleResolution": 148.1205,
+          "agreementPairs": 6667
+        }
+      ],
+      "firstToLastMatchedPairChange": 1571,
+      "firstToLastPairsPerResolutionChange": 3.2151,
+      "warning": "Changes in pair counts and agenda composition may affect annual voting-agreement comparisons."
+    },
+    {
+      "actor": "india",
+      "yearly": [
+        {
+          "year": 2021,
+          "actorEligibleResolutions": 73,
+          "matchedPairs": 10618,
+          "pairsPerEligibleResolution": 145.4521,
+          "agreementPairs": 6799
+        },
+        {
+          "year": 2022,
+          "actorEligibleResolutions": 77,
+          "matchedPairs": 11074,
+          "pairsPerEligibleResolution": 143.8182,
+          "agreementPairs": 7276
+        },
+        {
+          "year": 2023,
+          "actorEligibleResolutions": 74,
+          "matchedPairs": 10802,
+          "pairsPerEligibleResolution": 145.973,
+          "agreementPairs": 6954
+        },
+        {
+          "year": 2024,
+          "actorEligibleResolutions": 83,
+          "matchedPairs": 12294,
+          "pairsPerEligibleResolution": 148.1205,
+          "agreementPairs": 8064
+        }
+      ],
+      "firstToLastMatchedPairChange": 1676,
+      "firstToLastPairsPerResolutionChange": 2.6684,
+      "warning": "Changes in pair counts and agenda composition may affect annual voting-agreement comparisons."
+    },
+    {
+      "actor": "eu",
+      "yearly": [
+        {
+          "year": 2021,
+          "actorEligibleResolutions": 65,
+          "matchedPairs": 9381,
+          "pairsPerEligibleResolution": 144.3231,
+          "agreementPairs": 5245
+        },
+        {
+          "year": 2022,
+          "actorEligibleResolutions": 68,
+          "matchedPairs": 9766,
+          "pairsPerEligibleResolution": 143.6176,
+          "agreementPairs": 5769
+        },
+        {
+          "year": 2023,
+          "actorEligibleResolutions": 66,
+          "matchedPairs": 9541,
+          "pairsPerEligibleResolution": 144.5606,
+          "agreementPairs": 5342
+        },
+        {
+          "year": 2024,
+          "actorEligibleResolutions": 69,
+          "matchedPairs": 10234,
+          "pairsPerEligibleResolution": 148.3188,
+          "agreementPairs": 5768
+        }
+      ],
+      "firstToLastMatchedPairChange": 853,
+      "firstToLastPairsPerResolutionChange": 3.9957,
+      "warning": "Changes in pair counts and agenda composition may affect annual voting-agreement comparisons."
+    }
+  ],
+  "denominatorStabilityAssumed": false,
+  "matchedResolutionPanel": false,
+  "causalTrendAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
