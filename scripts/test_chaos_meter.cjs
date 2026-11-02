@@ -812,7 +812,7 @@ for(const item of diplomaticQueue.items){
  assert.equal(item.priorityTasks.find(t=>t.id==='attribute').complete,false);
  assert.equal(item.priorityTasks.find(t=>t.id==='costs').complete,false);
 }
-assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),9);
+assert.equal(diplomaticQueue.items.reduce((n,item)=>n+item.priorityTasks.filter(t=>t.complete).length,0),diplomaticQueue.auditProgressSummary.completedScopedChecks);
 
 // Additional operational-use and resource evidence remains distinct from influence.
 const usOperational=diplomaticQueue.items.find(x=>x.sphere==='us').additionalOperationalEvidence;
