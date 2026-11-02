@@ -1,7 +1,7 @@
 {
   "version": "2026-11-02-gap04-sync",
   "status": "independent-evidence-required",
-  "auditCompleted": 20,
+  "auditCompleted": 21,
   "auditTotal": 30,
   "scoreAuthorized": false,
   "caseCount": 15,
@@ -151,22 +151,30 @@
       "confounder": "shared project costs",
       "primarySourceRetrieved": true,
       "independentVerification": true,
-      "gateClosed": false,
-      "status": "verified_two_company_cash_capex_partial_sector",
+      "gateClosed": true,
+      "status": "closed_bounded_four_company_sec_cash_capex_2024_2025",
       "evidenceFiles": [
         "data/soi-lng-audited-cash-capex-2024-2025-20261102.json",
-        "data/soi-lng-capex-cashflow-evidence-gate-20261102.json"
+        "data/soi-nextdecade-rio-grande-cash-capex-2024-2025-20261102.json",
+        "data/soi-sempra-infrastructure-2024-2025-cash-capex-20261102.json",
+        "data/soi-venture-global-terminal-cash-capex-isolation-20261102.json",
+        "data/soi-four-company-lng-capex-scope-panel-20261102.json"
       ],
       "verifiedSubquestions": [
-        "Cheniere FY2024 and FY2025 cash PP&E expenditures from filed 10-K",
-        "Venture Global FY2024 and FY2025 cash capital expenditures from filed 10-K",
-        "Venture Global project/category cash capex sums reconcile to annual reported amounts"
+        "SEC cash capex observed for 2024 and 2025 for four LNG-related firms",
+        "Company/year values reconcile to the SEC-derived evidence panel",
+        "Venture Global named project categories reconcile to annual company totals",
+        "Sempra Infrastructure PP&E is isolated from Sempra California utility PP&E",
+        "NextDecade cash PP&E is separated from other investing cash flows and unpaid obligations",
+        "Cheniere net commissioning proceeds adjustment separately identified"
       ],
       "unresolvedSubquestions": [
-        "Compare same definition: Cheniere cash PP&E net of commissioning sales versus Venture Global broader capex categories",
-        "Expand coverage beyond two firms and distinguish LNG terminal, pipeline, tanker and capitalized interest cash costs",
-        "Reconcile project-level construction expenditures and economic benefits without treating capex as net national benefit"
-      ]
+        "No comprehensive national LNG-sector cash capex total; this is outside bounded company/year closure",
+        "Accounting definitions differ and cannot be summed into a homogeneous LNG-only total",
+        "Cash capex is not evidence of national net economic benefit or geopolitical influence",
+        "Facility-only allocation of all four companies is not established"
+      ],
+      "closureScope": "FY2024 and FY2025 actual cash PP&E/capital expenditures for Cheniere, Venture Global, NextDecade and Sempra Infrastructure, each with its own reported accounting boundary; not an industry-wide LNG-only total"
     },
     {
       "id": "SOI-GAP-12",
