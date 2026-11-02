@@ -34,13 +34,13 @@ def mock_fetch(url, key):
     assert q["to"] == ["2026-10-31"]
     n = int(q["page"][0])
     return {"last_page": 2, "data": [{"gasDayStart": "2026-10-0" + str(n)}]}
-rows, pages = mod.fetch_all_pages("https://alsi.gie.eu/api?facility=example&to=2026-10-31", "dummy", mock_fetch)
+rows, pages = mod.fetch_all_pages("https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST&from=2026-10-01&to=2026-10-31", "dummy", mock_fetch)
 assert pages == 2 and len(rows) == 2
 def bad_fetch(url, key):
     n = int(parse_qs(urlsplit(url).query)["page"][0])
     return {"last_page": 2 if n == 1 else 3, "data": [1]}
 try:
-    mod.fetch_all_pages("https://alsi.gie.eu/api?facility=example", "dummy", bad_fetch)
+    mod.fetch_all_pages("https://alsi.gie.eu/api?country=NL&company=21X000000001063H&facility=21W-TEST&from=2026-10-01&to=2026-10-31", "dummy", bad_fetch)
 except ValueError:
     pass
 else:
@@ -175,3 +175,19 @@ except ValueError:
 else:
     raise AssertionError("Inconsistent GIE facility URL was accepted")
 print("GIE listed URL identity consistency checks passed")
+
+for injected in ("&page=2", "&size=1", "&from=2025-01-01", "&to=2027-01-01", "&show=listing", "&facility=21W-OTHER"):
+    try:
+        mod.validate_facility_identity(url + injected)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Unapproved facility query parameter accepted: " + injected)
+for injected in ("&page=2", "&size=1", "&show=listing"):
+    try:
+        mod.fetch_all_pages(url + "&from=2026-10-01&to=2026-10-31" + injected, "dummy", mock_fetch)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Unexpected paged ALSI query parameter accepted: " + injected)
+print("ALSI query parameter injection tests passed")
