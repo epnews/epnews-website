@@ -200,6 +200,9 @@ def audit_observation_coverage(rows, from_date, to_date):
     missing_date_field = 0
     outside = []
     statuses = {}
+    confirmed_days = set()
+    estimated_days = set()
+    no_data_days = set()
     for row in rows:
         if not isinstance(row, dict) or not row.get("gasDayStart"):
             missing_date_field += 1
@@ -210,11 +213,22 @@ def audit_observation_coverage(rows, from_date, to_date):
             outside.append(day.isoformat())
         status = str(row.get("status", "missing"))
         statuses[status] = statuses.get(status, 0) + 1
+        if start <= day <= end:
+            if status == "C":
+                confirmed_days.add(day.isoformat())
+            elif status == "E":
+                estimated_days.add(day.isoformat())
+            elif status == "N":
+                no_data_days.add(day.isoformat())
     expected = [(start + timedelta(days=n)).isoformat() for n in range((end - start).days + 1)]
     observed_in_window = set(counts).intersection(expected)
     return {"expected_gas_days": len(expected), "observed_unique_gas_days": len(counts),
             "observed_in_window_gas_days": len(observed_in_window),
             "daily_coverage_percent": round(100 * len(observed_in_window) / len(expected), 2) if expected else 0,
+            "confirmed_gas_days": len(confirmed_days),
+            "estimated_gas_days": len(estimated_days),
+            "no_data_gas_days": len(no_data_days),
+            "confirmed_coverage_percent": round(100 * len(confirmed_days) / len(expected), 2) if expected else 0,
             "missing_gas_days": [day for day in expected if day not in counts],
             "duplicate_gas_days": {day: n for day, n in counts.items() if n > 1},
             "out_of_window_gas_days": sorted(set(outside)),
