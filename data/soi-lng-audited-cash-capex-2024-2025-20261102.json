@@ -1,0 +1,109 @@
+{
+  "version": "2026-11-02",
+  "targetGap": "SOI-GAP-11",
+  "currency": "USD millions",
+  "fiscalYears": [
+    2024,
+    2025
+  ],
+  "sourceDocuments": [
+    {
+      "company": "Cheniere Energy Inc",
+      "url": "https://www.cheniere.com/_assets/_319e88ea7f1e5df8686f292550871345/chenierecom/db/3793/35484/file/CEI_2025_Form_10K_%28AR_-_no_hyperlinks%29.pdf",
+      "filing": "FY2025 Form 10-K, consolidated statement of cash flows",
+      "cashCapex": [
+        {
+          "year": 2024,
+          "amount": 2238
+        },
+        {
+          "year": 2025,
+          "amount": 3078
+        }
+      ],
+      "cashFlowLabel": "Property, plant and equipment, net of proceeds from commissioning sales of LNG",
+      "note": "2025 net of $174m commissioning sales proceeds; not gross capex and not facility-only. Do not directly sum with subsidiary."
+    },
+    {
+      "company": "Venture Global Inc",
+      "url": "https://www.sec.gov/Archives/edgar/data/2007855/000200785526000013/vg-20251231.htm",
+      "filing": "FY2025 Form 10-K, cash used for capital expenditures by project",
+      "cashCapex": [
+        {
+          "year": 2024,
+          "amount": 13717
+        },
+        {
+          "year": 2025,
+          "amount": 13365
+        }
+      ],
+      "projects": [
+        {
+          "name": "Plaquemines",
+          "y2024": 9414,
+          "y2025": 5503
+        },
+        {
+          "name": "CP2",
+          "y2024": 2334,
+          "y2025": 5256
+        },
+        {
+          "name": "Pipeline projects",
+          "y2024": 509,
+          "y2025": 933
+        },
+        {
+          "name": "LNG tankers",
+          "y2024": 403,
+          "y2025": 754
+        },
+        {
+          "name": "Calcasieu",
+          "y2024": 37,
+          "y2025": 65
+        },
+        {
+          "name": "Capitalized interest",
+          "y2024": 668,
+          "y2025": 558
+        },
+        {
+          "name": "Other",
+          "y2024": 352,
+          "y2025": 296
+        }
+      ],
+      "note": "Company cash capex includes pipelines, LNG tankers, capitalized interest and other; not exclusively export-terminal construction."
+    }
+  ],
+  "companyCoverage": "Two-company sample, not all US LNG exporters",
+  "reconciliation": {
+    "ventureGlobal2024": 13717,
+    "ventureGlobal2025": 13365,
+    "cheniere2024": 2238,
+    "cheniere2025": 3078,
+    "projectSumsMustMatch": true
+  },
+  "gateAssessment": {
+    "actualCashCapexRetrieved": true,
+    "primaryFilingsVerified": true,
+    "companyYearCashSpendingVerified": true,
+    "projectAttributionPartiallyVerified": true,
+    "sectorComplete": false,
+    "gateClosed": false,
+    "reason": "Verified company cash spending, but full facility-only comparable capex, sector coverage and cross-source corroboration remain."
+  },
+  "limitations": [
+    "Cash capex is a cost, not proof of geopolitical influence or domestic economic net benefit.",
+    "Cheniere reported line is net of 2025 commissioning LNG sales proceeds, while Venture Global reports cash paid for capex.",
+    "Venture Global project categories include ships, pipelines, capitalized interest and other items.",
+    "No sum presented as US industry capex; no duplication of parent/subsidiary accounts.",
+    "No company-specific destination or LNG cargo attribution.",
+    "FY2024 and FY2025 fiscal year ending Dec 31."
+  ],
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
