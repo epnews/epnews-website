@@ -1,0 +1,75 @@
+{
+  "schema": "soi-paris-nato-official-legal-milestones-v1",
+  "asOf": "2026-11-02",
+  "cases": [
+    {
+      "id": "2020-us-paris-exit",
+      "date": "2020-11-04",
+      "event": "First US Paris Agreement withdrawal effective",
+      "roles": {
+        "us": "withdrawing-party",
+        "eu": "context-not-withdrawing-party"
+      },
+      "source": "https://treaties.un.org/Pages/showDetails.aspx?objid=0800000280458f37",
+      "scope": "UN treaty depositary effective legal status"
+    },
+    {
+      "id": "2021-us-paris-reentry",
+      "date": "2021-02-19",
+      "event": "US Paris Agreement reentry effective",
+      "roles": {
+        "us": "rejoining-party",
+        "eu": "context-not-rejoining-party"
+      },
+      "source": "https://www.un.org/sg/en/content/sg/notes-correspondents/2021-01-20/note-correspondents-the-united-states-return-the-paris-agreement",
+      "scope": "UN Secretary-General notification and effective date"
+    },
+    {
+      "id": "2026-us-paris-second-exit",
+      "date": "2026-01-27",
+      "event": "Second US Paris Agreement withdrawal effective",
+      "roles": {
+        "us": "withdrawing-party",
+        "eu": "context-not-withdrawing-party"
+      },
+      "source": "https://unfccc.int/node/61231",
+      "scope": "UNFCCC official country status, distinct from parent UNFCCC treaty"
+    },
+    {
+      "id": "2023-finland-nato",
+      "date": "2023-04-04",
+      "event": "Finland became NATO member",
+      "roles": {
+        "us": "existing-nato-ally-not-accession-subject",
+        "eu": "not-nato-institution",
+        "russia": "context-not-accession-party"
+      },
+      "source": "https://www.nato.int/cps/en/natohq/news_213448.htm",
+      "scope": "NATO official accession date and institutional membership"
+    },
+    {
+      "id": "2024-sweden-nato",
+      "date": "2024-03-07",
+      "event": "Sweden became NATO member",
+      "roles": {
+        "us": "existing-nato-ally-not-accession-subject",
+        "eu": "not-nato-institution",
+        "russia": "context-not-accession-party"
+      },
+      "source": "https://www.nato.int/cps/en/natohq/news_223446.htm",
+      "scope": "NATO official accession date and institutional membership"
+    }
+  ],
+  "verifiedLegalMilestones": 5,
+  "verifiedDiplomaticInfluenceScores": 0,
+  "attributionGateClosed": 0,
+  "costGateClosed": 0,
+  "scoringAuthorized": false,
+  "needleAuthorized": false,
+  "limitations": [
+    "Official accession and treaty-status milestones do not measure diplomatic leverage, costs or independent counterfactual outcomes.",
+    "The US as a NATO member is not the subject of Finnish or Swedish accession; EU institutional diplomacy is distinct from NATO membership.",
+    "The Paris Agreement and parent UNFCCC treaty have separate legal status and withdrawal clocks.",
+    "Existing context roles may remain appropriate as context; this dataset documents narrower legally established roles."
+  ]
+}
