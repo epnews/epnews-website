@@ -1,0 +1,56 @@
+name: SOI research guarded auto-merge
+on:
+  workflow_run:
+    workflows:
+      - EP News command meter
+      - EP News publishing gate
+      - EP News article smoke test
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+jobs:
+  merge-research:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge only approved-scope research PRs with three successful workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, subprocess
+          repo=os.environ['GH_REPO']
+          def gh(*args):
+              return subprocess.check_output(['gh','api',*args],text=True)
+          prs=json.loads(gh(f'repos/{repo}/pulls?state=open&per_page=100'))
+          required={'EP News command meter','EP News publishing gate','EP News article smoke test'}
+          for pr in prs:
+              branch=pr['head']['ref']
+              if not branch.startswith('research/soi-') or pr['head']['repo']['full_name']!=repo or pr['base']['ref']!='main' or pr['draft']:
+                  continue
+              files=json.loads(gh(f'repos/{repo}/pulls/{pr["number"]}/files?per_page=100'))
+              if len(files)>=100 or not files or any(not f['filename'].startswith(('data/soi-','docs/soi-','scripts/audit_soi_','scripts/test_soi_')) for f in files):
+                  continue
+              sha=pr['head']['sha']
+              runs=json.loads(gh(f'repos/{repo}/actions/runs?head_sha={sha}&per_page=100'))['workflow_runs']
+              statuses={name:[r for r in runs if r['name']==name and r['head_sha']==sha and r['event']=='pull_request'] for name in required}
+              if not all(statuses[name] and any(r['status']=='completed' and r['conclusion']=='success' for r in statuses[name]) and not any(r['status']!='completed' or r['conclusion']!='success' for r in statuses[name]) for name in required):
+                  print(f'PR #{pr["number"]}: waiting for all required green checks')
+                  continue
+              fresh=json.loads(gh(f'repos/{repo}/pulls/{pr["number"]}'))
+              if fresh['head']['sha']!=sha or fresh['draft'] or fresh['state']!='open':
+                  continue
+              print(f'Merging research-only PR #{pr["number"]} at {sha}')
+              result=json.loads(subprocess.check_output(['gh','api','--method','PUT',f'repos/{repo}/pulls/{pr["number"]}/merge','-f','merge_method=squash','-f',f'sha={sha}'],text=True))
+              if not result.get('merged'):
+                  raise RuntimeError(f'Merge not confirmed for PR #{pr["number"]}')
+              verify=json.loads(gh(f'repos/{repo}/pulls/{pr["number"]}'))
+              if not verify.get('merged'):
+                  raise RuntimeError(f'Post-merge verification failed for PR #{pr["number"]}')
+              print(f'Confirmed merged PR #{pr["number"]}: {result.get("sha")}')
+          PY
