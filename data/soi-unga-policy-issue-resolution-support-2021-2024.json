@@ -1,0 +1,557 @@
+{
+  "schema": "soi-unga-policy-issue-resolution-support-v1",
+  "sourceCsvSha256": "3d31e9835d5561df124772c573563202f64aa5c00ea7b7830b90c680305c40cd",
+  "policyCodes": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110",
+    "111",
+    "112",
+    "113",
+    "114",
+    "115",
+    "116",
+    "117",
+    "118",
+    "119",
+    "120",
+    "121",
+    "122",
+    "123",
+    "124",
+    "127",
+    "128",
+    "129",
+    "130",
+    "131",
+    "134"
+  ],
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "yearly": {
+    "2021": {
+      "total": 86,
+      "withIssue": 83,
+      "withoutIssue": 3,
+      "codes": {
+        "101": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.033333
+        },
+        "102": {
+          "distinctResolutions": 9,
+          "fractionalResolutionWeight": 3.533333
+        },
+        "103": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.45
+        },
+        "104": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "105": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 2.283333
+        },
+        "106": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.333333
+        },
+        "107": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.7
+        },
+        "108": {
+          "distinctResolutions": 9,
+          "fractionalResolutionWeight": 5.166667
+        },
+        "109": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1
+        },
+        "110": {
+          "distinctResolutions": 10,
+          "fractionalResolutionWeight": 4.25
+        },
+        "111": {
+          "distinctResolutions": 12,
+          "fractionalResolutionWeight": 7.333333
+        },
+        "112": {
+          "distinctResolutions": 18,
+          "fractionalResolutionWeight": 11.833333
+        },
+        "113": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "114": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.333333
+        },
+        "115": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.25
+        },
+        "116": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "117": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "118": {
+          "distinctResolutions": 8,
+          "fractionalResolutionWeight": 4.166667
+        },
+        "119": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 2.666667
+        },
+        "120": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.583333
+        },
+        "121": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.833333
+        },
+        "122": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.75
+        },
+        "123": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "124": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.75
+        },
+        "127": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "128": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.5
+        },
+        "129": {
+          "distinctResolutions": 32,
+          "fractionalResolutionWeight": 27
+        },
+        "130": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "131": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.25
+        },
+        "134": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        }
+      }
+    },
+    "2022": {
+      "total": 89,
+      "withIssue": 84,
+      "withoutIssue": 5,
+      "codes": {
+        "101": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 0.958333
+        },
+        "102": {
+          "distinctResolutions": 6,
+          "fractionalResolutionWeight": 2.583333
+        },
+        "103": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.25
+        },
+        "104": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.333333
+        },
+        "105": {
+          "distinctResolutions": 6,
+          "fractionalResolutionWeight": 2.25
+        },
+        "106": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 1.666667
+        },
+        "107": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "108": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.333333
+        },
+        "109": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "110": {
+          "distinctResolutions": 15,
+          "fractionalResolutionWeight": 6.375
+        },
+        "111": {
+          "distinctResolutions": 14,
+          "fractionalResolutionWeight": 8.75
+        },
+        "112": {
+          "distinctResolutions": 17,
+          "fractionalResolutionWeight": 10.041667
+        },
+        "113": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.625
+        },
+        "114": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "115": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.25
+        },
+        "116": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.833333
+        },
+        "117": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "118": {
+          "distinctResolutions": 10,
+          "fractionalResolutionWeight": 5.083333
+        },
+        "119": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 2.291667
+        },
+        "120": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 1.708333
+        },
+        "121": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.75
+        },
+        "122": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.5
+        },
+        "123": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.666667
+        },
+        "124": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.75
+        },
+        "127": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 1
+        },
+        "128": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.5
+        },
+        "129": {
+          "distinctResolutions": 33,
+          "fractionalResolutionWeight": 27.5
+        },
+        "130": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.625
+        },
+        "131": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.875
+        },
+        "134": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        }
+      }
+    },
+    "2023": {
+      "total": 88,
+      "withIssue": 84,
+      "withoutIssue": 4,
+      "codes": {
+        "101": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.583333
+        },
+        "102": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 2.333333
+        },
+        "103": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "104": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "105": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.166667
+        },
+        "106": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 1.833333
+        },
+        "107": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 1
+        },
+        "108": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.833333
+        },
+        "109": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 1
+        },
+        "110": {
+          "distinctResolutions": 16,
+          "fractionalResolutionWeight": 7.75
+        },
+        "111": {
+          "distinctResolutions": 13,
+          "fractionalResolutionWeight": 6.666667
+        },
+        "112": {
+          "distinctResolutions": 16,
+          "fractionalResolutionWeight": 10
+        },
+        "113": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "114": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 1.5
+        },
+        "115": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.25
+        },
+        "116": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.833333
+        },
+        "117": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.333333
+        },
+        "118": {
+          "distinctResolutions": 8,
+          "fractionalResolutionWeight": 4.166667
+        },
+        "119": {
+          "distinctResolutions": 7,
+          "fractionalResolutionWeight": 4.5
+        },
+        "120": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 1.583333
+        },
+        "121": {
+          "distinctResolutions": 6,
+          "fractionalResolutionWeight": 2.166667
+        },
+        "122": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 2
+        },
+        "123": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "124": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.75
+        },
+        "127": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 1
+        },
+        "128": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.5
+        },
+        "129": {
+          "distinctResolutions": 32,
+          "fractionalResolutionWeight": 27.5
+        },
+        "130": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 1
+        },
+        "131": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.25
+        },
+        "134": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        }
+      }
+    },
+    "2024": {
+      "total": 95,
+      "withIssue": 88,
+      "withoutIssue": 7,
+      "codes": {
+        "101": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 0.833333
+        },
+        "102": {
+          "distinctResolutions": 7,
+          "fractionalResolutionWeight": 3.25
+        },
+        "103": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.75
+        },
+        "104": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.333333
+        },
+        "105": {
+          "distinctResolutions": 5,
+          "fractionalResolutionWeight": 1.916667
+        },
+        "106": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.333333
+        },
+        "107": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "108": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "109": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "110": {
+          "distinctResolutions": 11,
+          "fractionalResolutionWeight": 5.033333
+        },
+        "111": {
+          "distinctResolutions": 16,
+          "fractionalResolutionWeight": 8.95
+        },
+        "112": {
+          "distinctResolutions": 19,
+          "fractionalResolutionWeight": 11.366667
+        },
+        "113": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "114": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "115": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.25
+        },
+        "116": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.833333
+        },
+        "117": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "118": {
+          "distinctResolutions": 11,
+          "fractionalResolutionWeight": 5.5
+        },
+        "119": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 2.166667
+        },
+        "120": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.45
+        },
+        "121": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 1.283333
+        },
+        "122": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.75
+        },
+        "123": {
+          "distinctResolutions": 0,
+          "fractionalResolutionWeight": 0
+        },
+        "124": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.25
+        },
+        "127": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        },
+        "128": {
+          "distinctResolutions": 4,
+          "fractionalResolutionWeight": 2
+        },
+        "129": {
+          "distinctResolutions": 38,
+          "fractionalResolutionWeight": 32.5
+        },
+        "130": {
+          "distinctResolutions": 3,
+          "fractionalResolutionWeight": 1.5
+        },
+        "131": {
+          "distinctResolutions": 2,
+          "fractionalResolutionWeight": 0.75
+        },
+        "134": {
+          "distinctResolutions": 1,
+          "fractionalResolutionWeight": 0.5
+        }
+      }
+    }
+  },
+  "minimumDistinctResolutionsPerActorYear": 5,
+  "thresholdStatus": "EXPLORATORY_NOT_PRE_REGISTERED",
+  "adjustedScoresAuthorized": false,
+  "influenceScoreAuthorized": false,
+  "canActivateInfluenceNeedle": false
+}
