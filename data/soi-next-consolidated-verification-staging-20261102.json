@@ -206,5 +206,69 @@
     "gatePromotion": false,
     "influenceScores": null
   },
-  "note": "17 staged entries, including derived and overlapping measures; PR must explicitly flag nonindependent records and not imply 17 independent outcomes."
+  "note": "17 staged entries, including derived and overlapping measures; PR must explicitly flag nonindependent records and not imply 17 independent outcomes.",
+  "crossBatchLinkages": [
+    {
+      "child": "EU-ERA-2025-FINAL-DISBURSEMENT",
+      "parent": "EU-ERA-2025-LOANS-PAID",
+      "relation": "supersedes"
+    },
+    {
+      "child": "US-DFC-ENERGY-REPORTING-YEAR-CORRECTION",
+      "parent": "US-DFC-2025-ENERGY-OUTPUT",
+      "relation": "corrects-period"
+    },
+    {
+      "child": "US-DFC-TRANSMISSION-REPORTING-YEAR-CORRECTION",
+      "parent": "US-DFC-2025-GRID-CONSTRUCTION",
+      "relation": "period-unconfirmed"
+    },
+    {
+      "child": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT-SOURCE-DEPENDENCE",
+      "parent": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT",
+      "relation": "shared-operator-source"
+    },
+    {
+      "child": "EU-ERA-2025-COMBINED-G7-PAID",
+      "parent": "EU-ERA-2025-FINAL-DISBURSEMENT",
+      "relation": "derived-sum"
+    },
+    {
+      "child": "CHINA-WHOOSH-THREE-YEAR-RIDERS",
+      "parent": "CHINA-INDONESIA-WHOOSH-RIDERS",
+      "relation": "cumulative-overlap"
+    },
+    {
+      "child": "CHINA-WHOOSH-2026-PARTIAL-YEAR-RIDERS",
+      "parent": "CHINA-WHOOSH-THREE-YEAR-RIDERS",
+      "relation": "subset-period"
+    },
+    {
+      "child": "CHINA-WHOOSH-FOREIGN-RIDERS-CUMULATIVE",
+      "parent": "CHINA-WHOOSH-THREE-YEAR-RIDERS",
+      "relation": "subset-passengers"
+    },
+    {
+      "child": "US-DFC-2024-ENERGY-JOBS-WOMEN-SHARE",
+      "parent": "US-DFC-2024-ENERGY-JOBS-SUPPORTED",
+      "relation": "composition-not-additive"
+    },
+    {
+      "child": "EU-UKRAINE-FACILITY-2025-NOVEMBER",
+      "parent": "EU-ERA-2025-FINAL-DISBURSEMENT",
+      "relation": "separate-program"
+    },
+    {
+      "child": "EU-ERA-OTHER-G7-2025-PAID",
+      "parent": "EU-ERA-2025-FINAL-DISBURSEMENT",
+      "relation": "separate-donors"
+    },
+    {
+      "child": "CHINA-WHOOSH-DAILY-TRAIN-TRIPS-2026",
+      "parent": "CHINA-WHOOSH-THREE-YEAR-RIDERS",
+      "relation": "supply-vs-ridership"
+    }
+  ],
+  "nonAdditiveMetrics": true,
+  "stagingOnly": true
 }
