@@ -1,0 +1,86 @@
+{
+  "version": "2026-11-02",
+  "gap": "SOI-GAP-12",
+  "officialWorkflowRun": {
+    "runId": 41390176956,
+    "runUrl": "https://github.com/epnews/epnews-website/actions/runs/41390176956",
+    "branch": "main",
+    "commit": "311ca9022954861cc21968d6d007e11f2543a7de",
+    "job": "verify-national-hicp",
+    "conclusion": "success",
+    "stepsPassed": [
+      "Verify synthetic JSON-stat parser",
+      "Fetch official national HICP and calculate real energy-price changes",
+      "Validate all national index observations and calculated changes",
+      "Preserve Eurostat national observations and calculated comparisons"
+    ]
+  },
+  "artifact": {
+    "id": 13116843168,
+    "url": "https://github.com/epnews/epnews-website/actions/runs/41390176956/artifacts/13116843168",
+    "name": "soi-eurostat-national-hicp-real-energy-2025s2-2026s1",
+    "sha256": "c84eb9bf7cb87b0f004503f9902713e8f1a52dde95bd6efe750337e52e74feaf",
+    "expiresAt": "2026-12-02T04:45:13Z"
+  },
+  "coverage": {
+    "countries": [
+      "BE",
+      "BG",
+      "DE",
+      "HR",
+      "HU",
+      "IE",
+      "MT",
+      "NL",
+      "RO",
+      "SE"
+    ],
+    "monthlyIndexObservations": 120,
+    "priceComparisons": 11,
+    "periodStart": "2025-07",
+    "periodEnd": "2026-06"
+  },
+  "selectedComputedRealPercent": [
+    {
+      "geo": "DE",
+      "commodity": "electricity",
+      "value": -7.638
+    },
+    {
+      "geo": "IE",
+      "commodity": "electricity",
+      "value": -5.732
+    },
+    {
+      "geo": "BE",
+      "commodity": "electricity",
+      "value": 0.21
+    },
+    {
+      "geo": "NL",
+      "commodity": "natural gas",
+      "value": -6.436
+    },
+    {
+      "geo": "HR",
+      "commodity": "natural gas",
+      "value": -9.111
+    },
+    {
+      "geo": "SE",
+      "commodity": "natural gas",
+      "value": 4.982
+    }
+  ],
+  "evidenceStatus": "Eurostat HICP retrieval and computation passed workflow; upstream nominal national energy price observations require independent cross-check against official releases before full source-level verification",
+  "limitations": [
+    "Percent changes are all-items national-HICP deflated nominal energy price changes, not energy-specific deflation or household spending.",
+    "Artifact retention is 30 days; ingest durable source evidence before expiry.",
+    "No evidence of geopolitical causality or national economic benefit.",
+    "Do not promote audit score from computation alone."
+  ],
+  "gapClosed": false,
+  "auditCompleted": 20,
+  "auditTotal": 30,
+  "scoreAuthorized": false
+}
