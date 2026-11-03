@@ -442,8 +442,14 @@ assert.match(html, /chaos-dashboard\.js\?v=[A-Za-z0-9._-]+/, 'diplomatic meter s
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
 assert.equal(data.actors.us.Diplomatic.number,1);
-assert.equal(data.actors.eu.Strategic.metric,'defence-spending-change-pct');
-assert.equal(data.actors.eu.Strategic.number,20);
+assert.equal(data.actors.eu.Strategic.metric,'sipri-real-change-2025');
+assert.equal(data.actors.eu.Strategic.period,'2024 → 2025');
+assert.ok(Math.abs(data.actors.eu.Strategic.number-(100*(430385.9250941504/360219.1214858137-1)))<1e-9,'EU27 must equal same-vintage constant-price aggregate growth');
+assert.ok(data.actors.eu.Strategic.sources.includes('sipri'));
+assert.ok(data.actors.eu.Strategic.sources.includes('eda'),'Retain independent EDA context');
+assert.ok(data.actors.eu.Strategic.meaning.includes('27 EU member countries'));
+assert.equal(data.actors.eu.Strategic.score,null,'Spending input must not become an influence score');
+assert.ok(Math.abs(data.actors.eu.Strategic.number-19.47892252885306)<1e-10,'Use audited SIPRI real change rather than obsolete EDA growth');
 assert.equal(data.actors.china['Energy and resources'].metric,'china-crude-import-qoq-pct');
 assert.equal(data.actors.russia['Energy and resources'].metric,'russia-fossil-export-revenue-eur-mn-day');
 assert.equal(data.actors.us.Diplomatic.score??null,null);

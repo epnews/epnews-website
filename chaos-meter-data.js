@@ -4997,20 +4997,21 @@ window.EP_CHAOS_DATA = {
         "score": null
       },
       "Strategic": {
-        "title": "EU-27 defence expenditure",
-        "value": "€418B · +20%",
+        "title": "EU-27 real military spending · SIPRI",
+        "value": "$360.22B → $430.39B · +19.48% real",
         "period": "2024 → 2025",
         "stage": "Observed statistic",
         "kind": "Resource input",
         "sources": [
+          "sipri",
           "eda"
         ],
-        "meaning": "EDA reports member-state expenditure, not a unified EU military budget. EU-27 differs from NATO and geographical Europe.",
+        "meaning": "Calculated from 27 EU member countries in SIPRI Military Expenditure Database v1.2, constant 2024 US dollars, 2024 $360.219B and 2025 $430.386B. Same-country sum gives +19.4789% real. Source workbook SHA-256: 6cc3a30b1064f9f02e60236667eef82e08cad2c398a9d. EDA separately reports €418B and +20% under a different definition; it is retained as context, not merged with SIPRI. EU-27 is a multi-country aggregate, unlike national actors.",
         "costs": "Member-state taxpayers fund expenditure. Procurement does not establish delivered operational capability.",
-        "gap": "2026 €454B is a projection and is excluded. EDA and SIPRI definitions differ; no direct spending-growth ranking.",
+        "gap": "SIPRI military spending is a resource input, not capability or geopolitical influence. EU-27 combines member states; EDA 2026 €454B is a projection and excluded. Source methodology and definitions differ.",
         "confidence": "Moderate",
-        "metric": "defence-spending-change-pct",
-        "number": 20,
+        "metric": "sipri-real-change-2025",
+        "number": 19.47892252885306,
         "score": null
       },
       "Diplomatic": {
