@@ -20,6 +20,36 @@ function init(){
   if(a.value===b.value){visual.append(el('p','Choose two different spheres to compare.'));return;}
   visual.append(el('h4',names[a.value]+' vs '+names[b.value]));
   const requested=dim.value;
+  if(requested==='All dimensions'){
+   const actors=window.EP_CHAOS_DATA&&window.EP_CHAOS_DATA.actors;
+   const left=actors&&actors[a.value],right=actors&&actors[b.value];
+   if(!left||!right){visual.append(el('p','Comparable observations are unavailable. Open the detailed evidence table below.'));return;}
+   visual.append(el('p','Matched observations for the selected spheres. Each row uses its own units and year; differences are descriptive, not a combined power score.'));
+   const table=el('table');const head=el('thead');const header=el('tr');
+   for(const label of ['Measure',names[a.value],names[b.value],'Difference (A − B)'])header.append(el('th',label));head.append(header);table.append(head);
+   const body=el('tbody');
+   const measures=[
+    {label:'Economic · 2025 real GDP growth',key:'Economic',metric:'gdp-growth-2025',unit:'%',diff:'pp'},
+    {label:'Strategic · 2025 real military spending change',key:'Strategic',metric:'sipri-real-change-2025',unit:'%',diff:'pp'}
+   ];
+   for(const m of measures){
+    const x=left[m.key],y=right[m.key],matched=x&&y&&x.metric===m.metric&&y.metric===m.metric&&Number.isFinite(x.number)&&Number.isFinite(y.number);
+    const row=el('tr');row.append(el('th',m.label));
+    row.append(el('td',matched?x.number.toFixed(2)+m.unit:'Not comparable'));
+    row.append(el('td',matched?y.number.toFixed(2)+m.unit:'Not comparable'));
+    row.append(el('td',matched?pp(x.number-y.number):'—'));body.append(row);
+   }
+   const energy={us:-9.78127421443322,china:24.0191966181448,russia:-70.7306703064017,india:36.0305276064275,eu:61.51735784436232};
+   const eA=energy[a.value],eB=energy[b.value];
+   const row=el('tr');row.append(el('th','Energy · 2024 net energy imports (% of use)'));
+   row.append(el('td',eA.toFixed(2)+'%'+(a.value==='eu'?' (modeled)':'')));
+   row.append(el('td',eB.toFixed(2)+'%'+(b.value==='eu'?' (modeled)':'')));
+   row.append(el('td',pp(eA-eB)));body.append(row);table.append(body);
+   const wrap=el('div',undefined,'chaos-table-scroll');wrap.append(table);visual.append(wrap);
+   visual.append(el('p','Energy: negative = net exporter; positive = net importer. EU-27 is an EP News calibrated estimate, not an official 2024 IEA observation. The other four are IEA-sourced World Bank figures.'));
+   visual.append(el('p','Economic and strategic observations are matched 2025 indicators from the existing meter evidence; growth rates and military spending changes are not equivalent to geopolitical influence. The separate Energy and resources selection provides source links and full provenance.'));
+   return;
+  }
   if(requested==='Energy and resources'){
    const rows={
     us:{value:-9.78127421443322,code:'USA',status:'Official IEA-sourced WDI'},
