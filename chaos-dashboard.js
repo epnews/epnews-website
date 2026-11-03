@@ -2,10 +2,10 @@
 (()=>{'use strict';
 const spheres=[
  {id:'us',name:'United States',note:'American economic and strategic influence; allied gains are assessed separately where interests diverge.'},
- {id:'china',name:'China',note:'Trade, manufacturing, strategic minerals, infrastructure and diplomatic leverage.'},
- {id:'russia',name:'Russia',note:'Energy, security partnerships and diplomatic influence.'},
+ {id:'china',name:'China',note:'Trade, manufacturing, strategic minerals and infrastructure.'},
+ {id:'russia',name:'Russia',note:'Energy, security partnerships and strategic positioning.'},
  {id:'eu',name:'European Union',note:'EU trade, regulation, economic integration and diplomacy; the broader European security sphere includes non-EU states.'},
- {id:'india',name:'India',note:'Independent Indian economic, technological, diplomatic and strategic influence.'}
+ {id:'india',name:'India',note:'Independent Indian economic, technological and strategic positioning.'}
 ];
 function init(){
 const root=document.getElementById('chaos-dashboard');if(!root)return;
@@ -99,7 +99,7 @@ if(explorationDrawer.children.length>1){
  const archive=root.querySelector('.chaos-research-archive');
  if(archive)root.insertBefore(explorationDrawer,archive);else root.append(explorationDrawer);
 }
-const dimensions=data.dimensions.filter(d=>d!=='Diplomatic'),cards=root.querySelector('#chaos-indicator-cards');
+const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
 function sourceLinks(parent,ids){
  const line=element('p',undefined,'chaos-source-links');
  for(const id of ids){const src=data.sources[id];const a=element('a',src.label+' ↗');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a,element('small','Source date: '+src.date));}
@@ -124,7 +124,7 @@ fetch('data/soi-international-alignment-original-archive-reproduction-20261102.j
  for(const sphere of spheres)window.EPInternationalAlignment.build(d,sphere.id);
  internationalAlignment=d;
  const actor=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');
- if(actor&&dim&&actor.value&&(dim.value==='Diplomatic'||dim.value==='Overall change'))renderCards(actor.value,dim.value);
+ if(actor&&dim&&actor.value&&(dim.value==='Overall change'))renderCards(actor.value,dim.value);
 }).catch(()=>{});
 
 const voteActor={us:'USA',china:'CHN',russia:'RUS',india:'IND'};
@@ -324,7 +324,7 @@ function update(){
  // Restore indicator movement only for genuine numeric, signed percentage-point observations.
  // This is NOT the reviewed geopolitical influence scale.
  const supportedUnits={'gdp-growth-2025':{label:'Real GDP growth (%)',range:10},'sipri-real-change-2025':{label:'Real military spending change (%)',range:10},'lng-export-share-pp':{label:'LNG export-share change (percentage points)',range:10},'nato-membership-change':{label:'NATO member-country change',range:5},'defence-spending-change-pct':{label:'EU defence spending change (%)',range:25},'eu-russian-gas-import-share-pp':{label:'Russian share of EU gas imports (percentage-point change)',range:50},'india-crude-import-dependence-pp':{label:'India crude oil import dependence (percentage-point change)',range:5},'eu-nz-bilateral-trade-growth-pct':{label:'EU–NZ nominal bilateral trade growth (%)',range:25},'china-crude-import-qoq-pct':{label:'China crude import change Q1 to Q2 2026 (%)',range:50},'russia-fossil-export-revenue-eur-mn-day':{label:'Estimated Russian fossil export sales (EUR million/day)',range:1000},'china-mediated-embassies-reopened-count':{label:'Saudi and Iranian embassies reopened (count)',range:2},'russia-dprk-treaties-in-force-count':{label:'Russia–DPRK treaty in force (count)',range:1},'india-efta-tariff-lines-covered-pct':{label:'EFTA tariff lines covered by TEPA commitments (%)',range:100}};
- const indicator=dim!=='Diplomatic'&&selectedScore===null&&observation&&Object.prototype.hasOwnProperty.call(supportedUnits,observation.metric)&&Number.isFinite(observation.number)?observation:null;
+ const indicator=selectedScore===null&&observation&&Object.prototype.hasOwnProperty.call(supportedUnits,observation.metric)&&Number.isFinite(observation.number)?observation:null;
  const indicatorValue=indicator?indicator.number:null;
  const indicatorUnit=indicator?supportedUnits[indicator.metric].label:null;
  const indicatorRange=indicator?supportedUnits[indicator.metric].range:null;
@@ -343,12 +343,9 @@ function update(){
  conf.textContent=selectedScore!==null?(dim==='Overall change'?'OVERALL':'DIMENSION')+' · REVIEWED INFLUENCE CHANGE':provisional!==null?'PROVISIONAL DESCRIPTIVE INDEX · NOT INFLUENCE':indicator?'OBSERVED INDICATOR · NOT INFLUENCE':dim==='Overall change'?'OVERALL INFLUENCE · AWAITING REVIEW':dim.toUpperCase()+' · AWAITING REVIEW';
  if(needle){needle.style.visibility=selectedScore!==null||provisional!==null||indicator?'visible':'hidden';if(selectedScore!==null)needle.style.transform='rotate('+(selectedScore*.9)+'deg)';else if(provisional!==null)needle.style.transform='rotate('+(provisional*.9)+'deg)';else if(indicator)needle.style.transform='rotate('+indicatorAngle+'deg)';}
  if(confidenceArc)confidenceArc.style.strokeDasharray='0 100';
- if(dim==='Diplomatic'){meter.dataset.state='pending';status.textContent='NOT CALIBRATED';conf.textContent='COMMON 2021 BASELINE · FIVE SPHERES';if(needle)needle.style.visibility='hidden';}
 
- if(dim==='Diplomatic'){const note=root.querySelector('#chaos-needle-note');note.textContent='Standard diplomatic index: 2021 baseline; UN voting alignment 25%, implemented agreements 25%, institutional leadership 20%, formal diplomatic relations 15%, implemented mediation 15%. Same rules for all five spheres. No calibrated scores yet; prior isolated indicators remain in the evidence records, not the dial.';}
-  root.querySelector('#chaos-needle-note').textContent=selectedScore!==null?'Reviewed '+(dim==='Overall change'?'overall influence':dim+' influence')+' change: '+selectedScore.toFixed(1)+' on a −100 to +100 scale.':provisional!==null?'Provisional descriptive index: '+provisional.toFixed(1)+' on a −100 to +100 display scale, based on '+provisionalParts.length+'/4 supported observations. Missing: '+(dimensions.filter(key=>!provisionalParts.some(p=>p.key===key)).join(', ')||'none')+'. Existing 30/30/20/20 weights are renormalized across available observations. This is NOT verified geopolitical influence or causal national benefit.':indicator?indicatorUnit+': '+(indicatorValue>0?'+':'')+indicatorValue.toFixed(1)+'. Needle displays this source-backed observation on a fixed −'+indicatorRange+' to +'+indicatorRange+' '+indicatorUnit+' reference window (values outside it are visually capped). It is NOT a geopolitical influence score. '+(indicator.measurementCaveat||''): 'No comparable numeric indicator for this selection; influence remains unscored. Evidence coverage: '+count+' of 3.';
- if(dim==='Diplomatic')root.querySelector('#chaos-needle-note').textContent='Diplomatic index (2021 baseline): alignment 25%; implemented agreements 25%; institutional leadership 20%; formal relations 15%; implemented mediation 15%. Same rules for every sphere. No calibrated scores yet; historical one-off indicators remain in evidence panels only.';
- meter.setAttribute('aria-label',actor.name+', '+dim+': '+(selectedScore!==null?selectedScore.toFixed(1)+' reviewed influence change':provisional!==null?'provisional descriptive index '+provisional.toFixed(1)+' from '+provisionalParts.length+' of 4 observations, not influence':indicator?indicatorUnit+' '+indicatorValue+'; observed indicator, not influence score':'influence not yet scored')+'; '+count+' of 4 evidence categories documented');
+  root.querySelector('#chaos-needle-note').textContent=selectedScore!==null?'Reviewed '+(dim==='Overall change'?'overall influence':dim+' influence')+' change: '+selectedScore.toFixed(1)+' on a −100 to +100 scale.':provisional!==null?'Provisional descriptive index: '+provisional.toFixed(1)+' on a −100 to +100 display scale, based on '+provisionalParts.length+'/3 supported observations. Missing: '+(dimensions.filter(key=>!provisionalParts.some(p=>p.key===key)).join(', ')||'none')+'. Current 37.5/37.5/25 weights are renormalized across available observations. This is NOT verified geopolitical influence or causal national benefit.':indicator?indicatorUnit+': '+(indicatorValue>0?'+':'')+indicatorValue.toFixed(1)+'. Needle displays this source-backed observation on a fixed −'+indicatorRange+' to +'+indicatorRange+' '+indicatorUnit+' reference window (values outside it are visually capped). It is NOT a geopolitical influence score. '+(indicator.measurementCaveat||''): 'No comparable numeric indicator for this selection; influence remains unscored. Evidence coverage: '+count+' of 3.';
+ meter.setAttribute('aria-label',actor.name+', '+dim+': '+(selectedScore!==null?selectedScore.toFixed(1)+' reviewed influence change':provisional!==null?'provisional descriptive index '+provisional.toFixed(1)+' from '+provisionalParts.length+' of 3 observations, not influence':indicator?indicatorUnit+' '+indicatorValue+'; observed indicator, not influence score':'influence not yet scored')+'; '+count+' of 3 evidence categories documented');
  root.querySelector('#chaos-readiness-text').textContent=result.ready+' of 3 dimensions meet the influence scoring gate. '+count+' of 3 categories have cited evidence. Evidence coverage is not influence.';
  let readiness=root.querySelector('#chaos-dimension-readiness');if(!readiness){readiness=document.createElement('div');readiness.id='chaos-dimension-readiness';readiness.setAttribute('aria-live','polite');root.querySelector('#chaos-assessment-readiness').append(readiness);}readiness.replaceChildren();for(const key of dimensions){const record=records[key],score=result.scores[key],line=element('p',key+': '+(score===null?'Not scored — missing: '+model.missingRequirements(record).join('; ')+'.':'Reviewed change '+score.toFixed(1)),'chaos-readiness-dimension');line.style.cssText='font-size:12px;line-height:1.5;margin:7px 0';readiness.append(line);}
  root.querySelector('#chaos-readiness-coverage').textContent='Reviewed '+data.reviewed+' · Sources have their own observation periods. No automatic live-data feed.';
