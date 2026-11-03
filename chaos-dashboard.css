@@ -233,3 +233,9 @@
 .chaos-visual-meter .chaos-needle-hub{fill:#cbd6e6;stroke:#fff;stroke-width:4}
 .chaos-visual-meter .chaos-status-badge{margin:12px auto 0}
 @media(max-width:720px){.chaos-visual-meter{width:100%}.chaos-visual-meter .chaos-status-badge{margin-top:10px}}
+
+/* Public methodology: concise, readable copy on desktop and narrow screens. */
+.chaos-public-methodology>div{max-width:72ch}
+.chaos-public-methodology h4{font-size:clamp(1rem,2.4vw,1.12rem);line-height:1.35;margin:20px 0 6px;color:#f2c579}
+.chaos-public-methodology p{line-height:1.6;margin:0 0 12px;overflow-wrap:break-word}
+@media(max-width:700px){.chaos-public-methodology>div{padding:12px!important}.chaos-public-methodology p{font-size:clamp(14px,3.8vw,16px)!important;line-height:1.55!important}.chaos-public-methodology h4{margin-top:16px}}
