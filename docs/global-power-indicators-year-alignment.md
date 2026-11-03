@@ -19,3 +19,34 @@ The public interface is renamed without changing stored selector values or under
 
 ## Known limitation
 This PR is a **label-only interface milestone plus research audit**. It does not activate an overall composite needle or claim that same-year datasets have been completed.
+
+## Source audit — 2 November 2026
+
+### Energy reporting-year ceiling
+The World Bank WDI indicator `EG.IMP.CONS.ZS` currently reports a **1990–2024** reference period. A complete **2025** panel is therefore **not available from this source**. Do not extrapolate or label 2024 observations as 2025. The WDI European Union aggregate currently displays 2023 as its most recent year; the existing 2024 EU modeled proxy must remain explicitly modeled.
+
+- WDI definition and coverage: https://databank.worldbank.org/metadataglossary/world-development-indicators/series/EG.IMP.CONS.ZS
+- Published country-year coverage: https://data.worldbank.org/indicator/EG.IMP.CONS.ZS
+
+### 2024 SIPRI real military expenditure growth — independently documented country values
+The SIPRI April 2025 fact sheet provides these **2023–2024** changes in real terms. They are source-publication figures, not yet a reconciled current-vintage series; SIPRI replaces prior annual releases when updating its database.
+
+| SOI | 2024 real military expenditure change | Source status |
+| --- | ---: | --- |
+| United States | +5.7% | SIPRI 2024 fact sheet |
+| China | +7.0% | SIPRI estimate |
+| Russia | +38% | SIPRI estimate, rounded |
+| India | +1.6% | SIPRI 2024 fact sheet |
+| EU27 | **Not established here** | Must aggregate the 27 EU member states, excluding non-EU Europe, in constant-price terms and with a consistent source vintage |
+
+- SIPRI 2024 fact sheet: https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024
+- SIPRI database and revision policy: https://www.sipri.org/databases/milex
+
+### Outstanding before publishing a common-year comparison
+1. Obtain and record WDI 2024 real GDP growth for USA, CHN, RUS, IND and EU27 with the same indicator and retrieval vintage.
+2. Reconcile 2024 military spending growth against the latest SIPRI database vintage, including an EU27 constant-price aggregate; do not use the SIPRI *Europe* regional total as EU27.
+3. Verify that all 2024 energy import dependence observations share the same IEA/WDI definition; keep the modeled EU value separate.
+4. Display 2024 and 2025 as **separate** selectable year cohorts; mark 2025 energy data missing until verified.
+5. Treat real military spending increases as expenditure changes, not automatically positive geopolitical outcomes.
+
+**Publication status:** research evidence only. No new live meter values, composite score, or dial behavior authorized by this audit.
