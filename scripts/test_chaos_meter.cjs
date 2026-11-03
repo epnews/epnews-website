@@ -1000,3 +1000,6 @@ require('./test_soi_energy_independence_gate.cjs');
 
 // Research-only 2024 IEA Highlights reproduction; no UI or score activation.
 require('./test_iea_highlights_2026_import_dependence.cjs');
+
+// Side-by-side energy trade dependence comparison regression.
+require('./test_soi_energy_import_comparison.cjs');
