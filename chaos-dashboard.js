@@ -76,11 +76,14 @@ for(const id of ['chaos-completion-status','chaos-meter-readiness']){
  const section=root.querySelector('#'+id);if(section)technicalDrawer.append(section);
 }
 if(technicalDrawer.children.length>1)root.append(technicalDrawer);
+// Keep technical scoring diagnostics out of the primary meter view.
 const assessment=root.querySelector('#chaos-assessment-readiness');
 if(assessment){
- const assessmentDrawer=makeDrawer('WHY IS INFLUENCE NOT SCORED?','Review the evidence and scoring requirements','chaos-assessment-drawer');
- assessment.parentNode.insertBefore(assessmentDrawer,assessment);
+ const assessmentDrawer=makeDrawer('SCORING REQUIREMENTS','Why the overall score is unavailable','chaos-assessment-drawer');
  assessmentDrawer.append(assessment);
+ const chips=root.querySelector('#chaos-evidence-chips');
+ if(chips)assessmentDrawer.append(chips);
+ technicalDrawer.append(assessmentDrawer);
 }
 const explorationDrawer=makeDrawer('EXPLORE COMPARISONS & SUPPORTING EVIDENCE','Country matrix, indicator sources and side-by-side comparisons','chaos-exploration-drawer');
 const explorationSections=[
