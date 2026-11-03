@@ -25,7 +25,7 @@ assert.match(visual.text,/2025 real military spending change/);assert.match(visu
 check('Economic',/2025 real GDP growth/);assert.match(visual.text,/Difference/);
 check('Strategic',/2025 real military spending change/);assert.match(visual.text,/SIPRI/);
 check('Energy and resources',/2024 net energy imports/);assert.match(visual.text,/World Bank source data/);
-a.value='eu';a.dispatch('change');assert.match(visual.text,/Modeled Eurostat/);
+a.value='eu';a.dispatch('change');assert.match(visual.text,/Official Eurostat EU27 2024/);assert.doesNotMatch(visual.text,/Modeled Eurostat/);
 a.value='china';b.value='china';b.dispatch('change');assert.match(visual.text,/Choose two different spheres/);
 b.value='india';b.dispatch('change');assert.match(visual.text,/2024 net energy imports/);
 assert.ok(parent.children.some(n=>n.tag==='details'),'evidence archive remains present');
