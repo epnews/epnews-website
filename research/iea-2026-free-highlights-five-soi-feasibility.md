@@ -23,3 +23,19 @@ Source: https://www.iea.org/data-and-statistics/data-product/world-energy-balanc
 
 ## Result
 The public page verifies that a free XLSX exists; it does **not** substantiate a five-actor apples-to-apples import-dependence series. Do not fill missing values by averaging Eurostat denominators or mix Eurostat 57.29% / exploratory 61.04% with WDI values.
+
+## Direct workbook inspection — uploaded 2026 Highlights XLSX
+
+User supplied the official workbook `World Energy Balances Highlights 2026.xlsx`. Sheet `TimeSeries_1971-2025` contains 2024 columns and the product `Total` with flows `Production (PJ)`, `Imports (PJ)`, `Exports (PJ)`, and `Total energy supply (PJ)`. **Exports are negative in the source**, so net imports = Imports + Exports.
+
+| Actor | 2024 imports PJ | 2024 exports PJ (negative) | 2024 TES PJ | Net imports / TES |
+|---|---:|---:|---:|---:|
+| United States | 21493.393274 | -30479.379067 | 91869.278589 | -9.781274% approx |
+| People's Republic of China | 45594.436454 | -3840.667639 | 173834.994958 | 24.019197% approx |
+| India | 20026.581438 | -3029.933619 | 47172.909257 | 36.030528% approx |
+
+These three ratios reproduce the published World Bank 2024 series to displayed precision, a significant independent validation of the common IEA accounting basis. The workbook's `Country` column **does not include Russia or an EU27 aggregate**. The free extract is therefore insufficient for a five-SOI comparison. Do not replace Russia with a broad Eurasian region or the EU with a partial member-state sum.
+
+The earlier note's access uncertainty is now resolved by direct workbook inspection. Remaining blocker is **coverage**, not the ability to download. The India fiscal-year qualification still needs explicit presentation even when all three ratios reproduce WDI.
+
+**Next action:** obtain authorized IEA data for Russia and EU27 with matching 2024 flows; alternatively independently verify complete EU27 constituent coverage from the same IEA vintage. Retain the existing research-only gate and do not change meter scores or needles.
