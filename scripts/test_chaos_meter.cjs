@@ -994,3 +994,6 @@ assert.equal(indiaPreference.influenceScoringAuthorized,false);
 
 // Run the staged Energy Scale comparison contract in command-meter CI.
 require('./test_soi_energy_scale_comparability.cjs');
+
+// Research-only five-SOI energy independence source and denominator guard.
+require('./test_soi_energy_independence_gate.cjs');
