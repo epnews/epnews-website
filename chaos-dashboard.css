@@ -239,3 +239,13 @@
 .chaos-public-methodology h4{font-size:clamp(1rem,2.4vw,1.12rem);line-height:1.35;margin:20px 0 6px;color:#f2c579}
 .chaos-public-methodology p{line-height:1.6;margin:0 0 12px;overflow-wrap:break-word}
 @media(max-width:700px){.chaos-public-methodology>div{padding:12px!important}.chaos-public-methodology p{font-size:clamp(14px,3.8vw,16px)!important;line-height:1.55!important}.chaos-public-methodology h4{margin-top:16px}}
+
+/* Reader-first indicator context; technical evidence remains available on demand. */
+#chaos-sphere-description .chaos-reader-summary{display:grid;gap:14px;margin:10px 0 16px}
+#chaos-sphere-description .chaos-reader-summary-item h4{margin:0 0 4px;font-size:1rem;color:#f2c579}
+#chaos-sphere-description .chaos-reader-summary-item p{margin:0;font-size:clamp(15px,2vw,17px);line-height:1.55;overflow-wrap:break-word}
+#chaos-sphere-description .chaos-reader-source{font-size:14px;line-height:1.45;color:#b9cadd;margin:0}
+#chaos-sphere-description .chaos-reader-details{border:1px solid #46617d;border-radius:10px;padding:10px 14px;margin-top:10px}
+#chaos-sphere-description .chaos-reader-details summary{cursor:pointer;font-weight:700;color:#e8edf6}
+#chaos-sphere-description .chaos-reader-details p{font-size:14px;line-height:1.5;margin:12px 0 2px;overflow-wrap:anywhere}
+@media(max-width:700px){#chaos-sphere-description .chaos-reader-summary-item p{font-size:15px;line-height:1.5}#chaos-sphere-description .chaos-reader-summary{gap:12px}}
