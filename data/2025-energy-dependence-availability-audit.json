@@ -14,5 +14,5 @@
     "eu": null
   },
   "eu_2024_official_wdi": null,
-  "policy": "Null is missing, not zero; no prior-year substitution or LNG-share substitution; EU 2024 remains labeled modeled proxy."
+  "policy": "Null means missing WDI 2025 observations, not zero; the reporting-year panel separately shows the provisional IEA-derived US 2025 value. EU 2024 WDI aggregate remains null; EU 2024 official Eurostat energy dependency is 57.3% and is not WDI."
 }
