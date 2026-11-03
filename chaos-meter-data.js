@@ -742,14 +742,12 @@ window.EP_CHAOS_DATA = {
   "dimensions": [
     "Economic",
     "Strategic",
-    "Diplomatic",
     "Energy and resources"
   ],
   "weights": {
-    "Economic": 0.3,
-    "Strategic": 0.3,
-    "Diplomatic": 0.2,
-    "Energy and resources": 0.2
+    "Economic": 0.375,
+    "Strategic": 0.375,
+    "Energy and resources": 0.25
   },
   "evidenceAudits": {
     "us": {
