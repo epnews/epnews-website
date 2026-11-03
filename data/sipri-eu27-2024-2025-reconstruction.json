@@ -1,0 +1,128 @@
+{
+  "source": "SIPRI 2026 via Our World in Data",
+  "source_url": "https://ourworldindata.org/grapher/military-spending-sipri.csv?v=1&csvType=full&useColumnShortNames=true",
+  "unit": "constant_2024_usd",
+  "years": [
+    2024,
+    2025
+  ],
+  "eu27_members": {
+    "AUT": [
+      5294394000,
+      5883185000
+    ],
+    "BEL": [
+      8566825000,
+      13593676000
+    ],
+    "BGR": [
+      2192670000,
+      2395975200
+    ],
+    "HRV": [
+      1730736400,
+      1930161400
+    ],
+    "CYP": [
+      596022340,
+      631515000
+    ],
+    "CZE": [
+      6511698000,
+      6488252000
+    ],
+    "DNK": [
+      9637155000,
+      14082958000
+    ],
+    "EST": [
+      1424412700,
+      1439068000
+    ],
+    "FIN": [
+      6502951000,
+      7614127000
+    ],
+    "FRA": [
+      63574700000,
+      64515090000
+    ],
+    "DEU": [
+      86148284000,
+      106727250000
+    ],
+    "GRC": [
+      7391576000,
+      7806244000
+    ],
+    "HUN": [
+      4732680700,
+      4620976600
+    ],
+    "IRL": [
+      1333276300,
+      1463822000
+    ],
+    "ITA": [
+      37849547000,
+      45440170000
+    ],
+    "LVA": [
+      1440648400,
+      1601245800
+    ],
+    "LTU": [
+      2688633000,
+      2734783000
+    ],
+    "LUX": [
+      618785000,
+      802632770
+    ],
+    "MLT": [
+      93626990,
+      116812040
+    ],
+    "NLD": [
+      23577494000,
+      26995331000
+    ],
+    "POL": [
+      34459550000,
+      42528140000
+    ],
+    "PRT": [
+      4524134000,
+      5504816000
+    ],
+    "ROU": [
+      8315372000,
+      8805836000
+    ],
+    "SVK": [
+      2786518000,
+      2871106600
+    ],
+    "SVN": [
+      980625600,
+      1143857200
+    ],
+    "ESP": [
+      25199837000,
+      37694824000
+    ],
+    "SWE": [
+      12046970000,
+      14954071000
+    ]
+  },
+  "method": "Sum country observations for all 27 EU members in each year, then compute 100*(2025/2024-1). No non-EU countries included.",
+  "totals": {
+    "year2024": 360219122430,
+    "year2025": 430385925610
+  },
+  "limitations": [
+    "Real expenditure growth is not an influence or military capability score.",
+    "Data may be revised in future SIPRI vintages."
+  ]
+}
