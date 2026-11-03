@@ -1,0 +1,19 @@
+{
+  "indicator": "NY.GDP.MKTP.KD.ZG",
+  "year": 2025,
+  "unit": "annual_percent",
+  "source": "World Bank World Development Indicators",
+  "api_last_updated": "2026-10-08",
+  "source_url": "https://api.worldbank.org/v2/country/USA;CHN;RUS;IND;EUU/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2025&per_page=100",
+  "actors": {
+    "us": 2.16138195623856,
+    "china": 4.95994886240992,
+    "russia": 1.00117656925738,
+    "india": 7.56666179284244,
+    "eu": 1.53795434836212
+  },
+  "limitations": [
+    "GDP growth is an economic observation, not a geopolitical influence score.",
+    "Values may be revised by the World Bank; do not silently substitute forecasts."
+  ]
+}
