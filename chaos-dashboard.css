@@ -214,3 +214,10 @@
 .chaos-rotterdam-evidence-body h3{font-size:15px;margin:10px 0}
 .chaos-rotterdam-evidence-body p{font-size:12px;line-height:1.6;overflow-wrap:anywhere}
 @media(min-width:721px){.chaos-rotterdam-evidence{max-width:640px}}
+
+/* Compact public meter: scoring diagnostics live inside optional research details. */
+.chaos-research-drawer .chaos-assessment-drawer{margin:10px 14px 16px;background:#13283e}
+.chaos-research-drawer .chaos-assessment-drawer>summary{padding:12px 14px;font-size:12px}
+.chaos-research-drawer .chaos-assessment-drawer #chaos-assessment-readiness{padding:12px!important}
+.chaos-research-drawer .chaos-assessment-drawer #chaos-evidence-chips{margin:0 12px 14px}
+#chaos-indicator-explainer{font-size:12px;line-height:1.5;max-width:66ch}

@@ -76,12 +76,7 @@ for(const id of ['chaos-completion-status','chaos-meter-readiness']){
  const section=root.querySelector('#'+id);if(section)technicalDrawer.append(section);
 }
 if(technicalDrawer.children.length>1)root.append(technicalDrawer);
-const assessment=root.querySelector('#chaos-assessment-readiness');
-if(assessment){
- const assessmentDrawer=makeDrawer('WHY IS INFLUENCE NOT SCORED?','Review the evidence and scoring requirements','chaos-assessment-drawer');
- assessment.parentNode.insertBefore(assessmentDrawer,assessment);
- assessmentDrawer.append(assessment);
-}
+// Keep technical scoring diagnostics out of the primary meter view.
 const explorationDrawer=makeDrawer('EXPLORE COMPARISONS & SUPPORTING EVIDENCE','Country matrix, indicator sources and side-by-side comparisons','chaos-exploration-drawer');
 const explorationSections=[
  ['chaos-matrix','COUNTRY MATRIX','Review evidence coverage across all five spheres'],
@@ -340,10 +335,6 @@ function update(){
 
   root.querySelector('#chaos-needle-note').textContent=selectedScore!==null?'Reviewed '+(dim==='Overall change'?'overall influence':dim+' influence')+' change: '+selectedScore.toFixed(1)+' on a −100 to +100 scale.':provisional!==null?'Provisional descriptive index: '+provisional.toFixed(1)+' on a −100 to +100 display scale, based on '+provisionalParts.length+'/3 supported observations. Missing: '+(dimensions.filter(key=>!provisionalParts.some(p=>p.key===key)).join(', ')||'none')+'. Current 37.5/37.5/25 weights are renormalized across available observations. This is NOT verified geopolitical influence or causal national benefit.':indicator?indicatorUnit+': '+(indicatorValue>0?'+':'')+indicatorValue.toFixed(1)+'. Needle displays this source-backed observation on a fixed −'+indicatorRange+' to +'+indicatorRange+' '+indicatorUnit+' reference window (values outside it are visually capped). It is NOT a geopolitical influence score. '+(indicator.measurementCaveat||''): dim==='Overall change'?'Insufficient comparable data: country-specific indicators have different units, periods, baselines and meanings. No provisional composite is calculated. Select a category to inspect the original observation.':'No comparable numeric indicator for this selection; influence remains unscored. Evidence coverage: '+count+' of 3.';
  meter.setAttribute('aria-label',actor.name+', '+dim+': '+(selectedScore!==null?selectedScore.toFixed(1)+' reviewed influence change':provisional!==null?'provisional descriptive index '+provisional.toFixed(1)+' from '+provisionalParts.length+' of 3 observations, not influence':indicator?indicatorUnit+' '+indicatorValue+'; observed indicator, not influence score':'influence not yet scored')+'; '+count+' of 3 evidence categories documented');
- root.querySelector('#chaos-readiness-text').textContent=result.ready+' of 3 dimensions meet the influence scoring gate. '+count+' of 3 categories have cited evidence. Evidence coverage is not influence.';
- let readiness=root.querySelector('#chaos-dimension-readiness');if(!readiness){readiness=document.createElement('div');readiness.id='chaos-dimension-readiness';readiness.setAttribute('aria-live','polite');root.querySelector('#chaos-assessment-readiness').append(readiness);}readiness.replaceChildren();for(const key of dimensions){const record=records[key],score=result.scores[key],line=element('p',key+': '+(score===null?'Not scored — missing: '+model.missingRequirements(record).join('; ')+'.':'Reviewed change '+score.toFixed(1)),'chaos-readiness-dimension');line.style.cssText='font-size:12px;line-height:1.5;margin:7px 0';readiness.append(line);}
- root.querySelector('#chaos-readiness-coverage').textContent='Reviewed '+data.reviewed+' · Sources have their own observation periods. No automatic live-data feed.';
- root.querySelector('#chaos-evidence-chips').replaceChildren(...dimensions.map(key=>element('span',key+' · Evidence recorded · '+(result.scores[key]===null?'Unscored':'Scored'))));
  const e=root.querySelector('#chaos-evidence');e.textContent=dim==='Overall change'?'No overall index is calculated from unlike observations. Select a dimension to inspect its evidence. All three dimensions must pass comparable reviewed scoring gates before a composite can be calculated.':'Selected evidence: '+records[dim].title+'. Missing to score: '+(model.missingRequirements(records[dim]).join('; ')||'none')+'. See the measurement, source and limits below.';
  const label=root.querySelector('#chaos-indicator-explainer');label.hidden=false;label.textContent='Evidence coverage: '+count+' of 3. The needle can display a dated numeric observation when one exists; this is NOT a geopolitical influence score. The verified overall influence score remains inactive until independently reviewed outcomes qualify. The provisional overall needle is descriptive only. GDP, spending, gas flows and treaty events are not interchangeable.';
  renderCards(actor.id,dim);

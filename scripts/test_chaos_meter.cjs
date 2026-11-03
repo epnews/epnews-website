@@ -433,11 +433,11 @@ assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
 
 // Public-facing dashboard keeps controls and articles visible while preserving all research nodes.
 const dashboardScript=fs.readFileSync('chaos-dashboard.js','utf8');
-for(const id of ['chaos-completion-status','chaos-meter-readiness','chaos-assessment-readiness'])assert.ok(dashboardScript.includes(id));
+for(const id of ['chaos-completion-status','chaos-meter-readiness'])assert.ok(dashboardScript.includes(id));
 for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(dashboardScript.includes(cls));
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
-assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
+assert.ok(!dashboardScript.includes('chaos-assessment-drawer'),'Retired scoring panel must not be rebuilt');
 assert.match(html, /chaos-dashboard\.js\?v=[A-Za-z0-9._-]+/, 'diplomatic meter script must be cache-busted');
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
@@ -866,7 +866,7 @@ assert.match(liveDiplomacyDashboardSource,/fetch\('data\/soi-diplomatic-audit-wo
 assert.match(liveDiplomacyDashboardSource,/VERIFICATION PROGRESS/);
 assert.match(liveDiplomacyDashboardSource,/OBSERVED OUTCOME/);
 assert.match(liveDiplomacyDashboardSource,/Original diplomatic influence needle remains unscored/);
-assert.match(indexSource,/chaos-dashboard\.js\?v=matched-measures-1/);
+assert.match(indexSource,/chaos-dashboard\.js\?v=compact-scoring-1/);
 
 // US before/after institution status now has independently dated official sources, not causal attribution.
 const usMatched=diplomaticQueue.items.find(x=>x.sphere==='us');
@@ -880,7 +880,7 @@ assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-followup').complete);
 assert.match(liveDiplomacyDashboardSource,/FIVE-SPHERE BASELINE COMPARABILITY/);
 assert.match(liveDiplomacyDashboardSource,/matched descriptive measure/);
 assert.match(liveDiplomacyDashboardSource,/not yet matched/);
-assert.match(fs.readFileSync(__dirname+'\/../index.html','utf8'),/chaos-dashboard\.js\?v=matched-measures-1/);
+assert.match(fs.readFileSync(__dirname+'\/../index.html','utf8'),/chaos-dashboard\.js\?v=compact-scoring-1/);
 
 // Russia treaty legal-status comparability is descriptive and does not prove military influence.
 const russiaLegal=diplomaticQueue.items.find(x=>x.sphere==='russia').baselineFollowupAssessment;

@@ -12,6 +12,8 @@ const assert=require('node:assert/strict');
    await page.locator('#chaos-dashboard').waitFor({state:'visible'});
    await page.locator('#chaos-meter').waitFor({state:'visible'});
    assert.equal(await page.locator('.chaos-research-drawer').evaluate(el=>el.open),false,'Research drawer should start collapsed');
+   assert.equal(await page.locator('#chaos-assessment-readiness').count(),0,'Redundant scoring panel must be absent');
+   assert.equal(await page.locator('#chaos-evidence-chips').count(),0,'Redundant status chips must be absent');
    await page.locator('.chaos-research-drawer > summary').click();
    await page.locator('#chaos-completion-status').waitFor({state:'visible'});
    assert.match(await page.locator('#chaos-completion-status').innerText(),/Technical readiness: 90%/);
