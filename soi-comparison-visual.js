@@ -57,14 +57,14 @@ function init(){
     row.append(el('td',matched?y.number.toFixed(2)+m.unit:'Not comparable'));
     row.append(el('td',matched?pp(x.number-y.number):'—'));body.append(row);
    }
-   const energy={us:-9.78127421443322,china:24.0191966181448,russia:-70.7306703064017,india:36.0305276064275,eu:61.51735784436232};
+   const energy={us:-9.78127421443322,china:24.0191966181448,russia:-70.7306703064017,india:36.0305276064275,eu:57.3};
    const eA=energy[a.value],eB=energy[b.value];
    const row=el('tr');row.append(el('th','Energy · 2024 net energy imports (% of use)'));
-   row.append(el('td',eA.toFixed(2)+'%'+(a.value==='eu'?' (modeled)':'')));
-   row.append(el('td',eB.toFixed(2)+'%'+(b.value==='eu'?' (modeled)':'')));
+   row.append(el('td',eA.toFixed(2)+'%'+(a.value==='eu'?' (official Eurostat)':'')));
+   row.append(el('td',eB.toFixed(2)+'%'+(b.value==='eu'?' (official Eurostat)':'')));
    row.append(el('td',pp(eA-eB)));body.append(row);table.append(body);
    const wrap=el('div',undefined,'chaos-table-scroll');wrap.append(table);visual.append(wrap);
-   visual.append(el('p','Energy: negative = net exporter; positive = net importer. EU-27 is an EP News calibrated estimate, not an official 2024 IEA observation. The other four are IEA-sourced World Bank figures.'));
+   visual.append(el('p','Energy: negative = net exporter; positive = net importer. EU27 is the official Eurostat 2024 all-energy import dependency (57.3%); the other four are World Bank WDI observations. Definitions and source frameworks differ, so cross-source differences are descriptive only.'));
    visual.append(el('p','Economic and strategic observations are matched 2025 indicators from the existing meter evidence; growth rates and military spending changes are not equivalent to geopolitical influence. The separate Energy and resources selection provides source links and full provenance.'));
    return;
   }
@@ -74,7 +74,7 @@ function init(){
     china:{value:24.0191966181448,code:'CHN',status:'Official IEA-sourced WDI'},
     russia:{value:-70.7306703064017,code:'RUS',status:'Official IEA-sourced WDI'},
     india:{value:36.0305276064275,code:'IND',status:'Official IEA-sourced WDI'},
-    eu:{value:61.51735784436232,code:'EUU',status:'Modeled Eurostat + four-year historical calibration'}
+    eu:{value:57.3,code:'EUU',status:'Official Eurostat EU27 2024'}
    };
    const left=rows[a.value],right=rows[b.value];
    if(!left||!right){visual.append(el('p','Energy import-dependence observations are unavailable for this selection.'));return;}
@@ -88,9 +88,9 @@ function init(){
     cards.append(card);
    }
    visual.append(cards,el('p','Signed difference ('+names[a.value]+' minus '+names[b.value]+'): '+pp(left.value-right.value)+'. This is a descriptive percentage-point gap, not a winner or ranking.'));
-   const note=el('p','EU-27 2024 is an EP News modeled estimate (Eurostat direct TES ratio 61.035% + historical adjustment 0.482 pp = 61.52%); not a published IEA observation. The other four values are World Bank WDI EG.IMP.CONS.ZS observations sourced to IEA.');visual.append(note);
+   const note=el('p','EU27 2024 is the official Eurostat all-energy import dependency of 57.3% (net imports divided by gross available energy). The other four values are World Bank WDI EG.IMP.CONS.ZS observations sourced to IEA. Different source frameworks limit direct comparison.');visual.append(note);
    const link=el('a','World Bank source data');link.href='https://api.worldbank.org/v2/country/RUS;USA;CHN;IND;EUU/indicator/EG.IMP.CONS.ZS?format=json&date=2024';link.target='_blank';link.rel='noopener noreferrer';visual.append(link);
-   const euLink=el('a',' · Eurostat EU27 source');euLink.href='https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?geo=EU27_2020&freq=A&siec=TOTAL&unit=KTOE&time=2024&nrg_bal=IMP&nrg_bal=EXP&nrg_bal=NRGSUP';euLink.target='_blank';euLink.rel='noopener noreferrer';visual.append(euLink);
+   const euLink=el('a',' · Eurostat EU27 source');euLink.href='https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Energy_statistics_-_an_overview';euLink.target='_blank';euLink.rel='noopener noreferrer';visual.append(euLink);
    return;
   }
   if(requested!=='All dimensions'&&requested!=='Diplomatic'){

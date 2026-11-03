@@ -4,7 +4,7 @@ const script=fs.readFileSync('soi-comparison-visual.js','utf8');new vm.Script(sc
 assert.match(script,/requested==='All dimensions'/);
 assert.match(script,/gdp-growth-2025/);assert.match(script,/sipri-real-change-2025/);
 assert.match(script,/Number\.isFinite\(x\.number\)/);assert.match(script,/x\.metric===m\.metric&&y\.metric===m\.metric/);
-assert.match(script,/2024 net energy imports/);assert.match(script,/\(modeled\)/);
+assert.match(script,/2024 net energy imports/);assert.match(script,/\(official Eurostat\)/);assert.doesNotMatch(script,/61\.51735784436232/);
 assert.match(script,/not a combined power score/);assert.match(script,/requested==='Energy and resources'/);
 assert.match(script,/EPInternationalAlignment/);assert.match(script,/Detailed source evidence table/);
 const dataSource=fs.readFileSync('chaos-meter-data.js','utf8');const sandbox={window:{}};vm.runInNewContext(dataSource,sandbox);const actors=sandbox.window.EP_CHAOS_DATA.actors;
