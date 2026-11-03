@@ -21,8 +21,9 @@
   "actors": {
     "us": {
       "economic": {
-        "value": 2.8,
-        "status": "published"
+        "value": 2.79318715363841,
+        "status": "published",
+        "source": "World Bank WDI NY.GDP.MKTP.KD.ZG, API last updated 2026-10-08"
       },
       "strategic": {
         "value": 6.560556536315598,
@@ -38,8 +39,9 @@
     },
     "china": {
       "economic": {
-        "value": 5,
-        "status": "published"
+        "value": 4.95830378788091,
+        "status": "published",
+        "source": "World Bank WDI NY.GDP.MKTP.KD.ZG, API last updated 2026-10-08"
       },
       "strategic": {
         "value": 6.734490732280629,
@@ -55,8 +57,9 @@
     },
     "russia": {
       "economic": {
-        "value": 4.9,
-        "status": "published"
+        "value": 4.92167966203073,
+        "status": "published",
+        "source": "World Bank WDI NY.GDP.MKTP.KD.ZG, API last updated 2026-10-08"
       },
       "strategic": {
         "value": 37.116854303611625,
@@ -72,8 +75,9 @@
     },
     "india": {
       "economic": {
-        "value": 7.1,
-        "status": "published"
+        "value": 7.09927893176518,
+        "status": "published",
+        "source": "World Bank WDI NY.GDP.MKTP.KD.ZG, API last updated 2026-10-08"
       },
       "strategic": {
         "value": 0.42771932265768253,
@@ -89,8 +93,9 @@
     },
     "eu": {
       "economic": {
-        "value": 1.1,
-        "status": "published"
+        "value": 1.08657885620458,
+        "status": "published",
+        "source": "World Bank WDI NY.GDP.MKTP.KD.ZG, API last updated 2026-10-08"
       },
       "strategic": {
         "value": 14.618136793400293,
@@ -112,6 +117,7 @@
     "All five 2024 strategic observations now derive from one SIPRI 2026 vintage; 2024 results differ from earlier SIPRI 2025 fact-sheet figures because of revisions.",
     "EU 2024 energy dependency is Eurostat's official 57.3%, calculated as net imports / gross available energy; country values are WDI EG.IMP.CONS.ZS. These source frameworks are closely related but must remain attributed separately.",
     "Economic growth, military spending change and net energy import dependence have different interpretations and cannot be combined into an influence score.",
-    "This is a staged data cohort; existing 2025 dashboard and needles are unchanged."
+    "This is a staged data cohort; existing 2025 dashboard and needles are unchanged.",
+    "2024 economic growth values retain exact World Bank WDI API precision; UI rounds to two decimals."
   ]
 }
