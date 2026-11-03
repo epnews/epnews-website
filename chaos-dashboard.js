@@ -71,7 +71,7 @@ const makeDrawer=(title,description,cls)=>{
  const hint=element('span',description,'chaos-clean-hint');
  summary.append(hint);drawer.append(summary);return drawer;
 };
-const technicalDrawer=makeDrawer('RESEARCH PROGRESS & METHODOLOGY','Readiness, scoring gates, source checks and unresolved questions','chaos-research-drawer');
+const technicalDrawer=makeDrawer('RESEARCH PROGRESS & METHODOLOGY','Research status, source checks and unanswered questions','chaos-research-drawer');
 for(const id of ['chaos-completion-status','chaos-meter-readiness']){
  const section=root.querySelector('#'+id);if(section)technicalDrawer.append(section);
 }
@@ -79,8 +79,8 @@ if(technicalDrawer.children.length>1)root.append(technicalDrawer);
 // Keep technical scoring diagnostics out of the primary meter view.
 const explorationDrawer=makeDrawer('EXPLORE COMPARISONS & SUPPORTING EVIDENCE','Country matrix, indicator sources and side-by-side comparisons','chaos-exploration-drawer');
 const explorationSections=[
- ['chaos-matrix','COUNTRY MATRIX','Review evidence coverage across all five spheres'],
- ['chaos-indicators','SUPPORTING EVIDENCE','Inspect indicator sources and documented changes'],
+ ['chaos-matrix','COUNTRY MATRIX','Compare the available measurements for all five powers'],
+ ['chaos-indicators','SUPPORTING EVIDENCE','See the numbers, sources and limitations behind each reading'],
  ['chaos-compare','SIDE-BY-SIDE COMPARISONS','Compare two spheres using the existing controls']
 ];
 for(const [cls,title,hint] of explorationSections){
@@ -159,7 +159,7 @@ function appendVotingEvidence(actor,dimension){
    const audited=entries.filter(x=>x.sourceAudit?.status==='independently-verified'&&x.sourceAudit?.claimChecked===true).length;
    const attributionReady=entries.filter(x=>x.measurementQuality?.eligibleForInfluenceScoring===true).length;
    const milestoneCount=entries.filter(x=>Boolean(x.observedEvidence?.finding)).length;
-   drawer.append(element('p','Evidence coverage: '+entries.length+' selected case(s) · '+milestoneCount+' documented milestone(s) · '+audited+' independently audited · '+attributionReady+' attribution-ready. This is research coverage, not diplomatic influence.'));
+   drawer.append(element('p','Cases reviewed: '+entries.length+' selected case(s) · '+milestoneCount+' documented milestone(s) · '+audited+' independently audited · '+attributionReady+' attribution-ready. This is research coverage, not diplomatic influence.'));
    drawer.append(element('p','Next evidence needed: independently checked counterpart outcomes, matched baselines, alternative explanations and costs. The diplomatic influence needle remains unscored.'));
    if(diplomaticWorklist){
     const verified=diplomaticWorklist.items.filter(x=>x.baselineFollowupAssessment?.descriptivelyComparable===true);
@@ -307,15 +307,19 @@ function renderCards(actor,dimension){
  appendVotingEvidence(actor,dimension);
  if(dimension==='Overall change'){
   const updates=(data.soiDiplomaticUpdates||{})[actor]||[];
-  if(updates.length){const section=element('section',undefined,'chaos-soi-evidence');section.append(element('h4','Recent SOI diplomatic evidence · not an influence score'));
-   for(const item of updates){const detail=element('details'),summary=element('summary',item.title+' — '+item.stage);detail.append(summary,element('p',item.finding),element('p','Measurement limit: '+item.limit));const link=element('a','Official source ↗');link.href=item.source;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);section.append(detail);}cards.append(section);
+  if(updates.length){const section=element('section',undefined,'chaos-soi-evidence');section.append(element('h4','Recent international agreements and developments'));
+   for(const item of updates){const detail=element('details'),summary=element('summary',item.title+' — '+item.stage);detail.append(summary,element('p',item.finding),element('p','What this does not establish: '+item.limit));const link=element('a','Official source ↗');link.href=item.source;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);section.append(detail);}cards.append(section);
   }
  }
 
  for(const key of dimension==='Overall change'?dimensions:[dimension]){
   const r=data.actors[actor][key],card=element('article',undefined,'chaos-indicator-card');
-  card.append(element('span',key+' · '+r.kind,'chaos-tag'),element('h4',r.title),element('strong',r.value,'chaos-metric-value'),element('p',r.period,'chaos-period'),element('span',r.stage+' · '+r.confidence+' fact confidence','chaos-record-stage'),element('p',r.meaning));
-  const details=element('details'),summary=element('summary','Who pays / what remains unresolved');details.append(summary,element('p','Costs and beneficiaries: '+r.costs),element('p','Scoring limit: '+r.gap));card.append(details);sourceLinks(card,r.sources);cards.append(card);
+  card.append(element('span',key+' · '+r.kind,'chaos-tag'),element('h4',r.title),element('strong',r.value,'chaos-metric-value'),element('p',r.period,'chaos-period'));
+  const evidenceSummary=explainReading(spheres.find(x=>x.id===actor)||spheres[0],key,r,null,null);
+  const plain=document.createElement('p');plain.textContent=evidenceSummary.why;card.append(plain);
+  const sourceDetail=element('details'),sourceSummary=element('summary','Full finding and verification details');
+  sourceDetail.append(sourceSummary,element('p',r.stage+' · '+r.confidence+' fact confidence'),element('p',r.meaning));card.append(sourceDetail);
+  const details=element('details'),summary=element('summary','Costs, limitations and full research notes');details.append(summary,element('p','Who pays and who benefits: '+r.costs),element('p','What the evidence does not establish: '+r.gap));card.append(details);sourceLinks(card,r.sources);cards.append(card);
  }
 }
 // Present readable context first; retain the verbatim audited record in a disclosure.
