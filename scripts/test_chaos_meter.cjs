@@ -433,11 +433,11 @@ assert.equal(data.meterReadiness.netNationalBenefitUsd,null);
 
 // Public-facing dashboard keeps controls and articles visible while preserving all research nodes.
 const dashboardScript=fs.readFileSync('chaos-dashboard.js','utf8');
-for(const id of ['chaos-completion-status','chaos-meter-readiness','chaos-assessment-readiness'])assert.ok(dashboardScript.includes(id));
+for(const id of ['chaos-completion-status','chaos-meter-readiness'])assert.ok(dashboardScript.includes(id));
 for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare'])assert.ok(dashboardScript.includes(cls));
 assert.ok(dashboardScript.includes('chaos-research-drawer'));
 assert.ok(dashboardScript.includes('chaos-exploration-drawer'));
-assert.ok(dashboardScript.includes('chaos-assessment-drawer'));
+assert.ok(!dashboardScript.includes('chaos-assessment-drawer'),'Retired scoring panel must not be rebuilt');
 assert.match(html, /chaos-dashboard\.js\?v=[A-Za-z0-9._-]+/, 'diplomatic meter script must be cache-busted');
 
 assert.equal(data.actors.us.Diplomatic.metric,'nato-membership-change');
