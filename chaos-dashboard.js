@@ -99,7 +99,7 @@ if(explorationDrawer.children.length>1){
  const archive=root.querySelector('.chaos-research-archive');
  if(archive)root.insertBefore(explorationDrawer,archive);else root.append(explorationDrawer);
 }
-const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
+const dimensions=data.dimensions.filter(d=>d!=='Diplomatic'),cards=root.querySelector('#chaos-indicator-cards');
 function sourceLinks(parent,ids){
  const line=element('p',undefined,'chaos-source-links');
  for(const id of ids){const src=data.sources[id];const a=element('a',src.label+' ↗');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';line.append(a,element('small','Source date: '+src.date));}
@@ -130,7 +130,7 @@ fetch('data/soi-international-alignment-original-archive-reproduction-20261102.j
 const voteActor={us:'USA',china:'CHN',russia:'RUS',india:'IND'};
 const voteNames={USA:'United States',CHN:'China',RUS:'Russia',IND:'India'};
 function appendVotingEvidence(actor,dimension){
- if(dimension!=='Diplomatic'&&dimension!=='Overall change')return;
+ if(dimension!=='Overall change')return;
  const panel=element('section',undefined,'chaos-indicator-card chaos-voting-evidence');
  panel.append(element('h4','UN voting agreement · recorded votes (2021–2024)'),element('p','Measured voting agreement, not diplomatic influence. Abstentions count as positions; consensus and nonvoting excluded.'));
  const alignment=element('details');alignment.className='chaos-international-alignment';
@@ -300,7 +300,7 @@ fetch('data/soi-unga-frozen-external-partner-2021-2024.json',{cache:'no-store'})
 function renderCards(actor,dimension){
  cards.replaceChildren();
  appendVotingEvidence(actor,dimension);
- if(dimension==='Diplomatic'||dimension==='Overall change'){
+ if(dimension==='Overall change'){
   const updates=(data.soiDiplomaticUpdates||{})[actor]||[];
   if(updates.length){const section=element('section',undefined,'chaos-soi-evidence');section.append(element('h4','Recent SOI diplomatic evidence · not an influence score'));
    for(const item of updates){const detail=element('details'),summary=element('summary',item.title+' — '+item.stage);detail.append(summary,element('p',item.finding),element('p','Measurement limit: '+item.limit));const link=element('a','Official source ↗');link.href=item.source;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);section.append(detail);}cards.append(section);
@@ -319,7 +319,7 @@ function update(){
  // The dial exclusively represents reviewed influence assessments, never mixed proxy units.
  const count=dimensions.filter(key=>records[key]&&records[key].sources.length).length;
  const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
- const selectedScore=dim==='Diplomatic'?null:(dim==='Overall change'?result.score:result.scores[dim]);
+ const selectedScore=dim==='Overall change'?result.score:result.scores[dim];
  const observation=dim!=='Overall change'?records[dim]:null;
  // Restore indicator movement only for genuine numeric, signed percentage-point observations.
  // This is NOT the reviewed geopolitical influence scale.
