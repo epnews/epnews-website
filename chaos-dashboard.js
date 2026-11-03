@@ -343,6 +343,8 @@ function explainReading(actor,dim,record,indicator,unit){
 function update(){
  const actor=spheres.find(x=>x.id===select.value)||spheres[0],records=data.actors[actor.id],result=model.assessment(records),dim=category.value;
  name.textContent=actor.name;
+ const reportingCountry=root.querySelector("#chaos-reporting-year-country");
+ if(reportingCountry)reportingCountry.textContent="Selected sphere: "+actor.name;
  // The dial exclusively represents reviewed influence assessments, never mixed proxy units.
  const count=dimensions.filter(key=>records[key]&&records[key].sources.length).length;
  const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
