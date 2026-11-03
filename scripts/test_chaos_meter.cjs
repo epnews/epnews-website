@@ -177,6 +177,11 @@ assert.match(cap.capacity,/1.3 Bcf\/day nominal/);
 for(const e of cap.events){assert.ok(data.sources[e.source]);}
 assert.equal(data.actors.us['Energy and resources'].score,null);
 assert.equal(Object.keys(data.actors).length,5);assert.equal(Object.values(weights).reduce((a,b)=>a+b,0),1);
+assert.deepEqual(Object.keys(weights),['Economic','Strategic','Energy and resources']);
+assert.equal(weights.Economic,.375);assert.equal(weights.Strategic,.375);assert.equal(weights['Energy and resources'],.25);
+assert.deepEqual(Array.from(data.dimensions),['Economic','Strategic','Energy and resources']);
+assert.equal(data.weights.Economic,.375);assert.equal(data.weights.Strategic,.375);assert.equal(data.weights['Energy and resources'],.25);
+
 for(const records of Object.values(data.actors)){
  assert.equal(Object.keys(records).length,4);assert.equal(assessment(records).score,null);
  for(const r of Object.values(records)){
