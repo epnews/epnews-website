@@ -2,7 +2,8 @@
 (function(root){'use strict';
 const matchedMetricUnits={
  'gdp-growth-2025':'percentage points',
- 'sipri-real-change-2025':'percentage points'
+ 'sipri-real-change-2025':'percentage points',
+ 'ei-total-energy-supply-2025':'EJ'
 };
 function compare(a,b){
  if(!a||!b||!a.metric||a.metric!==b.metric)return {comparable:false,reason:'Different measures'};
