@@ -1005,3 +1005,5 @@ require('./test_iea_highlights_2026_import_dependence.cjs');
 require('./test_soi_energy_import_comparison.cjs');
 
 require('./test_soi_all_dimensions_comparison.cjs');
+
+require('./test_soi_dimension_comparison.cjs');
