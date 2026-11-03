@@ -83,8 +83,17 @@ if(assessment){
  assessmentDrawer.append(assessment);
 }
 const explorationDrawer=makeDrawer('EXPLORE COMPARISONS & SUPPORTING EVIDENCE','Country matrix, indicator sources and side-by-side comparisons','chaos-exploration-drawer');
-for(const cls of ['chaos-matrix','chaos-indicators','chaos-compare']){
- const section=root.querySelector('.'+cls);if(section)explorationDrawer.append(section);
+const explorationSections=[
+ ['chaos-matrix','COUNTRY MATRIX','Review evidence coverage across all five spheres'],
+ ['chaos-indicators','SUPPORTING EVIDENCE','Inspect indicator sources and documented changes'],
+ ['chaos-compare','SIDE-BY-SIDE COMPARISONS','Compare two spheres using the existing controls']
+];
+for(const [cls,title,hint] of explorationSections){
+ const section=root.querySelector('.'+cls);
+ if(!section)continue;
+ const subsection=makeDrawer(title,hint,'chaos-exploration-subdrawer');
+ subsection.append(section);
+ explorationDrawer.append(subsection);
 }
 if(explorationDrawer.children.length>1){
  const archive=root.querySelector('.chaos-research-archive');
