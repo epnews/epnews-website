@@ -167,3 +167,11 @@
 .epic-brand-name small span{color:#e42c3a;margin:0 5px}
 @media(max-width:800px){.site-header .brandbar{padding:0;min-height:0;display:block}.site-header .epic-brand{max-width:none;width:100%;padding:20px 15px;min-height:140px;border-left:0;border-right:0;gap:14px}.epic-brand-emblem{font-size:clamp(48px,13vw,86px)}.epic-brand-name strong{font-size:clamp(15px,4.4vw,30px)}.epic-brand-name b{font-size:clamp(34px,9vw,57px)}.epic-brand-name small{font-size:clamp(6px,1.6vw,10px);letter-spacing:.055em}.site-header .brand-right{padding:9px 15px;justify-content:center;flex-wrap:wrap;gap:10px}.site-header .brand-right .briefing-pill{display:none}}
 @media(max-width:390px){.site-header .epic-brand{gap:9px;padding:15px 9px;min-height:112px}.epic-brand-emblem{font-size:45px}.epic-brand-name strong{font-size:14px}.epic-brand-name b{font-size:34px}.epic-brand-name small{font-size:6px;letter-spacing:0}.epic-brand-name small span{margin:0 2px}}
+
+/* Official masthead artwork from EP News public assets; retain accessible text fallback. */
+.site-header .epic-brand:has(.epic-brand-art){padding:0;display:block;max-width:940px;line-height:0}
+.site-header .epic-brand-art{display:block;width:100%;height:auto;aspect-ratio:1536/512;object-fit:contain}
+.site-header .epic-brand-art[hidden],.site-header .epic-brand-fallback[hidden]{display:none!important}
+.site-header .epic-brand-fallback:not([hidden]){display:flex;align-items:center;gap:20px;padding:16px 22px;line-height:1.1}
+@media(max-width:800px){.site-header .epic-brand:has(.epic-brand-art){max-width:none;min-height:0}.site-header .epic-brand-fallback:not([hidden]){padding:20px 15px;gap:14px}}
+@media(max-width:390px){.site-header .epic-brand-fallback:not([hidden]){padding:15px 9px;gap:9px}}
