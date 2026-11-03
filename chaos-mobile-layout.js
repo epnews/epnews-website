@@ -7,8 +7,26 @@ wrap(recent,'LATEST INVESTIGATION UPDATES');
 
 /* Mobile jump navigation opens nested evidence drawers before scrolling; no data or meter mutations. */
 const nav=document.createElement('nav');nav.className='chaos-mobile-quick-nav';nav.setAttribute('aria-label','Investigation quick navigation');
-const targets=[['Meter','#chaos-meter'],['Indicators','#chaos-year-comparison'],['Compare spheres','.chaos-compare'],['Evidence','#chaos-indicator-cards']];
-for(const [label,selector] of targets){const target=root.querySelector(selector);if(!target)continue;const button=document.createElement('button');button.type='button';button.textContent=label;button.addEventListener('click',()=>{let ancestor=target.parentElement;while(ancestor&&ancestor!==root){if(ancestor.tagName==='DETAILS')ancestor.open=true;ancestor=ancestor.parentElement;}target.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});nav.append(button);}
+const targets=[
+ ['Meter','#chaos-meter'],
+ ['Indicators','#chaos-dimension'],
+ ['Compare spheres','.chaos-compare'],
+ ['Evidence','#chaos-indicator-cards']
+];
+for(const [label,selector] of targets){
+ const target=root.querySelector(selector);if(!target)continue;
+ const button=document.createElement('button');button.type='button';button.textContent=label;
+ button.addEventListener('click',()=>{
+  // Reveal the destination and all enclosing disclosure panels before navigating.
+  let ancestor=target;
+  while(ancestor&&ancestor!==root){if(ancestor.tagName==='DETAILS')ancestor.open=true;ancestor=ancestor.parentElement;}
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  target.scrollIntoView({block:'start',behavior:reduced?'auto':'smooth'});
+  // Focus the actual indicator selector when requested; do not change its value.
+  if(label==='Indicators')target.focus({preventScroll:true});
+ });
+ nav.append(button);
+}
 if(nav.children.length){const heading=root.querySelector('h2');if(heading)heading.insertAdjacentElement('afterend',nav);else root.prepend(nav);}
 const intro=root.querySelector(':scope > p');if(intro)intro.classList.add('chaos-mobile-intro');
 }
