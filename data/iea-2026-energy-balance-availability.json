@@ -1,0 +1,61 @@
+{
+  "source": "IEA World Energy Balances Highlights 2026",
+  "file": "World Energy Balances Highlights 2026.xlsx",
+  "sheet": "TimeSeries_1971-2025",
+  "product": "Total",
+  "unit": "PJ",
+  "year_columns": {
+    "2024": "BH",
+    "2025": "BI"
+  },
+  "method": "100*(imports_PJ+exports_PJ)/total_energy_supply_PJ; IEA exports are negative",
+  "countries": {
+    "us": {
+      "2024": {
+        "production": 101989.692576,
+        "imports": 21493.393274,
+        "exports": -30479.379067,
+        "tes": 91869.278589
+      },
+      "2025": {
+        "production": 104669.852436,
+        "imports": 20105.549879,
+        "exports": -30407.723149,
+        "tes": 92510.461084,
+        "provisional": true
+      }
+    },
+    "china": {
+      "2024": {
+        "production": 139256.507479,
+        "imports": 45594.436454,
+        "exports": -3840.667639,
+        "tes": 173834.994958
+      },
+      "2025": null
+    },
+    "india": {
+      "2024": {
+        "production": 30831.812039,
+        "imports": 20026.581438,
+        "exports": -3029.933619,
+        "tes": 47172.909257
+      },
+      "2025": null
+    },
+    "russia": {
+      "2024": null,
+      "2025": null
+    },
+    "eu": {
+      "2024": null,
+      "2025": null
+    }
+  },
+  "notes": [
+    "2024 derived ratios reconcile to World Bank indicator EG.IMP.CONS.ZS within 0.000001 percentage point for US, China, India",
+    "2025 US is provisional and should be labeled as IEA 2026 calculation, not an official 2025 WDI observation",
+    "Russia and EU27 not separately covered; no invented values",
+    "No change to live dashboard in this PR"
+  ]
+}
