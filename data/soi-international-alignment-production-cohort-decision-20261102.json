@@ -1,0 +1,87 @@
+{
+  "schema": "soi-international-alignment-production-cohort-decision-v1",
+  "date": "2026-11-02",
+  "decision": "Prefer transparent full recorded-vote cohort as descriptive reference series, with restricted six-code and missingness sensitivity alongside; do not claim topic-adjusted time-series equivalence",
+  "frozenPartnersDefinition": "160 non-EU/non-reference country codes with recorded positions in each of 2021–2024, per existing coverage audit; original source reproduction also matched 160 2024 reference-year universe",
+  "sourceFiles": [
+    "data/soi-unga-frozen-external-partner-2021-2024.json",
+    "data/soi-unga-cohort-topic-coverage-audit-2021-2024.json",
+    "data/soi-unga-voting-sensitivity-2021-2024.json",
+    "data/soi-unga-missingness-bounds-2021-2024.json",
+    "data/soi-unga-six-code-divergence-audit-2021-2024.json"
+  ],
+  "cohort": {
+    "recordedVotesOnly": true,
+    "abstentionCountsAsDistinctPosition": true,
+    "consensusExcluded": true,
+    "nonvotingExcluded": true,
+    "externalPartnerCount": 160,
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "euProxy": {
+      "minimumEU27Votes": 20,
+      "threshold": 0.75,
+      "notAnOfficialVote": true
+    }
+  },
+  "failClosedTopicStandardization": {
+    "topicFamilies": 60,
+    "missingPooledTopicsByActorYear": {
+      "us": [
+        9,
+        12,
+        7,
+        13
+      ],
+      "china": [
+        9,
+        12,
+        7,
+        13
+      ],
+      "russia": [
+        9,
+        12,
+        7,
+        13
+      ],
+      "india": [
+        9,
+        12,
+        7,
+        13
+      ],
+      "eu": [
+        13,
+        12,
+        11,
+        15
+      ]
+    },
+    "topicAdjustedScores": null
+  },
+  "sensitivity": {
+    "restrictedSixCodeMaxAbsoluteGapPercentagePoints": 4.5179,
+    "missingVoteBoundsAreConfidenceIntervals": false,
+    "euStrict90ReadingsIncomplete": true,
+    "euAll27ReadingsIncomplete": true
+  },
+  "publicationPolicy": {
+    "historicalTableAllowed": true,
+    "descriptiveChartAllowedWithCohortAndMissingnessCaveats": true,
+    "trendIsCausalInfluence": false,
+    "alignmentNeedleAuthorized": false,
+    "weightedInfluenceCompositeAuthorized": false
+  },
+  "remainingGates": [
+    "Recompute strict 90%/24-member EU proxy for all four years directly from original source archive",
+    "Recompute fixed 160-country universe alternatives and source cohort hash check",
+    "Establish common-topic support or explicitly disclose non-standardized issue mix",
+    "Implement standalone descriptive percentage gauge without reusing influence score model or weighting",
+    "Desktop/mobile/selector/needle regression and rollback tests"
+  ]
+}
