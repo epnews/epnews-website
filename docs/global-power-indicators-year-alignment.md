@@ -50,3 +50,21 @@ The SIPRI April 2025 fact sheet provides these **2023–2024** changes in real t
 5. Treat real military spending increases as expenditure changes, not automatically positive geopolitical outcomes.
 
 **Publication status:** research evidence only. No new live meter values, composite score, or dial behavior authorized by this audit.
+
+## Verified 2024 GDP growth cohort (WDI, retrieved November 2026)
+
+Indicator: World Bank World Development Indicators `NY.GDP.MKTP.KD.ZG`, annual real GDP growth (%), calendar year 2024. The **European Union** aggregate is EU27, not the euro area. Values below are published one-decimal observations, not historical forecasts.
+
+| SOI | 2024 real GDP growth | 2025 real GDP growth (same WDI table) |
+| --- | ---: | ---: |
+| United States | 2.8% | 2.2% |
+| China | 5.0% | 5.0% |
+| Russia | 4.9% | 1.0% |
+| India | 7.1% | 7.6% |
+| European Union (EU27) | 1.1% | 1.5% |
+
+**Direct WDI DataBank table:** https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2
+
+**Interpretation:** These are annual GDP growth *rates*. Subtracting 2024 from 2025 yields a change in the annual growth rate in percentage points, **not** GDP growth itself, GDP size, global output share or international influence. The 2024 GDP panel is now complete; the 2024 EU27 SIPRI constant-price military aggregate remains outstanding. Do not substitute SIPRI's wider Europe region for EU27.
+
+**Live-site gate:** This update records verified source data in research documentation only. It does not alter the dashboard's 2025 observations, needle logic, or any composite score.
