@@ -99,6 +99,11 @@ const investigationUpdates=root.querySelector('.chaos-recent');
 if(investigationUpdates&&explorationDrawer.parentNode){
  explorationDrawer.parentNode.insertBefore(investigationUpdates,explorationDrawer);
 }
+// Keep the interactive regional tracker with the main dashboard, before the research/update drawers.
+const regionalTracker=root.querySelector('#chaos-local-tracker');
+if(regionalTracker&&investigationUpdates&&investigationUpdates.parentNode){
+ investigationUpdates.parentNode.insertBefore(regionalTracker,investigationUpdates);
+}
 const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
 function sourceLinks(parent,ids){
  const line=element('p',undefined,'chaos-source-links');
