@@ -991,3 +991,6 @@ assert.equal(indiaPreference.directDatabase.status.includes('pending'),true);
 assert.equal(indiaPreference.baselineFollowupGatesAuthorized,true);
 assert.equal(indiaPreference.sourceIntegrityPolicy.preferentialUtilizationVerified,false);
 assert.equal(indiaPreference.influenceScoringAuthorized,false);
+
+// Run the staged Energy Scale comparison contract in command-meter CI.
+require('./test_soi_energy_scale_comparability.cjs');
