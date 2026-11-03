@@ -20,6 +20,24 @@ function init(){
   if(a.value===b.value){visual.append(el('p','Choose two different spheres to compare.'));return;}
   visual.append(el('h4',names[a.value]+' vs '+names[b.value]));
   const requested=dim.value;
+  if(requested==='Economic'||requested==='Strategic'){
+   const spec=requested==='Economic'?{metric:'gdp-growth-2025',label:'2025 real GDP growth',unit:'%',source:'World Bank'}:{metric:'sipri-real-change-2025',label:'2025 real military spending change',unit:'%',source:'SIPRI'};
+   const actors=window.EP_CHAOS_DATA&&window.EP_CHAOS_DATA.actors;
+   const x=actors&&actors[a.value]&&actors[a.value][requested],y=actors&&actors[b.value]&&actors[b.value][requested];
+   if(!x||!y||x.metric!==spec.metric||y.metric!==spec.metric||!Number.isFinite(x.number)||!Number.isFinite(y.number)){
+    visual.append(el('p','Matching source observations are unavailable for this pair. Consult the detailed evidence table.'));return;
+   }
+   visual.append(el('h5',spec.label));
+   const cards=el('div',undefined,'chaos-visual-comparison-cards');
+   for(const [name,item] of [[names[a.value],x],[names[b.value],y]]){
+    const card=el('div',undefined,'chaos-visual-comparison-card');
+    card.append(el('strong',name),el('div',(item.number>0?'+':'')+item.number.toFixed(2)+spec.unit,'chaos-visual-big'),el('small',item.period||'2025'));
+    cards.append(card);
+   }
+   visual.append(cards,el('p','Difference ('+names[a.value]+' minus '+names[b.value]+'): '+pp(x.number-y.number)+'. Both figures are rates of change, not absolute GDP or military spending levels.'));
+   visual.append(el('p','Source: '+spec.source+' as documented in each sphere’s original evidence record. The difference is not a geopolitical influence score or an overall winner.'));
+   return;
+  }
   if(requested==='All dimensions'){
    const actors=window.EP_CHAOS_DATA&&window.EP_CHAOS_DATA.actors;
    const left=actors&&actors[a.value],right=actors&&actors[b.value];
