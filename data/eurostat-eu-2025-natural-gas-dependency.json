@@ -16,5 +16,16 @@
     "Not the all-energy net import dependency indicator; do not replace the EU 2025 all-energy unavailable value.",
     "Monthly cumulated/provisional natural gas balance, not the final all-fuels annual energy balance.",
     "Not a geopolitical influence score or meter needle input."
-  ]
+  ],
+  "annual_series_crosscheck": {
+    "dataset": "nrg_ind_id",
+    "geo": "EU27_2020",
+    "siec": "G3000",
+    "unit": "PC",
+    "year2024_value_pct": 93.69,
+    "year2025_value_pct": null,
+    "year2024_source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_id?geo=EU27_2020&time=2024",
+    "year2025_source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_id?geo=EU27_2020&siec=G3000&unit=PC&time=2025",
+    "note": "Annual-series 2025 observation absent; 2025 87.6% is from a provisional natural-gas balance, so no directly matched annual-series year-over-year change is published."
+  }
 }
