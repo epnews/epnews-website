@@ -1,0 +1,20 @@
+{
+  "year": 2025,
+  "actor": "eu",
+  "commodity": "natural_gas",
+  "indicator": "natural_gas_import_dependency",
+  "value_pct": 87.6,
+  "status": "published_provisional_balance",
+  "scope": "EU27 natural gas only",
+  "source": "Eurostat Natural gas supply statistics, data from June 2026",
+  "source_url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Natural_gas_supply_statistics",
+  "dataset_codes": [
+    "nrg_cb_gasm",
+    "nrg_cb_gas"
+  ],
+  "limitations": [
+    "Not the all-energy net import dependency indicator; do not replace the EU 2025 all-energy unavailable value.",
+    "Monthly cumulated/provisional natural gas balance, not the final all-fuels annual energy balance.",
+    "Not a geopolitical influence score or meter needle input."
+  ]
+}
