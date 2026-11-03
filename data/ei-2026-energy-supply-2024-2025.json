@@ -1,0 +1,39 @@
+{
+  "source": "Energy Institute Statistical Review of World Energy 2026",
+  "workbook": "EI-Stats-Review-ALL-data.xlsx",
+  "sheet": "Total Energy Supply (TES) -EJ",
+  "columns": {
+    "year2024": "BI",
+    "year2025": "BJ"
+  },
+  "unit": "EJ",
+  "metric": "total_energy_supply",
+  "not_net_import_dependence": true,
+  "actors": {
+    "us": {
+      "row": 7,
+      "year2024": 92.04445970151328,
+      "year2025": 93.82863411006706
+    },
+    "china": {
+      "row": 93,
+      "year2024": 158.78345967252983,
+      "year2025": 162.19336275220152
+    },
+    "russia": {
+      "row": 62,
+      "year2024": 31.380185667218328,
+      "year2025": 31.190338805851077
+    },
+    "india": {
+      "row": 95,
+      "year2024": 38.81889861734958,
+      "year2025": 39.099278362511015
+    },
+    "eu": {
+      "row": 114,
+      "year2024": 52.09764452847798,
+      "year2025": 52.19255687721864
+    }
+  }
+}
