@@ -14,3 +14,10 @@ Eurostat total energy supply dataset ten00122: https://ec.europa.eu/eurostat/dat
 ## Next evidence gate
 Find a single freely reusable source of 2024 net imports and energy-use denominator for all five actors, or reconcile Eurostat and IEA conventions quantitatively. Check EU external-trade boundary, intra-EU flows, international bunkers, stock adjustments, calendar year, revisions and units. Require scripts/test_soi_energy_independence_gate.cjs and command-meter CI before activation.
 Energy Scale EJ remains a separate, non-influence measure. No public observation, score, needle or UI change authorized.
+
+## Official flow reconciliation formula (new primary-source confirmation)
+Eurostat's *Energy balance - new methodology* explicitly defines:
+- Gross available energy = Primary production + Recovered & Recycled products + Imports - Exports + Stock changes.
+- Total energy supply = Gross available energy - International maritime bunkers - International aviation.
+Source: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Energy_balance_-_new_methodology
+This establishes a specific testable denominator adjustment, **not** an automatic match to World Bank/IEA primary energy use. Next extraction should collect the EU-27 2024 Total Energy Supply balance flow alongside GAE, IMP, EXP and bunker flows, then reconcile coverage and international trade boundaries. Do not calculate or publish an EU WDI-equivalent percentage before that reconciliation.
