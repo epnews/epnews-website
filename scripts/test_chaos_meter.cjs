@@ -997,3 +997,6 @@ require('./test_soi_energy_scale_comparability.cjs');
 
 // Research-only five-SOI energy independence source and denominator guard.
 require('./test_soi_energy_independence_gate.cjs');
+
+// Research-only 2024 IEA Highlights reproduction; no UI or score activation.
+require('./test_iea_highlights_2026_import_dependence.cjs');
