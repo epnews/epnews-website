@@ -10,7 +10,7 @@
     "strategic": {
       "name": "Real military expenditure change from 2023",
       "unit": "percent",
-      "source": "SIPRI 2024 fact sheet / SIPRI-derived 2026 EU27 aggregate"
+      "source": "SIPRI 2026 via Our World in Data, constant 2024 USD"
     },
     "energy": {
       "name": "Net energy imports as share of energy use",
@@ -25,9 +25,11 @@
         "status": "published"
       },
       "strategic": {
-        "value": 5.7,
-        "status": "published",
-        "source_vintage": "2025 fact sheet"
+        "value": 6.560556536315598,
+        "status": "derived_from_sipri_series",
+        "source_vintage": "SIPRI 2026 via OWID, constant 2024 USD",
+        "spending_2023_constant_2024_usd": 943032800000,
+        "spending_2024_constant_2024_usd": 1004901000000
       },
       "energy": {
         "value": -9.78127421443322,
@@ -40,9 +42,11 @@
         "status": "published"
       },
       "strategic": {
-        "value": 7,
-        "status": "estimated",
-        "source_vintage": "2025 fact sheet"
+        "value": 6.734490732280629,
+        "status": "derived_from_sipri_series",
+        "source_vintage": "SIPRI 2026 via OWID, constant 2024 USD",
+        "spending_2023_constant_2024_usd": 292220760000,
+        "spending_2024_constant_2024_usd": 311900340000
       },
       "energy": {
         "value": 24.0191966181448,
@@ -55,9 +59,11 @@
         "status": "published"
       },
       "strategic": {
-        "value": 38,
-        "status": "estimated_rounded",
-        "source_vintage": "2025 fact sheet"
+        "value": 37.116854303611625,
+        "status": "derived_from_sipri_series",
+        "source_vintage": "SIPRI 2026 via OWID, constant 2024 USD",
+        "spending_2023_constant_2024_usd": 108959530000,
+        "spending_2024_constant_2024_usd": 149401880000
       },
       "energy": {
         "value": -70.7306703064017,
@@ -70,9 +76,11 @@
         "status": "published"
       },
       "strategic": {
-        "value": 1.6,
-        "status": "published",
-        "source_vintage": "2025 fact sheet"
+        "value": 0.42771932265768253,
+        "status": "derived_from_sipri_series",
+        "source_vintage": "SIPRI 2026 via OWID, constant 2024 USD",
+        "spending_2023_constant_2024_usd": 85232530000,
+        "spending_2024_constant_2024_usd": 85597086000
       },
       "energy": {
         "value": 36.0305276064275,
@@ -87,7 +95,9 @@
       "strategic": {
         "value": 14.618136793400293,
         "status": "calculated",
-        "source_vintage": "2026 SIPRI-derived OWID country series"
+        "source_vintage": "SIPRI 2026 via OWID, constant 2024 USD",
+        "spending_2023_constant_2024_usd": 314277593850,
+        "spending_2024_constant_2024_usd": 360219122430
       },
       "energy": {
         "value": 61.51735784436232,
@@ -97,7 +107,7 @@
     }
   },
   "limitations": [
-    "2024 strategic source vintages differ: four country figures are SIPRI 2025 fact sheet, EU27 aggregate uses SIPRI 2026-derived series. Do not claim strict same-vintage comparability.",
+    "All five 2024 strategic observations now derive from one SIPRI 2026 vintage; 2024 results differ from earlier SIPRI 2025 fact-sheet figures because of revisions.",
     "EU energy observation is modeled, not an official IEA WDI observation.",
     "Economic growth, military spending change and net energy import dependence have different interpretations and cannot be combined into an influence score.",
     "This is a staged data cohort; existing 2025 dashboard and needles are unchanged."
