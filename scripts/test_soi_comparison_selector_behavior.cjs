@@ -22,7 +22,7 @@ assert.ok(visual,'visual inserted');
 function check(dimension,expected){dim.value=dimension;dim.dispatch('change');assert.match(visual.text,expected,dimension+' content');}
 check('All dimensions',/2025 real GDP growth/);
 assert.match(visual.text,/2025 real military spending change/);assert.match(visual.text,/2024 net energy imports/);
-check('Economic',/2025 real GDP growth/);assert.match(visual.text,/percentage-point/);
+check('Economic',/2025 real GDP growth/);assert.match(visual.text,/Difference/);
 check('Strategic',/2025 real military spending change/);assert.match(visual.text,/SIPRI/);
 check('Energy and resources',/2024 net energy imports/);assert.match(visual.text,/World Bank source data/);
 a.value='eu';a.dispatch('change');assert.match(visual.text,/Modeled Eurostat/);
