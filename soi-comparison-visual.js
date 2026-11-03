@@ -43,7 +43,7 @@ function init(){
    const left=actors&&actors[a.value],right=actors&&actors[b.value];
    if(!left||!right){visual.append(el('p','Comparable observations are unavailable. Open the detailed evidence table below.'));return;}
    visual.append(el('p','Matched observations for the selected spheres. Each row uses its own units and year; differences are descriptive, not a combined power score.'));
-   const table=el('table');const head=el('thead');const header=el('tr');
+   const table=el('table');table.className='chaos-all-dimensions-table';const head=el('thead');const header=el('tr');
    for(const label of ['Measure',names[a.value],names[b.value],'Difference (A − B)'])header.append(el('th',label));head.append(header);table.append(head);
    const body=el('tbody');
    const measures=[
@@ -53,16 +53,16 @@ function init(){
    for(const m of measures){
     const x=left[m.key],y=right[m.key],matched=x&&y&&x.metric===m.metric&&y.metric===m.metric&&Number.isFinite(x.number)&&Number.isFinite(y.number);
     const row=el('tr');row.append(el('th',m.label));
-    row.append(el('td',matched?x.number.toFixed(2)+m.unit:'Not comparable'));
-    row.append(el('td',matched?y.number.toFixed(2)+m.unit:'Not comparable'));
-    row.append(el('td',matched?pp(x.number-y.number):'—'));body.append(row);
+    const cellA=el('td',matched?x.number.toFixed(2)+m.unit:'Not comparable');cellA.setAttribute('data-column-label',names[a.value]);row.append(cellA);
+    const cellB=el('td',matched?y.number.toFixed(2)+m.unit:'Not comparable');cellB.setAttribute('data-column-label',names[b.value]);row.append(cellB);
+    const cellDiff=el('td',matched?pp(x.number-y.number):'—');cellDiff.setAttribute('data-column-label','Difference (A − B)');row.append(cellDiff);body.append(row);
    }
    const energy={us:-9.78127421443322,china:24.0191966181448,russia:-70.7306703064017,india:36.0305276064275,eu:57.3};
    const eA=energy[a.value],eB=energy[b.value];
    const row=el('tr');row.append(el('th','Energy · 2024 net energy imports (% of use)'));
-   row.append(el('td',eA.toFixed(2)+'%'+(a.value==='eu'?' (official Eurostat)':'')));
-   row.append(el('td',eB.toFixed(2)+'%'+(b.value==='eu'?' (official Eurostat)':'')));
-   row.append(el('td',pp(eA-eB)));body.append(row);table.append(body);
+   const energyA=el('td',eA.toFixed(2)+'%'+(a.value==='eu'?' (official Eurostat)':''));energyA.setAttribute('data-column-label',names[a.value]);row.append(energyA);
+   const energyB=el('td',eB.toFixed(2)+'%'+(b.value==='eu'?' (official Eurostat)':''));energyB.setAttribute('data-column-label',names[b.value]);row.append(energyB);
+   const energyDiff=el('td',pp(eA-eB));energyDiff.setAttribute('data-column-label','Difference (A − B)');row.append(energyDiff);body.append(row);table.append(body);
    const wrap=el('div',undefined,'chaos-table-scroll');wrap.append(table);visual.append(wrap);
    visual.append(el('p','Energy: negative = net exporter; positive = net importer. EU27 is the official Eurostat 2024 all-energy import dependency (57.3%); the other four are World Bank WDI observations. Definitions and source frameworks differ, so cross-source differences are descriptive only.'));
    visual.append(el('p','Economic and strategic observations are matched 2025 indicators from the existing meter evidence; growth rates and military spending changes are not equivalent to geopolitical influence. The separate Energy and resources selection provides source links and full provenance.'));
