@@ -1,0 +1,138 @@
+{
+  "schema": "soi-international-alignment-migration-audit-v1",
+  "asOf": "2026-11-02",
+  "decision": "Replace Diplomatic Influence with observed International Alignment, not a causal influence assessment",
+  "stage": "0-audit-and-contract-no-live-ui-changes",
+  "sourceFiles": [
+    "data/soi-unga-frozen-external-partner-2021-2024.json",
+    "data/soi-unga-six-code-restricted-results-2021-2024.json",
+    "data/soi-swp-verified-country-vote-alignment-2021-2024.json"
+  ],
+  "meterFiles": [
+    "chaos-meter-model.js",
+    "chaos-meter-data.js",
+    "chaos-dashboard.js",
+    "index.html"
+  ],
+  "historical": {
+    "period": "2021-2024",
+    "frozenExternalPartners": 160,
+    "annualRecordedResolutions": [
+      86,
+      89,
+      88,
+      95
+    ],
+    "euProxy": {
+      "minEU27ValidVotes": 20,
+      "supermajority": 0.75,
+      "notAnOfficialEUVote": true
+    },
+    "actorAgreementPct": {
+      "us": [
+        26.3343,
+        34.4341,
+        31.0386,
+        32.0913
+      ],
+      "china": [
+        71.6275,
+        64.8438,
+        65.1993,
+        66.2191
+      ],
+      "russia": [
+        57.5385,
+        51.4975,
+        48.9646,
+        51.4606
+      ],
+      "india": [
+        67.6766,
+        65.4398,
+        65.3877,
+        66.0088
+      ],
+      "eu": [
+        60.4288,
+        61.2742,
+        58.7824,
+        58.9489
+      ]
+    },
+    "status": "PRELIMINARY_REQUIRES_INDEPENDENT_REPRODUCTION_AND_SENSITIVITY"
+  },
+  "auditFindings": [
+    {
+      "severity": "blocker",
+      "id": "source-cohort",
+      "finding": "Frozen external partner series is preliminary; verify archive hash, denominator, source licensing, annual topic mix, matched resolution cohort and independently reproduce calculations before public needle."
+    },
+    {
+      "severity": "blocker",
+      "id": "restricted-topic",
+      "finding": "Six-code restricted policy-topic cohort differs from full recorded-vote cohort; must show sensitivity and coverage rather than silently interchange percentages."
+    },
+    {
+      "severity": "blocker",
+      "id": "eu-proxy",
+      "finding": "EU has no sovereign UNGA vote; EU-27 supermajority proxy must be clearly labeled, sensitivity-tested and shown as unavailable when insufficient member agreement."
+    },
+    {
+      "severity": "integration",
+      "id": "legacy-data",
+      "finding": "Existing data.dimensions, weights, actors and evidence maps use Diplomatic as object key; renaming a selector without a compatibility adapter would break lookups."
+    },
+    {
+      "severity": "integration",
+      "id": "legacy-model",
+      "finding": "Model assessment expects four influence assessments with Diplomatic weighted .20; International Alignment is a descriptive percentage and must not be inserted as if it were a net-influence score."
+    },
+    {
+      "severity": "integration",
+      "id": "legacy-dashboard",
+      "finding": "Voting evidence, diplomatic cases, selectedScore, cards and selectors branch on Diplomatic; migration must preserve archived cases in a separate drawer and existing gauge states."
+    },
+    {
+      "severity": "integration",
+      "id": "regressions",
+      "finding": "Command-meter tests reference existing dimensions, source registries and moving needle behavior; avoid mass replace of legacy keys and preserve all non-diplomatic paths."
+    }
+  ],
+  "stages": [
+    {
+      "id": 0,
+      "goal": "Audit and freeze metric contract",
+      "liveChanges": false,
+      "acceptance": "Published research audit, tests, no changed UI or model scores"
+    },
+    {
+      "id": 1,
+      "goal": "Introduce isolated alignment view-model and independent reproduction",
+      "liveChanges": false,
+      "acceptance": "Matched partner denominators, EU proxy, abstention/absence and topic sensitivity validated for 2021–2024"
+    },
+    {
+      "id": 2,
+      "goal": "Display International Alignment selector with descriptive percent and trend, separate from influence score",
+      "liveChanges": true,
+      "acceptance": "Feature flag, legacy Diplomatic alias for archived evidence, all existing selectors/needles work; insufficient data shows unavailable"
+    },
+    {
+      "id": 3,
+      "goal": "Remove obsolete diplomatic scoring weight from any overall influence composite and revise methodology",
+      "liveChanges": true,
+      "acceptance": "No mixing of UN voting percent with influence points; overall remains unscored unless independently valid"
+    },
+    {
+      "id": 4,
+      "goal": "Retire legacy display label after production smoke test",
+      "liveChanges": true,
+      "acceptance": "Desktop/mobile checks, rollback switch, four required CI checks and explicit approval"
+    }
+  ],
+  "scoreEligible": false,
+  "alignmentNeedleAuthorized": false,
+  "overallInfluenceScore": null,
+  "doNotMergeWithoutChecks": true
+}
