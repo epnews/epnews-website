@@ -44,3 +44,10 @@
  #chaos-dashboard .chaos-comparison-archive table{min-width:520px}
  #chaos-dashboard .chaos-visual-trend svg{max-width:100%;height:auto}
 }
+
+@media(max-width:700px){
+ #chaos-dashboard .chaos-mobile-quick-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0 16px}
+ #chaos-dashboard .chaos-mobile-quick-nav button{min-width:0;min-height:46px;padding:10px 8px;border:1px solid #6b8bac;border-radius:9px;background:#17344f;color:#f3f7fc;font:700 13px/1.3 inherit;cursor:pointer}
+ #chaos-dashboard .chaos-mobile-quick-nav button:focus-visible{outline:3px solid #f1c16d;outline-offset:2px}
+ #chaos-dashboard #chaos-meter,#chaos-dashboard #chaos-year-comparison,#chaos-dashboard .chaos-compare,#chaos-dashboard #chaos-indicator-cards{scroll-margin-top:18px}
+}
