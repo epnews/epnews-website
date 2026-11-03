@@ -175,3 +175,9 @@
 .site-header .epic-brand-fallback:not([hidden]){display:flex;align-items:center;gap:20px;padding:16px 22px;line-height:1.1}
 @media(max-width:800px){.site-header .epic-brand:has(.epic-brand-art){max-width:none;min-height:0}.site-header .epic-brand-fallback:not([hidden]){padding:20px 15px;gap:14px}}
 @media(max-width:390px){.site-header .epic-brand-fallback:not([hidden]){padding:15px 9px;gap:9px}}
+
+/* Mobile homepage: remove redundant News Desk promotion while retaining desktop layout and headline wire navigation. */
+@media (max-width: 720px) {
+  #home-view > .top-strip { display: none; }
+  #home-view > .container > .feature-section { margin-top: 0; padding-top: 12px; }
+}
