@@ -310,7 +310,7 @@ function renderCards(actor,dimension){
 }
 function update(){
  const actor=spheres.find(x=>x.id===select.value)||spheres[0],records=data.actors[actor.id],result=model.assessment(records),dim=category.value;
- name.textContent=actor.name;description.textContent=actor.note;
+ name.textContent=actor.name;description.textContent=records[dim]?.meaning||records[dim]?.title||actor.note;
  // The dial exclusively represents reviewed influence assessments, never mixed proxy units.
  const count=dimensions.filter(key=>records[key]&&records[key].sources.length).length;
  const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
@@ -329,13 +329,15 @@ function update(){
  const provisional=null;
  meter.dataset.state=selectedScore!==null?'scored':provisional!==null||indicator?'observed':'pending';
  status.textContent=selectedScore!==null?selectedScore.toFixed(1):provisional!==null?(provisional>0?'+':'')+provisional.toFixed(1):indicator?(indicatorValue>0?'+':'')+indicatorValue.toFixed(1):'NOT SCORED';
- conf.textContent=selectedScore!==null?(dim==='Overall change'?'OVERALL':'DIMENSION')+' · REVIEWED INFLUENCE CHANGE':provisional!==null?'PROVISIONAL DESCRIPTIVE INDEX · NOT INFLUENCE':indicator?'OBSERVED INDICATOR · NOT INFLUENCE':dim==='Overall change'?'INSUFFICIENT COMPARABLE DATA':dim.toUpperCase()+' · AWAITING REVIEW';
+ conf.textContent=indicator?indicatorUnit:selectedScore!==null?'Reviewed change':records[dim]?.title||'No numeric reading available';
  if(needle){needle.style.visibility=selectedScore!==null||provisional!==null||indicator?'visible':'hidden';if(selectedScore!==null)needle.style.transform='rotate('+(selectedScore*.9)+'deg)';else if(provisional!==null)needle.style.transform='rotate('+(provisional*.9)+'deg)';else if(indicator)needle.style.transform='rotate('+indicatorAngle+'deg)';}
  if(confidenceArc)confidenceArc.style.strokeDasharray='0 100';
 
-  root.querySelector('#chaos-needle-note').textContent=selectedScore!==null?'Reviewed '+(dim==='Overall change'?'overall influence':dim+' influence')+' change: '+selectedScore.toFixed(1)+' on a −100 to +100 scale.':provisional!==null?'Provisional descriptive index: '+provisional.toFixed(1)+' on a −100 to +100 display scale, based on '+provisionalParts.length+'/3 supported observations. Missing: '+(dimensions.filter(key=>!provisionalParts.some(p=>p.key===key)).join(', ')||'none')+'. Current 37.5/37.5/25 weights are renormalized across available observations. This is NOT verified geopolitical influence or causal national benefit.':indicator?indicatorUnit+': '+(indicatorValue>0?'+':'')+indicatorValue.toFixed(1)+'. Needle displays this source-backed observation on a fixed −'+indicatorRange+' to +'+indicatorRange+' '+indicatorUnit+' reference window (values outside it are visually capped). It is NOT a geopolitical influence score. '+(indicator.measurementCaveat||''): dim==='Overall change'?'Insufficient comparable data: country-specific indicators have different units, periods, baselines and meanings. No provisional composite is calculated. Select a category to inspect the original observation.':'No comparable numeric indicator for this selection; influence remains unscored. Evidence coverage: '+count+' of 3.';
+ const note=root.querySelector('#chaos-needle-note');
+ note.textContent=indicator?'Change: '+(indicatorValue>0?'+':'')+indicatorValue.toFixed(1)+(indicatorUnit.includes('(%)')?'%':indicatorUnit.includes('percentage points')?' percentage points':'')+'. '+(records[dim].meaning||''):selectedScore!==null?'Reviewed change: '+selectedScore.toFixed(1)+'. '+(records[dim].meaning||''):'No numeric reading is available for this selection. See the evidence below.';
+ const zones=root.querySelector('.chaos-dial-zones');if(zones){zones.hidden=true;}
  meter.setAttribute('aria-label',actor.name+', '+dim+': '+(selectedScore!==null?selectedScore.toFixed(1)+' reviewed influence change':provisional!==null?'provisional descriptive index '+provisional.toFixed(1)+' from '+provisionalParts.length+' of 3 observations, not influence':indicator?indicatorUnit+' '+indicatorValue+'; observed indicator, not influence score':'influence not yet scored')+'; '+count+' of 3 evidence categories documented');
- const e=root.querySelector('#chaos-evidence');e.textContent=dim==='Overall change'?'No overall index is calculated from unlike observations. Select a dimension to inspect its evidence. All three dimensions must pass comparable reviewed scoring gates before a composite can be calculated.':'Selected evidence: '+records[dim].title+'. Missing to score: '+(model.missingRequirements(records[dim]).join('; ')||'none')+'. See the measurement, source and limits below.';
+ const e=root.querySelector('#chaos-evidence');e.textContent='Source: '+(records[dim]?.title||'See supporting evidence')+'. Open the evidence cards for dates, sources and limitations.';
  const label=root.querySelector('#chaos-indicator-explainer');label.hidden=true;label.textContent='';
  renderCards(actor.id,dim);
  let worksheet=root.querySelector('#chaos-research-worksheet');if(!worksheet){worksheet=element('section',undefined,'chaos-indicator-card');worksheet.id='chaos-research-worksheet';worksheet.setAttribute('aria-label','Influence assessment research worksheet');cards.parentNode.insertBefore(worksheet,cards);}
