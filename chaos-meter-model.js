@@ -1,6 +1,6 @@
 /* Pure scoring gate shared by the UI and regression checks. */
 (function(root){'use strict';
-const weights={Economic:.30,Strategic:.30,Diplomatic:.20,'Energy and resources':.20};
+const weights={Economic:.375,Strategic:.375,'Energy and resources':.25};
 // A scored dimension requires a reviewed outcome assessment, never a raw proxy.
 function dimensionScore(r){
  if(!r||r.kind!=='Influence assessment'||!['Moderate','High'].includes(r.confidence)||!r.editorialReview||!r.baseline||!r.costAccounting||!r.counterfactual||!r.normalizationRationale||!r.targetFixedBeforeAssessment)return null;
@@ -29,9 +29,9 @@ function missingRequirements(r){
 function assessment(records){
  const scores=Object.fromEntries(Object.keys(weights).map(k=>[k,dimensionScore(records&&records[k])]));
  const ready=Object.values(scores).filter(x=>x!==null).length;
- if(ready!==4)return {score:null,ready,scores,sensitivity:null};
+ if(ready!==3)return {score:null,ready,scores,sensitivity:null};
  const total=w=>Object.keys(w).reduce((sum,k)=>sum+w[k]*scores[k],0);
- const variants=[weights,{Economic:.25,Strategic:.25,Diplomatic:.25,'Energy and resources':.25},{Economic:.40,Strategic:.20,Diplomatic:.20,'Energy and resources':.20},{Economic:.20,Strategic:.40,Diplomatic:.20,'Energy and resources':.20}];
+ const variants=[weights,{Economic:1/3,Strategic:1/3,'Energy and resources':1/3},{Economic:.50,Strategic:.25,'Energy and resources':.25},{Economic:.25,Strategic:.50,'Energy and resources':.25}];
  const range=variants.map(total);
  return {score:total(weights),ready,scores,sensitivity:[Math.min(...range),Math.max(...range)]};
 }
