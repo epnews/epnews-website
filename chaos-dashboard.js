@@ -335,7 +335,7 @@ function update(){
 
  const note=root.querySelector('#chaos-needle-note');
  note.textContent=indicator?'Change shown for this indicator. Details and sources are below.':selectedScore!==null?'Reviewed change for this indicator. Details and sources are below.':'No numeric reading is available for this selection. See the evidence below.';
- const zones=root.querySelector('.chaos-dial-zones');if(zones){zones.hidden=true;}
+ const zones=root.querySelector('.chaos-dial-zones');if(zones){zones.hidden=true;zones.style.display='none';}
  meter.setAttribute('aria-label',actor.name+', '+dim+': '+(selectedScore!==null?selectedScore.toFixed(1)+' reviewed influence change':provisional!==null?'provisional descriptive index '+provisional.toFixed(1)+' from '+provisionalParts.length+' of 3 observations, not influence':indicator?indicatorUnit+' '+indicatorValue+'; observed indicator, not influence score':'influence not yet scored')+'; '+count+' of 3 evidence categories documented');
  const e=root.querySelector('#chaos-evidence');e.textContent='Source: '+(records[dim]?.title||'See supporting evidence')+'. Open the evidence cards for dates, sources and limitations.';
  const label=root.querySelector('#chaos-indicator-explainer');label.hidden=true;label.textContent='';
