@@ -328,13 +328,13 @@ function update(){
  const provisionalParts=[];
  const provisional=null;
  meter.dataset.state=selectedScore!==null?'scored':provisional!==null||indicator?'observed':'pending';
- status.textContent=selectedScore!==null?selectedScore.toFixed(1):provisional!==null?(provisional>0?'+':'')+provisional.toFixed(1):indicator?(indicatorValue>0?'+':'')+indicatorValue.toFixed(1):'NOT SCORED';
+ status.textContent=selectedScore!==null?selectedScore.toFixed(1):provisional!==null?(provisional>0?'+':'')+provisional.toFixed(1):indicator?(indicatorValue>0?'+':'')+indicatorValue.toFixed(1):'—';
  conf.textContent=indicator?indicatorUnit:selectedScore!==null?'Reviewed change':records[dim]?.title||'No numeric reading available';
  if(needle){needle.style.visibility=selectedScore!==null||provisional!==null||indicator?'visible':'hidden';if(selectedScore!==null)needle.style.transform='rotate('+(selectedScore*.9)+'deg)';else if(provisional!==null)needle.style.transform='rotate('+(provisional*.9)+'deg)';else if(indicator)needle.style.transform='rotate('+indicatorAngle+'deg)';}
  if(confidenceArc)confidenceArc.style.strokeDasharray='0 100';
 
  const note=root.querySelector('#chaos-needle-note');
- note.textContent=indicator?'Change: '+(indicatorValue>0?'+':'')+indicatorValue.toFixed(1)+(indicatorUnit.includes('(%)')?'%':indicatorUnit.includes('percentage points')?' percentage points':'')+'. '+(records[dim].meaning||''):selectedScore!==null?'Reviewed change: '+selectedScore.toFixed(1)+'. '+(records[dim].meaning||''):'No numeric reading is available for this selection. See the evidence below.';
+ note.textContent=indicator?'Change shown for this indicator. Details and sources are below.':selectedScore!==null?'Reviewed change for this indicator. Details and sources are below.':'No numeric reading is available for this selection. See the evidence below.';
  const zones=root.querySelector('.chaos-dial-zones');if(zones){zones.hidden=true;}
  meter.setAttribute('aria-label',actor.name+', '+dim+': '+(selectedScore!==null?selectedScore.toFixed(1)+' reviewed influence change':provisional!==null?'provisional descriptive index '+provisional.toFixed(1)+' from '+provisionalParts.length+' of 3 observations, not influence':indicator?indicatorUnit+' '+indicatorValue+'; observed indicator, not influence score':'influence not yet scored')+'; '+count+' of 3 evidence categories documented');
  const e=root.querySelector('#chaos-evidence');e.textContent='Source: '+(records[dim]?.title||'See supporting evidence')+'. Open the evidence cards for dates, sources and limitations.';
