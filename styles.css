@@ -175,3 +175,11 @@
 .site-header .epic-brand-fallback:not([hidden]){display:flex;align-items:center;gap:20px;padding:16px 22px;line-height:1.1}
 @media(max-width:800px){.site-header .epic-brand:has(.epic-brand-art){max-width:none;min-height:0}.site-header .epic-brand-fallback:not([hidden]){padding:20px 15px;gap:14px}}
 @media(max-width:390px){.site-header .epic-brand-fallback:not([hidden]){padding:15px 9px;gap:9px}}
+
+/* Epic Perspective News footer identity: reuse the approved masthead artwork. */
+.footer-logo{display:flex;align-items:center;max-width:350px;min-height:62px;letter-spacing:normal}
+.footer-brand-image{display:block;width:min(100%,320px);max-height:94px;object-fit:contain;object-position:left center}
+.footer-brand-fallback{font-size:clamp(17px,2vw,23px);font-weight:800;letter-spacing:.01em;line-height:1.15;color:#fff}
+.footer-brand-fallback strong{color:#f4bd61}
+.footer-main>div:first-child{min-width:0}
+@media(max-width:700px){.footer-brand-image{width:min(100%,275px)}.footer-logo{min-height:54px}}
