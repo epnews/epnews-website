@@ -1,0 +1,18 @@
+{
+  "indicator": "EG.IMP.CONS.ZS",
+  "label": "Energy imports, net (% of energy use)",
+  "year": 2025,
+  "source": "World Bank WDI / IEA",
+  "api_url": "https://api.worldbank.org/v2/country/USA;CHN;RUS;IND;EUU/indicator/EG.IMP.CONS.ZS?format=json&date=2024:2025&per_page=100",
+  "api_last_updated": "2026-10-08",
+  "checked_on": "2026-11-03",
+  "observations": {
+    "us": null,
+    "china": null,
+    "russia": null,
+    "india": null,
+    "eu": null
+  },
+  "eu_2024_official_wdi": null,
+  "policy": "Null is missing, not zero; no prior-year substitution or LNG-share substitution; EU 2024 remains labeled modeled proxy."
+}
