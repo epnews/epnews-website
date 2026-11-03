@@ -520,8 +520,8 @@ if(left&&right&&comparison&&compareDimension){
   const table=element('table'),caption=element('caption','Source-backed evidence, not a ranking'),head=element('thead'),row=element('tr');row.append(...['Dimension',a.name,b.name,'Comparison limit'].map(t=>element('th',t)));head.append(row);table.append(caption,head);const body=element('tbody');
   for(const dim of (compareDimension.value==='All dimensions'?dimensions:[compareDimension.value])){const ra=data.actors[a.id][dim],rb=data.actors[b.id][dim],tr=element('tr');const label=element('th',dim);label.scope='row';tr.append(label);
    for(const r of [ra,rb]){const td=element('td');td.append(element('strong',r.value),element('p',r.title+' · '+r.period+' · '+r.stage));sourceLinks(td,r.sources);tr.append(td);}
-   const matching=ra.metric&&ra.metric===rb.metric&&ra.period===rb.period&&Number.isFinite(ra.number)&&Number.isFinite(rb.number);
-   tr.append(element('td',matching?'A minus B: '+(ra.number-rb.number).toFixed(1)+(ra.metric==='gdp-growth-2025'||ra.metric==='sipri-real-change-2025'?' percentage points':' original metric units')+' for this matched observation only. No causal or overall ranking.':'Different measures, scope or periods. No numeric difference calculated.'));body.append(tr);
+   const matched=window.EPChaosComparability.compare(ra,rb);
+   tr.append(element('td',matched.comparable?'A minus B: '+matched.difference.toFixed(1)+' '+matched.unit+' for this matched observation only. No causal or overall ranking.':matched.reason+'. No numeric difference calculated.'));body.append(tr);
   }table.append(body);host.append(table);
  }
  left.addEventListener('change',compare);right.addEventListener('change',compare);compareDimension.addEventListener('change',compare);compare();

@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');
+const {compare}=require('../chaos-comparability.js');
+const a={metric:'gdp-growth-2025',period:'2025 versus 2024',number:2.2};
+const b={metric:'gdp-growth-2025',period:'2025 versus 2024',number:5};
+assert.deepEqual(compare(a,b),{comparable:true,difference:-2.8,unit:'percentage points',metric:a.metric,period:a.period});
+assert.equal(compare(a,{...b,period:'2024 versus 2023'}).comparable,false);
+assert.equal(compare(a,{...b,metric:'sipri-real-change-2025'}).comparable,false);
+assert.equal(compare(a,{...b,number:null}).comparable,false);
+assert.equal(compare({...a,metric:'russia-fossil-export-revenue-eur-mn-day'},{...b,metric:'russia-fossil-export-revenue-eur-mn-day'}).comparable,false);
+console.log('Matched measurement contract passed');
