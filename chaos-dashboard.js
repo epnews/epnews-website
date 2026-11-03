@@ -109,12 +109,35 @@ let influenceFramework=null;
 fetch('data/soi-diplomatic-influence-framework.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('framework unavailable');return r.json();}).then(d=>{if(!d||d.influenceScoreAuthorized!==false||!Array.isArray(d.dimensions))throw Error('invalid framework');influenceFramework=d;const a=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');if(a&&dim&&a.value&&dim.value)renderCards(a.value,dim.value);}).catch(()=>{});
 let votingEvidence=null;
 let commonCohortVoting=null;
+let internationalAlignment=null;
+fetch('data/soi-international-alignment-original-archive-reproduction-20261102.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('alignment unavailable');return r.json();}).then(d=>{
+ if(!window.EPInternationalAlignment)throw Error('alignment adapter unavailable');
+ for(const sphere of spheres)window.EPInternationalAlignment.build(d,sphere.id);
+ internationalAlignment=d;
+ const actor=root.querySelector('#chaos-sphere'),dim=root.querySelector('#chaos-dimension');
+ if(actor&&dim&&actor.value&&(dim.value==='Diplomatic'||dim.value==='Overall change'))renderCards(actor.value,dim.value);
+}).catch(()=>{});
+
 const voteActor={us:'USA',china:'CHN',russia:'RUS',india:'IND'};
 const voteNames={USA:'United States',CHN:'China',RUS:'Russia',IND:'India'};
 function appendVotingEvidence(actor,dimension){
  if(dimension!=='Diplomatic'&&dimension!=='Overall change')return;
  const panel=element('section',undefined,'chaos-indicator-card chaos-voting-evidence');
  panel.append(element('h4','UN voting agreement · recorded votes (2021–2024)'),element('p','Measured voting agreement, not diplomatic influence. Abstentions count as positions; consensus and nonvoting excluded.'));
+ const alignment=element('details');alignment.className='chaos-international-alignment';
+ alignment.append(element('summary','International Alignment · UN voting agreement (2021–2024)'));
+ if(internationalAlignment&&window.EPInternationalAlignment){
+  try{
+   const display=window.EPInternationalAlignment.build(internationalAlignment,actor);
+   alignment.append(element('p',display.disclaimer));
+   const scroll=element('div');scroll.style.overflowX='auto';const table=element('table'),head=element('tr');
+   for(const label of ['Year','Agreement','Matching votes','Recorded comparisons'])head.append(element('th',label));table.append(head);
+   for(const r of display.years){const tr=element('tr');for(const value of [String(r.year),r.percentage.toFixed(2)+'%',String(r.agreements),String(r.denominator)])tr.append(element('td',value));table.append(tr);}
+   scroll.append(table);alignment.append(scroll,element('p','Descriptive voting agreement only; no geopolitical influence score or needle.'));
+   const source=element('a','Source: SWP / GESIS UNGA-RES');source.href='https://doi.org/10.7802/2855';source.target='_blank';source.rel='noopener noreferrer';alignment.append(source);
+  }catch(e){alignment.append(element('p','Alignment data failed validation; no score displayed.'));}
+ }else alignment.append(element('p','Historical alignment data loading or unavailable.'));
+ panel.append(alignment);
  if(!votingEvidence){panel.append(element('p','Country voting evidence is loading or unavailable.'));cards.append(panel);return;}
  if(diplomaticCandidates){
   const entries=diplomaticCandidates.cases.filter(x=>x.sphere===actor);
