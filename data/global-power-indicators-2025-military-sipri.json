@@ -1,0 +1,33 @@
+{
+  "year": 2025,
+  "source": "SIPRI 2026 via Our World in Data; constant 2024 USD",
+  "source_url": "https://ourworldindata.org/grapher/military-spending-sipri.csv?v=1&csvType=full&useColumnShortNames=true",
+  "actors": {
+    "us": {
+      "spending_2024": 1004901000000,
+      "spending_2025": 929162850000,
+      "real_change_pct": -7.536876766965106
+    },
+    "china": {
+      "spending_2024": 311900340000,
+      "spending_2025": 335017640000,
+      "real_change_pct": 7.411758512350453
+    },
+    "russia": {
+      "spending_2024": 149401880000,
+      "spending_2025": 158236360000,
+      "real_change_pct": 5.91323214942141
+    },
+    "india": {
+      "spending_2024": 85597086000,
+      "spending_2025": 93254680000,
+      "real_change_pct": 8.94609192654059
+    },
+    "eu": {
+      "spending_2024": 360219122430,
+      "spending_2025": 430385925610,
+      "aggregation": "27 EU member states",
+      "real_change_pct": 19.478922358885953
+    }
+  }
+}
