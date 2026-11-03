@@ -449,7 +449,7 @@ assert.ok(data.actors.eu.Strategic.sources.includes('sipri'));
 assert.ok(data.actors.eu.Strategic.sources.includes('eda'),'Retain independent EDA context');
 assert.ok(data.actors.eu.Strategic.meaning.includes('27 EU member countries'));
 assert.equal(data.actors.eu.Strategic.score,null,'Spending input must not become an influence score');
-assert.equal(data.actors.eu.Strategic.number,20);
+assert.ok(Math.abs(data.actors.eu.Strategic.number-19.47892252885306)<1e-10,'Use audited SIPRI real change rather than obsolete EDA growth');
 assert.equal(data.actors.china['Energy and resources'].metric,'china-crude-import-qoq-pct');
 assert.equal(data.actors.russia['Energy and resources'].metric,'russia-fossil-export-revenue-eur-mn-day');
 assert.equal(data.actors.us.Diplomatic.score??null,null);
