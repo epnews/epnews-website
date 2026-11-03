@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "year": 2024,
+  "dimensions": {
+    "economic": {
+      "name": "Real GDP growth",
+      "unit": "percent",
+      "source": "World Bank WDI NY.GDP.MKTP.KD.ZG"
+    },
+    "strategic": {
+      "name": "Real military expenditure change from 2023",
+      "unit": "percent",
+      "source": "SIPRI 2024 fact sheet / SIPRI-derived 2026 EU27 aggregate"
+    },
+    "energy": {
+      "name": "Net energy imports as share of energy use",
+      "unit": "percent",
+      "source": "World Bank WDI EG.IMP.CONS.ZS / EU modeled proxy"
+    }
+  },
+  "actors": {
+    "us": {
+      "economic": {
+        "value": 2.8,
+        "status": "published"
+      },
+      "strategic": {
+        "value": 5.7,
+        "status": "published",
+        "source_vintage": "2025 fact sheet"
+      },
+      "energy": {
+        "value": -9.78127421443322,
+        "status": "published"
+      }
+    },
+    "china": {
+      "economic": {
+        "value": 5,
+        "status": "published"
+      },
+      "strategic": {
+        "value": 7,
+        "status": "estimated",
+        "source_vintage": "2025 fact sheet"
+      },
+      "energy": {
+        "value": 24.0191966181448,
+        "status": "published"
+      }
+    },
+    "russia": {
+      "economic": {
+        "value": 4.9,
+        "status": "published"
+      },
+      "strategic": {
+        "value": 38,
+        "status": "estimated_rounded",
+        "source_vintage": "2025 fact sheet"
+      },
+      "energy": {
+        "value": -70.7306703064017,
+        "status": "published"
+      }
+    },
+    "india": {
+      "economic": {
+        "value": 7.1,
+        "status": "published"
+      },
+      "strategic": {
+        "value": 1.6,
+        "status": "published",
+        "source_vintage": "2025 fact sheet"
+      },
+      "energy": {
+        "value": 36.0305276064275,
+        "status": "published"
+      }
+    },
+    "eu": {
+      "economic": {
+        "value": 1.1,
+        "status": "published"
+      },
+      "strategic": {
+        "value": 14.618136793400293,
+        "status": "calculated",
+        "source_vintage": "2026 SIPRI-derived OWID country series"
+      },
+      "energy": {
+        "value": 61.51735784436232,
+        "status": "modeled",
+        "method": "Eurostat 2024 TES proxy plus calibration; not official IEA EU27 observation"
+      }
+    }
+  },
+  "limitations": [
+    "2024 strategic source vintages differ: four country figures are SIPRI 2025 fact sheet, EU27 aggregate uses SIPRI 2026-derived series. Do not claim strict same-vintage comparability.",
+    "EU energy observation is modeled, not an official IEA WDI observation.",
+    "Economic growth, military spending change and net energy import dependence have different interpretations and cannot be combined into an influence score.",
+    "This is a staged data cohort; existing 2025 dashboard and needles are unchanged."
+  ]
+}
