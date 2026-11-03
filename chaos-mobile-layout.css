@@ -25,3 +25,22 @@
  #chaos-dashboard #soi-unga-restricted-comparison table{min-width:360px}
  #chaos-dashboard .chaos-research-archive{overflow-wrap:anywhere}
 }
+
+/* Mobile-only reporting-year cards: remove cramped three-column table layout. */
+@media(max-width:700px){
+ #chaos-dashboard #chaos-reporting-year-values{min-width:0;max-width:100%;overflow-wrap:anywhere}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations{display:block;width:100%;min-width:0;border:0}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations tbody{display:grid;gap:10px;width:100%}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations tr{display:grid;grid-template-columns:minmax(0,1fr);gap:7px;padding:12px;border:1px solid #46617d;border-radius:10px;background:#14283e;min-width:0}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations th{display:block;width:100%;padding:0 0 6px;font-size:14px;text-align:left;border:0}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations td{display:block;width:100%;min-width:0;padding:8px 10px;border:1px solid rgba(127,145,170,.25);border-radius:7px;overflow-wrap:anywhere;white-space:normal;text-align:left}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations td::before{content:attr(data-reporting-year);display:block;font-size:11px;font-weight:700;letter-spacing:.06em;color:#f1c16d;margin-bottom:4px}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations td strong{display:block;font-size:1.2rem;font-variant-numeric:tabular-nums}
+ #chaos-dashboard #chaos-reporting-year-values .chaos-year-observations td small{display:block;line-height:1.45;margin-top:3px}
+ #chaos-dashboard #chaos-comparison-visual{min-width:0;max-width:100%;padding:10px}
+ #chaos-dashboard .chaos-visual-comparison-cards{grid-template-columns:minmax(0,1fr)}
+ #chaos-dashboard .chaos-comparison-archive{max-width:100%;overflow-x:auto}
+ #chaos-dashboard .chaos-comparison-archive table{min-width:520px}
+ #chaos-dashboard .chaos-visual-trend svg{max-width:100%;height:auto}
+}
