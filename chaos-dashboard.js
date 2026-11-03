@@ -318,9 +318,27 @@ function renderCards(actor,dimension){
   const details=element('details'),summary=element('summary','Who pays / what remains unresolved');details.append(summary,element('p','Costs and beneficiaries: '+r.costs),element('p','Scoring limit: '+r.gap));card.append(details);sourceLinks(card,r.sources);cards.append(card);
  }
 }
+// Present readable context first; retain the verbatim audited record in a disclosure.
+function explainReading(actor,dim,record,indicator,unit){
+ const heading=record?.title||dim;
+ const period=record?.period||'';
+ const value=indicator?(indicator.number>0?'+':'')+Number(indicator.number).toLocaleString('en-US',{maximumFractionDigits:1}):null;
+ const metric=unit||heading;
+ const what=value?'The published measurement for '+actor.name+' is '+value+' ('+metric+')'+(period?' for '+period:'')+'.':
+  'This selection tracks '+heading.toLowerCase()+(period?' during '+period:'')+'. A comparable numerical reading is not available.';
+ const category=String(dim).toLowerCase();
+ const why=/strategic|military|security|defen/.test(category)?'Changes in military resources and security arrangements can affect future capabilities and strategic choices.':
+ /energy|resource|lng|gas|oil/.test(category)?'Changes in energy supply, trade and dependence can affect economic security and bargaining options.':
+ /econom|trade|growth|invest/.test(category)?'Economic changes can affect a country’s resources, trade relationships and ability to invest.':
+ 'This provides one measurable piece of the broader picture.';
+ const limit=/strategic|military|security|defen/.test(category)?'Higher spending or an agreement does not by itself prove greater military capability or independence.':
+ /energy|resource|lng|gas|oil/.test(category)?'A change in one energy measure does not by itself prove greater energy security or geopolitical influence.':
+ 'One indicator alone does not establish a country’s overall power or geopolitical influence.';
+ return {what,why,limit};
+}
 function update(){
  const actor=spheres.find(x=>x.id===select.value)||spheres[0],records=data.actors[actor.id],result=model.assessment(records),dim=category.value;
- name.textContent=actor.name;description.textContent=records[dim]?.meaning||records[dim]?.title||actor.note;
+ name.textContent=actor.name;
  // The dial exclusively represents reviewed influence assessments, never mixed proxy units.
  const count=dimensions.filter(key=>records[key]&&records[key].sources.length).length;
  const status=root.querySelector('#chaos-status-text'),conf=root.querySelector('#chaos-confidence-text');
@@ -333,6 +351,26 @@ function update(){
  const indicatorValue=indicator?indicator.number:null;
  const indicatorUnit=indicator?supportedUnits[indicator.metric].label:null;
  const indicatorRange=indicator?supportedUnits[indicator.metric].range:null;
+ // Summary is deliberately separated from the technical evidence record.
+ const selectedRecord=records[dim];
+ const summary=explainReading(actor,dim,selectedRecord,indicator,indicatorUnit);
+ description.replaceChildren();
+ const readable=document.createElement('div');readable.className='chaos-reader-summary';
+ for(const [heading,copy] of [['What changed',summary.what],['Why it matters',summary.why],['What it does not prove',summary.limit]]){
+  const section=document.createElement('div');section.className='chaos-reader-summary-item';
+  const h=document.createElement('h4');h.textContent=heading;
+  const p=document.createElement('p');p.textContent=copy;section.append(h,p);readable.append(section);
+ }
+ const sourceIds=selectedRecord?.sources||[];
+ const sourceLine=document.createElement('p');sourceLine.className='chaos-reader-source';
+ sourceLine.textContent='Sources: '+(sourceIds.map(id=>data.sources[id]?.label||id).join(' · ')||'See evidence below');
+ readable.append(sourceLine);description.append(readable);
+ const raw=selectedRecord?.meaning||selectedRecord?.title||actor.note;
+ if(raw){const details=document.createElement('details');details.className='chaos-reader-details';
+  const heading=document.createElement('summary');heading.textContent='Detailed evidence and calculations';
+  const body=document.createElement('p');body.textContent=raw;body.style.overflowWrap='anywhere';
+  details.append(heading,body);description.append(details);}
+
  const indicatorAngle=indicator?Math.max(-90,Math.min(90,indicatorValue/indicatorRange*90)):null; // metric-specific symmetric reference range, not influence.
  // Do not combine incomparable country-specific observations into an overall index.
  const provisionalParts=[];
