@@ -15,7 +15,7 @@
     "energy": {
       "name": "Net energy imports as share of energy use",
       "unit": "percent",
-      "source": "World Bank WDI EG.IMP.CONS.ZS / EU modeled proxy"
+      "source": "World Bank WDI EG.IMP.CONS.ZS (countries) / Eurostat Energy statistics overview (EU27)"
     }
   },
   "actors": {
@@ -100,15 +100,17 @@
         "spending_2024_constant_2024_usd": 360219122430
       },
       "energy": {
-        "value": 61.51735784436232,
-        "status": "modeled",
-        "method": "Eurostat 2024 TES proxy plus calibration; not official IEA EU27 observation"
+        "value": 57.3,
+        "status": "published",
+        "source": "Eurostat Energy statistics - an overview, data extracted September 2026",
+        "method": "Net energy imports divided by gross available energy; Eurostat EU27 2024 official energy dependency",
+        "source_url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Energy_statistics_-_an_overview"
       }
     }
   },
   "limitations": [
     "All five 2024 strategic observations now derive from one SIPRI 2026 vintage; 2024 results differ from earlier SIPRI 2025 fact-sheet figures because of revisions.",
-    "EU energy observation is modeled, not an official IEA WDI observation.",
+    "EU 2024 energy dependency is Eurostat's official 57.3%, calculated as net imports / gross available energy; country values are WDI EG.IMP.CONS.ZS. These source frameworks are closely related but must remain attributed separately.",
     "Economic growth, military spending change and net energy import dependence have different interpretations and cannot be combined into an influence score.",
     "This is a staged data cohort; existing 2025 dashboard and needles are unchanged."
   ]
