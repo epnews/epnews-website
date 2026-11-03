@@ -866,7 +866,7 @@ assert.match(liveDiplomacyDashboardSource,/fetch\('data\/soi-diplomatic-audit-wo
 assert.match(liveDiplomacyDashboardSource,/VERIFICATION PROGRESS/);
 assert.match(liveDiplomacyDashboardSource,/OBSERVED OUTCOME/);
 assert.match(liveDiplomacyDashboardSource,/Original diplomatic influence needle remains unscored/);
-assert.match(indexSource,/chaos-dashboard\.js\?v=diplomacy-audit-gates-v4/);
+assert.match(indexSource,/chaos-dashboard\.js\?v=matched-measures-1/);
 
 // US before/after institution status now has independently dated official sources, not causal attribution.
 const usMatched=diplomaticQueue.items.find(x=>x.sphere==='us');
@@ -880,7 +880,7 @@ assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-followup').complete);
 assert.match(liveDiplomacyDashboardSource,/FIVE-SPHERE BASELINE COMPARABILITY/);
 assert.match(liveDiplomacyDashboardSource,/matched descriptive measure/);
 assert.match(liveDiplomacyDashboardSource,/not yet matched/);
-assert.match(fs.readFileSync(__dirname+'\/../index.html','utf8'),/chaos-dashboard\.js\?v=diplomacy-audit-gates-v4/);
+assert.match(fs.readFileSync(__dirname+'\/../index.html','utf8'),/chaos-dashboard\.js\?v=matched-measures-1/);
 
 // Russia treaty legal-status comparability is descriptive and does not prove military influence.
 const russiaLegal=diplomaticQueue.items.find(x=>x.sphere==='russia').baselineFollowupAssessment;
