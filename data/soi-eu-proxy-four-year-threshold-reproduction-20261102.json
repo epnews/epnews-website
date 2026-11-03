@@ -1,0 +1,127 @@
+{
+  "schema": "soi-eu-proxy-four-year-threshold-reproduction-v1",
+  "sourceArchiveSha256": "04e2a0df74df61ca07e157871578e53effe4f130932d71a3298852b7c5180522",
+  "sourceArchiveName": "2025-03-09_unga-res_un_resolutions_positions(4).zip",
+  "method": "Full original source ZIP scan with 2024-defined frozen 160 external partners, EU-27 voting position proxy",
+  "physicalLinesScanned": 2203461,
+  "eligibleRecordedVoteRows": 62967,
+  "frozenExternalPartners": 160,
+  "thresholds": {
+    "baseline_20_75": {
+      "minEU27ValidVotes": 20,
+      "agreementThreshold": 0.75
+    },
+    "strict_24_90": {
+      "minEU27ValidVotes": 24,
+      "agreementThreshold": 0.9
+    },
+    "unanimous_27": {
+      "minEU27ValidVotes": 27,
+      "agreementThreshold": 1
+    }
+  },
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "series": {
+    "baseline_20_75": [
+      {
+        "year": 2021,
+        "eligibleResolutions": 77,
+        "matchedPairs": 11008,
+        "agreements": 6652,
+        "agreementPercent": 60.4288
+      },
+      {
+        "year": 2022,
+        "eligibleResolutions": 80,
+        "matchedPairs": 11380,
+        "agreements": 6973,
+        "agreementPercent": 61.2742
+      },
+      {
+        "year": 2023,
+        "eligibleResolutions": 79,
+        "matchedPairs": 11301,
+        "agreements": 6643,
+        "agreementPercent": 58.7824
+      },
+      {
+        "year": 2024,
+        "eligibleResolutions": 81,
+        "matchedPairs": 11873,
+        "agreements": 6999,
+        "agreementPercent": 58.9489
+      }
+    ],
+    "strict_24_90": [
+      {
+        "year": 2021,
+        "eligibleResolutions": 66,
+        "matchedPairs": 9363,
+        "agreements": 6141,
+        "agreementPercent": 65.588
+      },
+      {
+        "year": 2022,
+        "eligibleResolutions": 73,
+        "matchedPairs": 10354,
+        "agreements": 6741,
+        "agreementPercent": 65.1053
+      },
+      {
+        "year": 2023,
+        "eligibleResolutions": 69,
+        "matchedPairs": 9820,
+        "agreements": 6256,
+        "agreementPercent": 63.7067
+      },
+      {
+        "year": 2024,
+        "eligibleResolutions": 69,
+        "matchedPairs": 10095,
+        "agreements": 6267,
+        "agreementPercent": 62.0802
+      }
+    ],
+    "unanimous_27": [
+      {
+        "year": 2021,
+        "eligibleResolutions": 48,
+        "matchedPairs": 6780,
+        "agreements": 4322,
+        "agreementPercent": 63.7463
+      },
+      {
+        "year": 2022,
+        "eligibleResolutions": 61,
+        "matchedPairs": 8789,
+        "agreements": 5446,
+        "agreementPercent": 61.9638
+      },
+      {
+        "year": 2023,
+        "eligibleResolutions": 60,
+        "matchedPairs": 8560,
+        "agreements": 5491,
+        "agreementPercent": 64.1472
+      },
+      {
+        "year": 2024,
+        "eligibleResolutions": 60,
+        "matchedPairs": 8771,
+        "agreements": 5139,
+        "agreementPercent": 58.5908
+      }
+    ]
+  },
+  "sourceReproductionCompleted": true,
+  "baselineMatchesFrozenSeries": true,
+  "notOfficialEUVote": true,
+  "notCausalInfluence": true,
+  "alignmentNeedleAuthorized": false,
+  "overallInfluenceScore": null
+}
