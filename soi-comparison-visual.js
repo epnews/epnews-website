@@ -20,6 +20,31 @@ function init(){
   if(a.value===b.value){visual.append(el('p','Choose two different spheres to compare.'));return;}
   visual.append(el('h4',names[a.value]+' vs '+names[b.value]));
   const requested=dim.value;
+  if(requested==='Energy and resources'){
+   const rows={
+    us:{value:-9.78127421443322,code:'USA',status:'Official IEA-sourced WDI'},
+    china:{value:24.0191966181448,code:'CHN',status:'Official IEA-sourced WDI'},
+    russia:{value:-70.7306703064017,code:'RUS',status:'Official IEA-sourced WDI'},
+    india:{value:36.0305276064275,code:'IND',status:'Official IEA-sourced WDI'},
+    eu:{value:61.51735784436232,code:'EUU',status:'Modeled Eurostat + four-year historical calibration'}
+   };
+   const left=rows[a.value],right=rows[b.value];
+   if(!left||!right){visual.append(el('p','Energy import-dependence observations are unavailable for this selection.'));return;}
+   visual.append(el('h5','2024 net energy imports · % of energy use'));
+   visual.append(el('p','Positive values mean net energy imports; negative values mean net energy exports. This measures energy trade dependence, not geopolitical power or a command-meter score.'));
+   const cards=el('div',undefined,'chaos-visual-comparison-cards');
+   for(const [name,item] of [[names[a.value],left],[names[b.value],right]]){
+    const card=el('div',undefined,'chaos-visual-comparison-card');
+    card.append(el('strong',name),el('div',(item.value>0?'+':'')+item.value.toFixed(2)+'%','chaos-visual-big'),el('small',item.status));
+    card.append(el('p',item.value<0?'Net exporter':'Net importer'));
+    cards.append(card);
+   }
+   visual.append(cards,el('p','Signed difference ('+names[a.value]+' minus '+names[b.value]+'): '+pp(left.value-right.value)+'. This is a descriptive percentage-point gap, not a winner or ranking.'));
+   const note=el('p','EU-27 2024 is an EP News modeled estimate (Eurostat direct TES ratio 61.035% + historical adjustment 0.482 pp = 61.52%); not a published IEA observation. The other four values are World Bank WDI EG.IMP.CONS.ZS observations sourced to IEA.');visual.append(note);
+   const link=el('a','World Bank source data');link.href='https://api.worldbank.org/v2/country/RUS;USA;CHN;IND;EUU/indicator/EG.IMP.CONS.ZS?format=json&date=2024';link.target='_blank';link.rel='noopener noreferrer';visual.append(link);
+   const euLink=el('a',' · Eurostat EU27 source');euLink.href='https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?geo=EU27_2020&freq=A&siec=TOTAL&unit=KTOE&time=2024&nrg_bal=IMP&nrg_bal=EXP&nrg_bal=NRGSUP';euLink.target='_blank';euLink.rel='noopener noreferrer';visual.append(euLink);
+   return;
+  }
   if(requested!=='All dimensions'&&requested!=='Diplomatic'){
    visual.append(el('p','This dimension currently has different indicators, periods or units. The detailed evidence table below shows each side; a numerical winner cannot be calculated responsibly.'));
    return;
