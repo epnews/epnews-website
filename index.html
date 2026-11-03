@@ -8,19 +8,16 @@
 <noscript><p class="chaos-disclaimer">JavaScript is required for the interactive meter. Influence scores are withheld. The methodology and detailed source archive below remain readable.</p></noscript><div class="chaos-layout"><section class="chaos-gauge" aria-label="Sphere of influence tracker"><h3>GLOBAL POWER INDICATORS</h3><p class="chaos-evidence">Evidence review · 31 October 2026 · Method v2.0</p><label for="chaos-sphere">Select sphere</label><select id="chaos-sphere"></select><label for="chaos-dimension">Select indicator</label><select id="chaos-dimension"><option value="Economic">Economic growth</option><option value="Strategic">Military spending</option><option value="Energy and resources">Energy &amp; resources</option></select>
 
 <div class="chaos-command-dial" id="chaos-meter" role="img" aria-label="Influence assessment not yet scored" data-state="pending">
-<div class="chaos-dial-wrap">
-<svg class="chaos-dial-svg" viewBox="0 0 320 206" aria-hidden="true">
-<defs><filter id="chaos-needle-glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3"/></filter></defs>
-<path class="chaos-dial-track" d="M 32 174 A 128 128 0 0 1 288 174"/>
-<g class="chaos-dial-segments" id="chaos-dial-segments"></g>
-<path class="chaos-confidence-track" d="M 53 174 A 107 107 0 0 1 267 174"/>
-<path class="chaos-confidence-value" id="chaos-confidence-value" d="M 53 174 A 107 107 0 0 1 267 174" pathLength="100"/>
-<g class="chaos-dial-ticks" id="chaos-dial-ticks"></g>
-<g id="chaos-needle-group" class="chaos-needle-group" transform="rotate(0 160 174)">
-<line x1="160" y1="174" x2="160" y2="99" class="chaos-needle-glow" filter="url(#chaos-needle-glow)"/>
-<line x1="160" y1="174" x2="160" y2="99" class="chaos-needle"/>
+<div class="chaos-dial-wrap chaos-visual-meter">
+<img class="chaos-meter-art" src="https://lh3.googleusercontent.com/d/12l-I1ipZSV8doUaPLQ8LvYXqFYE9akzL" alt="Strategic Outlook Meter: critical, at risk, transition, stable, dominant" loading="eager" decoding="async">
+<svg class="chaos-dial-svg chaos-visual-needle" viewBox="0 0 1536 768" aria-hidden="true">
+<defs><filter id="chaos-needle-glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+<g id="chaos-needle-group" class="chaos-needle-group" transform="rotate(0 768 596)">
+<path d="M 757 594 L 768 170 L 779 594 Z" class="chaos-needle-glow" filter="url(#chaos-needle-glow)"/>
+<path d="M 758 595 L 768 178 L 778 595 Z" class="chaos-needle"/>
 </g>
-<circle cx="160" cy="174" r="8" class="chaos-needle-cap"/>
+<circle cx="768" cy="596" r="30" class="chaos-needle-cap"/>
+<circle cx="768" cy="596" r="20" class="chaos-needle-hub"/>
 </svg>
 <div class="chaos-status-badge"><span>CURRENT READING</span><strong id="chaos-status-text">PENDING</strong><small id="chaos-confidence-text">Select an indicator</small></div>
 </div>

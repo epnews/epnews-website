@@ -221,3 +221,15 @@
 .chaos-research-drawer .chaos-assessment-drawer #chaos-assessment-readiness{padding:12px!important}
 .chaos-research-drawer .chaos-assessment-drawer #chaos-evidence-chips{margin:0 12px 14px}
 #chaos-indicator-explainer{font-size:12px;line-height:1.5;max-width:66ch}
+
+/* Approved Strategic Outlook artwork: image is a static dial face; SVG needle remains data-driven. */
+.chaos-visual-meter{width:min(100%,780px);max-width:100%;margin:16px auto 8px;isolation:isolate}
+.chaos-visual-meter .chaos-meter-art{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:contain}
+.chaos-visual-meter .chaos-visual-needle{position:absolute;inset:0;width:100%;height:auto;aspect-ratio:2/1;overflow:visible;filter:none;pointer-events:none}
+.chaos-visual-meter .chaos-needle-group{transform-origin:768px 596px;transition:transform .6s ease}
+.chaos-visual-meter .chaos-needle{fill:#fff1d1;stroke:#fffcf2;stroke-width:3;filter:drop-shadow(0 0 9px #ffb75d)}
+.chaos-visual-meter .chaos-needle-glow{fill:#ffb342;opacity:.65}
+.chaos-visual-meter .chaos-needle-cap{fill:#1c3755;stroke:#64d5ff;stroke-width:8;filter:drop-shadow(0 0 12px #13baff)}
+.chaos-visual-meter .chaos-needle-hub{fill:#cbd6e6;stroke:#fff;stroke-width:4}
+.chaos-visual-meter .chaos-status-badge{margin:12px auto 0}
+@media(max-width:720px){.chaos-visual-meter{width:100%}.chaos-visual-meter .chaos-status-badge{margin-top:10px}}
