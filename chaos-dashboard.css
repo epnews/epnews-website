@@ -249,22 +249,3 @@
 #chaos-sphere-description .chaos-reader-details summary{cursor:pointer;font-weight:700;color:#e8edf6}
 #chaos-sphere-description .chaos-reader-details p{font-size:14px;line-height:1.5;margin:12px 0 2px;overflow-wrap:anywhere}
 @media(max-width:700px){#chaos-sphere-description .chaos-reader-summary-item p{font-size:15px;line-height:1.5}#chaos-sphere-description .chaos-reader-summary{gap:12px}}
-
-/* Collapsed flagship discovery treatment: noninteractive metadata within native details summary. */
-.chaos-flagship-heading{display:flex;align-items:center;gap:12px;background:#101d2e;color:#f6f8fa;border-left:4px solid #d8a650;padding:10px 16px;margin-bottom:-24px;font-size:11px;font-weight:800;letter-spacing:.12em}
-.chaos-flagship-heading span{color:#e8bd70}.chaos-flagship-heading strong{font-size:inherit;letter-spacing:inherit}
-.chaos-left-stack>.chaos-flagship-heading{margin-bottom:-24px}
-.chaos-hub>summary .chaos-flagship-discovery{position:absolute;left:30px;bottom:15px;display:flex;flex-direction:column;gap:3px;max-width:calc(100% - 60px);color:#f0c577;pointer-events:none}
-.chaos-flagship-discovery strong{font-size:11px;letter-spacing:.09em}
-.chaos-flagship-discovery small{font-size:11px;color:#f0f3f7;line-height:1.45}
-.chaos-hub>summary{padding-bottom:74px}
-@media(max-width:700px){.chaos-flagship-heading{font-size:10px;padding:9px 12px}.chaos-hub>summary{padding-bottom:92px}.chaos-hub>summary .chaos-flagship-discovery{left:16px;bottom:12px;max-width:calc(100% - 32px)}.chaos-flagship-discovery small{font-size:10px}}
-
-/* Clear flagship discovery hierarchy; supersedes earlier subtle treatment. */
-.chaos-left-stack>.chaos-flagship-heading{margin-bottom:0;min-height:43px;background:#142840;border:1px solid #b98b39;border-bottom:0;border-left:6px solid #f1bd5b;border-radius:10px 10px 0 0;padding:12px 18px;font-size:13px;gap:10px}
-.chaos-left-stack>.chaos-hub{border-top-left-radius:0;border-top-right-radius:0}
-.chaos-hub>summary .chaos-flagship-discovery{position:relative;left:auto;bottom:auto;max-width:100%;width:100%;margin-top:14px;padding:12px 16px;background:rgba(8,19,33,.93);border-left:4px solid #f1bd5b;border-radius:6px;gap:5px;z-index:2}
-.chaos-hub>summary .chaos-flagship-discovery strong{font-size:14px;letter-spacing:.04em;color:#ffd17d}
-.chaos-hub>summary .chaos-flagship-discovery small{font-size:13px;color:#f5f7fa}
-.chaos-hub>summary{padding-bottom:26px;flex-wrap:wrap}
-@media(max-width:700px){.chaos-left-stack>.chaos-flagship-heading{font-size:11px;padding:11px 12px}.chaos-hub>summary{padding-bottom:18px}.chaos-hub>summary .chaos-flagship-discovery{margin-top:12px;padding:10px 12px}.chaos-hub>summary .chaos-flagship-discovery strong{font-size:12px}.chaos-hub>summary .chaos-flagship-discovery small{font-size:12px}}
