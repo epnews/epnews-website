@@ -1,0 +1,298 @@
+{
+  "schema": "soi-international-alignment-stage1-sensitivity-v1",
+  "asOf": "2026-11-02",
+  "inputs": [
+    "data/soi-unga-frozen-external-partner-2021-2024.json",
+    "data/soi-unga-six-code-restricted-results-2021-2024.json",
+    "data/soi-unga-missingness-bounds-2021-2024.json"
+  ],
+  "sourceArchiveSha256": "04e2a0df74df61ca07e157871578e53effe4f130932d71a3298852b7c5180522",
+  "metric": "UNGA voting agreement with 160 frozen external partners, not causal influence",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "actors": [
+    "us",
+    "china",
+    "russia",
+    "eu",
+    "india"
+  ],
+  "euProxy": {
+    "minimumEU27ValidVotes": 20,
+    "supermajority": 0.75,
+    "isOfficialUNVote": false
+  },
+  "restrictedPolicyCodes": [
+    "102",
+    "110",
+    "111",
+    "112",
+    "118",
+    "129"
+  ],
+  "series": {
+    "us": [
+      {
+        "year": 2021,
+        "fullCohortAgreementPct": 26.3343,
+        "restrictedSixCodeAgreementPct": 23.6188,
+        "restrictedMatchedPairs": 10589,
+        "restrictedEligibleResolutions": 73,
+        "restrictedAgreements": 2501,
+        "restrictedMinusFullPercentagePoints": -2.7155,
+        "fullCohortMissingVoteLowerBoundPct": 23.65,
+        "fullCohortMissingVoteUpperBoundPct": 33.83,
+        "fullCohortPartnerVoteCoveragePct": 89.82
+      },
+      {
+        "year": 2022,
+        "fullCohortAgreementPct": 34.4341,
+        "restrictedSixCodeAgreementPct": 31.2263,
+        "restrictedMatchedPairs": 11074,
+        "restrictedEligibleResolutions": 77,
+        "restrictedAgreements": 3458,
+        "restrictedMinusFullPercentagePoints": -3.2078,
+        "fullCohortMissingVoteLowerBoundPct": 30.68,
+        "fullCohortMissingVoteUpperBoundPct": 41.58,
+        "fullCohortPartnerVoteCoveragePct": 89.1
+      },
+      {
+        "year": 2023,
+        "fullCohortAgreementPct": 31.0386,
+        "restrictedSixCodeAgreementPct": 26.8546,
+        "restrictedMatchedPairs": 10892,
+        "restrictedEligibleResolutions": 75,
+        "restrictedAgreements": 2925,
+        "restrictedMinusFullPercentagePoints": -4.184,
+        "fullCohortMissingVoteLowerBoundPct": 27.89,
+        "fullCohortMissingVoteUpperBoundPct": 38.03,
+        "fullCohortPartnerVoteCoveragePct": 89.86
+      },
+      {
+        "year": 2024,
+        "fullCohortAgreementPct": 32.0913,
+        "restrictedSixCodeAgreementPct": 27.6407,
+        "restrictedMatchedPairs": 12156,
+        "restrictedEligibleResolutions": 82,
+        "restrictedAgreements": 3360,
+        "restrictedMinusFullPercentagePoints": -4.4506,
+        "fullCohortMissingVoteLowerBoundPct": 29.43,
+        "fullCohortMissingVoteUpperBoundPct": 37.71,
+        "fullCohortPartnerVoteCoveragePct": 91.72
+      }
+    ],
+    "china": [
+      {
+        "year": 2021,
+        "fullCohortAgreementPct": 71.6275,
+        "restrictedSixCodeAgreementPct": 68.6189,
+        "restrictedMatchedPairs": 10723,
+        "restrictedEligibleResolutions": 74,
+        "restrictedAgreements": 7358,
+        "restrictedMinusFullPercentagePoints": -3.0086,
+        "fullCohortMissingVoteLowerBoundPct": 64.29,
+        "fullCohortMissingVoteUpperBoundPct": 74.53,
+        "fullCohortPartnerVoteCoveragePct": 89.75
+      },
+      {
+        "year": 2022,
+        "fullCohortAgreementPct": 64.8438,
+        "restrictedSixCodeAgreementPct": 67.1638,
+        "restrictedMatchedPairs": 10930,
+        "restrictedEligibleResolutions": 76,
+        "restrictedAgreements": 7341,
+        "restrictedMinusFullPercentagePoints": 2.32,
+        "fullCohortMissingVoteLowerBoundPct": 57.77,
+        "fullCohortMissingVoteUpperBoundPct": 68.68,
+        "fullCohortPartnerVoteCoveragePct": 89.09
+      },
+      {
+        "year": 2023,
+        "fullCohortAgreementPct": 65.1993,
+        "restrictedSixCodeAgreementPct": 66.3475,
+        "restrictedMatchedPairs": 10757,
+        "restrictedEligibleResolutions": 74,
+        "restrictedAgreements": 7137,
+        "restrictedMinusFullPercentagePoints": 1.1482,
+        "fullCohortMissingVoteLowerBoundPct": 58.63,
+        "fullCohortMissingVoteUpperBoundPct": 68.71,
+        "fullCohortPartnerVoteCoveragePct": 89.92
+      },
+      {
+        "year": 2024,
+        "fullCohortAgreementPct": 66.2191,
+        "restrictedSixCodeAgreementPct": 68.0178,
+        "restrictedMatchedPairs": 12138,
+        "restrictedEligibleResolutions": 82,
+        "restrictedAgreements": 8256,
+        "restrictedMinusFullPercentagePoints": 1.7987,
+        "fullCohortMissingVoteLowerBoundPct": 60.66,
+        "fullCohortMissingVoteUpperBoundPct": 69.06,
+        "fullCohortPartnerVoteCoveragePct": 91.6
+      }
+    ],
+    "russia": [
+      {
+        "year": 2021,
+        "fullCohortAgreementPct": 57.5385,
+        "restrictedSixCodeAgreementPct": 55.0779,
+        "restrictedMatchedPairs": 10723,
+        "restrictedEligibleResolutions": 74,
+        "restrictedAgreements": 5906,
+        "restrictedMinusFullPercentagePoints": -2.4606,
+        "fullCohortMissingVoteLowerBoundPct": 51.64,
+        "fullCohortMissingVoteUpperBoundPct": 61.89,
+        "fullCohortPartnerVoteCoveragePct": 89.75
+      },
+      {
+        "year": 2022,
+        "fullCohortAgreementPct": 51.4975,
+        "restrictedSixCodeAgreementPct": 54.3164,
+        "restrictedMatchedPairs": 11074,
+        "restrictedEligibleResolutions": 77,
+        "restrictedAgreements": 6015,
+        "restrictedMinusFullPercentagePoints": 2.8189,
+        "fullCohortMissingVoteLowerBoundPct": 45.88,
+        "fullCohortMissingVoteUpperBoundPct": 56.78,
+        "fullCohortPartnerVoteCoveragePct": 89.1
+      },
+      {
+        "year": 2023,
+        "fullCohortAgreementPct": 48.9646,
+        "restrictedSixCodeAgreementPct": 51.7628,
+        "restrictedMatchedPairs": 10892,
+        "restrictedEligibleResolutions": 75,
+        "restrictedAgreements": 5638,
+        "restrictedMinusFullPercentagePoints": 2.7982,
+        "fullCohortMissingVoteLowerBoundPct": 44,
+        "fullCohortMissingVoteUpperBoundPct": 54.14,
+        "fullCohortPartnerVoteCoveragePct": 89.86
+      },
+      {
+        "year": 2024,
+        "fullCohortAgreementPct": 51.4606,
+        "restrictedSixCodeAgreementPct": 54.2297,
+        "restrictedMatchedPairs": 12294,
+        "restrictedEligibleResolutions": 83,
+        "restrictedAgreements": 6667,
+        "restrictedMinusFullPercentagePoints": 2.7691,
+        "fullCohortMissingVoteLowerBoundPct": 47.17,
+        "fullCohortMissingVoteUpperBoundPct": 55.51,
+        "fullCohortPartnerVoteCoveragePct": 91.66
+      }
+    ],
+    "eu": [
+      {
+        "year": 2021,
+        "fullCohortAgreementPct": 60.4288,
+        "restrictedSixCodeAgreementPct": 55.9109,
+        "restrictedMatchedPairs": 9381,
+        "restrictedEligibleResolutions": 65,
+        "restrictedAgreements": 5245,
+        "restrictedMinusFullPercentagePoints": -4.5179,
+        "fullCohortMissingVoteLowerBoundPct": 53.99,
+        "fullCohortMissingVoteUpperBoundPct": 64.64,
+        "fullCohortPartnerVoteCoveragePct": 89.35
+      },
+      {
+        "year": 2022,
+        "fullCohortAgreementPct": 61.2742,
+        "restrictedSixCodeAgreementPct": 59.0723,
+        "restrictedMatchedPairs": 9766,
+        "restrictedEligibleResolutions": 68,
+        "restrictedAgreements": 5769,
+        "restrictedMinusFullPercentagePoints": -2.2019,
+        "fullCohortMissingVoteLowerBoundPct": 54.48,
+        "fullCohortMissingVoteUpperBoundPct": 65.57,
+        "fullCohortPartnerVoteCoveragePct": 88.91
+      },
+      {
+        "year": 2023,
+        "fullCohortAgreementPct": 58.7824,
+        "restrictedSixCodeAgreementPct": 55.9899,
+        "restrictedMatchedPairs": 9541,
+        "restrictedEligibleResolutions": 66,
+        "restrictedAgreements": 5342,
+        "restrictedMinusFullPercentagePoints": -2.7925,
+        "fullCohortMissingVoteLowerBoundPct": 52.56,
+        "fullCohortMissingVoteUpperBoundPct": 63.15,
+        "fullCohortPartnerVoteCoveragePct": 89.41
+      },
+      {
+        "year": 2024,
+        "fullCohortAgreementPct": 58.9489,
+        "restrictedSixCodeAgreementPct": 56.3611,
+        "restrictedMatchedPairs": 10234,
+        "restrictedEligibleResolutions": 69,
+        "restrictedAgreements": 5768,
+        "restrictedMinusFullPercentagePoints": -2.5878,
+        "fullCohortMissingVoteLowerBoundPct": 54,
+        "fullCohortMissingVoteUpperBoundPct": 62.39,
+        "fullCohortPartnerVoteCoveragePct": 91.61
+      }
+    ],
+    "india": [
+      {
+        "year": 2021,
+        "fullCohortAgreementPct": 67.6766,
+        "restrictedSixCodeAgreementPct": 64.0328,
+        "restrictedMatchedPairs": 10618,
+        "restrictedEligibleResolutions": 73,
+        "restrictedAgreements": 6799,
+        "restrictedMinusFullPercentagePoints": -3.6438,
+        "fullCohortMissingVoteLowerBoundPct": 60.93,
+        "fullCohortMissingVoteUpperBoundPct": 70.9,
+        "fullCohortPartnerVoteCoveragePct": 90.04
+      },
+      {
+        "year": 2022,
+        "fullCohortAgreementPct": 65.4398,
+        "restrictedSixCodeAgreementPct": 65.7034,
+        "restrictedMatchedPairs": 11074,
+        "restrictedEligibleResolutions": 77,
+        "restrictedAgreements": 7276,
+        "restrictedMinusFullPercentagePoints": 0.2636,
+        "fullCohortMissingVoteLowerBoundPct": 58.31,
+        "fullCohortMissingVoteUpperBoundPct": 69.21,
+        "fullCohortPartnerVoteCoveragePct": 89.1
+      },
+      {
+        "year": 2023,
+        "fullCohortAgreementPct": 65.3877,
+        "restrictedSixCodeAgreementPct": 64.377,
+        "restrictedMatchedPairs": 10802,
+        "restrictedEligibleResolutions": 74,
+        "restrictedAgreements": 6954,
+        "restrictedMinusFullPercentagePoints": -1.0107,
+        "fullCohortMissingVoteLowerBoundPct": 59.01,
+        "fullCohortMissingVoteUpperBoundPct": 68.76,
+        "fullCohortPartnerVoteCoveragePct": 90.24
+      },
+      {
+        "year": 2024,
+        "fullCohortAgreementPct": 66.0088,
+        "restrictedSixCodeAgreementPct": 65.593,
+        "restrictedMatchedPairs": 12294,
+        "restrictedEligibleResolutions": 83,
+        "restrictedAgreements": 8064,
+        "restrictedMinusFullPercentagePoints": -0.4158,
+        "fullCohortMissingVoteLowerBoundPct": 60.51,
+        "fullCohortMissingVoteUpperBoundPct": 68.84,
+        "fullCohortPartnerVoteCoveragePct": 91.66
+      }
+    ]
+  },
+  "diagnostics": {
+    "actorYears": 20,
+    "maxAbsoluteRestrictedVsFullGapPercentagePoints": 4.5179,
+    "missingVoteBoundsAreConfidenceIntervals": false,
+    "cohortsInterchangeable": false,
+    "independentRawArchiveReproductionCompleted": false
+  },
+  "publicAlignmentNeedleAuthorized": false,
+  "overallInfluenceScore": null
+}
