@@ -94,6 +94,11 @@ if(explorationDrawer.children.length>1){
  const archive=root.querySelector('.chaos-research-archive');
  if(archive)root.insertBefore(explorationDrawer,archive);else root.append(explorationDrawer);
 }
+// Keep investigation updates immediately above the exploration drawer, below reporting-year and meter evidence.
+const investigationUpdates=root.querySelector('.chaos-recent');
+if(investigationUpdates&&explorationDrawer.parentNode){
+ explorationDrawer.parentNode.insertBefore(investigationUpdates,explorationDrawer);
+}
 const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
 function sourceLinks(parent,ids){
  const line=element('p',undefined,'chaos-source-links');
