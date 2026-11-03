@@ -1,0 +1,370 @@
+{
+  "schema": "soi-five-sphere-evidence-provenance-crosswalk-v1",
+  "asOf": "2026-11-02",
+  "purpose": "Classify 30 existing observed outcome records by provenance without upgrading audits or scoring",
+  "inputFiles": [
+    "data/soi-five-sphere-verified-outcomes-batch15-20261102.json",
+    "data/soi-five-sphere-outcomes-batch15-independent-vs-primary-20261102.json"
+  ],
+  "records": [
+    {
+      "id": "US-2025-LNG-EXPORT-VOLUME",
+      "actor": "us",
+      "sourceBatch": "batch15",
+      "evidenceClass": "official_reported",
+      "unit": "million cubic feet",
+      "period": "calendar year",
+      "source": "https://www.eia.gov/dnav/ng/ng_move_expc_s1_a.htm",
+      "limitations": "National physical exports, not Europe-only volumes, FOB value, profit or sanction-driven benefit.",
+      "scoreEligible": false
+    },
+    {
+      "id": "US-DFC-2025-ENERGY-OUTPUT",
+      "actor": "us",
+      "sourceBatch": "batch15",
+      "evidenceClass": "reported_not_independently_audited",
+      "unit": "GWh",
+      "period": "2025",
+      "source": "https://www.dfc.gov/our-impact/approach-to-impact",
+      "limitations": "DFC-client-reported impact, not independently audited or necessarily newly built capacity; do not attribute all output to 2025 disbursements.",
+      "scoreEligible": false
+    },
+    {
+      "id": "US-DFC-2025-GRID-CONSTRUCTION",
+      "actor": "us",
+      "sourceBatch": "batch15",
+      "evidenceClass": "reported_not_independently_audited",
+      "unit": "km",
+      "period": "2025",
+      "source": "https://www.dfc.gov/our-impact/approach-to-impact",
+      "limitations": "Constructed or improved is a combined category; not exclusively new transmission or proof of DFC causality.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-ERA-2025-LOANS-PAID",
+      "actor": "eu",
+      "sourceBatch": "batch15",
+      "evidenceClass": "official_reported",
+      "unit": "EUR billion",
+      "period": "2025 through June 13",
+      "source": "https://enlargement.ec.europa.eu/news/ukraine-receives-further-eu1-billion-g7-loan-initiative-2025-06-13_en",
+      "limitations": "Cumulative EU ERA loan payments; do not add interim tranches to cumulative total or confuse loans with Russian principal confiscation.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-RUSSIAN-ASSET-PROCEEDS-ALLOCATED",
+      "actor": "eu",
+      "sourceBatch": "batch15",
+      "evidenceClass": "official_reported",
+      "unit": "EUR billion",
+      "period": "Council reported cumulative as of 2026-11-01",
+      "source": "https://www.consilium.europa.eu/en/policies/sanctions-against-russia-explained/",
+      "limitations": "€4.2bn includes reserved sums; €8bn aggregate is not all cash received by Ukraine and does not represent seized principal. Timing is as-of source retrieval, not annual.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-GAS-IMPORTS-2024-2025",
+      "actor": "eu",
+      "sourceBatch": "batch15",
+      "evidenceClass": "official_reported",
+      "unit": "bcm",
+      "period": "calendar year",
+      "source": "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+      "limitations": "All suppliers and both LNG and pipeline; rising imports do not prove Russian replacement cost or influence.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-REGAS-2025-CAPACITY",
+      "actor": "eu",
+      "sourceBatch": "batch15",
+      "evidenceClass": "official_reported",
+      "unit": "percent",
+      "period": "2025 vs 2024",
+      "source": "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+      "limitations": "Capacity increase is not utilization, import volume or return on investment; project-level capital costs not provided.",
+      "scoreEligible": false
+    },
+    {
+      "id": "CHINA-LAOS-2025-CROSSBORDER-FREIGHT",
+      "actor": "china",
+      "sourceBatch": "batch15",
+      "evidenceClass": "reported_not_independently_audited",
+      "unit": "million metric tonnes",
+      "period": "calendar year",
+      "source": "https://english.www.gov.cn/archive/statistics/202603/11/content_WS69b181b3c6d00ca5f9a09cf8.html",
+      "limitations": "Railway operator figures relayed by Chinese state media; not independently audited, not the railway's total domestic-plus-international cargo or net Laos fiscal gain.",
+      "scoreEligible": false
+    },
+    {
+      "id": "CHINA-INDONESIA-WHOOSH-RIDERS",
+      "actor": "china",
+      "sourceBatch": "batch15",
+      "evidenceClass": "reported_not_independently_audited",
+      "unit": "million passenger journeys",
+      "period": "calendar year",
+      "source": "https://en.antaranews.com/news/436657/whoosh-draws-one-million-foreign-passengers-in-three-years-kcic",
+      "limitations": "Reported by operator KCIC via Indonesian ANTARA; ridership is a delivered service, not profitability or evidence of Indonesian policy alignment.",
+      "scoreEligible": false
+    },
+    {
+      "id": "CHINA-INDONESIA-WHOOSH-DEBT-TERMS",
+      "actor": "china",
+      "sourceBatch": "batch15",
+      "evidenceClass": "announced_not_paid",
+      "unit": "USD million per year approximately",
+      "period": "2026-09-08",
+      "source": "https://en.antaranews.com/news/430487/ri-govt-restructures-whoosh-debt-to-us56-million-annual-installments",
+      "limitations": "Announced debt restructuring terms, not a verified executed loan amendment or actual annual payment; tenor does not establish lifetime net present cost.",
+      "scoreEligible": false
+    },
+    {
+      "id": "RUSSIA-2025-WARYEAR-FOSSIL-REVENUE",
+      "actor": "russia",
+      "sourceBatch": "batch15",
+      "evidenceClass": "independent_model",
+      "unit": "EUR billion",
+      "period": "2025-02-24 to 2026-02-23 approximately",
+      "source": "https://energyandcleanair.org/publication/fourth-year-of-full-scale-invasion-russian-fossil-fuel-revenues-tank-to-27-below-pre-invasion-levels/",
+      "limitations": "War-anniversary period, not calendar 2025; modeled gross revenue, not audited cash receipts, tax income or sanction-causal decline.",
+      "scoreEligible": false
+    },
+    {
+      "id": "RUSSIA-2025-WARYEAR-CRUDE",
+      "actor": "russia",
+      "sourceBatch": "batch15",
+      "evidenceClass": "independent_model",
+      "unit": "mixed explicitly labeled",
+      "period": "2025-02-24 to 2026-02-23 approximately",
+      "source": "https://energyandcleanair.org/publication/fourth-year-of-full-scale-invasion-russian-fossil-fuel-revenues-tank-to-27-below-pre-invasion-levels/",
+      "limitations": "Crude subset of preceding fossil total; never add EUR 85.5bn to EUR 193bn. Modeled, not audited.",
+      "scoreEligible": false
+    },
+    {
+      "id": "RUSSIA-DPRK-ROAD-BRIDGE-OPEN",
+      "actor": "russia",
+      "sourceBatch": "batch15",
+      "evidenceClass": "independent_report_of_official_event",
+      "unit": "operational infrastructure event",
+      "period": "2026-09-07",
+      "source": "https://www.reuters.com/world/asia-pacific/north-korea-russia-open-their-first-road-bridge-symbol-expanding-ties-tass-2026-09-07/",
+      "limitations": "Inauguration and reported initial cargo traffic are not verified crossing counts, military shipments, actual utilization or economic benefit.",
+      "scoreEligible": false
+    },
+    {
+      "id": "INDIA-2025-CROSSBORDER-UPI",
+      "actor": "india",
+      "sourceBatch": "batch15",
+      "evidenceClass": "reported_not_independently_audited",
+      "unit": "transactions",
+      "period": "2025-04-01 to 2025-07-31",
+      "source": "https://indianexpress.com/article/business/international-upi-surges-transactions-fy26-10183216/",
+      "limitations": "Secondary report of Lok Sabha answer; needs direct parliamentary primary-document retrieval before independent audit gate. Cross-border UPI does not measure Indian diplomatic influence.",
+      "scoreEligible": false
+    },
+    {
+      "id": "INDIA-US-2025-BILATERAL-TRADE",
+      "actor": "india",
+      "sourceBatch": "batch15",
+      "evidenceClass": "official_reported",
+      "unit": "USD billion",
+      "period": "calendar year 2025",
+      "source": "https://ustr.gov/countries-regions/south-central-asia/india",
+      "limitations": "Goods only, not services; a trade deficit is not national welfare or a geopolitical score. No causal attribution to 2025-26 trade negotiations.",
+      "scoreEligible": false
+    },
+    {
+      "id": "US-CHINA-2025-GOODS-IMPORTS",
+      "actor": "us",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "USD billion",
+      "period": "CY2025",
+      "source": "https://ustr.gov/countries-regions/china-mongolia-taiwan/peoples-republic-china",
+      "limitations": "USTR estimated US import valuation; not Chinese net exports, welfare, tariff effect or a bilateral trade agreement outcome.",
+      "scoreEligible": false
+    },
+    {
+      "id": "US-CHINA-2025-GOODS-EXPORTS",
+      "actor": "us",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "USD billion",
+      "period": "CY2025",
+      "source": "https://ustr.gov/countries-regions/china-mongolia-taiwan/peoples-republic-china",
+      "limitations": "US exports and imports are distinct directions; services excluded.",
+      "scoreEligible": false
+    },
+    {
+      "id": "US-INDIA-2025-SERVICES-TRADE",
+      "actor": "us",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "USD billion",
+      "period": "CY2025",
+      "source": "https://ustr.gov/countries-regions/south-central-asia/india",
+      "limitations": "USTR estimated services trade; separate from goods trade in previous batch; rounded components sum to USD 90.5bn against USD 90.4bn reported total.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-2025-ENERGY-IMPORT-VALUE",
+      "actor": "eu",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "EUR billion",
+      "period": "CY2025",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitations": "All imported energy products, not only gas or Russia; nominal invoice value not EU net welfare. Prior 2024 release cited EUR 375.9bn; simple division gives a different rate, so do not cross-vintage recompute.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-2025-ENERGY-IMPORT-MASS",
+      "actor": "eu",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "million metric tonnes",
+      "period": "CY2025",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3",
+      "limitations": "Aggregate mass across fuels is not energy-equivalent volume. Prior 2024 release cited 720.4 Mt, incompatible with stated -0.6% without revisions; don't splice vintages.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-2026Q1-LNG-ORIGIN-SHARES",
+      "actor": "eu",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "percent US share",
+      "period": "2026-Q1",
+      "source": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260626-2",
+      "limitations": "Article does not explicitly define whether origin shares use value or mass; do not infer tonnes, revenue, or one-for-one replacement.",
+      "scoreEligible": false
+    },
+    {
+      "id": "EU-2026-10-UKRAINE-FACILITY-CASH",
+      "actor": "eu",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "EUR billion",
+      "period": "2026-10-02",
+      "source": "https://enlargement.ec.europa.eu/news/commission-disburses-eur29-billion-under-ukraine-facility-support-financial-stability-and-reforms-2026-10-02_en",
+      "limitations": "Payer-confirmed release, not recipient-side bank reconciliation; EUR 0.8bn is included, not additional; separate from 2025 ERA loans.",
+      "scoreEligible": false
+    },
+    {
+      "id": "CHINA-2025-SOLAR-OPERATING-GENERATION",
+      "actor": "china",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "independent_analysis",
+      "unit": "TWh",
+      "period": "CY2025",
+      "source": "https://ember-energy.org/latest-insights/global-electricity-review-2026/major-countries-and-regions/",
+      "limitations": "Independent generation estimate; electricity output, not installed capacity or exports. Ember methodology differs from Chinese NEA capacity series.",
+      "scoreEligible": false
+    },
+    {
+      "id": "CHINA-2025-WIND-OPERATING-GROWTH",
+      "actor": "china",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "independent_analysis",
+      "unit": "TWh increase",
+      "period": "CY2025",
+      "source": "https://ember-energy.org/latest-insights/global-electricity-review-2026/major-countries-and-regions/",
+      "limitations": "Annual additional output, not total generation or capacity additions; not additive to clean-generation growth without checking components.",
+      "scoreEligible": false
+    },
+    {
+      "id": "CHINA-2025-FOSSIL-GENERATION-CHANGE",
+      "actor": "china",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "independent_analysis",
+      "unit": "TWh change",
+      "period": "CY2025",
+      "source": "https://ember-energy.org/latest-insights/global-electricity-review-2026/major-countries-and-regions/",
+      "limitations": "Signed change is negative by design; coal and gas are components, not separate additive claims.",
+      "scoreEligible": false
+    },
+    {
+      "id": "RUSSIA-2026-09-FOSSIL-EXPORT-GROSS",
+      "actor": "russia",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "independent_analysis",
+      "unit": "EUR million/day",
+      "period": "2026-09",
+      "source": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "limitations": "Independent CREA model, not audited cash receipts or Russian fiscal revenues; gross all-fuel revenue includes LNG and crude subsets.",
+      "scoreEligible": false
+    },
+    {
+      "id": "RUSSIA-2026-09-LNG-EXPORT-GROSS",
+      "actor": "russia",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "independent_analysis",
+      "unit": "EUR million/day",
+      "period": "2026-09",
+      "source": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "limitations": "Subset of Russia total fossil exports; cargo-unloading basis, not loading-month receipts. Never add to EUR625m/day total.",
+      "scoreEligible": false
+    },
+    {
+      "id": "RUSSIA-2026-09-SANCTIONED-SHADOW-TANKERS",
+      "actor": "russia",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "independent_analysis",
+      "unit": "percent of seaborne oil volume",
+      "period": "2026-09",
+      "source": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "limitations": "CREA vessel classification and modeled trade flows, not verified evasion count or proof of legal breach.",
+      "scoreEligible": false
+    },
+    {
+      "id": "INDIA-FY2025-26-SOLAR-CAPACITY-ADDED",
+      "actor": "india",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "official_reported",
+      "unit": "MW",
+      "period": "FY2025-26 through 2026-01-31",
+      "source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2238921&lang=1&reg=1",
+      "limitations": "Official installed generation capacity additions, not electricity actually generated, project-level cash spending, or a full FY result.",
+      "scoreEligible": false
+    },
+    {
+      "id": "INDIA-2025-RENEWABLE-OPERATING-GROWTH",
+      "actor": "india",
+      "sourceBatch": "batch15-independent-vs-primary",
+      "evidenceClass": "independent_analysis",
+      "unit": "TWh increase",
+      "period": "CY2025",
+      "source": "https://ember-energy.org/latest-insights/global-electricity-review-2026/major-countries-and-regions/",
+      "limitations": "Independent Ember analysis; subcomponents overlap total. Weather drove hydro output and reduced cooling demand; not all growth is policy-caused.",
+      "scoreEligible": false
+    }
+  ],
+  "counts": {
+    "records": 30,
+    "byActor": {
+      "us": 6,
+      "china": 6,
+      "russia": 6,
+      "eu": 8,
+      "india": 4
+    },
+    "byEvidenceClass": {
+      "official_reported": 14,
+      "reported_not_independently_audited": 5,
+      "announced_not_paid": 1,
+      "independent_model": 2,
+      "independent_report_of_official_event": 1,
+      "independent_analysis": 7
+    }
+  },
+  "nonAdditivityRules": [
+    "Each record is an evidence row, not an independent causal effect or score point.",
+    "Subsets such as Russian crude/LNG within fossil revenues must not be summed with their parent.",
+    "Exports, imports, and total trade may overlap; retain units and accounting directions.",
+    "Cash disbursements, commitments, debt-service plans, and modeled revenues are distinct concepts.",
+    "Source-backed means attributed to a source, not necessarily independently corroborated.",
+    "Source evidence classes describe provenance only; do not promote the 20/30 audit or ten diplomatic gates."
+  ],
+  "scoreEligible": false,
+  "needleChangeAuthorized": false,
+  "compositeInfluenceScore": null
+}
