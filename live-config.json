@@ -1,7 +1,7 @@
 {
   "active": true,
-  "title": "Newsmax2 — Live Coverage Test",
-  "description": "Rumble embed test; publisher controls availability and permissions.",
+  "title": "Newsmax2 — Live News",
+  "description": "Watch Newsmax2 live news coverage through Rumble. Availability is controlled by the original provider.",
   "sources": [
     {
       "key": "newsmax2",
