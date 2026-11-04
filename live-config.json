@@ -1,6 +1,12 @@
 {
-  "active": false,
-  "title": "Live coverage temporarily unavailable",
-  "description": "Live streams are disabled pending verification of a working authorized source.",
-  "sources": []
+  "active": true,
+  "title": "Newsmax2 — Live Coverage Test",
+  "description": "Rumble embed test; publisher controls availability and permissions.",
+  "sources": [
+    {
+      "key": "newsmax2",
+      "name": "Newsmax2 via Rumble",
+      "url": "https://rumble.com/embed/v5xwnen/"
+    }
+  ]
 }
