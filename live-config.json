@@ -1,7 +1,7 @@
 {
   "active": true,
-  "title": "Election Coverage — Stream Test",
-  "description": "Testing a user-provided YouTube video. Stream availability and embedding permissions are controlled by YouTube and the original publisher.",
-  "broadcaster": "YouTube — source not yet verified",
-  "youtubeVideoId": "1Tixjf8Gx9A"
+  "title": "World News — Live",
+  "description": "Watch DW News live coverage of international headlines and breaking developments. Broadcast provided by Deutsche Welle; Epic Perspective provides independent reporting and context.",
+  "broadcaster": "DW News (Deutsche Welle)",
+  "youtubeVideoId": "LuKwFajn37U"
 }
