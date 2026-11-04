@@ -1,13 +1,12 @@
 {
   "title": "World News — Choose Your Source",
-  "description": "Select LiveNOW from FOX, Reuters, or Sky News Australia. Streams are provided by their original publishers; some channels may open on YouTube until an embeddable live video is verified.",
+  "description": "Choose a provider to open its official news or live viewing page. Third-party video embeds are disabled until an active stream and embedding permissions are confirmed.",
   "defaultSource": "livenow",
   "sources": [
     {
       "key": "livenow",
       "name": "LiveNOW from FOX",
-      "url": "https://www.youtube.com/watch?v=sIv6YmBeO3Q",
-      "youtubeVideoId": "sIv6YmBeO3Q"
+      "url": "https://www.livenowfox.com/live?id=LIVENOW"
     },
     {
       "key": "reuters",
@@ -17,7 +16,7 @@
     {
       "key": "skyau",
       "name": "Sky News Australia",
-      "url": "https://www.youtube.com/@SkyNewsAustralia"
+      "url": "https://stream.skynews.com.au/"
     }
   ]
 }
