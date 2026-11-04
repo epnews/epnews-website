@@ -1,7 +1,7 @@
 {
-  "active": false,
-  "title": "Live Coverage",
-  "description": "Major events, elections, and breaking developments — with original-source video when available.",
-  "broadcaster": "",
-  "youtubeVideoId": ""
+  "active": true,
+  "title": "Election Coverage — Stream Test",
+  "description": "Testing a user-provided YouTube video. Stream availability and embedding permissions are controlled by YouTube and the original publisher.",
+  "broadcaster": "YouTube — source not yet verified",
+  "youtubeVideoId": "1Tixjf8Gx9A"
 }
