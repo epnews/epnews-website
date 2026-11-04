@@ -1,22 +1,28 @@
 {
   "title": "World News — Choose Your Source",
-  "description": "Choose a provider to open its official news or live viewing page. Third-party video embeds are disabled until an active stream and embedding permissions are confirmed.",
-  "defaultSource": "livenow",
+  "description": "Choose a news provider. Newsmax2 has a YouTube player configured; availability and embedding are controlled by its publisher. Other providers open at their official viewing destinations.",
+  "defaultSource": "newsmax2",
   "sources": [
+    {
+      "key": "newsmax2",
+      "name": "Newsmax2 Live",
+      "url": "https://www.youtube.com/watch?v=IUXluvJPe3o",
+      "youtubeVideoId": "IUXluvJPe3o"
+    },
     {
       "key": "livenow",
       "name": "LiveNOW from FOX",
       "url": "https://www.livenowfox.com/live?id=LIVENOW"
     },
     {
-      "key": "reuters",
-      "name": "Reuters",
-      "url": "https://www.youtube.com/@Reuters"
-    },
-    {
       "key": "skyau",
       "name": "Sky News Australia",
       "url": "https://stream.skynews.com.au/"
+    },
+    {
+      "key": "oan",
+      "name": "OAN",
+      "url": "https://oan.live/home.ktv"
     }
   ]
 }
