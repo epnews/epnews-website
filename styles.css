@@ -205,3 +205,30 @@
 .site-header .epic-brand-art{width:100%;height:auto;aspect-ratio:3/1;object-fit:contain}
 .site-header .brand-right{width:100%;box-sizing:border-box;display:flex;justify-content:flex-end;padding:0 0 8px}
 @media(max-width:800px){.site-header .brandbar{gap:4px}.site-header .brand-right{justify-content:center;padding:4px 0 8px}}
+
+
+/* Unified EP News article presentation: shared dark canvas, proportional masthead,
+   comfortable editorial measure, and compact navigation across desktop/mobile. */
+body:has(#route-view .article-shell) .site-header{background:#10151c;color:#f5f7fb}
+body:has(#route-view .article-shell) .site-header .brandbar{padding-top:12px;padding-bottom:4px;gap:5px}
+body:has(#route-view .article-shell) .site-header .epic-brand:has(.epic-brand-art){border:0;box-shadow:none;background:transparent}
+body:has(#route-view .article-shell) .site-header .brand-right{padding-bottom:5px}
+body:has(#route-view .article-shell) .site-header .nav-shell{background:#17212d;border-top-color:#33404e}
+body:has(#route-view .article-shell) .site-header .navrow nav a{color:#e5ebf3}
+body:has(#route-view .article-shell) .site-header .navrow nav a:hover{color:#ff8b91}
+body:has(#route-view .article-shell) .site-header .search-button,
+body:has(#route-view .article-shell) .site-header .menu-button{color:#fff}
+body:has(#route-view .article-shell) .site-header .outline-button{color:#f5f7fb;border-color:#647284}
+body:has(#route-view .article-shell) .site-header .briefing-pill{color:#c2cfdf}
+#route-view .article-shell{box-sizing:border-box;max-width:1200px;width:100%;margin:0 auto;padding:30px clamp(18px,3vw,40px) 88px}
+#route-view .article-shell h1{max-width:1100px;font-size:clamp(32px,4.1vw,56px);line-height:1.15}
+#route-view .article-shell .article-body{max-width:1000px;font-size:clamp(17px,1.45vw,19px);line-height:1.8}
+#route-view .article-shell .article-featured{max-width:1100px}
+#route-view .article-shell .article-featured img{max-width:100%;height:auto}
+#route-view .article-shell .article-category{margin-top:14px}
+@media(max-width:700px){
+  #route-view .article-shell{padding:22px 18px 60px}
+  #route-view .article-shell h1{font-size:clamp(30px,8vw,43px)}
+  #route-view .article-shell .article-body{font-size:17px;line-height:1.75}
+  body:has(#route-view .article-shell) .site-header .brandbar{padding-top:0}
+}
