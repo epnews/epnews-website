@@ -31,7 +31,8 @@ export async function onRequestGet({params,env,request}){
  if(!entry)return new Response('Not found',{status:404});
  const title=get(entry,'title'),description=get(entry,'deck');
  const imageMatch=entry.match(/image\s*:\s*\{\s*src\s*:\s*['"]([^'"]+)['"]/);
- const image=new URL('/'+(imageMatch?imageMatch[1]:'assets/images/ep-news-official-horizontal-masthead-20261105.png').replace(/^\//,''),ORIGIN).href;
+ const imagePath=id==='power'?'assets/images/chaos-flagship-hero-approved-20261031.jpg':(imageMatch?imageMatch[1]:'assets/images/ep-news-official-horizontal-masthead-20261105.png');
+ const image=new URL('/'+imagePath.replace(/^\//,''),ORIGIN).href;
  const url=ORIGIN+'/share/'+encodeURIComponent(id);
  const dest=id==='panama-ports-20261105'?'/investigations/panama-ports-who-won.html':'/#article/'+encodeURIComponent(id);
  const tags=[['og:type','article'],['og:site_name','Epic Perspective News'],['og:title',title],['og:description',description],['og:image',image],['og:url',url]];
