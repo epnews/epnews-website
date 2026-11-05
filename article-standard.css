@@ -37,3 +37,11 @@ body:has(.report) .back{color:#f5f7fb}
  .site-header .navrow nav a{padding:12px 0;border-bottom:0;font-size:10px}
  .site-header .navrow .search-button{margin-left:0}
 }
+
+/* Flagship introduction stays visible above the tracker on desktop and mobile. */
+.chaos-feature-article{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 20px;text-align:center;padding:18px 20px;background:#152439;color:#fff;border:1px solid #4e6683;border-top:4px solid #c32d34;border-radius:8px}
+.chaos-feature-article span{font-size:10px;letter-spacing:.12em;font-weight:800;color:#f5a7aa}
+.chaos-feature-article strong{font-size:clamp(16px,1.7vw,22px);line-height:1.3;flex-basis:100%}
+.chaos-feature-article a{display:inline-block;padding:11px 18px;background:#c32d34;color:#fff!important;border-radius:5px;font-size:11px;letter-spacing:.08em;font-weight:800}
+.chaos-feature-article a:hover,.chaos-feature-article a:focus-visible{background:#a52229;color:#fff!important}
+@media(max-width:700px){.chaos-feature-article{padding:16px 14px}.chaos-feature-article a{width:100%;max-width:340px}}
