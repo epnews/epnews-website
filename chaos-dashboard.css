@@ -249,3 +249,16 @@
 #chaos-sphere-description .chaos-reader-details summary{cursor:pointer;font-weight:700;color:#e8edf6}
 #chaos-sphere-description .chaos-reader-details p{font-size:14px;line-height:1.5;margin:12px 0 2px;overflow-wrap:anywhere}
 @media(max-width:700px){#chaos-sphere-description .chaos-reader-summary-item p{font-size:15px;line-height:1.5}#chaos-sphere-description .chaos-reader-summary{gap:12px}}
+
+/* Desktop: restore investigation updates alongside the Strategic Outlook Meter. */
+@media (min-width: 1051px) {
+  #chaos-dashboard .chaos-layout { display:grid; grid-template-columns:minmax(0, 1.15fr) minmax(300px, .85fr); align-items:start; gap:20px; }
+  #chaos-dashboard .chaos-recent { display:block; visibility:visible; min-width:0; align-self:start; }
+  #chaos-dashboard .chaos-recent #chaos-updates { display:block; }
+  #chaos-dashboard .chaos-recent .chaos-update { display:block; padding:14px 0; }
+  #chaos-dashboard .chaos-recent .chaos-update strong { overflow-wrap:anywhere; }
+}
+@media (min-width: 721px) and (max-width:1050px) {
+  #chaos-dashboard .chaos-layout { grid-template-columns:minmax(0, 1fr) minmax(260px, .85fr); }
+  #chaos-dashboard .chaos-recent { display:block; }
+}

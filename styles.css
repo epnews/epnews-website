@@ -181,3 +181,9 @@
   #home-view > .top-strip { display: none; }
   #home-view > .container > .feature-section { margin-top: 0; padding-top: 12px; }
 }
+
+/* Wider desktop news desk; preserve tablet/mobile and article reading widths. */
+@media (min-width: 1250px) {
+  .container { width:min(1560px, calc(100% - 72px)); }
+  .hero-layout { grid-template-columns:minmax(0, 1.7fr) minmax(330px, 1fr); }
+}
