@@ -7,7 +7,8 @@ const modules=[...index.matchAll(/<script[^>]+src="(content\/[a-z0-9-]+\.js)"/g)
 const share=fs.readFileSync('functions/share/[slug].js','utf8');
 const base=process.env.GITHUB_BASE_REF||'main';
 const changed=cp.execFileSync('git',['diff','--name-only','origin/'+base+'...HEAD'],{encoding:'utf8'}).trim().split('\n');
-assert(fs.existsSync('functions/article/[slug].js'),'Permanent article route missing');\nassert(share.includes("'/article/'")||share.includes("+'/article/'"),'Canonical article URL missing');
+assert(fs.existsSync('functions/article/[slug].js'),'Permanent article route missing');
+assert(share.includes("'/article/'")||share.includes("+'/article/'"),'Canonical article URL missing');
 assert(share.includes('og:image')&&share.includes('og:title')&&share.includes('og:description'),'Missing required Open Graph tags');
 const contentFiles=changed.filter(p=>/^content\/[a-z0-9-]+\.js$/.test(p)&&p!=='content/editorial.js');
 for(const file of contentFiles){
