@@ -1,21 +1,75 @@
-// EP News | Who Benefits From the Chaos? | Peru's two-port test
+// Epic Perspective News | Peru two-port investigation | sourced editorial article
 STORIES.push({
- id:'peru-chancay-callao-20261105',status:'published',category:'investigations',type:'INVESTIGATION',categoryLabel:'INVESTIGATIONS',publishedAt:'2026-11-05',author:'EP News Investigations',
- title:"Peru's Two-Port Test: China's Chancay Is Moving Cargo. America's Callao Deal Is Still Proposed.",
- deck:'Chancay moved 139,669 TEUs in Q3 2026. Washington approved a possible $1.5 billion naval-base sale, while U.S.-donated customs scanners already operate at the Chinese-run terminal.',
- image: { src: 'assets/images/epnews_peru_ports_1600x900.jpg', alt: 'EP News data graphic comparing Chancay Q3 2026 cargo throughput and a proposed Callao naval-base sale', credit: 'EP News original informational graphic. Data: COSCO Shipping Ports, DSCA, SUNAT; not a documentary photograph.' },
- body:["China's port is operating. COSCO Shipping Ports reported that its Chancay terminal handled 139,669 twenty-foot equivalent units (TEUs) in July–September 2026, compared with 111,862 a year earlier, a 24.9% increase. These are the operator's reported actual volumes, not a forecast.",
-"Callao's American deal is only possible. On January 15, 2026, the United States notified Congress of a possible Foreign Military Sale of up to $1.5 billion for the design and construction of facilities at Peru's Callao naval base. The notification did not name a winning contractor or establish that $1.5 billion had been spent, contracted or earned by U.S. businesses.",
-"Why Callao matters. Relocating or modernizing naval facilities could free space for expansion of Callao's commercial port, a possible competitor to Chancay. That outcome is prospective: the notified transaction concerns Peruvian naval infrastructure, not a new U.S.-owned commercial port.",
-"The U.S. is also inside Chancay. Peru's SUNAT customs agency confirmed in June 2026 that two high-energy container scanners donated by the U.S. embassy had entered service at Chancay. That is a tangible U.S.–Peru security partnership at a Chinese-operated terminal. It does not transfer ownership or prove control over shipping information.",
-"Peru's commercial benefit is complicated. SUNAT reported that, since Chancay operations began, 47% of containers moved were transshipments. It also reported 2025 customs collections of about S/1.037 billion associated with Chancay. Neither transshipment throughput nor gross customs collections alone measures incremental national profit or the benefit compared with routing through another Peruvian port.",
-"The ownership and sovereignty distinction. COSCO's operational position gives a Chinese-linked company commercial reach, while Peru retains sovereign authority and customs enforcement. A July 2026 Peruvian appellate ruling affirmed the transport regulator OSITRAN's oversight power, though further litigation was reported. Claims of Chinese military use or absolute exemption from Peruvian regulation require evidence not established here.",
-"Who benefits from the chaos?. China-linked COSCO has a functioning and growing port network asset. Peru gains transport connectivity and customs activity, subject to costs and displacement effects not fully measured. The United States has operational customs cooperation and a possible future defense-infrastructure sale, but no verified $1.5 billion contract revenue or demonstrated U.S. control of either commercial port. The measurable contest is still unfolding."],
- sections:[{kind:'paragraph',text:"China's port is operating: COSCO Shipping Ports reported that its Chancay terminal handled 139,669 twenty-foot equivalent units (TEUs) in July–September 2026, compared with 111,862 a year earlier, a 24.9% increase. These are the operator's reported actual volumes, not a forecast.",citation:{label:"China's port is operating — source",url:"https://www.nasdaq.com/press-release/cosco-shipping-ports-announces-2026-third-quarter-results-2026-10-29"}},
-{kind:'paragraph',text:"Callao's American deal is only possible: On January 15, 2026, the United States notified Congress of a possible Foreign Military Sale of up to $1.5 billion for the design and construction of facilities at Peru's Callao naval base. The notification did not name a winning contractor or establish that $1.5 billion had been spent, contracted or earned by U.S. businesses.",citation:{label:"Callao's American deal is only possible — source",url:"https://media.defense.gov/2026/Jan/15/2003857016/-1/-1/0/PRESS%20RELEASE%20-%20PERU%2025-37%20CN.PDF"}},
-{kind:'paragraph',text:"Why Callao matters: Relocating or modernizing naval facilities could free space for expansion of Callao's commercial port, a possible competitor to Chancay. That outcome is prospective: the notified transaction concerns Peruvian naval infrastructure, not a new U.S.-owned commercial port.",citation:{label:"Why Callao matters — source",url:"https://www.reuters.com/world/americas/us-approves-possible-sale-equipment-services-shift-peruvian-naval-base-2026-01-16/"}},
-{kind:'paragraph',text:"The U.S. is also inside Chancay: Peru's SUNAT customs agency confirmed in June 2026 that two high-energy container scanners donated by the U.S. embassy had entered service at Chancay. That is a tangible U.S.–Peru security partnership at a Chinese-operated terminal. It does not transfer ownership or prove control over shipping information.",citation:{label:"The U.S. is also inside Chancay — source",url:"https://www.gob.pe/institucion/sunat/noticias/1410621-sunat-agiliza-comercio-exterior-con-modernos-escaneres-en-el-puerto-de-chancay"}},
-{kind:'paragraph',text:"Peru's commercial benefit is complicated: SUNAT reported that, since Chancay operations began, 47% of containers moved were transshipments. It also reported 2025 customs collections of about S/1.037 billion associated with Chancay. Neither transshipment throughput nor gross customs collections alone measures incremental national profit or the benefit compared with routing through another Peruvian port.",citation:{label:"Peru's commercial benefit is complicated — source",url:"https://www.gob.pe/institucion/sunat/noticias/1410621-sunat-agiliza-comercio-exterior-con-modernos-escaneres-en-el-puerto-de-chancay"}},
-{kind:'paragraph',text:"The ownership and sovereignty distinction: COSCO's operational position gives a Chinese-linked company commercial reach, while Peru retains sovereign authority and customs enforcement. A July 2026 Peruvian appellate ruling affirmed the transport regulator OSITRAN's oversight power, though further litigation was reported. Claims of Chinese military use or absolute exemption from Peruvian regulation require evidence not established here.",citation:{label:"The ownership and sovereignty distinction — source",url:"https://www.gob.pe/institucion/ositran/noticias/1413559-segunda-sala-constitucional-ratifica-competencia-del-ositran-para-supervisar-el-terminal-portuario-de-chancay"}},
-{kind:'paragraph',text:"Who benefits from the chaos?: China-linked COSCO has a functioning and growing port network asset. Peru gains transport connectivity and customs activity, subject to costs and displacement effects not fully measured. The United States has operational customs cooperation and a possible future defense-infrastructure sale, but no verified $1.5 billion contract revenue or demonstrated U.S. control of either commercial port. The measurable contest is still unfolding.",citation:{label:"Who benefits from the chaos? — source",url:"https://www.dsca.mil/Press-Media/Major-Arms-Sales/Article-Display/Article/4380611/peru-design-and-construction-at-callao-naval-base"}}]
+  "id": "peru-chancay-callao-20261105",
+  "status": "published",
+  "category": "investigations",
+  "type": "INVESTIGATION",
+  "categoryLabel": "INVESTIGATIONS",
+  "publishedAt": "2026-11-05",
+  "author": "EP News Investigations",
+  "title": "Peru's Two-Port Power Struggle: China's Chancay Is Moving Cargo. America's Callao Deal Is Still Proposed.",
+  "deck": "Chancay reported 139,669 TEUs in Q3 2026 (+24.9%). Callao's up-to-$1.5-billion U.S. naval-base proposal remains a possible sale. Who gains the influence—and who gets the trade?",
+  image: {
+    src: "assets/images/peru_two_port_approved_1600x900.jpg",
+    "alt": "EP News illustrated comparison of operating Chancay commercial port and proposed Callao naval-base defense sale",
+    "credit": "Epic Perspective News AI-generated editorial illustration; port scenes are not documentary photographs. Figures: COSCO Shipping Ports and U.S. DSCA."
+  },
+  "body": [
+    "Chancay is already moving cargo. COSCO Shipping Ports reported 139,669 twenty-foot equivalent units (TEUs) at Chancay in July–September 2026, up 24.9% from 111,862 TEUs a year earlier. This is operating commercial-port throughput, not a projection.",
+    "Callao is a possible defense sale, not an American-owned port. On January 15, 2026, the U.S. Defense Security Cooperation Agency announced a possible Foreign Military Sale to Peru of design and construction services for Callao naval-base facilities, estimated at up to $1.5 billion. The notification is not evidence of a signed $1.5 billion contract, money spent, or a U.S.-owned commercial port.",
+    "Why the distinction matters. The naval-base project could enable relocation of military facilities and create room for Callao commercial-port expansion, but that possible downstream benefit is not the same as completed construction or demonstrated trade gains.",
+    "U.S. cooperation also reaches Chancay. Peru's SUNAT customs agency said in June 2026 that two U.S.-embassy-donated high-energy scanners were operating at Chancay. That is a real U.S.–Peru security partnership at a Chinese-operated terminal; it does not establish American control of the port.",
+    "Peru retains regulatory authority. A July 2026 Peruvian appellate ruling affirmed the regulator OSITRAN's authority to supervise Chancay, though the legal dispute continued. Chinese-linked commercial operations do not, by themselves, establish Chinese sovereignty or military use.",
+    "Who gains the influence—and who gets the trade?. China-linked COSCO has measurable cargo growth at an operating terminal. Peru gains connectivity and customs activity, but net national economic gains require a fuller accounting of costs and diverted traffic. The United States has customs cooperation and a proposed defense-infrastructure transaction, not proven control or completed $1.5 billion spending. The strategic competition is real; its ultimate winner is not yet established."
+  ],
+  "sections": [
+    {
+      "kind": "paragraph",
+      "text": "Chancay is already moving cargo. COSCO Shipping Ports reported 139,669 twenty-foot equivalent units (TEUs) at Chancay in July–September 2026, up 24.9% from 111,862 TEUs a year earlier. This is operating commercial-port throughput, not a projection.",
+      "citation": {
+        "label": "Chancay is already moving cargo — primary reporting",
+        "url": "https://www.prnewswire.com/news-releases/cosco-shipping-ports-announces-2026-third-quarter-results-302923643.html"
+      }
+    },
+    {
+      "kind": "paragraph",
+      "text": "Callao is a possible defense sale, not an American-owned port. On January 15, 2026, the U.S. Defense Security Cooperation Agency announced a possible Foreign Military Sale to Peru of design and construction services for Callao naval-base facilities, estimated at up to $1.5 billion. The notification is not evidence of a signed $1.5 billion contract, money spent, or a U.S.-owned commercial port.",
+      "citation": {
+        "label": "Callao is a possible defense sale, not an American-owned port — primary reporting",
+        "url": "https://www.dsca.mil/Press-Media/Major-Arms-Sales/Article-Display/Article/4380611/peru-design-and-construction-at-callao-naval-base"
+      }
+    },
+    {
+      "kind": "paragraph",
+      "text": "Why the distinction matters. The naval-base project could enable relocation of military facilities and create room for Callao commercial-port expansion, but that possible downstream benefit is not the same as completed construction or demonstrated trade gains.",
+      "citation": {
+        "label": "Why the distinction matters — primary reporting",
+        "url": "https://www.reuters.com/world/americas/us-approves-possible-sale-equipment-services-shift-peruvian-naval-base-2026-01-16/"
+      }
+    },
+    {
+      "kind": "paragraph",
+      "text": "U.S. cooperation also reaches Chancay. Peru's SUNAT customs agency said in June 2026 that two U.S.-embassy-donated high-energy scanners were operating at Chancay. That is a real U.S.–Peru security partnership at a Chinese-operated terminal; it does not establish American control of the port.",
+      "citation": {
+        "label": "U.S. cooperation also reaches Chancay — primary reporting",
+        "url": "https://www.gob.pe/institucion/sunat/noticias/1410621-sunat-agiliza-comercio-exterior-con-modernos-escaneres-en-el-puerto-de-chancay"
+      }
+    },
+    {
+      "kind": "paragraph",
+      "text": "Peru retains regulatory authority. A July 2026 Peruvian appellate ruling affirmed the regulator OSITRAN's authority to supervise Chancay, though the legal dispute continued. Chinese-linked commercial operations do not, by themselves, establish Chinese sovereignty or military use.",
+      "citation": {
+        "label": "Peru retains regulatory authority — primary reporting",
+        "url": "https://www.gob.pe/institucion/ositran/noticias/1413559-segunda-sala-constitucional-ratifica-competencia-del-ositran-para-supervisar-el-terminal-portuario-de-chancay"
+      }
+    },
+    {
+      "kind": "paragraph",
+      "text": "Who gains the influence—and who gets the trade?. China-linked COSCO has measurable cargo growth at an operating terminal. Peru gains connectivity and customs activity, but net national economic gains require a fuller accounting of costs and diverted traffic. The United States has customs cooperation and a proposed defense-infrastructure transaction, not proven control or completed $1.5 billion spending. The strategic competition is real; its ultimate winner is not yet established.",
+      "citation": {
+        "label": "Who gains the influence—and who gets the trade? — primary reporting",
+        "url": "https://www.dsca.mil/Press-Media/Major-Arms-Sales/Article-Display/Article/4380611/peru-design-and-construction-at-callao-naval-base"
+      }
+    }
+  ]
 });
