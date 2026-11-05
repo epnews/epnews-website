@@ -1,6 +1,6 @@
 const ORIGIN='https://epnews.pages.dev';
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const get=(s,k)=>{const m=s.match(new RegExp('["\\x27]'+k+'["\\x27]\\s*:\\s*["\\x27]([^"\\x27]*)["\\x27]'));return m?m[1]:''};
+const get=(s,k)=>{const m=s.match(new RegExp('(?:["\\x27]'+k+'["\\x27]|\\b'+k+'\\b)\\s*:\\s*["\\x27]([^"\\x27]*)["\\x27]'));return m?m[1]:''};
 export async function onRequestGet({params,env,request}){
  const id=String(params.slug||'');
  if(!/^[a-z0-9-]{1,120}$/.test(id))return new Response('Not found',{status:404});
@@ -14,7 +14,7 @@ export async function onRequestGet({params,env,request}){
   const match=token.exec(content);
   if(!match)continue;
   const slice=content.slice(match.index);
-  const next=/(?:["']id["']|\\bid)\\s*:\\s*["']/.exec(slice.slice(match[0].length));
+  const next=/(?:["']id["']|\bid)\s*:\s*["']/.exec(slice.slice(match[0].length));
   entry=next?slice.slice(0,match[0].length+next.index):slice;
   if(path==='content/chaos-investigation.js')entry=content;
   if(get(entry,'status')==='published')break;
