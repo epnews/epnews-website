@@ -10,7 +10,7 @@ STORIES.push({
   "title": "Guyana's Oil Boom: American Operators, a Chinese Partner—and Who Actually Benefits?",
   "deck": "Guyana's crude output is soaring. ExxonMobil, Chevron and CNOOC share the Stabroek contractor venture, while a signed $527 million U.S. financing deal still awaits proven household power savings.",
   image: {
-    src: "assets/images/epnews_guyana_oil_boom_1600x900.png",
+    src: "assets/images/epnews_guyana_oil_boom_exact_1600x900.png",
     "alt": "Epic Perspective News illustration of Guyana's oil development, contractor interests and gas-to-energy financing",
     "credit": "Epic Perspective News AI-generated editorial illustration, not documentary photography. Contractor interests and financing from ExxonMobil and U.S. EXIM; first-power target from Guyana government."
   },
