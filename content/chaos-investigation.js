@@ -3,9 +3,9 @@ Object.assign(STORIES.find(s=>s.id==='power'),{
   "status": "published",
   "author": "EP News Investigations",
   "publishedAt": "2026-10-27",
-  "updatedAt": "2026-10-27",
+  "updatedAt": "2026-11-05",
   "title": "Who Benefits From the Chaos?",
-  "deck": "America's economic gains are emerging—but who pays the price? Financing promises, energy exports and industrial projects under examination.",
+  "deck": "Wars, trade disputes, strategic ports, critical minerals and shifting alliances are reshaping global power. Who gains—and who pays?",
   "category": "investigations",
   "type": "FEATURED INVESTIGATION",
   "image": {
@@ -17,6 +17,18 @@ Object.assign(STORIES.find(s=>s.id==='power'),{
     "This complete investigative article is presented through structured sections with citations and evidence tables."
   ],
   "sections": [
+    {"kind":"paragraph","text":"The chaos unfolding across the world is often presented as a collection of unrelated crises. A war in one region. A trade dispute in another. A battle over strategic ports. A critical-mineral acquisition. A new military agreement. A multibillion-dollar industrial investment."},
+    {"kind":"paragraph","text":"Individually, each appears to be a separate news story. Together, they raise a larger question: Is the balance of global power being fundamentally reshaped?"},
+    {"kind":"paragraph","text":"Is the United States strengthening its economic and strategic position as the international order changes? Are China, Russia, the European Union and India adapting to the same disruptions—or losing ground? Which countries, corporations and industries are emerging with lasting advantages? And are those gains reaching ordinary people?"},
+    {"kind":"quote","text":"The headlines tell us what's happening. Our investigation examines who is gaining from it."},
+    {"kind":"heading","text":"What chaos are we talking about?"},
+    {"kind":"paragraph","text":"We are investigating overlapping disruptions involving wars, tariffs and trade restrictions, energy markets, manufacturing, critical minerals, strategic infrastructure and military alliances. These events have different causes; they are not necessarily coordinated, and there is no established evidence that one actor is directing them. But their economic and strategic consequences can intersect."},
+    {"kind":"paragraph","text":"A conflict can interrupt energy supplies and create opportunities for other exporters. Tariffs can redirect trade without necessarily rebuilding domestic manufacturing. Changes in port operators can shift strategic access without proving an economic victory. Mineral acquisitions can change ownership while leaving processing and supply chains overseas. The disruption itself is only half the story. The other half is what changes hands while the world is focused on the crisis."},
+    {"kind":"heading","text":"The struggle for spheres of influence"},
+    {"kind":"paragraph","text":"A sphere of influence is a region or network where a country exercises significant economic, military or strategic leverage. Epic Perspective News is tracking measurable developments involving the United States, China, Russia, the European Union and India—without assuming that one country's gain is automatically another's loss."},
+    {"kind":"paragraph","text":"Our investigation separates announcements from completed projects, financing from actual production, and strategic rhetoric from implemented access. We examine economic power, military and strategic capabilities, and energy and resources, including costs to households, workers and taxpayers. We will not assign a numerical influence score where comparable evidence is insufficient."},
+    {"kind":"heading","text":"Follow the money—and what actually changes"},
+    {"kind":"paragraph","text":"Who owns the infrastructure? Who operates it? Where are the resources processed? Who receives the revenue? What has actually been built? Who bears the financial and security costs? These are the questions that connect the headlines to the underlying shifts in power."},
     {
       "kind": "paragraph",
       "text": "More than $230 billion in financing activity. A 23% rise in U.S. liquefied natural gas exports. New manufacturing commitments measured in billions of dollars. These figures point to substantial economic activity—but they do not answer the central question: how much American production is actually new, and who bears the costs?",
