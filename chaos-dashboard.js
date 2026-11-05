@@ -94,15 +94,14 @@ if(explorationDrawer.children.length>1){
  const archive=root.querySelector('.chaos-research-archive');
  if(archive)root.insertBefore(explorationDrawer,archive);else root.append(explorationDrawer);
 }
-// Keep investigation updates immediately above the exploration drawer, below reporting-year and meter evidence.
+// Keep investigation updates inside .chaos-layout, beside the meter on desktop.
+// Do not move .chaos-recent into the exploration drawer's parent: doing so
+// removes it from the two-column grid and leaves a blank right-hand column.
 const investigationUpdates=root.querySelector('.chaos-recent');
-if(investigationUpdates&&explorationDrawer.parentNode){
- explorationDrawer.parentNode.insertBefore(investigationUpdates,explorationDrawer);
-}
-// Keep the interactive regional tracker with the main dashboard, before the research/update drawers.
+// Regional tracker remains before the exploration drawer, outside the meter grid.
 const regionalTracker=root.querySelector('#chaos-local-tracker');
-if(regionalTracker&&investigationUpdates&&investigationUpdates.parentNode){
- investigationUpdates.parentNode.insertBefore(regionalTracker,investigationUpdates);
+if(regionalTracker&&explorationDrawer.parentNode){
+ explorationDrawer.parentNode.insertBefore(regionalTracker,explorationDrawer);
 }
 const dimensions=data.dimensions,cards=root.querySelector('#chaos-indicator-cards');
 function sourceLinks(parent,ids){
