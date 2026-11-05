@@ -45,3 +45,7 @@ body:has(.report) .back{color:#f5f7fb}
 .chaos-feature-article a{display:inline-block;padding:11px 18px;background:#c32d34;color:#fff!important;border-radius:5px;font-size:11px;letter-spacing:.08em;font-weight:800}
 .chaos-feature-article a:hover,.chaos-feature-article a:focus-visible{background:#a52229;color:#fff!important}
 @media(max-width:700px){.chaos-feature-article{padding:16px 14px}.chaos-feature-article a{width:100%;max-width:340px}}
+
+/* Keep pull quotes legible on the dark EP News article theme. */
+.article-shell .investigation-quote{background:#19283a;color:#f5f7fb;border-left:5px solid #c32d34;padding:20px 24px;font-style:italic}
+@media(max-width:700px){.article-shell .investigation-quote{padding:18px 20px;font-size:clamp(19px,5vw,23px);line-height:1.5}}
