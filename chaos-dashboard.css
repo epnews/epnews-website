@@ -114,7 +114,7 @@
 .chaos-hub>summary .chaos-expand-helper{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 @media(max-width:720px){
-.chaos-hub>summary{background:#101d2e url('https://drive.google.com/thumbnail?id=19LfRg67skzr9ifpSO1jgrOuNjU1rZ-wu&sz=w1000') center center / cover no-repeat}
+.chaos-hub>summary{background:#101d2e url('assets/images/epnews-global-power-globe-hero-clean-v2.png') center center / cover no-repeat}
 .chaos-hub>summary .chaos-hero-art{display:none!important}
 }
 
