@@ -24,7 +24,7 @@
 <div class="chaos-dial-zones" aria-label="Evidence coverage scale, zero to four documented dimensions"><span>0 OF 4</span><span>1 OF 4</span><span>2 OF 4</span><span>3 OF 4</span><span>4 OF 4</span></div><p class="chaos-needle-note" id="chaos-needle-note">Needle inactive — no score assigned. Center does not mean neutral.</p>
 </div>
 <p id="chaos-indicator-explainer" class="chaos-evidence">The needle shows the selected measurement when enough comparable data is available.</p><h3 id="chaos-sphere-name"></h3><div id="chaos-sphere-description"></div><p class="chaos-evidence" id="chaos-evidence"></p></section>
-<section class="chaos-recent"><h3>LATEST INVESTIGATION UPDATES <span id="chaos-update-count" aria-live="polite"></span></h3><div id="chaos-updates"></div><a href="#investigations">BROWSE INVESTIGATIONS ↗</a></section></div>
+<section class="chaos-recent" id="chaos-investigation-updates-panel" aria-label="Latest Chaos investigation updates"><h3>LATEST INVESTIGATION UPDATES <span id="chaos-update-count" aria-live="polite"></span></h3><div id="chaos-updates"></div><a href="#investigations">BROWSE INVESTIGATIONS ↗</a></section></div>
 <section class="chaos-reporting-year-section" aria-labelledby="chaos-reporting-year-title"><h3 id="chaos-reporting-year-title">REPORTING YEAR &amp; HISTORICAL DATA</h3><p class="chaos-evidence" id="chaos-reporting-year-country" aria-live="polite">Selected sphere: United States</p><div id="chaos-year-comparison" class="chaos-indicator-card" aria-label="Reporting-year indicator comparison"><label for="chaos-reporting-year">Reporting year</label> <select id="chaos-reporting-year"><option value="2025">2025 — latest available</option><option value="2024">2024 — aligned baseline</option><option value="compare">Compare 2024 and 2025</option></select><div id="chaos-reporting-year-values" aria-live="polite"></div></div></section>
 <section class="chaos-matrix" aria-labelledby="chaos-matrix-title"><h3 id="chaos-matrix-title">FIVE ACTORS · THREE DIMENSIONS</h3><p id="chaos-matrix-count">Compare the available evidence for each country below.</p><div class="chaos-table-scroll" tabindex="0" aria-label="Evidence matrix; scroll horizontally"><table><thead><tr><th>Actor</th><th>Economic</th><th>Strategic</th><th>Energy / resources</th></tr></thead><tbody id="chaos-matrix-body"></tbody></table></div></section>
 <section class="chaos-indicators" aria-labelledby="chaos-indicators-title"><h3 id="chaos-indicators-title">EVIDENCE BEHIND THE METER</h3><p>Explore the facts behind each reading, including original sources and what remains uncertain.</p><div id="chaos-indicator-cards" class="chaos-indicator-cards" aria-live="polite"></div></section>
@@ -97,4 +97,15 @@
 .chaos-visual-trend{margin:14px 0;min-width:0}.chaos-visual-trend svg{width:100%;height:auto;display:block}
 .chaos-visual-legend-a{color:#2c80d3}.chaos-visual-legend-b{color:#b77a20}
 .chaos-comparison-archive{margin-top:12px}.chaos-comparison-archive>summary{cursor:pointer;font-weight:700;padding:12px}
+</style><style id="chaos-updates-desktop-layout-fix">
+/* Explicit two-column placement of the existing updates, scoped to the flagship dashboard. */
+@media (min-width: 721px) {
+  #chaos-dashboard .chaos-layout { display:grid !important; grid-template-columns:minmax(0, 1.15fr) minmax(290px, .85fr) !important; gap:20px; align-items:start; }
+  #chaos-dashboard .chaos-layout > .chaos-gauge { grid-column:1; grid-row:1; min-width:0; }
+  #chaos-dashboard .chaos-layout > #chaos-investigation-updates-panel { grid-column:2; grid-row:1; display:block !important; visibility:visible !important; opacity:1 !important; position:relative !important; min-width:0; min-height:240px; padding:18px; background:#101e30; color:#fff; border:1px solid #41526a; border-radius:10px; }
+  #chaos-investigation-updates-panel h3, #chaos-investigation-updates-panel #chaos-updates { display:block !important; visibility:visible !important; }
+}
+@media (max-width:720px) {
+  #chaos-dashboard .chaos-layout > #chaos-investigation-updates-panel { display:block; width:100%; }
+}
 </style><script src="soi-comparison-visual-20261102-759.js"></script><script src="chaos-mobile-layout.js?v=jump-links-20261103"></script></body></html>
