@@ -1,0 +1,26 @@
+/* EP News unified article reading system. Loaded after legacy page styles. */
+:root{--ep-article-bg:#10151c;--ep-article-fg:#f5f7fb;--ep-article-muted:#c4cfdd;--ep-article-link:#91cbff}
+body:has(.ep-article-brand),body:has(.report),body:has(#route-view .article-shell){background:var(--ep-article-bg);color:var(--ep-article-fg)}
+body:has(.ep-article-brand) main,body:has(.report) .report{box-sizing:border-box;width:100%;max-width:1100px;margin-left:auto;margin-right:auto;padding-left:clamp(18px,3vw,40px);padding-right:clamp(18px,3vw,40px)}
+body:has(.ep-article-brand) main,body:has(.report) .report,#route-view .article-shell{overflow-wrap:break-word}
+body:has(.ep-article-brand) h1,body:has(.report) h1,#route-view .article-shell h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,4.1vw,54px);line-height:1.16;letter-spacing:-.025em;color:#fff}
+body:has(.ep-article-brand) main>p,body:has(.report) .report>p,#route-view .article-body{font-size:clamp(17px,1.45vw,19px);line-height:1.8;color:var(--ep-article-fg)}
+body:has(.ep-article-brand) main a,body:has(.report) .report a{color:var(--ep-article-link);overflow-wrap:anywhere}
+body:has(.ep-article-brand) main img,body:has(.report) .report img,#route-view .article-shell img{max-width:100%;object-fit:contain}
+body:has(.ep-article-brand) .article-quick-nav{gap:10px 18px;align-items:center}
+body:has(.report) .report .deck,body:has(.report) .report .byline,body:has(.report) .report .eyebrow{color:var(--ep-article-muted)}
+body:has(.report) .report h2,body:has(.report) .report h3{color:#fff}
+body:has(.report) .report blockquote,body:has(.report) .report .note{background:#1c2939;color:#f1f4f8}
+body:has(.report) .report table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;color:#f5f7fb}
+body:has(.report) .report th{background:#26384b;color:#fff}
+body:has(.report) .report td,body:has(.report) .report th{border-color:#425368}
+body:has(.report) .back{color:#f5f7fb}
+@media(max-width:600px){
+  body:has(.ep-article-brand) main,body:has(.report) .report,#route-view .article-shell{padding-left:18px;padding-right:18px}
+  body:has(.ep-article-brand) main,body:has(.report) .report{padding-top:18px}
+  body:has(.ep-article-brand) h1,body:has(.report) h1,#route-view .article-shell h1{font-size:clamp(30px,8vw,38px)}
+  body:has(.ep-article-brand) .article-quick-nav{gap:8px 14px;font-size:10px}
+  body:has(.report) .report{margin-top:18px}
+  body:has(.report) .report table{font-size:13px}
+  body:has(.report) .report th,body:has(.report) .report td{min-width:120px;padding:10px}
+}
