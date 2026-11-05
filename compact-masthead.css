@@ -23,3 +23,32 @@
     padding-bottom: 0;
   }
 }
+
+/* Second pass: the earlier crop left a separate CTA row beneath the art.
+   Use the dark lower-right portion of the masthead for these controls instead. */
+@media (min-width: 801px) {
+  .site-header .brandbar {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 0;
+  }
+  .site-header .brand-right {
+    position: absolute;
+    z-index: 2;
+    right: 12px;
+    bottom: 5px;
+    width: auto;
+    max-width: calc(100% - 24px);
+    padding: 0;
+    gap: 12px;
+  }
+  .site-header .briefing-pill { display: none; }
+  .site-header .brand-right a,
+  .site-header .brand-right button {
+    background: rgba(8, 17, 30, .85);
+    color: #fff;
+    border-color: rgba(255,255,255,.6);
+  }
+  .site-header .nav-shell { margin-top: 0; }
+}
