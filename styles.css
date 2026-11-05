@@ -187,3 +187,14 @@
   .container { width:min(1560px, calc(100% - 72px)); }
   .hero-layout { grid-template-columns:minmax(0, 1.7fr) minmax(330px, 1fr); }
 }
+
+/* EP News standard long-form reading theme: dark canvas and high-contrast type. */
+#route-view:has(.article-shell){background:#10151c;color:#f5f7fb;min-height:100vh;padding:1px 0}
+#route-view .article-shell{color:#f5f7fb}
+#route-view .article-shell h1,#route-view .article-shell .article-body h2{color:#fff}
+#route-view .article-shell .article-deck,#route-view .article-shell .article-meta{color:#d4dce6}
+#route-view .article-shell .article-meta{border-color:#46505e}
+#route-view .article-shell .article-body{color:#f1f4f8}
+#route-view .article-shell .article-body a{color:#91cbff;text-decoration:underline}
+#route-view .article-shell .article-back{color:#ff8189}
+#route-view .article-shell .article-notice{background:#352a20;color:#fff0d6}
