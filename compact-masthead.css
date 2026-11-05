@@ -1,0 +1,25 @@
+/* Compact the official EP News masthead without altering its source artwork.
+   Crop only the mostly-empty lower portion; retain the logo and tagline. */
+@media (min-width: 801px) {
+  .site-header .epic-brand:has(.epic-brand-art) {
+    aspect-ratio: 4 / 1;
+    overflow: hidden;
+  }
+  .site-header .epic-brand-art {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .site-header .brandbar {
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .site-header .brand-right {
+    padding: 3px 0 6px;
+  }
+  body:has(#route-view .article-shell) .site-header .brandbar {
+    padding-bottom: 0;
+  }
+}
