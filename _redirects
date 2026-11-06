@@ -1,0 +1,3 @@
+# Let Cloudflare Pages serve the SPA shell for direct article deep links.
+# app.js reads the /article/<slug> path and renders the matching published story.
+/article/* /index.html 200
