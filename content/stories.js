@@ -5,7 +5,7 @@ const STORIES=[
 {
   "id": "trump-democrats-common-ground-20261106",
   "image": {"src":"assets/images/trump-democrats-common-ground-1600x900.png","alt":"EP News editorial graphic exploring possible policy cooperation between President Trump and congressional Democrats","credit":"Epic Perspective News editorial graphic; not documentary photography."},
-  "status": "draft",
+  "status": "published",
   "category": "politics",
   "categoryLabel": "U.S. POLITICS",
   "type": "POLITICAL ANALYSIS",
