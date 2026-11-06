@@ -5,6 +5,17 @@ export async function onRequestGet({params,env,request}){
  const id=String(params.slug||'');
  if(!/^[a-z0-9-]{1,120}$/.test(id))return new Response('Not found',{status:404});
  const scripts=["content/stories.js","content/chaos-investigation.js","content/october-news.js","content/comey-case.js","content/fec-filing-outage.js","content/venezuela-oil-corpus-christi.js","content/us-canada-tariff-talks.js","content/qatar-iran-peace-proposal.js","content/us-treasury-debt-buyback-2026.js","content/bukele-haiti-reinforcements-2026.js","content/china-trade-manufacturing-2026.js","content/st-lng-texas-offshore-port-2026.js","content/vance-iran-outreach-october-2026.js","content/new-energy-dependency-oct28.js","content/brett-sylvia-pentagon-oct29-2026.js","content/alaska-election-probe-oct29-2026.js","content/iran-hidden-military-procurement-oct29-2026.js","content/argentina-lithium-supply-chain-oct29-2026.js","content/audi-georgia-factory-oct29-2026.js","content/new-factories-economic-costs-oct29-2026.js","content/china-import-shift-oct29-2026.js","content/mexico-owned-american-copper-oct29-2026.js","content/ilhan-omar-2016-investigation-oct29-2026.js","content/qatar-woodside-lng-oct29-2026.js","content/netanyahu-loses-majority-oct30-2026.js","content/valero-houston-refinery-oct30-2026.js","content/iran-qatar-doha-talks-oct31-2026.js","content/iran-radar-base-damage-oct31-2026.js","content/ukraine-patriot-sale-oct31-2026.js","content/brazil-serra-verde-20261105.js","content/peru-chancay-callao-20261105.js","content/argentina-andes-atlantic-corridor-20261105.js","content/guyana-oil-benefits-20261105.js","content/canada-uae-trade-20261105.js","content/ecuador-us-trade-20261105.js","content/russia-iran-gamble-20261106.js","content/iran-invasion-logistics-20261106.js","content/hormuz-price-of-peace-20261106.js","content/editorial.js"];
+ // Keep server-side article discovery in sync with the scripts registered by the website.
+ // Static list above remains as a fallback if index.html is temporarily unavailable.
+ const homepage=await env.ASSETS.fetch(new URL('/index.html',request.url));
+ if(homepage.ok){
+  const markup=await homepage.text();
+  const matches=markup.matchAll(/<script[^>]+src=["'](\/?content\/[^"']+[.]js)["'][^>]*>/gi);
+  for(const match of matches){
+   const path=match[1].replace(/^\//,'');
+   if(!scripts.includes(path))scripts.push(path);
+  }
+ }
  let entry='';
  for(const path of scripts){
   const res=await env.ASSETS.fetch(new URL('/'+path,request.url));
