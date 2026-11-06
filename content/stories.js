@@ -4,6 +4,7 @@ const STORIES=[
 {id:'power',category:'investigations',type:'INVESTIGATIVE SERIES',title:'Who Benefits From the Chaos?',deck:'Follow the money, strategic agreements, and measurable outcomes behind shifting global power.',body:[],categoryLabel:'INVESTIGATIONS'},,
 {
   "id": "trump-democrats-common-ground-20261106",
+  "image": {"src":"assets/images/trump-democrats-common-ground-1600x900.png","alt":"EP News editorial graphic exploring possible policy cooperation between President Trump and congressional Democrats","credit":"Epic Perspective News editorial graphic; not documentary photography."},
   "status": "draft",
   "category": "politics",
   "categoryLabel": "U.S. POLITICS",
