@@ -10,8 +10,9 @@ export async function onRequestGet({params,env,request}){
  const homepage=await env.ASSETS.fetch(new URL('/index.html',request.url));
  if(homepage.ok){
   const markup=await homepage.text();
-  for(const match of markup.matchAll(/<script\\b[^>]*\\bsrc=["'](\\/?content\\/[^"']+\\.js)(?:\\?[^"']*)?["'][^>]*>/gi)){
-   const path=match[1].replace(/^\\//,'');
+  const matches=markup.matchAll(/<script[^>]+src=["'](\/?content\/[^"']+[.]js)["'][^>]*>/gi);
+  for(const match of matches){
+   const path=match[1].replace(/^\//,'');
    if(!scripts.includes(path))scripts.push(path);
   }
  }
