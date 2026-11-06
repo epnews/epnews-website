@@ -3,12 +3,14 @@
  if(location.hostname==="epnews.pages.dev"||location.hostname==="www.epnews.pages.dev")return;
  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  async function mount(){
-  const m=location.pathname.match(/^\/article\/([a-z0-9-]+)\/?$/);
-  const article=m&&m[1],shell=document.querySelector('#route-view .article-shell');
-  if(!article||!shell||shell.querySelector('#reader-discussion'))return;
-  const section=document.createElement('section');section.id='reader-discussion';section.className='reader-discussion';
+  const m=location.pathname.match(/^\/article\/([a-z0-9-]+)\/?$/) || location.hash.match(/^#article\/([a-z0-9-]+)$/);
+  const article=m&&m[1],shell=document.querySelector('#route-view .article-shell')||document.querySelector('[data-ep-comments-article]');
+  if(!article||!shell)return;
+  const existing=shell.querySelector('#reader-discussion');
+  if(existing&&existing.dataset.initialized==='yes')return;
+  const section=existing||document.createElement('section');section.id='reader-discussion';section.className='reader-discussion';section.dataset.initialized='yes';
   section.innerHTML='<h2>Reader Discussion <small>TEST PREVIEW</small></h2><p>Open discussion. Profanity and links are filtered. Comments are visible to other preview visitors.</p><div id="reader-comments">Loading comments…</div><form id="reader-form"><label>Display name <input name="name" maxlength="40" minlength="2" required></label><label>Comment <textarea name="message" maxlength="1200" minlength="3" required></textarea></label><input type="hidden" name="parent_id"><button type="submit">Post comment</button><button type="button" id="reader-cancel" hidden>Cancel reply</button><p id="reader-feedback" role="status"></p></form>';
-  shell.querySelector('.facebook-discussion')?.before(section);
+  if(!existing){const target=shell.querySelector('.facebook-discussion');if(target)target.before(section);else shell.append(section);}
   const list=section.querySelector('#reader-comments'),form=section.querySelector('form'),feedback=section.querySelector('#reader-feedback');
   async function load(){
    try{
@@ -35,6 +37,7 @@
   load();
  }
  const observer=new MutationObserver(()=>mount());
- observer.observe(document.getElementById('route-view')||document.body,{childList:true,subtree:false});
+ // Article rendering replaces #route-view contents; watch nested replacements as well.
+ observer.observe(document.body,{childList:true,subtree:true});
  window.addEventListener('popstate',mount);window.addEventListener('hashchange',mount);mount();
 })();

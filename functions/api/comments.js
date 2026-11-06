@@ -12,6 +12,7 @@ function preview(context){
 async function setup(db){
  await db.prepare("CREATE TABLE IF NOT EXISTS reader_comments (id INTEGER PRIMARY KEY AUTOINCREMENT, article_id TEXT NOT NULL, parent_id INTEGER, display_name TEXT NOT NULL, body TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, status TEXT NOT NULL DEFAULT 'visible', FOREIGN KEY(parent_id) REFERENCES reader_comments(id))").run();
  await db.prepare("CREATE INDEX IF NOT EXISTS reader_comments_article ON reader_comments(article_id,status,created_at)").run();
+ await db.prepare("CREATE TABLE IF NOT EXISTS comment_rate_limits (client_hash TEXT NOT NULL, window_start INTEGER NOT NULL, attempts INTEGER NOT NULL, PRIMARY KEY(client_hash,window_start))").run();
  await db.prepare("CREATE TABLE IF NOT EXISTS comment_reports (id INTEGER PRIMARY KEY AUTOINCREMENT, comment_id INTEGER NOT NULL, reason TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(comment_id) REFERENCES reader_comments(id))").run();
 }
 async function handler(ctx){
@@ -46,7 +47,19 @@ async function handler(ctx){
   const p=await db.prepare("SELECT id FROM reader_comments WHERE id=? AND article_id=? AND status='visible'").bind(parent,article).first();
   if(!p)return json({error:"Reply target not found"},404);
  }
- // Basic per-client cooldown using a cookie; NOT robust against malicious clients.
+ // Preview-only server-side rate limiting with salted IP hashes (no raw IP stored).
+ const ip=ctx.request.headers.get("CF-Connecting-IP")||"";
+ const salt=ctx.env.EP_COMMENTS_RATE_SALT;
+ if(ip&&typeof salt==="string"&&salt.length>=24){
+  const bytes=new TextEncoder().encode(salt+":"+ip);
+  const digest=await crypto.subtle.digest("SHA-256",bytes);
+  const clientHash=Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,"0")).join("");
+  const bucket=Math.floor(Date.now()/60000);
+  await db.prepare("INSERT INTO comment_rate_limits(client_hash,window_start,attempts) VALUES(?,?,1) ON CONFLICT(client_hash,window_start) DO UPDATE SET attempts=attempts+1").bind(clientHash,bucket).run();
+  const usage=await db.prepare("SELECT attempts FROM comment_rate_limits WHERE client_hash=? AND window_start=?").bind(clientHash,bucket).first();
+  if(usage&&usage.attempts>3)return json({error:"Too many comments. Please try again shortly."},429);
+ }
+ // Basic per-client cooldown using a cookie; not sufficient alone.
  const cookies=ctx.request.headers.get("cookie")||"";
  const match=cookies.match(/(?:^|;\s*)ep_comment_last=(\d+)/);
  const now=Math.floor(Date.now()/1000);
