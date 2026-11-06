@@ -28,7 +28,7 @@ function investigationBlocks(s) {
   if(b.kind==='paragraph')return '<p>'+escapeHtml(b.text||'')+link(b.citation)+'</p>';
   if(b.kind==='quote')return '<blockquote class="investigation-quote">'+escapeHtml(b.text||'')+'</blockquote>';
   if(b.kind==='metrics'&&Array.isArray(b.items))return '<section class="investigation-metrics" aria-label="Evidence at a glance">'+b.items.slice(0,6).map(x=>'<div><strong>'+escapeHtml(x.value||'')+'</strong><span>'+escapeHtml(x.label||'')+'</span>'+link(x.citation)+'</div>').join('')+'</section>';
-  if(b.kind==='table'&&Array.isArray(b.rows))return '<div class="investigation-table-wrap"><table class="investigation-table"><caption>'+escapeHtml(b.title||'Verification')+'</caption><thead><tr>'+(b.columns||[]).slice(0,5).map(x=>'<th>'+escapeHtml(x)+'</th>').join('')+'</tr></thead><tbody>'+b.rows.slice(0,50).map(row=>'<tr>'+row.slice(0,5).map(x=>'<td>'+escapeHtml(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
+  if(b.kind==='table'&&Array.isArray(b.rows))return '<div class="investigation-table-wrap"><table class="investigation-table"><caption>'+escapeHtml(b.title||'Verification')+'</caption><thead><tr>'+(b.columns||[]).slice(0,5).map(x=>'<th>'+escapeHtml(x)+'</th>').join('')+'</tr></thead><tbody>'+b.rows.slice(0,50).map(row=>'<tr>'+row.slice(0,5).map((x,i)=>'<td data-label="'+escapeHtml((b.columns||[])[i]||'')+'">'+escapeHtml(x)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>';
   return '';
  }).join('');
 }
