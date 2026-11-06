@@ -3,7 +3,7 @@
  if(location.hostname==="epnews.pages.dev"||location.hostname==="www.epnews.pages.dev")return;
  const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  async function mount(){
-  const m=location.pathname.match(/^\/article\/([a-z0-9-]+)\/?$/);
+  const m=location.pathname.match(/^\/article\/([a-z0-9-]+)\/?$/) || location.hash.match(/^#article\/([a-z0-9-]+)$/);
   const article=m&&m[1],shell=document.querySelector('#route-view .article-shell');
   if(!article||!shell||shell.querySelector('#reader-discussion'))return;
   const section=document.createElement('section');section.id='reader-discussion';section.className='reader-discussion';
@@ -35,6 +35,7 @@
   load();
  }
  const observer=new MutationObserver(()=>mount());
- observer.observe(document.getElementById('route-view')||document.body,{childList:true,subtree:false});
+ // Article rendering replaces #route-view contents; watch nested replacements as well.
+ observer.observe(document.body,{childList:true,subtree:true});
  window.addEventListener('popstate',mount);window.addEventListener('hashchange',mount);mount();
 })();
