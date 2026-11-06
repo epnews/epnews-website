@@ -9,7 +9,7 @@ STORIES.push({
   author: 'EP News Investigations',
   title: 'The Price of Peace: Who Wins and Loses if Hormuz Reopens?',
   deck: 'A reopening could lower energy and shipping costs worldwide—but also shift revenues and bargaining power. EP News separates market expectations from confirmed shipping recovery.',
-  image: { src: 'assets/images/epnews_hormuz_price_of_peace_1600x900.png', alt: 'EP News informational scenario graphic on the possible economic consequences of reopening the Strait of Hormuz', credit: 'Epic Perspective News original text-only informational graphic; no event photography.' },
+  image: { src: 'assets/images/epnews_hormuz_satellite_map_1600x900.png', alt: 'EP News scenario analysis infographic using the supplied satellite map of the Strait of Hormuz', credit: 'Epic Perspective News graphic using a user-supplied satellite map; scenario outcomes are conditional, not verified forecasts.' },
   body: [
   "The price of peace is not the same for everyone. A reopened Strait of Hormuz could reduce costs for oil importers, shipping firms and households while narrowing price advantages for producers selling outside the Gulf. Yet Gulf exporters could benefit from restored volumes even if benchmark prices decline. The net effect depends on barrels actually shipped, realized prices, discounts, transport costs and the timing of sanctions relief.",
   "What changed this week. On November 6, Reuters reported Brent crude heading for an approximately 16 percent weekly fall as markets priced in greater hopes of de-escalation following U.S. midterm elections. At the same time, Reuters reported tanker incidents in and around Hormuz and no final peace agreement. Falling futures prices are not evidence that commercial shipping has normalized.",
