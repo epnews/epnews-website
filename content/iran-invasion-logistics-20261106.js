@@ -94,4 +94,5 @@ STORIES.push({
       "url": "https://www.centcom.mil/"
     }
   }
-],
+]
+});
