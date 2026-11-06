@@ -49,3 +49,42 @@ body:has(.report) .back{color:#f5f7fb}
 /* Keep pull quotes legible on the dark EP News article theme. */
 .article-shell .investigation-quote{background:#19283a;color:#f5f7fb;border-left:5px solid #c32d34;padding:20px 24px;font-style:italic}
 @media(max-width:700px){.article-shell .investigation-quote{padding:18px 20px;font-size:clamp(19px,5vw,23px);line-height:1.5}}
+
+.article-shell .investigation-metrics {
+  background: #101820;
+  gap: 10px;
+}
+.article-shell .investigation-metrics > div,
+.article-shell .investigation-table tbody tr > td {
+  background: #192533;
+  color: #f5f7fb;
+}
+.article-shell .investigation-table tbody tr:nth-child(even) > td {
+  background: #233244;
+}
+@media (max-width: 600px) {
+  .article-shell .investigation-metrics { grid-template-columns: 1fr; }
+  .article-shell .investigation-table,
+  .article-shell .investigation-table tbody,
+  .article-shell .investigation-table tr,
+  .article-shell .investigation-table td,
+  .article-shell .investigation-table caption {
+    display: block;
+    width: auto;
+    min-width: 0;
+  }
+  .article-shell .investigation-table thead {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .article-shell .investigation-table tbody tr { margin-bottom: 12px; }
+  .article-shell .investigation-table td::before {
+    content: attr(data-label);
+    display: block;
+    color: #b9cada;
+    font: 600 0.8rem/1.5 system-ui, sans-serif;
+  }
+}
