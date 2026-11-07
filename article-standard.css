@@ -88,3 +88,17 @@ body:has(.report) .back{color:#f5f7fb}
     font: 600 0.8rem/1.5 system-ui, sans-serif;
   }
 }
+
+.article-share button {
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.article-share button:disabled { opacity: .6; cursor: wait; }
+.article-share [role="status"] { font-size: .9rem; }
+.article-share-url { width: 100%; margin-top: 10px; padding: 10px; }
