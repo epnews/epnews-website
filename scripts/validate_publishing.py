@@ -48,9 +48,7 @@ for path in articles:
                 fail(f"{path}: {asset} is {img.size}, expected 1600x900")
     except Exception as exc:
         fail(f"{path}: image unreadable: {exc}")
-    # Reuse is permitted only when this article already referenced the exact
-    # same asset on the base branch. New articles or changed images still
-    # require a freshly committed image, as before.
+    # Allow a previously imported, verified image on the base branch when its\n    # original import was merged separately (for example a graphic-only PR).\n    # The manifest and actual raster validation above remain mandatory.
     prior = subprocess.run(
         ["git", "show", f"origin/{base}:{path}"],
         capture_output=True, text=True
