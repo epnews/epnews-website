@@ -48,7 +48,9 @@ for path in articles:
                 fail(f"{path}: {asset} is {img.size}, expected 1600x900")
     except Exception as exc:
         fail(f"{path}: image unreadable: {exc}")
-    # Allow a previously imported, verified image on the base branch when its\n    # original import was merged separately (for example a graphic-only PR).\n    # The manifest and actual raster validation above remain mandatory.
+    # Allow a previously imported, verified image on the base branch when its
+    # original import was merged separately (for example a graphic-only PR).
+    # The manifest and actual raster validation above remain mandatory.
     prior = subprocess.run(
         ["git", "show", f"origin/{base}:{path}"],
         capture_output=True, text=True
@@ -64,7 +66,11 @@ for path in articles:
             capture_output=True
         ).returncode == 0
     )
-    if asset not in changed and not reusing_existing_image:
-        fail(f"{path}: {asset} must be newly imported/committed on the article PR branch")
+    already_imported_on_base = subprocess.run(
+        ["git", "cat-file", "-e", f"origin/{base}:{asset}"],
+        capture_output=True
+    ).returncode == 0
+    if asset not in changed and not reusing_existing_image and not already_imported_on_base:
+        fail(f"{path}: {asset} must be newly imported or already committed on the base branch")
 print(f"Checked {len(articles)} changed article(s); errors: {len(errors)}")
 sys.exit(bool(errors))
