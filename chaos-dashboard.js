@@ -62,6 +62,31 @@ if(typeof model.observedInputShares==='function'){
   root.prepend(section);
  }
 }
+// Publish existing comparable economic statistics and distinctly labelled energy indicators.
+if(data.actors){
+ const ids=['us','china','russia','eu','india'];
+ const names={us:'United States',china:'China',russia:'Russia',eu:'European Union',india:'India'};
+ const econ=ids.map(id=>({id,record:data.actors[id]&&data.actors[id].Economic}));
+ if(econ.every(x=>x.record&&x.record.metric==='gdp-growth-2025'&&Number.isFinite(x.record.number)&&x.record.period==='2025 versus 2024')){
+  const section=element('section',undefined,'chaos-completion');section.id='soi-observed-economic-comparison';
+  section.append(element('h4','Economic · 2025 real GDP growth comparison'));
+  section.append(element('p','Five-power comparison using the existing World Bank 2025 GDP growth series. Growth is not an influence score or a measure of national net benefit.'));
+  const table=element('table');const head=element('tr');['Power','Real GDP growth','Reporting period'].forEach(t=>head.append(element('th',t)));table.append(head);
+  econ.forEach(({id,record})=>{const tr=element('tr');[names[id],record.number.toFixed(1)+'%',record.period].forEach(t=>tr.append(element('td',t)));table.append(tr);});section.append(table);
+  section.append(element('p','Comparable growth rates describe domestic output change; they do not establish geopolitical bargaining power.'));
+  root.prepend(section);
+ }
+ const energy=ids.map(id=>({id,record:data.actors[id]&&data.actors[id]['Energy and resources']}));
+ if(energy.every(x=>x.record&&x.record.value&&x.record.period)){
+  const section=element('section',undefined,'chaos-completion');section.id='soi-observed-energy-indicators';
+  section.append(element('h4','Energy & resources · verified country indicators'));
+  section.append(element('p','Different measures and reporting periods. These are separate observations, not a common ranking or a combined score.'));
+  const table=element('table');const head=element('tr');['Power','Observed indicator','Value','Period'].forEach(t=>head.append(element('th',t)));table.append(head);
+  energy.forEach(({id,record})=>{const tr=element('tr');[names[id],record.title,record.value,record.period].forEach(t=>tr.append(element('td',t)));table.append(tr);});section.append(table);
+  section.append(element('p','No cross-country energy aggregate is calculated because the denominators, commodities and periods differ. See each power’s indicator for its underlying sources and limitations.'));
+  root.prepend(section);
+ }
+}
 const sprint=data.completionSprint,completionModel=window.EPCompletionModel;
 if(sprint&&completionModel){
  const section=element('section',undefined,'chaos-completion');
