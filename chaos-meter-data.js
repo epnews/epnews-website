@@ -2,12 +2,86 @@
 window.EP_CHAOS_DATA = {
   "soiDiplomaticUpdates": {
     "us": [
-      {"title":"Quad economic-security cooperation · Oct 31","stage":"Ministerial statement; pledge and completed observer mission","finding":"$10 million U.S. mineral-recovery commitment and intended Quad AI assistance exceeding $85 million are not verified disbursements. Quad-at-Sea observer mission was reported completed.","limit":"No independently measured diplomatic influence or rival loss.","source":"https://www.mofa.go.jp/files/101110375.pdf"},
-      {"title":"U.S.–Japan missile-production cooperation · Oct 28","stage":"Ministerial agreement; facility not operational","finding":"Agreement to establish AMRAAM final assembly and inspection in Japan; SM-3 technical cooperation planned.","limit":"No verified facility output, delivered missiles, or influence change.","source":"https://www.mod.go.jp/en/article/2026/10/8dbc5c2ef47ef3843a13f3bb48dc6b00fff7ba03.html"}
+      {
+        "title": "China–U.S. tariff and rare-earth suspension extensions · Nov 9",
+        "stage": "Official regulatory extensions announced; tariff change effective Nov 10",
+        "finding": "China extended suspension of its additional 24% tariff on U.S. goods for two months and certain rare-earth controls and U.S.-linked vessel fees to Jan 10, 2027.",
+        "limit": "A separate 10% tariff remains. No verified additional mineral tonnes, avoided fees, net importer savings, or diplomatic leverage; reciprocal compliance remains disputed.",
+        "source": "https://ca.finance.yahoo.com/news/china-extends-suspensions-24-tariff-050234512.html"
+      },
+      {
+        "title": "Busan trade commitments: U.S. compliance complaint · Nov 6",
+        "stage": "Official compliance dispute; no independent breach determination",
+        "finding": "U.S. officials pressed China over implementation of the prior Busan arrangement, including critical minerals and agricultural purchases.",
+        "limit": "No independently reconciled commodity-level delivery shortfall or reciprocal compliance audit; U.S. claims are contested.",
+        "source": "https://www.ft.com/content/391bb785-0247-4c39-b53b-35007187d603"
+      },
+      {
+        "title": "U.S.–DRC strategic minerals partnership · Nov 6",
+        "stage": "Pre-existing signed partnership; steering-committee implementation review",
+        "finding": "A second joint steering committee reviewed the partnership's project pipeline; DRC called for completed investments, processing, electricity and peace as measures of success.",
+        "limit": "No new independently audited project disbursements, production, exports, electricity connections or net benefits established by the meeting.",
+        "source": "https://www.reuters.com/world/africa/congo-says-us-minerals-deal-should-be-judged-by-projects-not-signed-deals-2026-11-06/"
+      },
+      {
+        "title": "Oleshky humanitarian ceasefire · Oct 27–Nov 1",
+        "stage": "Temporary implementation corroborated; signed instruments not independently inspected",
+        "finding": "A local Russia–Ukraine humanitarian pause enabled demining, aid delivery and some civilian evacuations, with U.S. intermediary involvement.",
+        "limit": "Evacuation totals not independently audited; Ukraine alleged Russian military repositioning; no durable peace or influence outcome established.",
+        "source": "https://www.reuters.com/world/europe/ukraine-says-russia-used-oleshky-ceasefire-reinforce-positions-2026-11-02/"
+      }
     ],
-    "india": [{"title":"Quad economic-security cooperation · Oct 31","stage":"Ministerial statement; observer mission completed","finding":"India participated in Quad economic-security commitments and the completed Chennai–Perth maritime observer mission.","limit":"Pledges and activities do not establish an independently measured influence change.","source":"https://www.mofa.go.jp/files/101110375.pdf"}]
+    "china": [
+      {
+        "title": "China–U.S. trade and rare-earth controls · Nov 9",
+        "stage": "Regulatory suspension extensions announced; outcomes unmeasured",
+        "finding": "China prolonged selected tariff, rare-earth control and port-fee suspensions, while keeping other trade restrictions.",
+        "limit": "No audited net export, import-price or bargaining-power change; additional 10% tariff remains.",
+        "source": "https://www.investing.com/news/commodities-news/china-extends-suspension-of-new-rare-earth-controls-until-january-5010878"
+      },
+      {
+        "title": "China–Gabon agreements · Nov 5–6",
+        "stage": "Corporate technology MoUs reported signed; mining/security pledges separate",
+        "finding": "Gabon reported Huawei-related digital and public-security agreements; the countries also pledged deeper mining and security cooperation.",
+        "limit": "No verified new mineral concession, exclusive offtake, financed installation, delivered mineral tonnage or geopolitical control.",
+        "source": "https://presidence.ga/2026/11/05/gabon-chine-plusieurs-accords-signes-a-shangai-pour-accelerer-la-modernisation-et-lindustrialisation-du-gabon/"
+      }
+    ],
+    "russia": [
+      {
+        "title": "Oleshky local humanitarian ceasefire · Oct 27–Nov 1",
+        "stage": "Short-lived implementation corroborated; reciprocal compliance contested",
+        "finding": "The local humanitarian pause enabled demining, aid and some evacuations, but expired without a broader peace agreement.",
+        "limit": "Ukraine alleged military repositioning; signed text, independent breach assessment, and durable concessions are missing.",
+        "source": "https://www.reuters.com/world/europe/ukraine-says-russia-used-oleshky-ceasefire-reinforce-positions-2026-11-02/"
+      }
+    ],
+    "india": [
+      {
+        "title": "India–Ukraine Black Sea food-corridor discussion · Nov 9",
+        "stage": "Leaders discussed possible mediation; no corridor agreement",
+        "finding": "Ukraine says India is prepared to mediate possible Black Sea grain corridors; India's official statement supports peaceful resolution but does not specify an agreed corridor.",
+        "limit": "No Russian acceptance, signed guarantee, protected voyage, incremental grain tonnage or insurance-cost reduction verified.",
+        "source": "https://www.president.gov.ua/en/news/prezident-ukrayini-obgovoriv-iz-premyer-ministrom-indiyi-dip-107209"
+      },
+      {
+        "title": "ADNOC–Gujarat Energy LNG agreement · Nov 6",
+        "stage": "Ten-year commercial supply agreement signed; first deliveries scheduled 2028",
+        "finding": "Agreement covers up to 4 million metric tonnes total over ten years; no cargo delivery under this agreement yet independently documented.",
+        "limit": "Upper-bound total is not annual minimum; price, cargo origin, take-or-pay terms, delivered costs and strategic leverage unknown.",
+        "source": "https://www.reuters.com/business/energy/adnoc-signs-10-year-lng-supply-agreement-with-indias-gujarat-energy-2026-11-06/"
+      },
+      {
+        "title": "Quad economic-security cooperation · Oct 31",
+        "stage": "Ministerial statement; observer mission completed",
+        "finding": "India participated in Quad economic-security commitments and the completed Chennai–Perth maritime observer mission.",
+        "limit": "Pledges and activities do not establish an independently measured influence change.",
+        "source": "https://www.mofa.go.jp/files/101110375.pdf"
+      }
+    ],
+    "eu": []
   },
-  "reviewed": "2026-10-31",
+  "reviewed": "2026-11-09",
   "methodologyVersion": "2.0",
   "evidenceTableRegistry": [
     {
