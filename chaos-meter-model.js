@@ -35,6 +35,15 @@ function assessment(records){
  const range=variants.map(total);
  return {score:total(weights),ready,scores,sensitivity:[Math.min(...range),Math.max(...range)]};
 }
-const api={weights,dimensionScore,missingRequirements,assessment};root.EPChaosModel=api;
+// Observable input comparison, NOT a causal influence assessment. Shares sum to 100 within the chosen five-power set.
+function observedInputShares(values){
+ if(!values||typeof values!=='object')return null;
+ const entries=Object.entries(values);
+ if(entries.length<2||entries.some(([,v])=>!Number.isFinite(v)||v<0))return null;
+ const total=entries.reduce((n,[,v])=>n+v,0);
+ if(total<=0)return null;
+ return Object.fromEntries(entries.map(([k,v])=>[k,Math.round(10000*v/total)/100]));
+}
+const api={weights,dimensionScore,missingRequirements,assessment,observedInputShares};root.EPChaosModel=api;
 if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
