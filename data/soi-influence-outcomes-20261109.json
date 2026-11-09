@@ -113,5 +113,58 @@
       "influenceScores": 0,
       "readiness": "unchanged"
     }
+  },
+  "pricingAndCostEvidence": {
+    "reviewed": "2026-11-09",
+    "russianCrude": {
+      "uralsIndia": {
+        "date": "2026-11-06",
+        "period": "December 2026 delivery offers",
+        "differentialUsdPerBarrel": {
+          "low": -2,
+          "high": -1
+        },
+        "benchmark": "Dated Brent, delivered basis",
+        "caution": "Indicative trader-reported delivered offers, not realized seller netback; freight and insurance matter",
+        "source": "https://www.bairdmaritime.com/amp/story/shipping/tankers/indian-demand-cools-down-and-pushes-russian-crude-into-a-discount"
+      },
+      "espoChina": {
+        "date": "2026-10-23",
+        "period": "December 2026-January 2027 delivery offers",
+        "differentialUsdPerBarrel": {
+          "low": 25,
+          "high": 30
+        },
+        "benchmark": "ICE Brent, delivered basis",
+        "caution": "Reported offers, not confirmed executed prices; different crude grade, geography and benchmark from Urals India; cannot directly subtract",
+        "source": "https://www.marketscreener.com/news/russian-espo-oil-sellers-seek-record-premiums-as-gulf-exports-uncertain-ce785cdfd88ef721"
+      },
+      "assessment": "Buyer concentration does not establish uniformly low Russian seller pricing power; Urals and ESPO diverge and must not be pooled.",
+      "influenceScore": null
+    },
+    "euGas": {
+      "conflictGasImportBillIncrementEuroBillion": {
+        "low": 18,
+        "high": 33
+      },
+      "estimateContext": "ACER estimated 2026 Middle East conflict effect on EU gas import bill for same quantity, different TTF price measures; not the cost of EU Russia phase-out",
+      "usLNGApproxShareOfTotalEUGasSupplyPercent": 30,
+      "russianGasApproxSharePercent": 11,
+      "gasStorageOctober21Percent": 75,
+      "source": "https://www.acer.europa.eu/monitoring/key-developments-european-gas-wholesale-markets-summer-2026",
+      "interpretation": "EU reduced Russian gas exposure but is exposed to global LNG price and shipping shocks. No net causal diversification cost quantified.",
+      "influenceScore": null
+    },
+    "nextEvidence": [
+      "Obtain matched transaction prices and freight/insurance netbacks for same grade and delivery month to compare buyer leverage.",
+      "Separate Russian oil grade (Urals/ESPO), export versus delivered prices, benchmark and contract timing.",
+      "Build EU gas cost counterfactual controlling for volume, prices, storage, weather and supplier mix; avoid attributing Middle East conflict cost to diversification.",
+      "Quantify security-of-supply benefits and industrial losses in matched units."
+    ],
+    "meterChanges": {
+      "numericIndicators": 0,
+      "influenceScores": 0,
+      "readiness": "unchanged"
+    }
   }
 }
