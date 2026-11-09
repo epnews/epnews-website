@@ -1,0 +1,189 @@
+{
+  "asOf": "2026-11-09",
+  "scope": "All fifteen visible three-dimension indicators; source-level comparison against repository baseline",
+  "method": "Preserve source and time basis; reject forecast substitutions and inconsistent EU definitions; no geopolitical influence score inferred",
+  "indicators": [
+    {
+      "sphere": "us",
+      "dimension": "Economic",
+      "previous": "2.2%",
+      "decision": "Retain",
+      "proposed": "2.2%",
+      "verification": "Confirmed World Bank WDI 2025 2.2%, annual real GDP growth",
+      "sourceUrls": [
+        "https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2"
+      ]
+    },
+    {
+      "sphere": "us",
+      "dimension": "Strategic",
+      "previous": "-7.5% · US$954B",
+      "decision": "Retain",
+      "proposed": "-7.5% · US$954B",
+      "verification": "Confirmed SIPRI 2025 $954B and -7.5% real change",
+      "sourceUrls": [
+        "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+      ]
+    },
+    {
+      "sphere": "us",
+      "dimension": "Energy and resources",
+      "previous": "21% → 26% · +5 pp",
+      "decision": "Retain",
+      "proposed": "21% → 26% · +5 pp",
+      "verification": "Confirmed EIA 2024 21% and 2025 26%, +5 percentage points",
+      "sourceUrls": [
+        "https://www.eia.gov/todayinenergy/detail.php?id=67864"
+      ]
+    },
+    {
+      "sphere": "china",
+      "dimension": "Economic",
+      "previous": "5.0%",
+      "decision": "Retain",
+      "proposed": "5.0%",
+      "verification": "Confirmed World Bank WDI 2025 5.0%",
+      "sourceUrls": [
+        "https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2"
+      ]
+    },
+    {
+      "sphere": "china",
+      "dimension": "Strategic",
+      "previous": "+7.4% · US$336B",
+      "decision": "Retain",
+      "proposed": "+7.4% · US$336B",
+      "verification": "Confirmed SIPRI $336B estimate and +7.4% real",
+      "sourceUrls": [
+        "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+      ]
+    },
+    {
+      "sphere": "china",
+      "dimension": "Energy and resources",
+      "previous": "−32% quarter over quarter (Q1 → Q2 2026)",
+      "decision": "Retain",
+      "proposed": "−32% quarter over quarter (Q1 → Q2 2026)",
+      "verification": "Confirmed EIA China customs Q1→Q2 2026 -32%; not year-on-year",
+      "sourceUrls": [
+        "https://www.eia.gov/todayinenergy/detail.php?id=67905"
+      ]
+    },
+    {
+      "sphere": "russia",
+      "dimension": "Economic",
+      "previous": "1.0%",
+      "decision": "Retain",
+      "proposed": "1.0%",
+      "verification": "Confirmed World Bank WDI 2025 1.0%",
+      "sourceUrls": [
+        "https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2"
+      ]
+    },
+    {
+      "sphere": "russia",
+      "dimension": "Strategic",
+      "previous": "+5.9% · US$190B",
+      "decision": "Retain",
+      "proposed": "+5.9% · US$190B",
+      "verification": "Confirmed SIPRI $190B estimate and +5.9% real",
+      "sourceUrls": [
+        "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+      ]
+    },
+    {
+      "sphere": "russia",
+      "dimension": "Energy and resources",
+      "previous": "€625 million/day estimated (September 2026)",
+      "decision": "Retain",
+      "proposed": "€625 million/day estimated (September 2026)",
+      "verification": "Confirmed CREA September 2026 €625m/day; October report not yet published on CREA monthly index",
+      "sourceUrls": [
+        "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+        "https://energyandcleanair.org/august-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+        "https://ru.themoscowtimes.com/2026/10/06/tablitsa-neftegazovye-dokhody-rossiyskogo-byudzheta-za-sentyabr-2026-goda-a207874",
+        "https://minfin.gov.ru/en/statistics/fedbud/",
+        "https://kse.ua/en/news/russian-oil-tracker-september-2026-russias-oil-and-oil-products-exports-fall-to-lowest-level-since-2018-as-higher-prices-add-only-0-3-billion-to-export-revenue/",
+        "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/",
+        "https://theins.press/en/economics/297251",
+        "https://www.brookings.edu/articles/stiffening-european-sanctions-against-the-russian-oil-trade/"
+      ]
+    },
+    {
+      "sphere": "eu",
+      "dimension": "Economic",
+      "previous": "1.5%",
+      "decision": "Retain",
+      "proposed": "1.5%",
+      "verification": "Confirmed World Bank WDI 2025 1.5% for EU, not euro area",
+      "sourceUrls": [
+        "https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2"
+      ]
+    },
+    {
+      "sphere": "eu",
+      "dimension": "Strategic",
+      "previous": "$360.22B → $430.39B · +19.48% real",
+      "decision": "Retain",
+      "proposed": "$360.22B → $430.39B · +19.48% real",
+      "verification": "Conditional: SIPRI EU-27 same-country constant-2024-dollar sum in repository $360.22B→$430.39B +19.48%; primary country workbook not independently reproduced here. EDA independent different-definition €418B and +20%, do not substitute.",
+      "sourceUrls": [
+        "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
+        "https://www.eda.europa.eu/news-and-events/press-office/latest-press-releases/2026/07/16/eu-defence-spending---418-billion-in-2025--projected-to--454-billion-in-2026"
+      ]
+    },
+    {
+      "sphere": "eu",
+      "dimension": "Energy and resources",
+      "previous": "45% → 12% Russian share of EU gas imports",
+      "decision": "Retain",
+      "proposed": "45% → 12% Russian share of EU gas imports",
+      "verification": "Confirmed European Commission Russian gas share 45% 2021 to 12% 2025; not share of all energy",
+      "sourceUrls": [
+        "https://energy.ec.europa.eu/topics/energy-security/security-gas-supply_en",
+        "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/"
+      ]
+    },
+    {
+      "sphere": "india",
+      "dimension": "Economic",
+      "previous": "7.6%",
+      "decision": "Retain",
+      "proposed": "7.6%",
+      "verification": "Confirmed World Bank WDI 2025 7.6%",
+      "sourceUrls": [
+        "https://databank.worldbank.org/reports.aspx?country=USA%2CEMU%2CEUU%2CRUS%2CCHN%2CIND%2CBRA&series=NY.GDP.MKTP.KD.ZG&source=2"
+      ]
+    },
+    {
+      "sphere": "india",
+      "dimension": "Strategic",
+      "previous": "+8.9% · US$92.1B",
+      "decision": "Retain",
+      "proposed": "+8.9% · US$92.1B",
+      "verification": "Confirmed SIPRI 2025 $92.1B and +8.9% real",
+      "sourceUrls": [
+        "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+      ]
+    },
+    {
+      "sphere": "india",
+      "dimension": "Energy and resources",
+      "previous": "88.2% → 88.7%",
+      "decision": "Correct",
+      "proposed": "88.3% → 88.7%",
+      "verification": "Correct revised PPAC FY2024-25 88.3% versus FY2025-26 88.7% provisional; +0.4 percentage points",
+      "sourceUrls": [
+        "https://ppac.gov.in/download.php?file=whatsnew/1784899305_The_PPAC_Ready_Reckoner_FY_2025%E2%80%9326_Final.pdf"
+      ]
+    }
+  ],
+  "caveats": [
+    "EU-27 SIPRI aggregate requires independent raw-workbook re-summation before any further change",
+    "GDP 2025 is WDI annual observed data; do not replace with IMF different-vintage estimates or 2026 forecasts",
+    "Russia CREA September export revenue estimate is not audited cash receipts; October monthly analysis not yet listed",
+    "India FY2025–26 88.7% remains provisional in government parliamentary reply"
+  ],
+  "influenceScoreChanges": 0,
+  "readinessChange": 0
+}
