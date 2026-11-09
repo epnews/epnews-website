@@ -1,0 +1,80 @@
+{
+  "asOf": "2026-11-09",
+  "method": "Separate observed outcome, causal attribution, alternatives, costs, and counterfactual; influence scores remain null until net effects established.",
+  "cases": [
+    {
+      "id": "russia-energy-buyer-concentration",
+      "spheres": [
+        "russia",
+        "china",
+        "india",
+        "eu"
+      ],
+      "dimension": "Energy and resources",
+      "observed": "CREA September: Russian fossil fuel revenue €625m/day, China largest buyer, India second; buyer concentration persists.",
+      "hypothesis": "Concentrated buyers could constrain Russian bargaining power, despite sustained revenue.",
+      "missing": "Price discounts, shipping costs, alternative suppliers, net margins and causal comparison",
+      "status": "outcome-documented-causation-unresolved",
+      "score": null,
+      "source": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/"
+    },
+    {
+      "id": "india-oil-negotiation",
+      "spheres": [
+        "india",
+        "russia",
+        "us",
+        "china"
+      ],
+      "dimension": "Energy and resources",
+      "observed": "US Russia-related sanctions waiver October 2026; India-US trade negotiations ongoing.",
+      "hypothesis": "India may retain energy purchasing flexibility.",
+      "missing": "Final tariff terms, landed prices, refinery cost savings and credible no-waiver comparison",
+      "status": "policy-action-outcome-pending",
+      "score": null,
+      "source": "https://www.investing.com/news/economy-news/trumps-russia-sanctions-waiver-eases-indias-energy-woes-lifts-trade-deal-chances-4957111"
+    },
+    {
+      "id": "us-china-trade-leverage",
+      "spheres": [
+        "us",
+        "china",
+        "eu",
+        "india"
+      ],
+      "dimension": "Economic",
+      "observed": "November US election may alter trade negotiation positions; no completed new trade outcomes measured.",
+      "hypothesis": "Trading partners may gain bargaining space.",
+      "missing": "Actual enacted tariffs, delivered investments, trade flows and price effects",
+      "status": "forecast-not-outcome",
+      "score": null,
+      "source": "https://www.reuters.com/world/china/trumps-midterm-rebuke-gives-trading-partners-room-resist-2026-11-04/"
+    },
+    {
+      "id": "eu-gas-diversification",
+      "spheres": [
+        "eu",
+        "russia",
+        "us"
+      ],
+      "dimension": "Energy and resources",
+      "observed": "EU Russian gas import share 45% in 2021 to 12% in 2025.",
+      "hypothesis": "EU reduced exposure to Russian gas leverage, with potentially offsetting costs.",
+      "missing": "Security gains, alternative gas costs, industrial impact and no-diversification counterfactual",
+      "status": "structural-outcome-net-effect-unresolved",
+      "score": null,
+      "source": "https://www.consilium.europa.eu/en/infographics/where-does-the-eu-s-gas-come-from/"
+    }
+  ],
+  "rules": [
+    "No positive or negative influence score inferred solely from signed deals, spending, growth or directional proxies.",
+    "No cross-unit averaging.",
+    "Diplomacy is supporting context, not a scored fourth dimension."
+  ],
+  "meterChanges": {
+    "numericIndicators": 0,
+    "influenceScores": 0,
+    "readiness": "unchanged"
+  },
+  "validationRetryNote": "2026-11-09: retrigger PR checks after GitHub Actions internal server errors (no jobs started); no research or scoring changes."
+}
