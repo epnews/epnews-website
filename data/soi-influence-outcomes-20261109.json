@@ -76,5 +76,42 @@
     "influenceScores": 0,
     "readiness": "unchanged"
   },
-  "validationRetryNote": "2026-11-09: retrigger PR checks after GitHub Actions internal server errors (no jobs started); no research or scoring changes."
+  "validationRetryNote": "2026-11-09: retrigger PR checks after GitHub Actions internal server errors (no jobs started); no research or scoring changes.",
+  "quantifiedOutcomes": {
+    "reviewed": "2026-11-09",
+    "russiaCrudeBuyerConcentration": {
+      "period": "2022-12-05 through 2026-09-30",
+      "chinaPercent": 50,
+      "indiaPercent": 37,
+      "combinedPercent": 87,
+      "measure": "Share of Russian crude exports by importing destination, not all fossil fuel exports or current monthly share",
+      "source": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "interpretation": "Concentrated demand is observed; buyer bargaining power and Russia net price concession remain unquantified",
+      "score": null
+    },
+    "euRussianGas": {
+      "year2021Bcm": 152,
+      "year2025Bcm": 36,
+      "absoluteDeclineBcm": 116,
+      "relativeDeclinePercent": 76.3157894736842,
+      "russianShare2021Percent": 45,
+      "russianShare2025Percent": 12,
+      "shareDeclinePercentagePoints": 33,
+      "source": "https://energy.ec.europa.eu/topics/energy-security/security-gas-supply_en",
+      "tradeoffSource": "https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/economic-forecasts/spring-2026-economic-forecast-slowdown-growth-energy-shock-drives-inflation/eu-energy-markets-evolving-gas-electricity-price-linkages-more-volatile-system_en",
+      "interpretation": "Lower exposure to Russian gas disruption; greater sensitivity to global LNG market shocks; net benefit/cost and causal counterfactual not quantified",
+      "score": null
+    },
+    "remainingGaps": [
+      "For Russia, matched monthly destination prices net of freight, insurance and discounts to infer buyer leverage",
+      "For EU, quantify 2021-2025 gas import cost, industrial demand destruction, LNG infrastructure costs and reliability benefits with comparable baselines",
+      "For India, matched landed crude prices and tariff concessions under waiver versus enforcement",
+      "For US-China trade, signed and implemented commitments with delivered volume and cost observations"
+    ],
+    "meterChanges": {
+      "numericIndicators": 0,
+      "influenceScores": 0,
+      "readiness": "unchanged"
+    }
+  }
 }
