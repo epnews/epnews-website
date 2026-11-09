@@ -1160,5 +1160,38 @@
       "influenceScores": 0,
       "readiness": "unchanged"
     }
+  },
+  "finitePublicationDecision": {
+    "asOf": "2026-11-09",
+    "status": "publish observable inputs; reserve influence score for causal outcomes",
+    "publishedDashboardMetric": {
+      "dimension": "Strategic",
+      "metric": "2025 SIPRI military expenditure relative share of five selected powers",
+      "valuesUsdBillions": {
+        "us": 954,
+        "china": 336,
+        "russia": 190,
+        "eu": 430.39,
+        "india": 92.1
+      },
+      "unit": "2025 current USD billions",
+      "denominator": "Sum of listed powers; EU-27 is an aggregation of member states",
+      "meaning": "Relative share of recorded military spending inputs only",
+      "doesNotMeasure": [
+        "geopolitical influence",
+        "operational effectiveness",
+        "military capability",
+        "national net benefit"
+      ],
+      "source": "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+    },
+    "publicationRules": [
+      "No requirement for perfect causal proof to publish descriptive indicators",
+      "Never call expenditure share an influence score",
+      "Economic and Energy & Resources dimensions retain their existing published indicators and unscored influence until valid aggregation exists",
+      "Stop repetitive gap-filling; maintain data on periodic updates or major material events"
+    ],
+    "liveInfluenceScoreChanges": 0,
+    "readiness": "unchanged at 53%"
   }
 }
