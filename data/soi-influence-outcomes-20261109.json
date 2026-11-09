@@ -944,5 +944,221 @@
       "influenceScores": 0,
       "readiness": "unchanged"
     }
+  },
+  "causalEvidenceBatch": {
+    "asOf": "2026-11-09",
+    "scope": "Cross-power causal constraints and priority evidence for 15-cell scoring matrix; no new numerical scores",
+    "findings": [
+      {
+        "id": "eu-contract-lock-in",
+        "powers": [
+          "European Union",
+          "Russia"
+        ],
+        "dimension": "Energy & Resources",
+        "observations": [
+          {
+            "metric": "Authorised EU Russian LNG long-term contracts",
+            "low": 20,
+            "high": 32,
+            "unit": "bcm/year",
+            "period": "2026"
+          },
+          {
+            "metric": "Authorised EU Russian pipeline contracts",
+            "low": 16,
+            "high": 26,
+            "unit": "bcm/year",
+            "period": "2026"
+          },
+          {
+            "metric": "Russian share of EU gas demand",
+            "value": 12,
+            "unit": "percent",
+            "period": "2026"
+          },
+          {
+            "metric": "Russian LNG imports year-on-year following REPower phase-in",
+            "value": 17,
+            "unit": "percent change",
+            "period": "18 March–31 May 2026"
+          }
+        ],
+        "source": "https://www.acer.europa.eu/monitoring/russian-gas-phase-out-2026",
+        "interpretation": "A phase-out regulation is not equivalent to a completed supply cut; outstanding contracts and early import increases limit claims of realized independence.",
+        "counterfactualNeeded": "Contract-by-contract actual deliveries and substitute supply costs after each ban date",
+        "scoreEligible": false
+      },
+      {
+        "id": "eu-global-gas-shock",
+        "powers": [
+          "European Union",
+          "United States",
+          "Russia"
+        ],
+        "dimension": "Energy & Resources",
+        "observations": [
+          {
+            "metric": "Global LNG loadings foregone from Qatar and UAE",
+            "value": 60,
+            "comparison": "greater-than",
+            "unit": "bcm",
+            "period": "March–October 2026"
+          },
+          {
+            "metric": "European gas storage level",
+            "value": null,
+            "unit": "percent",
+            "period": "2026-27 heating season",
+            "note": "IEA reports lowest level since 2013 but no exact percentage in source excerpt"
+          },
+          {
+            "metric": "EU gas storage downside scenario",
+            "value": 10,
+            "comparison": "below",
+            "unit": "percent of working capacity",
+            "period": "end March 2027",
+            "note": "IEA scenario under colder-than-average weather and continued Hormuz disruption, not observed outcome"
+          }
+        ],
+        "sources": [
+          "https://www.iea.org/news/low-storage-buffers-in-europe-could-prolong-global-gas-market-tightness-well-into-2027",
+          "https://www.iea.org/reports/global-gas-security-review-2026/executive-summary"
+        ],
+        "interpretation": "Supplier diversification does not eliminate global price and shipping risk; scenario must not be reported as actual outcome.",
+        "counterfactualNeeded": "Matched weather and LNG disruption scenarios with storage and import cost sensitivity",
+        "scoreEligible": false
+      },
+      {
+        "id": "eu-structural-rebalancing",
+        "powers": [
+          "European Union",
+          "Russia",
+          "United States"
+        ],
+        "dimension": "Energy & Resources",
+        "observations": [
+          {
+            "metric": "Russian pipeline imports reduction",
+            "value": 120,
+            "unit": "bcm approximately",
+            "period": "2021–2025"
+          },
+          {
+            "metric": "Russian LNG imports increase",
+            "value": 6,
+            "unit": "bcm approximately",
+            "period": "2021–2025"
+          },
+          {
+            "metric": "EU LNG share of gas demand",
+            "baseline": "less than 20%",
+            "comparison": "almost 45%",
+            "period": "2021–2025"
+          }
+        ],
+        "source": "https://www.iea.org/commentaries/eu-phase-out-of-russian-gas-creates-new-diversification-opportunities-for-central-and-eastern-europe",
+        "interpretation": "Pipeline dependence fell while Russian LNG rose and global LNG exposure increased; pipeline and LNG should not be conflated.",
+        "counterfactualNeeded": "Supplier-by-supplier annual gas prices, weather-normalized demand, industrial output, capex and avoided outage losses",
+        "scoreEligible": false
+      },
+      {
+        "id": "urals-price-volatility",
+        "powers": [
+          "Russia",
+          "India",
+          "China"
+        ],
+        "dimension": "Energy & Resources",
+        "observations": [
+          {
+            "metric": "Urals DAP west coast India premium to Forward Dated Brent",
+            "value": 1.05,
+            "unit": "USD/bbl",
+            "date": "2026-09-14"
+          },
+          {
+            "metric": "Urals DAP west coast India discount to Forward Dated Brent",
+            "value": -3.2,
+            "unit": "USD/bbl",
+            "date": "2026-08-17"
+          },
+          {
+            "metric": "Urals India December delivery discount to Dated Brent",
+            "low": -2,
+            "high": -1,
+            "unit": "USD/bbl",
+            "date": "2026-11-06",
+            "note": "Trader-reported delivered offers; different benchmark/timing from Platts DAP series"
+          }
+        ],
+        "sources": [
+          "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/091526-discounts-on-russian-crude-narrow-since-mid-august-on-growing-middle-east-supply-concerns",
+          "https://www.bairdmaritime.com/amp/story/shipping/tankers/indian-demand-cools-down-and-pushes-russian-crude-into-a-discount"
+        ],
+        "interpretation": "Delivered Russian oil prices moved in both directions as alternative supply, freight, demand and sanctions changed. Cannot infer permanent buyer or seller leverage or Russian FOB revenue from delivered differentials.",
+        "counterfactualNeeded": "Matched grade, delivery, benchmark, freight, insurance, realized invoice and alternative supplier quotes",
+        "scoreEligible": false
+      },
+      {
+        "id": "india-russian-oil-alternatives",
+        "powers": [
+          "India",
+          "China",
+          "Russia"
+        ],
+        "dimension": "Energy & Resources",
+        "observations": [
+          {
+            "metric": "Russian oil arrival projection to India",
+            "value": 1.75,
+            "unit": "million barrels/day",
+            "period": "September 2026",
+            "note": "Reuters reported projection, not final customs observation"
+          },
+          {
+            "metric": "August arrivals month-over-month change",
+            "value": -16.5,
+            "unit": "percent",
+            "period": "August 2026",
+            "note": "Reuters reported estimate"
+          }
+        ],
+        "source": "https://www.reuters.com/business/energy/russian-oil-supply-india-tightens-reduced-exports-strong-chinese-demand-2026-09-28/",
+        "interpretation": "India sought alternative Middle East and West African barrels while China competed for Russian cargoes; substitution options and Russian volume constraints matter.",
+        "counterfactualNeeded": "Matched realized Indian import cost by supplier and crude grade, refinery margins and sanctions compliance costs",
+        "scoreEligible": false
+      }
+    ],
+    "crossDimensionGates": [
+      {
+        "dimension": "Economic",
+        "priority": "Obtain signed and implemented US-China trade commitments, delivered customs quantities, actual tariff payments and welfare incidence; distinguish proposed tariffs from enacted measures",
+        "currentScoreEligible": false
+      },
+      {
+        "dimension": "Strategic",
+        "priority": "Compare delivered and operational military capability and outcomes, not only SIPRI fiscal inputs; separate EU-27 national forces from unified deployable force",
+        "currentScoreEligible": false
+      },
+      {
+        "dimension": "Energy & Resources",
+        "priority": "Calculate weather-normalized EU security and welfare counterfactual; Russian oil FOB netback vs delivered alternative; separate source dependence from market shock exposure",
+        "currentScoreEligible": false
+      }
+    ],
+    "methodology": [
+      "Do not mix EU demand, imports, LNG imports, and contract volume denominators.",
+      "Do not treat forecasts or simulations as observed facts.",
+      "Do not compare Urals India delivered and Russia FOB/ESPO China prices as interchangeable.",
+      "Separate causally attributed effects from correlations and policy announcements.",
+      "Do not increase 53% editorial readiness without an explicit approved readiness methodology."
+    ],
+    "scoreEligibleCells": 0,
+    "meterChanges": {
+      "numericIndicators": 0,
+      "influenceScores": 0,
+      "readiness": "unchanged"
+    }
   }
 }
