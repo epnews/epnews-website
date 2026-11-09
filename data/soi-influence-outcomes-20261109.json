@@ -75,5 +75,6 @@
     "numericIndicators": 0,
     "influenceScores": 0,
     "readiness": "unchanged"
-  }
+  },
+  "validationRetryNote": "2026-11-09: retrigger PR checks after GitHub Actions internal server errors (no jobs started); no research or scoring changes."
 }
