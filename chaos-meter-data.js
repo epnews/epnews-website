@@ -81,6 +81,21 @@ window.EP_CHAOS_DATA = {
     ],
     "eu": []
   },
+  "indicatorFreshnessAudit": {
+  "asOf": "2026-11-09",
+  "scope": "Repository consistency audit of current Economic, Strategic and Energy and resources cards across all five spheres; not independent revalidation of every statistical source",
+  "status": "Historical indicator baselines retained pending source-by-source verification",
+  "reviewPolicy": "November 9 applies to agreement evidence only, not all underlying statistics; do not score influence or increase readiness from added notes alone",
+  "pendingChecks": [
+    "Five GDP series: same-period revisions",
+    "Five SIPRI military-spending series: price basis, EU-27 aggregation and uniform scale",
+    "Five energy/resource series: U.S. LNG, China crude, Russian fossil sales, EU Russian-gas share, India crude dependence",
+    "New agreements: independently measured delivery, costs, counterfactuals and reciprocal compliance",
+    "Desktop/mobile preview and article route regression"
+  ],
+  "influenceScoresAuthorized": false,
+  "readinessRecalculationAuthorized": false
+},
   "reviewed": "2026-11-09",
   "methodologyVersion": "2.0",
   "evidenceTableRegistry": [
