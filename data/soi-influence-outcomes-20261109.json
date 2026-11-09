@@ -737,5 +737,212 @@
       "influenceScores": 0,
       "readiness": "unchanged"
     }
+  },
+  "evidenceToScoreAssessment": {
+    "asOf": "2026-11-09",
+    "version": 1,
+    "scope": "Evidence-to-score gate for all 15 five-power dimension cells; no automated influence score assignment",
+    "rules": {
+      "classifications": [
+        "verified-descriptive",
+        "verified-outcome-limited-attribution",
+        "plausible-unproven",
+        "insufficient"
+      ],
+      "requirementsForNumericInfluenceScore": [
+        "Comparable baseline and current observation with same denominator",
+        "Outcome rather than solely policy announcement or resource input",
+        "Causal mechanism with independently corroborated evidence",
+        "Explicit costs to focal and counterpart powers",
+        "Credible counterfactual and uncertainty range"
+      ],
+      "noScoreWhen": "Any required causal, counterfactual or net-cost element is missing"
+    },
+    "assessments": [
+      {
+        "dimension": "Energy & Resources",
+        "powers": [
+          "European Union",
+          "Russia"
+        ],
+        "classification": "verified-outcome-limited-attribution",
+        "observed": "EU Russian gas import share 45% in 2021 to 12% in 2025, 152 to 36 bcm; actual supplier exposure fell",
+        "attribution": "Multiple causes including substitution, mild winters, demand destruction and policy; 2026 Russian gas demand share still ~12% with long-term contracts",
+        "sources": [
+          "https://energy.ec.europa.eu/strategy/repowereu-phase-out-russian-energy-imports/repowereu-4-years_en",
+          "https://acer.europa.eu/monitoring/russian-gas-phase-out-2026",
+          "https://www.iea.org/reports/global-gas-security-review-2026/executive-summary"
+        ],
+        "missing": [
+          "Weather-normalized counterfactual",
+          "Security-adjusted replacement cost",
+          "Industrial and household welfare costs"
+        ],
+        "numericScore": null
+      },
+      {
+        "dimension": "Energy & Resources",
+        "powers": [
+          "India",
+          "Russia",
+          "China"
+        ],
+        "classification": "verified-outcome-limited-attribution",
+        "observed": "Russian crude delivered price discounts and shipment volumes vary sharply by month and destination; September India discharges ~1.64m b/d, China ~2.43m b/d in S&P data",
+        "attribution": "Supply disruption, sanctions waiver, alternative cargoes, shipping and demand all change relative negotiating power; 60-day waiver reduces immediate compliance risk but is not permanent concession",
+        "sources": [
+          "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/102326-us-waiver-eases-risks-for-india-china-but-wont-alter-russian-crude-flows",
+          "https://uk.marketscreener.com/news/discounts-narrow-on-russian-urals-crude-in-india-sources-say-ce7f51d2d18bfe24"
+        ],
+        "missing": [
+          "Matched realized transaction prices and Russian netbacks",
+          "Comparable alternative supplier quotes",
+          "Sanctions counterfactual"
+        ],
+        "numericScore": null
+      },
+      {
+        "dimension": "Economic",
+        "powers": [
+          "United States",
+          "China"
+        ],
+        "classification": "plausible-unproven",
+        "observed": "China announced two-month continuation of suspension of selected trade measures November 9; proposed reciprocal $60bn tariff-cut package not finalized",
+        "attribution": "A truce extension is a policy action, not proof of net economic benefit or one-sided leverage",
+        "sources": [
+          "https://www.reuters.com/world/asia-pacific/china-extends-suspension-24-tariff-us-imports-two-months-2026-11-09/"
+        ],
+        "missing": [
+          "Implemented agreement and delivery records",
+          "Tariff incidence and firm-level costs",
+          "Counterfactual trade flow"
+        ],
+        "numericScore": null
+      },
+      {
+        "dimension": "Strategic",
+        "powers": [
+          "United States",
+          "China",
+          "Russia",
+          "European Union",
+          "India"
+        ],
+        "classification": "insufficient",
+        "observed": "2025 SIPRI military expenditure data establish fiscal inputs, not deployed effectiveness or outcomes",
+        "attribution": "No causal strategic gain demonstrated by expenditure alone",
+        "sources": [
+          "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+        ],
+        "missing": [
+          "Readiness and deployable capability",
+          "Attrition and delivered procurement",
+          "Independent outcome comparison and counterfactual"
+        ],
+        "numericScore": null
+      },
+      {
+        "dimension": "Economic",
+        "powers": [
+          "Russia",
+          "European Union",
+          "India"
+        ],
+        "classification": "insufficient",
+        "observed": "Energy trade and sanctions facts are documented, but matched net economic welfare and bargaining concessions are not",
+        "attribution": "No cross-power net economic influence score justified",
+        "sources": [
+          "https://www.iea.org/reports/global-gas-security-review-2026/executive-summary"
+        ],
+        "missing": [
+          "Welfare and incidence",
+          "Matched trade and energy prices",
+          "Causal policy counterfactual"
+        ],
+        "numericScore": null
+      }
+    ],
+    "matrix": {
+      "United States": {
+        "Economic": {
+          "classification": "plausible-unproven",
+          "score": null
+        },
+        "Strategic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Energy & Resources": {
+          "classification": "insufficient",
+          "score": null
+        }
+      },
+      "China": {
+        "Economic": {
+          "classification": "plausible-unproven",
+          "score": null
+        },
+        "Strategic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Energy & Resources": {
+          "classification": "verified-outcome-limited-attribution",
+          "score": null
+        }
+      },
+      "Russia": {
+        "Economic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Strategic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Energy & Resources": {
+          "classification": "verified-outcome-limited-attribution",
+          "score": null
+        }
+      },
+      "European Union": {
+        "Economic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Strategic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Energy & Resources": {
+          "classification": "verified-outcome-limited-attribution",
+          "score": null
+        }
+      },
+      "India": {
+        "Economic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Strategic": {
+          "classification": "insufficient",
+          "score": null
+        },
+        "Energy & Resources": {
+          "classification": "verified-outcome-limited-attribution",
+          "score": null
+        }
+      }
+    },
+    "interpretation": "A verified descriptive shift can justify an evidence confidence upgrade, not an influence score absent net causal effects",
+    "scoreEligibleCells": 0,
+    "scoredCells": 0,
+    "editorialReadiness": "unchanged at 53%",
+    "meterChanges": {
+      "numericIndicators": 0,
+      "influenceScores": 0,
+      "readiness": "unchanged"
+    }
   }
 }
