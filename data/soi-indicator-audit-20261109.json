@@ -126,7 +126,7 @@
       "previous": "$360.22B → $430.39B · +19.48% real",
       "decision": "Retain",
       "proposed": "$360.22B → $430.39B · +19.48% real",
-      "verification": "Conditional: SIPRI EU-27 same-country constant-2024-dollar sum in repository $360.22B→$430.39B +19.48%; primary country workbook not independently reproduced here. EDA independent different-definition €418B and +20%, do not substitute.",
+      "verification": "Verified independently from user-supplied SIPRI Milex v1.2, Constant (2024) US$ worksheet: sum of all 27 EU members, 2024 $360,219.121486 million; 2025 $430,385.925094 million; +19.47892253% real. Both years contain 27 numeric country observations. EDA €418B uses a different methodology and is not substituted.",
       "sourceUrls": [
         "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
         "https://www.eda.europa.eu/news-and-events/press-office/latest-press-releases/2026/07/16/eu-defence-spending---418-billion-in-2025--projected-to--454-billion-in-2026"
@@ -179,11 +179,21 @@
     }
   ],
   "caveats": [
-    "EU-27 SIPRI aggregate requires independent raw-workbook re-summation before any further change",
     "GDP 2025 is WDI annual observed data; do not replace with IMF different-vintage estimates or 2026 forecasts",
     "Russia CREA September export revenue estimate is not audited cash receipts; October monthly analysis not yet listed",
     "India FY2025–26 88.7% remains provisional in government parliamentary reply"
   ],
   "influenceScoreChanges": 0,
-  "readinessChange": 0
+  "readinessChange": 0,
+  "eu27WorkbookVerification": {
+    "source": "SIPRI-Milex-data-1949-2025_v1.2.xlsx",
+    "sheet": "Constant (2024) US$",
+    "sha256": "6cc3a30b1064f9f02e60236667eef82e08cad42910ce630909d004ad2c398a9d",
+    "countries": 27,
+    "year2024MillionUsd": 360219.1214858137,
+    "year2025MillionUsd": 430385.9250941504,
+    "realChangePercent": 19.47892252885306,
+    "method": "Sum 2024 and 2025 numeric cells for Austria Belgium Bulgaria Croatia Cyprus Czechia Denmark Estonia Finland France Germany Greece Hungary Ireland Italy Latvia Lithuania Luxembourg Malta Netherlands Poland Portugal Romania Slovakia Slovenia Spain Sweden; constant 2024 US$ millions; percent=100*(2025/2024-1)",
+    "status": "verified"
+  }
 }
