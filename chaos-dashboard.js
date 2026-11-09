@@ -32,6 +32,19 @@ if(segmentRoot&&tickRoot){
 const data=window.EP_CHAOS_DATA,model=window.EPChaosModel;
 if(!data||!model){const e=root.querySelector('#chaos-evidence');if(e)e.textContent='Evidence could not load. Reload this page; scores remain withheld.';return;}
 const element=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
+// Keep the meter immediately visible. Supporting research belongs in one collapsed section BELOW the meter.
+let supportingDetails=root.querySelector('#chaos-supporting-comparisons');
+function placeBelowMeter(section){
+ if(!supportingDetails){
+  supportingDetails=element('details',undefined,'chaos-methodology');
+  supportingDetails.id='chaos-supporting-comparisons';
+  supportingDetails.append(element('summary','View supporting comparisons, readiness and research details'));
+  const layout=root.querySelector('.chaos-layout');
+  if(layout&&layout.parentNode===root)layout.insertAdjacentElement('afterend',supportingDetails);
+  else root.append(supportingDetails);
+ }
+ supportingDetails.append(section);
+}
 const readiness=data.meterReadiness;
 if(readiness){const section=element('section');section.id='chaos-meter-readiness';section.setAttribute('aria-label','Command Meter readiness, not influence score');
  section.append(element('h4',readiness.label+' · '+readiness.percent+'%'),element('p',readiness.kind));
@@ -40,7 +53,7 @@ if(readiness){const section=element('section');section.id='chaos-meter-readiness
  if(readiness.previousPercent!==null){section.append(element('p','Previous readiness: '+readiness.previousPercent+'% · Current: '+readiness.percent+'% · Change: '+(readiness.percent-readiness.previousPercent)+' percentage points'));if(readiness.changeReason)section.append(element('p','Reason: '+readiness.changeReason));}
  section.append(element('p','Change rule: '+readiness.changePolicy),element('p','Next evidence needed: '+readiness.nextEvidenceGate));
  section.append(element('p','Influence score: NOT SCORED · National net benefit: NOT ESTABLISHED'));
- root.prepend(section);
+ placeBelowMeter(section);
 }
 // Publish a finite, source-backed strategic input comparison without implying measured influence.
 if(typeof model.observedInputShares==='function'){
@@ -59,7 +72,7 @@ if(typeof model.observedInputShares==='function'){
   section.append(table);
   const note=element('p','Comparison scope: these five entities only; shares are not world shares. EU-27 is not a unified deployable force. Other Economic and Energy & Resources measurements remain individual indicators rather than invented aggregate scores.');section.append(note);
   const link=element('a','Source: SIPRI 2026 military expenditure fact sheet');link.href='https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025';link.target='_blank';link.rel='noopener noreferrer';section.append(link);
-  root.prepend(section);
+  placeBelowMeter(section);
  }
 }
 // Publish existing comparable economic statistics and distinctly labelled energy indicators.
@@ -74,7 +87,7 @@ if(data.actors){
   const table=element('table');const head=element('tr');['Power','Real GDP growth','Reporting period'].forEach(t=>head.append(element('th',t)));table.append(head);
   econ.forEach(({id,record})=>{const tr=element('tr');[names[id],record.number.toFixed(1)+'%',record.period].forEach(t=>tr.append(element('td',t)));table.append(tr);});section.append(table);
   section.append(element('p','Comparable growth rates describe domestic output change; they do not establish geopolitical bargaining power.'));
-  root.prepend(section);
+  placeBelowMeter(section);
  }
  const energy=ids.map(id=>({id,record:data.actors[id]&&data.actors[id]['Energy and resources']}));
  if(energy.every(x=>x.record&&x.record.value&&x.record.period)){
@@ -84,7 +97,7 @@ if(data.actors){
   const table=element('table');const head=element('tr');['Power','Observed indicator','Value','Period'].forEach(t=>head.append(element('th',t)));table.append(head);
   energy.forEach(({id,record})=>{const tr=element('tr');[names[id],record.title,record.value,record.period].forEach(t=>tr.append(element('td',t)));table.append(tr);});section.append(table);
   section.append(element('p','No cross-country energy aggregate is calculated because the denominators, commodities and periods differ. See each power’s indicator for its underlying sources and limitations.'));
-  root.prepend(section);
+  placeBelowMeter(section);
  }
 }
 const sprint=data.completionSprint,completionModel=window.EPCompletionModel;
@@ -107,7 +120,7 @@ if(sprint&&completionModel){
   list.append(detail);
  }
  section.append(list);
- root.prepend(section);
+ placeBelowMeter(section);
 }
 // Progressive disclosure: the public meter leads; research administration stays available on demand.
 const makeDrawer=(title,description,cls)=>{
