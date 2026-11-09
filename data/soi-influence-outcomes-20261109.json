@@ -487,5 +487,255 @@
       "influenceScores": 0,
       "readiness": "unchanged"
     }
+  },
+  "consolidatedOutcomeReview": {
+    "asOf": "2026-11-09",
+    "purpose": "Assess realized geopolitical outcomes and causal identification, not automatically infer influence from inputs",
+    "outcomeCases": [
+      {
+        "id": "us-china-trade-compliance",
+        "powers": [
+          "United States",
+          "China"
+        ],
+        "dimension": "Economic",
+        "finding": "China extended certain trade-measure suspensions by two months on Nov 9; a proposed $60bn reciprocal tariff-cut package remains unfinalized. US agencies requested immediate implementation of prior critical mineral and farm commitments on Nov 6.",
+        "evidence": [
+          {
+            "metric": "Proposed reciprocal tariff-cut package",
+            "value": 60,
+            "unit": "USD billion",
+            "status": "proposal not finalized"
+          },
+          {
+            "metric": "Additional non-soy US agricultural goods imports Jan-Sep 2026",
+            "value": 7.2,
+            "unit": "USD billion",
+            "status": "observed purchases; not proof of compliance with contested target"
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.reuters.com/world/asia-pacific/china-extends-suspension-24-tariff-us-imports-two-months-2026-11-09/",
+            "publicationDate": "2026-11-09"
+          },
+          {
+            "url": "https://www.marketscreener.com/news/china-ties-more-us-farm-imports-to-reciprocal-tariff-cuts-ce785fdcda8bfe25",
+            "publicationDate": "2026-11-05"
+          },
+          {
+            "url": "https://www.marketscreener.com/news/us-urged-beijing-to-implement-commitments-of-busan-trade-deal-treasury-says-ce785fd2dd8af226",
+            "publicationDate": "2026-11-06"
+          }
+        ],
+        "competingExplanations": [
+          "Reciprocal bargaining and market conditions, not unilateral coercion, may explain suspension",
+          "Farm demand, tariffs and delivery timing may explain purchase pace"
+        ],
+        "missingToScore": [
+          "Agreement text and effective dates",
+          "Customs-confirmed delivered quantities by product versus explicit commitment start date",
+          "Net tariff incidence and export-control delivery outcomes",
+          "Counterfactual without concessions"
+        ],
+        "causalConclusion": "Negotiation and compliance dispute documented; neither side's net leverage advantage established",
+        "influenceScore": null
+      },
+      {
+        "id": "russia-india-urals-bargaining",
+        "powers": [
+          "Russia",
+          "India",
+          "China"
+        ],
+        "dimension": "Energy & Resources",
+        "finding": "Urals delivered-to-India differentials swung between premiums and discounts in 2026. July August-delivery cargoes reported discounts >$10/bbl; December-delivery offers in November were $1–2/bbl below dated Brent.",
+        "evidence": [
+          {
+            "period": "2026-07-07",
+            "metric": "Urals India discount for August delivery",
+            "value": "more than 10",
+            "unit": "USD per barrel below dated Brent",
+            "status": "trader-reported delivered pricing"
+          },
+          {
+            "period": "2026-11-06",
+            "metric": "Urals India discount for December delivery",
+            "value": "1–2",
+            "unit": "USD per barrel below dated Brent",
+            "status": "trader-reported delivered pricing"
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://in.marketscreener.com/news/discounts-for-russian-urals-crude-widen-to-more-than-10-per-barrel-in-india-sources-say-ce7f5ed8da8df725",
+            "publicationDate": "2026-07-07"
+          },
+          {
+            "url": "https://www.bairdmaritime.com/amp/story/shipping/tankers/indian-demand-cools-down-and-pushes-russian-crude-into-a-discount",
+            "publicationDate": "2026-11-06"
+          },
+          {
+            "url": "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/091526-discounts-on-russian-crude-narrow-since-mid-august-on-growing-middle-east-supply-concerns",
+            "publicationDate": "2026-09-15"
+          }
+        ],
+        "competingExplanations": [
+          "Middle East supply disruption and alternative-grade availability",
+          "Refinery margins, freight, insurance, sanctions and Chinese competing demand"
+        ],
+        "missingToScore": [
+          "Matched Russian FOB netback and Indian delivered acquisition cost",
+          "Benchmark and grade normalization",
+          "Contract quantities and realized payments",
+          "Counterfactual alternative-supplier cost"
+        ],
+        "causalConclusion": "Price sensitivity to outside options documented; durable India leverage and Russian loss cannot yet be causally quantified",
+        "influenceScore": null
+      },
+      {
+        "id": "eu-gas-diversification-outcomes",
+        "powers": [
+          "European Union",
+          "Russia",
+          "United States"
+        ],
+        "dimension": "Energy & Resources",
+        "finding": "EU Russian gas import share fell from 45% in 2021 to 12% in 2025; auditors caution that mild winters and demand destruction contributed. IEA warns low EU storage and global LNG shock threaten 2026-27 supply resilience.",
+        "evidence": [
+          {
+            "metric": "Russian share of EU gas imports",
+            "baselineYear": 2021,
+            "baseline": 45,
+            "comparisonYear": 2025,
+            "comparison": 12,
+            "unit": "percent",
+            "differencePercentagePoints": -33
+          },
+          {
+            "metric": "EU Russian gas imports",
+            "baselineYear": 2021,
+            "baseline": 153,
+            "comparisonYear": 2024,
+            "comparison": 38,
+            "unit": "bcm",
+            "note": "European Court of Auditors series, distinct from 2025 European Commission series"
+          },
+          {
+            "metric": "EU Russian LNG imports",
+            "baselineYear": 2021,
+            "baseline": 12,
+            "comparisonYear": 2024,
+            "comparison": 20,
+            "unit": "bcm",
+            "note": "Russian LNG rose even as total Russian gas imports fell"
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.eca.europa.eu/en/publications/SR-2026-21",
+            "publicationDate": "2026-09-09"
+          },
+          {
+            "url": "https://energy.ec.europa.eu/strategy/repowereu-phase-out-russian-energy-imports_en",
+            "publicationDate": "2026-11-09 access"
+          },
+          {
+            "url": "https://www.iea.org/news/low-storage-buffers-in-europe-could-prolong-global-gas-market-tightness-well-into-2027",
+            "publicationDate": "2026-11-03"
+          },
+          {
+            "url": "https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/economic-forecasts/spring-2026-economic-forecast-slowdown-growth-energy-shock-drives-inflation/eu-energy-markets-evolving-gas-electricity-price-linkages-more-volatile-system_en",
+            "publicationDate": "2026-05-21"
+          }
+        ],
+        "competingExplanations": [
+          "Mild winters and reduced consumption contributed to import declines",
+          "Industrial demand destruction is a cost, not necessarily improved strategic position",
+          "Global LNG shocks can erode gains in supply independence"
+        ],
+        "missingToScore": [
+          "Weather-normalized gas demand and industrial output",
+          "Supplier-specific landed import cost and security-adjusted alternative",
+          "Storage and interconnection capex",
+          "Reliable avoided-disruption value and counterfactual"
+        ],
+        "causalConclusion": "Reduced exposure to one supplier observed, but attributable share and net welfare effect remain unquantified",
+        "influenceScore": null
+      },
+      {
+        "id": "five-power-strategic-outcomes",
+        "powers": [
+          "United States",
+          "China",
+          "Russia",
+          "European Union",
+          "India"
+        ],
+        "dimension": "Strategic",
+        "finding": "Existing SIPRI 2025 expenditure data document input changes, not operational or deterrence outcomes.",
+        "evidence": [],
+        "sources": [
+          {
+            "url": "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
+            "publicationDate": "2026"
+          }
+        ],
+        "competingExplanations": [
+          "Spending may reflect inflation, replacement of losses or procurement delays rather than net capability gains",
+          "EU-27 spending sum is not a unified deployable military"
+        ],
+        "missingToScore": [
+          "Comparable deployed capacity and readiness",
+          "Production and delivery timelines",
+          "Measured outcomes in crises and deterrence",
+          "Costs, attrition and counterfactuals"
+        ],
+        "causalConclusion": "No new strategic influence score justified by expenditure alone",
+        "influenceScore": null
+      },
+      {
+        "id": "remaining-economic-cross-power",
+        "powers": [
+          "United States",
+          "China",
+          "Russia",
+          "European Union",
+          "India"
+        ],
+        "dimension": "Economic",
+        "finding": "Trade and sanctions outcome data remain incomplete beyond the US-China compliance dispute and Russian energy transactions.",
+        "evidence": [],
+        "sources": [],
+        "competingExplanations": [
+          "Market conditions, substitution, third-country rerouting and macroeconomic shocks"
+        ],
+        "missingToScore": [
+          "Matched pre/post implementation trade flows",
+          "Pass-through and welfare incidence",
+          "Implemented agreement clauses",
+          "Third-country diversion and counterfactuals"
+        ],
+        "causalConclusion": "Unknown; preserve nulls",
+        "influenceScore": null
+      }
+    ],
+    "publicationGate": {
+      "researchOnly": true,
+      "liveMeterChanges": false,
+      "requiredBeforeScoring": [
+        "Verified realized outcomes",
+        "Cost to both sides",
+        "Matched counterfactual",
+        "Uncertainty interval and independent corroboration"
+      ],
+      "editorialReadiness": "unchanged at 53%",
+      "influenceScores": "remain null"
+    },
+    "meterChanges": {
+      "numericIndicators": 0,
+      "influenceScores": 0,
+      "readiness": "unchanged"
+    }
   }
 }
