@@ -42,6 +42,26 @@ if(readiness){const section=element('section');section.id='chaos-meter-readiness
  section.append(element('p','Influence score: NOT SCORED · National net benefit: NOT ESTABLISHED'));
  root.prepend(section);
 }
+// Publish a finite, source-backed strategic input comparison without implying measured influence.
+if(typeof model.observedInputShares==='function'){
+ const expenditure={us:954,china:336,russia:190,eu:430.39,india:92.1};
+ const shares=model.observedInputShares(expenditure);
+ if(shares){
+  const section=element('section',undefined,'chaos-completion');
+  section.id='soi-observed-strategic-inputs';
+  section.setAttribute('aria-label','Observed military spending comparison, not geopolitical influence');
+  section.append(element('h4','2025 strategic resources · observed spending'));
+  section.append(element('p','SIPRI 2025 military expenditure, current US$ billions. EU is the separately audited sum of 27 member countries. This is an input comparison—not combat effectiveness, net national benefit, or an influence score.'));
+  const names={us:'United States',china:'China',russia:'Russia',eu:'European Union (EU-27)',india:'India'};
+  const table=element('table');
+  const header=element('tr');['Power','2025 spending (US$ bn)','Share of these five'].forEach(t=>header.append(element('th',t)));table.append(header);
+  Object.keys(expenditure).forEach(id=>{const tr=element('tr');[names[id],expenditure[id].toFixed(id==='eu'?2:1),shares[id].toFixed(2)+'%'].forEach(t=>tr.append(element('td',t)));table.append(tr);});
+  section.append(table);
+  const note=element('p','Comparison scope: these five entities only; shares are not world shares. EU-27 is not a unified deployable force. Other Economic and Energy & Resources measurements remain individual indicators rather than invented aggregate scores.');section.append(note);
+  const link=element('a','Source: SIPRI 2026 military expenditure fact sheet');link.href='https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025';link.target='_blank';link.rel='noopener noreferrer';section.append(link);
+  root.prepend(section);
+ }
+}
 const sprint=data.completionSprint,completionModel=window.EPCompletionModel;
 if(sprint&&completionModel){
  const section=element('section',undefined,'chaos-completion');
