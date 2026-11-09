@@ -166,5 +166,326 @@
       "influenceScores": 0,
       "readiness": "unchanged"
     }
+  },
+  "consolidatedFivePowerAssessment": {
+    "asOf": "2026-11-09",
+    "scope": "Five geopolitical powers x three scored dimensions; evidence matrix, not scored meter data",
+    "comparabilityRules": [
+      "Do not equate absolute spending with operational effectiveness or geopolitical influence.",
+      "EU-27 aggregate is not the same as SIPRI geographic Europe or European NATO members.",
+      "Do not equate supply shares, demand shares, import shares or LNG-only shares.",
+      "2026 forecasts and scenarios are not observations; label separately.",
+      "Do not infer causal outcomes from trade concentration or price offers.",
+      "Do not translate spending changes into influence scores absent outcome and counterfactual evidence."
+    ],
+    "evidenceMatrix": [
+      {
+        "power": "United States",
+        "dimension": "Economic",
+        "observedMetrics": [],
+        "sources": [],
+        "unresolved": [
+          "Document delivered bilateral trade concessions and counterfactual tariff costs; distinguish announcement from implementation."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "China",
+        "dimension": "Economic",
+        "observedMetrics": [],
+        "sources": [],
+        "unresolved": [
+          "Measure matched trade flows, tariff incidence, export controls and realized concessions, not headline tariffs."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "Russia",
+        "dimension": "Economic",
+        "observedMetrics": [],
+        "sources": [],
+        "unresolved": [
+          "Separate gross energy revenues, discounts, fiscal costs and sanctions leakage by commodity and month."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "European Union",
+        "dimension": "Economic",
+        "observedMetrics": [],
+        "sources": [],
+        "unresolved": [
+          "Quantify import bill, industry output and real-income effects controlling for weather and energy shock."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "India",
+        "dimension": "Economic",
+        "observedMetrics": [],
+        "sources": [],
+        "unresolved": [
+          "Compare actual landed oil costs and bilateral trade concessions against credible alternative suppliers."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "United States",
+        "dimension": "Strategic",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "SIPRI military expenditure",
+            "value": 954,
+            "unit": "USD billion current",
+            "realChangePercent": -7.5
+          }
+        ],
+        "sources": [
+          "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+        ],
+        "unresolved": [
+          "Measure force availability, alliance outcomes and capability delivery; spending is input not influence."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "China",
+        "dimension": "Strategic",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "SIPRI estimated military expenditure",
+            "value": 336,
+            "unit": "USD billion current",
+            "realChangePercent": 7.4
+          }
+        ],
+        "sources": [
+          "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+        ],
+        "unresolved": [
+          "Verify capability and deterrence outcomes; estimate uncertainty."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "Russia",
+        "dimension": "Strategic",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "SIPRI estimated military expenditure",
+            "value": 190,
+            "unit": "USD billion current",
+            "realChangePercent": 5.9,
+            "gdpSharePercent": 7.5
+          }
+        ],
+        "sources": [
+          "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+        ],
+        "unresolved": [
+          "Assess military losses, production and territorial control using independently comparable measures."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "European Union",
+        "dimension": "Strategic",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "SIPRI EU-27 member-country sum (preexisting audited ledger)",
+            "value": 430.39,
+            "unit": "USD billion current",
+            "realChangePercent": 19.48,
+            "sourceType": "existing audited EP News SIPRI aggregation"
+          }
+        ],
+        "sources": [
+          "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+        ],
+        "unresolved": [
+          "Do not substitute SIPRI geographic Europe $864bn or European NATO $559bn for EU-27; test interoperability and procurement outputs."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "India",
+        "dimension": "Strategic",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "SIPRI military expenditure",
+            "value": 92.1,
+            "unit": "USD billion current",
+            "realChangePercent": 8.9
+          }
+        ],
+        "sources": [
+          "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025"
+        ],
+        "unresolved": [
+          "Test regional capability and operational readiness against outcomes."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "United States",
+        "dimension": "Energy & Resources",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "US share of global LNG exports",
+            "value": 26,
+            "unit": "percent of global LNG exports"
+          }
+        ],
+        "sources": [
+          "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en"
+        ],
+        "unresolved": [
+          "Measure actual US export receipts, delivered buyer costs and diversification counterfactual; no profit inference."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "China",
+        "dimension": "Energy & Resources",
+        "observedMetrics": [
+          {
+            "period": "Dec 2022-Sep 2026",
+            "metric": "Share of Russian crude export purchases",
+            "value": 50,
+            "unit": "percent of Russian crude exports",
+            "sourceType": "previously sourced ledger"
+          }
+        ],
+        "sources": [],
+        "unresolved": [
+          "Separate ESPO premiums from Urals pricing and establish matched netback price bargaining outcomes."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "Russia",
+        "dimension": "Energy & Resources",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "Russian share of EU gas imports",
+            "value": 13,
+            "unit": "percent of EU gas imports"
+          },
+          {
+            "year": 2026,
+            "metric": "Russian gas share of EU gas demand (ACER approximate)",
+            "value": 12,
+            "unit": "percent of EU gas demand"
+          }
+        ],
+        "sources": [
+          "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+          "https://www.acer.europa.eu/monitoring/russian-gas-phase-out-2026"
+        ],
+        "unresolved": [
+          "Different denominators and years: no direct 13% to 12% trend; measure realized seller netbacks and fiscal effects."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "European Union",
+        "dimension": "Energy & Resources",
+        "observedMetrics": [
+          {
+            "year": 2025,
+            "metric": "Total EU gas imports",
+            "value": 289,
+            "unit": "bcm"
+          },
+          {
+            "year": 2025,
+            "metric": "Russian gas imports",
+            "value": 36,
+            "unit": "bcm"
+          },
+          {
+            "year": 2025,
+            "metric": "EU gas import share supplied as LNG (European Commission)",
+            "value": 45,
+            "unit": "percent"
+          },
+          {
+            "year": 2025,
+            "metric": "US share of EU LNG imports (ACER)",
+            "value": 58,
+            "unit": "percent of LNG imports"
+          }
+        ],
+        "sources": [
+          "https://energy.ec.europa.eu/data-and-analysis/market-analysis_en",
+          "https://www.acer.europa.eu/monitoring/MMR/LNG_market_developments_2026",
+          "https://www.iea.org/reports/global-gas-security-review-2026/executive-summary"
+        ],
+        "unresolved": [
+          "ACER LNG import definition 146 bcm differs from EC 131 bcm; do not combine denominators without reconciliation; quantify supply security vs price exposure."
+        ],
+        "causalInfluenceScore": null
+      },
+      {
+        "power": "India",
+        "dimension": "Energy & Resources",
+        "observedMetrics": [
+          {
+            "period": "Dec 2022-Sep 2026",
+            "metric": "Share of Russian crude export purchases",
+            "value": 37,
+            "unit": "percent of Russian crude exports",
+            "sourceType": "previously sourced ledger"
+          }
+        ],
+        "sources": [],
+        "unresolved": [
+          "Estimate matched delivered oil discount and realized savings vs alternative supply; import-dependence indicator is already maintained separately."
+        ],
+        "causalInfluenceScore": null
+      }
+    ],
+    "researchWorkPackages": [
+      {
+        "name": "Economic outcomes",
+        "deliverables": [
+          "Bilateral trade measures and actual implemented concessions",
+          "Tariff and sanctions incidence with time-consistent baselines",
+          "Cost and counterfactual register"
+        ],
+        "status": "needs transaction-level verification"
+      },
+      {
+        "name": "Strategic outcomes",
+        "deliverables": [
+          "SIPRI 2025 spending comparison across all five powers",
+          "Separate EU-27 aggregation from Europe/NATO",
+          "Capability, readiness and outcome evidence"
+        ],
+        "status": "spending inputs verified; outcomes unresolved"
+      },
+      {
+        "name": "Energy and resources",
+        "deliverables": [
+          "EU 2025 gas sourcing and 2026 supply-shock risk",
+          "US global LNG export share",
+          "Russia-China-India crude buyer concentration and grade-specific pricing"
+        ],
+        "status": "descriptive evidence assembled; causal costs unresolved"
+      }
+    ],
+    "scoringDecision": "Do not change influence scores or 53% editorial readiness until outcomes and counterfactuals are verified",
+    "meterChanges": {
+      "numericIndicators": 0,
+      "influenceScores": 0,
+      "readiness": "unchanged"
+    }
   }
 }
