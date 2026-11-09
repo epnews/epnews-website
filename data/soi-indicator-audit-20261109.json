@@ -195,5 +195,30 @@
     "realChangePercent": 19.47892252885306,
     "method": "Sum 2024 and 2025 numeric cells for Austria Belgium Bulgaria Croatia Cyprus Czechia Denmark Estonia Finland France Germany Greece Hungary Ireland Italy Latvia Lithuania Luxembourg Malta Netherlands Poland Portugal Romania Slovakia Slovenia Spain Sweden; constant 2024 US$ millions; percent=100*(2025/2024-1)",
     "status": "verified"
+  },
+  "followupEnergyReview": {
+    "reviewDate": "2026-11-09",
+    "outcome": "No numeric meter changes; new source observations and provisional-status caution",
+    "sources": [
+      {
+        "sphere": "us",
+        "indicator": "LNG share of world exports",
+        "result": "2024 21%, 2025 26%, +5 percentage points; confirmed same annual GIIGNL series via EIA",
+        "url": "https://www.eia.gov/todayinenergy/detail.php?id=67864"
+      },
+      {
+        "sphere": "russia",
+        "indicator": "Estimated fossil export revenue",
+        "result": "September 2026 €625m/day; CREA's monthly index lists September as latest; September LNG subcomponent €75m/day (+68% month over month), not interchangeable with total",
+        "url": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/"
+      },
+      {
+        "sphere": "india",
+        "indicator": "Crude oil import dependence",
+        "result": "FY2024-25 88.3% vs FY2025-26 88.7%, +0.4 pp; secondary data page says final but its economy landing page says PPAC provisional. Retain provisional caveat pending direct PPAC status confirmation",
+        "url": "https://data.indiadispatch.com/economy/crude-oil-imports"
+      }
+    ],
+    "policy": "Retain same-source comparisons and do not infer causal influence or change readiness from descriptive energy measurements."
   }
 }
