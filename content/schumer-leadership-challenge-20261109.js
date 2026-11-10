@@ -1,7 +1,7 @@
 // Epic Perspective News | Schumer Democratic leadership | November 9, 2026
 STORIES.push({
-  "image": {
-    "src": "assets/images/schumer-leadership-20261109_1600x900.jpg",
+  image: {
+    src: 'assets/images/schumer-leadership-20261109_1600x900.jpg',
     "alt": "EP News editorial graphic using supplied photograph of Chuck Schumer and Chris Van Hollen at a Senate podium, with headline about a possible Democratic leadership challenge",
     "credit": "User-supplied photograph incorporated into EP News editorial graphic; graphic design is an editorial composite."
   },
