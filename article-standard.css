@@ -103,13 +103,13 @@ body:has(.report) .back{color:#f5f7fb}
 .article-share [role="status"] { font-size: .9rem; }
 .article-share-url { width: 100%; margin-top: 10px; padding: 10px; }
 
-/* Portrait editorial artwork: avoid legacy 16:9 image boxes and stretching. */
-#route-view .article-shell .article-featured:has(img[src*="epnews-supreme-court-transgender-inmate-care-20261110"]) {
+/* Recent portrait news graphics: preserve original proportions on all viewports. */
+#route-view .article-shell .article-featured:has(img:is([src*="epnews-supreme-court-transgender-inmate-care-20261110"], [src*="epnews-black-sea-security-20261110"])) {
   width: min(100%, 620px);
   max-width: 100%;
   margin: 24px auto 30px;
 }
-#route-view .article-shell .article-featured img[src*="epnews-supreme-court-transgender-inmate-care-20261110"] {
+#route-view .article-shell .article-featured img:is([src*="epnews-supreme-court-transgender-inmate-care-20261110"], [src*="epnews-black-sea-security-20261110"]) {
   display: block;
   width: 100%;
   height: auto;
@@ -119,7 +119,7 @@ body:has(.report) .back{color:#f5f7fb}
   margin-inline: auto;
 }
 @media (max-width: 700px) {
-  #route-view .article-shell .article-featured:has(img[src*="epnews-supreme-court-transgender-inmate-care-20261110"]) {
+  #route-view .article-shell .article-featured:has(img:is([src*="epnews-supreme-court-transgender-inmate-care-20261110"], [src*="epnews-black-sea-security-20261110"])) {
     width: 100%;
   }
 }
