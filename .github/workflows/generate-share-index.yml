@@ -5,14 +5,17 @@ on:
     paths:
       - 'content/**.js'
       - 'scripts/build-share-index.mjs'
+      - '.github/workflows/generate-share-index.yml'
   pull_request:
     paths:
       - 'content/**.js'
       - 'scripts/build-share-index.mjs'
       - 'functions/share/**'
+      - '.github/workflows/generate-share-index.yml'
   workflow_dispatch:
 permissions:
   contents: write
+  pull-requests: write
 jobs:
   build-index:
     runs-on: ubuntu-latest
@@ -28,13 +31,16 @@ jobs:
       - name: Validate metadata coverage
         run: |
           node -e "const x=require('./content/share-index.json'); for(const id of ['power','japan-philippines-radar-drones-20261109','big-bend-border-construction-20261109']) if(!x[id]?.title) process.exit(1); console.log(Object.keys(x).length,'indexed articles')"
-      - name: Commit index if changed
+      - name: Propose share index update through a PR (protected main)
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/share-index.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Refresh article share metadata index [skip ci]"
-            git push
-          fi
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: refresh article share metadata index'
+          branch: automation/refresh-share-index
+          delete-branch: true
+          title: 'chore: refresh article share metadata index'
+          body: |
+            Automatically generated share metadata for published articles.
+            Review and merge only after required status checks pass.
+          add-paths: content/share-index.json
