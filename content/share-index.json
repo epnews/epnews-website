@@ -79,10 +79,20 @@
     "deck": "Washington and Quito signed a reciprocal trade agreement in March, but Ecuador's Constitutional Court says lawmakers must approve it before ratification. China's existing trade agreement is already in force.",
     "image": "assets/images/epnews_ecuador_trade_1600x900.png"
   },
+  "egypt-saudi-defense-2026": {
+    "title": "Egypt Authorizes Military Support for Saudi Arabia as Houthi Attacks Intensify",
+    "deck": "Egypt's parliament has authorized defensive assistance if requested by Riyadh; the mandate does not establish that Egyptian troops have deployed.",
+    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
+  },
   "elon-musk-government-targeting-20261107": {
     "title": "Be Careful What You Ask for With Elon Musk",
     "deck": "If government can target him, government can target you. Proposed DOGE investigations raise a larger question: where does legitimate oversight end and political retaliation begin?",
     "image": "assets/images/elon-musk-government-targeting-20261107.jpg"
+  },
+  "eqt-range-gas-2026": {
+    "title": "EQT Announces Range Resources Acquisition in Deal Valuing Combined Gas Company Above $50 Billion",
+    "deck": "The all-stock agreement would create a large vertically integrated U.S. natural gas producer, but shareholder and regulatory approvals remain.",
+    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
   },
   "fec-filing-outage-2026": {
     "title": "FEC Filing System Offline After Reported Hacking Attempts",
@@ -119,6 +129,11 @@
     "deck": "An invasion needs more than threats and airstrikes. EP News examines troop increases, sealift, equipment, medical support and contracts—and finds no verified public evidence yet of an imminent large-scale ground invasion.",
     "image": "assets/images/epnews_iran_logistics_revised_1600x900.png"
   },
+  "iran-oil-beneficiaries-20261110": {
+    "title": "Oil Prices Are Falling. But Who Really Benefits From the Chaos in Iran?",
+    "deck": "Crude prices have dropped as Washington signals restraint toward Tehran. Consumers may gain, producers face pressure, and the Strait of Hormuz remains vulnerable.",
+    "image": "assets/images/epnews-iran-oil-beneficiaries-20261110.png"
+  },
   "iran-qatar-doha-talks-oct31-2026": {
     "title": "Iran Sends Envoys to Qatar as U.S. Strike Decision Looms",
     "deck": "Iranian negotiators met Qatari mediators in Doha after lengthy Tehran talks. Washington remains in contact, but the sides have not announced a deal and their demands remain far apart.",
@@ -133,6 +148,11 @@
     "title": "Japan Backs Philippines With Radar and Drones as Security Ties Deepen",
     "deck": "A ¥4.3 billion agreement will strengthen Philippine maritime surveillance—and marks a new step in Japan’s security assistance program.",
     "image": "assets/images/japan-philippines-radar-drones-20261109_1600x900.jpg"
+  },
+  "judiciary-epstein-report-2026": {
+    "title": "House Judiciary Democrats Release Report Alleging Epstein-Related Misconduct and Justice Department Failures",
+    "deck": "A report by the committee's Democratic staff details serious allegations and demands further investigation; its assertions are not criminal findings.",
+    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
   },
   "mexico-owned-american-copper-oct29-2026": {
     "title": "Mexico-Owned American Copper — Who Owns the Benefits?",
@@ -164,20 +184,10 @@
     "deck": "The company says it has no reason to believe its secrets or U.S. national security were compromised. Its investigation puts executive access and the security of America’s AI industry under scrutiny.",
     "image": "assets/images/nvidia-intelligence-probe-20261109_1600x900.png"
   },
-  "egypt-saudi-defense-2026": {
-    "title": "Egypt Authorizes Military Support for Saudi Arabia as Houthi Attacks Intensify",
-    "deck": "Egypt's parliament has authorized defensive assistance if requested by Riyadh; the mandate does not establish that Egyptian troops have deployed.",
-    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
-  },
-  "eqt-range-gas-2026": {
-    "title": "EQT Announces Range Resources Acquisition in Deal Valuing Combined Gas Company Above $50 Billion",
-    "deck": "The all-stock agreement would create a large vertically integrated U.S. natural gas producer, but shareholder and regulatory approvals remain.",
-    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
-  },
-  "judiciary-epstein-report-2026": {
-    "title": "House Judiciary Democrats Release Report Alleging Epstein-Related Misconduct and Justice Department Failures",
-    "deck": "A report by the committee's Democratic staff details serious allegations and demands further investigation; its assertions are not criminal findings.",
-    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
+  "panama-ports-20261105": {
+    "title": "China Lost Control of Two Panama Canal Ports. But Who Actually Won?",
+    "deck": "Panama changed operators at Balboa and Cristóbal. Preliminary official cargo figures reveal a more complicated economic picture.",
+    "image": "assets/images/panama_approved_epnews_1600x900.jpg"
   },
   "peace-at-table-war-on-grid-20261110": {
     "title": "Peace at the Table, War on the Grid: Who Benefits From Russia's Two-Track Strategy?",
@@ -228,11 +238,6 @@
     "title": "U.S. Approves New Offshore Texas LNG Port as Global Energy Competition Intensifies",
     "deck": "Federal officials approved the deepwater-port license application for a proposed export facility near Matagorda. Construction and commercial exports remain ahead.",
     "image": "assets/images/epnews_lng_website_1600x900.jpg"
-  },
-  "panama-ports-20261105": {
-    "title": "China Lost Control of Two Panama Canal Ports. But Who Actually Won?",
-    "deck": "Panama changed operators at Balboa and Cristóbal. Preliminary official cargo figures reveal a more complicated economic picture.",
-    "image": "assets/images/panama_approved_epnews_1600x900.jpg"
   },
   "trump-democrats-common-ground-20261106": {
     "title": "Trump and Democrats: Where Could They Find Common Ground?",
