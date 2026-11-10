@@ -84,7 +84,9 @@ jobs:
           git diff --exit-code -- sitemap.xml content/share-index.json
       - name: Open PR for editorial review, if not already open
         env:
-          GH_TOKEN: ${{ github.token }}
+          # A dedicated authorized bot/user token avoids the GitHub Actions bot PR
+          # approval gate. Keep the default token as fallback until configured.
+          GH_TOKEN: ${{ secrets.EP_NEWS_PR_TOKEN || github.token }}
           BRANCH: ${{ steps.target.outputs.branch }}
           SLUG: ${{ steps.article.outputs.slug }}
         run: |
