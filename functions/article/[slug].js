@@ -27,7 +27,7 @@ export async function onRequestGet({params,env,request}){
  const ogUrl='<meta property="og:url" content="https://epnews.pages.dev/article/'+slug+'">';
  html=html.replace(/<title>[^<]*<\/title>/i,title);
  html=html.replace(/<meta name="description"[^>]*>/i,description);
- html=html.replace('<head>','<head><base href="/">');
+ // The static HTML shell already declares <base href="/">; do not duplicate it.
  html=html.replace('</head>',tags.filter(t=>!t.includes('property="og:url"')).join('')+ogUrl+canonical+'</head>');
  return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
 }
