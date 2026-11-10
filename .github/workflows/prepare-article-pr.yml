@@ -1,0 +1,96 @@
+name: Prepare and open EP News article PR
+on:
+  workflow_run:
+    workflows: ["Import EP News images"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Existing feature branch containing approved article and imported image"
+        required: true
+        type: string
+      article:
+        description: "Article file (content/<slug>.js)"
+        required: true
+        type: string
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: article-package-${{ github.event.workflow_run.head_branch || inputs.branch }}
+  cancel-in-progress: false
+jobs:
+  prepare-and-propose:
+    if: >-
+      github.repository == 'epnews/epnews-website' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event.workflow_run.conclusion == 'success' &&
+        startsWith(github.event.workflow_run.head_branch, 'feature/')))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve feature branch
+        id: target
+        env:
+          TARGET_BRANCH: ${{ github.event.workflow_run.head_branch || inputs.branch }}
+          REQUESTED_ARTICLE: ${{ inputs.article }}
+        run: |
+          if [[ ! "$TARGET_BRANCH" =~ ^feature/[a-zA-Z0-9._/-]+$ ]] || [[ "$TARGET_BRANCH" == *..* ]]; then
+            echo 'A valid feature/ branch is required' >&2; exit 1
+          fi
+          echo "branch=$TARGET_BRANCH" >> "$GITHUB_OUTPUT"
+          echo "article=$REQUESTED_ARTICLE" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.target.outputs.branch }}
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Find the approved article on this branch
+        id: article
+        env:
+          REQUESTED_ARTICLE: ${{ steps.target.outputs.article }}
+        run: |
+          if [[ -n "$REQUESTED_ARTICLE" ]]; then
+            [[ "$REQUESTED_ARTICLE" =~ ^content/[a-z0-9-]+\.js$ && -f "$REQUESTED_ARTICLE" ]] || { echo 'Invalid article path' >&2; exit 1; }
+            ARTICLE="$REQUESTED_ARTICLE"
+          else
+            git fetch origin main
+            mapfile -t ARTICLES < <(git diff --name-only --diff-filter=ACMR origin/main...HEAD -- 'content/*.js' | grep -E '^content/[a-z0-9-]+\.js$' | grep -v -E '^content/(editorial|stories)\.js$' || true)
+            if [[ "${#ARTICLES[@]}" -ne 1 ]]; then
+              echo "Expected exactly one changed article; found ${#ARTICLES[@]}. Use workflow_dispatch with explicit article for multi-article branches." >&2
+              exit 1
+            fi
+            ARTICLE="${ARTICLES[0]}"
+          fi
+          echo "path=$ARTICLE" >> "$GITHUB_OUTPUT"
+          echo "slug=${ARTICLE#content/}" | sed 's/\.js$//' >> "$GITHUB_OUTPUT"
+      - name: Prepare complete article package and run validations
+        run: bash scripts/prepare-article-package.sh "${{ steps.article.outputs.path }}"
+      - name: Commit canonical generated metadata to feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add sitemap.xml content/share-index.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: finalize article sitemap and share metadata'
+            git push origin "HEAD:${{ steps.target.outputs.branch }}"
+          fi
+      - name: Verify committed metadata is reproducible
+        run: |
+          node scripts/generate-sitemap.mjs --check
+          node scripts/build-share-index.mjs
+          git diff --exit-code -- sitemap.xml content/share-index.json
+      - name: Open PR for editorial review, if not already open
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.target.outputs.branch }}
+          SLUG: ${{ steps.article.outputs.slug }}
+        run: |
+          existing="$(gh pr list --head "$BRANCH" --base main --state open --json number --jq '.[0].number // empty')"
+          if [[ -n "$existing" ]]; then
+            echo "Existing PR #$existing updated; wait for required PR and Cloudflare checks."
+            exit 0
+          fi
+          gh pr create --base main --head "$BRANCH" --title "Publish EP News: $SLUG" --body "Automated article package prepared after image import. Sitemap and Facebook share metadata generated and validated on this feature branch. **Editorial approval is required. Do not merge until required PR checks and Cloudflare preview pass.** After deployment verify article, image, citations, share preview and mobile discovery."
