@@ -1,6 +1,6 @@
 // EP News | Black Sea security hub | November 10, 2026
 STORIES.push({
-  image: { src: "assets/images/epnews-black-sea-security-20261110.png", alt: "EP News illustrated Black Sea maritime security hub graphic with European Commission president, shipping and ports", credit: "EP News AI-generated editorial composite; illustrative, not a photograph of an actual event." },
+  image: { src: "assets/images/epnews-black-sea-security-portrait-v2.png", alt: "EP News illustrated Black Sea maritime security hub graphic with European Commission president, shipping and ports", credit: "EP News AI-generated editorial composite; illustrative, not a photograph of an actual event." },
 
   "id": "black-sea-security-who-benefits-20261110",
   "status": "published",
