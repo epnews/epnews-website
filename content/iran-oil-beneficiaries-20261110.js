@@ -100,4 +100,4 @@ STORIES.push({
       "url": "https://finance.yahoo.com/news/oil-falls-trump-downplays-prospect-014322571.html"
     }
   ]
-};
+});
