@@ -8,6 +8,8 @@ on:
       - 'sitemap.xml'
       - 'assets/images/**'
       - 'scripts/preflight-article.mjs'
+      - 'scripts/build-share-index.mjs'
+      - 'scripts/generate-sitemap.mjs'
       - '.github/workflows/article-preflight.yml'
 permissions:
   contents: read
@@ -28,6 +30,10 @@ jobs:
           while IFS= read -r article; do
             node scripts/preflight-article.mjs "$article"
           done < /tmp/epnews-changed-articles
+      - name: Verify share metadata is committed and current
+        run: |
+          node scripts/build-share-index.mjs
+          git diff --exit-code -- content/share-index.json || { echo 'Share metadata stale: run node scripts/build-share-index.mjs and commit content/share-index.json'; exit 1; }
       - name: Verify sitemap and full article registry
         run: |
           node scripts/generate-sitemap.mjs --check
