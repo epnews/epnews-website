@@ -1,6 +1,7 @@
 // EP News single-article preflight. Run: node scripts/preflight-article.mjs content/slug.js
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 const root=process.cwd();
 const errors=[];
 const fail=x=>errors.push(x);
@@ -8,6 +9,8 @@ const exists=p=>fs.existsSync(path.join(root,p))&&fs.statSync(path.join(root,p))
 const article=process.argv[2];
 if(!article||!/^content\/[a-z0-9-]+\.js$/.test(article)||!exists(article)){console.error('Usage: node scripts/preflight-article.mjs content/slug.js');process.exit(2);}
 const src=fs.readFileSync(article,'utf8');
+const syntax=spawnSync(process.execPath,['--check',article],{encoding:'utf8'});
+if(syntax.status!==0)fail('JavaScript syntax invalid: '+(syntax.stderr||syntax.stdout||'node --check failed').trim());
 const slug=path.basename(article,'.js');
 const field=name=>new RegExp('(?:["\\x27]?'+name+'["\\x27]?)\\s*:\\s*["\\x27]([^"\\x27]+)["\\x27]').exec(src)?.[1];
 const id=field('id');
