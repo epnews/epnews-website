@@ -91,7 +91,7 @@ export async function onRequestGet({params,env,request}){
  if(direct.ok){
   const source=await direct.text();
   if(get(source,'status')==='published'){
-   const imageMatch=source.match(/image\\s*:\\s*\\{[^}]*?\\bsrc\\s*:\\s*['"]([^'"]+)['"]/s);
+   const imageMatch=source.match(/image\s*:\s*\{[^}]*?\bsrc\s*:\s*['"]([^'"]+)['"]/s);
    record={title:get(source,'title'),deck:get(source,'deck'),image:imageMatch?.[1]||'assets/images/ep-news-official-horizontal-masthead-20261105.png'};
   }
  }
