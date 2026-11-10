@@ -103,8 +103,8 @@ for entry in data:
     target=ROOT/dest
     target.parent.mkdir(parents=True,exist_ok=True)
     picture=Image.open(BytesIO(payload)).convert('RGB')
-    if picture.size != (1600,900):
-        picture=picture.resize((1600,900),Image.Resampling.LANCZOS)
+    if picture.width > 1600 or picture.height > 1600:
+        picture.thumbnail((1600,1600),Image.Resampling.LANCZOS)
     buffer=BytesIO()
     if extension in ('.jpg','.jpeg'):
         picture.save(buffer,format='JPEG',quality=90)
