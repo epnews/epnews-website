@@ -1,0 +1,35 @@
+name: EP News one-pass article preflight
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'index.html'
+      - 'sitemap.xml'
+      - 'assets/images/**'
+      - 'scripts/preflight-article.mjs'
+      - '.github/workflows/article-preflight.yml'
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate changed article packages
+        shell: bash
+        run: |
+          git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep -E '^content/[a-z0-9-]+\.js$' | grep -v -E '^content/(editorial|stories)\.js$' > /tmp/epnews-changed-articles || true
+          while IFS= read -r article; do
+            node scripts/preflight-article.mjs "$article"
+          done < /tmp/epnews-changed-articles
+      - name: Verify sitemap and full article registry
+        run: |
+          node scripts/generate-sitemap.mjs --check
+          node scripts/validate-publishing.mjs
+          node scripts/validate-all-articles.mjs
