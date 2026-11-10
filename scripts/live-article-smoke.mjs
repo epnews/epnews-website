@@ -17,7 +17,7 @@ async function get(url){
 function meta(html,tag,key,value){
  const tags=html.match(new RegExp('<'+tag+'\\b[^>]*>','gi'))||[];
  for(const line of tags){
-  const attrs=Object.fromEntries([...line.matchAll(/([\\w:-]+)\\s*=\\s*(["'])(.*?)\\2/g)].map(m=>[m[1].toLowerCase(),m[3]]));
+  const attrs=Object.fromEntries([...line.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/g)].map(m=>[m[1].toLowerCase(),m[3]]));
   if(attrs[key]===value)return attrs;
  }
  return null;
@@ -28,7 +28,7 @@ async function check(slug){
  if(!res.ok)throw Error('Article HTTP '+res.status);
  if(!(res.headers.get('content-type')||'').includes('text/html'))throw Error('Article response not HTML');
  const html=await res.text();
- const title=html.match(/<title>([^<]+)<\\/title>/i)?.[1]?.trim();
+ const title=html.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim();
  if(!title||title==='Epic Perspective News | EP News')throw Error('Article-specific HTML title missing');
  const canonical=meta(html,'link','rel','canonical')?.href;
  if(canonical!==url)throw Error('canonical mismatch: '+canonical);
