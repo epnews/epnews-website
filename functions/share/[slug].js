@@ -1,6 +1,7 @@
 const ORIGIN='https://epnews.pages.dev';
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const get=(s,k)=>{const m=s.match(new RegExp('(?:["\\x27]'+k+'["\\x27]|\\b'+k+'\\b)\\s*:\\s*["\\x27]([^"\\x27]*)["\\x27]'));return m?m[1]:''};
+// Match a quoted property value using its opening quote, not the first apostrophe inside the text.
+const get=(s,k)=>{const escaped=k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');const m=s.match(new RegExp('(?:["\\x27]'+escaped+'["\\x27]|\\b'+escaped+'\\b)\\s*:\\s*(["\\x27])([\\s\\S]*?)\\1'));return m?m[2]:''};
 export async function onRequestGet({params,env,request}){
  const id=String(params.slug||'');
  if(!/^[a-z0-9-]{1,120}$/.test(id))return new Response('Not found',{status:404});
