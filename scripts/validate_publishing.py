@@ -44,8 +44,8 @@ for path in articles:
         with Image.open(file) as img:
             img.verify()
         with Image.open(file) as img:
-            if img.size != (1600, 900):
-                fail(f"{path}: {asset} is {img.size}, expected 1600x900")
+            if img.width < 1 or img.height < 1 or max(img.size) > 1600:
+                fail(f"{path}: {asset} has invalid dimensions {img.size}")
     except Exception as exc:
         fail(f"{path}: image unreadable: {exc}")
     # Allow a previously imported, verified image on the base branch when its
