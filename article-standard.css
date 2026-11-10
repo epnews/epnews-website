@@ -34,7 +34,7 @@ body:has(.report) .back{color:#f5f7fb}
 @media(max-width:790px){
  .site-header .navrow .menu-button{display:none}
  .site-header .navrow nav,.site-header .navrow nav.open{display:flex;position:static;flex:1;min-height:46px;flex-direction:row;align-items:center;gap:16px;padding:0;background:transparent;box-shadow:none;z-index:auto}
- .site-header .navrow nav a{padding:12px 0;border-bottom:0;font-size:10px}
+ .site-header .navrow nav a{padding:12px 0;border-bottom:0;font-size:12px;line-height:1.5}
  .site-header .navrow .search-button{margin-left:0}
 }
 
