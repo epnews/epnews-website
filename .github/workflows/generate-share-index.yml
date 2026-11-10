@@ -1,0 +1,40 @@
+name: Generate article share metadata index
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**.js'
+      - 'scripts/build-share-index.mjs'
+  pull_request:
+    paths:
+      - 'content/**.js'
+      - 'scripts/build-share-index.mjs'
+      - 'functions/share/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate share index
+        run: node scripts/build-share-index.mjs
+      - name: Validate metadata coverage
+        run: |
+          node -e "const x=require('./content/share-index.json'); for(const id of ['power','japan-philippines-radar-drones-20261109','big-bend-border-construction-20261109']) if(!x[id]?.title) process.exit(1); console.log(Object.keys(x).length,'indexed articles')"
+      - name: Commit index if changed
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/share-index.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh article share metadata index [skip ci]"
+            git push
+          fi
