@@ -4,6 +4,17 @@ const get=(s,k)=>{const m=s.match(new RegExp('(?:["\\x27]'+k+'["\\x27]|\\b'+k+'\
 export async function onRequestGet({params,env,request}){
  const id=String(params.slug||'');
  if(!/^[a-z0-9-]{1,120}$/.test(id))return new Response('Not found',{status:404});
+ // Preserve the legacy Facebook share link for the Panama Ports investigation.
+ // Its canonical article is now a standalone investigation page rather than a content/<slug>.js entry.
+ if(id==='panama-ports-20261105'){
+  const dest=ORIGIN+'/investigations/panama-ports-who-won.html';
+  const title='China Lost Control of Two Panama Canal Ports. But Who Actually Won?';
+  const description='Panama changed operators at Balboa and Cristóbal. Preliminary official cargo figures reveal a more complicated economic picture.';
+  const image=ORIGIN+'/assets/images/panama_approved_epnews_1600x900.jpg';
+  const tags=[['og:type','article'],['og:site_name','Epic Perspective News'],['og:title',title],['og:description',description],['og:image',image],['og:url',dest]];
+  const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | Epic Perspective News</title><meta name="description" content="'+esc(description)+'">'+tags.map(([k,v])=>'<meta property="'+k+'" content="'+esc(v)+'">').join('')+'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+esc(image)+'"><link rel="canonical" href="'+esc(dest)+'"><meta http-equiv="refresh" content="0;url='+esc(dest)+'"></head><body><a href="'+esc(dest)+'">Read '+esc(title)+'</a></body></html>';
+  return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
+ }
  // Direct metadata lookup for Myanmar rare-earths article; bypass missing/stale metadata index.
  if(id==='myanmar-us-rare-earths-20261110'){
   const sourceResponse=await env.ASSETS.fetch(new URL('/content/myanmar-us-rare-earths-20261110.js',request.url));
