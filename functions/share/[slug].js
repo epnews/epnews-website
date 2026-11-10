@@ -46,6 +46,17 @@ export async function onRequestGet({params,env,request}){
  }
  // One small metadata request replaces the previous 40+ sequential asset fetches.
  // Never scan every article in a live Cloudflare request: that can trigger Error 1101.
+ // New stories should resolve without waiting for the asynchronous metadata-index job.
+ // The Schumer article file exists on main, but its share index was not generated.
+ if(id==='schumer-leadership-challenge-20261109'){
+  const title='Democrats Won the Senate. Now Schumer Faces a Fight Over Who Leads It.';
+  const description='Chris Van Hollen is considering a challenge to Chuck Schumer after Democrats\u0027 Senate victory—but Schumer still has substantial caucus support.';
+  const image=ORIGIN+'/assets/images/schumer-leadership-20261109_1600x900.jpg';
+  const url=ORIGIN+'/article/'+id;
+  const tags=[['og:type','article'],['og:site_name','Epic Perspective News'],['og:title',title],['og:description',description],['og:image',image],['og:url',url]];
+  const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>'+esc(title)+' | Epic Perspective News</title><meta name="description" content="'+esc(description)+'">'+tags.map(([k,v])=>'<meta property="'+k+'" content="'+esc(v)+'">').join('')+'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+esc(image)+'"><link rel="canonical" href="'+esc(url)+'"></head><body><a href="'+esc(url)+'">Read '+esc(title)+'</a></body></html>';
+  return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
+ }
  const indexResponse=await env.ASSETS.fetch(new URL('/content/share-index.json',request.url));
  let record;
  if(indexResponse.ok){
