@@ -44,46 +44,28 @@ export async function onRequestGet({params,env,request}){
   const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | Epic Perspective News</title><meta name="description" content="'+esc(description)+'">'+tags.map(([k,v])=>'<meta property="'+k+'" content="'+esc(v)+'">').join('')+'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+esc(image)+'"><link rel="canonical" href="'+esc(url)+'"><meta http-equiv="refresh" content="0;url=/article/power"></head><body><a href="/article/power">Read '+esc(title)+'</a></body></html>';
   return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
  }
- const scripts=["content/stories.js","content/chaos-investigation.js","content/october-news.js","content/comey-case.js","content/fec-filing-outage.js","content/venezuela-oil-corpus-christi.js","content/us-canada-tariff-talks.js","content/qatar-iran-peace-proposal.js","content/us-treasury-debt-buyback-2026.js","content/bukele-haiti-reinforcements-2026.js","content/china-trade-manufacturing-2026.js","content/st-lng-texas-offshore-port-2026.js","content/vance-iran-outreach-october-2026.js","content/new-energy-dependency-oct28.js","content/brett-sylvia-pentagon-oct29-2026.js","content/alaska-election-probe-oct29-2026.js","content/iran-hidden-military-procurement-oct29-2026.js","content/argentina-lithium-supply-chain-oct29-2026.js","content/audi-georgia-factory-oct29-2026.js","content/new-factories-economic-costs-oct29-2026.js","content/china-import-shift-oct29-2026.js","content/mexico-owned-american-copper-oct29-2026.js","content/ilhan-omar-2016-investigation-oct29-2026.js","content/qatar-woodside-lng-oct29-2026.js","content/netanyahu-loses-majority-oct30-2026.js","content/valero-houston-refinery-oct30-2026.js","content/iran-qatar-doha-talks-oct31-2026.js","content/iran-radar-base-damage-oct31-2026.js","content/ukraine-patriot-sale-oct31-2026.js","content/brazil-serra-verde-20261105.js","content/peru-chancay-callao-20261105.js","content/argentina-andes-atlantic-corridor-20261105.js","content/guyana-oil-benefits-20261105.js","content/canada-uae-trade-20261105.js","content/ecuador-us-trade-20261105.js","content/russia-iran-gamble-20261106.js","content/iran-invasion-logistics-20261106.js","content/hormuz-price-of-peace-20261106.js","content/editorial.js"];
- // Keep server-side article discovery in sync with the scripts registered by the website.
- // Static list above remains as a fallback if index.html is temporarily unavailable.
- const homepage=await env.ASSETS.fetch(new URL('/index.html',request.url));
- if(homepage.ok){
-  const markup=await homepage.text();
-  const matches=markup.matchAll(/<script[^>]+src=["'](\/?content\/[^"']+[.]js)["'][^>]*>/gi);
-  for(const match of matches){
-   const path=match[1].replace(/^\//,'');
-   if(!scripts.includes(path))scripts.push(path);
+ // One small metadata request replaces the previous 40+ sequential asset fetches.
+ // Never scan every article in a live Cloudflare request: that can trigger Error 1101.
+ const indexResponse=await env.ASSETS.fetch(new URL('/content/share-index.json',request.url));
+ let record;
+ if(indexResponse.ok){
+  try { const index=await indexResponse.json(); record=Object.prototype.hasOwnProperty.call(index,id)?index[id]:null; }
+  catch { return new Response('Metadata index invalid',{status:503}); }
+ }
+ if(!record){
+  // Newly added articles can resolve directly before the index generation job completes.
+  const direct=await env.ASSETS.fetch(new URL('/content/'+id+'.js',request.url));
+  if(direct.ok){
+   const source=await direct.text();
+   if(get(source,'status')==='published'){
+    const imageMatch=source.match(/image\\s*:\\s*\\{\\s*src\\s*:\\s*['"]([^'"]+)['"]/);
+    record={title:get(source,'title'),deck:get(source,'deck'),image:imageMatch?.[1]||'assets/images/ep-news-official-horizontal-masthead-20261105.png'};
+   }
   }
  }
- let entry='';
- for(const path of scripts){
-  const res=await env.ASSETS.fetch(new URL('/'+path,request.url));
-  if(!res.ok)continue;
-  const content=await res.text();
-  const token=new RegExp('(?:["\\x27]id["\\x27]|\\bid)\\s*:\\s*["\\x27]'+id+'["\\x27]');
-  const match=token.exec(content);
-  if(!match)continue;
-  const slice=content.slice(match.index);
-  const next=/(?:["']id["']|\bid)\s*:\s*["']/.exec(slice.slice(match[0].length));
-  entry=next?slice.slice(0,match[0].length+next.index):slice;
-  if(path==='content/chaos-investigation.js')entry=content;
-  if(get(entry,'status')==='published')break;
-  entry='';
- }
- if(id==='power'){
-  const original=await env.ASSETS.fetch(new URL('/content/chaos-investigation.js',request.url));
-  if(!original.ok)return new Response('Metadata unavailable',{status:503});
-  const data=await original.text();
-  const getValue=(key)=>{const match=data.match(new RegExp('["\\x27]'+key+'["\\x27]\\s*:\\s*["\\x27]([^"\\x27]+)["\\x27]'));return match?match[1]:''};
-  if(getValue('status')!=='published')return new Response('Not found',{status:404});
-  entry=data;
- }
- if(!entry)return new Response('Not found',{status:404});
- const title=get(entry,'title'),description=get(entry,'deck');
- const imageMatch=entry.match(/image\s*:\s*\{\s*src\s*:\s*['"]([^'"]+)['"]/);
- const imagePath=id==='power'?'assets/images/chaos-flagship-hero-approved-20261031.jpg':(imageMatch?imageMatch[1]:'assets/images/ep-news-official-horizontal-masthead-20261105.png');
- const image=new URL('/'+imagePath.replace(/^\//,''),ORIGIN).href;
+ if(!record||!record.title)return new Response('Not found',{status:404});
+ const title=record.title,description=record.deck||'';
+ const image=new URL('/'+String(record.image||'assets/images/ep-news-official-horizontal-masthead-20261105.png').replace(/^\\//,''),ORIGIN).href;
  const url=ORIGIN+'/article/'+encodeURIComponent(id);
  const dest='/article/'+encodeURIComponent(id);
  const tags=[['og:type','article'],['og:site_name','Epic Perspective News'],['og:title',title],['og:description',description],['og:image',image],['og:url',url]];
