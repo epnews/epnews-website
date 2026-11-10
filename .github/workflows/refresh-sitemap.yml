@@ -9,25 +9,27 @@ on:
       - 'sitemap.xml'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
+  pull-requests: write
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Generate sitemap from published stories
         run: node scripts/generate-sitemap.mjs
-      - name: Commit sitemap when changed
-        run: |
-          if ! git diff --quiet -- sitemap.xml; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add sitemap.xml
-            git commit -m "chore: refresh published article sitemap"
-            git push
-          fi
+      - name: Open or update sitemap PR (never push directly to protected main)
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: refresh published article sitemap'
+          branch: automation/refresh-published-sitemap
+          delete-branch: true
+          title: 'chore: refresh published article sitemap'
+          body: |
+            Automatically generated from published stories loaded by index.html.
+            Review sitemap entries and merge after required status checks pass.
+          add-paths: sitemap.xml
