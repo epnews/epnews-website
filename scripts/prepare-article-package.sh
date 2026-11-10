@@ -6,10 +6,13 @@ if [[ $# -ne 1 || ! "$1" =~ ^content/[a-z0-9-]+\.js$ ]]; then
   exit 2
 fi
 if [[ ! -f "$1" ]]; then echo "Article not found: $1" >&2; exit 2; fi
+node --check "$1"
 node scripts/generate-sitemap.mjs
 node scripts/build-share-index.mjs
 node scripts/preflight-article.mjs "$1"
 node scripts/validate-publishing.mjs
 node scripts/validate-all-articles.mjs
 node scripts/generate-sitemap.mjs --check
+node scripts/build-share-index.mjs
+git diff --exit-code -- content/share-index.json sitemap.xml || { echo 'Generated files changed during verification; commit them before requesting merge' >&2; exit 1; }
 echo 'PACKAGE READY: commit article, imported image, index.html, sitemap.xml and content/share-index.json on the same feature branch.'
