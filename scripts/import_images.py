@@ -7,6 +7,8 @@ from urllib.parse import urlparse
 import socket
 import ipaddress
 import time
+from io import BytesIO
+from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 MANIFEST=ROOT/'content/image-imports.json'
@@ -26,7 +28,10 @@ for entry in data:
     extension=Path(dest).suffix.lower()
     if extension not in ('.png','.jpg','.jpeg','.webp'): raise ValueError('Unsupported extension')
     if (ROOT/dest).is_file():
-        print(f'Already imported: {dest}')
+        with Image.open(ROOT/dest) as existing:
+            if existing.size != (1600, 900):
+                raise ValueError(f'Existing image {dest} is {existing.size}, expected 1600x900. Use a new versioned filename in the manifest to prevent stale assets.')
+        print(f'Already imported and dimension-verified: {dest}')
         continue
     # Do not allow fetching local/private-network endpoints.
     addresses=socket.getaddrinfo(parsed.hostname,443,type=socket.SOCK_STREAM)
@@ -69,15 +74,17 @@ for entry in data:
         if not signatures[extension]:raise ValueError('Image file signature mismatch')
         target=ROOT/dest
         target.parent.mkdir(parents=True,exist_ok=True)
-        if dest in ('assets/images/epnews-venezuela-oil-website-1600x900.png', 'assets/images/china-trade-investigation-2026.jpg', 'assets/images/epnews_china_trade_shift_website_1600x900.png'):
-            from PIL import Image
-            from io import BytesIO
-            picture=Image.open(BytesIO(payload)).convert('RGB')
+        picture=Image.open(BytesIO(payload)).convert('RGB')
+        if picture.size != (1600, 900):
             picture=picture.resize((1600,900),Image.Resampling.LANCZOS)
-            buffer=BytesIO()
-            picture.save(buffer,format='JPEG',quality=90) if extension in ('.jpg','.jpeg') else picture.save(buffer,format='PNG',optimize=True)
-            payload=buffer.getvalue()
-            assert Image.open(BytesIO(payload)).size == (1600,900)
+        buffer=BytesIO()
+        if extension in ('.jpg','.jpeg'):
+            picture.save(buffer,format='JPEG',quality=90)
+        else:
+            picture.save(buffer,format='PNG',optimize=True)
+        payload=buffer.getvalue()
+        if Image.open(BytesIO(payload)).size != (1600,900):
+            raise ValueError(f'Failed to normalize {dest} to 1600x900')
         target.write_bytes(payload)
         print(f'Imported Google Drive image {dest} ({len(payload)} bytes)')
         continue
@@ -93,5 +100,14 @@ for entry in data:
     if not signatures[extension]:raise ValueError('Image file signature mismatch')
     target=ROOT/dest
     target.parent.mkdir(parents=True,exist_ok=True)
+    picture=Image.open(BytesIO(payload)).convert('RGB')
+    if picture.size != (1600,900):
+        picture=picture.resize((1600,900),Image.Resampling.LANCZOS)
+    buffer=BytesIO()
+    if extension in ('.jpg','.jpeg'):
+        picture.save(buffer,format='JPEG',quality=90)
+    else:
+        picture.save(buffer,format='PNG',optimize=True)
+    payload=buffer.getvalue()
     target.write_bytes(payload)
     print(f'Imported {dest} ({len(payload)} bytes)')
