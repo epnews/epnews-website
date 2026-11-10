@@ -9,8 +9,8 @@ STORIES.push({
   "author": "Epic Perspective News",
   "title": "Peace at the Table, War on the Grid: Who Benefits From Russia's Two-Track Strategy?",
   "deck": "U.S.-mediated talks between Russia and Ukraine opened in Abu Dhabi as Russian strikes continued against Ukrainian energy infrastructure. The contrast raises difficult questions about leverage, civilian costs and what genuine progress toward peace would require.",
-  "image": {
-    "src": "assets/images/peace-at-table-war-on-grid-20261110.png",
+  image: {
+    src: "assets/images/peace-at-table-war-on-grid-20261110.png",
     "alt": "EP News AI-generated editorial illustration contrasting diplomacy with attacks on electrical infrastructure; not a photograph of actual events",
     "credit": "Epic Perspective News — AI-generated editorial illustration, not documentary photography"
   },
