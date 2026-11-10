@@ -4,6 +4,20 @@ const get=(s,k)=>{const m=s.match(new RegExp('(?:["\\x27]'+k+'["\\x27]|\\b'+k+'\
 export async function onRequestGet({params,env,request}){
  const id=String(params.slug||'');
  if(!/^[a-z0-9-]{1,120}$/.test(id))return new Response('Not found',{status:404});
+ // Direct metadata lookup for Myanmar rare-earths article; bypass missing/stale metadata index.
+ if(id==='myanmar-us-rare-earths-20261110'){
+  const sourceResponse=await env.ASSETS.fetch(new URL('/content/myanmar-us-rare-earths-20261110.js',request.url));
+  if(!sourceResponse.ok)return new Response('Article asset unavailable',{status:503});
+  const source=await sourceResponse.text();
+  if(get(source,'status')!=='published')return new Response('Not found',{status:404});
+  const title=get(source,'title'),description=get(source,'deck');
+  if(!title)return new Response('Article metadata unavailable',{status:503});
+  const image=ORIGIN+'/assets/images/epnews_myanmar_rare_earths_website_1600x900.jpg';
+  const url=ORIGIN+'/article/'+id;
+  const tags=[['og:type','article'],['og:site_name','Epic Perspective News'],['og:title',title],['og:description',description],['og:image',image],['og:url',url]];
+  const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | Epic Perspective News</title><meta name="description" content="'+esc(description)+'">'+tags.map(([k,v])=>'<meta property="'+k+'" content="'+esc(v)+'">').join('')+'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+esc(image)+'"><link rel="canonical" href="'+esc(url)+'"></head><body><a href="'+esc(url)+'">Read '+esc(title)+'</a></body></html>';
+  return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
+ }
  // Direct metadata lookup for the Big Bend article. Avoids exceeding Worker subrequest limits.
  if(id==='big-bend-border-construction-20261109'){
   const res=await env.ASSETS.fetch(new URL('/content/big-bend-border-construction-20261109.js',request.url));
