@@ -8,7 +8,7 @@ export async function onRequestGet({params,env,request}){
  // Preserve the legacy Facebook share link for the Panama Ports investigation.
  // Its canonical article is now a standalone investigation page rather than a content/<slug>.js entry.
  if(id==='panama-ports-20261105'){
-  const dest=ORIGIN+'/investigations/panama-ports-who-won.html';
+  const dest=ORIGIN+'/article/panama-ports-20261105';
   const title='China Lost Control of Two Panama Canal Ports. But Who Actually Won?';
   const description='Panama changed operators at Balboa and Cristóbal. Preliminary official cargo figures reveal a more complicated economic picture.';
   const image=ORIGIN+'/assets/images/panama_approved_epnews_1600x900.jpg';
