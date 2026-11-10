@@ -1,7 +1,7 @@
 // Epic Perspective News | GCC advanced military command in Kuwait | November 10, 2026
 STORIES.push({
   image: {
-    src: "assets/images/epnews-gcc-defense-command-20261110.png",
+    src: "assets/images/epnews-gcc-defense-command-20261110-1600x900.png",
     "alt": "EP News editorial illustration depicting Gulf military cooperation and a regional map",
     "credit": "EP News AI-generated editorial illustration; not an actual photograph of the GCC meeting."
   },
