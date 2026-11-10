@@ -65,7 +65,7 @@ export async function onRequestGet({params,env,request}){
  }
  if(!record||!record.title)return new Response('Not found',{status:404});
  const title=record.title,description=record.deck||'';
- const image=new URL('/'+String(record.image||'assets/images/ep-news-official-horizontal-masthead-20261105.png').replace(/^\\//,''),ORIGIN).href;
+ const image=new URL('/'+String(record.image||'assets/images/ep-news-official-horizontal-masthead-20261105.png').replace(/^[/]+/,''),ORIGIN).href;
  const url=ORIGIN+'/article/'+encodeURIComponent(id);
  const dest='/article/'+encodeURIComponent(id);
  const tags=[['og:type','article'],['og:site_name','Epic Perspective News'],['og:title',title],['og:description',description],['og:image',image],['og:url',url]];
