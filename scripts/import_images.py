@@ -80,6 +80,8 @@ for entry in data:
         buffer=BytesIO()
         if extension in ('.jpg','.jpeg'):
             picture.save(buffer,format='JPEG',quality=90)
+        elif extension == '.webp':
+            picture.save(buffer,format='WEBP',quality=90)
         else:
             picture.save(buffer,format='PNG',optimize=True)
         payload=buffer.getvalue()
@@ -106,6 +108,8 @@ for entry in data:
     buffer=BytesIO()
     if extension in ('.jpg','.jpeg'):
         picture.save(buffer,format='JPEG',quality=90)
+    elif extension == '.webp':
+        picture.save(buffer,format='WEBP',quality=90)
     else:
         picture.save(buffer,format='PNG',optimize=True)
     payload=buffer.getvalue()
