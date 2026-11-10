@@ -10,9 +10,9 @@ STORIES.push({
   title: "73–25: Washington Finds Common Ground on Energy. But Who Pays the Price?",
   deck: "A rare bipartisan Senate vote could reshape how America builds power plants, transmission lines and data centers. Supporters promise faster construction and lower costs. Critics warn that environmental protections and community rights could pay the price.",
   image: {
-    "src": "assets/images/epnews_senate_permitting_20261110_1600x900.jpg",
-    "alt": "EP News editorial graphic based on supplied photograph of high-voltage transmission towers at sunset",
-    "credit": "EP News graphic; underlying photograph supplied by publisher"
+    src: "assets/images/epnews_senate_permitting_20261110_1600x900.jpg",
+    alt: "EP News editorial graphic based on supplied photograph of high-voltage transmission towers at sunset",
+    credit: "EP News graphic; underlying photograph supplied by publisher"
   },
   body: [
     "WASHINGTON AGREES ON SOMETHING — After years of bitter political division, Republicans and Democrats have found a major issue on which they can cooperate: America's difficulty building new energy infrastructure.",
