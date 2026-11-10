@@ -61,7 +61,7 @@ export async function onRequestGet({params,env,request}){
  let record;
  if(indexResponse.ok){
   try { const index=await indexResponse.json(); record=Object.prototype.hasOwnProperty.call(index,id)?index[id]:null; }
-  catch { return new Response('Metadata index invalid',{status:503}); }
+  catch { /* Missing or stale index can resolve to SPA HTML; fall through to direct article lookup. */ record=null; }
  }
  if(!record){
   // Newly added articles can resolve directly before the index generation job completes.
