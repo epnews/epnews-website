@@ -4,6 +4,19 @@ const get=(s,k)=>{const m=s.match(new RegExp('(?:["\\x27]'+k+'["\\x27]|\\b'+k+'\
 export async function onRequestGet({params,env,request}){
  const id=String(params.slug||'');
  if(!/^[a-z0-9-]{1,120}$/.test(id))return new Response('Not found',{status:404});
+ // Direct metadata lookup for the Big Bend article. Avoids exceeding Worker subrequest limits.
+ if(id==='big-bend-border-construction-20261109'){
+  const res=await env.ASSETS.fetch(new URL('/content/big-bend-border-construction-20261109.js',request.url));
+  if(!res.ok)return new Response('Article unavailable',{status:503});
+  const entry=await res.text();
+  if(get(entry,'status')!=='published')return new Response('Not found',{status:404});
+  const title=get(entry,'title'),description=get(entry,'deck');
+  const image=ORIGIN+'/assets/images/big-bend-border-construction-20261109_1600x900.jpg';
+  const url=ORIGIN+'/article/'+id;
+  const tags=[['og:type','article'],['og:site_name','Epic Perspective News'],['og:title',title],['og:description',description],['og:image',image],['og:url',url]];
+  const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' | Epic Perspective News</title><meta name="description" content="'+esc(description)+'">'+tags.map(([k,v])=>'<meta property="'+k+'" content="'+esc(v)+'">').join('')+'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+esc(image)+'"><link rel="canonical" href="'+esc(url)+'"></head><body><a href="'+esc(url)+'">Read '+esc(title)+'</a></body></html>';
+  return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
+ }
  // Direct metadata lookup for the Japan–Philippines article avoids scanning dozens of assets.
  if(id==='japan-philippines-radar-drones-20261109'){
   const res=await env.ASSETS.fetch(new URL('/content/japan-philippines-radar-drones-20261109.js',request.url));
