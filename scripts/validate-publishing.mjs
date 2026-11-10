@@ -9,7 +9,7 @@ const exists = file => fs.existsSync(path.join(root, file));
 const html = read('index.html');
 const sitemap = read('sitemap.xml');
 const scripts = new Set([...html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+)["']/g)].map(x => x[1].split('?')[0].replace(/^\//, '')));
-const recent = [...scripts].filter(p => /^content\/[a-z0-9-]+-202611(?:09|10)\.js$/.test(p));
+const recent = [...scripts].filter(p => { const m = p.match(/^content\/[a-z0-9-]+-(20\d{6})\.js$/); return m && m[1] >= '20261109'; });
 if (recent.length < 5) failures.push('Expected recent published article scripts are missing from index.html');
 for (const file of recent) {
   if (!exists(file)) { failures.push('Missing loaded article: ' + file); continue; }
