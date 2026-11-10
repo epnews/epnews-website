@@ -71,21 +71,26 @@ export async function onRequestGet({params,env,request}){
   const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>'+esc(title)+' | Epic Perspective News</title><meta name="description" content="'+esc(description)+'">'+tags.map(([k,v])=>'<meta property="'+k+'" content="'+esc(v)+'">').join('')+'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+esc(image)+'"><link rel="canonical" href="'+esc(url)+'"></head><body><a href="'+esc(url)+'">Read '+esc(title)+'</a></body></html>';
   return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
  }
- const indexResponse=await env.ASSETS.fetch(new URL('/content/share-index.json',request.url));
- let record;
- if(indexResponse.ok){
-  try { const index=await indexResponse.json(); record=Object.prototype.hasOwnProperty.call(index,id)?index[id]:null; }
-  catch { /* Missing or stale index can resolve to SPA HTML; fall through to direct article lookup. */ record=null; }
+ // Every newly published article has a content/<slug>.js file. Read it first:
+ // the generated share index may be missing, stale, or served as HTML by SPA fallback.
+ // Never let an invalid index prevent a published story from resolving.
+ let record=null;
+ const direct=await env.ASSETS.fetch(new URL('/content/'+id+'.js',request.url));
+ if(direct.ok){
+  const source=await direct.text();
+  if(get(source,'status')==='published'){
+   const imageMatch=source.match(/image\\s*:\\s*\\{[^}]*?\\bsrc\\s*:\\s*['"]([^'"]+)['"]/s);
+   record={title:get(source,'title'),deck:get(source,'deck'),image:imageMatch?.[1]||'assets/images/ep-news-official-horizontal-masthead-20261105.png'};
+  }
  }
+ // Legacy articles can still use the metadata index, but it is never mandatory.
  if(!record){
-  // Newly added articles can resolve directly before the index generation job completes.
-  const direct=await env.ASSETS.fetch(new URL('/content/'+id+'.js',request.url));
-  if(direct.ok){
-   const source=await direct.text();
-   if(get(source,'status')==='published'){
-    const imageMatch=source.match(/image\\s*:\\s*\\{\\s*src\\s*:\\s*['"]([^'"]+)['"]/);
-    record={title:get(source,'title'),deck:get(source,'deck'),image:imageMatch?.[1]||'assets/images/ep-news-official-horizontal-masthead-20261105.png'};
-   }
+  const indexResponse=await env.ASSETS.fetch(new URL('/content/share-index.json',request.url));
+  if(indexResponse.ok){
+   try {
+    const index=await indexResponse.json();
+    record=index && typeof index==='object' && !Array.isArray(index) && Object.prototype.hasOwnProperty.call(index,id)?index[id]:null;
+   } catch { record=null; }
   }
  }
  if(!record||!record.title)return new Response('Not found',{status:404});
