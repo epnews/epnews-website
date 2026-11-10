@@ -1,0 +1,26 @@
+name: EP News live article smoke test
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: epnews-live-smoke
+  cancel-in-progress: false
+jobs:
+  deployed-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Allow Cloudflare Pages deployment to propagate
+        if: github.event_name == 'push'
+        run: sleep 90
+      - name: Check live article URLs and Facebook preview assets
+        run: node scripts/live-article-smoke.mjs
