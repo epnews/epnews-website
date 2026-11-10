@@ -18,3 +18,11 @@ The CI preflight is a guardrail, not a replacement for source verification or hu
 - The one-pass PR preflight rejects syntax errors and any sitemap/share-index drift; the image importer also syntax-checks all article scripts. Do not manually edit or alphabetically reorder generated files.
 - Require successful one-pass preflight, publishing integrity, smoke test, publishing gate, and Cloudflare preview before requesting an editor merge. A green GitHub check is not proof of production deployment.
 - After merge, verify the production URL, image, source links, Facebook share preview, and mobile series discovery. Record failures in the same PR when possible rather than opening replacement PRs.
+
+## Automated preparation and PR handoff
+
+After an approved article is committed on a `feature/` branch and its Google Drive image entry is added to `content/image-imports.json`, the existing image importer runs. On successful completion, `.github/workflows/prepare-article-pr.yml` automatically finds the single changed article, runs `scripts/prepare-article-package.sh`, commits generated sitemap/share metadata, verifies reproducibility and opens (or reuses) a PR for editorial review. The PR's required checks and Cloudflare preview must then finish successfully **before** merging. This automation does not auto-approve or auto-merge articles.
+
+For branches with multiple changed articles, the automatic handoff deliberately fails rather than guessing. Run **Prepare and open EP News article PR** manually with the feature branch and explicit `content/<slug>.js` article path. The manual workflow also supports retrying a prepared feature branch after resolving a failed image import.
+
+The workflow requires repository GitHub Actions permissions allowing creation of pull requests with `GITHUB_TOKEN` (Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests). A protected branch may still require a separate human review.
