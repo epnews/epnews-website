@@ -2,7 +2,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { onRequestGet } from '../functions/share/[slug].js';
+// Import the Cloudflare Pages ESM handler without requiring package.json type=module.
+const handlerSource = await readFile(new URL('../functions/share/[slug].js', import.meta.url), 'utf8');
+const { onRequestGet } = await import('data:text/javascript;base64,' + Buffer.from(handlerSource).toString('base64'));
 
 const root = new URL('../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
