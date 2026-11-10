@@ -1,6 +1,6 @@
 // Epic Perspective News | Supreme Court inmate treatment | November 10, 2026
 STORIES.push({
-  image: { src: "assets/images/epnews-supreme-court-transgender-inmate-care-20261110.png", alt: "Illustration of the U.S. Supreme Court and prison corridor with question about taxpayer-funded inmate medical care", credit: "EP News AI-generated editorial illustration; not a documentary photograph." },
+  image: { src: "assets/images/epnews-supreme-court-redesign-1080x1350.png", alt: "Illustration of the U.S. Supreme Court and prison corridor with question about taxpayer-funded inmate medical care", credit: "EP News AI-generated editorial illustration; not a documentary photograph." },
 
   "id": "supreme-court-transgender-inmate-care-20261110",
   "status": "published",
