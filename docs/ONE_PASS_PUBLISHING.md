@@ -10,3 +10,11 @@
 8. Merge only with explicit editor approval. Verify production article, hero image, source links, and Facebook share preview after Cloudflare production deployment.
 
 The CI preflight is a guardrail, not a replacement for source verification or human approval.
+
+## Mandatory release sequence
+
+- Do not open or present a PR as merge-ready before the importer has committed the real image, generated sitemap and generated share index to the feature branch. The importer performs this finalization automatically after manifest changes.
+- Run `bash scripts/prepare-article-package.sh content/<slug>.js` on the finalized branch. This now checks JavaScript syntax before generating the canonical metadata files. Commit any generated changes, then allow CI to run again.
+- The one-pass PR preflight rejects syntax errors and any sitemap/share-index drift; the image importer also syntax-checks all article scripts. Do not manually edit or alphabetically reorder generated files.
+- Require successful one-pass preflight, publishing integrity, smoke test, publishing gate, and Cloudflare preview before requesting an editor merge. A green GitHub check is not proof of production deployment.
+- After merge, verify the production URL, image, source links, Facebook share preview, and mobile series discovery. Record failures in the same PR when possible rather than opening replacement PRs.

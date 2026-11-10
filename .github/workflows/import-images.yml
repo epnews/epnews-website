@@ -32,6 +32,10 @@ jobs:
           node scripts/build-share-index.mjs
       - name: Validate completed article package
         run: |
+          for article in content/*.js; do
+            [[ "$article" == "content/editorial.js" || "$article" == "content/stories.js" ]] && continue
+            node --check "$article"
+          done
           node scripts/validate-publishing.mjs
           node scripts/validate-all-articles.mjs
           node scripts/generate-sitemap.mjs --check

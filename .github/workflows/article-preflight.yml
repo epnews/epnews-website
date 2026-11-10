@@ -8,6 +8,7 @@ on:
       - 'sitemap.xml'
       - 'assets/images/**'
       - 'scripts/preflight-article.mjs'
+      - 'scripts/prepare-article-package.sh'
       - 'scripts/build-share-index.mjs'
       - 'scripts/generate-sitemap.mjs'
       - '.github/workflows/article-preflight.yml'
@@ -28,6 +29,7 @@ jobs:
         run: |
           git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep -E '^content/[a-z0-9-]+\.js$' | grep -v -E '^content/(editorial|stories)\.js$' > /tmp/epnews-changed-articles || true
           while IFS= read -r article; do
+            node --check "$article"
             node scripts/preflight-article.mjs "$article"
           done < /tmp/epnews-changed-articles
       - name: Verify share metadata is committed and current
