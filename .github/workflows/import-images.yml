@@ -61,6 +61,7 @@ jobs:
             echo "No image or metadata changes"
             exit 0
           fi
-          git commit -m "Finalize EP News article assets and metadata"
+          git restore -- sitemap.xml content/share-index.json
+          git commit -m "Import verified EP News article image"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
