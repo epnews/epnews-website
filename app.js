@@ -17,7 +17,7 @@ function sourceLink(source, inline = false) {
  return escapeHtml(publisher) + ' · ' + link;
 }
 const validUrl=url=>{try{return ['https:','http:'].includes(new URL(url).protocol)}catch{return false}};
-const safeImage=s=>{if(typeof s!=='string')return '';const u=s.trim();return (/^https?:\/\//.test(u)||(/^assets\/[a-zA-Z0-9_./-]+$/.test(u)&&!u.includes('..')))?u:''};
+const safeImage=s=>{if(typeof s!=='string')return '';const u=s.trim();if(/^https?:\/\//.test(u))return u;if(/^\/?assets\/[a-zA-Z0-9_./-]+$/.test(u)&&!u.includes('..'))return '/'+u.replace(/^\//,'');return '';};
 const imageMarkup=(s,cls)=>{const url=safeImage(s.image?.src);return url?`<figure class="${cls}"><img src="${escapeHtml(url)}" alt="${escapeHtml(s.image.alt||s.title)}" loading="${cls==="article-featured"?"eager":"lazy"}" decoding="async"><figcaption>${escapeHtml(s.image.credit||'')}</figcaption></figure>`:''};
 const fmtDate=s=>{if(!s)return '';const d=new Date(s+'T12:00:00Z');return isNaN(d.getTime())?'':new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(d)};
 function investigationBlocks(s) {
