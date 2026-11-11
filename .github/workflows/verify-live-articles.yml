@@ -1,0 +1,17 @@
+name: EP News live publication verification
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '40 13 * * *'
+permissions:
+  contents: read
+jobs:
+  verify-live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify homepage, newest articles, share URLs and hero images
+        run: node scripts/verify-live-articles.mjs
