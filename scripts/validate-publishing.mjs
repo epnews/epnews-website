@@ -21,7 +21,7 @@ for (const file of recent) {
   for (const name of ['title', 'deck']) if (!field(name)) failures.push(slug + ': missing ' + name);
   if (!sitemap.includes('https://epnews.pages.dev/article/' + slug + '</loc>'))
     failures.push(slug + ': missing from sitemap.xml');
-  const image = content.match(/\bsrc\s*:\s*["']([^"']+)["']/)?.[1];
+  const image = content.match(/(?:["']?image["']?)\s*:\s*\{[^}]*?(?:["']?src["']?)\s*:\s*["']([^"']+)["']/s)?.[1];
   if (!image) failures.push(slug + ': no hero image src');
   else if (!/^https?:\/\//.test(image) && !exists(image.replace(/^\//, '')))
     failures.push(slug + ': missing local image ' + image);
