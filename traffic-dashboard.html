@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>EP News | Private Traffic Dashboard</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#edf2fa;background:#0b1425}*{box-sizing:border-box}body{margin:0;padding:24px}main{max-width:1100px;margin:auto}h1{font-size:clamp(1.6rem,4vw,2.5rem);margin:0}p,small{color:#aebed4}header{border-bottom:3px solid #bf253b;padding-bottom:20px;margin-bottom:24px}.panel{background:#15233a;border:1px solid #354862;border-radius:14px;padding:20px;margin:16px 0}label{display:block;margin-bottom:8px}input{padding:12px;background:#081323;color:white;border:1px solid #71849d;border-radius:8px;width:min(100%,440px)}button{background:#c5263f;color:white;border:0;border-radius:8px;padding:12px 18px;font-weight:700;cursor:pointer;margin:8px 0}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}.number{font-size:2rem;font-weight:800;color:white}.chart{display:flex;align-items:end;gap:4px;height:200px;border-bottom:1px solid #71849d;padding:12px 0}.bar{flex:1;min-width:3px;background:#df465e;border-radius:4px 4px 0 0}.bar:hover{background:#f7b0bc}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid #354862;text-align:left}th{color:#aebed4}#dashboard{display:none}.muted{font-size:.85rem}.error{color:#ffb3bd}a{color:#a5c9ff}section{overflow-x:auto}
+</style></head><body><main><header><strong>EPIC PERSPECTIVE / EP NEWS</strong><h1>Private Traffic Dashboard</h1><p>Read-only audience reporting • Daily totals use UTC • No tracking cookies</p></header>
+<div class="panel"><label for="token">Dashboard access token (Cloudflare Pages secret: ANALYTICS_DASHBOARD_TOKEN)</label><input id="token" type="password" autocomplete="off" placeholder="Enter your private token"><div><button id="load">Load analytics</button> <button id="clear" type="button">Clear dashboard</button></div><small>Token stays in this page's memory only; it is not saved in browser storage. Never share it in a screenshot or URL.</small><p id="status" role="status"></p></div>
+<div id="dashboard"><div class="stats"><div class="panel"><p>Visits since activation</p><div class="number" id="visits">—</div></div><div class="panel"><p>Facebook outbound clicks</p><div class="number" id="clicks">—</div></div><div class="panel"><p>Outbound clicks per 100 visits</p><div class="number" id="ratio">—</div></div></div>
+<div class="panel"><h2>Daily visits — last 30 days</h2><div id="chart" class="chart" role="img" aria-label="Daily visit bar chart"></div><p class="muted">Bars show recorded visits, not unique visitors. Zero can also mean tracking was not yet active.</p></div>
+<div class="panel"><h2>Facebook link clicks by placement</h2><section><table><thead><tr><th>Placement</th><th>Clicks</th></tr></thead><tbody id="placements"></tbody></table></section></div>
+<div class="panel"><h2>Daily detail</h2><section><table><thead><tr><th>Date (UTC)</th><th>Visits</th><th>Facebook outbound clicks</th></tr></thead><tbody id="daily"></tbody></table></section></div>
+<div class="panel"><h2>What these numbers mean</h2><p id="note"></p><p>Article popularity, Facebook inbound referrals, unique readers and reading time are not available from the existing aggregate data. These require additional event tracking and cannot be reconstructed historically.</p></div></div>
+</main><script>
+const $=id=>document.getElementById(id),fmt=n=>Number(n||0).toLocaleString();
+$('clear').onclick=()=>{$('token').value='';$('dashboard').style.display='none';$('status').textContent='Dashboard cleared';};
+$('load').onclick=async()=>{
+ const token=$('token').value;$('status').className='';$('status').textContent='Loading…';$('dashboard').style.display='none';
+ if(!token){$('status').textContent='Enter the dashboard token.';return;}
+ try{
+  const response=await fetch('/api/analytics',{headers:{'X-Analytics-Token':token},cache:'no-store'});
+  const data=await response.json();if(!response.ok)throw Error(data.error||'Request failed');
+  $('visits').textContent=fmt(data.totalVisits);$('clicks').textContent=fmt(data.totalClicks);$('ratio').textContent=data.clicksPer100Visits===null?'—':data.clicksPer100Visits;
+  $('note').textContent=data.note||'';
+  const placements=$('placements');placements.replaceChildren();
+  for(const [name,value] of Object.entries(data.byPlacement||{})){const tr=document.createElement('tr');for(const x of [name,fmt(value)]){const td=document.createElement('td');td.textContent=x;tr.append(td);}placements.append(tr);}
+  const byDay=new Map();for(const item of data.daily||[]){const day=String(item.day);if(!byDay.has(day))byDay.set(day,{visit:0,click:0});const row=byDay.get(day);if(item.metric==='visit')row.visit+=Number(item.total)||0;else if(item.metric.includes('click'))row.click+=Number(item.total)||0;}
+  const days=[];for(let i=29;i>=0;i--){const d=new Date();d.setUTCHours(12,0,0,0);d.setUTCDate(d.getUTCDate()-i);days.push(d.toISOString().slice(0,10));}
+  const max=Math.max(1,...days.map(d=>byDay.get(d)?.visit||0));const chart=$('chart'),daily=$('daily');chart.replaceChildren();daily.replaceChildren();
+  for(const day of days){const v=byDay.get(day)||{visit:0,click:0};const bar=document.createElement('div');bar.className='bar';bar.style.height=Math.max(1,v.visit/max*100)+'%';bar.title=day+': '+v.visit+' visits';chart.append(bar);const tr=document.createElement('tr');for(const x of [day,fmt(v.visit),fmt(v.click)]){const td=document.createElement('td');td.textContent=x;tr.append(td);}daily.append(tr);}
+  $('dashboard').style.display='block';$('status').textContent='Updated from live Cloudflare D1 analytics.';
+ }catch(err){$('status').className='error';$('status').textContent=err.message||'Unable to load analytics';}
+};
+</script></body></html>
