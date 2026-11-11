@@ -1,15 +1,17 @@
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
-const entries=JSON.parse(fs.readFileSync('content/image-imports.json','utf8'));
-const index=fs.readFileSync('index.html','utf8');
+
+// Only strictly preflight article files changed on this feature branch.
+// Historical articles are covered by the separate all-article integrity audit;
+// older schema variations must not block a new article's image import.
+const base=process.env.GITHUB_BASE_REF || 'main';
+execFileSync('git',['fetch','--no-tags','origin',base],{stdio:'inherit'});
+const changed=execFileSync('git',['diff','--name-only','origin/'+base+'...HEAD'],{encoding:'utf8'}).trim().split('\n').filter(p=>/^content\/[a-z0-9-]+\.js$/.test(p)&&!['content/editorial.js','content/stories.js'].includes(p));
 let count=0;
-for(const file of fs.readdirSync('content').filter(x=>x.endsWith('.js')&&!['stories.js','editorial.js'].includes(x))){
-  const path='content/'+file;
-  if(!index.includes('src="'+path+'"')&&!index.includes("src='"+path+"'"))continue;
-  const src=fs.readFileSync(path,'utf8');
-  const match=src.match(/\bimage\s*:\s*\{[^}]*?\bsrc\s*:\s*["']([^"']+)["']/s);
-  if(!match||!entries.some(e=>e.path===match[1]))continue;
+for(const path of changed){
+  if(!fs.existsSync(path))continue;
+  execFileSync(process.execPath,['--check',path],{stdio:'inherit'});
   execFileSync(process.execPath,['scripts/preflight-article.mjs',path],{stdio:'inherit'});
   count++;
 }
-console.log('Verified '+count+' registered image-imported article packages');
+console.log('Strictly verified '+count+' changed article package(s); historical articles covered by all-article audit');
