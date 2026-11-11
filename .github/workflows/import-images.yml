@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: epnews-image-import-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   import-images:
     if: github.repository == 'epnews/epnews-website'
@@ -14,6 +17,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -22,46 +26,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Allow Google Drive public download to propagate
-        run: sleep 15
-      - name: Download and validate images
-        run: python scripts/import_images.py
-      - name: Finalize sitemap and Facebook share metadata
-        run: |
-          node scripts/generate-sitemap.mjs
-          node scripts/build-share-index.mjs
-      - name: Validate completed article package
-        run: |
-          for article in content/*.js; do
-            [[ "$article" == "content/editorial.js" || "$article" == "content/stories.js" ]] && continue
-            node --check "$article"
-          done
-          node scripts/validate-publishing.mjs
-          node scripts/validate-all-articles.mjs
-          node scripts/generate-sitemap.mjs --check
-          node - <<'NODE'
-          const fs=require('fs');
-          const entries=JSON.parse(fs.readFileSync('content/image-imports.json','utf8'));
-          const index=fs.readFileSync('index.html','utf8');
-          for(const entry of entries){
-            const slug=entry.path.split('/').pop().replace(/\\.(png|jpe?g|webp)$/i,'');
-            const article='content/'+slug+'.js';
-            if(fs.existsSync(article)&&index.includes(article)){
-              const {execFileSync}=require('child_process');
-              execFileSync('node',['scripts/preflight-article.mjs',article],{stdio:'inherit'});
-            }
-          }
-          NODE
-      - name: Commit verified image and generated metadata to review branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/images
-          if git diff --cached --quiet; then
-            echo "No image or metadata changes"
-            exit 0
-          fi
-          git restore -- sitemap.xml content/share-index.json
-          git commit -m "Import verified EP News article image"
-          git pull --rebase origin "${GITHUB_REF_NAME}"
-          git push
+      - name: Import, generate, validate and commit one consistent package
+        shell: bash
+        run: bash scripts/finalize-image-import.sh
