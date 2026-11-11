@@ -17,8 +17,8 @@ const id=field('id');
 if(id!==slug)fail('Article id must equal filename slug');
 if(field('status')!=='published')fail('Missing published status');
 for(const name of ['title','deck','publishedAt'])if(!field(name))fail('Missing '+name);
-const image=src.match(/\bimage\s*:\s*\{[^}]*?\bsrc\s*:\s*["']([^"']+)["']/s)?.[1];
-if(!image)fail('Missing image.src with supported unquoted property keys');
+const image=src.match(/(?:["']?image["']?)\s*:\s*\{[^}]*?(?:["']?src["']?)\s*:\s*["']([^"']+)["']/s)?.[1];
+if(!image)fail('Missing image.src');
 else {
  if(!/^assets\/images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|webp)$/i.test(image))fail('Hero image must be a local raster asset');
  else {
