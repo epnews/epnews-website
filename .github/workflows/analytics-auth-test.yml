@@ -9,28 +9,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check authentication
+      - name: Verify private analytics response schema
         env:
           ANALYTICS_TOKEN: ${{ secrets.EP_NEWS_ANALYTICS_KEY }}
         run: |
           set +x
-          if [ -z "$ANALYTICS_TOKEN" ]; then echo 'Analytics secret missing'; exit 1; fi
-          status=$(curl --silent --show-error --max-time 30 --output /dev/null --write-out '%{http_code}' -H "X-Analytics-Token: $ANALYTICS_TOKEN" https://epnews.pages.dev/api/analytics)
-          echo "Analytics HTTP status: $status"
-          test "$status" = 200
-
-# Retest after production redeployment.
-
-# Retest dedicated read token after PR 983.
-
-      - name: Protected credential diagnostic
-        if: always()
-        env:
-          ANALYTICS_TOKEN: ${{ secrets.EP_NEWS_ANALYTICS_KEY }}
-          DIAGNOSTIC_TOKEN: ${{ secrets.EP_ANALYTICS_DIAGNOSTIC_TOKEN }}
-        run: |
-          set +x
-          if [ -z "$DIAGNOSTIC_TOKEN" ]; then echo 'Diagnostic secret missing'; exit 1; fi
-          curl --silent --show-error --fail --max-time 30 -H "X-Diagnostic-Token: $DIAGNOSTIC_TOKEN" -H "X-Analytics-Token: $ANALYTICS_TOKEN" 'https://epnews.pages.dev/api/analytics?diagnostic=1' | jq -e '{active,secrets: [.secrets[] | {name,configured,matches}]}'
-
-# Run diagnostic after merge of PR 984.
+          test -n "$ANALYTICS_TOKEN"
+          trap 'rm -f "$RUNNER_TEMP/ep-analytics.json"' EXIT
+          curl --silent --show-error --fail --max-time 30 -H "X-Analytics-Token: $ANALYTICS_TOKEN" https://epnews.pages.dev/api/analytics -o "$RUNNER_TEMP/ep-analytics.json"
+          jq -e '(.totalVisits|type=="number") and (.totalClicks|type=="number") and (.byPlacement|type=="object") and ([.daily,.articleReads,.referralSources,.hourlyReads,.articleDaily]|all(type=="array"))' "$RUNNER_TEMP/ep-analytics.json" >/dev/null
+          echo 'Authenticated analytics response schema verified; no metrics or credentials printed.'
