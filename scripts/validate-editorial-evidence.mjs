@@ -21,7 +21,11 @@ for(const source of story.sources){
 const image=story.image.src, bytes=fs.readFileSync(image);
 assert(evidence.image?.path===image,'Image path mismatch');
 assert(evidence.image.sha256===crypto.createHash('sha256').update(bytes).digest('hex'),'Imported image differs from approved bytes');
-assert(evidence.image.authentic===true&&evidence.image.original_source&&evidence.image.attribution&&evidence.image.rights,'Image provenance missing');
+const provenance=evidence.image;
+assert(provenance.original_source&&provenance.attribution&&provenance.rights,'Image provenance missing');
+const authentic=provenance.authentic===true;
+const illustration=provenance.authentic===false&&provenance.kind==='ai-generated-editorial-illustration'&&provenance.publisher_approved===true&&/AI.generated/i.test(story.image.credit||'')&&/AI.generated/i.test(story.image.alt||'');
+assert(authentic||illustration,'Authentic photo or approved, disclosed AI illustration required');
 const result=spawnSync('python3',['-c','from PIL import Image; import sys; im=Image.open(sys.argv[1]); im.load(); assert im.size==(1600,900), im.size',image],{encoding:'utf8'});
 assert(result.status===0,'Image decoding/dimensions failed: '+result.stderr);
 console.log('Editorial evidence and image integrity passed: '+slug);
