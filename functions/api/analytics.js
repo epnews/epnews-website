@@ -3,13 +3,18 @@
 const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 export async function onRequestGet({request,env}){
   const configuredToken=env.EP_ANALYTICS_READ_TOKEN||env.EP_NEWS_ANALYTICS_KEY||env.ANALYTICS_DASHBOARD_TOKEN;
-  if(!configuredToken)return reply({error:'Dashboard secret not configured'},503);
+  const tokens=[configuredToken,env.EP_ANALYTICS_COLLECTOR_TOKEN].filter(t=>typeof t==='string'&&t.length>0);
+  if(!tokens.length)return reply({error:'Dashboard secret not configured'},503);
   const supplied=request.headers.get('X-Analytics-Token')||'';
-  const expected=configuredToken;
-  const a=new TextEncoder().encode(supplied),b=new TextEncoder().encode(expected);
-  let diff=a.length^b.length;
-  for(let i=0;i<Math.max(a.length,b.length);i++)diff|=(a[i]||0)^(b[i]||0);
-  if(diff!==0)return reply({error:'Unauthorized'},401);
+  const a=new TextEncoder().encode(supplied);
+  let matched=0;
+  for(const expected of tokens){
+    const b=new TextEncoder().encode(expected);
+    let diff=a.length^b.length;
+    for(let i=0;i<Math.max(a.length,b.length);i++)diff|=(a[i]||0)^(b[i]||0);
+    matched|=Number(diff===0);
+  }
+  if(!matched)return reply({error:'Unauthorized'},401);
   const db=env.EP_VISITS_DB;
   if(!db)return reply({error:'Database unavailable'},503);
   try{
