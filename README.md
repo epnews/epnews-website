@@ -20,3 +20,6 @@ The site makes optional requests to Google Fonts. Public GitHub repositories exp
 * Story data, section routing, article layout, news-wire filtering, search: `app.js`
 
 No paid theme, build tools, external JavaScript libraries, or hosting subscription are required.
+
+## EP News publishing image transfer policy (v7.2)
+Google Drive is the exclusive image upload and transfer service for editorial publishing. Do not use Canva exports or alternative image hosting. Use the established public Drive folder and existing image-import manifest and GitHub Actions importer. All current editorial evidence, image integrity, preflight, CI, human merge approval and live verification requirements remain mandatory. This policy does not change the importer or validators; unresolved validation failures must be resolved before publication.
