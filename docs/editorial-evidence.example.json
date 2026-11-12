@@ -1,0 +1,24 @@
+{
+  "slug": "example",
+  "article_sha256": "REPLACE",
+  "publisher_approved": false,
+  "sources": [
+    {
+      "url": "https://example.com",
+      "verified": false,
+      "claims": [
+        "specific supported claim"
+      ],
+      "checked_at": "YYYY-MM-DD",
+      "evidence_excerpt": "short source excerpt"
+    }
+  ],
+  "image": {
+    "path": "assets/images/example.png",
+    "sha256": "REPLACE",
+    "authentic": false,
+    "original_source": "",
+    "attribution": "",
+    "rights": ""
+  }
+}
