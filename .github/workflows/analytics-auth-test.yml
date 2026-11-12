@@ -22,3 +22,13 @@ jobs:
 # Retest after production redeployment.
 
 # Retest dedicated read token after PR 983.
+
+      - name: Protected credential diagnostic
+        if: always()
+        env:
+          ANALYTICS_TOKEN: ${{ secrets.EP_NEWS_ANALYTICS_KEY }}
+          DIAGNOSTIC_TOKEN: ${{ secrets.EP_ANALYTICS_DIAGNOSTIC_TOKEN }}
+        run: |
+          set +x
+          if [ -z "$DIAGNOSTIC_TOKEN" ]; then echo 'Diagnostic secret missing'; exit 1; fi
+          curl --silent --show-error --fail --max-time 30 -H "X-Diagnostic-Token: $DIAGNOSTIC_TOKEN" -H "X-Analytics-Token: $ANALYTICS_TOKEN" 'https://epnews.pages.dev/api/analytics?diagnostic=1' | jq -e '{active,secrets: [.secrets[] | {name,configured,matches}]}'
