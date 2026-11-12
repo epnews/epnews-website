@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'content/**'
+      - 'editorial-evidence/**'
+      - 'scripts/validate-editorial-evidence.mjs'
       - 'index.html'
       - 'sitemap.xml'
       - 'assets/images/**'
@@ -24,11 +26,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==11.3.0
       - name: Validate changed article packages
         shell: bash
         run: |
           git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep -E '^content/[a-z0-9-]+\.js$' | grep -v -E '^content/(editorial|stories)\.js$' > /tmp/epnews-changed-articles || true
           while IFS= read -r article; do
+            node scripts/validate-editorial-evidence.mjs "$article"
             node --check "$article"
             node scripts/preflight-article.mjs "$article"
           done < /tmp/epnews-changed-articles

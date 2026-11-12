@@ -1,0 +1,27 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import vm from 'node:vm';
+import {spawnSync} from 'node:child_process';
+const article=process.argv[2];
+if(!/^content\/[a-z0-9-]+\.js$/.test(article||''))throw Error('Article path required');
+const slug=article.split('/').pop().slice(0,-3);
+const evidence=JSON.parse(fs.readFileSync('editorial-evidence/'+slug+'.json','utf8'));
+const stories=[];vm.runInNewContext(fs.readFileSync(article,'utf8'),{STORIES:stories},{timeout:1000});
+const story=stories.find(s=>s.id===slug);
+if(!story)throw Error('Article not found');
+const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
+assert(evidence.slug===slug,'Evidence slug mismatch');
+assert(evidence.article_sha256===crypto.createHash('sha256').update(fs.readFileSync(article)).digest('hex'),'Article changed since review');
+assert(evidence.publisher_approved===true,'Publisher approval missing');
+assert(Array.isArray(story.sources)&&story.sources.length>0,'Sources missing');
+for(const source of story.sources){
+ const item=evidence.sources?.find(x=>x.url===source.url);
+ assert(item&&item.verified===true&&item.claims?.length&&item.checked_at&&item.evidence_excerpt,'Missing documented source verification: '+source.url);
+}
+const image=story.image.src, bytes=fs.readFileSync(image);
+assert(evidence.image?.path===image,'Image path mismatch');
+assert(evidence.image.sha256===crypto.createHash('sha256').update(bytes).digest('hex'),'Imported image differs from approved bytes');
+assert(evidence.image.authentic===true&&evidence.image.original_source&&evidence.image.attribution&&evidence.image.rights,'Image provenance missing');
+const result=spawnSync('python3',['-c','from PIL import Image; import sys; im=Image.open(sys.argv[1]); im.load(); assert im.size==(1600,900), im.size',image],{encoding:'utf8'});
+assert(result.status===0,'Image decoding/dimensions failed: '+result.stderr);
+console.log('Editorial evidence and image integrity passed: '+slug);
