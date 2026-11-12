@@ -84,6 +84,11 @@
     "deck": "Washington and Quito signed a reciprocal trade agreement in March, but Ecuador's Constitutional Court says lawmakers must approve it before ratification. China's existing trade agreement is already in force.",
     "image": "assets/images/epnews_ecuador_trade_1600x900.png"
   },
+  "egypt-saudi-defense-2026": {
+    "title": "Egypt Authorizes Military Support for Saudi Arabia as Houthi Attacks Intensify",
+    "deck": "Egypt's parliament has authorized defensive assistance if requested by Riyadh; the mandate does not establish that Egyptian troops have deployed.",
+    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
+  },
   "elon-musk-government-targeting-20261107": {
     "title": "Be Careful What You Ask for With Elon Musk",
     "deck": "If government can target him, government can target you. Proposed DOGE investigations raise a larger question: where does legitimate oversight end and political retaliation begin?",
@@ -93,6 +98,11 @@
     "title": "Congress Exposes Decades of Failures in Epstein Case — and Demands More Investigations",
     "deck": "A House Republican majority report says authorities failed Epstein survivors for years and calls for further interviews and scrutiny. Its recommendations are not findings of criminal guilt.",
     "image": "assets/images/EP_News_Epstein_Maxwell_Website_1600x900.png"
+  },
+  "eqt-range-gas-2026": {
+    "title": "EQT Announces Range Resources Acquisition in Deal Valuing Combined Gas Company Above $50 Billion",
+    "deck": "The all-stock agreement would create a large vertically integrated U.S. natural gas producer, but shareholder and regulatory approvals remain.",
+    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
   },
   "fec-filing-outage-2026": {
     "title": "FEC Filing System Offline After Reported Hacking Attempts",
@@ -159,10 +169,20 @@
     "deck": "Federal prosecutors allege an imprisoned suspect attempted to coordinate a plot targeting a British airbase used by American forces.",
     "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
   },
+  "ireland-russia-alumina-20261112": {
+    "title": "Europe Funds Ukraine’s Defense While Irish Refinery Supplies Russia",
+    "deck": "Hundreds of thousands of metric tons of Irish alumina continue flowing into Russia as European officials confront evidence linking the material to Russian weapons manufacturers.",
+    "image": "assets/images/ireland-russia-alumina-1600x900.png"
+  },
   "japan-philippines-radar-drones-20261109": {
     "title": "Japan Backs Philippines With Radar and Drones as Security Ties Deepen",
     "deck": "A ¥4.3 billion agreement will strengthen Philippine maritime surveillance—and marks a new step in Japan’s security assistance program.",
     "image": "assets/images/japan-philippines-radar-drones-20261109_1600x900.jpg"
+  },
+  "judiciary-epstein-report-2026": {
+    "title": "House Judiciary Democrats Release Report Alleging Epstein-Related Misconduct and Justice Department Failures",
+    "deck": "A report by the committee's Democratic staff details serious allegations and demands further investigation; its assertions are not criminal findings.",
+    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
   },
   "mexico-fake-steel-mills-20261111": {
     "title": "Mexico Exposes 1,100 Fake Steel Mills as U.S. Tariff Pressure Reshapes Global Trade",
@@ -199,20 +219,10 @@
     "deck": "The company says it has no reason to believe its secrets or U.S. national security were compromised. Its investigation puts executive access and the security of America’s AI industry under scrutiny.",
     "image": "assets/images/nvidia-intelligence-probe-20261109_1600x900.png"
   },
-  "egypt-saudi-defense-2026": {
-    "title": "Egypt Authorizes Military Support for Saudi Arabia as Houthi Attacks Intensify",
-    "deck": "Egypt's parliament has authorized defensive assistance if requested by Riyadh; the mandate does not establish that Egyptian troops have deployed.",
-    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
-  },
-  "eqt-range-gas-2026": {
-    "title": "EQT Announces Range Resources Acquisition in Deal Valuing Combined Gas Company Above $50 Billion",
-    "deck": "The all-stock agreement would create a large vertically integrated U.S. natural gas producer, but shareholder and regulatory approvals remain.",
-    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
-  },
-  "judiciary-epstein-report-2026": {
-    "title": "House Judiciary Democrats Release Report Alleging Epstein-Related Misconduct and Justice Department Failures",
-    "deck": "A report by the committee's Democratic staff details serious allegations and demands further investigation; its assertions are not criminal findings.",
-    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
+  "panama-ports-20261105": {
+    "title": "China Lost Control of Two Panama Canal Ports. But Who Actually Won?",
+    "deck": "Panama changed operators at Balboa and Cristóbal. Preliminary official cargo figures reveal a more complicated economic picture.",
+    "image": "assets/images/panama_approved_epnews_1600x900.jpg"
   },
   "peace-at-table-war-on-grid-20261110": {
     "title": "Peace at the Table, War on the Grid: Who Benefits From Russia's Two-Track Strategy?",
@@ -233,6 +243,11 @@
     "title": "The Iran War Just Cost Qatar a Major Energy Customer. Who Benefits From the Chaos?",
     "deck": "Poland's ORLEN has moved to terminate a QatarEnergy LNG agreement valued at an estimated €570 million for 2026 after prolonged delivery failures. The decision shows how conflict is redrawing global energy relationships.",
     "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
+  },
+  "power": {
+    "title": "Who Benefits From the Chaos?",
+    "deck": "America's economic gains are emerging—but who pays the price? Financing promises, energy exports and industrial projects under examination.",
+    "image": "assets/images/chaos-flagship-hero-approved-20261031.jpg"
   },
   "qatar-iran-peace-proposal-2026": {
     "title": "Qatar Presents Iran With New Seven-Day Peace Proposal",
@@ -269,20 +284,15 @@
     "deck": "Federal officials approved the deepwater-port license application for a proposed export facility near Matagorda. Construction and commercial exports remain ahead.",
     "image": "assets/images/epnews_lng_website_1600x900.jpg"
   },
-  "panama-ports-20261105": {
-    "title": "China Lost Control of Two Panama Canal Ports. But Who Actually Won?",
-    "deck": "Panama changed operators at Balboa and Cristóbal. Preliminary official cargo figures reveal a more complicated economic picture.",
-    "image": "assets/images/panama_approved_epnews_1600x900.jpg"
+  "supreme-court-transgender-inmate-care-20261110": {
+    "title": "Supreme Court Leaves Transgender Inmate Treatment Protections in Place. Should Taxpayers Pay?",
+    "deck": "The justices declined to immediately reinstate Trump administration restrictions on federal inmate treatment, while a separate housing case was returned to a lower court. What did the Court actually decide?",
+    "image": "assets/images/epnews-supreme-court-redesign-portrait-v2.png"
   },
   "trump-democrats-common-ground-20261106": {
     "title": "Trump and Democrats: Where Could They Find Common Ground?",
     "deck": "After Democrats won control of Congress, five policy areas offer possible openings for negotiation—but agreement on a goal is not the same as agreement on a bill.",
     "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
-  },
-  "supreme-court-transgender-inmate-care-20261110": {
-    "title": "Supreme Court Leaves Transgender Inmate Treatment Protections in Place. Should Taxpayers Pay?",
-    "deck": "The justices declined to immediately reinstate Trump administration restrictions on federal inmate treatment, while a separate housing case was returned to a lower court. What did the Court actually decide?",
-    "image": "assets/images/epnews-supreme-court-redesign-portrait-v2.png"
   },
   "trump-stephen-miller-chief-of-staff-20261106": {
     "title": "Trump Replaces Susie Wiles With Stephen Miller After Midterm Defeat",
@@ -318,10 +328,5 @@
     "title": "First Venezuelan Oil Cargo Under U.S. Deal Arrives in Texas",
     "deck": "Two tankers carrying Venezuelan crude reached Corpus Christi under a new U.S.–NABEP arrangement. The arrival is confirmed; the value and payment terms remain contested.",
     "image": "assets/images/epnews-venezuela-oil-website-1600x900.png"
-  },
-  "power": {
-    "title": "Who Benefits From the Chaos?",
-    "deck": "America's economic gains are emerging—but who pays the price? Financing promises, energy exports and industrial projects under examination.",
-    "image": "assets/images/chaos-flagship-hero-approved-20261031.jpg"
   }
 }
