@@ -1,0 +1,64 @@
+{
+  "slug": "south-korea-us-investment-20261112",
+  "article_sha256": "a4632923db662020df900df504c9098ac793cf290ab3f09739e37ba7431866de",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://en.yna.co.kr/view/AEN20261006005500320",
+      "verified": true,
+      "claims": [
+        "$2.4 billion transfer",
+        "October 6 finance minister confirmation"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "Seoul sent US$2.4 bln to Washington for Texas energy project: finance minister"
+    },
+    {
+      "url": "https://english.mofe.go.kr/pc/selectTbPressCenterDtl.do?boardCd=N0001&seq=6492",
+      "verified": true,
+      "claims": [
+        "Project Star, Project Power and Project North",
+        "Strategic investment framework"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "Governments announced plans to advance Project Star, Project Power and Project North."
+    },
+    {
+      "url": "https://www.related.com/press-releases/2026-09-30/us-dept-commerce-and-republic-korea-announce-project-star-223b-energy",
+      "verified": true,
+      "claims": [
+        "$22.3 billion, 6.47 GW, Encinal, 8,400 peak construction jobs"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "Estimated 8,400 jobs during peak construction activity; 6.47 GW natural gas generation."
+    },
+    {
+      "url": "https://www.marketscreener.com/news/south-korea-unveils-major-energy-investment-plans-in-us-ce785ad3db8df422",
+      "verified": true,
+      "claims": [
+        "Energy investment plans"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "South Korea unveils major energy investment plans in US"
+    },
+    {
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/joint-fact-sheet-on-president-donald-j-trumps-meeting-with-president-lee-jae-myung/",
+      "verified": true,
+      "claims": [
+        "$150 billion shipbuilding and $200 billion strategic investment"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "Joint fact sheet describes shipbuilding and strategic investment commitments."
+    }
+  ],
+  "image": {
+    "path": "assets/images/south_korea_website_1600x900_optimized.jpg",
+    "sha256": "01682e1eefe1e130527fb86a6ce71fefe20bd73c21edd4a4184fda640b55432a",
+    "original_source": "https://drive.google.com/file/d/1GtBOiHzC1LvBqiTyxiEtWQucMyXDiiCr/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Publisher-approved AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
