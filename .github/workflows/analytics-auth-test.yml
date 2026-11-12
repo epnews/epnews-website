@@ -18,3 +18,5 @@ jobs:
           status=$(curl --silent --show-error --max-time 30 --output /dev/null --write-out '%{http_code}' -H "X-Analytics-Token: $ANALYTICS_TOKEN" https://epnews.pages.dev/api/analytics)
           echo "Analytics HTTP status: $status"
           test "$status" = 200
+
+# Retest after production redeployment.
