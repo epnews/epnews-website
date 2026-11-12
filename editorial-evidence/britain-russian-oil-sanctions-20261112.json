@@ -1,0 +1,46 @@
+{
+  "slug": "britain-russian-oil-sanctions-20261112",
+  "article_sha256": "f3330017ced94b261f390978e36a955d1b274d0f5fd669458912e76802a277b5",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.reuters.com/business/energy/uk-sanctions-russias-slavneft-latest-move-against-oil-producers-2026-11-12/",
+      "verified": true,
+      "claims": [
+        "All ten largest producers",
+        "Slavneft, Vostok Oil, coal and shipping",
+        "Dublin summit"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "Reuters reports Slavneft designation completes coverage of the ten largest producers."
+    },
+    {
+      "url": "https://www.gov.uk/government/news/new-uk-sanctions-hit-the-money-oil-and-supply-chains-fuelling-russias-war",
+      "verified": true,
+      "claims": [
+        "October 8: 38 designations, over 90% capacity, over 600 tankers"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "UK sanctions now cover over 90% of Russia’s total oil production capacity."
+    },
+    {
+      "url": "https://energyandcleanair.org/october-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "verified": true,
+      "claims": [
+        "October revenue up 14%, volumes broadly unchanged"
+      ],
+      "checked_at": "2026-11-12",
+      "evidence_excerpt": "Russia’s fossil fuel export revenues increased 14% month-on-month"
+    }
+  ],
+  "image": {
+    "path": "assets/images/britain-russian-oil-sanctions-20261112.png",
+    "sha256": "c20ffbd533d0e8cf636e591425435ddd38e34e6efbba8e2d9d2299fab1d11a94",
+    "original_source": "https://drive.google.com/file/d/1SUgvwpIDkpZd-aZPccgPLn5GM0iISqPb/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Publisher-approved AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
