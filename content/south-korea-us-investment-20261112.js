@@ -64,8 +64,8 @@ STORIES.push({
       "url": "https://www.marketscreener.com/news/south-korea-unveils-major-energy-investment-plans-in-us-ce785ad3db8df422"
     },
     {
-      "label": "Reuters: Investment framework",
-      "url": "https://www.reuters.com/world/asia-pacific/south-koreas-cabinet-approves-decree-350-bln-us-investment-plan-2026-06-09/"
+      "label": "White House: Joint investment fact sheet",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/joint-fact-sheet-on-president-donald-j-trumps-meeting-with-president-lee-jae-myung/"
     }
   ]
 });
