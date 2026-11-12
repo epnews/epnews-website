@@ -10,6 +10,7 @@ const changed=execFileSync('git',['diff','--name-only','origin/'+base+'...HEAD']
 let count=0;
 for(const path of changed){
   if(!fs.existsSync(path))continue;
+  execFileSync(process.execPath,['scripts/validate-editorial-evidence.mjs',path],{stdio:'inherit'});
   execFileSync(process.execPath,['--check',path],{stdio:'inherit'});
   execFileSync(process.execPath,['scripts/preflight-article.mjs',path],{stdio:'inherit'});
   count++;
