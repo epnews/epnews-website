@@ -2,7 +2,7 @@
 // Requires HTTPS and never returns metrics without the correct token.
 const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 export async function onRequestGet({request,env}){
-  const configuredToken=env.EP_NEWS_ANALYTICS_KEY||env.ANALYTICS_DASHBOARD_TOKEN;
+  const configuredToken=env.EP_ANALYTICS_READ_TOKEN||env.EP_NEWS_ANALYTICS_KEY||env.ANALYTICS_DASHBOARD_TOKEN;
   if(!configuredToken)return reply({error:'Dashboard secret not configured'},503);
   const supplied=request.headers.get('X-Analytics-Token')||'';
   const expected=configuredToken;
