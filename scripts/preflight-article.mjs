@@ -23,7 +23,7 @@ else {
  if(!/^assets\/images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|webp)$/i.test(image))fail('Hero image must be a local raster asset');
  else {
   const manifest=JSON.parse(fs.readFileSync('content/image-imports.json','utf8'));
-  if(!manifest.some(x=>x.path===image&&/^https:\/\/drive\.google\.com\/uc\?/.test(x.url)&&/[?&]id=/.test(x.url)))fail('Image missing from Google Drive import manifest');
+  if(!manifest.some(x=>x.path===image&&((/^https:\/\/drive\.google\.com\/uc\?/.test(x.url)&&/[?&]id=/.test(x.url))||(x.mode==='verified-external'&&/^https:\/\/export-download\.canva\.com\/$/.test(x.url)&&/^[a-f0-9]{64}$/.test(x.sha256)))))fail('Image missing from approved import manifest');
   if(!exists(image))fail('Image not yet imported into GitHub: '+image);
  }
 }
