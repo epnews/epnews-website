@@ -238,3 +238,13 @@ body:has(#route-view .article-shell) .site-header .briefing-pill{color:#c2cfdf}
 #route-view .article-shell .article-meta{display:flex;flex-wrap:wrap;justify-content:flex-start;column-gap:20px;row-gap:8px}
 #route-view .article-shell .article-meta span{display:inline-block;white-space:normal}
 @media(max-width:700px){#route-view .article-shell .article-meta{display:flex;flex-direction:column;align-items:flex-start;gap:8px}}
+
+/* Compact Editor’s Desk: two columns, consistent image boxes, full readable titles. */
+#editor-picks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+#editor-picks .pick{display:block;min-width:0;padding:0 0 10px;border-bottom:1px solid #e7e8e9}
+#editor-picks .pick-content{min-width:0}
+#editor-picks .pick-image{margin:0 0 6px;aspect-ratio:16/9;overflow:hidden;background:#10151c;border-radius:4px}
+#editor-picks .pick-image img{width:100%;height:100%;object-fit:contain;display:block}
+#editor-picks .pick h3{font-size:clamp(12px,1.5vw,15px);line-height:1.35;margin:3px 0 0;overflow-wrap:anywhere}
+#editor-picks .pick:focus-visible{outline:2px solid #bf262e;outline-offset:3px}
+@media(max-width:720px){#editor-picks{gap:10px}#editor-picks .pick h3{font-size:13px}.relocated-editor{padding:14px}}
