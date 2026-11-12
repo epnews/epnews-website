@@ -149,6 +149,11 @@
     "deck": "New satellite-image investigations show how Iranian attacks degraded early-warning systems and damaged U.S.-linked military installations across the Middle East.",
     "image": "assets/images/epnews_iran_radar_replacement_1600x900.png"
   },
+  "iran-terror-plot-us-jail-20261111": {
+    "title": "Iran-Backed Militant Accused of Coordinating Terror Plot From Inside U.S. Jail",
+    "deck": "Federal prosecutors allege an imprisoned suspect attempted to coordinate a plot targeting a British airbase used by American forces.",
+    "image": "assets/images/ep-news-official-horizontal-masthead-20261105.png"
+  },
   "japan-philippines-radar-drones-20261109": {
     "title": "Japan Backs Philippines With Radar and Drones as Security Ties Deepen",
     "deck": "A ¥4.3 billion agreement will strengthen Philippine maritime surveillance—and marks a new step in Japan’s security assistance program.",
@@ -308,10 +313,5 @@
     "title": "Who Benefits From the Chaos?",
     "deck": "America's economic gains are emerging—but who pays the price? Financing promises, energy exports and industrial projects under examination.",
     "image": "assets/images/chaos-flagship-hero-approved-20261031.jpg"
-  },
-  "iran-terror-plot-us-jail-20261111": {
-    "title": "Iran-Backed Militant Accused of Coordinating Terror Plot From Inside U.S. Jail",
-    "deck": "Federal prosecutors allege an imprisoned suspect attempted to coordinate a plot targeting a British airbase used by American forces.",
-    "image": "assets/images/iran-terror-plot-us-jail-20261111_website_1600x900.png"
   }
 }
