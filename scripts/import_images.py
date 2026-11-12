@@ -2,21 +2,41 @@
 """Import only HTTPS image assets listed in a reviewed repository manifest."""
 import json
 from pathlib import Path
-from urllib.request import Request, urlopen
+from urllib.request import Request, build_opener, HTTPRedirectHandler, ProxyHandler
 from urllib.parse import urlparse
 import socket
 import ipaddress
 import time
+import hashlib
+import re
 from io import BytesIO
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
 MANIFEST=ROOT/'content/image-imports.json'
 MAX_BYTES=8_000_000
+class NoRedirect(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise ValueError('External redirects are blocked; use the final HTTPS URL')
+
+def verify_exact(payload, extension, entry):
+    expected=entry.get('sha256')
+    if not isinstance(expected,str) or not re.fullmatch(r'[a-f0-9]{64}',expected):
+        raise ValueError('External import requires approved SHA-256')
+    if hashlib.sha256(payload).hexdigest()!=expected:
+        raise ValueError('Approved SHA-256 mismatch')
+    if len(payload)>MAX_BYTES: raise ValueError('Image exceeds 8MB')
+    with Image.open(BytesIO(payload)) as im:
+        if im.format != {'.png':'PNG','.jpg':'JPEG','.jpeg':'JPEG','.webp':'WEBP'}[extension]:
+            raise ValueError('Image format mismatch')
+        if im.size!=(1600,900): raise ValueError('Website graphic must be 1600x900')
+        im.verify()
+    with Image.open(BytesIO(payload)) as im: im.load()
+
 if not MANIFEST.exists():
     raise SystemExit('No image import manifest')
 data=json.loads(MANIFEST.read_text())
-if not isinstance(data,list) or len(data)>40: raise ValueError('Expected 0-40 images')
+if not isinstance(data,list) or len(data)>1000: raise ValueError('Expected 0-1000 images')
 for entry in data:
     source=entry['url']
     dest=entry['path']
@@ -27,7 +47,11 @@ for entry in data:
         raise ValueError('Path must be a single filename in assets/images/')
     extension=Path(dest).suffix.lower()
     if extension not in ('.png','.jpg','.jpeg','.webp'): raise ValueError('Unsupported extension')
+    exact=entry.get('mode')=='verified-external'
+    if exact and (parsed.hostname not in ('export-download.canva.com',) or parsed.port not in (None,443)):
+        raise ValueError('External source host not approved')
     if (ROOT/dest).is_file():
+        if exact: verify_exact((ROOT/dest).read_bytes(),extension,entry)
         with Image.open(ROOT/dest) as existing:
             if existing.width < 1 or existing.height < 1:
                 raise ValueError(f'Invalid image dimensions for {dest}')
@@ -90,8 +114,11 @@ for entry in data:
         target.write_bytes(payload)
         print(f'Imported Google Drive image {dest} ({len(payload)} bytes)')
         continue
+    if exact:
+        # Signed URLs are supplied via an Actions secret, never committed.
+        raise ValueError('Verified external asset missing; use the secure import workflow')
     req=Request(source,headers={'User-Agent':'EPNewsImageImporter/1.0'})
-    with urlopen(req,timeout=25) as res:
+    with build_opener(ProxyHandler({}),NoRedirect()).open(req,timeout=25) as res:
         if res.url != source: raise ValueError('Redirects are not supported; use the final URL')
         content_type=res.headers.get('Content-Type','').split(';')[0].strip().lower()
         if content_type not in ('image/png','image/jpeg','image/webp'):
