@@ -15,12 +15,18 @@ export async function onRequestGet({request,env}){
   try{
     const visits=await db.prepare('SELECT total FROM site_visits WHERE id=1').first();
     const clicks=await db.prepare('SELECT placement,total FROM facebook_outbound_clicks').all();
-    await db.prepare("CREATE TABLE IF NOT EXISTS analytics_daily (day TEXT NOT NULL, metric TEXT NOT NULL, placement TEXT NOT NULL DEFAULT '', total INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(day,metric,placement))").run();
+
     const daily=await db.prepare("SELECT day,metric,placement,total FROM analytics_daily WHERE day >= date('now','-29 days') ORDER BY day ASC").all();
+    // Optional new table: report empty until the first tracked read.
+    const exists=await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='article_reads_hourly'").first();
+    const articleReads=exists?(await db.prepare("SELECT slug,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-29 days') GROUP BY slug ORDER BY total DESC,slug LIMIT 100").all()).results: [];
+    const referralSources=exists?(await db.prepare("SELECT source,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-29 days') GROUP BY source").all()).results: [];
+    const hourlyReads=exists?(await db.prepare("SELECT hour,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-6 days') GROUP BY hour ORDER BY hour").all()).results: [];
+    const articleDaily=exists?(await db.prepare("SELECT substr(hour,1,10) AS day,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-29 days') GROUP BY day ORDER BY day").all()).results: [];
     const byPlacement={header:0,homepage:0,footer:0,article:0};
     for(const row of clicks.results||[])if(Object.hasOwn(byPlacement,row.placement))byPlacement[row.placement]=Number(row.total)||0;
     const totalClicks=Object.values(byPlacement).reduce((a,b)=>a+b,0);
     const totalVisits=Number(visits?.total||0);
-    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
+    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
   }catch(e){console.error('Analytics dashboard error',e);return reply({error:'Analytics temporarily unavailable'},503);}
 }
