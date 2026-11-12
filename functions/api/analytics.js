@@ -2,6 +2,16 @@
 // Requires HTTPS and never returns metrics without the correct token.
 const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 export async function onRequestGet({request,env}){
+  // Temporary diagnostic: independently authenticated; never returns secret values.
+  if(new URL(request.url).searchParams.get('diagnostic')==='1'){
+    const guard=env.EP_ANALYTICS_DIAGNOSTIC_TOKEN;
+    const provided=request.headers.get('X-Diagnostic-Token')||'';
+    const equal=(x,y)=>{const a=new TextEncoder().encode(x),b=new TextEncoder().encode(y);let d=a.length^b.length;for(let i=0;i<Math.max(a.length,b.length);i++)d|=(a[i]||0)^(b[i]||0);return d===0;};
+    if(!guard||!equal(provided,guard))return reply({error:'Unauthorized'},401);
+    const candidate=request.headers.get('X-Analytics-Token')||'';
+    const names=['EP_ANALYTICS_READ_TOKEN','EP_NEWS_ANALYTICS_KEY','ANALYTICS_DASHBOARD_TOKEN'];
+    return reply({secrets:names.map(name=>({name,configured:!!env[name],matches:!!env[name]&&!!candidate&&equal(candidate,env[name])})),active:names.find(name=>!!env[name])||null});
+  }
   const configuredToken=env.EP_ANALYTICS_READ_TOKEN||env.EP_NEWS_ANALYTICS_KEY||env.ANALYTICS_DASHBOARD_TOKEN;
   if(!configuredToken)return reply({error:'Dashboard secret not configured'},503);
   const supplied=request.headers.get('X-Analytics-Token')||'';
