@@ -87,13 +87,16 @@ editorPicks();wireInit();sidebars();leadPhoto();window.addEventListener('hashcha
   const key='epnews-visit-counted-v1';
   let counted=false;
   try{counted=sessionStorage.getItem(key)==='yes';}catch{}
-  const response=await fetch('/api/visits',{method:counted?'GET':'POST',cache:'no-store',headers:{'Accept':'application/json'}});
+  let response=await fetch('/api/visits',{method:counted?'GET':'POST',cache:'no-store',headers:{'Accept':'application/json'}});
+  const registered=!counted&&response.ok;
+  // If registering a new session fails, still display the readable public count.
+  if(!response.ok&&!counted)response=await fetch('/api/visits',{method:'GET',cache:'no-store',headers:{'Accept':'application/json'}});
   if(!response.ok)throw new Error('Counter backend unavailable');
   const data=await response.json();
   if(!Number.isSafeInteger(data.total)||data.total<0)throw new Error('Invalid visit count');
   display.textContent=new Intl.NumberFormat('en-US').format(data.total);
   display.title='Website visits since counter activation (not unique visitors)';
-  if(!counted){try{sessionStorage.setItem(key,'yes');}catch{}}
+  if(registered){try{sessionStorage.setItem(key,'yes');}catch{}}
  }catch{display.textContent='—';display.title='Visit counter not yet configured';}
 })();
 
