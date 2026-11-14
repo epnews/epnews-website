@@ -1,6 +1,7 @@
 STORIES.push({
   "id": "britain-russian-oil-sanctions-20261112",
   "status": "published",
+  "seriesId": "chaos",
   "category": "investigations",
   "categoryLabel": "INVESTIGATIONS",
   "type": "REPORTING",
