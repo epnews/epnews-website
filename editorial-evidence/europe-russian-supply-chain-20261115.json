@@ -1,0 +1,89 @@
+{
+  "slug": "europe-russian-supply-chain-20261115",
+  "article_sha256": "28e18a46ed0c39e1fdf8c3151675e62074b7ab276d4757f2849688938265a302",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://apnews.com/article/75d388cc6e92cc97341c13eb8b0e7ce6",
+      "verified": true,
+      "claims": [
+        "Dublin summit and alumina shipment; alumina not covered by latest measures"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Dublin summit and alumina shipment; alumina not covered by latest measures"
+    },
+    {
+      "url": "https://www.occrp.org/en/investigation/inside-the-aluminum-supply-chain-linking-irish-industry-to-russian-rockets",
+      "verified": true,
+      "claims": [
+        "Smelter and distributor links; $650 million and over 40 manufacturers; tracing limitation"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Smelter and distributor links; $650 million and over 40 manufacturers; tracing limitation"
+    },
+    {
+      "url": "https://www.irishtimes.com/ireland/2026/09/01/aughinish-aluminas-exports-to-russia-continue-to-rise/",
+      "verified": true,
+      "claims": [
+        "422,474 tonnes and €119.5 million in first half of 2026"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "422,474 tonnes and €119.5 million in first half of 2026"
+    },
+    {
+      "url": "https://www.reuters.com/world/no-definitive-evidence-irish-alumina-exports-used-russian-weapons-irish-pm-says-2026-07-23/",
+      "verified": true,
+      "claims": [
+        "No definitive evidence of weapons end use"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "No definitive evidence of weapons end use"
+    },
+    {
+      "url": "https://www.occrp.org/en/news/eu-sanctions-envoy-pushes-for-action-against-rusals-irish-alumina-refinery",
+      "verified": true,
+      "claims": [
+        "EU envoy says material reaches military-industrial supply chain"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "EU envoy says material reaches military-industrial supply chain"
+    },
+    {
+      "url": "https://eur-lex.europa.eu/eli/reg/2014/833/2026-04-24",
+      "verified": true,
+      "claims": [
+        "Conditional titanium, nuclear and metals exceptions"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Conditional titanium, nuclear and metals exceptions"
+    },
+    {
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32026R1848",
+      "verified": true,
+      "claims": [
+        "Expanded restrictions on metals and ores"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Expanded restrictions on metals and ores"
+    },
+    {
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/12/russia-s-war-of-aggression-against-ukraine-eu-agrees-largest-ever-package-of-listings-targeting-almost-1600-individuals-and-entities-in-russia-s-military-industrial-complex/",
+      "verified": true,
+      "claims": [
+        "1,569 military-industrial listings"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "1,569 military-industrial listings"
+    }
+  ],
+  "image": {
+    "path": "assets/images/europe-russian-supply-chain-1600x900.png",
+    "sha256": "5355bc0094ef66c9ed25b367912416468c78cec015b4b444ffbc0130d199be4e",
+    "original_source": "https://drive.google.com/file/d/1_39WFyWzSJan2N4VXZfZWJwZQxD-sXXs/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration; publication requested by publisher",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
