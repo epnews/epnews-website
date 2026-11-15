@@ -98,6 +98,11 @@ for entry in data:
         if not signatures[extension]:raise ValueError('Image file signature mismatch')
         target=ROOT/dest
         target.parent.mkdir(parents=True,exist_ok=True)
+        if entry.get('sha256'):
+            verify_exact(payload, extension, entry)
+            target.write_bytes(payload)
+            print(f'Imported exact approved Google Drive image {dest} ({len(payload)} bytes)')
+            continue
         picture=Image.open(BytesIO(payload)).convert('RGB')
         if picture.width > 1600 or picture.height > 1600:
             picture.thumbnail((1600,1600),Image.Resampling.LANCZOS)
