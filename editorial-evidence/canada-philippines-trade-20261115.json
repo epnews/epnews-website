@@ -1,0 +1,71 @@
+{
+  "slug": "canada-philippines-trade-20261115",
+  "article_sha256": "0584b98c58c6edb9194edc05feed54dafb1b7a24ab134fb25f62f7bfea63c7c3",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.pm.gc.ca/en/news/news-releases/2026/11/14/canada-concludes-negotiations-two-new-free-trade-agreements",
+      "verified": true,
+      "claims": [
+        "Conclusion of negotiations, bilateral trade and ASEAN projections"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Conclusion of negotiations, bilateral trade and ASEAN projections"
+    },
+    {
+      "url": "https://www.pm.gc.ca/en/news/readouts/2026/11/14/prime-minister-carney-meets-president-philippines-ferdinand-marcos-jr",
+      "verified": true,
+      "claims": [
+        "Strategic partnership and maritime security initiatives"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Strategic partnership and maritime security initiatives"
+    },
+    {
+      "url": "https://www.pm.gc.ca/en/news/speeches/2026/11/14/prime-minister-carney-delivers-remarks-media-during-his-visit-philippines",
+      "verified": true,
+      "claims": [
+        "Diversification strategy and non-US export target"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Diversification strategy and non-US export target"
+    },
+    {
+      "url": "https://globalnews.ca/news/12150796/canada-philippines-trade-deal/",
+      "verified": true,
+      "claims": [
+        "Independent reporting on trade negotiations"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Independent reporting on trade negotiations"
+    },
+    {
+      "url": "https://qa.philstar.com/headlines/2026/11/15/2570278/philippines-canada-conclude-free-trade-negotiations",
+      "verified": true,
+      "claims": [
+        "Digital trade and Philippine business opportunities"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Digital trade and Philippine business opportunities"
+    },
+    {
+      "url": "https://www.pna.gov.ph/article/ph-canada-conclude-negotiations-for-free-trade-agreement",
+      "verified": true,
+      "claims": [
+        "Philippine confirmation of concluded negotiations"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Philippine confirmation of concluded negotiations"
+    }
+  ],
+  "image": {
+    "path": "assets/images/canada-philippines-trade-20261115.png",
+    "sha256": "02396ef7fd33b021bc5285c58c1b5e9711e1b16bfdf6b8d5b2e41bf03f554402",
+    "original_source": "https://drive.google.com/file/d/1moZW4MFRVxwuqldAzPaMHtSrfHLQmxq1/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
