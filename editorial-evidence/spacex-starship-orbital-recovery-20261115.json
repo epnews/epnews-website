@@ -1,0 +1,62 @@
+{
+  "slug": "spacex-starship-orbital-recovery-20261115",
+  "article_sha256": "5270f08d89e40ac2f94a28350b80ee1f2a9adcb72897f74692414ddcbe6399ef",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.reuters.com/business/aerospace-defense/spacexs-starship-aces-first-return-texas-2026-11-14/",
+      "verified": true,
+      "claims": [
+        "Orbital recovery in Texas and mission duration"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Orbital recovery in Texas and mission duration"
+    },
+    {
+      "url": "https://www.investing.com/news/stock-market-news/spacex-to-attempt-first-starship-spacecraft-recovery-on-land-in-15th-flight-5024836",
+      "verified": true,
+      "claims": [
+        "Development of reusable Starship and NASA lunar investment"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Development of reusable Starship and NASA lunar investment"
+    },
+    {
+      "url": "https://spacepolicyonline.com/news/spacex-catches-a-starship/",
+      "verified": true,
+      "claims": [
+        "Flight 15 spacecraft catch and mission details"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Flight 15 spacecraft catch and mission details"
+    },
+    {
+      "url": "https://qz.com/spacex-catches-starship-spacecraft-texas-launch-site-111426",
+      "verified": true,
+      "claims": [
+        "Spacecraft recovery and loss of Super Heavy booster"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Spacecraft recovery and loss of Super Heavy booster"
+    },
+    {
+      "url": "https://abcnews.com/US/spacex-attempt-starships-1st-orbital-flight-test/story?id=136805227",
+      "verified": true,
+      "claims": [
+        "Orbital test and satellite deployment"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Orbital test and satellite deployment"
+    }
+  ],
+  "image": {
+    "path": "assets/images/spacex-starship-orbital-recovery-20261115.png",
+    "sha256": "6736a763d1e3829df1e9d7277081665abce3ef58537ca6f2130668b385a2f346",
+    "original_source": "https://drive.google.com/file/d/1zhxkNeJIi2XJF1iwJIqySrpM7GYc3b02/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
