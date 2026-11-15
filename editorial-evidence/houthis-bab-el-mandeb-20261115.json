@@ -1,0 +1,53 @@
+{
+  "slug": "houthis-bab-el-mandeb-20261115",
+  "article_sha256": "e72f1187e6faa6fa7affb1a8ae5d32721da8e39f4e5b8fb49d23422afab3765d",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.reuters.com/world/middle-east/yemen-government-forces-withdraw-area-near-bab-el-mandeb-strait-houthis-control-2026-11-15/",
+      "verified": true,
+      "claims": [
+        "Government withdrawal near Bab el-Mandeb and humanitarian displacement"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Government withdrawal near Bab el-Mandeb and humanitarian displacement"
+    },
+    {
+      "url": "https://apnews.com/article/3b4adde832dadd333451fd2f7a51908c",
+      "verified": true,
+      "claims": [
+        "Independent coverage of Yemeni withdrawal"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Independent coverage of Yemeni withdrawal"
+    },
+    {
+      "url": "https://www.ukmto.org/-/media/ukmto/products/jmic_advisory_update_113_12-nov.pdf",
+      "verified": true,
+      "claims": [
+        "Substantial maritime threat and daily transit figures"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Substantial maritime threat and daily transit figures"
+    },
+    {
+      "url": "https://www.ukmto.org/-/media/ukmto/products/20261113-ukmto_vra_overview_u.pdf",
+      "verified": true,
+      "claims": [
+        "Shipping traffic remains below earlier baseline"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Shipping traffic remains below earlier baseline"
+    }
+  ],
+  "image": {
+    "path": "assets/images/houthis-bab-el-mandeb-20261115.png",
+    "sha256": "b473e8434f686c5023d47e962efea8012d20f6c86e28a95eefdc7322c74ad5aa",
+    "original_source": "https://drive.google.com/file/d/1TZRhEZUkL6amPLRE9BLx_1gE1Mx4nbFF/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
