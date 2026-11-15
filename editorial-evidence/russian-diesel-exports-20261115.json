@@ -1,0 +1,80 @@
+{
+  "slug": "russian-diesel-exports-20261115",
+  "article_sha256": "83d036496671eaabeda38b77ff5c1cc8f508c43e32db9a95b34266995f0554b2",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.reuters.com/business/energy/russian-fuel-exports-oil-output-rebounded-october-after-deal-with-trump-iea-says-2026-11-13/",
+      "verified": true,
+      "claims": [
+        "October exports and agreement, destination volumes"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "October exports and agreement, destination volumes"
+    },
+    {
+      "url": "https://www.iea.org/reports/oil-market-report-october-2026",
+      "verified": true,
+      "claims": [
+        "September global diesel export shortfall"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "September global diesel export shortfall"
+    },
+    {
+      "url": "https://www.iea.org/commentaries/russian-refining-sector-struggles-amid-intensifying-ukrainian-attacks",
+      "verified": true,
+      "claims": [
+        "June refinery throughput decline"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "June refinery throughput decline"
+    },
+    {
+      "url": "https://www.kpler.com/blog/winter-2026-27-scenarios-for-the-russian-oil-industry",
+      "verified": true,
+      "claims": [
+        "October refinery recovery"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "October refinery recovery"
+    },
+    {
+      "url": "https://www.ecb.europa.eu/pub/pdf/ecbu/eb202607.en.pdf",
+      "verified": true,
+      "claims": [
+        "Export restrictions through January"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Export restrictions through January"
+    },
+    {
+      "url": "https://www.reuters.com/business/energy/us-diesel-below-6-gallon-2-month-low-easing-tensions-weaker-demand-2026-11-15/",
+      "verified": true,
+      "claims": [
+        "US retail diesel prices"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "US retail diesel prices"
+    },
+    {
+      "url": "https://www.iru.org/system/files/story/Diesel%20prices%20ease%2C%20supply%20doesn%27t.html",
+      "verified": true,
+      "claims": [
+        "Six refinery strikes"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Six refinery strikes"
+    }
+  ],
+  "image": {
+    "path": "assets/images/russian-diesel-exports-20261115.png",
+    "sha256": "84ec140de96cf35c7390f28434fed74225bbc16f503825312a5a513910073025",
+    "original_source": "https://drive.google.com/file/d/1nj2-_tv8DiooM6iS9O6Ok8eriIaua-2D/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
