@@ -11,7 +11,7 @@ STORIES.push({
   "deck": "Europe has imposed thousands of sanctions against Russia, yet strategically important industrial trade continues. Ireland's alumina controversy exposes the economic dependencies complicating Europe's efforts to isolate Moscow.",
   "image": {
     "src": "assets/images/europe-russian-supply-chain-1600x900.png",
-    "alt": "Editorial illustration of European and Russian flags, industrial metals and a cargo port.",
+    "alt": "AI-generated editorial illustration of European and Russian flags, industrial metals and a cargo port.",
     "credit": "EP News / AI-generated editorial illustration"
   },
   "body": [
