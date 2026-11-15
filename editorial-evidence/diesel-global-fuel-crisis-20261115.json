@@ -1,0 +1,62 @@
+{
+  "slug": "diesel-global-fuel-crisis-20261115",
+  "article_sha256": "7f061a8916b1a78056f89cfebaa3fa0043bd02fa2580a73d886a7c946d550789",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.reuters.com/business/energy/us-diesel-below-6-gallon-2-month-low-easing-tensions-weaker-demand-2026-11-15/",
+      "verified": true,
+      "claims": [
+        "US retail diesel average and September peak"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: US retail diesel average and September peak"
+    },
+    {
+      "url": "https://www.iru.org/system/files/story/Diesel%20prices%20ease%2C%20supply%20doesn%27t.html",
+      "verified": true,
+      "claims": [
+        "Distillate inventory and 2027 price forecast"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Distillate inventory and 2027 price forecast"
+    },
+    {
+      "url": "https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/economic-research/publications/specials/en/2026/november/2026_11_13_Inflation-Outlook.pdf",
+      "verified": true,
+      "claims": [
+        "Refining capacity disruptions"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Refining capacity disruptions"
+    },
+    {
+      "url": "https://www.euronews.com/2026/11/13/european-diesel-prices-stay-high-as-global-oil-supply-overtakes-demand-iea-says",
+      "verified": true,
+      "claims": [
+        "European diesel wholesale premium"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: European diesel wholesale premium"
+    },
+    {
+      "url": "https://www.eia.gov/outlooks/steo/archives/nov26.pdf",
+      "verified": true,
+      "claims": [
+        "Energy outlook and inventory risks"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Prior editorial verification summary: Energy outlook and inventory risks"
+    }
+  ],
+  "image": {
+    "path": "assets/images/diesel-global-fuel-crisis-20261115.png",
+    "sha256": "4e4a5b19b06ea73d13fc8634127df5e7f379982b378b7f6b1f4a6f96e3a32680",
+    "original_source": "https://drive.google.com/file/d/1G9OMoQViHH8KfOXjHKIl9sbSWyAZfmC7/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
