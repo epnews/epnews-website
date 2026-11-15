@@ -1,0 +1,80 @@
+{
+  "slug": "venezuela-oil-custody-20261115",
+  "article_sha256": "9d9a4c28eb4cd909b346903c778613afda70ddad67f5dc87597efc0010234545",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.reuters.com/business/energy/us-handled-12-billion-venezuelas-oil-revenues-report-says-2026-11-12/",
+      "verified": true,
+      "claims": [
+        "Reported KPMG account receipts and disbursements"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Reported KPMG account receipts and disbursements"
+    },
+    {
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/01/safeguarding-venezuelan-oil-revenue-for-the-good-of-the-american-and-venezuelan-people/",
+      "verified": true,
+      "claims": [
+        "Venezuelan ownership and US custody authority"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Venezuelan ownership and US custody authority"
+    },
+    {
+      "url": "https://www.washingtonpost.com/business/2026/11/12/venezuela-oil-sales-maduro-trump/7030781a-dec8-11f1-912c-4fbb80d73f7f_story.html",
+      "verified": true,
+      "claims": [
+        "Payments for goods and services"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Payments for goods and services"
+    },
+    {
+      "url": "https://www.inquirer.com/news/nation-world/veneuela-oil-natural-resource-revenues-us-receive-disburse-kmg-report-rubio-20261110.html",
+      "verified": true,
+      "claims": [
+        "Trafigura and Vitol deposit concentration"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Trafigura and Vitol deposit concentration"
+    },
+    {
+      "url": "https://www.finance.senate.gov/wp-content/uploads/media/doc/09172026lettertotreasuryandstaterevenezuelanaturalresourcestransactions.pdf",
+      "verified": true,
+      "claims": [
+        "Senate request for transparency"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "Senate request for transparency"
+    },
+    {
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-announces-historic-oil-agreement-to-secure-american-energy-dominance-and-drive-venezuelas-economic-recovery/",
+      "verified": true,
+      "claims": [
+        "17 fields and estimated reserves"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "17 fields and estimated reserves"
+    },
+    {
+      "url": "https://www.whitehouse.gov/releases/2026/10/president-trump-announces-arrival-of-first-one-million-barrels-of-oil-in-texas-thanks-to-historic-oil-deal/",
+      "verified": true,
+      "claims": [
+        "First million barrels in Texas"
+      ],
+      "checked_at": "2026-11-15",
+      "evidence_excerpt": "First million barrels in Texas"
+    }
+  ],
+  "image": {
+    "path": "assets/images/venezuela-oil-custody-20261115.png",
+    "sha256": "928e53616260bac6931b15664bce6fc4f4a39eb2d5084f8c204a01a0b2627f01",
+    "original_source": "https://drive.google.com/file/d/1flw1tK8WlVnFgC1k-Z7IvCsMyDTvfGD9/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
