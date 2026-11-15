@@ -675,7 +675,8 @@ function renderLocal(){
 mode.addEventListener('change',renderLocal);renderLocal();
 }
 const list=root.querySelector('#chaos-updates');
-const articles=(typeof STORIES!=='undefined'?STORIES:[]).filter(s=>s&&s.status==='published'&&s.id!=='power'&&(s.category==='investigations'||/investigat|energy dependency|supply.chain|tariff|resource/i.test(s.type||''))).sort((a,b)=>String(b.publishedAt||b.updatedAt||'').localeCompare(String(a.publishedAt||a.updatedAt||''))).slice(0,10);
+const curatedChaosIds=new Set(typeof EDITORIAL!=='undefined'?(EDITORIAL.chaosUpdates||[]):[]);
+const articles=(typeof STORIES!=='undefined'?STORIES:[]).filter(s=>s&&s.status==='published'&&s.id!=='power'&&(curatedChaosIds.has(s.id)||s.category==='investigations'||/investigat|energy dependency|supply.chain|tariff|resource/i.test(s.type||''))).sort((a,b)=>String(b.publishedAt||b.updatedAt||'').localeCompare(String(a.publishedAt||a.updatedAt||''))).slice(0,10);
 if(!list)return;
 list.replaceChildren();
 const counter=root.querySelector('#chaos-update-count');if(counter)counter.textContent='('+articles.length+' OF UP TO 10)';
