@@ -1,0 +1,44 @@
+{
+  "slug": "trump-putin-xi-nuclear-talks-20261116",
+  "article_sha256": "a0fcac4eda71bc4ffe53e6e667540d5f326094feaabd4da087640ef5e43d0305",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://apnews.com/article/ffc5e5a2d384f00960034ec10087502e",
+      "verified": true,
+      "claims": [
+        "First trilateral nuclear talks; Ukraine excluded from agenda"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "AP reports the three-way talks will focus on nuclear stockpiles rather than Ukraine."
+    },
+    {
+      "url": "https://www.reuters.com/world/china/china-says-xi-putin-trump-meeting-has-groundbreaking-significance-2026-11-16/",
+      "verified": true,
+      "claims": [
+        "Shenzhen summit, nuclear reductions, Chinese position, UN support"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Reuters reports Thursday's meeting in Shenzhen, Washington's arms-reduction agenda and UN readiness to support disarmament."
+    },
+    {
+      "url": "https://www.channelnewsasia.com/east-asia/donald-trump-xi-jinping-vladimir-putin-china-meeting-6553826",
+      "verified": true,
+      "claims": [
+        "November 19 date, Iran agenda and China's arms-control position"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "AFP reports the November 19 meeting and US officials' plans to raise Iran and nuclear reductions."
+    }
+  ],
+  "image": {
+    "path": "assets/images/nuclear-talks-website.jpg",
+    "sha256": "aff69fed326f0db8394812076f565e20ae289c4f1b4f78c895f2fae976052562",
+    "original_source": "https://drive.google.com/file/d/1GMlsXDQ1buk1vmG657Owq86bjYm0kmnf/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
