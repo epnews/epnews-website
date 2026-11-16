@@ -11,7 +11,8 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core python3-pil
       - run: |
           /usr/bin/python3 -c "from PIL import Image; Image.new('RGB',(1600,900),'navy').save('/tmp/fixture.png')"
-          echo '{"image":"/tmp/fixture.png","hook":"Test hook","development":"Test development","impact":"Test impact","cta":"Subscribe","durations":[3,5,4,3]}' > /tmp/short.json
+          test -s assets/images/ep-news-official-horizontal-masthead-20261105.png
+          echo '{"image":"/tmp/fixture.png","test_fixture":true,"hook":"Test hook","development":"Test development","impact":"Test impact","cta":"Subscribe","durations":[3,5,4,3]}' > /tmp/short.json
           /usr/bin/python3 scripts/ep_shorts.py /tmp/short.json /tmp/short.mp4
           /usr/bin/python3 scripts/validate_ep_short.py /tmp/short.mp4 --expected-duration 15
           ffmpeg -v error -i /tmp/short.mp4 -c:v copy -c:a aac -ar 48000 -movflags +faststart /tmp/bad.mp4
