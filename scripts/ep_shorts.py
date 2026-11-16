@@ -1,5 +1,6 @@
 import argparse, json, subprocess, tempfile
 from pathlib import Path
+from validate_ep_short import validate
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 W,H=1080,1920
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
@@ -38,6 +39,7 @@ def render(cfg,out):
             p=Path(tmp)/f'{i}.png'; im.save(p); v=Path(tmp)/f'{i}.mp4'
             subprocess.run(['ffmpeg','-v','error','-y','-i',str(p),'-vf',f"zoompan=z='1+0.00018*on':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={duration*30}:s=1080x1920:fps=30",'-t',str(duration),'-c:v','libx264','-threads','2','-preset','fast','-pix_fmt','yuv420p',str(v)],check=True); paths.append(v)
         listing=Path(tmp)/'concat.txt'; listing.write_text('\n'.join(f"file '{p}'" for p in paths))
-        subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(listing),'-f','lavfi','-i','anullsrc=channel_layout=stereo:sample_rate=48000','-map','0:v:0','-map','1:a:0','-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-b:a','128k','-shortest','-movflags','+faststart',out],check=True)
+        subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(listing),'-f','lavfi','-i','anullsrc=channel_layout=stereo:sample_rate=44100','-map','0:v:0','-map','1:a:0','-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-profile:a','aac_low','-ar','44100','-ac','2','-b:a','128k','-shortest','-movflags','+faststart',out],check=True)
+        validate(out)
 if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('config'); p.add_argument('output'); a=p.parse_args(); render(json.loads(Path(a.config).read_text()),a.output)
