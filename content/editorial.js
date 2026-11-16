@@ -1,7 +1,7 @@
 // EP News homepage placement. Newly published stories enter the headline wire automatically.
-// Editor picks remain manually curated. Do not manually insert article IDs into wire.
+// Editor picks remain manually curated and must not duplicate Chaos featured investigations. Do not manually insert article IDs into wire.
 const EDITORIAL = {
-  editorPicks: ["trump-putin-xi-nuclear-talks-20261116","autonomous-weapons-20261116","ai-chip-contradiction-20261116","carrier-contradiction-20261116"],
+  editorPicks: ["trump-putin-xi-nuclear-talks-20261116","autonomous-weapons-20261116","houthis-bab-el-mandeb-20261115","spacex-starship-orbital-recovery-20261115"],
   analysis: [],
   chaosUpdates: ["russia-oil-windfall-20261116","ai-chip-contradiction-20261116","carrier-contradiction-20261116","venezuela-oil-custody-20261115","europe-russian-supply-chain-20261115"],
   wire: [...new Set(STORIES
