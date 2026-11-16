@@ -10,3 +10,12 @@ Target 12–15 seconds for simple breaking news, 15–20 for standard news, 20�
 
 ## Production assets
 Run from a complete repository checkout. The masthead defaults to assets/images/ep-news-official-horizontal-masthead-20261105.png; set image to the verified article artwork path in that checkout. Supply music as the local licensed Sweaty Staredown audio file and music_rights_verified:true. No narration. Never commit audio or video binaries. test_fixture:true enables silent CI fixtures only; never use it for production. The CTA text should direct viewers to channel links. For automatic artwork selection, supply article_url instead of image. The renderer resolves published story metadata from the trusted repository checkout using Node.js and requires the original local asset. Special static investigations without matching content records fail closed. The soundtrack is stored in private Google Drive: https://drive.google.com/file/d/1e0wPhXzPOGM6JQ0DHku2387i6KM8eI4B/view . Retrieve via authorized Drive access to a local file and set EP_NEWS_SOUNDTRACK or music. Never make the audio public or commit it. Drive download is an external authenticated preparation step, not performed by the renderer. Editorial text and planned durations still require review.
+
+## Cloud rendering fallback
+Run EP News Short cloud render from Actions with reviewed JSON. The artifact contains a silent video, preview and timing config; it is NOT publishable. Download it, retrieve the authorized soundtrack from Drive locally, and replace silence without re-encoding video:
+
+```sh
+ffmpeg -i short-silent.mp4 -stream_loop -1 -i "$EP_NEWS_SOUNDTRACK" -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -profile:a aac_low -ar 44100 -ac 2 -b:a 128k -af "volume=0.65,afade=t=out:st=23:d=1" -t 24 -movflags +faststart final.mp4
+python scripts/validate_ep_short.py final.mp4 --expected-duration 24
+```
+Replace 24 with the independently planned total and 23 with total minus one. Review final video and obtain approval before Metricool. No soundtrack or credentials in GitHub artifacts. The PR smoke test uses the published autonomous weapons article.
