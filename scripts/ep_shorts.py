@@ -1,4 +1,5 @@
-import argparse, json, subprocess, tempfile, math
+import argparse, json, subprocess, tempfile, math, os, re
+from urllib.parse import urlsplit
 from pathlib import Path
 from validate_ep_short import validate, check_duration
 from PIL import Image, ImageDraw, ImageFont, ImageOps
@@ -24,7 +25,32 @@ def centered(d,text,y,n,color='white',bold=False,width=900):
     for line in lines:
         d.text((540,y),line,font=f,fill=color,anchor='mt'); y+=int(n*1.4)
     return y
+def resolve_article(url):
+    u=urlsplit(url)
+    if u.scheme!='https' or u.netloc!='epnews.pages.dev' or u.query or u.fragment:
+        raise ValueError('Use canonical EP News article URL')
+    m=re.fullmatch(r'/article/([a-z0-9-]{1,120})/?',u.path)
+    if not m: raise ValueError('Invalid article URL')
+    slug=m.group(1)
+    source=ROOT/'content'/f'{slug}.js'
+    # Evaluate only trusted repository content in a separate Node process.
+    js="const fs=require('fs'),vm=require('vm');const ctx={STORIES:[]};vm.runInNewContext(fs.readFileSync(process.argv[1],'utf8'),ctx,{timeout:1000});process.stdout.write(JSON.stringify(ctx.STORIES));"
+    stories=json.loads(subprocess.check_output(['node','-e',js,str(source)],timeout=5))
+    matches=[s for s in stories if s.get('id')==slug and s.get('status')=='published']
+    if len(matches)!=1: raise ValueError('Expected one published story')
+    story=matches[0]
+    path=(ROOT/story['image']['src']).resolve()
+    if not path.is_relative_to((ROOT/'assets/images').resolve()) or not path.is_file():
+        raise ValueError('Original article artwork missing or outside asset directory')
+    return str(path),story.get('categoryLabel','WORLD')
+
 def render(cfg,out):
+    cfg=dict(cfg)
+    if cfg.get('article_url'):
+        cfg['image'],cfg['category']=resolve_article(cfg['article_url'])
+    if not cfg.get('music') and os.environ.get('EP_NEWS_SOUNDTRACK'):
+        cfg['music']=os.environ['EP_NEWS_SOUNDTRACK']
+
     durations=cfg.get('durations')
     if not isinstance(durations,list) or len(durations)!=4 or any(type(d) is not int or d<2 for d in durations):
         raise ValueError('Provide four integer scene durations of at least two seconds')
