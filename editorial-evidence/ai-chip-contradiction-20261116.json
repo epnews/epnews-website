@@ -1,0 +1,62 @@
+{
+  "slug": "ai-chip-contradiction-20261116",
+  "article_sha256": "fcbcb74cc820b40f930f398694ed1c106ef45078378404c4f050e4230701b116",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.bis.gov/media/documents/rin-0694-ak50.pdf?ftag=YHF4eb9d17",
+      "verified": true,
+      "claims": [
+        "Remote access controls, commercial recommender exception and additional licensing."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "new restrictions which will apply for exports, reexports, or transfers (in-country) to overseas data centers"
+    },
+    {
+      "url": "https://live.euronext.com/en/financial-news/us-curb-chinas-access-ai-chips-trump-heads-asia",
+      "verified": true,
+      "claims": [
+        "Chinese remote computing access and new five-country licensing rules."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "new restrictions on chip exports to overseas data centers"
+    },
+    {
+      "url": "https://apnews.com/article/60f868d3bb430b85a8657b27d421096e",
+      "verified": true,
+      "claims": [
+        "Remote access and end-user identification requirements."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Overseas data centers serving customers in China, Russia, Iran and Cuba must identify their end users."
+    },
+    {
+      "url": "https://www.reuters.com/world/asia-pacific/nvidia-fallout-throws-spotlight-southeast-asias-ai-boom-2026-11-13/",
+      "verified": true,
+      "claims": [
+        "Regional investment and potential disruption from controls."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Industry leaders warn new rules could delay chip deliveries"
+    },
+    {
+      "url": "https://www.theguardian.com/technology/2026/nov/16/megaspeed-company-breaks-slience-nvidia-jensen-huang-alice-huang",
+      "verified": true,
+      "claims": [
+        "Megaspeed purchases, denial and Malaysian investigation."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "buying nearly US$5bn"
+    }
+  ],
+  "image": {
+    "path": "assets/images/ai-chip-contradiction-1600x900.png",
+    "sha256": "43fc76f86a17b6bdaf679d9c325aace54af2165f52c06a36d2301019fd0396ea",
+    "original_source": "https://drive.google.com/file/d/1oxMccY2wZ-1weCQETXb3quMvbK11z2SL/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Publisher-approved original AI-generated graphic",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
