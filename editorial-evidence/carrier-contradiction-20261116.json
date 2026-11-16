@@ -1,0 +1,44 @@
+{
+  "slug": "carrier-contradiction-20261116",
+  "article_sha256": "2f5a7e1aa6e610a66735023503b7faee227513737c323a1add7ed7cea938e40f",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://apnews.com/article/9858fc82c61c7a1d159e7bba72afe99a",
+      "verified": true,
+      "claims": [
+        "AP reports Roosevelt arrival and Navy fleet count of three carriers, thirteen destroyers, two cruisers and one littoral combat ship."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "AP reports Roosevelt arrival and Navy fleet count of three carriers, thirteen destroyers, two cruisers and one littoral combat ship."
+    },
+    {
+      "url": "https://www.investing.com/news/world-news/trump-tells-advisers-he-may-hold-off-on-iran-attacks-barring-new-provocations-sources-say-5027294",
+      "verified": true,
+      "claims": [
+        "Reuters reports conditional restraint, allied pressure, intelligence assessments and possible three-carrier overlap."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Reuters reports conditional restraint, allied pressure, intelligence assessments and possible three-carrier overlap."
+    },
+    {
+      "url": "https://www.inss.org.il/publication/us-forces-november-8-15/",
+      "verified": true,
+      "claims": [
+        "November 15 assessment documents November 9 Trump remarks, November 13 Rubio remarks, Iranian drone claims and CENTCOM interception report."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "November 15 assessment documents November 9 Trump remarks, November 13 Rubio remarks, Iranian drone claims and CENTCOM interception report."
+    }
+  ],
+  "image": {
+    "path": "assets/images/carrier-contradiction-1600x900.png",
+    "sha256": "afbda8a825a02e1f8bc44a9b3f95614fa4e309140ab3314475e85090d1680732",
+    "original_source": "https://drive.google.com/file/d/13Ure0pqLiGHg7vXp5iYEFoYiLT-hwXWK/view",
+    "attribution": "EP News / AI-generated editorial illustration based on publisher-supplied reference",
+    "rights": "Publisher-approved AI-generated editorial graphic; reference photograph rights not independently established",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
