@@ -11,7 +11,7 @@ STORIES.push({
   "deck": "The three leaders will meet in Shenzhen as Washington pushes for a new arms-control agreement that includes Beijing.",
   image: {
     src: "assets/images/nuclear-talks-website.jpg",
-    "alt": "AI editorial illustration of the three leaders with national flags",
+    "alt": "AI-generated editorial illustration of the three leaders with national flags",
     "credit": "EP News / AI-generated editorial illustration"
   },
   "body": [
@@ -38,8 +38,8 @@ STORIES.push({
   ],
   "sources": [
     {
-      "label": "China Foreign Ministry — summit announcement",
-      "url": "https://www.fmprc.gov.cn/eng/xw/zyxw/202611/t20261116_12059663.html"
+      "label": "Associated Press — summit and nuclear agenda",
+      "url": "https://apnews.com/article/ffc5e5a2d384f00960034ec10087502e"
     },
     {
       "label": "Reuters — nuclear agenda and strategic stability",
