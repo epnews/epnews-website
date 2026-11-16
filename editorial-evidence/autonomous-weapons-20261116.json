@@ -1,0 +1,53 @@
+{
+  "slug": "autonomous-weapons-20261116",
+  "article_sha256": "f15f6974af9dadcabe4668b4da4e53d4e7b257c3890b663a35ef6abcae511ee2",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.reuters.com/world/us-russia-oppose-talks-limiting-autonomous-weapons-2026-11-16/",
+      "verified": true,
+      "claims": [
+        "US, Russia and Israel oppose binding rules; US favors guidelines; UK, France and Germany leave legal status open; AI-assisted systems have been used in conflicts."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "US, Russia and Israel oppose binding rules; US favors guidelines; UK, France and Germany leave legal status open; AI-assisted systems have been used in conflicts."
+    },
+    {
+      "url": "https://apnews.com/article/1ff519255c145105360b04961d136081",
+      "verified": true,
+      "claims": [
+        "Seven named countries propose negotiations; consensus rule allows a single country to block progress; humanitarian groups urge human control."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Seven named countries propose negotiations; consensus rule allows a single country to block progress; humanitarian groups urge human control."
+    },
+    {
+      "url": "https://www.ungeneva.org/en/meetings-events/events/observances-special-events/2026/11/seventh-review-conference-high",
+      "verified": true,
+      "claims": [
+        "Seventh CCW review conference in Geneva November 16–20 considers future work on lethal autonomous weapons."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Seventh CCW review conference in Geneva November 16–20 considers future work on lethal autonomous weapons."
+    },
+    {
+      "url": "https://www.un.org/en/node/250267",
+      "verified": true,
+      "claims": [
+        "Autonomous systems can select and engage targets without human intervention; no specific CCW protocol; Secretary-General calls for prohibitions and regulation."
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Autonomous systems can select and engage targets without human intervention; no specific CCW protocol; Secretary-General calls for prohibitions and regulation."
+    }
+  ],
+  "image": {
+    "path": "assets/images/autonomous-weapons-final-1600x900.png",
+    "sha256": "f5e52d89617f0bdffe04e69481ad4566e39c8cc32ce9c12e0711f87f56f959f8",
+    "original_source": "https://drive.google.com/file/d/1mr47J5R9_F7NHbVms0NVlhEJeK0XEeS_/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
