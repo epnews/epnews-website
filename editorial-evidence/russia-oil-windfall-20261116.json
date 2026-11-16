@@ -1,0 +1,62 @@
+{
+  "slug": "russia-oil-windfall-20261116",
+  "article_sha256": "43f7886bc6712c4dbad3d55e48036bab3f441bfd41b609360ede028080923e14",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://eia.media/en/article/economy/rossiya-stala-bolshe-zarabatyvat-na-nefti",
+      "verified": true,
+      "claims": [
+        "October revenue $21.15 billion, increase $8.33 billion, exports 6.82 million bpd"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "October revenue $21.15 billion, increase $8.33 billion, exports 6.82 million bpd"
+    },
+    {
+      "url": "https://gcaptain.com/russia-oil-revenues-hit-five-month-high-on-crude-rally-iea-says/",
+      "verified": true,
+      "claims": [
+        "Revenue up about 65% year on year"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Revenue up about 65% year on year"
+    },
+    {
+      "url": "https://energyandcleanair.org/october-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "verified": true,
+      "claims": [
+        "Urals price $101.70, cap $44.10, estimated $35.9 billion additional seaborne earnings"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Urals price $101.70, cap $44.10, estimated $35.9 billion additional seaborne earnings"
+    },
+    {
+      "url": "https://www.reuters.com/business/energy/russian-fuel-exports-oil-output-rebounded-october-after-deal-with-trump-iea-says-2026-11-13/",
+      "verified": true,
+      "claims": [
+        "Product exports increased 260,000 bpd after agreement"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Product exports increased 260,000 bpd after agreement"
+    },
+    {
+      "url": "https://www.iea.org/reports/oil-market-report-november-2026",
+      "verified": true,
+      "claims": [
+        "Gulf supply recovery and benchmark price decline"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "Gulf supply recovery and benchmark price decline"
+    }
+  ],
+  "image": {
+    "path": "assets/images/russia-oil-windfall-20261116.png",
+    "sha256": "18082202c8da34f78137a169061ea844597bf004717925121ca0180a09d30f4a",
+    "original_source": "https://drive.google.com/file/d/16iY8WgIcGTCHAf2sHe1faCyWMCnAoDCx/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News AI-generated editorial illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
