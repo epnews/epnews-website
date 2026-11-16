@@ -1,6 +1,6 @@
 import argparse, json, subprocess, tempfile
 from pathlib import Path
-from validate_ep_short import validate
+from validate_ep_short import validate, check_duration
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 W,H=1080,1920
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
@@ -17,9 +17,14 @@ def centered(d,t,y,n,color='white',width=880):
     return y
 
 def render(cfg,out):
+    durations=cfg.get('durations')
+    if not isinstance(durations,list) or len(durations)!=4 or any(type(d) is not int or d<=0 for d in durations):
+        raise ValueError('Provide four positive integer scene durations')
+    total=sum(durations)
+    check_duration(total,total)
     with tempfile.TemporaryDirectory() as tmp:
         paths=[]
-        for i,(label,key,duration) in enumerate([('THE STORY','hook',3),('THE CONTRADICTION','development',5),('WHY IT MATTERS','impact',4),('EPIC PERSPECTIVE NEWS','cta',3)]):
+        for i,(label,key,duration) in enumerate([(label,key,duration) for (label,key),duration in zip([('THE STORY','hook'),(cfg.get('development_label','THE DEVELOPMENT'),'development'),('WHY IT MATTERS','impact'),('EPIC PERSPECTIVE NEWS','cta')],durations)]):
             im=Image.new('RGB',(W,H),'#091426'); d=ImageDraw.Draw(im)
             d.rounded_rectangle((24,24,1056,1896),radius=42,outline='#bd2334',width=12)
             d.rounded_rectangle((43,43,1037,1877),radius=30,outline='#e7e9ee',width=3)
@@ -40,6 +45,6 @@ def render(cfg,out):
             subprocess.run(['ffmpeg','-v','error','-y','-i',str(p),'-vf',f"zoompan=z='1+0.00018*on':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={duration*30}:s=1080x1920:fps=30",'-t',str(duration),'-c:v','libx264','-threads','2','-preset','fast','-pix_fmt','yuv420p',str(v)],check=True); paths.append(v)
         listing=Path(tmp)/'concat.txt'; listing.write_text('\n'.join(f"file '{p}'" for p in paths))
         subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',str(listing),'-f','lavfi','-i','anullsrc=channel_layout=stereo:sample_rate=44100','-map','0:v:0','-map','1:a:0','-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-profile:a','aac_low','-ar','44100','-ac','2','-b:a','128k','-shortest','-movflags','+faststart',out],check=True)
-        validate(out)
+        validate(out,total)
 if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('config'); p.add_argument('output'); a=p.parse_args(); render(json.loads(Path(a.config).read_text()),a.output)

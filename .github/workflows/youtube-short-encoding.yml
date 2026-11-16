@@ -11,8 +11,16 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core python3-pil
       - run: |
           /usr/bin/python3 -c "from PIL import Image; Image.new('RGB',(1600,900),'navy').save('/tmp/fixture.png')"
-          echo '{"image":"/tmp/fixture.png","hook":"Test hook","development":"Test development","impact":"Test impact","cta":"Subscribe"}' > /tmp/short.json
+          echo '{"image":"/tmp/fixture.png","hook":"Test hook","development":"Test development","impact":"Test impact","cta":"Subscribe","durations":[3,5,4,3]}' > /tmp/short.json
           /usr/bin/python3 scripts/ep_shorts.py /tmp/short.json /tmp/short.mp4
-          /usr/bin/python3 scripts/validate_ep_short.py /tmp/short.mp4
+          /usr/bin/python3 scripts/validate_ep_short.py /tmp/short.mp4 --expected-duration 15
           ffmpeg -v error -i /tmp/short.mp4 -c:v copy -c:a aac -ar 48000 -movflags +faststart /tmp/bad.mp4
-          if /usr/bin/python3 scripts/validate_ep_short.py /tmp/bad.mp4; then exit 1; fi
+          if /usr/bin/python3 scripts/validate_ep_short.py /tmp/bad.mp4 --expected-duration 15; then exit 1; fi
+
+          if /usr/bin/python3 scripts/validate_ep_short.py /tmp/short.mp4 --expected-duration 24; then exit 1; fi
+          for durations in '3,7,7,7' '3,10,12,10'; do
+            /usr/bin/python3 -c "import json; p='/tmp/short.json'; c=json.load(open(p)); c['durations']=[int(x) for x in '$durations'.split(',')]; json.dump(c,open(p,'w'))"
+            total=$(/usr/bin/python3 -c "print(sum(map(int,'$durations'.split(','))))")
+            /usr/bin/python3 scripts/ep_shorts.py /tmp/short.json /tmp/short-$total.mp4
+            /usr/bin/python3 scripts/validate_ep_short.py /tmp/short-$total.mp4 --expected-duration "$total"
+          done
