@@ -24,10 +24,10 @@ STORIES.push({
     "The Commerce Department's interim final rule seeks to close that gap by extending licensing requirements to certain overseas computing arrangements.",
     "Billions of dollars in commercial interests",
     "Singapore-based Megaspeed International has become a focal point in the controversy. The Guardian reported that the company bought nearly $5 billion in Nvidia hardware over three years. Megaspeed denies illegal transfers and says it complies with applicable export controls.",
-    "Malaysia's trade ministry said on November 13 that it was investigating whether chips imported by Megaspeed's local affiliate were subsequently reexported in accordance with Malaysian law.",
+    "Malaysia said on November 13 it was investigating possible diversion of advanced chips by a Megaspeed subsidiary, according to the Guardian.",
     "American semiconductor manufacturers benefit from international demand for advanced computing equipment. Data center operators generate revenue by selling access to that equipment. Chinese technology companies benefit when overseas computing services provide capabilities they cannot readily purchase at home.",
     "A policy gap Washington acknowledged",
-    "The Commerce Department's announcement describes the new rule as aligning remote computing restrictions with existing physical export controls. It says the rule was written by and at the direction of Treasury and the National Security Council.",
+    "The Commerce Department's November 15 announcement describes the new rule as aligning remote computing restrictions with existing physical export controls. It says the rule was written by and at the direction of Treasury and the National Security Council.",
     "Reuters reported that the new restrictions follow criticism of Commerce Secretary Howard Lutnick's handling of chip export controls.",
     "Southeast Asia faces the consequences",
     "Malaysia, Singapore, Thailand and Indonesia have positioned themselves to benefit from growing international demand for artificial intelligence infrastructure. Additional licensing requirements could increase compliance costs and complicate investment decisions across the region.",
@@ -40,7 +40,7 @@ STORIES.push({
   "sources": [
     {
       "label": "Commerce Department — interim final rule",
-      "url": "https://www.bis.gov/media/documents/rin-0694-ak50.pdf"
+      "url": "https://www.bis.gov/media/documents/rin-0694-ak50.pdf?ftag=YHF4eb9d17"
     },
     {
       "label": "Reuters — new export restrictions",
@@ -51,8 +51,8 @@ STORIES.push({
       "url": "https://apnews.com/article/60f868d3bb430b85a8657b27d421096e"
     },
     {
-      "label": "Malaysia MITI — Megaspeed statement",
-      "url": "https://www.miti.gov.my/miti/resources/Speech/MEDIA_STATEMENT_13112026.pdf"
+      "label": "Reuters — Southeast Asian data centers",
+      "url": "https://www.reuters.com/world/asia-pacific/nvidia-fallout-throws-spotlight-southeast-asias-ai-boom-2026-11-13/"
     },
     {
       "label": "The Guardian — Megaspeed response",
