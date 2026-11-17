@@ -210,5 +210,10 @@
     "url": "https://drive.google.com/uc?export=download&id=1SwLgYtFGCk9rhJvVThlSHuivrqTmE5dj",
     "path": "assets/images/epnews_uranium_website.png",
     "sha256": "5bfa568b45c856f42245e6eef8876e0d8847329f6e35bf4cd6b7c6a7a9db0cc2"
+  },
+  {
+    "path": "assets/images/epnews_trump_iran_peace.png",
+    "sha256": "45b40d0c2420c25cac0ed3969c1833b2a953421cc8c2fb9c31512cee9363fcfb",
+    "url": "https://drive.google.com/uc?export=download&id=1Q08-gdab4oQOG9AV4CtqYuA__7OlD-Ok"
   }
 ]
