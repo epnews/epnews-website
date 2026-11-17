@@ -1,0 +1,16 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {classify} from './publication-state.mjs';
+const p={merged:false,state:'open',draft:false,publication:true,mergeable:true,head:{sha:'new'}};
+const c={id:1,name:'gate',head_sha:'new',status:'completed',conclusion:'success'};
+const run=(patch={},checks=[c],required=['gate'],preview=true)=>classify({...p,...patch},checks,required,preview);
+test('merged overrides stale checks',()=>assert.equal(run({merged:true},[]),'MERGED'));
+test('closed',()=>assert.equal(run({state:'closed'}),'CLOSED'));
+test('test excluded',()=>assert.equal(run({publication:false}),'TEST/DO NOT MERGE'));
+test('new head invalidates checks',()=>assert.equal(run({head:{sha:'newer'}}),'RUNNING'));
+test('failure',()=>assert.equal(run({},[{...c,conclusion:'failure'}]),'BLOCKED'));
+test('latest rerun wins',()=>assert.equal(run({},[c,{...c,id:2,conclusion:'failure'}]),'BLOCKED'));
+test('missing policy',()=>assert.equal(run({},[],[]),'UNVERIFIED'));
+test('missing preview',()=>assert.equal(run({},[c],['gate'],false),'RUNNING'));
+test('ready',()=>assert.equal(run(),'READY'));
+test('API unavailable',()=>assert.equal(classify(null,[],[],false),'UNVERIFIED'));
