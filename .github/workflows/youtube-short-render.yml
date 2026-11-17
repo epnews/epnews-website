@@ -25,7 +25,7 @@ jobs:
           /usr/bin/python3 - <<'PY'
           import json, os
           from pathlib import Path
-          cfg=json.loads(os.environ['CONFIG']) if os.environ.get('CONFIG') else json.loads("{\"article_url\":\"https://epnews.pages.dev/article/ai-chip-contradiction-20261116\",\"hook\":\"America restricted China's AI chips.\",\"development\":\"Chinese companies could still rent American computing power overseas.\",\"impact\":\"Washington is now targeting that loophole.\",\"cta\":\"Who benefited? Read the investigation. Visit our channel links.\",\"durations\":[5,7,7,5],\"development_label\":\"THE CONTRADICTION\",\"impact_label\":\"THE RESPONSE\"}")
+          cfg=json.loads(os.environ['CONFIG']) if os.environ.get('CONFIG') else json.loads("{\"article_url\":\"https://epnews.pages.dev/article/carrier-contradiction-20261116\",\"hook\":\"America is talking peace with Iran.\",\"development\":\"A third U.S. aircraft carrier has arrived in the Middle East.\",\"impact\":\"Routine rotation or sustained military buildup?\",\"cta\":\"Read the investigation through our channel links.\",\"durations\":[5,7,7,5],\"development_label\":\"THE CONTRADICTION\",\"impact_label\":\"THE BIG QUESTION\"}")
           allowed={'article_url','hook','development','impact','cta','durations','development_label','impact_label'}
           if set(cfg)-allowed or not cfg.get('article_url'):
               raise ValueError('Unexpected config keys or missing article URL')
