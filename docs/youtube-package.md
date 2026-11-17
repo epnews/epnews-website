@@ -15,7 +15,9 @@ Run from a complete repository checkout. The masthead defaults to assets/images/
 Run EP News Short cloud render from Actions with reviewed JSON. The artifact contains a silent video, preview and timing config; it is NOT publishable. Download it, retrieve the authorized soundtrack from Drive locally, and replace silence without re-encoding video:
 
 ```sh
-ffmpeg -i short-silent.mp4 -stream_loop -1 -i "$EP_NEWS_SOUNDTRACK" -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -profile:a aac_low -ar 44100 -ac 2 -b:a 128k -af "volume=0.65,afade=t=out:st=23:d=1" -t 24 -movflags +faststart final.mp4
+ffmpeg -i short-silent.mp4 -stream_loop -1 -i "$EP_NEWS_SOUNDTRACK" -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -profile:a aac_low -ar 44100 -ac 2 -b:a 128k -af "volume=0.30,afade=t=out:st=23:d=1" -t 24 -movflags +faststart final.mp4
 python scripts/validate_ep_short.py final.mp4 --expected-duration 24
 ```
 Replace 24 with the independently planned total and 23 with total minus one. Review final video and obtain approval before Metricool. No soundtrack or credentials in GitHub artifacts. The PR smoke test uses the published autonomous weapons article.
+
+Production soundtrack standard: 30% of original amplitude (FFmpeg volume=0.30), with the existing ending fade-out.
