@@ -23,7 +23,7 @@ STORIES.push({
     "Three months later, Ottawa is offering Beijing additional relief on those same industrial commodities.",
     "The American deal that fell apart",
     "On August 21, negotiations between the United States and Canada collapsed after the two governments appeared close to reaching an agreement.",
-    "Global News reported that Washington was prepared to reduce tariffs on Canadian steel and aluminum from 50% to 25%. The proposed deal included relief for other Canadian exports, including automobiles and lumber.",
+    "U.S. Trade Representative Jamieson Greer told The New York Times that Washington offered to reduce tariffs on most Canadian steel from 50% to 25% under a quota, and aluminum from 50% to 25%. The proposed deal included relief for other Canadian exports, including automobiles and lumber.",
     "But Washington wanted greater alignment between American and Canadian trade policies, particularly concerning foreign steel.",
     "S&P Global reported that the proposed agreement included cooperation on economic security, export controls and critical minerals. Canadian officials objected to demands restricting Canada's ability to negotiate other trade agreements.",
     "The dispute extended beyond steel. Automobile tariffs, cultural protections and Canadian sovereignty were also significant points of disagreement.",
@@ -69,12 +69,12 @@ STORIES.push({
       "url": "https://www.international.gc.ca/country_news-pays_nouvelles/2026-11-16-china-chine.aspx?lang=eng"
     },
     {
-      "label": "Prime Minister of Canada — November 17 agreement",
-      "url": "https://www.pm.gc.ca/en/news/backgrounders/2026/11/17/prime-minister-carney-advances-canadas-strategic-partnership-china"
+      "label": "Reuters — November 17 agreement",
+      "url": "https://www.reuters.com/world/china-canada-relations-more-stable-carney-says-he-meets-xi-2026-11-17/"
     },
     {
-      "label": "Global News — proposed tariff relief",
-      "url": "https://globalnews.ca/news/12026846/donald-trump-tariff-pause/"
+      "label": "New York Times — Greer interview",
+      "url": "https://monorepo-sample1.nyt.net/2026/08/22/business/economy/greer-us-canada-trade-deal.html"
     },
     {
       "label": "S&P Global — collapse of trade talks",
