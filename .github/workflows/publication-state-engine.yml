@@ -22,8 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: node --test scripts/publication-state*.test.mjs
+      - run: node --test scripts/publication-state*.test.mjs scripts/publication-alerts.test.mjs
   reconcile:
+    permissions:
+      contents: read
+      pull-requests: read
+      checks: read
+      actions: read
     if: github.event_name != 'pull_request' || github.event.action == 'closed'
     runs-on: ubuntu-latest
     steps:
@@ -55,3 +60,24 @@ jobs:
           name: publication-state
           path: publication-state.json
           retention-days: 30
+  notify:
+    needs: reconcile
+    if: github.event_name != 'pull_request' && github.repository == 'epnews/epnews-website'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: publication-state
+      - name: Notify on verified actionable failures
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: node scripts/send-publication-alerts.mjs
