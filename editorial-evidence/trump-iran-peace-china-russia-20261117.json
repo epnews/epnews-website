@@ -1,0 +1,71 @@
+{
+  "slug": "trump-iran-peace-china-russia-20261117",
+  "publisher_approved": true,
+  "article_sha256": "5bb05a1017609490ad92e5b265ad5ad9de99b97f23c52e082b4443079a727dd9",
+  "sources": [
+    {
+      "url": "https://abcnews.com/amp/Politics/trump-meet-putin-xi-china-week-us-officials/story?id=138128914",
+      "verified": true,
+      "claims": [
+        "Officials expect Iran discussion and nuclear talks; no concrete agreement anticipated."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Officials expect Iran discussion and nuclear talks; no concrete agreement anticipated."
+    },
+    {
+      "url": "https://www.investing.com/news/world-news/trump-says-he-does-not-believe-that-china-and-russia-are-helping-iran-at-all-4945373",
+      "verified": true,
+      "claims": [
+        "October 13 report cites two briefed people on imagery and weapon components; Trump disputed assistance."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "October 13 report cites two briefed people on imagery and weapon components; Trump disputed assistance."
+    },
+    {
+      "url": "https://www.reuters.com/world/us/trump-told-xi-that-china-helping-iran-is-unacceptable-us-ambassador-says-2026-09-25/",
+      "verified": true,
+      "claims": [
+        "Perdue described assurances; Iranian official described continued ties; barter arrangements reported."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Perdue described assurances; Iranian official described continued ties; barter arrangements reported."
+    },
+    {
+      "url": "https://apnews.com/article/7ffbf7bf87519f9ec4050ee27127fd1d",
+      "verified": true,
+      "claims": [
+        "Diplomats described Chinese influence in ceasefire efforts and economic risks from Hormuz closure."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Diplomats described Chinese influence in ceasefire efforts and economic risks from Hormuz closure."
+    },
+    {
+      "url": "https://jinsa.org/wp-content/uploads/2026/11/Trump-Russia-China-Insight-11.16.2026.pdf",
+      "verified": true,
+      "claims": [
+        "Policy analysis describes sanctions on refineries and intermediaries and argues wider financial networks remain insufficiently targeted."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Policy analysis describes sanctions on refineries and intermediaries and argues wider financial networks remain insufficiently targeted."
+    },
+    {
+      "url": "https://apnews.com/article/5fe92253ef38100bae913834a9b74d72",
+      "verified": true,
+      "claims": [
+        "Thursday trilateral summit and Iran agenda confirmed in reporting."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Thursday trilateral summit and Iran agenda confirmed in reporting."
+    }
+  ],
+  "image": {
+    "path": "assets/images/epnews_trump_iran_peace.png",
+    "sha256": "45b40d0c2420c25cac0ed3969c1833b2a953421cc8c2fb9c31512cee9363fcfb",
+    "original_source": "Approved EP News AI-generated editorial illustration",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated artwork approved by publisher",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
