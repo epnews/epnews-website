@@ -1,0 +1,50 @@
+{
+  "slug": "test-pipeline-20261117",
+  "publisher_approved": true,
+  "article": "STORIES.push({\n id: \"test-pipeline-20261117\", status: \"published\", category: \"investigations\", categoryLabel: \"INVESTIGATIONS\", type: \"INVESTIGATION\", publishedAt: \"2026-11-17\", updatedAt: \"2026-11-17\", author: \"Epic Perspective News\",\n title: \"TEST ONLY — DO NOT MERGE: EP News pipeline fixture\",\n deck: \"Synthetic technical fixture for publication pipeline validation. Not a news article.\",\n image: {src: \"assets/images/test_pipeline_20261117.png\", alt: \"AI-generated editorial illustration reused solely for technical testing\", credit: \"EP News / AI-generated editorial illustration\"},\n body: [\"This is a technical test fixture, not a news report. Do not publish or merge this branch.\"],\n sources: [{label: \"EP News technical test reference\", url: \"https://epnews.pages.dev/\"}]\n});\n",
+  "evidence": {
+    "slug": "test-pipeline-20261117",
+    "publisher_approved": true,
+    "article_sha256": "d81f3bb4f31f065afbc81fe8b4b2053dfcf1d16016614212d6dcfd34209f3da2",
+    "sources": [
+      {
+        "url": "https://epnews.pages.dev/",
+        "verified": true,
+        "claims": [
+          "Technical fixture references EP News site only"
+        ],
+        "checked_at": "2026-11-17",
+        "evidence_excerpt": "Technical test only, not a factual news claim."
+      }
+    ],
+    "image": {
+      "path": "assets/images/test_pipeline_20261117.png",
+      "sha256": "5bfa568b45c856f42245e6eef8876e0d8847329f6e35bf4cd6b7c6a7a9db0cc2",
+      "original_source": "Previously approved uranium artwork, reused for isolated technical test only",
+      "attribution": "EP News / AI-generated editorial illustration",
+      "rights": "Previously approved EP News artwork",
+      "authentic": false,
+      "kind": "ai-generated-editorial-illustration",
+      "publisher_approved": true
+    }
+  },
+  "image_import": {
+    "path": "assets/images/test_pipeline_20261117.png",
+    "sha256": "5bfa568b45c856f42245e6eef8876e0d8847329f6e35bf4cd6b7c6a7a9db0cc2",
+    "url": "https://drive.google.com/uc?export=download&id=1SwLgYtFGCk9rhJvVThlSHuivrqTmE5dj"
+  },
+  "reel": {
+    "slug": "test-pipeline-20261117",
+    "article_script": "content/test-pipeline-20261117.js",
+    "headline": "TEST ONLY — DO NOT MERGE",
+    "facebook_description": "Technical test only",
+    "drive_file_id": "1SwLgYtFGCk9rhJvVThlSHuivrqTmE5dj",
+    "fact_checked": false,
+    "image_verified": false,
+    "website_published": false,
+    "approved_for_reel": false,
+    "automatic_reel": false,
+    "music_category": "none",
+    "duration": "15"
+  }
+}
