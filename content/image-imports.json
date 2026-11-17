@@ -215,5 +215,10 @@
     "path": "assets/images/epnews_trump_iran_peace.png",
     "sha256": "45b40d0c2420c25cac0ed3969c1833b2a953421cc8c2fb9c31512cee9363fcfb",
     "url": "https://drive.google.com/uc?export=download&id=1Q08-gdab4oQOG9AV4CtqYuA__7OlD-Ok"
+  },
+  {
+    "path": "assets/images/epnews_iran_bahrain_radar.png",
+    "sha256": "a08ca83cf2af7c5a51d4c5b13cc876d80bf8a8e66adae4edc0d04ca85344fd0e",
+    "url": "https://drive.google.com/uc?export=download&id=1Bd7-GP1hjJHXI5MWWl5DYogvtYLNMAJA"
   }
 ]
