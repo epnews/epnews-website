@@ -1,0 +1,89 @@
+{
+  "slug": "us-russian-uranium-enrichment-20261117",
+  "article_sha256": "7788f73ad92c8629c81025b72775d035da4610cc09097f50e68c27a45b55ba88",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.eia.gov/uranium/marketing/table16.php",
+      "verified": true,
+      "claims": [
+        "Russian SWU 3043 to 3284 thousand; total 15159 to 12710; US 2892 to 2930"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Russian SWU 3043 to 3284 thousand; total 15159 to 12710; US 2892 to 2930"
+    },
+    {
+      "url": "https://centrusenergy.gcs-web.com/static-files/193cd147-289c-49a8-aa48-842eb7a1e892",
+      "verified": true,
+      "claims": [
+        "TENEX supplies well over half through 2027; alternative sources insufficient; Russian individual export licenses through 2027"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "TENEX supplies well over half through 2027; alternative sources insufficient; Russian individual export licenses through 2027"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026046801/leu-20260630.htm",
+      "verified": true,
+      "claims": [
+        "June 30 $900m HALEU contract with milestone payments"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "June 30 $900m HALEU contract with milestone payments"
+    },
+    {
+      "url": "https://www.centrusenergy.com/news/centrus-signs-contract-with-department-of-energy-for-900-million-award-intends-to-transition-haleu-production-cascade-to-commercial-operation/",
+      "verified": true,
+      "claims": [
+        "First new capacity expected by 2029; initial buildout includes HALEU and LEU"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "First new capacity expected by 2029; initial buildout includes HALEU and LEU"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2024-05-24/pdf/FR-2024-05-24.pdf",
+      "verified": true,
+      "claims": [
+        "Waivers terminate by January 1 2028; alternative supply and national interest exceptions"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Waivers terminate by January 1 2028; alternative supply and national interest exceptions"
+    },
+    {
+      "url": "https://files.gao.gov/reports/GAO-26-107385/index.html",
+      "verified": true,
+      "claims": [
+        "Near-term supply risk and committed delivery waivers through 2027"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Near-term supply risk and committed delivery waivers through 2027"
+    },
+    {
+      "url": "https://www.reuters.com/legal/litigation/us-seeks-faster-uranium-enrichment-expansion-avert-supply-shortages-2026-09-18/",
+      "verified": true,
+      "claims": [
+        "DOE officials pressing suppliers to accelerate enrichment expansion to avert shortages; Reuters indexed report and syndicated copies"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "DOE officials pressing suppliers to accelerate enrichment expansion to avert shortages; Reuters indexed report and syndicated copies"
+    },
+    {
+      "url": "https://centrusenergy.gcs-web.com/news-releases/news-release-details/centrus-reports-third-quarter-2026-results",
+      "verified": true,
+      "claims": [
+        "November 4 centrifuge shipments, critical supply contracts and construction package"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "November 4 centrifuge shipments, critical supply contracts and construction package"
+    }
+  ],
+  "image": {
+    "path": "assets/images/epnews_uranium_website.png",
+    "sha256": "5bfa568b45c856f42245e6eef8876e0d8847329f6e35bf4cd6b7c6a7a9db0cc2",
+    "original_source": "Approved EP News AI illustration, Google Drive file 1SwLgYtFGCk9rhJvVThlSHuivrqTmE5dj; exact image importer verifies SHA-256, PNG decoding and 1600x900 before writing",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated editorial artwork, approved for publication",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
