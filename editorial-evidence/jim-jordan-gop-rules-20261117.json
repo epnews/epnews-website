@@ -1,0 +1,44 @@
+{
+  "slug": "jim-jordan-gop-rules-20261117",
+  "publisher_approved": true,
+  "article_sha256": "7af3752e23d156d687b106bc6665584a19f17f019625a1f0dee9582c31dd5ddd",
+  "sources": [
+    {
+      "url": "https://www.axios.com/2026/11/17/jim-jordan-house-gop-rules",
+      "verified": true,
+      "claims": [
+        "Proposed procedural vote penalties and Freedom Caucus opposition."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Proposed procedural vote penalties and Freedom Caucus opposition."
+    },
+    {
+      "url": "https://www.mprnews.org/story/2026/11/10/rep-jim-jordan-of-ohio-elected-to-lead-house-republicans-in-the-the-minority",
+      "verified": true,
+      "claims": [
+        "Jordan elected Republican leader after defeating Scalise 106–73."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Jordan elected Republican leader after defeating Scalise 106–73."
+    },
+    {
+      "url": "https://www.axios.com/2026/11/11/jim-jordan-house-minority-leader-republicans",
+      "verified": true,
+      "claims": [
+        "Jordan's leadership election and Freedom Caucus background."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Jordan's leadership election and Freedom Caucus background."
+    }
+  ],
+  "image": {
+    "path": "assets/images/jim-jordan-gop-rules-20261117.png",
+    "sha256": "db243f4457157d77db71b36b9793a78bbe3227c6d4857c6578847e81a22a3fcc",
+    "original_source": "Approved EP News AI-generated editorial illustration",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated artwork approved by publisher",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
