@@ -15,7 +15,10 @@ Run from a complete repository checkout. The masthead defaults to assets/images/
 Run EP News Short cloud render from Actions with reviewed JSON. The artifact contains a silent video, preview and timing config; it is NOT publishable. Download it, retrieve the authorized soundtrack from Drive locally, and replace silence without re-encoding video:
 
 ```sh
-ffmpeg -i short-silent.mp4 -stream_loop -1 -i "$EP_NEWS_SOUNDTRACK" -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -profile:a aac_low -ar 44100 -ac 2 -b:a 128k -af "volume=0.65,afade=t=out:st=23:d=1" -t 24 -movflags +faststart final.mp4
+ffmpeg -i short-silent.mp4 -stream_loop -1 -i "$EP_NEWS_SOUNDTRACK" -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -profile:a aac_low -ar 44100 -ac 2 -b:a 128k -af "highpass=f=90,equalizer=f=1800:t=q:w=1:g=3,acompressor=threshold=0.125:ratio=3:attack=10:release=100:makeup=2,loudnorm=I=-10.5:TP=-2.6:LRA=7,aresample=44100,afade=t=out:st=23:d=1" -t 24 -movflags +faststart final.mp4
 python scripts/validate_ep_short.py final.mp4 --expected-duration 24
 ```
 Replace 24 with the independently planned total and 23 with total minus one. Review final video and obtain approval before Metricool. No soundtrack or credentials in GitHub artifacts. The PR smoke test uses the published autonomous weapons article.
+
+## Approved audio reference (v7.8)
+The publisher approved YouTube Audio Test 2, measured at -10.5 LUFS integrated and -2.6 dBTP. Use the smartphone EQ/compression/loudness filter above as a reproducible approximation, not a fixed volume percentage. Verify the final export against the reference by measuring loudness and listening on YouTube; no narration. Retain the one-second ending fade. This filter is a new implementation and requires a production listening test before claiming exact equivalence. Supersedes all 30%, 65% and 80% gain proposals.
