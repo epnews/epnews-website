@@ -25,14 +25,7 @@ jobs:
           /usr/bin/python3 - <<'PY'
           import json, os
           from pathlib import Path
-          cfg=json.loads(os.environ['CONFIG']) if os.environ.get('CONFIG') else {
-              'article_url':'https://epnews.pages.dev/article/autonomous-weapons-20261116',
-              'hook':'Should machines decide who dies?',
-              'development':'The U.S. and Russia oppose binding restrictions on autonomous weapons.',
-              'impact':'Consensus rules could block treaty negotiations.',
-              'cta':'Read the full story through our channel links.',
-              'durations':[4,7,7,6]
-          }
+          cfg=json.loads(os.environ['CONFIG']) if os.environ.get('CONFIG') else json.loads("{\"article_url\":\"https://epnews.pages.dev/article/ai-chip-contradiction-20261116\",\"hook\":\"America restricted China's AI chips.\",\"development\":\"Chinese companies could still rent American computing power overseas.\",\"impact\":\"Washington is now targeting that loophole.\",\"cta\":\"Who benefited? Read the investigation. Visit our channel links.\",\"durations\":[5,7,7,5],\"development_label\":\"THE CONTRADICTION\",\"impact_label\":\"THE RESPONSE\"}")
           allowed={'article_url','hook','development','impact','cta','durations','development_label','impact_label'}
           if set(cfg)-allowed or not cfg.get('article_url'):
               raise ValueError('Unexpected config keys or missing article URL')
