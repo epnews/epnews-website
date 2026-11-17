@@ -1,0 +1,39 @@
+name: EP News live release verification
+on:
+  push:
+    branches: [main]
+    paths: ['content/*.js']
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: Published article slug
+        required: true
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify actual production routes
+        env:
+          REQUESTED_SLUG: ${{ inputs.slug }}
+          BEFORE: ${{ github.event.before }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n "$REQUESTED_SLUG" ]]; then
+            node scripts/verify-live-publication.mjs "$REQUESTED_SLUG"
+          else
+            git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- content/ | while IFS= read -r path; do
+              if [[ "$path" =~ ^content/([a-z0-9-]+)\.js$ && "$path" != content/editorial.js && "$path" != content/stories.js ]]; then
+                node scripts/verify-live-publication.mjs "${BASH_REMATCH[1]}"
+              fi
+            done
+          fi
