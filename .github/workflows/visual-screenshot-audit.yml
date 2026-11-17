@@ -1,6 +1,8 @@
 name: EP News visual screenshot audit
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
 permissions:
   contents: read
 jobs:
@@ -17,7 +19,9 @@ jobs:
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
       - name: Capture desktop and mobile layout
-        run: node scripts/capture-visual-layout.mjs
+        run: |
+          sed -i 's/senate-energy-permitting-20261110/china-trade-baldwin-20261117/g' scripts/capture-visual-layout.mjs
+          node scripts/capture-visual-layout.mjs
       - name: Save screenshots and geometry report
         if: always()
         uses: actions/upload-artifact@v4
