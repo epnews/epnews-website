@@ -76,7 +76,7 @@ def render(cfg,out):
         if end>610: raise ValueError('Text too long for approved layout: '+key)
         panels.append(panel)
     audio=['-f','lavfi','-i','anullsrc=channel_layout=stereo:sample_rate=44100'] if fixture else ['-stream_loop','-1','-i',str(cfg['music'])]
-    cmd=['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','pipe:0']+audio+['-map','0:v:0','-map','1:a:0','-t',str(total),'-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-profile:a','aac_low','-ar','44100','-ac','2','-b:a','128k','-af',f'volume=0.30,afade=t=out:st={total-1}:d=1','-movflags','+faststart',str(out)]
+    cmd=['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','pipe:0']+audio+['-map','0:v:0','-map','1:a:0','-t',str(total),'-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-profile:a','aac_low','-ar','44100','-ac','2','-b:a','128k','-af',f'volume=0.80,afade=t=out:st={total-1}:d=1','-movflags','+faststart',str(out)]
     proc=subprocess.Popen(cmd,stdin=subprocess.PIPE)
     try:
         frame_no=0
