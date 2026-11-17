@@ -1,0 +1,41 @@
+name: EP News publication state engine
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed, ready_for_review, converted_to_draft]
+  workflow_run:
+    workflows: ["EP News publishing gate", "EP News article smoke test", "Article publishing integrity", "Generate article share metadata index", "EP News one-pass article preflight", "EP News YouTube encoding", "EP News browser publication verification"]
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: read
+  pull-requests: read
+  checks: read
+  actions: read
+jobs:
+  test:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node --test scripts/publication-state.test.mjs
+  reconcile:
+    if: github.event_name != 'pull_request' || github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Capture authoritative PR states
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          EVENT_PATH: ${{ github.event_path }}
+        run: node scripts/capture-publication-state.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: publication-state
+          path: publication-state.json
+          retention-days: 30
