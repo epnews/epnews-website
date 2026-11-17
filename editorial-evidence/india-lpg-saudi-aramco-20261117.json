@@ -1,0 +1,62 @@
+{
+  "slug": "india-lpg-saudi-aramco-20261117",
+  "publisher_approved": true,
+  "article_sha256": "217aa3313a7e7cfb46cd6c02ff0eff3ed43d5766b5c79ccee26feebd5c635473",
+  "sources": [
+    {
+      "url": "https://www.reuters.com/business/energy/indian-companies-buy-us-lpg-2027-aramco-chevron-vitol-totsa-2026-11-17/",
+      "verified": true,
+      "claims": [
+        "Reported 2.75 million tons and one monthly Aramco cargo, out of five."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Reported 2.75 million tons and one monthly Aramco cargo, out of five."
+    },
+    {
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190755&lang=1&reg=3",
+      "verified": true,
+      "claims": [
+        "2026 contract of 2.2 million tons and affordable reliable supply objective."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "2026 contract of 2.2 million tons and affordable reliable supply objective."
+    },
+    {
+      "url": "https://sansad.in/getFile/loksabhaquestions/annex/187/AU6429_Gnfkj1.pdf?source=pqals",
+      "verified": true,
+      "claims": [
+        "60 percent imported, 90 percent through Hormuz, March 9 refinery directions and piped gas expansion."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "60 percent imported, 90 percent through Hormuz, March 9 refinery directions and piped gas expansion."
+    },
+    {
+      "url": "https://www.opis.com/resources/energy-market-news-from-opis/indian-psus-boost-us-lpg-term-volumes-in-2027-amid-mideast-supply-concerns/",
+      "verified": true,
+      "claims": [
+        "25 percent of awarded CIF cargoes may be non-US origin."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "25 percent of awarded CIF cargoes may be non-US origin."
+    },
+    {
+      "url": "https://www.business-standard.com/economy/news/centre-seeks-more-us-lpg-to-cut-reliance-on-west-asia-aid-trade-deal-126081301067_1.html",
+      "verified": true,
+      "claims": [
+        "3.9 million tons through August and trade negotiations."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "3.9 million tons through August and trade negotiations."
+    }
+  ],
+  "image": {
+    "path": "assets/images/india-lpg-saudi-aramco-20261117.png",
+    "sha256": "a8b591f81c9a299cbfc471ae03dc62780c387cee612dc21da431dff5085fc62f",
+    "original_source": "Approved EP News AI-generated editorial illustration",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated artwork approved by publisher",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
