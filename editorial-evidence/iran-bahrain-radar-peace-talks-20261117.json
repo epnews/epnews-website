@@ -1,0 +1,53 @@
+{
+  "slug": "iran-bahrain-radar-peace-talks-20261117",
+  "publisher_approved": true,
+  "article_sha256": "5e96dd68dee8140fe93e86292499d274cef7d437e17554fd8adeb01c86ecf4b3",
+  "sources": [
+    {
+      "url": "https://za.investing.com/news/commodities-news/iran-attacks-us-military-radar-system-in-bahrain-despite-talks-with-mediators-4580662",
+      "verified": true,
+      "claims": [
+        "Bahrain reported interception without casualties or damage; Oman and Qatar mediation; missing tanker crew."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Bahrain reported interception without casualties or damage; Oman and Qatar mediation; missing tanker crew."
+    },
+    {
+      "url": "https://apnews.com/article/582e0b5d51be06f0ed630fac24f39b72",
+      "verified": true,
+      "claims": [
+        "Third recent attack following two-month lull; blockade and stalled talks."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Third recent attack following two-month lull; blockade and stalled talks."
+    },
+    {
+      "url": "https://www.investing.com/news/commodities-news/irans-guards-say-they-targeted-a-us-earlywarning-radar-in-bahrain-5024146",
+      "verified": true,
+      "claims": [
+        "US said two drones intercepted without harm; Iran claimed radar attack."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "US said two drones intercepted without harm; Iran claimed radar attack."
+    },
+    {
+      "url": "https://www.thenationalnews.com/news/gulf/2026/11/17/iran-and-oman-discuss-maritime-security-amid-rising-attacks-in-strait-of-hormuz/",
+      "verified": true,
+      "claims": [
+        "Omani talks, Sunday interceptions and Iranian claims, UKMTO crew unaccounted for."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Omani talks, Sunday interceptions and Iranian claims, UKMTO crew unaccounted for."
+    }
+  ],
+  "image": {
+    "path": "assets/images/epnews_iran_bahrain_radar.png",
+    "sha256": "a08ca83cf2af7c5a51d4c5b13cc876d80bf8a8e66adae4edc0d04ca85344fd0e",
+    "original_source": "Approved EP News AI-generated editorial illustration",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated artwork approved by publisher",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
