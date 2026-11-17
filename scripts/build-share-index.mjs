@@ -15,8 +15,8 @@ for(const file of files){
   if(status!=='published')continue;
   const title=field(segment,'title'),deck=field(segment,'deck');
   if(!title)continue;
-  const imageMatch=segment.match(/image\s*:\s*\{\s*src\s*:\s*['"]([^'"]+)['"]/);
-  const prefixImage=source.slice(0,match.index).match(/image\s*:\s*\{\s*src\s*:\s*['"]([^'"]+)['"]/);
+  const imageMatch=segment.match(/(?:["']image["']|\bimage)\s*:\s*\{\s*(?:["']src["']|\bsrc)\s*:\s*['"]([^'"]+)['"]/);
+  const prefixImage=source.slice(0,match.index).match(/(?:["']image["']|\bimage)\s*:\s*\{\s*(?:["']src["']|\bsrc)\s*:\s*['"]([^'"]+)['"]/);
   const image=imageMatch?.[1]||(matches.length===1?prefixImage?.[1]:'')||'assets/images/ep-news-official-horizontal-masthead-20261105.png';
   index[id]={title,deck,image};
  }
