@@ -8,6 +8,7 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const exists = file => fs.existsSync(path.join(root, file));
 const html = read('index.html');
 const sitemap = read('sitemap.xml');
+const shareIndex = JSON.parse(read('content/share-index.json'));
 const scripts = new Set([...html.matchAll(/<script\b[^>]*\bsrc=["']([^"']+)["']/g)].map(x => x[1].split('?')[0].replace(/^\//, '')));
 const recent = [...scripts].filter(p => { const m = p.match(/^content\/[a-z0-9-]+-(20\d{6})\.js$/); return m && m[1] >= '20261109'; });
 if (recent.length < 5) failures.push('Expected recent published article scripts are missing from index.html');
@@ -22,6 +23,7 @@ for (const file of recent) {
   if (!sitemap.includes('https://epnews.pages.dev/article/' + slug + '</loc>'))
     failures.push(slug + ': missing from sitemap.xml');
   const image = content.match(/(?:["']?image["']?)\s*:\s*\{[^}]*?(?:["']?src["']?)\s*:\s*["']([^"']+)["']/s)?.[1];
+  if (image && shareIndex[slug]?.image !== image) failures.push(slug + ': share image differs from article hero image');
   if (!image) failures.push(slug + ': no hero image src');
   else if (!/^https?:\/\//.test(image) && !exists(image.replace(/^\//, '')))
     failures.push(slug + ': missing local image ' + image);
