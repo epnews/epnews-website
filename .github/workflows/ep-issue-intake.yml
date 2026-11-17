@@ -92,7 +92,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           ISSUE: ${{ github.event.issue.number }}
           PR_URL: ${{ steps.publish.outputs.url }}
-        run: gh issue comment "$ISSUE" --body "Validated package received. PR: $PR_URL" || echo "::warning::Issue notification failed; PR remains valid"
+        run: |
+          gh issue comment "$ISSUE" --body "Validated package received. PR: $PR_URL" || echo "::warning::Issue notification failed; PR remains valid"
       - name: Report failure
         if: failure()
         env:
