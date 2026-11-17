@@ -14,7 +14,7 @@ def font(n,bold=False):
 def fit_image(path, size):
     with Image.open(path) as im:
         return ImageOps.contain(im.convert('RGB'),size,Image.Resampling.LANCZOS)
-def centered(d,text,y,n,color='white',bold=False,width=900):
+def centered(d,text,y,n,color='white',bold=False,width=780):
     f=font(n,bold); lines=[]; line=''
     for word in text.split():
         if d.textlength(word,font=f)>width: raise ValueError('Word exceeds safe width')
@@ -23,7 +23,7 @@ def centered(d,text,y,n,color='white',bold=False,width=900):
         else: line=test
     if line: lines.append(line)
     for line in lines:
-        d.text((540,y),line,font=f,fill=color,anchor='mt'); y+=int(n*1.4)
+        d.text((465,y),line,font=f,fill=color,anchor='mt'); y+=int(n*1.28)
     return y
 def resolve_article(url):
     u=urlsplit(url)
@@ -64,16 +64,16 @@ def render(cfg,out):
     base.paste(masthead,((W-masthead.width)//2,74))
     base.paste(artwork,((W-artwork.width)//2,380))
     d.rectangle((40,956,1040,962),fill=RED)
-    d.rectangle((0,1640,W,H),fill='#0a1728')
-    centered(d,'EP NEWS  •  '+cfg.get('category','WORLD').upper(),1680,32,'#b9cbe0',True)
-    d.rectangle((40,1752,1040,1758),fill='#35445a')
-    centered(d,'epnews.pages.dev',1790,36)
+    d.rectangle((0,970,W,H),fill=BG)
+    centered(d,'EP NEWS  •  '+cfg.get('category','WORLD').upper(),1375,28,'#b9cbe0',True)
+    d.rectangle((65,1475,865,1481),fill='#35445a')
+    centered(d,'epnews.pages.dev',1420,32)
     panels=[]
     for label,key in [('THE STORY','hook'),(cfg.get('development_label','WHAT HAPPENED'),'development'),(cfg.get('impact_label','WHY IT MATTERS'),'impact'),('FOLLOW THE FACTS','cta')]:
-        panel=Image.new('RGB',(W,660),BG); pd=ImageDraw.Draw(panel)
-        centered(pd,label,38,34,RED,True)
-        end=centered(pd,cfg[key],135,58,'white',False,880)
-        if end>610: raise ValueError('Text too long for approved layout: '+key)
+        panel=Image.new('RGB',(W,390),BG); pd=ImageDraw.Draw(panel)
+        centered(pd,label,16,32,RED,True)
+        end=centered(pd,cfg[key],76,52,'white',False,780)
+        if end>=380: raise ValueError('Text too long for approved layout: '+key)
         panels.append(panel)
     audio=['-f','lavfi','-i','anullsrc=channel_layout=stereo:sample_rate=44100'] if fixture else ['-stream_loop','-1','-i',str(cfg['music'])]
     cmd=['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','pipe:0']+audio+['-map','0:v:0','-map','1:a:0','-t',str(total),'-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-profile:a','aac_low','-ar','44100','-ac','2','-b:a','128k','-af',f'highpass=f=90,equalizer=f=1800:t=q:w=1:g=3,acompressor=threshold=0.125:ratio=3:attack=10:release=100:makeup=2,loudnorm=I=-10.5:TP=-2.6:LRA=7,aresample=44100,afade=t=out:st={total-1}:d=1','-movflags','+faststart',str(out)]
@@ -83,15 +83,15 @@ def render(cfg,out):
         for i,duration in enumerate(durations):
             for j in range(duration*FPS):
                 frame=base.copy()
-                region=Image.new('RGB',(W,660),BG)
+                region=Image.new('RGB',(W,390),BG)
                 transition=18
                 if i and j<transition:
-                    offset=round(660*(j+1)/transition)
+                    offset=round(390*(j+1)/transition)
                     region.paste(panels[i-1],(0,-offset))
-                    region.paste(panels[i],(0,660-offset))
+                    region.paste(panels[i],(0,390-offset))
                 else: region.paste(panels[i],(0,0))
-                frame.paste(region,(0,970))
-                ImageDraw.Draw(frame).rectangle((40,1752,40+round(1000*(frame_no+1)/(total*FPS)),1758),fill=RED)
+                frame.paste(region,(0,975))
+                ImageDraw.Draw(frame).rectangle((65,1475,65+round(800*(frame_no+1)/(total*FPS)),1481),fill=RED)
                 proc.stdin.write(frame.tobytes()); frame_no+=1
         proc.stdin.close()
         if proc.wait(): raise RuntimeError('FFmpeg failed')
