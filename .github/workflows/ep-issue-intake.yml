@@ -1,0 +1,91 @@
+name: EP News issue publication gateway
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: epnews-issue-intake
+  cancel-in-progress: false
+jobs:
+  intake:
+    if: github.repository == 'epnews/epnews-website' && github.event.issue.user.login == 'epnews' && startsWith(github.event.issue.title, '[EP APPROVED PACKAGE] ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Parse authorized submission
+        id: intake
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const event = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH,'utf8'));
+          const body = event.issue.body.trim();
+          const match = body.match(/^\x60\x60\x60json\s*\n([\s\S]*?)\n\x60\x60\x60$/);
+          const p = JSON.parse(match ? match[1] : body);
+          assert(/^[a-z0-9-]{1,120}$/.test(p.slug || ''));
+          assert(p.publisher_approved === true && p.dry_run !== true);
+          assert(event.issue.title === '[EP APPROVED PACKAGE] '+p.slug);
+          fs.writeFileSync('/tmp/ep-package.json',JSON.stringify(p));
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'slug='+p.slug+'\n');
+          NODE
+      - name: Validate and build approved package
+        env:
+          SLUG: ${{ steps.intake.outputs.slug }}
+        run: |
+          set -euo pipefail
+          python -m pip install gdown==5.2.0 pillow==11.3.0
+          node scripts/stage-approved-package.mjs /tmp/ep-package.json
+          sleep 15
+          python scripts/import_images.py
+          node scripts/generate-sitemap.mjs
+          node scripts/build-share-index.mjs
+          node --check "content/$SLUG.js"
+          node scripts/validate-editorial-evidence.mjs "content/$SLUG.js"
+          node scripts/preflight-article.mjs "content/$SLUG.js"
+          node scripts/validate-publishing.mjs
+          node scripts/validate-all-articles.mjs
+          node scripts/generate-sitemap.mjs --check
+      - name: Push validated branch and open PR
+        env:
+          GH_TOKEN: ${{ secrets.EP_NEWS_PR_TOKEN }}
+          SLUG: ${{ steps.intake.outputs.slug }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          test -n "$GH_TOKEN" || { echo 'EP_NEWS_PR_TOKEN required to trigger independent PR checks'; exit 1; }
+          branch="feature/intake-$SLUG"
+          existing=$(gh pr list --head "$branch" --base main --state all --json url --jq '.[0].url // empty')
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$ISSUE" --body "Existing publication PR: $existing"
+            exit 0
+          fi
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo 'Existing branch requires review; refusing overwrite'; exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html content assets/images editorial-evidence editorial-reel-inputs sitemap.xml
+          git commit -m "Finalize approved package $SLUG"
+          gh auth setup-git
+          git push origin "HEAD:refs/heads/$branch"
+          url=$(gh pr create --base main --head "$branch" --title "Publish EP News: $SLUG" --body "Approved intake issue #$ISSUE. Existing editorial and publishing checks passed locally. Do not merge until required PR checks and Cloudflare preview pass.")
+          gh issue comment "$ISSUE" --body "Validated package received. PR: $url"
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE" --body "Intake failed. No automatic merge. Review run https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
