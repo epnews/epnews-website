@@ -9,8 +9,8 @@ STORIES.push({
   "author": "Epic Perspective News",
   "title": "U.S. Purchases of Russian Uranium Enrichment Rise Despite Import Ban",
   "deck": "Washington is spending $900 million to rebuild American uranium enrichment capacity, but federal data and corporate filings reveal how dependent the United States remains on Russia for nuclear fuel.",
-  "image": {
-    "src": "assets/images/epnews_uranium_website.png",
+  image: {
+    src: "assets/images/epnews_uranium_website.png",
     "alt": "AI-generated editorial illustration of American and Russian flags and uranium enrichment centrifuges",
     "credit": "EP News / AI-generated editorial illustration"
   },
