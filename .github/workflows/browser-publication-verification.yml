@@ -1,0 +1,63 @@
+name: EP News browser publication verification
+on:
+  push:
+    branches: [main]
+    paths: ['content/**']
+  pull_request:
+    branches: [main]
+    paths: ['scripts/verify-publication-browser.mjs', '.github/workflows/browser-publication-verification.yml']
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: Published article slug
+        required: true
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Select articles
+        id: select
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          MANUAL: ${{ inputs.slug }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVENT" == pull_request ]]; then
+            slugs=china-trade-baldwin-20261117
+          elif [[ "$EVENT" == workflow_dispatch ]]; then
+            [[ "$MANUAL" =~ ^[a-z0-9-]+$ ]]
+            slugs="$MANUAL"
+          else
+            slugs=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- content/ | sed -nE 's@^content/([a-z0-9-]+)\.js$@\1@p' | xargs)
+          fi
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+      - name: Install Chromium
+        if: steps.select.outputs.slugs != ''
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Allow production deployment
+        if: github.event_name == 'push'
+        run: sleep 90
+      - name: Verify live articles and capture screenshots
+        if: steps.select.outputs.slugs != ''
+        env:
+          SLUGS: ${{ steps.select.outputs.slugs }}
+        run: node scripts/verify-publication-browser.mjs $SLUGS
+      - name: Save verification evidence
+        if: always() && steps.select.outputs.slugs != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: epnews-publication-visual
+          path: publication-visual/
+          retention-days: 14
