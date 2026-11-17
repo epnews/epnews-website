@@ -1,0 +1,54 @@
+name: EP News Short cloud render
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/youtube-short-render.yml'
+  workflow_dispatch:
+    inputs:
+      config:
+        description: 'Reviewed JSON: article_url, hook, development, impact, cta, durations'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core python3-pil
+      - name: Prepare reviewed config
+        env:
+          CONFIG: ${{ inputs.config }}
+        run: |
+          /usr/bin/python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          cfg=json.loads(os.environ['CONFIG']) if os.environ.get('CONFIG') else {
+              'article_url':'https://epnews.pages.dev/article/autonomous-weapons-20261116',
+              'hook':'Should machines decide who dies?',
+              'development':'The U.S. and Russia oppose binding restrictions on autonomous weapons.',
+              'impact':'Consensus rules could block treaty negotiations.',
+              'cta':'Read the full story through our channel links.',
+              'durations':[4,7,7,6]
+          }
+          allowed={'article_url','hook','development','impact','cta','durations','development_label','impact_label'}
+          if set(cfg)-allowed or not cfg.get('article_url'):
+              raise ValueError('Unexpected config keys or missing article URL')
+          cfg['test_fixture']=True
+          Path('/tmp/short.json').write_text(json.dumps(cfg))
+          PY
+      - name: Render original artwork with silent audio
+        run: /usr/bin/python3 scripts/ep_shorts.py /tmp/short.json /tmp/short-silent.mp4
+      - name: Export preview and timing
+        run: |
+          mkdir -p /tmp/short-output
+          cp /tmp/short-silent.mp4 /tmp/short-output/
+          cp /tmp/short.json /tmp/short-output/
+          ffmpeg -v error -ss 2 -i /tmp/short-silent.mp4 -frames:v 1 /tmp/short-output/preview.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ep-news-short-silent-review
+          path: /tmp/short-output/
+          retention-days: 3
