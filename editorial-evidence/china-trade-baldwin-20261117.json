@@ -1,0 +1,62 @@
+{
+  "slug": "china-trade-baldwin-20261117",
+  "publisher_approved": true,
+  "article_sha256": "a14f56f16b15d6fd048dd166538ed5e2fdb37f112e299424b6bd5de08c57274a",
+  "sources": [
+    {
+      "url": "https://www.reuters.com/world/us/us-democratic-senator-introduces-bill-end-chinas-trade-status-ahead-trump-xi-2026-11-17/",
+      "verified": true,
+      "claims": [
+        "Bill introduction, timing, projected economic effects and dissenting commissioners."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Bill introduction, timing, projected economic effects and dissenting commissioners."
+    },
+    {
+      "url": "https://www.whitehouse.gov/wp-content/uploads/2026/09/US-China-Board-of-Trade-Working-Procedures.pdf",
+      "verified": true,
+      "claims": [
+        "September 27 procedures specify roughly $30 billion in goods on each side for potential reciprocal tariff reductions."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "September 27 procedures specify roughly $30 billion in goods on each side for potential reciprocal tariff reductions."
+    },
+    {
+      "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-leads-colleagues-in-laying-out-worker-first-american-trade-policy",
+      "verified": true,
+      "claims": [
+        "Baldwin has long opposed China PNTR."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Baldwin has long opposed China PNTR."
+    },
+    {
+      "url": "https://apnews.com/article/5fe92253ef38100bae913834a9b74d72",
+      "verified": true,
+      "claims": [
+        "Thursday meeting on Shenzhen APEC sidelines."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Thursday meeting on Shenzhen APEC sidelines."
+    },
+    {
+      "url": "https://www.everycrsreport.com/files/2025-05-14_IF12980_6bb69113083af824be2b632199299da9428efa23.html",
+      "verified": true,
+      "claims": [
+        "Normal trade relations governs baseline tariff treatment; non-MFN rates typically higher."
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Normal trade relations governs baseline tariff treatment; non-MFN rates typically higher."
+    }
+  ],
+  "image": {
+    "path": "assets/images/china-trade-baldwin-20261117.png",
+    "sha256": "248abb41f435ed308ff4114e8c0b64c66716ac7416488e8e2d3d02417f0616b2",
+    "original_source": "Approved EP News AI-generated editorial illustration",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated artwork approved by publisher",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
