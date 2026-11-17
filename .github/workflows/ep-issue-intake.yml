@@ -59,6 +59,7 @@ jobs:
           node scripts/validate-all-articles.mjs
           node scripts/generate-sitemap.mjs --check
       - name: Push validated branch and open PR
+        id: publish
         env:
           GH_TOKEN: ${{ secrets.EP_NEWS_PR_TOKEN }}
           SLUG: ${{ steps.intake.outputs.slug }}
@@ -69,7 +70,8 @@ jobs:
           branch="feature/intake-$SLUG"
           existing=$(gh pr list --head "$branch" --base main --state all --json url --jq '.[0].url // empty')
           if [[ -n "$existing" ]]; then
-            gh issue comment "$ISSUE" --body "Existing publication PR: $existing"
+            echo "Existing publication PR: $existing" >> "$GITHUB_STEP_SUMMARY"
+            echo "url=$existing" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
@@ -82,7 +84,15 @@ jobs:
           gh auth setup-git
           git push origin "HEAD:refs/heads/$branch"
           url=$(gh pr create --base main --head "$branch" --title "Publish EP News: $SLUG" --body "Approved intake issue #$ISSUE. Existing editorial and publishing checks passed locally. Do not merge until required PR checks and Cloudflare preview pass.")
-          gh issue comment "$ISSUE" --body "Validated package received. PR: $url"
+          echo "Validated package received. PR: $url" >> "$GITHUB_STEP_SUMMARY"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - name: Report successful intake
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          PR_URL: ${{ steps.publish.outputs.url }}
+        run: gh issue comment "$ISSUE" --body "Validated package received. PR: $PR_URL" || echo "::warning::Issue notification failed; PR remains valid"
       - name: Report failure
         if: failure()
         env:
