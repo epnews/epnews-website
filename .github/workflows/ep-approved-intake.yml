@@ -5,7 +5,6 @@ on:
     paths: ['publication-intake/*.json']
 permissions:
   contents: write
-  pull-requests: write
 concurrency:
   group: epnews-intake-${{ github.ref }}
   cancel-in-progress: false
@@ -54,23 +53,11 @@ jobs:
           echo "Validated candidate $candidate" >> "$GITHUB_STEP_SUMMARY"
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           echo "candidate=$candidate" >> "$GITHUB_OUTPUT"
-      - name: Open one validated publication PR
+      - name: Confirm validated remote candidate
         env:
-          GH_TOKEN: ${{ github.token }}
-          SLUG: ${{ steps.finalize.outputs.slug }}
           CANDIDATE: ${{ steps.finalize.outputs.candidate }}
-        shell: bash
         run: |
           set -euo pipefail
-          [[ "$GITHUB_REF_NAME" == feature/* ]]
-          [[ "$SLUG" =~ ^[a-z0-9-]{1,120}$ ]]
-          [[ "$CANDIDATE" =~ ^[a-f0-9]{40}$ ]]
           remote=$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)
           [[ "$remote" == "$CANDIDATE" ]]
-          existing=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$GITHUB_REF_NAME" --base main --state open --json url --jq '.[0].url // empty')
-          if [[ -n "$existing" ]]; then
-            echo "Existing PR: $existing" >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          url=$(gh pr create --repo "$GITHUB_REPOSITORY" --head "$GITHUB_REF_NAME" --base main --title "Publish: $SLUG" --body "Approved editorial package. Intake preflight passed at $CANDIDATE. Requires independent CI, preview review and explicit publisher merge approval." --draft)
-          echo "Publication PR: $url" >> "$GITHUB_STEP_SUMMARY"
+          echo "Ready for authenticated connector PR creation: $CANDIDATE" >> "$GITHUB_STEP_SUMMARY"
