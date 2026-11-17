@@ -364,6 +364,11 @@
     "deck": "The justices declined to immediately reinstate Trump administration restrictions on federal inmate treatment, while a separate housing case was returned to a lower court. What did the Court actually decide?",
     "image": "assets/images/epnews-supreme-court-redesign-portrait-v2.png"
   },
+  "test-pipeline-20261117": {
+    "title": "TEST ONLY — DO NOT MERGE: EP News pipeline fixture",
+    "deck": "Synthetic technical fixture for publication pipeline validation. Not a news article.",
+    "image": "assets/images/test_pipeline_20261117.png"
+  },
   "trump-putin-xi-nuclear-talks-20261116": {
     "title": "Trump, Putin and Xi to Hold Historic Nuclear Talks in China",
     "deck": "The three leaders will meet in Shenzhen as Washington pushes for a new arms-control agreement that includes Beijing.",

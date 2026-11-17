@@ -1,0 +1,26 @@
+{
+  "slug": "test-pipeline-20261117",
+  "publisher_approved": true,
+  "article_sha256": "d81f3bb4f31f065afbc81fe8b4b2053dfcf1d16016614212d6dcfd34209f3da2",
+  "sources": [
+    {
+      "url": "https://epnews.pages.dev/",
+      "verified": true,
+      "claims": [
+        "Technical fixture references EP News site only"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Technical test only, not a factual news claim."
+    }
+  ],
+  "image": {
+    "path": "assets/images/test_pipeline_20261117.png",
+    "sha256": "5bfa568b45c856f42245e6eef8876e0d8847329f6e35bf4cd6b7c6a7a9db0cc2",
+    "original_source": "Previously approved uranium artwork, reused for isolated technical test only",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Previously approved EP News artwork",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}

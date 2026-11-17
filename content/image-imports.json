@@ -210,5 +210,10 @@
     "url": "https://drive.google.com/uc?export=download&id=1SwLgYtFGCk9rhJvVThlSHuivrqTmE5dj",
     "path": "assets/images/epnews_uranium_website.png",
     "sha256": "5bfa568b45c856f42245e6eef8876e0d8847329f6e35bf4cd6b7c6a7a9db0cc2"
+  },
+  {
+    "path": "assets/images/test_pipeline_20261117.png",
+    "sha256": "5bfa568b45c856f42245e6eef8876e0d8847329f6e35bf4cd6b7c6a7a9db0cc2",
+    "url": "https://drive.google.com/uc?export=download&id=1SwLgYtFGCk9rhJvVThlSHuivrqTmE5dj"
   }
 ]
