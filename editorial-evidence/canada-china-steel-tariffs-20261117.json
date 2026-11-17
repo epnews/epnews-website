@@ -1,0 +1,89 @@
+{
+  "slug": "canada-china-steel-tariffs-20261117",
+  "article_sha256": "6dc087552f4413c7c85816818ffec8e1ccd19a663dffe2449006cbb5b41797ac",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.international.gc.ca/country_news-pays_nouvelles/2026-11-16-china-chine.aspx?lang=eng",
+      "verified": true,
+      "claims": [
+        "23 steel and nine aluminum items; 2028 extension; agricultural relief; EV and canola figures"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Government backgrounder specifies 23 steel and 9 aluminum tariff items and 16,211 EVs."
+    },
+    {
+      "url": "https://www.reuters.com/world/china-canada-relations-more-stable-carney-says-he-meets-xi-2026-11-17/",
+      "verified": true,
+      "claims": [
+        "Shenzhen meeting; C$400m trade relief; diversification"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Reuters reports expanded arrangement and relief on about C$400 million in exports."
+    },
+    {
+      "url": "https://monorepo-sample1.nyt.net/2026/08/22/business/economy/greer-us-canada-trade-deal.html",
+      "verified": true,
+      "claims": [
+        "August collapse; Greer tariff offer; third-country demands"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Greer described 50-to-25 percent steel quota and aluminum offer; Carney cited third-country tariff demands."
+    },
+    {
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/082226-us-canada-trade-talks-collapse-as-50-tariffs-take-effect",
+      "verified": true,
+      "claims": [
+        "August talks collapse"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "S&P Global reports collapse of US-Canada talks and 50% tariffs."
+    },
+    {
+      "url": "https://ustr.gov/sites/default/files/Joint_Statement_by_the_United_States_and_Canada.pdf",
+      "verified": true,
+      "claims": [
+        "2019 transshipment agreement"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Joint statement sections 3 and 4 require anti-transshipment measures and monitoring."
+    },
+    {
+      "url": "https://www.justice.gov/opa/pr/canadian-steel-companies-and-owner-pay-19m-settle-false-claims-act-allegations-relating",
+      "verified": true,
+      "claims": [
+        "May 20 settlement; origin allegations"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "DOJ reports $19 million settlement and alleged misrepresentation of five countries of origin."
+    },
+    {
+      "url": "https://www.canada.ca/en/department-finance/programs/international-trade-finance-policy/canadas-tariff-responses/canadas-tariffs-steel-aluminum.html",
+      "verified": true,
+      "claims": [
+        "Canadian tariff policy and origin rules"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "Finance Canada describes surtaxes on Chinese steel and steel melted and poured in China."
+    },
+    {
+      "url": "https://apnews.com/article/00dea030028a7c221840458b25469e02",
+      "verified": true,
+      "claims": [
+        "November talks progress"
+      ],
+      "checked_at": "2026-11-17",
+      "evidence_excerpt": "AP reports Carney and Trump made progress on trade deal."
+    }
+  ],
+  "image": {
+    "path": "assets/images/epnews_canada_china_steel_1600x900.png",
+    "sha256": "27cec9e9bb43a817603dcba9d7f43109110fe95dd10d98793a58ec02f014772a",
+    "original_source": "Publisher-approved EP News AI illustration, Drive file 1p1ns5gg9nMmWA-kQPIS0W9dayPSXkRcs; importer output independently reproduced and matched Git blob 422bda2b0611a803054a2207f1d5934ed48b0530",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated editorial artwork, approved for publication",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
