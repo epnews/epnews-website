@@ -1,0 +1,35 @@
+{
+  "slug": "europe-russian-energy-sanctions-20261116",
+  "article_sha256": "dc074dbd924d76a4261bff027ab4bf486c56c980c3c742d67bdd654ae5d67b93",
+  "publisher_approved": true,
+  "sources": [
+    {
+      "url": "https://www.consilium.europa.eu/mt/press/press-releases/2026/11/16/ukraine-eu-lists-113-individuals-and-entities-to-further-restrict-russia-s-ability-to-finance-its-war-of-aggression/",
+      "verified": true,
+      "claims": [
+        "113 designations targeting Russian financing and oil networks"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "EU lists 113 individuals and entities to further restrict Russia’s ability to finance its war of aggression"
+    },
+    {
+      "url": "https://energyandcleanair.org/october-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "verified": true,
+      "claims": [
+        "October EU Russian fossil fuel imports, country and fuel breakdown, refinery shipments and LNG restrictions"
+      ],
+      "checked_at": "2026-11-16",
+      "evidence_excerpt": "October 2026 monthly analysis of Russian fossil fuel exports and sanctions; reported EU imports of EUR 2.2 billion (paraphrased)."
+    }
+  ],
+  "image": {
+    "path": "assets/images/epnews_europe_russian_energy_1600x900.png",
+    "sha256": "a57fde2dca8f3776b7d7e5353570ef0a863716919e366b89b6c9dbe7eb2ca922",
+    "original_source": "https://drive.google.com/file/d/1eXk3S1EXXq3TZQwy_fBm10Cgf5AQiz2h/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Publisher-approved original AI-generated graphic",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
