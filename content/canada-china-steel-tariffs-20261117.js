@@ -11,8 +11,8 @@ STORIES.push({
   "deck": "Ottawa is expanding tariff exemptions for Chinese metals just months after disagreements over foreign steel helped derail negotiations to reduce American tariffs on Canadian exports.",
   image: {
     src: "assets/images/epnews_canada_china_steel_1600x900.png",
-    "alt": "Steel coils beneath Canadian, Chinese and American flags illustrating the dispute over Chinese steel tariffs and North American trade.",
-    "credit": "EP News / AI editorial illustration"
+    "alt": "AI-generated editorial illustration of steel coils beneath Canadian, Chinese and American flags illustrating the dispute over Chinese steel tariffs and North American trade.",
+    "credit": "EP News / AI-generated editorial illustration"
   },
   "body": [
     "Canadian Prime Minister Mark Carney and Chinese President Xi Jinping agreed Tuesday in Shenzhen to expand a trade arrangement that will give Chinese steel and aluminum suppliers greater access to the Canadian market.",
