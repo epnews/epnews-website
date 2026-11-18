@@ -5,10 +5,30 @@ on:
     branches: [main]
 jobs:
   encoding:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core python3-pil
+      - name: Verify or install encoding dependencies
+        timeout-minutes: 5
+        shell: bash
+        run: |
+          set -euo pipefail
+          missing=()
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then missing+=(ffmpeg); fi
+          if ! /usr/bin/python3 -c 'from PIL import Image, ImageFont' 2>/dev/null; then missing+=(python3-pil); fi
+          if ! test -s /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf || ! test -s /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf; then missing+=(fonts-dejavu-core); fi
+          if (( ${#missing[@]} )); then
+            printf 'Installing missing dependencies: %s\n' "${missing[*]}"
+            sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 update
+            sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 install -y "${missing[@]}"
+          else
+            echo 'All encoding dependencies already installed; skipping apt.'
+          fi
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+          /usr/bin/python3 -c 'from PIL import Image, ImageFont; ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 24)'
+
       - run: |
           /usr/bin/python3 -c "from PIL import Image; Image.new('RGB',(1600,900),'navy').save('/tmp/fixture.png')"
           test -s assets/images/ep-news-official-horizontal-masthead-20261105.png
