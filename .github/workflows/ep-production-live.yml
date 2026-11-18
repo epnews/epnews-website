@@ -5,7 +5,7 @@ on:
     paths: ['content/*.js']
   pull_request:
     branches: [main]
-    paths: ['scripts/verify-live-publication.mjs', '.github/workflows/ep-production-live.yml']
+    paths: ['scripts/verify-live-publication.mjs', 'scripts/verify_live_reel_story.py', '.github/workflows/ep-production-live.yml']
   workflow_dispatch:
     inputs:
       slug:
@@ -28,6 +28,9 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
           npx playwright install --with-deps chromium
+      - name: Regression test approved Reel input without publishing
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/verify_live_reel_story.py editorial-reel-inputs/philippines-china-australia-defense-20261117.json --attempts 2 --delay 5
       - name: Verify actual production routes
         env:
           REQUESTED_SLUG: ${{ github.event_name == 'pull_request' && 'philippines-china-australia-defense-20261117' || inputs.slug }}
