@@ -2,7 +2,8 @@ import argparse, json, subprocess, tempfile, math, os, re
 from urllib.parse import urlsplit
 from pathlib import Path
 from validate_ep_short import validate, check_duration
-from ep_soundtracks import choose, verify_audio
+from ep_soundtracks import choose, verify_audio, apply_credit
+from validate_youtube_metadata import validate as validate_metadata
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 W,H,FPS=1080,1920,30
@@ -104,5 +105,17 @@ def render(cfg,out):
     if not fixture: verify_audio(out)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(); p.add_argument('config'); p.add_argument('output'); a=p.parse_args()
-    render(json.loads(Path(a.config).read_text()),a.output)
+    p=argparse.ArgumentParser(); p.add_argument('config'); p.add_argument('output'); p.add_argument('--metadata'); a=p.parse_args()
+    cfg=json.loads(Path(a.config).read_text())
+    if cfg.get('test_fixture') is True:
+        render(cfg,a.output)
+    else:
+        if not a.metadata: p.error('--metadata is required for production')
+        metadata=json.loads(Path(a.metadata).read_text())
+        if cfg.get('article_url') != metadata.get('article_url'): raise ValueError('Article URL mismatch')
+        durations=cfg.get('durations')
+        if not isinstance(durations,list) or len(durations)!=4 or any(type(d) is not int or d<2 for d in durations): raise ValueError('Four planned scene durations required')
+        apply_credit(cfg,sum(durations),metadata)
+        validate_metadata(metadata)
+        render(cfg,a.output)
+        Path(a.metadata).write_text(json.dumps(metadata,ensure_ascii=False,indent=2)+'\n')
