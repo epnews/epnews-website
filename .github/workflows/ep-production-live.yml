@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
     paths: ['content/*.js']
+  pull_request:
+    branches: [main]
+    paths: ['scripts/verify-live-publication.mjs', '.github/workflows/ep-production-live.yml']
   workflow_dispatch:
     inputs:
       slug:
@@ -21,9 +24,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
       - name: Verify actual production routes
         env:
-          REQUESTED_SLUG: ${{ inputs.slug }}
+          REQUESTED_SLUG: ${{ github.event_name == 'pull_request' && 'philippines-china-australia-defense-20261117' || inputs.slug }}
           BEFORE: ${{ github.event.before }}
         shell: bash
         run: |
