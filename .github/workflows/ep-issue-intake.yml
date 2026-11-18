@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   intake:
-    if: github.repository == 'epnews/epnews-website' && github.event.issue.user.login == 'epnews' && startsWith(github.event.issue.title, '[EP APPROVED PACKAGE] ')
+    if: github.repository == 'epnews/epnews-website' && github.event.issue.user.login == 'epnews' && (startsWith(github.event.issue.title, '[EP APPROVED PACKAGE] ') || startsWith(github.event.issue.title, '[EP WEBSITE TEST] '))
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -36,8 +36,10 @@ jobs:
           const match = body.match(/^\x60\x60\x60json\s*\n([\s\S]*?)\n\x60\x60\x60$/);
           const p = JSON.parse(match ? match[1] : body);
           assert(/^[a-z0-9-]{1,120}$/.test(p.slug || ''));
-          assert(p.publisher_approved === true && p.dry_run !== true);
-          assert(event.issue.title === '[EP APPROVED PACKAGE] '+p.slug);
+          assert(p.publisher_approved === true);
+          const test = event.issue.title === '[EP WEBSITE TEST] '+p.slug;
+          assert(test ? p.dry_run === true && p.reel == null : event.issue.title === '[EP APPROVED PACKAGE] '+p.slug && p.dry_run !== true);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'test='+test+'\n');
           fs.writeFileSync('/tmp/ep-package.json',JSON.stringify(p));
           fs.appendFileSync(process.env.GITHUB_OUTPUT,'slug='+p.slug+'\n');
           NODE
@@ -58,7 +60,11 @@ jobs:
           node scripts/validate-publishing.mjs
           node scripts/validate-all-articles.mjs
           node scripts/generate-sitemap.mjs --check
+      - name: Report isolated test result
+        if: steps.intake.outputs.test == 'true'
+        run: echo 'Website-only test passed all intake validators. No branch, PR or deployment created.' >> "$GITHUB_STEP_SUMMARY"
       - name: Push validated branch and open PR
+        if: steps.intake.outputs.test == 'false'
         id: publish
         env:
           GH_TOKEN: ${{ secrets.EP_NEWS_PR_TOKEN }}
@@ -87,7 +93,7 @@ jobs:
           echo "Validated package received. PR: $url" >> "$GITHUB_STEP_SUMMARY"
           echo "url=$url" >> "$GITHUB_OUTPUT"
       - name: Report successful intake
-        if: success()
+        if: success() && steps.intake.outputs.test == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE: ${{ github.event.issue.number }}
