@@ -1,0 +1,98 @@
+{
+  "sources": [
+    {
+      "url": "https://www.reuters.com/world/china/russias-putin-says-he-expects-big-potential-benefit-meeting-with-trump-and-xi-2026-11-18/",
+      "verified": true,
+      "claims": [
+        "Trilateral scheduled Thursday on APEC sidelines"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Trilateral scheduled Thursday on APEC sidelines"
+    },
+    {
+      "url": "https://www.cbsnews.com/news/trump-putin-xi-jinping-meeting-china-us-russia-talks/",
+      "verified": true,
+      "claims": [
+        "White House confirmed November 19; nuclear reductions and Iran; Ukraine initially not expected"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "White House confirmed November 19; nuclear reductions and Iran; Ukraine initially not expected"
+    },
+    {
+      "url": "https://www.euronews.com/2026/11/18/chinas-xi-jinping-and-putin-hold-talks-in-shenzhen-on-eve-of-three-way-summit-with-trump",
+      "verified": true,
+      "claims": [
+        "New START expired in February; Quad met in Manila; Ukraine agenda uncertain"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "New START expired in February; Quad met in Manila; Ukraine agenda uncertain"
+    },
+    {
+      "url": "https://www.worldometers.info/gdp/gdp-by-country/",
+      "verified": true,
+      "claims": [
+        "India $4.06 trillion, Russia $2.86 trillion, Germany $5.47 trillion nominal 2026 projections"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "India $4.06 trillion, Russia $2.86 trillion, Germany $5.47 trillion nominal 2026 projections"
+    },
+    {
+      "url": "https://www.sipri.org/publications/2026/sipri-fact-sheets/trends-world-military-expenditure-2025",
+      "verified": true,
+      "claims": [
+        "US 954, China 336, Russia 190 billion; European NATO 559 billion"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "US 954, China 336, Russia 190 billion; European NATO 559 billion"
+    },
+    {
+      "url": "https://www.sipri.org/sites/default/files/2026-06/yb26_summary_en_1.pdf",
+      "verified": true,
+      "claims": [
+        "India military spending 92.1 billion; Germany 114 billion"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "India military spending 92.1 billion; Germany 114 billion"
+    },
+    {
+      "url": "https://www.sipri.org/sites/default/files/WNF%20Map.pdf",
+      "verified": true,
+      "claims": [
+        "Russia 5420, US 5042, China 620, India 190, France 370, UK 225"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Russia 5420, US 5042, China 620, India 190, France 370, UK 225"
+    },
+    {
+      "url": "https://www.apec.org/who-we-are/our-members",
+      "verified": true,
+      "claims": [
+        "US China Russia members; India and EU not members"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "US China Russia members; India and EU not members"
+    },
+    {
+      "url": "https://www.brookings.edu/articles/trump-xi-and-putin-what-to-expect-from-the-apec-summit/",
+      "verified": true,
+      "claims": [
+        "Analysts compare optics with Yalta and warn of risks to allies"
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Analysts compare optics with Yalta and warn of risks to allies"
+    }
+  ],
+  "image": {
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "original_source": "EP News generated editorial collage, resized proportionally to 1600 x 900",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated artwork",
+    "path": "assets/images/five-global-powers-three-seats-20261118.png",
+    "sha256": "b9f9c2e2ef6366f278596fc7d814dd16febb66ed6bad678a0103b1173b1152e9",
+    "publisher_approved": true
+  },
+  "slug": "five-global-powers-three-seats-20261118",
+  "publisher_approved": true,
+  "article_sha256": "de8b30f7eff9f3dac43c3e05f0155c0f81fefdef2040d238ac49cf9faf3dfc97"
+}
