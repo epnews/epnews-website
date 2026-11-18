@@ -1,0 +1,35 @@
+{
+  "slug": "trump-philippines-trade-20261118",
+  "sources": [
+    {
+      "url": "https://www.reuters.com/world/asia-pacific/trump-says-us-has-concluded-very-big-trade-deal-with-philippines-2026-11-18/",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "Trade announcement, unsigned agreement, Manila understanding and Thailand pending deal"
+      ],
+      "evidence_excerpt": "Manila described an economic cooperation understanding; ambassador confirmed no signature."
+    },
+    {
+      "url": "https://www.channelnewsasia.com/asia/trump-us-expanding-defence-cooperation-philippines-6561271",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "Treaty alliance, defense and energy cooperation, Manila response"
+      ],
+      "evidence_excerpt": "Washington discussed defense, nuclear energy and natural gas cooperation."
+    }
+  ],
+  "image": {
+    "path": "assets/images/philippines-trade-20261118.png",
+    "original_source": "EP News generated headline artwork, approved in conversation",
+    "attribution": "EP News",
+    "rights": "Original AI-generated editorial artwork",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "sha256": "4f217ba89049423a7f1ac00e675718ac1f0dd66281a1a727e28282e3e6ebc5a6",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "0c032579a02e47e960c1abef79b2e17a70bd73219e67cf4587d65fb721b0beba"
+}
