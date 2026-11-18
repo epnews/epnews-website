@@ -14,6 +14,8 @@ if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",slug):
     p.error("Invalid article slug")
 if not re.fullmatch(r"content/[a-z0-9-]+\.js",script):
     p.error("article_script must be a single content/<slug>.js file")
+if script != f"content/{slug}.js":
+    p.error("Article script must match slug")
 if d.get("approved_for_reel") is not True or d.get("automatic_reel") is not True:
     p.error("Reel approval and opt-in required")
 if d.get("fact_checked") is not True or d.get("image_verified") is not True:
@@ -35,10 +37,12 @@ for attempt in range(a.attempts):
         article=get(script)
         if ('src="'+script+'"' not in index and "src='"+script+"'" not in index):
             raise ValueError("Article script not registered in live homepage")
-        if not re.search(r"\bid\s*:\s*['\"]"+re.escape(slug)+r"['\"]",article):
+        if not re.search(r"""(?:\bid\b|[\'"]id[\'"])\s*:\s*['"]"""+re.escape(slug)+r"""['"]""",article):
             raise ValueError("Article ID absent from live script")
-        if not re.search(r"\bstatus\s*:\s*['\"]published['\"]",article):
+        if not re.search(r"""(?:\bstatus\b|['"]status['"])\s*:\s*['"]published['"]""",article):
             raise ValueError("Live article is not marked published")
+        if article != pathlib.Path(script).read_text(encoding="utf-8"):
+            raise ValueError("Live article differs from approved repository script")
         break
     except (urllib.error.URLError,TimeoutError,ValueError) as e:
         print(f"Live verification pending ({attempt+1}/{a.attempts}): {e}",file=sys.stderr)
