@@ -10,7 +10,7 @@ class ResolverTests(unittest.TestCase):
             (p/folder).mkdir()
             data=dict(drive_file_id="abcdefghijklmnop",music_category="none",duration="15")
             if manifest:
-                data.update(slug="test-story",headline="Headline",facebook_description="Description",image_verified=True,fact_checked=True,website_published=True,approved_for_reel=True,automatic_reel=True)
+                data.update(reel_drive_file_id="portraitabcdefghijkl",reel_image_verified=True,slug="test-story",headline="Headline",facebook_description="Description",image_verified=True,fact_checked=True,website_published=True,approved_for_reel=True,automatic_reel=True)
             else:
                 data.update(approved=True,reel_title="Headline",reel_description="Description")
             data.update(changes or {})
@@ -30,6 +30,14 @@ class ResolverTests(unittest.TestCase):
             r,out=self.run_case(changes={field:False})
             self.assertNotEqual(r.returncode,0)
             self.assertFalse(out)
+    def test_portrait_gate(self):
+        for changes in ({"reel_image_verified":False},{"reel_drive_file_id":None},{"reel_drive_file_id":"abcdefghijklmnop"}):
+            r,out=self.run_case(changes=changes)
+            self.assertNotEqual(r.returncode,0)
+            self.assertFalse(out)
+        r,out=self.run_case()
+        self.assertIn("portraitabcdefghijkl",out)
+        self.assertNotIn("\nabcdefghijklmnop\n",out)
     def test_legacy_gate(self):
         self.assertNotEqual(self.run_case(False,{"approved":False})[0].returncode,0)
     def test_slug(self):

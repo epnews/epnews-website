@@ -20,6 +20,8 @@ if d.get("approved_for_reel") is not True or d.get("automatic_reel") is not True
     p.error("Reel approval and opt-in required")
 if d.get("fact_checked") is not True or d.get("image_verified") is not True:
     p.error("Editorial and Drive graphic verification required")
+# Portrait approval is enforced by prepare_publication_reel.py before manifest creation.
+# This verifier establishes live website evidence only.
 if d.get("website_published") is True:
     p.error("website_published is set by live verification, not by editorial input")
 if a.base_url!="https://epnews.pages.dev":

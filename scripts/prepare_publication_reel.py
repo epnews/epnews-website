@@ -12,9 +12,10 @@ if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",d["slug"]): p.error("Invalid slu
 if not re.fullmatch(r"[A-Za-z0-9_-]{15,}",d["drive_file_id"]): p.error("Invalid Drive ID")
 for k in ("image_verified","fact_checked","website_published"):
     if d.get(k) is not True: p.error("Unverified: "+k)
+if d.get("reel_image_verified") is not True or not isinstance(d.get("reel_drive_file_id"),str) or not re.fullmatch(r"[A-Za-z0-9_-]{15,}",d["reel_drive_file_id"]) or d["reel_drive_file_id"]==d["drive_file_id"]: p.error("Dedicated approved portrait Reel artwork required")
 if not a.approve_reel: p.error("Explicit --approve-reel required")
 m={k:d[k] for k in ("slug","headline","facebook_description","drive_file_id","image_verified","fact_checked","website_published")}
-m.update(approved_for_reel=True,automatic_reel=True,music_category=d.get("music_category","none"),music_track=d.get("music_track",""),duration=str(d.get("duration","15")),custom_seconds=str(d.get("custom_seconds","30")))
+m.update(reel_drive_file_id=d["reel_drive_file_id"],reel_image_verified=True,approved_for_reel=True,automatic_reel=True,music_category=d.get("music_category","none"),music_track=d.get("music_track",""),duration=str(d.get("duration","15")),custom_seconds=str(d.get("custom_seconds","30")))
 f=pathlib.Path("publication-manifests")/(d["slug"]+".json")
 if f.exists(): p.error("Refusing overwrite: "+str(f))
 f.parent.mkdir(exist_ok=True)

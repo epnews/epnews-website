@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/test_resolve_reel_package.py
-      - name: Resolve actual approved Philippines manifest
+      - name: Reject historical Philippines manifest lacking portrait approval
         run: |
-          PACKAGE_PATH=publication-manifests/philippines-china-australia-defense-20261117.json EVENT_NAME=workflow_dispatch GITHUB_ENV="$(mktemp)" python3 scripts/resolve_reel_package.py
+          if PACKAGE_PATH=publication-manifests/philippines-china-australia-defense-20261117.json EVENT_NAME=workflow_dispatch GITHUB_ENV="$(mktemp)" python3 scripts/resolve_reel_package.py; then exit 1; fi

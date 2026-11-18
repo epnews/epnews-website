@@ -18,7 +18,9 @@ if path.startswith("publication-manifests/"):
             raise SystemExit(f"Manifest requires {field}")
     if os.environ.get("EVENT_NAME")=="push" and data.get("automatic_reel") is not True:
         raise SystemExit("Manifest is not opted into automatic Reel generation")
-    data={**data,"approved":True,"reel_title":data.get("headline"),"reel_description":data.get("facebook_description")}
+    if data.get("reel_image_verified") is not True or not isinstance(data.get("reel_drive_file_id"),str) or data["reel_drive_file_id"] == data.get("drive_file_id"):
+        raise SystemExit("Dedicated approved portrait Reel artwork required; no website fallback")
+    data={**data,"drive_file_id":data["reel_drive_file_id"],"approved":True,"reel_title":data.get("headline"),"reel_description":data.get("facebook_description")}
 if data.get("approved") is not True:
     raise SystemExit("Package is not marked approved.")
 required=("drive_file_id","reel_title","reel_description","music_category","duration")
