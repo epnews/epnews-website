@@ -19,8 +19,10 @@ assert(e.article_sha256===crypto.createHash('sha256').update(p.article).digest('
 assert(/^assets\/images\/[a-zA-Z0-9_.-]+\.(png|jpe?g|webp)$/.test(im?.path||''),'Invalid image path');
 assert(s.image.src===im.path&&e.image.path===im.path&&e.image.sha256===im.sha256&&/^[a-f0-9]{64}$/.test(im.sha256),'Image identity mismatch');
 assert(/^https:\/\/drive\.google\.com\/uc\?export=download&id=[A-Za-z0-9_-]+$/.test(im.url),'Approved Drive URL required');
+if(reel != null){
 assert(reel?.slug===slug&&reel.article_script===article&&reel.website_published===false,'Invalid Reel input');
 assert(reel.drive_file_id===new URL(im.url).searchParams.get('id'),'Reel image mismatch');
+}
 const manifest=JSON.parse(fs.readFileSync('content/image-imports.json','utf8'));
 assert(!manifest.some(x=>x.path===im.path),'Image path already registered');
 const index=fs.readFileSync('index.html','utf8'), anchor='<script src="content/editorial.js"></script>';
@@ -29,7 +31,7 @@ const evidencePath='editorial-evidence/'+slug+'.json', reelPath='editorial-reel-
 assert(!fs.existsSync(evidencePath)&&!fs.existsSync(reelPath),'Existing package records');
 const json=x=>JSON.stringify(x,null,2)+'\n';
 fs.mkdirSync('editorial-evidence',{recursive:true});fs.mkdirSync('editorial-reel-inputs',{recursive:true});
-fs.writeFileSync(article,p.article);fs.writeFileSync(evidencePath,json(e));fs.writeFileSync(reelPath,json(reel));
+fs.writeFileSync(article,p.article);fs.writeFileSync(evidencePath,json(e));if(reel != null) fs.writeFileSync(reelPath,json(reel));
 fs.writeFileSync('content/image-imports.json',json([...manifest,im]));
 fs.writeFileSync('index.html',index.replace(anchor,'<script src="'+article+'"></script>\n'+anchor));
 console.log('Staged approved package '+slug);
