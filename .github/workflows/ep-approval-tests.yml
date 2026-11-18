@@ -17,3 +17,6 @@ jobs:
         with:
           node-version: '22'
       - run: node scripts/test-prepared-approval.mjs
+      - name: Validate workflow YAML
+        run: |
+          ruby -ryaml -e 'ARGV.each { |f| YAML.parse_file(f); puts "Valid YAML: #{f}" }' .github/workflows/ep-approve-prepared.yml .github/workflows/ep-issue-intake.yml .github/workflows/ep-prepare-package.yml
