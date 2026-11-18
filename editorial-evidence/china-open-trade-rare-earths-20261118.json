@@ -1,0 +1,71 @@
+{
+  "slug": "china-open-trade-rare-earths-20261118",
+  "publisher_approved": true,
+  "article_sha256": "2b20efefc2d0763071fd4064c145e3126d6ad1443f7fea25f5c51c1fb1cce4b1",
+  "sources": [
+    {
+      "url": "https://english.www.gov.cn/news/202611/18/content_WS6afd5da6c6d00ca5f9a0e636.html",
+      "verified": true,
+      "claims": [
+        "Xi advocated open trade and investment and fewer barriers."
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Xi advocated open trade and investment and fewer barriers."
+    },
+    {
+      "url": "https://www.csis.org/analysis/one-year-after-busan-has-china-kept-its-rare-earth-promises",
+      "verified": true,
+      "claims": [
+        "Monthly imports 76.8 versus 19.3 tons; US/Japan down 58%, others up 146%, total down 2.5%; truce expires January 10."
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Monthly imports 76.8 versus 19.3 tons; US/Japan down 58%, others up 146%, total down 2.5%; truce expires January 10."
+    },
+    {
+      "url": "https://es.panjiva.com/supply-chain-research/articles/6321683_Connect",
+      "verified": true,
+      "claims": [
+        "Q3 US-bound exports up 8.8%, global up 16.3%, soybean exports down 33% over 12 months; search-indexed article text retrieved."
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Q3 US-bound exports up 8.8%, global up 16.3%, soybean exports down 33% over 12 months; search-indexed article text retrieved."
+    },
+    {
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/110926-china-extends-rare-earth-export-suspension-to-january-2027",
+      "verified": true,
+      "claims": [
+        "November 9 extension; seven April 2025 controls remain; China dominates refining."
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "November 9 extension; seven April 2025 controls remain; China dominates refining."
+    },
+    {
+      "url": "https://www.reuters.com/world/chinas-xi-calls-free-open-trade-apec-summit-2026-11-18/",
+      "verified": true,
+      "claims": [
+        "Thursday talks expected; US advanced AI chip restrictions."
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Thursday talks expected; US advanced AI chip restrictions."
+    },
+    {
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/readout-ambassador-greers-call-chinas-vice-premier-he-lifeng",
+      "verified": true,
+      "claims": [
+        "Greer and Bessent spoke with He Lifeng about agricultural and mineral commitments."
+      ],
+      "checked_at": "2026-11-18",
+      "evidence_excerpt": "Greer and Bessent spoke with He Lifeng about agricultural and mineral commitments."
+    }
+  ],
+  "image": {
+    "path": "assets/images/china_rare_earths_website_1600x900.png",
+    "sha256": "fc935a13433098f9ce547280d64db2525b38a1dcd39d874e0c267d4c0a3f5f14",
+    "original_source": "Publisher-approved EP News generated artwork",
+    "attribution": "EP News",
+    "rights": "AI-generated editorial artwork approved for EP News publication",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "publisher_approved": true
+  }
+}
