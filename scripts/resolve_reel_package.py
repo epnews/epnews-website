@@ -6,9 +6,19 @@ path=os.environ.get("PACKAGE_PATH","").strip()
 if not path:
     print("No package supplied; manual inputs retained.")
     raise SystemExit(0)
-if not re.fullmatch(r"reel-packages/[a-zA-Z0-9_/-]+\.json",path) or ".." in path:
-    raise SystemExit("Package must be a reviewed JSON file inside reel-packages/")
+if not re.fullmatch(r"(?:reel-packages|publication-manifests)/[a-zA-Z0-9_/-]+\.json",path) or ".." in path:
+    raise SystemExit("Package must be a reviewed JSON file inside reel-packages/ or publication-manifests/")
 data=json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
+if path.startswith("publication-manifests/"):
+    slug=data.get("slug")
+    if not isinstance(slug,str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*",slug) or path != f"publication-manifests/{slug}.json":
+        raise SystemExit("Manifest slug/path mismatch")
+    for field in ("image_verified","fact_checked","website_published","approved_for_reel"):
+        if data.get(field) is not True:
+            raise SystemExit(f"Manifest requires {field}")
+    if os.environ.get("EVENT_NAME")=="push" and data.get("automatic_reel") is not True:
+        raise SystemExit("Manifest is not opted into automatic Reel generation")
+    data={**data,"approved":True,"reel_title":data.get("headline"),"reel_description":data.get("facebook_description")}
 if data.get("approved") is not True:
     raise SystemExit("Package is not marked approved.")
 required=("drive_file_id","reel_title","reel_description","music_category","duration")

@@ -1,0 +1,16 @@
+name: EP News Reel package resolver tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  resolver:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/test_resolve_reel_package.py
+      - name: Resolve actual approved Philippines manifest
+        run: |
+          PACKAGE_PATH=publication-manifests/philippines-china-australia-defense-20261117.json EVENT_NAME=workflow_dispatch GITHUB_ENV="$(mktemp)" python3 scripts/resolve_reel_package.py

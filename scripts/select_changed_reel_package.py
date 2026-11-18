@@ -17,10 +17,6 @@ for path in paths:
 if len(candidates)!=1:
     raise SystemExit(f"Expected exactly one approved, opted-in changed package or manifest; found {len(candidates)}")
 kind,path=candidates[0]
-if kind=="manifest":
-    subprocess.run([sys.executable,"scripts/create_reel_package.py",path,"--approve"],check=True,stdout=sys.stderr)
-    slug=json.loads(pathlib.Path(path).read_text())["slug"]
-    path=f"reel-packages/{slug}.json"
 with open(os.environ["GITHUB_ENV"],"a") as f:
     f.write(f"PACKAGE_PATH={path}\n")
 print(path)

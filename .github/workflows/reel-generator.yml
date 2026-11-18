@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       package_path:
-        description: 'Optional approved reel-packages/*.json path; overrides manual story fields'
+        description: 'Approved reel-packages/ or publication-manifests/ JSON path'
         required: false
         type: string
       drive_file_id:
@@ -104,8 +104,10 @@ jobs:
           BEFORE_SHA: ${{ github.event.before }}
           AFTER_SHA: ${{ github.sha }}
         run: |
+          set -euo pipefail
           if [ "$EVENT_NAME" = "push" ]; then
-            export PACKAGE_PATH="$(python3 scripts/select_changed_reel_package.py)"
+            PACKAGE_PATH="$(python3 scripts/select_changed_reel_package.py)"
+            export PACKAGE_PATH
           fi
           python3 scripts/resolve_reel_package.py
       - name: Validate inputs and download approved artwork
