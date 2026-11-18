@@ -1,0 +1,19 @@
+name: Prepared package approval tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/*prepared*approval*.mjs'
+      - 'scripts/approve-prepared-package.mjs'
+      - '.github/workflows/ep-approve-prepared.yml'
+      - '.github/workflows/ep-approval-tests.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/test-prepared-approval.mjs
