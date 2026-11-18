@@ -22,6 +22,8 @@ if source.get("image_verified") is not True or source.get("fact_checked") is not
     raise SystemExit("Graphic verification and factual review are required")
 if source.get("website_published") is not True:
     raise SystemExit("Website publication must be confirmed first")
+if source.get("reel_image_verified") is not True or not isinstance(source.get("reel_drive_file_id"),str) or not re.fullmatch(r"[A-Za-z0-9_-]{15,}",source["reel_drive_file_id"]) or source["reel_drive_file_id"]==source["drive_file_id"]:
+    raise SystemExit("Dedicated approved portrait Reel artwork required")
 description=source["facebook_description"].strip()
 if len(description)>5000:
     raise SystemExit("Facebook description too long")
@@ -32,7 +34,7 @@ duration=str(source.get("duration","15"))
 if duration not in ("10","15","30","60","auto","custom"):
     raise SystemExit("Invalid duration")
 package={"approved":bool(args.approve),"automatic_reel":bool(args.approve),
-         "drive_file_id":source["drive_file_id"],"reel_title":source["headline"].strip(),
+         "drive_file_id":source["reel_drive_file_id"],"reel_title":source["headline"].strip(),
          "reel_description":description,"music_category":category,
          "music_track":source.get("music_track",""),"duration":duration,
          "custom_seconds":str(source.get("custom_seconds","30"))}
