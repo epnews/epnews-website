@@ -5,6 +5,10 @@ on:
     paths:
       - 'editorial-reel-inputs/*.json'
   workflow_dispatch:
+    inputs:
+      slug:
+        description: Approved published article slug for recovery
+        required: true
 permissions:
   contents: write
   pull-requests: write
@@ -22,8 +26,17 @@ jobs:
       - name: Select one approved editorial story
         id: select
         shell: bash
+        env:
+          MANUAL_SLUG: ${{ inputs.slug }}
         run: |
           set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
+            [[ "$GITHUB_REF" == refs/heads/main && "$MANUAL_SLUG" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]
+            path="editorial-reel-inputs/$MANUAL_SLUG.json"
+            test -f "$path"
+            echo "path=$path" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           mapfile -t paths < <(git diff --name-only --diff-filter=A HEAD^ HEAD -- 'editorial-reel-inputs/*.json')
           if [ "${#paths[@]}" -ne 1 ]; then
             echo "Exactly one newly added editorial input required; got ${#paths[@]}"
@@ -42,6 +55,12 @@ jobs:
         run: |
           set -euo pipefail
           slug="$(python3 -c 'import json,os;print(json.load(open(os.environ["STORY_PATH"]))["slug"])')"
+          if git cat-file -e "HEAD:publication-manifests/${slug}.json" 2>/dev/null; then
+            echo "Manifest already on main; no duplicate handoff."
+            exit 0
+          fi
+          existing="$(gh pr list --state all --limit 100 --search "Reel preview handoff: ${slug} in:title" --json number,title --jq ".[] | select(.title == \"Reel preview handoff: ${slug}\") | .number")"
+          if [[ -n "$existing" ]]; then echo "Existing review PR: $existing"; exit 0; fi
           branch="automation/reel-${slug}-${GITHUB_RUN_ID}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
