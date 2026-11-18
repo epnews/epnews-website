@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "label": "Reuters — New blockade advisory",
+      "url": "https://www.reuters.com/business/energy/us-tightens-iran-blockade-with-curbs-oil-transfers-sea-advisory-shows-2026-11-18/",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "CENTCOM advisory covers offshore transfers",
+        "Possible interception and diversion",
+        "July reinstatement",
+        "Refined products continue exporting"
+      ],
+      "evidence_excerpt": "Ships receiving cargo at sea from vessels carrying goods loaded at Iranian ports or coastlines may be treated as evading the US blockade"
+    },
+    {
+      "label": "Associated Press — Escalating Gulf attacks",
+      "url": "https://apnews.com/article/b1f0b530cffe951e6fcc1e27b2e1af94",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "Iran targeted Kuwait and Bahrain following US strike on missile site"
+      ],
+      "evidence_excerpt": "Iran widened its Gulf attacks Wednesday, targeting Kuwait’s Ali Al Salem air base and launching attacks on Bahrain"
+    }
+  ],
+  "image": {
+    "original_source": "EP News generated artwork approved by publisher",
+    "attribution": "EP News",
+    "rights": "Original AI editorial illustration for EP News",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/iran-oil-blockade-20261118.png",
+    "sha256": "6b87b2781b77b4bf526984fd3aa3aa531961408415ce7b735ff462df7a588b47",
+    "publisher_approved": true
+  },
+  "slug": "iran-oil-blockade-20261118",
+  "publisher_approved": true,
+  "article_sha256": "fd32fb7b32f0419f691bc6471795eda6e10fea2813b8893a14b34721efd8af99"
+}
