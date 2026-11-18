@@ -9,3 +9,8 @@ export function changes(previous,current){
  const old=new Map(previous.map(r=>[r.number,transitionKey(r)]));
  return current.filter(r=>old.get(r.number)!==transitionKey(r)&&['MERGED','BLOCKED','READY','CLOSED'].includes(r.status));
 }
+
+export function publicationSlugs(files){
+ const paths=new Set(files.map(f=>f.filename));
+ return [...paths].filter(p=>/^content\/[a-z0-9-]+\.js$/.test(p)).map(p=>p.slice(8,-3)).filter(slug=>paths.has('editorial-evidence/'+slug+'.json')||paths.has('publication-intake/'+slug+'.json'));
+}
