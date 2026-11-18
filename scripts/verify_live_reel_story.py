@@ -20,6 +20,8 @@ if d.get("approved_for_reel") is not True or d.get("automatic_reel") is not True
     p.error("Reel approval and opt-in required")
 if d.get("fact_checked") is not True or d.get("image_verified") is not True:
     p.error("Editorial and Drive graphic verification required")
+if d.get("reel_image_verified") is not True or not isinstance(d.get("reel_drive_file_id"),str) or not re.fullmatch(r"[A-Za-z0-9_-]{15,}",d["reel_drive_file_id"]) or d["reel_drive_file_id"]==d.get("drive_file_id"):
+    p.error("Dedicated approved portrait Reel artwork required")
 if d.get("website_published") is True:
     p.error("website_published is set by live verification, not by editorial input")
 if a.base_url!="https://epnews.pages.dev":
