@@ -2,6 +2,7 @@ import argparse, json, subprocess, tempfile, math, os, re
 from urllib.parse import urlsplit
 from pathlib import Path
 from validate_ep_short import validate, check_duration
+from ep_soundtracks import choose, verify_audio
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 W,H,FPS=1080,1920,30
@@ -48,16 +49,18 @@ def render(cfg,out):
     cfg=dict(cfg)
     if cfg.get('article_url'):
         cfg['image'],cfg['category']=resolve_article(cfg['article_url'])
-    if not cfg.get('music') and os.environ.get('EP_NEWS_SOUNDTRACK'):
-        cfg['music']=os.environ['EP_NEWS_SOUNDTRACK']
 
     durations=cfg.get('durations')
     if not isinstance(durations,list) or len(durations)!=4 or any(type(d) is not int or d<2 for d in durations):
         raise ValueError('Provide four integer scene durations of at least two seconds')
     total=sum(durations); check_duration(total,total)
     fixture=cfg.get('test_fixture') is True
-    if not fixture and (not cfg.get('music') or cfg.get('music_rights_verified') is not True):
-        raise ValueError('Approved soundtrack file and rights confirmation required')
+    if not fixture:
+        if not cfg.get('music') and not cfg.get('soundtrack') and not cfg.get('music_tone') and os.environ.get('EP_NEWS_SOUNDTRACK'):
+            cfg['music']=os.environ['EP_NEWS_SOUNDTRACK']
+        cfg['music'],audio_filter=choose(cfg,total)
+    else:
+        audio_filter='anull'
     masthead=fit_image(cfg.get('masthead',MASTHEAD),(1080,330))
     artwork=fit_image(cfg['image'],(1000,563))
     base=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(base)
@@ -75,8 +78,8 @@ def render(cfg,out):
         end=centered(pd,cfg[key],76,52,'white',False,780)
         if end>=380: raise ValueError('Text too long for approved layout: '+key)
         panels.append(panel)
-    audio=['-f','lavfi','-i','anullsrc=channel_layout=stereo:sample_rate=44100'] if fixture else ['-stream_loop','-1','-i',str(cfg['music'])]
-    cmd=['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','pipe:0']+audio+['-map','0:v:0','-map','1:a:0','-t',str(total),'-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-profile:a','aac_low','-ar','44100','-ac','2','-b:a','128k','-af',f'highpass=f=90,equalizer=f=1800:t=q:w=1:g=3,acompressor=threshold=0.125:ratio=3:attack=10:release=100:makeup=2,loudnorm=I=-10.5:TP=-2.6:LRA=7,aresample=44100,afade=t=out:st={total-1}:d=1','-movflags','+faststart',str(out)]
+    audio=['-f','lavfi','-i','anullsrc=channel_layout=stereo:sample_rate=44100'] if fixture else ['-i',str(cfg['music'])]
+    cmd=['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','pipe:0']+audio+['-map','0:v:0','-map','1:a:0','-t',str(total),'-c:v','libx264','-profile:v','main','-level:v','4.1','-pix_fmt','yuv420p','-preset','fast','-threads','2','-c:a','aac','-profile:a','aac_low','-ar','44100','-ac','2','-b:a','192k','-af',audio_filter,'-movflags','+faststart',str(out)]
     proc=subprocess.Popen(cmd,stdin=subprocess.PIPE)
     try:
         frame_no=0
@@ -98,6 +101,7 @@ def render(cfg,out):
     except BaseException:
         proc.kill(); proc.wait(); raise
     validate(out,total)
+    if not fixture: verify_audio(out)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('config'); p.add_argument('output'); a=p.parse_args()
