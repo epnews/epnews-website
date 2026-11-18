@@ -41,6 +41,8 @@ for attempt in range(a.attempts):
             raise ValueError("Article ID absent from live script")
         if not re.search(r"""(?:\bstatus\b|['"]status['"])\s*:\s*['"]published['"]""",article):
             raise ValueError("Live article is not marked published")
+        if article != pathlib.Path(script).read_text(encoding="utf-8"):
+            raise ValueError("Live article differs from approved repository script")
         break
     except (urllib.error.URLError,TimeoutError,ValueError) as e:
         print(f"Live verification pending ({attempt+1}/{a.attempts}): {e}",file=sys.stderr)
