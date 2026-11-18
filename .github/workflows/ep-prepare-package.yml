@@ -1,0 +1,62 @@
+name: EP News prepare publication package
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+  issues: write
+jobs:
+  prepare:
+    if: github.repository == 'epnews/epnews-website' && github.event.issue.user.login == 'epnews' && startsWith(github.event.issue.title, '[EP PREPARE PACKAGE] ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Parse and validate draft
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {validateDraft} from './scripts/validate-publication-package.mjs';
+          const issue=JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH)).issue;
+          const d=JSON.parse(issue.body);
+          const errors=validateDraft(d);
+          if(issue.title!=='[EP PREPARE PACKAGE] '+d.slug)errors.push('Title/slug mismatch');
+          if(fs.existsSync('content/'+d.slug+'.js'))errors.push('Article already exists');
+          if(errors.length)throw Error(errors.join('\n'));
+          fs.writeFileSync('/tmp/ep-draft.json',JSON.stringify(d));
+          fs.writeFileSync('/tmp/ep-image-url',d.image_import.url);
+          NODE
+      - name: Download and build immutable review package
+        run: |
+          python -m pip install gdown==5.2.0 pillow==11.3.0
+          sleep 15
+          gdown "$(cat /tmp/ep-image-url)" -O /tmp/ep-image
+          node scripts/build-publication-package.mjs /tmp/ep-draft.json /tmp/ep-image /tmp/ep-review.json
+          sha256sum /tmp/ep-review.json >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ep-review-package
+          path: /tmp/ep-review.json
+          retention-days: 90
+      - name: Record review package on issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          { echo 'Prepared only. NOT approved or published.'; echo 'Exact package SHA256:'; sha256sum /tmp/ep-review.json; echo 'Run: https://github.com/'"$GITHUB_REPOSITORY"'/actions/runs/'"$GITHUB_RUN_ID"; } > /tmp/ep-comment
+          gh issue comment "$ISSUE" --body-file /tmp/ep-comment
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE" --body "Preparation failed; no publication attempted. https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

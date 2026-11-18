@@ -1,0 +1,19 @@
+name: Publication package preflight tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/*publication-package*.mjs'
+      - '.github/workflows/ep-prepare-package.yml'
+      - '.github/workflows/ep-package-tests.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/test-publication-package.mjs
+      - run: node --check scripts/build-publication-package.mjs

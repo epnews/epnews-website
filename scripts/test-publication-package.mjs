@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {validateDraft,sha256} from './validate-publication-package.mjs';
+assert.equal(sha256('abc'),'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
+const slug='isolated-preflight-test',path='assets/images/test.png',url='https://example.com/source';
+const d={slug,story:{id:slug,status:'published',title:'Test',deck:'Test',category:'economy',categoryLabel:'ECONOMY',type:'REPORTING',author:'EP News',publishedAt:'2026-11-18',updatedAt:'2026-11-18',body:['Test only'],sources:[{label:'Test',url}],image:{src:path,alt:'AI-generated test',credit:'AI-generated test'}},evidence:{sources:[{url,verified:true,claims:['Test'],checked_at:'2026-11-18',evidence_excerpt:'Test'}],image:{authentic:false,kind:'ai-generated-editorial-illustration',original_source:'Test',attribution:'Test',rights:'Test'}},image_import:{path,url:'https://drive.google.com/uc?export=download&id=test'}};
+assert.deepEqual(validateDraft(d),[]);
+assert(validateDraft({...d,publisher_approved:true}).length);
+assert(validateDraft({...d,evidence:{}}).length>=2);
+assert(validateDraft({...d,image_import:{path,url:'https://example.com'}}).length);
+console.log('Isolated preflight tests passed');
