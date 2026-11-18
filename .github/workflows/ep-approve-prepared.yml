@@ -57,6 +57,7 @@ jobs:
           gh run download "$run" -n ep-review-package -D /tmp/ep-reviewed
           node scripts/approve-prepared-package.mjs /tmp/ep-reviewed/ep-review.json "$(jq -r .sha256 /tmp/ep-approval.json)" "$(jq -r .slug /tmp/ep-approval.json)" "$(jq -r .mode /tmp/ep-approval.json)" /tmp/ep-approved.json
       - name: Submit existing intake gateway
+        id: submit
         env:
           GH_TOKEN: ${{ secrets.EP_NEWS_PR_TOKEN }}
           ISSUE: ${{ github.event.issue.number }}
@@ -67,7 +68,13 @@ jobs:
           if [[ "$mode" == test ]]; then title="[EP WEBSITE TEST] $slug"; else title="[EP APPROVED PACKAGE] $slug"; fi
           existing=$(gh issue list --state all --search "$slug in:title" --limit 100 --json title,url --jq ".[] | select(.title == \"$title\") | .url")
           if [[ -n "$existing" ]]; then echo "Existing intake: $existing"; url="$existing"; else url=$(gh issue create --title "$title" --body-file /tmp/ep-approved.json); fi
-          gh issue comment "$ISSUE" --body "Preserved package submitted: $url"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - name: Report successful submission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          INTAKE_URL: ${{ steps.submit.outputs.url }}
+        run: gh issue comment "$ISSUE" --body "Preserved package submitted: $INTAKE_URL" || echo "::warning::Notification failed; intake already submitted"
       - name: Report failure
         if: failure()
         env:
