@@ -456,9 +456,10 @@ assert.equal(data.actors.us.Diplomatic.score??null,null);
 assert.equal(data.actors.eu.Strategic.score??null,null);
 
 assert.equal(data.actors.china['Energy and resources'].number,-32);
-assert.equal(data.actors.russia['Energy and resources'].number,625);
+assert.equal(data.actors.russia['Energy and resources'].number,754);
+assert.equal(data.actors.russia['Energy and resources'].sources[0],'creaRussiaOctober2026');
 assert.match(data.actors.china['Energy and resources'].measurementCaveat,/matched consecutive quarters/);
-assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/MODEL-ESTIMATED/);
+assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/estimated gross export value/);
 assert.equal(data.actors.china['Energy and resources'].score,null);
 assert.equal(data.actors.russia['Energy and resources'].score,null);
 
@@ -490,24 +491,24 @@ for (const [actor,metric,number] of [['china','china-mediated-embassies-reopened
 assert.match(data.actors.china['Energy and resources'].measurementCaveat,/NOT Q2 2025 vs Q2 2026/);
 assert.match(data.actors.china['Energy and resources'].measurementCaveat,/inventory drawdowns/);
 
-assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/NOT cash received/);
-assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/September 2026/);
+assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/Audited cash receipts/);
+assert.match(data.actors.russia['Energy and resources'].period,/October 2026/);
 
 assert.ok(data.actors.russia['Energy and resources'].sources.includes('kseRussianOilTrackerOct2026'));
 assert.match(data.actors.russia['Energy and resources'].costs,/688\.3 billion RUB/);
 assert.match(data.actors.russia['Energy and resources'].costs,/US\$4.4B/);
-assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/do not add or subtract/);
+assert.match(data.actors.russia['Energy and resources'].gap,/Never subtract gross MET/);
 
 assert.ok(data.actors.russia['Energy and resources'].sources.includes('russiaMinfinSeptember2026'));
 assert.match(data.actors.russia['Energy and resources'].costs,/452.4 billion RUB/);
 assert.match(data.actors.russia['Energy and resources'].costs,/22\.3% year-over-year/);
-assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/Separate fiscal series/);
-assert.equal(data.actors.russia['Energy and resources'].number,625);
+assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/taxes, freight and financing costs, and net proceeds are separate measures/);
+assert.equal(data.actors.russia['Energy and resources'].number,754);
 
 assert.ok(data.actors.russia['Energy and resources'].sources.includes('russiaUralsFreightSep2026'));
 assert.match(data.actors.russia['Energy and resources'].costs,/US\$20\/barrel/);
 assert.match(data.actors.russia['Energy and resources'].costs,/US\$24\.8\/barrel/);
-assert.match(data.actors.russia['Energy and resources'].measurementCaveat,/NOT additive/);
+assert.match(data.actors.russia['Energy and resources'].costs,/never sum these as independent costs/);
 assert.equal(data.actors.russia['Energy and resources'].score,null);
 
 const lngGate=data.evidenceAudits.us['Energy and resources'].usLNGBenefitGate;
@@ -873,7 +874,7 @@ assert.match(liveDiplomacyDashboardSource,/fetch\('data\/soi-diplomatic-audit-wo
 assert.match(liveDiplomacyDashboardSource,/VERIFICATION PROGRESS/);
 assert.match(liveDiplomacyDashboardSource,/OBSERVED OUTCOME/);
 assert.match(liveDiplomacyDashboardSource,/Original diplomatic influence needle remains unscored/);
-assert.match(indexSource,/chaos-dashboard\.js\?v=reader-labels-1/);
+assert.match(indexSource,/chaos-dashboard\.js\?v=20261117/);
 
 // US before/after institution status now has independently dated official sources, not causal attribution.
 const usMatched=diplomaticQueue.items.find(x=>x.sphere==='us');
@@ -887,7 +888,7 @@ assert.ok(usMatched.priorityTasks.find(x=>x.id==='match-followup').complete);
 assert.match(liveDiplomacyDashboardSource,/FIVE-SPHERE BASELINE COMPARABILITY/);
 assert.match(liveDiplomacyDashboardSource,/matched descriptive measure/);
 assert.match(liveDiplomacyDashboardSource,/not yet matched/);
-assert.match(fs.readFileSync(__dirname+'\/../index.html','utf8'),/chaos-dashboard\.js\?v=reader-labels-1/);
+assert.match(fs.readFileSync(__dirname+'\/../index.html','utf8'),/chaos-dashboard\.js\?v=20261117/);
 
 // Russia treaty legal-status comparability is descriptive and does not prove military influence.
 const russiaLegal=diplomaticQueue.items.find(x=>x.sphere==='russia').baselineFollowupAssessment;
