@@ -365,7 +365,7 @@ function renderCards(actor,dimension){
  if(dimension==='Overall change'){
   const updates=(data.soiDiplomaticUpdates||{})[actor]||[];
   if(updates.length){const section=element('section',undefined,'chaos-soi-evidence');section.append(element('h4','Recent international agreements and developments'));
-   for(const item of updates){const detail=element('details'),summary=element('summary',item.title+' — '+item.stage);detail.append(summary,element('p',item.finding),element('p','What this does not establish: '+item.limit));const link=element('a','Official source ↗');link.href=item.source;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);section.append(detail);}cards.append(section);
+   for(const item of updates){const detail=element('details'),summary=element('summary',item.title+' — '+item.stage);detail.append(summary,element('p',item.finding),element('p','What this does not establish: '+item.limit));const link=element('a','Source ↗');link.href=item.source;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);section.append(detail);}cards.append(section);
   }
  }
 

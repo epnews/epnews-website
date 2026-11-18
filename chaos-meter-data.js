@@ -3,6 +3,13 @@ window.EP_CHAOS_DATA = {
   "soiDiplomaticUpdates": {
     "us": [
       {
+        "title": "India awards U.S. LPG supply tender · Nov 17",
+        "stage": "Commercial awards reported",
+        "finding": "Indian state-owned refiners awarded contracts for about 2.75 million metric tonnes of U.S.-origin LPG for 2027, according to market participants cited by Reuters.",
+        "limit": "The reported volume is for future supply. Actual shipments, U.S. export revenue and effects on bilateral trade remain to be measured.",
+        "source": "https://www.reuters.com/business/energy/indian-companies-buy-us-lpg-2027-aramco-chevron-vitol-totsa-2026-11-17/"
+      },
+      {
         "title": "China–U.S. tariff and rare-earth suspension extensions · Nov 9",
         "stage": "Official regulatory extensions announced; tariff change effective Nov 10",
         "finding": "China extended suspension of its additional 24% tariff on U.S. goods for two months and certain rare-earth controls and U.S.-linked vessel fees to Jan 10, 2027.",
@@ -33,6 +40,13 @@ window.EP_CHAOS_DATA = {
     ],
     "china": [
       {
+        "title": "Philippines–Australia defense cooperation · Nov 16",
+        "stage": "New cooperation framework confirmed in joint statement",
+        "finding": "The Philippines and Australia announced expanded defense cooperation and reaffirmed their position on the 2016 South China Sea arbitral award.",
+        "limit": "The statement provides no basis for quantifying changes in maritime incidents, deterrence or China's influence.",
+        "source": "https://www.pm.gov.au/media/kasandigan-philippines-australia-leaders-statement-expanded-security-and-defense-cooperation"
+      },
+      {
         "title": "China–U.S. trade and rare-earth controls · Nov 9",
         "stage": "Regulatory suspension extensions announced; outcomes unmeasured",
         "finding": "China prolonged selected tariff, rare-earth control and port-fee suspensions, while keeping other trade restrictions.",
@@ -49,6 +63,13 @@ window.EP_CHAOS_DATA = {
     ],
     "russia": [
       {
+        "title": "October fossil fuel export revenue · Nov 16",
+        "stage": "New monthly estimate published",
+        "finding": "CREA estimated gross export revenue of €754 million per day, up 14% in its November release, with broadly steady export volumes.",
+        "limit": "Gross export value cannot establish government receipts, margins or geopolitical influence.",
+        "source": "https://energyandcleanair.org/october-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/"
+      },
+      {
         "title": "Oleshky local humanitarian ceasefire · Oct 27–Nov 1",
         "stage": "Short-lived implementation corroborated; reciprocal compliance contested",
         "finding": "The local humanitarian pause enabled demining, aid and some evacuations, but expired without a broader peace agreement.",
@@ -57,6 +78,13 @@ window.EP_CHAOS_DATA = {
       }
     ],
     "india": [
+      {
+        "title": "India diversifies LPG supply · Nov 17",
+        "stage": "Commercial awards reported",
+        "finding": "Indian state-owned refiners awarded contracts for about 2.75 million metric tonnes of U.S.-origin LPG for 2027, according to Reuters.",
+        "limit": "Delivered cargoes, costs and the eventual share of U.S. suppliers remain to be measured. The tender covers LPG, a separate market from crude oil.",
+        "source": "https://www.reuters.com/business/energy/indian-companies-buy-us-lpg-2027-aramco-chevron-vitol-totsa-2026-11-17/"
+      },
       {
         "title": "India–Ukraine Black Sea food-corridor discussion · Nov 9",
         "stage": "Leaders discussed possible mediation; no corridor agreement",
@@ -79,7 +107,15 @@ window.EP_CHAOS_DATA = {
         "source": "https://www.mofa.go.jp/files/101110375.pdf"
       }
     ],
-    "eu": []
+    "eu": [
+      {
+        "title": "EU third-quarter growth and autumn outlook · Nov 13–17",
+        "stage": "Flash GDP estimate and annual forecast published",
+        "finding": "Eurostat estimated that EU real GDP rose 0.5% from the prior quarter and 1.5% from a year earlier in Q3. The European Commission projects 1.4% growth for full-year 2026.",
+        "limit": "Quarterly data may be revised, and the full-year figure is a forecast. The dashboard's annual cross-power comparison uses 2025 observations.",
+        "source": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-13112026-ap"
+      }
+    ]
   },
   "indicatorFreshnessAudit": {
   "asOf": "2026-11-09",
@@ -96,7 +132,7 @@ window.EP_CHAOS_DATA = {
   "influenceScoresAuthorized": false,
   "readinessRecalculationAuthorized": false
 },
-  "reviewed": "2026-11-09",
+  "reviewed": "2026-11-17",
   "methodologyVersion": "2.0",
   "evidenceTableRegistry": [
     {
@@ -4805,6 +4841,11 @@ window.EP_CHAOS_DATA = {
       "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2320142",
       "date": "2026-10-07"
     },
+    "creaRussiaOctober2026": {
+      "label": "CREA · October 2026 Russian fossil export revenue analysis",
+      "url": "https://energyandcleanair.org/october-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
+      "date": "2026-11-16"
+    },
     "creaRussiaSeptember2026": {
       "label": "CREA · September 2026 Russian fossil export revenue analysis",
       "url": "https://energyandcleanair.org/september-2026-monthly-analysis-of-russian-fossil-fuel-exports-and-sanctions/",
@@ -5043,11 +5084,12 @@ window.EP_CHAOS_DATA = {
       },
       "Energy and resources": {
         "title": "Russian fossil fuel export revenue",
-        "value": "€625 million/day estimated (September 2026)",
-        "period": "September 2026; August comparator €604 million/day",
+        "value": "€754 million/day estimated (October 2026)",
+        "period": "October 2026 · CREA release dated November 16",
         "stage": "Estimated realized export sales value (not audited receipts)",
         "kind": "Revenue estimate",
         "sources": [
+          "creaRussiaOctober2026",
           "creaRussiaSeptember2026",
           "creaRussiaAugust2026",
           "russiaMinfinSeptember2026",
@@ -5057,15 +5099,15 @@ window.EP_CHAOS_DATA = {
           "russiaUralsFreightSep2026",
           "brookingsRussiaShadowFleet2026"
         ],
-        "meaning": "CREA estimates Russian fossil fuel export revenues at €625 million per day in September 2026, broadly unchanged from €604 million/day in August despite September export volumes declining 6%. Covers fossil fuels across global buyers; not just EU gas. KSE independently estimates August oil export revenue at US$13.9 billion (oil only; different model and period).",
-        "costs": "Russia Finance Ministry budget data (Reuters reproduction): federal oil-and-gas revenue 452.4 billion RUB in September 2026 vs 424.0 billion RUB in August (+6.7%); September fell 22.3% year-over-year and January–September receipts totaled 5.471 trillion RUB (−17.2% YoY). September crude MET was 688.3 billion RUB, a gross tax component subject to offsets, subsidies and other fiscal items; NOT net budget receipts or company profit. KSE separately models US$4.4B August sanctions-related oil export revenue foregone, not an observed expense. Route-specific reported freight estimates in September analysis: Urals via Suez to China about US$20/barrel and to India about US$18/barrel (approximate, not audited realized company expenses). Argus assessed Aug 21 Urals FOB discount to Brent at US$24.8/barrel Baltic and US$25.2–26.15/barrel Novorossiysk (different benchmark basis from delivered Indian prices). Freight, grade and sanctions discounts overlap economically; never sum these as independent costs.",
+        "meaning": "CREA estimates October gross fossil fuel export revenue at €754 million per day across global buyers. Its October report gives a 14% month-over-month increase with broadly unchanged volumes. The separately published September estimate of €625 million per day does not reproduce that growth rate, so the two releases are not used to compute a trend.",
+        "costs": "September context only: Russia Finance Ministry budget data (Reuters reproduction): federal oil-and-gas revenue 452.4 billion RUB in September 2026 vs 424.0 billion RUB in August (+6.7%); September fell 22.3% year-over-year and January–September receipts totaled 5.471 trillion RUB (−17.2% YoY). September crude MET was 688.3 billion RUB, a gross tax component subject to offsets, subsidies and other fiscal items; NOT net budget receipts or company profit. KSE separately models US$4.4B August sanctions-related oil export revenue foregone, not an observed expense. Route-specific reported freight estimates in September analysis: Urals via Suez to China about US$20/barrel and to India about US$18/barrel (approximate, not audited realized company expenses). Argus assessed Aug 21 Urals FOB discount to Brent at US$24.8/barrel Baltic and US$25.2–26.15/barrel Novorossiysk (different benchmark basis from delivered Indian prices). Freight, grade and sanctions discounts overlap economically; never sum these as independent costs.",
         "gap": "Reconcile Minfin tax categories, excise and refinery subsidy offsets with cash timing; independently estimate shipping, insurance, discounts and financing costs. Never subtract gross MET from gross exports or mix fiscal receipts with modeled export revenues as profit. Need matched transaction margins and counterfactual for net benefit. Need date-matched route contracts, vessel ownership, CIF/DAP vs FOB reconciliation, freight/insurance payer, broker margin and sanctions-related incremental costs. US$20/bbl is a route estimate, not Russia-wide cost per exported barrel.",
         "confidence": "Moderate",
         "score": null,
         "metric": "russia-fossil-export-revenue-eur-mn-day",
-        "number": 625,
+        "number": 754,
         "displayPrecision": "estimated",
-        "measurementCaveat": "€625 million/day is CREA's MODEL-ESTIMATED gross fossil export revenue rate for September 2026, NOT cash received, audited revenue, profit, tax receipts, annual revenue, geopolitical influence, or net national benefit. August comparator €604m/day comes from CREA's August report; series may be revised. Historical EU gas-volume contraction is separate context. Separately: KSE August oil-only modeled export revenue US$13.9B and sanctions counterfactual loss US$4.4B; CREA-reported September crude MET receipts 688B RUB. Different periods, scopes, currencies and models; do not add or subtract. Minfin federal oil-and-gas budget receipts September 2026 were 452.4B RUB (+6.7% MoM; −22.3% YoY); Jan–Sep 5.471T RUB (−17.2% YoY). Separate fiscal series, not the €625m/day export-sales needle. Freight reference: China via Suez ≈US$20/bbl, India ≈US$18/bbl; Aug 21 FOB Urals-Brent discounts ≈US$24.8–26.15/bbl by port. Different routes/dates/bases; NOT additive to each other or a verified net margin."
+        "measurementCaveat": "The October reading is CREA's estimated gross export value. Audited cash receipts, taxes, freight and financing costs, and net proceeds are separate measures. Use the October report for its stated month-over-month growth rate."
       }
     },
     "eu": {
