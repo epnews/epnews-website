@@ -74,7 +74,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           ISSUE: ${{ github.event.issue.number }}
           INTAKE_URL: ${{ steps.submit.outputs.url }}
-        run: gh issue comment "$ISSUE" --body "Preserved package submitted: $INTAKE_URL" || echo "::warning::Notification failed; intake already submitted"
+        run: |
+          gh issue comment "$ISSUE" --body "Preserved package submitted: $INTAKE_URL" || echo "::warning::Notification failed; intake already submitted"
       - name: Report failure
         if: failure()
         env:
