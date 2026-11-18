@@ -1,7 +1,7 @@
 """Finish a silent cloud Short locally using the shared soundtrack library."""
 import argparse, json, subprocess
 from pathlib import Path
-from ep_soundtracks import choose, verify_audio
+from ep_soundtracks import choose, verify_audio, apply_credit
 from validate_ep_short import validate, check_duration
 from validate_youtube_metadata import validate as validate_metadata
 
@@ -12,6 +12,7 @@ def mux(cfg, metadata, source, output):
     total=sum(durations)
     check_duration(total,total)
     if Path(source).resolve()==Path(output).resolve(): raise ValueError('Use distinct input and output')
+    apply_credit(cfg,total,metadata)
     validate_metadata(metadata)
     if cfg.get('article_url') != metadata['article_url']: raise ValueError('Article URL mismatch')
     credit=cfg.get('music_attribution')
@@ -26,4 +27,6 @@ if __name__=='__main__':
     p=argparse.ArgumentParser()
     for arg in ('config','metadata','source','output'): p.add_argument(arg)
     a=p.parse_args()
-    mux(json.loads(Path(a.config).read_text()),json.loads(Path(a.metadata).read_text()),a.source,a.output)
+    metadata=json.loads(Path(a.metadata).read_text())
+    mux(json.loads(Path(a.config).read_text()),metadata,a.source,a.output)
+    Path(a.metadata).write_text(json.dumps(metadata,ensure_ascii=False,indent=2)+'\n')
