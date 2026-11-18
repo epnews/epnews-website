@@ -11,7 +11,7 @@ on:
         required: true
 permissions:
   contents: write
-  pull-requests: write
+  pull-requests: read
 concurrency:
   group: ep-news-reel-handoff
   cancel-in-progress: false
@@ -45,9 +45,21 @@ jobs:
           echo "path=${paths[0]}" >> "$GITHUB_OUTPUT"
       - name: Verify deployed article before creating manifest
         run: python3 scripts/verify_live_reel_story.py "${{ steps.select.outputs.path }}"
+      - name: Check for existing handoff
+        id: duplicate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STORY_PATH: ${{ steps.select.outputs.path }}
+        run: |
+          set -euo pipefail
+          slug=$(python3 -c 'import json,os;print(json.load(open(os.environ["STORY_PATH"]))["slug"])')
+          existing=$(gh pr list --state all --limit 100 --search "Reel preview handoff: $slug in:title" --json title,number --jq '.[] | select(.title == "Reel preview handoff: '+"$slug"+'") | .number')
+          if [[ -f "publication-manifests/$slug.json" || -n "$existing" ]]; then echo 'skip=true' >> "$GITHUB_OUTPUT"; fi
       - name: Prepare approved Reel manifest
+        if: steps.duplicate.outputs.skip != 'true'
         run: python3 scripts/prepare_publication_reel.py verified-reel-story.json --approve-reel
-      - name: Open review PR for generated manifest
+      - name: Finalize remote candidate for authenticated connector
+        if: steps.duplicate.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           STORY_PATH: ${{ steps.select.outputs.path }}
@@ -55,28 +67,27 @@ jobs:
         run: |
           set -euo pipefail
           slug="$(python3 -c 'import json,os;print(json.load(open(os.environ["STORY_PATH"]))["slug"])')"
-          if git cat-file -e "HEAD:publication-manifests/${slug}.json" 2>/dev/null; then
-            echo "Manifest already on main; no duplicate handoff."
-            exit 0
-          fi
-          existing="$(gh pr list --state all --limit 100 --search "Reel preview handoff: ${slug} in:title" --json number,title --jq ".[] | select(.title == \"Reel preview handoff: ${slug}\") | .number")"
-          if [[ -n "$existing" ]]; then echo "Existing review PR: $existing"; exit 0; fi
-          branch="automation/reel-${slug}-${GITHUB_RUN_ID}"
+          manifest="publication-manifests/$slug.json"
+          branch="automation/reel-$slug-${GITHUB_RUN_ID}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
-            echo "Existing automation branch found: $branch"
-            existing="$(gh pr list --head "$branch" --state all --json number --jq '.[0].number // empty')"
-            if [ -n "$existing" ]; then
-              echo "Existing review PR #$existing; nothing to recreate."
-              exit 0
-            fi
-            echo "Branch exists without a PR; create PR from existing branch."
-            gh pr create --base main --head "$branch" --title "Reel preview handoff: ${slug}" --body "Recovered approved Reel manifest after live website verification. Requires human review. No Meta draft or public Facebook publishing."
-            exit 0
+            git fetch origin "$branch"
+            git show "FETCH_HEAD:$manifest" | cmp - "$manifest"
+            sha="$(git rev-parse FETCH_HEAD)"
+          else
+            git checkout -b "$branch"
+            git add "$manifest"
+            git commit -m "Prepare approved Reel manifest for $slug"
+            git push origin "$branch"
+            sha="$(git rev-parse HEAD)"
           fi
-          git checkout -b "$branch"
-          git add "publication-manifests/${slug}.json"
-          git commit -m "Prepare approved Reel manifest for ${slug}"
-          git push origin "$branch"
-          gh pr create --base main --head "$branch" --title "Reel preview handoff: ${slug}" --body "Generated after verifying the article script is live on EP News. Requires human merge approval. Merging triggers preview MP4 only; no Meta draft or public Facebook posting."
+          test "$(git ls-remote origin "refs/heads/$branch" | cut -f1)" = "$sha"
+          python3 -c 'import json,sys; print(json.dumps(dict(slug=sys.argv[1],branch=sys.argv[2],sha=sys.argv[3],manifest=sys.argv[4],source_sha=sys.argv[5],run_id=sys.argv[6])))' "$slug" "$branch" "$sha" "$manifest" "$GITHUB_SHA" "$GITHUB_RUN_ID" > reel-handoff.json
+          cat reel-handoff.json
+      - uses: actions/upload-artifact@v4
+        if: steps.duplicate.outputs.skip != 'true'
+        with:
+          name: reel-connector-handoff
+          path: reel-handoff.json
+          retention-days: 30
