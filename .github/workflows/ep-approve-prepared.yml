@@ -1,0 +1,76 @@
+name: EP News approve prepared package
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+  actions: read
+  issues: write
+concurrency:
+  group: epnews-prepared-approval
+  cancel-in-progress: false
+jobs:
+  approve:
+    if: github.repository == 'epnews/epnews-website' && github.event.issue.user.login == 'epnews' && startsWith(github.event.issue.title, '[EP APPROVE PREPARED] ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Resolve authorized preparation record
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          import {execFileSync} from 'node:child_process';
+          const issue=JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH)).issue;
+          const p=JSON.parse(issue.body);
+          assert(p.publisher_approved===true);
+          assert(/^[a-z0-9-]{1,120}$/.test(p.slug));
+          assert(issue.title==='[EP APPROVE PREPARED] '+p.slug);
+          assert(Number.isSafeInteger(p.preparation_issue)&&p.preparation_issue>0);
+          assert(Number.isSafeInteger(p.run_id)&&p.run_id>0);
+          assert(/^[a-f0-9]{64}$/.test(p.sha256));
+          assert(['test','production'].includes(p.mode));
+          const api=path=>JSON.parse(execFileSync('gh',['api','repos/'+process.env.GITHUB_REPOSITORY+'/'+path],{encoding:'utf8'}));
+          const prep=api('issues/'+p.preparation_issue);
+          assert(prep.user.login==='epnews'&&prep.title==='[EP PREPARE PACKAGE] '+p.slug);
+          const run=api('actions/runs/'+p.run_id);
+          assert(run.path==='.github/workflows/ep-prepare-package.yml'&&run.event==='issues'&&run.conclusion==='success');
+          const comments=api('issues/'+p.preparation_issue+'/comments?per_page=100');
+          assert(comments.some(c=>c.user.login==='github-actions[bot]'&&c.body.includes(p.sha256+'  /tmp/ep-review.json')&&c.body.includes('/actions/runs/'+p.run_id)),'Preparation attestation missing');
+          fs.writeFileSync('/tmp/ep-approval.json',JSON.stringify(p));
+          NODE
+      - name: Retrieve and verify exact reviewed package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          run=$(jq -r .run_id /tmp/ep-approval.json)
+          gh run download "$run" -n ep-review-package -D /tmp/ep-reviewed
+          node scripts/approve-prepared-package.mjs /tmp/ep-reviewed/ep-review.json "$(jq -r .sha256 /tmp/ep-approval.json)" "$(jq -r .slug /tmp/ep-approval.json)" "$(jq -r .mode /tmp/ep-approval.json)" /tmp/ep-approved.json
+      - name: Submit existing intake gateway
+        env:
+          GH_TOKEN: ${{ secrets.EP_NEWS_PR_TOKEN }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          slug=$(jq -r .slug /tmp/ep-approval.json)
+          mode=$(jq -r .mode /tmp/ep-approval.json)
+          if [[ "$mode" == test ]]; then title="[EP WEBSITE TEST] $slug"; else title="[EP APPROVED PACKAGE] $slug"; fi
+          existing=$(gh issue list --state all --search "$slug in:title" --limit 100 --json title,url --jq ".[] | select(.title == \"$title\") | .url")
+          if [[ -n "$existing" ]]; then echo "Existing intake: $existing"; url="$existing"; else url=$(gh issue create --title "$title" --body-file /tmp/ep-approved.json); fi
+          gh issue comment "$ISSUE" --body "Preserved package submitted: $url"
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE" --body "Approval bridge failed. Inspect https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID before retrying."
