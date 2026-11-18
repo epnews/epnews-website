@@ -3,7 +3,7 @@
 const EDITORIAL = {
   editorPicks: ["trump-putin-xi-nuclear-talks-20261116","autonomous-weapons-20261116","houthis-bab-el-mandeb-20261115","spacex-starship-orbital-recovery-20261115"],
   analysis: [],
-  chaosUpdates: ["russia-oil-windfall-20261116","ai-chip-contradiction-20261116","carrier-contradiction-20261116","venezuela-oil-custody-20261115","europe-russian-supply-chain-20261115"],
+  chaosUpdates: ["five-global-powers-three-seats-20261118","russia-oil-windfall-20261116","ai-chip-contradiction-20261116","carrier-contradiction-20261116","venezuela-oil-custody-20261115","europe-russian-supply-chain-20261115"],
   wire: [...new Set(STORIES
     .filter(story => story.status === 'published' && story.id !== 'power')
     .sort((a, b) => String(b.publishedAt || '').localeCompare(String(a.publishedAt || '')))
