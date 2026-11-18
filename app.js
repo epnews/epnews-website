@@ -33,7 +33,7 @@ function investigationBlocks(s) {
  }).join('');
 }
 // Historical installments published before the seriesId convention.
-const legacyChaosIds=new Set(['iran-oil-beneficiaries-20261110','peace-at-table-war-on-grid-20261110','russian-diesel-where-is-fuel-20261107','panama-ports-20261105','black-sea-security-who-benefits-20261110','britain-russian-oil-sanctions-20261112','ireland-russia-alumina-20261112','russia-oil-windfall-20261116','ai-chip-contradiction-20261116','carrier-contradiction-20261116','venezuela-oil-custody-20261115']);
+const legacyChaosIds=new Set(['five-global-powers-three-seats-20261118','iran-oil-beneficiaries-20261110','peace-at-table-war-on-grid-20261110','russian-diesel-where-is-fuel-20261107','panama-ports-20261105','black-sea-security-who-benefits-20261110','britain-russian-oil-sanctions-20261112','ireland-russia-alumina-20261112','russia-oil-windfall-20261116','ai-chip-contradiction-20261116','carrier-contradiction-20261116','venezuela-oil-custody-20261115']);
 function isChaosInstallment(s){return s.id!=='power'&&(s.seriesId==='chaos'||legacyChaosIds.has(s.id));}
 function chaosReports(){return STORIES.filter(s=>s.status==='published'&&(s.id==='power'||isChaosInstallment(s))).sort((a,b)=>String(b.publishedAt||'').localeCompare(String(a.publishedAt||'')));}
 function renderChaosFeatured(){
