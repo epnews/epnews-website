@@ -4,7 +4,7 @@
  let state=null;
  const allowed=()=>navigator.globalPrivacyControl!==true&&navigator.doNotTrack!=='1'&&localStorage.getItem(key)==='yes';
  function send(){
-  if(!state||!allowed())return;
+  if(!state||!allowed()||state.seconds<1)return;
   const {id,slug,source,campaign,seconds,depth}=state;
   fetch('/api/reading-engagement',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,slug,source,campaign,seconds:Math.floor(seconds),depth}),keepalive:true}).catch(()=>{});
  }
@@ -16,6 +16,7 @@
    if(!body||!slug){if(state)send();state=null;return;}
    if(!state||state.slug!==slug||state.body!==body){
     if(state)send();
+    state=null;
     const p=new URLSearchParams(location.search),tag=p.get('utm_source'),c=p.get('utm_content')||'';
     if(c.startsWith('diagnostic-')){state=null;return;}
     const source=['facebook','youtube'].includes(tag)?tag:'untagged';
