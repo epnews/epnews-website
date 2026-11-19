@@ -31,10 +31,19 @@ export async function onRequestGet({request,env}){
     // Preserve existing aggregates; export daily article/source counts without visitor identifiers.
     const articleReferralDaily=exists?(await db.prepare("SELECT substr(hour,1,10) AS day,slug,source,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-29 days') GROUP BY day,slug,source ORDER BY day,slug,source").all()).results: [];
     const articleReferralCoverage=exists?await db.prepare("SELECT MIN(hour) AS firstRecordedHour,MAX(hour) AS lastRecordedHour FROM article_reads_hourly").first():null;
+    const audienceExists=await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='audience_sessions_v2'").first();
+    const audience=audienceExists?{
+      coverage:await db.prepare("SELECT MIN(day) AS firstDay,MAX(day) AS lastDay FROM audience_sessions_v2").first(),
+      totals:await db.prepare("SELECT COUNT(*) AS tabSessions,COUNT(DISTINCT browser) AS uniqueBrowsers,COUNT(DISTINCT CASE WHEN browser IN (SELECT browser FROM audience_sessions_v2 GROUP BY browser HAVING COUNT(*)>1) THEN browser END) AS returningBrowsers FROM audience_sessions_v2 WHERE day>=date('now','-29 days')").first(),
+      daily:(await db.prepare("SELECT day,COUNT(*) AS tabSessions,COUNT(DISTINCT browser) AS uniqueBrowsers FROM audience_sessions_v2 WHERE day>=date('now','-29 days') GROUP BY day ORDER BY day").all()).results,
+      landing:(await db.prepare("SELECT landing,COUNT(*) AS tabSessions FROM audience_sessions_v2 WHERE day>=date('now','-29 days') GROUP BY landing ORDER BY tabSessions DESC,landing").all()).results,
+      articles:(await db.prepare("SELECT slug,COUNT(DISTINCT browser) AS uniqueBrowsers FROM audience_articles_v2 WHERE day>=date('now','-29 days') GROUP BY slug ORDER BY uniqueBrowsers DESC,slug").all()).results,
+      note:'Opt-in browser estimates only; tab sessions, not people; returning means multiple measured tabs in retained history; IDs rotate after 30 days; UTC; no historical backfill.'
+    }:null;
     const byPlacement={header:0,homepage:0,footer:0,article:0};
     for(const row of clicks.results||[])if(Object.hasOwn(byPlacement,row.placement))byPlacement[row.placement]=Number(row.total)||0;
     const totalClicks=Object.values(byPlacement).reduce((a,b)=>a+b,0);
     const totalVisits=Number(visits?.total||0);
-    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,articleReferralDaily,articleReferralCoverage,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
+    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,articleReferralDaily,articleReferralCoverage,audience,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
   }catch(e){console.error('Analytics dashboard error',e);return reply({error:'Analytics temporarily unavailable'},503);}
 }
