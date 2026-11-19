@@ -11,14 +11,14 @@
    fetch('/api/audience',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({browser:id.value,session,kind,slug}),keepalive:true}).catch(()=>{});
   }catch{}
  }
- function current(){return location.pathname.match(/^\/article\/([a-z0-9-]+)\/?$/)?.[1]||'home';}
+ function current(){return location.pathname.match(/^\/article\/([a-z0-9-]+)\/?$/)?.[1]||location.hash.match(/^#article\/([a-z0-9-]+)$/)?.[1]||'home';}
  window.epAudienceTrack=track;
  function init(){
   try{
    const host=document.createElement('div');host.style.cssText='font-size:12px;padding:8px;text-align:center';
    const button=document.createElement('button');button.type='button';button.textContent='Audience analytics privacy settings';
    const panel=document.createElement('div');panel.hidden=true;
-   const info=document.createElement('p');info.textContent='Optional audience measurement uses a random browser ID for up to 30 days and a tab session ID. No IP addresses or fingerprints are stored. Existing aggregate visit counts remain active.';
+   const info=document.createElement('p');info.textContent='Optional audience measurement uses a random browser ID for up to 30 days and a tab session ID. No IP addresses or fingerprints are stored. Optional measurement also records visible active article time and scroll depth using a separate random view ID. Existing aggregate visit counts remain active.';
    const yes=document.createElement('button'),no=document.createElement('button');yes.type=no.type='button';yes.textContent='Allow audience measurement';no.textContent='Decline / stop measurement';
    yes.disabled=navigator.globalPrivacyControl===true||navigator.doNotTrack==='1';
    yes.onclick=()=>{try{localStorage.setItem(key,'yes');track(current()==='home'?'session':'article',current());panel.hidden=true;}catch{}};
