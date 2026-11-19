@@ -34,6 +34,6 @@ for(const slug of examples){
  assert.ok(html.includes(esc(story.body.at(-1))),'Last paragraph present in initial HTML');
  assert.ok(html.includes('<link rel="canonical" href="'+origin+'/article/'+slug+'">'));
  assert.ok(html.includes('document.getElementById("ep-home-template").replaceWith'),'SPA restoration exists');
- assert.ok(!html.includes('<main id="home-view">'),'Homepage main is not live initial HTML');
+ assert.ok(!html.replace(/<template id="ep-home-template">[\s\S]*?<\/template>/,'').includes('<main id="home-view">'),'Homepage main is not live initial HTML');
  console.log('PASS crawlable HTML: '+slug+' ('+story.body.length+' paragraphs)');
 }
