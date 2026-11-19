@@ -60,5 +60,5 @@ for (const story of result.stories) {
 assert.ok(homepageIds.has('us-treasury-debt-buyback-october-2026'),
   'Treasury buyback article missing from homepage placement');
 
-assert.ok(html.includes('src="app.js"'), 'Application script missing');
+assert.ok(/src="app\.js(?:\?[^"]*)?"/.test(html), 'Application script missing');
 console.log('PASS: Qatar + '+result.stories.length+' total stories; '+result.editorial.wire.length+' headline wire IDs; legacy articles retained.');
