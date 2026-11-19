@@ -1,0 +1,36 @@
+name: SEO Cloudflare preview access probe
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/seo-preview-probe.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe public preview without credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://7015f0f5.epnews.pages.dev"
+          for path in / /article/ai-chip-contradiction-20261116; do
+            echo "::group::GET $path"
+            status=$(curl --location --silent --show-error --max-time 25 --output /tmp/preview.html --write-out '%{http_code}' "$base$path" || true)
+            echo "HTTP status: $status"
+            echo "Body bytes: $(wc -c </tmp/preview.html 2>/dev/null || echo 0)"
+            if [[ "$status" != "200" ]]; then
+              echo "::warning::Preview inaccessible without authentication: $path (HTTP $status)"
+            elif grep -Eqi 'cloudflare access|sign in to|login required' /tmp/preview.html; then
+              echo "::warning::Preview returned an authentication page: $path"
+            else
+              echo "Public HTTP 200 without obvious access gate"
+              if [[ "$path" == /article/* ]]; then
+                if grep -q 'ep-home-template' /tmp/preview.html; then
+                  echo "Server article marker found"
+                else
+                  echo "::warning::Server article marker not found; preview may be stale or unrelated to PR"
+                fi
+              fi
+            fi
+            echo "::endgroup::"
+          done
