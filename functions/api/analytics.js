@@ -44,10 +44,11 @@ export async function onRequestGet({request,env}){
     const articleCampaignDaily=campaignExists?(await db.prepare("SELECT day,slug,source,campaign,total FROM article_campaign_daily WHERE day>=date('now','-29 days') ORDER BY day,slug,source,campaign").all()).results:[];
     const readingExists=await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='reading_engagement_v1'").first();
     const readingEngagement=readingExists?(await db.prepare("SELECT day,slug,source,campaign,COUNT(*) AS measuredViews,SUM(seconds) AS totalSeconds,SUM(CASE WHEN seconds>=30 THEN 1 ELSE 0 END) AS engagedViews,SUM(CASE WHEN depth>=25 THEN 1 ELSE 0 END) AS depth25,SUM(CASE WHEN depth>=50 THEN 1 ELSE 0 END) AS depth50,SUM(CASE WHEN depth>=75 THEN 1 ELSE 0 END) AS depth75,SUM(CASE WHEN depth>=100 THEN 1 ELSE 0 END) AS depth100 FROM reading_engagement_v1 WHERE day>=date('now','-29 days') GROUP BY day,slug,source,campaign ORDER BY day,slug,source,campaign").all()).results:[];
+    const readingDiagnostic=readingEngagement.filter(r=>r.campaign.startsWith('diagnostic-'));
     const byPlacement={header:0,homepage:0,footer:0,article:0};
     for(const row of clicks.results||[])if(Object.hasOwn(byPlacement,row.placement))byPlacement[row.placement]=Number(row.total)||0;
     const totalClicks=Object.values(byPlacement).reduce((a,b)=>a+b,0);
     const totalVisits=Number(visits?.total||0);
-    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,articleReferralDaily,articleReferralCoverage,articleCampaignDaily,audience,readingEngagement,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
+    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,articleReferralDaily,articleReferralCoverage,articleCampaignDaily,audience,readingEngagement:readingEngagement.filter(r=>!r.campaign.startsWith('diagnostic-')),readingDiagnostic,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
   }catch(e){console.error('Analytics dashboard error',e);return reply({error:'Analytics temporarily unavailable'},503);}
 }
