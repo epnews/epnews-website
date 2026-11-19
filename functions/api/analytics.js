@@ -28,10 +28,13 @@ export async function onRequestGet({request,env}){
     const referralSources=exists?(await db.prepare("SELECT source,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-29 days') GROUP BY source").all()).results: [];
     const hourlyReads=exists?(await db.prepare("SELECT hour,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-6 days') GROUP BY hour ORDER BY hour").all()).results: [];
     const articleDaily=exists?(await db.prepare("SELECT substr(hour,1,10) AS day,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-29 days') GROUP BY day ORDER BY day").all()).results: [];
+    // Preserve existing aggregates; export daily article/source counts without visitor identifiers.
+    const articleReferralDaily=exists?(await db.prepare("SELECT substr(hour,1,10) AS day,slug,source,SUM(total) AS total FROM article_reads_hourly WHERE hour>=strftime('%Y-%m-%dT00:00:00Z','now','-29 days') GROUP BY day,slug,source ORDER BY day,slug,source").all()).results: [];
+    const articleReferralCoverage=exists?await db.prepare("SELECT MIN(hour) AS firstRecordedHour,MAX(hour) AS lastRecordedHour FROM article_reads_hourly").first():null;
     const byPlacement={header:0,homepage:0,footer:0,article:0};
     for(const row of clicks.results||[])if(Object.hasOwn(byPlacement,row.placement))byPlacement[row.placement]=Number(row.total)||0;
     const totalClicks=Object.values(byPlacement).reduce((a,b)=>a+b,0);
     const totalVisits=Number(visits?.total||0);
-    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
+    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,articleReferralDaily,articleReferralCoverage,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
   }catch(e){console.error('Analytics dashboard error',e);return reply({error:'Analytics temporarily unavailable'},503);}
 }
