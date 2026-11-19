@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "label": "Reuters",
+      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/19/us-defense-secretary-hegseth-vows-to-boost-venezuela-military-cooperation",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Joint training and intelligence sharing; 17 oilfields; Hormuz and Monroe Doctrine remarks"
+      ],
+      "evidence_excerpt": "it covered joint training, intelligence sharing"
+    },
+    {
+      "label": "Associated Press",
+      "url": "https://apnews.com/article/e02dd6173e575c644a37dd417d84296d",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Military partnership and unresolved election timeline"
+      ],
+      "evidence_excerpt": "no date has been set for the next presidential election"
+    },
+    {
+      "label": "Washington Post",
+      "url": "https://www.washingtonpost.com/world/2026/11/18/hegseth-makes-surprise-appearance-venezuela-renews-military-partnership/",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Rodríguez previously served as vice president; military modernization and past narcotics allegations"
+      ],
+      "evidence_excerpt": "who served as vice president to Maduro"
+    }
+  ],
+  "image": {
+    "original_source": "EP News generated artwork, publisher-reviewed",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original AI-generated editorial artwork for EP News",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/us-venezuela-military-partnership-20261119_website_1600x900.png",
+    "sha256": "7ac00c92d72e08dc8e116ed3bd906f6bf3131404f48fc6813e40f8451884fa06",
+    "publisher_approved": true
+  },
+  "slug": "us-venezuela-military-partnership-20261119",
+  "publisher_approved": true,
+  "article_sha256": "b428529e8a114ecc57330c58ae9b33b60ef2d3e8c891957d16c58112f2205d6b"
+}
