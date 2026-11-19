@@ -18,7 +18,7 @@
     if(state)send();
     state=null;
     const p=new URLSearchParams(location.search),tag=p.get('utm_source'),c=p.get('utm_content')||'';
-    if(c.startsWith('diagnostic-')){state=null;return;}
+    
     const source=['facebook','youtube'].includes(tag)?tag:'untagged';
     state={id:crypto.randomUUID(),slug,body,source,campaign:source!=='untagged'&&/^[a-z0-9-]{1,100}$/.test(c)?c:'',seconds:0,depth:0,last:performance.now(),sent:0};
    }
