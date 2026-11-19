@@ -10,7 +10,7 @@ export async function onRequestPost({request,env}){
  try{
   const raw=await request.text();if(raw.length>512)return reply(413);
   const {browser,session,kind,slug}=JSON.parse(raw);
-  if(!uuid.test(browser)||!uuid.test(session)||!['session','article'].includes(kind)||!(slug==='home'||slugPattern.test(slug)))return reply(400);
+  if(typeof browser!=='string'||typeof session!=='string'||typeof slug!=='string'||!uuid.test(browser)||!uuid.test(session)||!['session','article'].includes(kind)||!(slug==='home'||slugPattern.test(slug)))return reply(400);
   const db=env.EP_VISITS_DB, b=await digest(browser), s=await digest(browser+':'+session);
   await db.batch([
    db.prepare("CREATE TABLE IF NOT EXISTS audience_sessions_v2 (session TEXT PRIMARY KEY,browser TEXT NOT NULL,day TEXT NOT NULL,landing TEXT NOT NULL)"),
@@ -18,7 +18,7 @@ export async function onRequestPost({request,env}){
    db.prepare("CREATE INDEX IF NOT EXISTS audience_sessions_v2_day ON audience_sessions_v2(day)"),
    db.prepare("CREATE INDEX IF NOT EXISTS audience_articles_v2_day ON audience_articles_v2(day)")
   ]);
-  const writes=[db.prepare("INSERT OR IGNORE INTO audience_sessions_v2(session,browser,day,landing) VALUES(?,?,date('now'),?)").bind(s,b,slug)];
+  const writes=[db.prepare("DELETE FROM audience_sessions_v2 WHERE day<date('now','-59 days')"),db.prepare("DELETE FROM audience_articles_v2 WHERE day<date('now','-59 days')"),db.prepare("INSERT OR IGNORE INTO audience_sessions_v2(session,browser,day,landing) VALUES(?,?,date('now'),?)").bind(s,b,slug)];
   if(kind==='article')writes.push(db.prepare("INSERT OR IGNORE INTO audience_articles_v2(day,browser,slug) VALUES(date('now'),?,?)").bind(b,slug));
   await db.batch(writes);
   return reply(204);
