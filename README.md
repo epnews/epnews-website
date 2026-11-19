@@ -1,4 +1,6 @@
-# EP News v2 — editorial website prototype
+# EP News — editorial website
+
+Current editorial authority: [EP News Master Workflow](https://drive.google.com/file/d/1-S44eeR25lVsO9WVCEdz2SPgAAAcTtpm/view). Retrieve the current version by permanent Drive ID. Website-only publication is the default; social packages require separate authorization. See [connector handoff](docs/connector-pr-handoff.md) and [optional Reel handoff](docs/automatic-website-reel-pipeline.md). The prototype notes below are historical, not current operating instructions.
 
 This is a fully static, zero-build site designed to deploy to Cloudflare Pages.
 
@@ -21,5 +23,5 @@ The site makes optional requests to Google Fonts. Public GitHub repositories exp
 
 No paid theme, build tools, external JavaScript libraries, or hosting subscription are required.
 
-## EP News publishing image transfer policy (v7.2)
+## EP News publishing image transfer policy
 Google Drive is the exclusive image upload and transfer service for editorial publishing. Do not use Canva exports or alternative image hosting. Use the established public Drive folder and existing image-import manifest and GitHub Actions importer. All current editorial evidence, image integrity, preflight, CI, human merge approval and live verification requirements remain mandatory. This policy does not change the importer or validators; unresolved validation failures must be resolved before publication.
