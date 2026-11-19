@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "label": "Associated Press",
+      "url": "https://apnews.com/article/3d0f8ed366d6084e1cfe12a4d8020c55",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Reporter exclusion despite White House efforts; nuclear security and Ukraine discussions"
+      ],
+      "evidence_excerpt": "China barred a Bloomberg reporter from the meeting after she questioned Trump"
+    },
+    {
+      "label": "ABC News",
+      "url": "https://abcnews.com/Politics/live-updates/trump-asia-trip-2026?entryId=138280263&id=138187702",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Meeting location, participants and first trilateral format"
+      ],
+      "evidence_excerpt": "the first ever such meeting between the leaders of the three nations"
+    },
+    {
+      "label": "New York Post",
+      "url": "https://nypost.com/2026/11/19/us-news/trump-knocks-old-school-diplomacy-as-he-urges-china-and-russia-to-reduce-nukes-during-summit/",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Independent report of exclusion after question about Nvidia; preliminary nuclear talks"
+      ],
+      "evidence_excerpt": "Chinese officials barred a Bloomberg reporter from the press pool"
+    }
+  ],
+  "image": {
+    "original_source": "EP News original generated editorial artwork",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original AI-generated editorial artwork for EP News",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/china-bars-bloomberg-reporter-20261119.png",
+    "sha256": "1637d15cca5e280e8b39e4a5da3215d328e89d216a97b9a48abb3ac7086745f4",
+    "publisher_approved": true
+  },
+  "slug": "china-bars-bloomberg-reporter-20261119",
+  "publisher_approved": true,
+  "article_sha256": "8ee1c7354eac0a9b6c0bc168ea63e448c61ffe48a2f175b99f647595facea655"
+}
