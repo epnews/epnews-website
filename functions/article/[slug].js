@@ -35,10 +35,10 @@ export async function onRequestGet({params,env,request}){
  const asset=await env.ASSETS.fetch(new URL('/content/'+slug+'.js',request.url));
  if(asset.ok){
   const source=await asset.text();
-  const match=source.match(/\\bbody\\s*:\\s*\\[([\\s\\S]*?)\\]\\s*,\\s*(?:["']?sources|["']?related|["']?tags)/);
+  const match=source.match(/["']?body["']?\s*:\s*\[([\s\S]*?)\]\s*,\s*(?:["']?sources|["']?related|["']?tags)/);
   if(match){
    const paragraphs=[];
-   for(const token of match[1].match(/"(?:\\\\.|[^"\\\\])*"/g)||[]){
+   for(const token of match[1].match(/"(?:\\.|[^"\\])*"/g)||[]){
     try{const value=JSON.parse(token);if(typeof value==='string'&&value.length>25)paragraphs.push(value);}catch{}
    }
    if(paragraphs.length>=2){
