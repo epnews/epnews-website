@@ -40,10 +40,12 @@ export async function onRequestGet({request,env}){
       articles:(await db.prepare("SELECT slug,COUNT(DISTINCT browser) AS uniqueBrowsers FROM audience_articles_v2 WHERE day>=date('now','-29 days') GROUP BY slug ORDER BY uniqueBrowsers DESC,slug").all()).results,
       note:'Opt-in browser estimates only; tab sessions, not people; returning means multiple measured tabs in retained history; IDs rotate after 30 days; UTC; no historical backfill.'
     }:null;
+    const campaignExists=await db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='article_campaign_daily'").first();
+    const articleCampaignDaily=campaignExists?(await db.prepare("SELECT day,slug,source,campaign,total FROM article_campaign_daily WHERE day>=date('now','-29 days') ORDER BY day,slug,source,campaign").all()).results:[];
     const byPlacement={header:0,homepage:0,footer:0,article:0};
     for(const row of clicks.results||[])if(Object.hasOwn(byPlacement,row.placement))byPlacement[row.placement]=Number(row.total)||0;
     const totalClicks=Object.values(byPlacement).reduce((a,b)=>a+b,0);
     const totalVisits=Number(visits?.total||0);
-    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,articleReferralDaily,articleReferralCoverage,audience,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
+    return reply({totalVisits,totalClicks,clicksPer100Visits:totalVisits?Math.round(totalClicks/totalVisits*1000)/10:null,byPlacement,daily:daily.results||[],articleReads,referralSources,hourlyReads,articleDaily,articleReferralDaily,articleReferralCoverage,articleCampaignDaily,audience,note:'Clicks per 100 visits is not a follower conversion rate. Daily history begins at deployment; dates use UTC. Diagnostic clicks excluded.'});
   }catch(e){console.error('Analytics dashboard error',e);return reply({error:'Analytics temporarily unavailable'},503);}
 }
