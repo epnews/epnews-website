@@ -1,0 +1,62 @@
+{
+  "sources": [
+    {
+      "label": "South Korean Ministry of Trade, Industry and Resources — Shenzhen trade announcement",
+      "url": "https://www.motir.go.kr/attach/down/095a2dda9c864e1d90d751f7668a1117/b77c5d414e2a55e230370eac34568322",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "Substantial conclusion and outstanding technical wording",
+        "Negotiations began in March 2018",
+        "Films, games, travel agencies and 2024 trade figures"
+      ],
+      "evidence_excerpt": "The ministry details third-country treatment, nondiscriminatory screening, outbound travel in 23 areas and $38.8 billion in bilateral services trade in 2024."
+    },
+    {
+      "label": "Reuters — Trade breakthrough and the missile-defense dispute",
+      "url": "https://www.reuters.com/world/south-korea-says-china-trade-agreement-boost-tourism-entertainment-sectors-2026-11-18/",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "Lee–Xi meeting at APEC",
+        "Sector restrictions following the THAAD dispute",
+        "Beijing has not explicitly linked restrictions to THAAD"
+      ],
+      "evidence_excerpt": "Reuters reports the timing of restrictions after the dispute and notes Beijing never specifically linked them to the deployment."
+    },
+    {
+      "label": "Congressional Research Service — South Korea and U.S. relations",
+      "url": "https://www.everycrsreport.com/files/2026-09-17_IF10165_8d7fb825b30b7e0973748647757d5632e38aafe5.html",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "1953 mutual defense treaty",
+        "Approximately 28,500 U.S. troops in South Korea"
+      ],
+      "evidence_excerpt": "The September 2026 overview describes the mutual defense commitment and puts the U.S. troop presence at approximately 28,500."
+    },
+    {
+      "label": "U.S. Forces Korea — Joint defense dialogue statement",
+      "url": "https://www.usfk.mil/Media/Newsroom/News/Article/4487764/joint-statement-for-the-28th-korea-us-integrated-defense-dialogue/",
+      "verified": true,
+      "checked_at": "2026-11-18",
+      "claims": [
+        "May 2026 combined defense talks"
+      ],
+      "evidence_excerpt": "The governments discussed ways to strengthen their combined defense posture and implement previously announced defense commitments."
+    }
+  ],
+  "image": {
+    "original_source": "https://www.dvidshub.net/image/9167893/unc-75th-anniversary",
+    "attribution": "Jong Beom Shin / U.S. Forces Korea via DVIDS",
+    "rights": "DVIDS public domain U.S. military file photograph; EP News layout and text",
+    "authentic": true,
+    "kind": "documentary-file-photograph",
+    "path": "assets/images/south-korea-us-defense-china-trade-20261118.png",
+    "sha256": "6a3e765176448c0b266e3af548fc486de69b10d7c4b00ee5e36247a90b4885f6",
+    "publisher_approved": true
+  },
+  "slug": "south-korea-us-defense-china-trade-20261118",
+  "publisher_approved": true,
+  "article_sha256": "1c31d936ae49d9fc1c400472e298a8ab382727b8e242a28803b58303f3b2da5e"
+}
