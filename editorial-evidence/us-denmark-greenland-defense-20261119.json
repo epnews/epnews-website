@@ -1,0 +1,44 @@
+{
+  "sources": [
+    {
+      "url": "https://www.ft.dk/da/aktuelt/nyheder/2026/11/folketinget-godkender-aftale-om-forsvaret-af-groenland",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Danish parliament approval"
+      ],
+      "evidence_excerpt": "Danish parliament approved the Greenland defense agreement"
+    },
+    {
+      "url": "https://www.reuters.com/world/denmark-expected-ratify-trump-deal-over-greenland-thursday-2026-11-19/",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Defense access and proposed bases"
+      ],
+      "evidence_excerpt": "Denmark expected to ratify the Greenland agreement"
+    },
+    {
+      "url": "https://apnews.com/article/a392abbba5c2f1bccbbb372e3d38769d",
+      "verified": true,
+      "checked_at": "2026-11-19",
+      "claims": [
+        "Parliamentary security agreement"
+      ],
+      "evidence_excerpt": "Denmark's parliament approves security deal"
+    }
+  ],
+  "image": {
+    "original_source": "EP News AI-generated Arctic defense editorial illustration, publisher approved",
+    "attribution": "EP News",
+    "rights": "EP News commissioned AI editorial illustration; no documentary photograph",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/greenland-defense-20261119.png",
+    "sha256": "1a9194bec9acf8aa1de7781de020ce3a4302d25ca649b76b10f6455e0aee74cd",
+    "publisher_approved": true
+  },
+  "slug": "us-denmark-greenland-defense-20261119",
+  "publisher_approved": true,
+  "article_sha256": "32ac64d00dbb4dbff12e690c22d13851a72861f28598bfdcd9085c74b0bcbbd7"
+}
