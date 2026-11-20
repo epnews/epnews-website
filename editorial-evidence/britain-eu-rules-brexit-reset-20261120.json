@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "url": "https://www.gov.uk/government/news/costs-cut-prime-minister-secures-deal-with-eu-to-cut-costs-keep-prices-down-and-create-opportunities-for-young-people-worth-up-to-17-billion-per-year",
+      "verified": true,
+      "claims": [
+        "UK government projected up to £17 billion annual GDP benefit by 2040",
+        "food and drink, emissions and youth deals announced"
+      ],
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "Together, the deals agreed today could add up to 0.5% to UK GDP by 2040 – equivalent to around £17 billion a year for the UK economy."
+    },
+    {
+      "url": "https://www.consilium.europa.eu/en/meetings/international-summit/2026/11/20/",
+      "verified": true,
+      "claims": [
+        "EU and UK welcomed conclusion of SPS and ETS negotiations",
+        "youth experience scheme and unresolved tuition agreement"
+      ],
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "welcomed the conclusion of the negotiations on a common sanitary and phytosanitary area (SPS agreement) and on linking the EU and UK emissions trading systems (ETS agreement)"
+    },
+    {
+      "url": "https://www.reuters.com/world/uk/what-eu-uk-have-agreed-summit-2026-11-20/",
+      "verified": true,
+      "claims": [
+        "March 2028 target for food checks",
+        "UK alignment with EU standards and youth scheme details"
+      ],
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "From March 2028, animal, plant and related products could cross borders without current health certificates and checks"
+    }
+  ],
+  "image": {
+    "original_source": "EP News AI-generated UK and EU flags editorial artwork, November 20 2026",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News generated artwork for editorial use",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/britain-eu-rules-brexit-reset-20261120.png",
+    "sha256": "e24a85551aaacdf39601a4923255ca1cecc2bd585369d3e69e2fc17ac882dfd2",
+    "publisher_approved": true
+  },
+  "slug": "britain-eu-rules-brexit-reset-20261120",
+  "publisher_approved": true,
+  "article_sha256": "74a317526ee856b3dc5a300dc16e4edc8b938bf0ca3993f16ffb05661bd6ac64"
+}
