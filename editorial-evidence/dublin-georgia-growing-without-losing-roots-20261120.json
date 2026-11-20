@@ -1,0 +1,80 @@
+{
+  "sources": [
+    {
+      "url": "https://cocacolaunited.com/blog/2026/11/19/coca-cola-united-breaks-ground-on-new-sales-center-in-dublin-georgia/",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "November 18 groundbreaking, $20m, 33,000 square feet, 60 associates, 10 counties, October 2027",
+      "claims": [
+        "November 18 groundbreaking, $20m, 33,000 square feet, 60 associates, 10 counties, October 2027"
+      ]
+    },
+    {
+      "url": "https://www.cityofdublin.org/community/news/post/coca-cola-breaks-ground-on-new-dublin-facility",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "Former Coca-Cola building repurposed as municipal gas operations and Katherine W. Gray Resource Center",
+      "claims": [
+        "Former Coca-Cola building repurposed as municipal gas operations and Katherine W. Gray Resource Center"
+      ]
+    },
+    {
+      "url": "https://dlcda.com/news/article/investing-in-innovation-hwashin-georgia-awarded-1.2-million-edge-grant",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "$176m investment, 475 planned jobs, $1.2m EDGE grant and 56 robots",
+      "claims": [
+        "$176m investment, 475 planned jobs, $1.2m EDGE grant and 56 robots"
+      ]
+    },
+    {
+      "url": "https://chambervu.com/dublin-laurens2026/",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "Three blocks between Church and Jefferson; $4.6m pedestrian streetscape project",
+      "claims": [
+        "Three blocks between Church and Jefferson; $4.6m pedestrian streetscape project"
+      ]
+    },
+    {
+      "url": "https://visitdublinga.org/good-growth-increases-visitor-tourism-spending-in-laurens-county/",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "2025 Laurens County visitor spending $126.8m, 4.4% growth, 1,263 jobs, $9.6m tax revenue, $37.5m food/beverage",
+      "claims": [
+        "2025 Laurens County visitor spending $126.8m, 4.4% growth, 1,263 jobs, $9.6m tax revenue, $37.5m food/beverage"
+      ]
+    },
+    {
+      "url": "https://visitdublinga.org/st-patricks-festival/",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "Festival founded 1966 by Dick Killebrew; 11-day first festival; parade and pancake supper",
+      "claims": [
+        "Festival founded 1966 by Dick Killebrew; 11-day first festival; parade and pancake supper"
+      ]
+    },
+    {
+      "url": "https://www.va.gov/dublin-health-care/about-us/",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "evidence_excerpt": "Carl Vinson VA has served veterans since 1948; college affiliations and medical services",
+      "claims": [
+        "Carl Vinson VA has served veterans since 1948; college affiliations and medical services"
+      ]
+    }
+  ],
+  "image": {
+    "original_source": "User-supplied photograph of downtown Dublin, Georgia; AI-assisted derivative graphic",
+    "attribution": "EP News / AI-generated editorial rendition based on user-supplied downtown Dublin photo",
+    "rights": "User supplied source image; permission to republish underlying source photograph not independently established",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/dublin-georgia-growing-without-losing-roots-20261120.png",
+    "sha256": "4f64eb2f726375ad6036ac2fa3815adad6e76895784371076615bf2d53e2dcf2",
+    "publisher_approved": true
+  },
+  "slug": "dublin-georgia-growing-without-losing-roots-20261120",
+  "publisher_approved": true,
+  "article_sha256": "bc315aa304884f87fb1da5ddf635aea3f333052c3cd53d8ca8901ea8421c517c"
+}
