@@ -12,7 +12,7 @@ try {
  const recent=api('repos/'+repo+'/pulls?state=closed&sort=updated&direction=desc&per_page=30');
  const recheckRuns=[];
  try {
-  const candidates=api('repos/'+repo+'/actions/workflows/publication-browser-recheck.yml/runs?per_page=30').workflow_runs.filter(r=>r.status==='completed'&&r.conclusion==='success'&&['pull_request','workflow_dispatch'].includes(r.event));
+  const candidates=api('repos/'+repo+'/actions/workflows/publication-browser-recheck.yml/runs?per_page=30').workflow_runs.filter(r=>r.status==='completed'&&r.conclusion==='success'&&['pull_request','workflow_dispatch'].includes(r.event)).slice(0,5);
   for(const r of candidates){
    const dir='recheck-evidence/'+r.id;
    try {
@@ -56,4 +56,4 @@ try {
   }catch(e){report.records.push({number,status:'UNVERIFIED',error:String(e.message)});}
  }
 }catch(e){report.errors.push(String(e.message));process.exitCode=1;}
-finally{let previous=[];try{previous=JSON.parse(fs.readFileSync('previous-state/publication-state.json','utf8')).records;}catch{} report.transitions=changes(previous,report.records);fs.writeFileSync('publication-state.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));}
+finally{let previous=null;try{const snapshot=JSON.parse(fs.readFileSync('previous-state/publication-state.json','utf8'));if(!Array.isArray(snapshot.records)||!snapshot.checkedAt)throw Error('Invalid previous snapshot');previous=snapshot.records;report.previousCheckedAt=snapshot.checkedAt;}catch(e){report.errors.push('Previous reconciliation unavailable: '+String(e.message));} report.transitions=previous?changes(previous,report.records):[];fs.writeFileSync('publication-state.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));}
