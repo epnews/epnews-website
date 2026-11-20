@@ -1,0 +1,68 @@
+{
+  "slug": "texas-senate-election-audit-20261120",
+  "sources": [
+    {
+      "url": "https://live.txelectionresults.com/2026-general-election/races/1285574",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "claims": [
+        "Unofficial Talarico and Paxton vote totals"
+      ],
+      "evidence_excerpt": "Talarico 5,444,982; Paxton 4,249,373; updated Nov. 9, 2026"
+    },
+    {
+      "url": "https://content.govdelivery.com/accounts/TXSOS/bulletins/43300bb",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "claims": [
+        "First statewide risk-limiting audit",
+        "Senate race selected",
+        "2021 legislation and five-year rollout",
+        "Random seed selection"
+      ],
+      "evidence_excerpt": "First implementation of statewide risk-limiting audits required by 2021 laws; Senate contest selected; Nov. 18 random seed"
+    },
+    {
+      "url": "https://www.txaceo.org/new-blog/texas-county-election-officials-conduct-post-election-audits-to-verify-security-accuracy-of-2026-general-election",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "claims": [
+        "Paper ballot inventory and random selection",
+        "Additional ballots if sample insufficient",
+        "Nov. 19 audit schedule"
+      ],
+      "evidence_excerpt": "Counties submit ballot inventory; state selects ballots randomly; county boards record votes by hand; sample can expand"
+    },
+    {
+      "url": "https://www.texastribune.org/2026/11/03/texas-ken-paxton-james-talarico-us-senate-elections-2026/",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "claims": [
+        "First Democratic Senate win since 1988",
+        "Political context of victory"
+      ],
+      "evidence_excerpt": "First Democratic U.S. Senate victory in Texas since Lloyd Bentsen's 1988 reelection"
+    },
+    {
+      "url": "https://statutes.capitol.texas.gov/Docs/EL/htm/EL.127.htm",
+      "verified": true,
+      "checked_at": "2026-11-20",
+      "claims": [
+        "Statutory basis for election audit"
+      ],
+      "evidence_excerpt": "Texas Election Code Chapter 127 governs electronic voting systems and audits"
+    }
+  ],
+  "image": {
+    "path": "assets/images/texas-senate-election-audit-20261120.png",
+    "original_source": "EP News AI-generated conceptual Texas election composite approved by publisher",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Publisher-authorized AI-generated artwork",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "sha256": "7b03ca065d10caad8de5447d73beb89dcd7c5835d23ee507bc83c01af99b2439",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "189955238299d8d4aba07a4689e9b8979ca35f7d0b82781d6c7a278350d15130"
+}
