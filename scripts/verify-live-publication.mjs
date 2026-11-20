@@ -20,7 +20,7 @@ async function verify(){
   const page=await browser.newPage();
   const response=await page.goto(base+'/article/'+slug,{waitUntil:'domcontentloaded',timeout:30000});
   assert(response?.ok(),'Article route failed');
-  await page.getByText(story.title,{exact:true}).first().waitFor({state:'visible',timeout:15000});
+  await page.locator('#route-view article.article-shell h1').getByText(story.title,{exact:true}).waitFor({state:'visible',timeout:15000});
   article=norm(await page.locator('body').innerText());
  }finally{await browser.close();}
  const share=normalize(await (await get('/share/'+slug)).text());
@@ -35,4 +35,27 @@ async function verify(){
  assert(home.includes('content/'+slug+'.js'),'Homepage registration missing');
  console.log('LIVE VERIFIED '+slug);
 }
+// Wait for the exact merged article asset, not merely an HTTP 200 from the SPA fallback.
+// GitHub push events can precede the Cloudflare Pages production deployment.
+async function waitForProductionAsset(){
+ const expected=readFileSync('content/'+slug+'.js','utf8');
+ const url=base+'/content/'+slug+'.js';
+ const deadline=Date.now()+10*60*1000;
+ let last='not checked';
+ for(let attempt=1;Date.now()<deadline;attempt++){
+  try{
+   const response=await fetch(url+'?ep_verify='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(15000)});
+   const actual=await response.text();
+   if(response.ok&&actual===expected){
+    console.log('DEPLOYMENT READY '+slug+' (exact article asset matches repository)');
+    return;
+   }
+   last='HTTP '+response.status+', bytes '+actual.length+'/'+expected.length+', exactMatch='+String(actual===expected);
+  }catch(e){last=String(e);}
+  console.log('Waiting for Cloudflare production asset, attempt '+attempt+': '+last);
+  await new Promise(resolve=>setTimeout(resolve,15000));
+ }
+ throw Error('Cloudflare deployment not ready after 10 minutes: '+url+'; last observation: '+last);
+}
+await waitForProductionAsset();
 for(let attempt=1;attempt<=6;attempt++){try{await verify();break;}catch(e){console.error('Attempt '+attempt+': '+e.message);if(attempt===6)throw e;await new Promise(r=>setTimeout(r,20000));}}
