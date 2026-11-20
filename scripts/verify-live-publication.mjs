@@ -20,7 +20,7 @@ async function verify(){
   const page=await browser.newPage();
   const response=await page.goto(base+'/article/'+slug,{waitUntil:'domcontentloaded',timeout:30000});
   assert(response?.ok(),'Article route failed');
-  await page.getByText(story.title,{exact:true}).first().waitFor({state:'visible',timeout:15000});
+  await page.locator('#route-view article.article-shell h1').getByText(story.title,{exact:true}).waitFor({state:'visible',timeout:15000});
   article=norm(await page.locator('body').innerText());
  }finally{await browser.close();}
  const share=normalize(await (await get('/share/'+slug)).text());
