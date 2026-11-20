@@ -1,0 +1,62 @@
+{
+  "sources": [
+    {
+      "url": "https://www.investing.com/news/politics-news/vance-repudiates-iran-war-after-us-electoral-defeat-5000807",
+      "verified": true,
+      "claims": [
+        "Reuters — Vance repudiates Iran war after electoral defeat, November 4"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "Reuters reported that Vance questioned the Iran war's worth and blamed the conflict for Republican electoral losses."
+    },
+    {
+      "url": "https://abcnews.com/US/wireStory/trump-bluntly-tells-jd-vance-shift-focus-iran-138089310",
+      "verified": true,
+      "claims": [
+        "Associated Press — Trump redirects Vance away from Iran diplomacy, November 12"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "AP reported that Trump directed Vance to focus on domestic corruption and crime instead of Iran negotiations."
+    },
+    {
+      "url": "https://apnews.com/article/b1d26390b7ed7968435089be6d3bf612",
+      "verified": true,
+      "claims": [
+        "Associated Press — Trump defends Iran war following midterms, November 4"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "AP reported that Trump defended the Iran war even while acknowledging its political cost."
+    },
+    {
+      "url": "https://apnews.com/article/02378df1ec3073d2c0f8f162e697d181",
+      "verified": true,
+      "claims": [
+        "Associated Press — Iran diplomacy and the administration's conflicting signals, November 14"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "AP reported shifting signals on Iran diplomacy and the reassignment of Vance from possible negotiations."
+    },
+    {
+      "url": "https://www.cbsnews.com/live-updates/election-day-2026-midterms/",
+      "verified": true,
+      "claims": [
+        "CBS News — Trump and Vance responses to election results, November 4"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "CBS reported Trump's response that Vance's remarks were fine and that the war's political impact was largely true."
+    }
+  ],
+  "image": {
+    "original_source": "EP News original AI-generated illustration of Capitol and national flags",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News original AI-generated editorial artwork",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/trump-vance-iran-20261119-hero.png",
+    "sha256": "7f79b12bebf8161e425832010514338f1aee5ab5cbf5e232eb90a94b43c9b759",
+    "publisher_approved": true
+  },
+  "slug": "trump-vance-iran-war-republican-defeats-20261119",
+  "publisher_approved": true,
+  "article_sha256": "ba43baf1c999932412d415920b625e2c32286f726b21311bd3834c75799c50b2"
+}
