@@ -8,3 +8,15 @@ test('deduplicate identical transitions',()=>{const p={number:1,head:'a',status:
 
 test('actual Philippines intake layout',()=>assert.deepEqual(publicationSlugs([{filename:'content/philippines-china-australia-defense-20261117.js'},{filename:'editorial-evidence/philippines-china-australia-defense-20261117.json'}]),['philippines-china-australia-defense-20261117']));
 test('unrelated evidence cannot qualify a content change',()=>assert.deepEqual(publicationSlugs([{filename:'content/foo.js'},{filename:'editorial-evidence/bar.json'}]),[]));
+
+test('verified recheck supersedes original failure without erasing it',()=>{
+ const failed={...r,id:10,conclusion:'failure'};
+ const checks={http:true,headline:true,body:true,graphic:true,canonical:true,ogTitle:true,ogImage:true,share:true,overflow:true};
+ const recheck={id:20,ancestorVerified:true,status:'completed',conclusion:'success',report:['desktop','mobile'].map(viewport=>({slug:'story',viewport,passed:true,attempts:[{checks}]}))};
+ const result=deploymentEvidence([failed],'merge',[recheck],['story']);
+ assert.equal(result.status,'BROWSER_RECHECK_PASSED');
+ assert.equal(result.originalFailureRunId,10);
+ assert.equal(result.runId,20);
+ for(const patch of [{ancestorVerified:false},{report:recheck.report.slice(0,1)},{id:9},{conclusion:'failure'}])
+  assert.equal(deploymentEvidence([failed],'merge',[{...recheck,...patch}],['story']).status,'BROWSER_RUN_FAILED');
+});
