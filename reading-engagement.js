@@ -1,11 +1,14 @@
 // Separate opt-in; no persistent browser or session identifiers.
 (function(){
  const key='epnews-reading-consent-v1';
- let state=null;
- const allowed=()=>navigator.globalPrivacyControl!==true&&navigator.doNotTrack!=='1'&&localStorage.getItem(key)==='yes';
- function send(){
+ let state=null,automatic=false;
+ const preference=()=>localStorage.getItem(key);
+ const aggregateMode=()=>automatic&&preference()===null;
+ const allowed=()=>navigator.globalPrivacyControl!==true&&navigator.doNotTrack!=='1'&&(preference()==='yes'||aggregateMode());
+ function send(final=false){
   if(!state||!allowed()||state.seconds<1)return;
   const {id,slug,source,campaign,seconds,depth}=state;
+  if(state.aggregate){if(!final||state.finalized)return;state.finalized=true;fetch('/api/reading-aggregate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug,seconds:Math.floor(seconds),depth}),keepalive:true}).catch(()=>{});return;}
   fetch('/api/reading-engagement',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,slug,source,campaign,seconds:Math.floor(seconds),depth}),keepalive:true}).catch(()=>{});
  }
  function tick(){
@@ -13,14 +16,14 @@
    if(!allowed()){state=null;return;}
    const body=document.querySelector('#route-view:not([hidden]) .article-body');
    const slug=location.pathname.match(/^\/article\/([a-z0-9-]+)\/?$/)?.[1];
-   if(!body||!slug){if(state)send();state=null;return;}
-   if(!state||state.slug!==slug||state.body!==body){
-    if(state)send();
+   if(!body||!slug){if(state)send(true);state=null;return;}
+   if(!state||state.finalized||state.slug!==slug||state.body!==body||state.aggregate!==aggregateMode()){
+    if(state&&!state.finalized)send(true);
     state=null;
     const p=new URLSearchParams(location.search),tag=p.get('utm_source'),c=p.get('utm_content')||'';
     
     const source=['facebook','youtube'].includes(tag)?tag:'untagged';
-    state={id:crypto.randomUUID(),slug,body,source,campaign:source!=='untagged'&&/^[a-z0-9-]{1,100}$/.test(c)?c:'',seconds:0,depth:0,last:performance.now(),sent:0};
+    state={aggregate:aggregateMode(),id:aggregateMode()?null:crypto.randomUUID(),slug,body,source,campaign:source!=='untagged'&&/^[a-z0-9-]{1,100}$/.test(c)?c:'',seconds:0,depth:0,last:performance.now(),sent:0};
    }
    const now=performance.now(),delta=Math.min(2,(now-state.last)/1000);state.last=now;
    if(document.visibilityState==='visible'&&document.hasFocus()){
@@ -30,7 +33,7 @@
      state.depth=Math.max(state.depth,Math.min(100,Math.max(0,Math.floor((innerHeight-rect.top)/Math.max(1,rect.height)*100))));
     }
    }
-   if(state.seconds-state.sent>=15){state.sent=state.seconds;send();}
+   if(!state.aggregate&&state.seconds-state.sent>=15){state.sent=state.seconds;send();}
   }catch{}
  }
  function init(){
@@ -43,8 +46,9 @@
   yes.onclick=()=>{try{localStorage.setItem(key,'yes');panel.hidden=true;tick();}catch{}};
   no.onclick=()=>{try{localStorage.setItem(key,'no');state=null;panel.hidden=true;}catch{}};
   toggle.onclick=()=>{panel.hidden=!panel.hidden;};panel.append(info,yes,no);host.append(toggle,panel);document.body.append(host);
+  if(typeof fetch==='function'&&preference()===null&&!yes.disabled){fetch('/api/analytics-policy',{cache:'no-store'}).then(r=>r.json()).then(p=>{if(p.automaticReading===true&&preference()===null){automatic=true;info.textContent='Limited aggregate reading measurement is enabled in your region. It sends article, focused time and scroll depth without a browser or view identifier. You may decline at any time.';tick();}}).catch(()=>{});}
   if(localStorage.getItem(key)===null&&!yes.disabled)panel.hidden=false;
-  setInterval(tick,1000);addEventListener('pagehide',()=>{try{send();}catch{}});
+  setInterval(tick,1000);addEventListener('pagehide',()=>{try{send(true);}catch{}});
   document.addEventListener('visibilitychange',()=>{if(document.hidden){try{send();}catch{}}});
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
