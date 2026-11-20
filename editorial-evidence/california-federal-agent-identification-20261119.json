@@ -1,0 +1,46 @@
+{
+  "sources": [
+    {
+      "url": "https://www.justice.gov/opa/pr/justice-department-secures-permanent-injunction-against-california-laws-restricting-federal",
+      "verified": true,
+      "claims": [
+        "DOJ announced the injunction November 19, 2026"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "Justice Department release announces permanent injunction against California restrictions on federal law enforcement."
+    },
+    {
+      "url": "https://www.justice.gov/opa/media/1473341/dl?inline=",
+      "verified": true,
+      "claims": [
+        "Judge entered stipulated permanent injunction November 17",
+        "Four provisions restrained as to federal officers"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "Signed order permanently enjoins enforcement of the challenged statutory provisions against federal personnel."
+    },
+    {
+      "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2026/10/14/26-926.pdf",
+      "verified": true,
+      "claims": [
+        "Ninth Circuit ruled October 14 on identification requirement",
+        "Federal supremacy analysis"
+      ],
+      "checked_at": "2026-11-19",
+      "evidence_excerpt": "Appellate opinion addresses California's direct regulation of federal officers and preliminary injunctive relief."
+    }
+  ],
+  "image": {
+    "original_source": "EP News commissioned AI-generated editorial illustration",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original AI-generated illustration commissioned for EP News editorial use",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/california-federal-agents-20261119-hero.png",
+    "sha256": "091777baeb874502a6fb690daeb9d305927dee3c819619203651d942e28a47c9",
+    "publisher_approved": true
+  },
+  "slug": "california-federal-agent-identification-20261119",
+  "publisher_approved": true,
+  "article_sha256": "73b3a7af04891b2ba5493188d98950e8c455c13095183bc1bfc7f49873bd544f"
+}
