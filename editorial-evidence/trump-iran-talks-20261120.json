@@ -1,0 +1,48 @@
+{
+  "sources": [
+    {
+      "label": "Associated Press",
+      "url": "https://apnews.com/article/8fd6dcd6dc4a1a77437cedc4567fbee8",
+      "claims": [
+        "Trump's Friday White House remarks",
+        "Trump's position on an Iranian nuclear weapon"
+      ],
+      "evidence_excerpt": "AP reports that Trump described the terms Iran was willing to accept as unacceptable to him and repeated his opposition to Iran acquiring a nuclear weapon.",
+      "verified": true,
+      "checked_at": "2026-11-21T00:52:10Z"
+    },
+    {
+      "label": "Reuters",
+      "url": "https://www.investing.com/news/world-news/araqchi-says-iran-wants-diplomacy-to-end-war-trump-says-terms-unacceptable-5042853",
+      "claims": [
+        "Trump's Friday remarks",
+        "Araqchi's stated negotiating conditions and uranium position"
+      ],
+      "evidence_excerpt": "Reuters independently reports Trump's remarks and quotes Araqchi's interview with the state-owned Iran newspaper.",
+      "verified": true,
+      "checked_at": "2026-11-21T00:52:10Z"
+    },
+    {
+      "label": "Qatar Ministry of Foreign Affairs",
+      "url": "https://mofa.gov.qa/en/qatar/latest-articles/latest-news/details/2026/11/17/advisor-to-prime-minister--foreign-ministry-official-spokesperson--qatar%27s-mediation-continues--meeting-with-iranian-side-expected",
+      "claims": [
+        "Qatar's continuing mediation"
+      ],
+      "evidence_excerpt": "Qatar's Foreign Ministry spokesperson confirmed ongoing efforts to bridge the gap between Washington and Tehran on November 17.",
+      "verified": true,
+      "checked_at": "2026-11-21T00:52:10Z"
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:June_2026_Official_Portrait_of_Donald_J._Trump.jpg",
+    "attribution": "Official White House portrait by Daniel Torok, June 2026. Graphic by EP News.",
+    "rights": "U.S. public domain as an official federal government work; identified on the graphic as a June 2026 official portrait.",
+    "authentic": true,
+    "path": "assets/images/epnews-trump-iran-talks-20261120.jpg",
+    "sha256": "6f1196e431b099c24c9eb17a4f1224095c4dc2c9416a14a52487c265dfa24f46",
+    "publisher_approved": true
+  },
+  "slug": "trump-iran-talks-20261120",
+  "publisher_approved": true,
+  "article_sha256": "4b689dc4980ae7de4d586acce48c7af27a614c6b928a53cf54d573aeebb36756"
+}
