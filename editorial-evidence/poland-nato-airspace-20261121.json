@@ -1,0 +1,107 @@
+{
+  "slug": "poland-nato-airspace-20261121",
+  "sources": [
+    {
+      "label": "Reuters · Polish airspace violations",
+      "url": "https://www.reuters.com/business/aerospace-defense/polish-army-investigates-report-unknown-objects-near-ukraine-border-2026-11-20/",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Poland’s defense minister identified one cruise missile, a suspected second missile and a likely jet-powered drone."
+      ],
+      "evidence_excerpt": "Poland’s defense minister identified one cruise missile, a suspected second missile and a likely jet-powered drone."
+    },
+    {
+      "label": "Polish Radio · Impact sites and injuries",
+      "url": "https://www.polskieradio.pl/395/7784/Artykul/3755199,two-russian-missiles-drone-crash-in-poland-during-air-attack-on-ukraine-defence-minister-says",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Three objects came down in southeast Poland and no injuries were reported."
+      ],
+      "evidence_excerpt": "Three objects came down in southeast Poland and no injuries were reported."
+    },
+    {
+      "label": "Polish Radio · NATO response",
+      "url": "https://www.polskieradio.pl/395/7785/artykul/3755243,nato-ukraine-and-uk-express-solidarity-with-poland-after-airspace-violations",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Rutte said NATO scrambled jets."
+      ],
+      "evidence_excerpt": "Rutte said NATO scrambled jets."
+    },
+    {
+      "label": "Reuters · Rutte in Warsaw",
+      "url": "https://www.reuters.com/world/nato-will-defend-every-inch-polish-territory-rutte-says-2026-11-21/",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Rutte pledged to defend Polish territory, and PAP reported a Monday council meeting."
+      ],
+      "evidence_excerpt": "Rutte pledged to defend Polish territory, and PAP reported a Monday council meeting."
+    },
+    {
+      "label": "MiGFlug · Polish operational command account",
+      "url": "https://migflug.com/afterburner/fr/kh-101-missile-poland-nowy-lipowiec-swedish-gripens-2026/",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Nowak attributed the lack of an engagement to unmet conditions and described difficult weather during the Swedish attempt."
+      ],
+      "evidence_excerpt": "Nowak attributed the lack of an engagement to unmet conditions and described difficult weather during the Swedish attempt."
+    },
+    {
+      "label": "Associated Press · European military exercise",
+      "url": "https://apnews.com/article/a28d60d1b37093199dd017472028d7ac",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Troops from 11 countries drilled for a possible postwar mission. Tusk assessed the incursion as deliberate."
+      ],
+      "evidence_excerpt": "Troops from 11 countries drilled for a possible postwar mission. Tusk assessed the incursion as deliberate."
+    },
+    {
+      "label": "Institute for the Study of War · Nov. 20 assessment",
+      "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-november-20-2026/",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "ISW assessed the incursion as consistent with testing NATO and discouraging European involvement."
+      ],
+      "evidence_excerpt": "ISW assessed the incursion as consistent with testing NATO and discouraging European involvement."
+    },
+    {
+      "label": "NATO · Collective defence and Article 5",
+      "url": "https://www.nato.int/en/what-we-do/introduction-to-nato/collective-defence-and-article-5",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Allies assist after an armed attack as each deems necessary."
+      ],
+      "evidence_excerpt": "Allies assist after an armed attack as each deems necessary."
+    },
+    {
+      "label": "European Pravda · Polish request for assistance",
+      "url": "https://www.eurointegration.com.ua/eng/news/2026/11/20/7250473/",
+      "verified": true,
+      "checked_at": "2026-11-21T16:11:46.639Z",
+      "claims": [
+        "Poland requested additional airborne surveillance and F-35s."
+      ],
+      "evidence_excerpt": "Poland requested additional airborne surveillance and F-35s."
+    }
+  ],
+  "image": {
+    "original_source": "EP News editorial artwork created using OpenAI image generation",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News editorial use",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/epnews-poland-nato-20261121.png",
+    "sha256": "cb9c2007ef56f7f5c4a0cd360c1587eb7f12512252f6f59010692175ce439da4",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "d935cf5ce99d626b78f75010269b35b06fdad6db9ef963e924e8522d96eb2c9d"
+}
