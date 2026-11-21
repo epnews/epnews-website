@@ -1,0 +1,103 @@
+{
+  "sources": [
+    {
+      "label": "TCEQ permit letter, Nov. 16",
+      "url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=10258371&searchType=External",
+      "claims": [
+        "Nov. 16 authorization",
+        "43 gas-fired generators",
+        "Authorization scope"
+      ],
+      "evidence_excerpt": "The registration letter authorizes emissions associated with 43 natural gas-powered generators at the Boca Chica Facility under standard permit 185303, subject to the registered conditions.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    },
+    {
+      "label": "TCEQ technical review",
+      "url": "https://records.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=10258370&searchType=External",
+      "claims": [
+        "Generating capacity",
+        "Title V operating permit"
+      ],
+      "evidence_excerpt": "The review lists 1,456.22 MW and records the company's confirmation that it will obtain a Title V operating permit.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    },
+    {
+      "label": "Cameron County Commissioners Court agenda, Nov. 17",
+      "url": "https://www.cameroncountytx.gov/wp-content/uploads/2026/11/Agenda-Commissioners-Court-Meeting.pdf",
+      "claims": [
+        "Scope of county motion"
+      ],
+      "evidence_excerpt": "Agenda item 4H concerns authorization to post notice of intent to consider a Chapter 312 tax abatement.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    },
+    {
+      "label": "KRGV, Nov. 17",
+      "url": "https://www.krgv.com/news/cameron-county-commissioners-reject-spacex-data-center-tax-break-request",
+      "claims": [
+        "County vote",
+        "Company estimates"
+      ],
+      "evidence_excerpt": "Only two members voted to move the request ahead. The application cited an estimated $24 billion investment and 500 jobs.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    },
+    {
+      "label": "San Antonio Express-News, Nov. 20",
+      "url": "https://www.expressnews.com/business/article/spacex-cameron-county-data-center-tax-break-22540117.php",
+      "claims": [
+        "3–2 vote",
+        "10-year exemption and payments",
+        "Project connection to the 43-generator air permit"
+      ],
+      "evidence_excerpt": "Reporting links the 43-generator authorization to the data-center project and describes the defeated procedural motion and proposed annual payments.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    },
+    {
+      "label": "KRGV, Nov. 19",
+      "url": "https://www.krgv.com/news/spacex-responds-after-cameron-county-rejects-tax-break-for-data-center-power-plant",
+      "claims": [
+        "SpaceX response"
+      ],
+      "evidence_excerpt": "SpaceX said the proposed payments in lieu of taxes would give the county more predictable revenue as equipment depreciated.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    },
+    {
+      "label": "City of Starbase public notices",
+      "url": "https://www.starbase.texas.gov/",
+      "claims": [
+        "Dec. 9 hearing"
+      ],
+      "evidence_excerpt": "The city lists a December 9 public hearing on tax abatement and economic development agreements.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    },
+    {
+      "label": "Reuters, Nov. 9",
+      "url": "https://www.reuters.com/legal/transactional/spacex-plans-24-billion-gas-power-plant-data-center-project-texas-2026-11-09/",
+      "claims": [
+        "Separate municipal proceeding",
+        "Proposed project value"
+      ],
+      "evidence_excerpt": "Reuters independently reports the city hearing on a proposed tax abatement and economic development agreement for the roughly $24 billion project.",
+      "verified": true,
+      "checked_at": "2026-11-21T13:14:00Z"
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:USA_-_Texas_-_Boca_Chica_-_Starbase_(51285305397).jpg",
+    "attribution": "2021 Starbase file photo by Alexander Hatley via Wikimedia Commons, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/). Cropped and overlaid with EP News graphics.",
+    "rights": "Creative Commons Attribution 2.0 Generic. Archival context image, taken June 27, 2021. Photo cropped and overlaid with type and branding.",
+    "authentic": true,
+    "path": "assets/images/epnews-spacex-starbase-permit-tax-break-20261121.jpg",
+    "sha256": "ffc40f7a5df3149fbef51e82025c7665e49f2605b72ccf842da69b600ae6764a",
+    "publisher_approved": true
+  },
+  "slug": "spacex-starbase-permit-tax-break-20261121",
+  "publisher_approved": true,
+  "article_sha256": "5777a9f42fb1d72d5a9299e6d6b24af01765b71bf4f86680e8eb555a7e630082"
+}
