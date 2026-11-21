@@ -1,0 +1,87 @@
+{
+  "sources": [
+    {
+      "label": "The Texas Tribune · Friday withdrawals",
+      "url": "https://www.texastribune.org/2026/11/20/texas-paxton-abortion-pill-lawsuits-dropped-california-delaware/",
+      "verified": true,
+      "claims": [
+        "Paxton filed notices of nonsuit in both cases Friday. The Tribune also reported a separate Galveston County plaintiff’s case involving Coeytaux."
+      ],
+      "checked_at": "2026-11-21T17:20:16.377Z",
+      "evidence_excerpt": "Paxton filed notices of nonsuit in both cases Friday. The Tribune also reported a separate Galveston County plaintiff’s case involving Coeytaux."
+    },
+    {
+      "label": "The Texas Tribune · Nathan Johnson interview",
+      "url": "https://www.texastribune.org/2026/11/04/texas-abortion-ban-democrats-nathan-johnson-gina-hinojosa/",
+      "verified": true,
+      "claims": [
+        "Johnson said his office would stop suing out-of-state doctors who mail abortion medication to Texas patients."
+      ],
+      "checked_at": "2026-11-21T17:20:16.377Z",
+      "evidence_excerpt": "Johnson said his office would stop suing out-of-state doctors who mail abortion medication to Texas patients."
+    },
+    {
+      "label": "Texas Legislature · Enrolled House Bill 7",
+      "url": "https://capitol.texas.gov/tlodocs/892/billtext/html/HB00007F.htm",
+      "verified": true,
+      "claims": [
+        "Chapter 171A addresses mailing and prescribing to or from Texas and authorizes eligible private plaintiffs to bring civil actions."
+      ],
+      "checked_at": "2026-11-21T17:20:16.377Z",
+      "evidence_excerpt": "Chapter 171A addresses mailing and prescribing to or from Texas and authorizes eligible private plaintiffs to bring civil actions."
+    },
+    {
+      "label": "Associated Press · New York enforcement case",
+      "url": "https://apnews.com/article/e1d6d561c098084258575fb9f647ac1b",
+      "verified": true,
+      "claims": [
+        "An Ulster County clerk declined to file the Texas judgment under New York’s shield law. A New York judge dismissed Texas’ challenge in October 2025."
+      ],
+      "checked_at": "2026-11-21T17:20:16.377Z",
+      "evidence_excerpt": "An Ulster County clerk declined to file the Texas judgment under New York’s shield law. A New York judge dismissed Texas’ challenge in October 2025."
+    },
+    {
+      "label": "New York attorney general · Shield law guidance",
+      "url": "https://ag.ny.gov/shield-law-guidance",
+      "verified": true,
+      "claims": [
+        "The guidance describes limits on cooperation with out-of-state proceedings involving care protected under New York law."
+      ],
+      "checked_at": "2026-11-21T17:20:16.377Z",
+      "evidence_excerpt": "The guidance describes limits on cooperation with out-of-state proceedings involving care protected under New York law."
+    },
+    {
+      "label": "Texas attorney general · Delaware complaint announcement",
+      "url": "https://alt-dev.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-abortionist-sending-pills-kill-unborn-babies-texas",
+      "verified": true,
+      "claims": [
+        "Paxton’s office identified Debra Lynch and Her Safe Harbor as the targets of the January lawsuit."
+      ],
+      "checked_at": "2026-11-21T17:20:16.377Z",
+      "evidence_excerpt": "Paxton’s office identified Debra Lynch and Her Safe Harbor as the targets of the January lawsuit."
+    },
+    {
+      "label": "Texas attorney general · Aid Access complaint announcement",
+      "url": "https://alt-stage.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-radical-network-ships-abortion-drugs-houston-san-antonio-dallas",
+      "verified": true,
+      "claims": [
+        "Paxton’s office identified Aid Access, Remy Coeytaux and Rebecca Gomperts in the February lawsuit."
+      ],
+      "checked_at": "2026-11-21T17:20:16.377Z",
+      "evidence_excerpt": "Paxton’s office identified Aid Access, Remy Coeytaux and Rebecca Gomperts in the February lawsuit."
+    }
+  ],
+  "image": {
+    "original_source": "EP News original AI-generated editorial illustration with approved EP News masthead",
+    "attribution": "EP News · AI-generated editorial illustration",
+    "rights": "Original AI-generated artwork with publisher-provided EP News branding",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "sha256": "00526c987c9bb71829faa745e397c48cc6b9995dfec84dbfd02e54c27c8a54be",
+    "path": "assets/images/epnews-texas-abortion-pill-lawsuits-20261121.jpg",
+    "publisher_approved": true
+  },
+  "slug": "texas-abortion-pill-lawsuits-20261121",
+  "publisher_approved": true,
+  "article_sha256": "f2d1fe602ce26202060fb55107e11f1555ea486a9fd10f8b27a15666460cc332"
+}
