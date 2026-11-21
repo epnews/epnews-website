@@ -330,5 +330,10 @@
     "path": "assets/images/epnews-ensign-venezuela-drilling-20261121.jpg",
     "url": "https://drive.google.com/uc?export=download&id=19J2z3juVWGsyKxWLN_vbwe_N9V_OjCx9",
     "sha256": "073ebe33120256304f899287e212c225dc69b6b6b8fa027d2e95e50c2b357f26"
+  },
+  {
+    "path": "assets/images/epnews-poland-nato-20261121.png",
+    "url": "https://drive.google.com/uc?export=download&id=1Z-UHG0uTzog2DW4gXuLDXLWTytN69Zvo",
+    "sha256": "cb9c2007ef56f7f5c4a0cd360c1587eb7f12512252f6f59010692175ce439da4"
   }
 ]
