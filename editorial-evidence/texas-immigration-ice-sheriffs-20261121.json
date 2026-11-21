@@ -1,0 +1,67 @@
+{
+  "slug": "texas-immigration-ice-sheriffs-20261121",
+  "sources": [
+    {
+      "label": "Texas Tribune · Hinojosa interview",
+      "url": "https://www.texastribune.org/2026/11/18/gina-hinojosa-texas-governor-elect-interview/",
+      "verified": true,
+      "checked_at": "2026-11-21T18:36:25.000Z",
+      "claims": [
+        "Hinojosa supports border security and said she would revoke the detention-land directive."
+      ],
+      "evidence_excerpt": "Hinojosa supports border security and said she would revoke the detention-land directive."
+    },
+    {
+      "label": "Travis County Sheriff's Office · SB 8 compliance",
+      "url": "https://tcsheriff.org/about/media/press-releases/2026-press-releases/455-tcso-enters-287g-agreement-in-accordance-with-state-law",
+      "verified": true,
+      "checked_at": "2026-11-21T18:36:25.000Z",
+      "claims": [
+        "Sheriff says SB 8 deadline December 1; Travis chose limited WSO model and signed November 18."
+      ],
+      "evidence_excerpt": "Sheriff says SB 8 deadline December 1; Travis chose limited WSO model and signed November 18."
+    },
+    {
+      "label": "Texas Legislature · Enrolled Senate Bill 8",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00008F.htm",
+      "verified": true,
+      "checked_at": "2026-11-21T18:36:25.000Z",
+      "claims": [
+        "Section 2 sets December 1, 2026, as the deadline to comply with Section 753.051(a). Section 753.051(b) requires additional requests at least annually if an agreement is requested but not entered."
+      ],
+      "evidence_excerpt": "Sections 2 and 753.051(a)–(b) specify coverage, the deadline and follow-up requests."
+    },
+    {
+      "label": "Texas Tribune · Houston ICE cooperation",
+      "url": "https://www.texastribune.org/2026/11/06/ice-warrants-immigration-houston-texas-whitmire-police/",
+      "verified": true,
+      "checked_at": "2026-11-21T18:36:25.000Z",
+      "claims": [
+        "Houston changed its ICE notification policy for administrative warrants and non-jailable encounters."
+      ],
+      "evidence_excerpt": "Houston changed its ICE notification policy for administrative warrants and non-jailable encounters."
+    },
+    {
+      "label": "Texas Tribune · 287(g) future",
+      "url": "https://www.texastribune.org/2026/11/20/texas-287g-immigration-police-department-money/",
+      "verified": true,
+      "checked_at": "2026-11-21T18:36:25.000Z",
+      "claims": [
+        "Republicans retained Texas Senate; Democrats won governor and House; Schwertner wants expanded 287(g)."
+      ],
+      "evidence_excerpt": "Republicans retained Texas Senate; Democrats won governor and House; Schwertner wants expanded 287(g)."
+    }
+  ],
+  "image": {
+    "original_source": "EP News AI-generated artwork with approved master logo composited",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News editorial use",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/epnews-texas-immigration-ice-sheriffs-20261121.png",
+    "sha256": "e8589145f4523fca76e98f4f00c1dfdd57d4658f5af9a28d865767571ec358f5",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "7befce3840a8ff57ff9ff72a70fb8255d2613c8ab6236c76bfc8f64ee513d479"
+}
