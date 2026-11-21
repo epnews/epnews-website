@@ -340,5 +340,10 @@
     "path": "assets/images/epnews-texas-abortion-pill-lawsuits-20261121.jpg",
     "url": "https://drive.google.com/uc?export=download&id=1wiAizBVUErd0On53meLojAFoJiFFIBg2",
     "sha256": "00526c987c9bb71829faa745e397c48cc6b9995dfec84dbfd02e54c27c8a54be"
+  },
+  {
+    "path": "assets/images/epnews-texas-immigration-ice-sheriffs-20261121.png",
+    "url": "https://drive.google.com/uc?export=download&id=1t9nC_tRIiFVTyef57vvrqIHQEL5j0cE6",
+    "sha256": "e8589145f4523fca76e98f4f00c1dfdd57d4658f5af9a28d865767571ec358f5"
   }
 ]
