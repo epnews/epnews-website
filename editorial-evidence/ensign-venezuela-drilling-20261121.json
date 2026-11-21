@@ -1,0 +1,58 @@
+{
+  "sources": [
+    {
+      "label": "Reuters · Ensign interview, Nov. 20",
+      "url": "https://www.reuters.com/business/energy/canadas-ensign-plans-grow-drilling-rig-fleet-venezuela-2026-11-20/",
+      "claims": [
+        "Fleet target and rig movements",
+        "Chevron and prospective customers",
+        "Permian upgrades"
+      ],
+      "evidence_excerpt": "CEO Bob Geddes described the two-rig operating baseline, the two-year target, a third rig in country and a fourth in transit. He identified three additional rigs for Chevron and negotiations over the other ten. Chevron did not immediately comment.",
+      "checked_at": "2026-11-21T13:55:21.522Z",
+      "verified": true
+    },
+    {
+      "label": "Ensign Energy Services · Third-quarter report",
+      "url": "https://www.ensignenergy.com/wp-content/uploads/2026/11/2026-EESI-THIRD-QUARTER-REPORT.pdf",
+      "claims": [
+        "Receivables and collection risk"
+      ],
+      "evidence_excerpt": "Ensign reported approximately C$9.2 million in net accounts receivable at September 30 for Venezuelan work and said political unrest and sanctions could affect collection.",
+      "checked_at": "2026-11-21T13:55:21.522Z",
+      "verified": true
+    },
+    {
+      "label": "Associated Press · Chevron’s Venezuela investment plan",
+      "url": "https://apnews.com/article/4d77fa9a9d53fc8693a242fbbb07fcef",
+      "claims": [
+        "Chevron investment and production targets"
+      ],
+      "evidence_excerpt": "Chevron announced plans to invest more than US$7 billion over five years and target approximately 600,000 barrels a day.",
+      "checked_at": "2026-11-21T13:55:21.522Z",
+      "verified": true
+    },
+    {
+      "label": "U.S. Treasury · Venezuela license updates",
+      "url": "https://ofac.treasury.gov/recent-actions/20260827?ftag=YHF4eb9d17",
+      "claims": [
+        "Conditional U.S. sanctions licensing"
+      ],
+      "evidence_excerpt": "Treasury issued General License 50C covering oil and gas operations of certain entities and General License 48C covering certain items and services.",
+      "checked_at": "2026-11-21T13:55:21.522Z",
+      "verified": true
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:Balanc%C3%ADn_Petrolero.jpg",
+    "attribution": "2014 Barinas pumpjack file photo by Carlos Santos via Wikimedia Commons. Cropped, shaded and overlaid. Adapted graphic distributed under CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/).",
+    "rights": "CC BY-SA 3.0. The adapted graphic is distributed under the same license. The archival image shows a pumpjack in Barinas and is contextual.",
+    "authentic": true,
+    "path": "assets/images/epnews-ensign-venezuela-drilling-20261121.jpg",
+    "sha256": "073ebe33120256304f899287e212c225dc69b6b6b8fa027d2e95e50c2b357f26",
+    "publisher_approved": true
+  },
+  "slug": "ensign-venezuela-drilling-20261121",
+  "publisher_approved": true,
+  "article_sha256": "6d37be7db6f9251fea1fe8a741c2938a3d6c49cf4cce012d7a29220231b071e0"
+}
