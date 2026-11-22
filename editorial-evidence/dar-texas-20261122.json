@@ -1,0 +1,67 @@
+{
+  "sources": [
+    {
+      "label": "DAR president general’s October 28 message",
+      "url": "https://nssdar.org/2026/10/28/dars-membership-governance-mission-important-president-general-message/",
+      "claims": [
+        "June vote and national board’s account"
+      ],
+      "evidence_excerpt": "Reports vote of 1,474 to 981 and cites use of official chapter resources for an outside campaign and failure to provide requested records.",
+      "verified": true,
+      "checked_at": "2026-11-22"
+    },
+    {
+      "label": "Titus County petition and exhibits, Case 44639",
+      "url": "https://static.heritage.org/2026/MarthaLaird-Petition.pdf",
+      "claims": [
+        "Chapter’s allegations and requested relief"
+      ],
+      "evidence_excerpt": "The chapter alleges procedural violations and disputes the defendants’ authority to dissolve a separate Texas nonprofit and obtain its property.",
+      "verified": true,
+      "checked_at": "2026-11-22"
+    },
+    {
+      "label": "DAR membership guidance",
+      "url": "https://www.dar.org/discover/become-member/how-join",
+      "claims": [
+        "Age and lineage requirements"
+      ],
+      "evidence_excerpt": "Requires women 18 or older to document lineal descent from a person who aided American independence.",
+      "verified": true,
+      "checked_at": "2026-11-22"
+    },
+    {
+      "label": "Alabama Gazette",
+      "url": "https://www.alabamagazette.com/story/2026/11/01/news/span-classbrnwsbreaking-news-spanjudge-grants-temporary-restraining-order-protecting-the-martha-laird-chapter-of-the-dar/13090.html",
+      "claims": [
+        "Temporary court order"
+      ],
+      "evidence_excerpt": "Reports provisional restoration of chapter recognition and protections for its assets and bank account.",
+      "verified": true,
+      "checked_at": "2026-11-22"
+    },
+    {
+      "label": "PJ Media, Amy Denton, Part Four",
+      "url": "https://pjmedia.com/amy-denton/2026/11/22/when-the-dar-went-woke-part-four-n4959577",
+      "claims": [
+        "Reported hearing delay"
+      ],
+      "evidence_excerpt": "Reports the injunction hearing moved from November 9 to early 2027, without an exact date.",
+      "verified": true,
+      "checked_at": "2026-11-22"
+    }
+  ],
+  "image": {
+    "original_source": "EP News website hero generated for this article",
+    "attribution": "EP News",
+    "rights": "EP News commissioned illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/epnews-dar-texas-20261122-1600x900.png",
+    "sha256": "2caf913bdcaacce2baf4d3927af9ac453842a2effb084b3851f0419c49f32a2c",
+    "publisher_approved": true
+  },
+  "slug": "dar-texas-20261122",
+  "publisher_approved": true,
+  "article_sha256": "dce2219bcec07532a6a08d13a4ce0700d9525a114b80dad27310606cc2352c44"
+}
