@@ -1,0 +1,57 @@
+{
+  "sources": [
+    {
+      "label": "Joint statement on the settlement, April 21",
+      "url": "https://freespeechunion.org/news/brodie-mitchell-and-royal-holloway-settle-free-speech-dispute",
+      "verified": true,
+      "checked_at": "2026-11-22T14:00:00Z",
+      "claims": [
+        "The joint statement confirms the goodwill payment, regret for the suspension’s duration and no admission of liability."
+      ],
+      "evidence_excerpt": "The joint statement confirms the goodwill payment, regret for the suspension’s duration and no admission of liability."
+    },
+    {
+      "label": "October reporting on the referral and the June 2 police email",
+      "url": "https://ioehighereducation.com/News/Article/4457",
+      "verified": true,
+      "checked_at": "2026-11-22T14:00:00Z",
+      "claims": [
+        "The October account reports the university panel’s assessment of the post and the June 2 police response."
+      ],
+      "evidence_excerpt": "The October account reports the university panel’s assessment of the post and the June 2 police response."
+    },
+    {
+      "label": "The Telegraph’s November 21 reporting on the university records",
+      "url": "https://www.telegraph.co.uk/news/2026/11/21/university-spied-brodie-mitchell-student-pro-israel-views/",
+      "verified": true,
+      "checked_at": "2026-11-22T14:00:00Z",
+      "claims": [
+        "The November report describes the nine-week suspension and 1,465 pages of records released to Mitchell."
+      ],
+      "evidence_excerpt": "The November report describes the nine-week suspension and 1,465 pages of records released to Mitchell."
+    },
+    {
+      "label": "Home Office guidance on Prevent in higher education",
+      "url": "https://www.gov.uk/government/publications/explaining-prevent-to-staff-and-students-in-higher-education/explaining-prevent-to-staff-and-students-in-higher-education",
+      "verified": true,
+      "checked_at": "2026-11-22T14:00:00Z",
+      "claims": [
+        "The Home Office describes Prevent as a safeguarding assessment and calls for proportionate implementation and regard for free speech."
+      ],
+      "evidence_excerpt": "The Home Office describes Prevent as a safeguarding assessment and calls for proportionate implementation and regard for free speech."
+    }
+  ],
+  "image": {
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "original_source": "EP News original AI-generated illustration with an on-image disclosure",
+    "attribution": "EP News",
+    "rights": "EP News-generated editorial artwork, approved by the publisher for this package",
+    "path": "assets/images/royal-holloway-mitchell-prevent-referral-20261122.jpg",
+    "sha256": "4809624fddbb05ff06c0fc935d1936d8b2bbd252748d147ce9a2f91c1bc985c4",
+    "publisher_approved": true
+  },
+  "slug": "royal-holloway-mitchell-prevent-referral-20261122",
+  "publisher_approved": true,
+  "article_sha256": "61821df79de0ee9486a37507f31ab41af376a0708d732542b843fd929376e521"
+}
