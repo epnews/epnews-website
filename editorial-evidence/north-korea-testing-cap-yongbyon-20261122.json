@@ -1,0 +1,97 @@
+{
+  "sources": [
+    {
+      "label": "The Wall Street Journal",
+      "url": "https://www.wsj.com/world/asia/kim-jong-un-north-korea-trump-2920ff49",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "Reported testing-cap discussions and the administration official’s denial of efforts to broker a meeting."
+      ],
+      "evidence_excerpt": "Reported testing-cap discussions and the administration official’s denial of efforts to broker a meeting."
+    },
+    {
+      "label": "Reuters, November 18",
+      "url": "https://www.reuters.com/world/china/iaea-says-north-korea-is-expanding-uranium-enrichment-plant-yongbyon-2026-11-18/",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "Reported Grossi’s Yongbyon extension announcement and limits on IAEA access."
+      ],
+      "evidence_excerpt": "Reported Grossi’s Yongbyon extension announcement and limits on IAEA access."
+    },
+    {
+      "label": "Yonhap",
+      "url": "https://en.yna.co.kr/view/AEN20260902001100315",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "White House said policy was unchanged and Trump was open to dialogue without preconditions."
+      ],
+      "evidence_excerpt": "White House said policy was unchanged and Trump was open to dialogue without preconditions."
+    },
+    {
+      "label": "Congressional Research Service, weapons programs",
+      "url": "https://www.congress.gov/crs_external_products/IF/PDF/IF10472/IF10472.14.pdf",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "Records no nuclear tests in 2018 and continued fissile material production."
+      ],
+      "evidence_excerpt": "Records no nuclear tests in 2018 and continued fissile material production."
+    },
+    {
+      "label": "Congressional Research Service, nuclear negotiations",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R45033/R45033.8.pdf",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "Describes Hanoi, the Yongbyon offer and the sanctions disagreement."
+      ],
+      "evidence_excerpt": "Describes Hanoi, the Yongbyon offer and the sanctions disagreement."
+    },
+    {
+      "label": "SIPRI Yearbook 2026",
+      "url": "https://www.sipri.org/sites/default/files/2026-06/yb26_summary_en_1.pdf",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "Estimates approximately 60 North Korean warheads as of January 2026."
+      ],
+      "evidence_excerpt": "Estimates approximately 60 North Korean warheads as of January 2026."
+    },
+    {
+      "label": "White House joint fact sheet",
+      "url": "https://www.whitehouse.gov/fact-sheets/2025/11/joint-fact-sheet-on-president-donald-j-trumps-meeting-with-president-lee-jae-myung/",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "Records the U.S.–South Korea commitment to complete denuclearization."
+      ],
+      "evidence_excerpt": "Records the U.S.–South Korea commitment to complete denuclearization."
+    },
+    {
+      "label": "Reuters, February 25",
+      "url": "https://www.reuters.com/world/asia-pacific/north-koreas-kim-says-relations-with-us-depend-us-attitude-2026-02-25/",
+      "verified": true,
+      "checked_at": "2026-11-22T15:00:00Z",
+      "claims": [
+        "Reports Kim’s pledge to expand the arsenal and stated condition for better relations."
+      ],
+      "evidence_excerpt": "Reports Kim’s pledge to expand the arsenal and stated condition for better relations."
+    }
+  ],
+  "image": {
+    "authentic": true,
+    "kind": "file-photograph",
+    "original_source": "https://commons.wikimedia.org/wiki/File:President_Trump_and_Kim_Jong-Un_meet_June_2018_(cropped).jpg",
+    "attribution": "Shealah Craighead / The White House, public-domain file photo",
+    "rights": "Public domain, official White House photograph",
+    "path": "assets/images/north-korea-testing-cap-yongbyon-20261122.jpg",
+    "sha256": "14b27d7cee12709583b04879e1c4fba5af24f69ad52a8fc9325df23f1f3fdb54",
+    "publisher_approved": true
+  },
+  "slug": "north-korea-testing-cap-yongbyon-20261122",
+  "publisher_approved": true,
+  "article_sha256": "31bffc712802ddc86787a3c20e26d85f361c2feb47080fb4f5bcece335a51ff0"
+}
