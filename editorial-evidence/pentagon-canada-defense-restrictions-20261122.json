@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "label": "Associated Press",
+      "url": "https://apnews.com/article/1959fff46997c899f3c2bc2df7220ec6",
+      "verified": true,
+      "checked_at": "2026-11-22T12:00:00Z",
+      "claims": [
+        "Rounds described limits on informal engagements.",
+        "The Pentagon said NORAD, NATO and defense intelligence sharing are unaffected.",
+        "Canada’s defence minister reported no operational change."
+      ],
+      "evidence_excerpt": "AP reported remarks by Rounds, Parnell and McGuinty, including the continuing joint counter-drug work."
+    },
+    {
+      "label": "The Washington Post",
+      "url": "https://www.washingtonpost.com/national-security/2026/11/20/secret-hegseth-memo-restricts-us-canada-defense-relationship/",
+      "verified": true,
+      "checked_at": "2026-11-22T12:00:00Z",
+      "claims": [
+        "Hegseth circulated classified guidance, whose full text remains unavailable."
+      ],
+      "evidence_excerpt": "Officials familiar with the directive described classified guidance. The Post said it had not reviewed the memo."
+    }
+  ],
+  "image": {
+    "authentic": true,
+    "kind": "file-photograph",
+    "original_source": "https://www.dvidshub.net/image/8226342/norad-and-usnorthcom-change-command-ceremony-feb-5-2024",
+    "attribution": "Joshua Armstrong / U.S. Department of Defense (2024 file photo)",
+    "rights": "U.S. Department of Defense public domain photograph",
+    "path": "assets/images/pentagon-canada-defense-restrictions-20261122.jpg",
+    "sha256": "7bfe36d1f8f17c6bac89741ff09eb8c7609e7e79c27d0fbc0ba0aebca0408a52",
+    "publisher_approved": true
+  },
+  "slug": "pentagon-canada-defense-restrictions-20261122",
+  "publisher_approved": true,
+  "article_sha256": "35ab527e0f993f3811dc58f042c142026b0f884cc29d45c24838492120226f03"
+}
