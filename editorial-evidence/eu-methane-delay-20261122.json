@@ -1,0 +1,107 @@
+{
+  "sources": [
+    {
+      "label": "Council of the European Union, November 19–20, 2026",
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/19/methane-regulation-eu-agrees-targeted-amendment-to-safeguard-security-of-supply/",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "Provisional agreement, dates, and review requirement"
+      ],
+      "evidence_excerpt": "The agreement sets importer monitoring, reporting and verification at January 1, 2029, intensity reporting at August 5, 2030, and the Commission review by January 1, 2028. Formal adoption is still required."
+    },
+    {
+      "label": "European Commission, Directorate-General for Energy, November 19, 2026",
+      "url": "https://energy.ec.europa.eu/news/co-legislators-agree-targeted-amendment-methane-regulation-ensure-supply-security-amid-energy-crisis-2026-11-19_en",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "Stated security-of-supply rationale"
+      ],
+      "evidence_excerpt": "The Commission cited energy market strain linked to the Middle East conflict and said the postponement gives operators time to prepare."
+    },
+    {
+      "label": "European Parliamentary Research Service, 2026",
+      "url": "https://research.europarl.europa.eu/EPRS_BRI%282026%29797009?locale=EN",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "U.S. objections and background"
+      ],
+      "evidence_excerpt": "The briefing records Ambassador Andrew Puzder’s April 2026 criticism of the requirements and warning about their effect on energy supply."
+    },
+    {
+      "label": "Reuters, November 19, 2026",
+      "url": "https://www.reuters.com/business/energy/us-gas-exporters-more-comfortable-signing-european-deals-after-eu-delays-methane-2026-11-19/",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "U.S. LNG industry reaction"
+      ],
+      "evidence_excerpt": "Reuters reports industry concerns about contracting and quotes Charlie Riedl on the relief provided by the delay."
+    },
+    {
+      "label": "Financial Times, November 19, 2026",
+      "url": "https://www.ft.com/content/e871493f-920c-4ece-94d4-9d14317047fe",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "Reported lobbying"
+      ],
+      "evidence_excerpt": "The Financial Times reports sustained lobbying by the United States, Qatar and the oil and gas sector."
+    },
+    {
+      "label": "Columbia University Center on Global Energy Policy, October 22, 2026",
+      "url": "https://www.energypolicy.columbia.edu/the-costs-of-delaying-implementation-of-the-eu-methane-regulation/",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "EU implementation challenges"
+      ],
+      "evidence_excerpt": "The researchers identify unfinished verification protocols, accreditation and harmonized penalty rules."
+    },
+    {
+      "label": "Environmental Defense Fund Europe, Carbon Limits analysis",
+      "url": "https://www.edfeurope.org/news/2026/06/03/carbon-limits-analysis-monitoring-reporting-and-verification-costs-under-eu-methane",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "Estimated direct monitoring, reporting and verification costs"
+      ],
+      "evidence_excerpt": "The analysis estimates 0.03% to 0.6% of production value for the producer types studied."
+    },
+    {
+      "label": "Regulation (EU) 2024/1787, Article 33",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1787/oj",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "Administrative fine ceiling"
+      ],
+      "evidence_excerpt": "For legal persons the specified administrative fines may not exceed 20% of annual turnover in the preceding business year."
+    },
+    {
+      "label": "Reuters, November 19, 2026, agreement coverage",
+      "url": "https://www.reuters.com/business/energy/eu-countries-parliament-agree-delay-eu-methane-regulation-by-two-years-2026-11-19/",
+      "verified": true,
+      "checked_at": "2026-11-22T19:10:10.864Z",
+      "claims": [
+        "Independent confirmation of the two-year delay"
+      ],
+      "evidence_excerpt": "Reuters reports the two-year postponement and the energy market disruption cited in support."
+    }
+  ],
+  "image": {
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "original_source": "https://drive.google.com/file/d/1kFXcWI03pY4fA2_eTtUzFoPIPeAe8q0i/view",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News original editorial illustration with EP News masthead",
+    "path": "assets/images/epnews-eu-methane-20261122-1600x900.png",
+    "sha256": "b8ce6d9127f530662ecf8b3808bd1354a05f1a62bb592bbf10ffda4ce67a8a38",
+    "publisher_approved": true
+  },
+  "slug": "eu-methane-delay-20261122",
+  "publisher_approved": true,
+  "article_sha256": "0f7a1350a3f1b20109d14506a0e2620d5ddc9371659a1aca2534ac1bd7e218ec"
+}
