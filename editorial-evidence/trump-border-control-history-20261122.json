@@ -1,0 +1,126 @@
+{
+  "sources": [
+    {
+      "label": "Trump’s November 22 statement",
+      "url": "https://www.trumpstruth.org/statuses/43688",
+      "claims": [
+        "Trump’s claim about open borders"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "Trump said open borders destroy nations and that the U.S. had come close."
+    },
+    {
+      "label": "Cambridge University Press on Adrianople",
+      "url": "https://assets.cambridge.org/97810092/96946/excerpt/9781009296946_excerpt.pdf",
+      "claims": [
+        "Gothic crossing and the Battle of Adrianople"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "More Goths crossed the destabilized Danube defenses; Valens marched to meet the Goths in 378."
+    },
+    {
+      "label": "A History of Rome to 565 A.D.",
+      "url": "https://www.crcnh.org/downloads/history-reference/rome/A-History-of-Rome.pdf",
+      "claims": [
+        "Roman admission and treatment of Goths"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "The westward movement of the Huns drove Goths to the Roman frontier; the crisis culminated at Adrianople."
+    },
+    {
+      "label": "UK Parliament research briefing on Lebanon",
+      "url": "https://researchbriefings.files.parliament.uk/documents/RP07-08/RP07-08.pdf",
+      "claims": [
+        "PLO relocation and Lebanon’s civil war"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "PLO fighters relocated from Jordan, launched raids into Israel and changed Lebanon’s internal balance."
+    },
+    {
+      "label": "UNHCR history of the Great Lakes crisis",
+      "url": "https://www.unhcr.org/sites/default/files/legacy-pdf/3ebf9bb60.pdf",
+      "claims": [
+        "Armed groups operating from eastern Zaire"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "Former Rwandan military groups mounted cross-border attacks from eastern Zaire, and Mobutu supported rearmament."
+    },
+    {
+      "label": "UNHCR Uganda",
+      "url": "https://www.unhcr.org/where-we-work/countries/uganda",
+      "claims": [
+        "Uganda refugee population and policy"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "Uganda hosted 1,999,576 refugees and asylum seekers as of March 31, 2026."
+    },
+    {
+      "label": "World Bank on Uganda’s host communities",
+      "url": "https://documents1.worldbank.org/curated/en/099031226135537388/pdf/BOSIB-2a929b98-ca07-4dd4-bfdc-a00f081de829.pdf",
+      "claims": [
+        "Pressure on local services in Uganda"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "Local health and education facilities and other public services face mounting pressure."
+    },
+    {
+      "label": "American Factbook compilation of CBP data",
+      "url": "https://americanfactbook.org/immigration/region/southwest",
+      "claims": [
+        "Southwest land-border encounters"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "December 2023: 301,981; December 2024: 96,033; February 2025: 11,710; October 2026: 11,443."
+    },
+    {
+      "label": "Pew Research Center on border encounters",
+      "url": "https://www.pewresearch.org/short-reads/2026/02/02/migrant-encounters-at-the-us-mexico-border-are-at-their-lowest-level-in-more-than-50-years/",
+      "claims": [
+        "Policy changes behind encounter decline"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "The decline followed policy changes in the U.S. and Mexico during both administrations."
+    },
+    {
+      "label": "Breitbart’s account of Trump’s November 20 remarks",
+      "url": "https://www.breitbart.com/economy/2026/11/20/trump-dodge-question-on-salazar-amnesty-cheap-labor-bill/",
+      "claims": [
+        "Trump’s response to the veto question"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "Trump discussed removing serious offenders and gave no direct answer on a veto."
+    },
+    {
+      "label": "Text of the Dignity Act, H.R. 4393",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4393ih/html/BILLS-119hr4393ih.htm",
+      "claims": [
+        "Border enforcement, E-Verify and legal status provisions"
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T02:56:32.207Z",
+      "evidence_excerpt": "The introduced bill pairs border and employment enforcement with a Dignity Program for qualifying applicants."
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:President_Trump_Travels_to_Arizona_(50041201182).jpg",
+    "attribution": "Shealah Craighead / Official White House Photo, public domain",
+    "rights": "Public domain, U.S. federal government work",
+    "authentic": true,
+    "path": "assets/images/trump-border-control-history-20261122.jpg",
+    "sha256": "855cd507e3f00db7314bfcc78c0693f10643041628ee270de21e190195f58cd1",
+    "publisher_approved": true
+  },
+  "slug": "trump-border-control-history-20261122",
+  "publisher_approved": true,
+  "article_sha256": "51b091f546739117f42c34edc20236c25af78f72918f78dc6a3ae0f997baa4d1"
+}

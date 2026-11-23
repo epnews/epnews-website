@@ -370,5 +370,10 @@
     "path": "assets/images/epnews-dar-texas-20261122-1600x900.png",
     "url": "https://drive.google.com/uc?export=download&id=1F8AKUiavU2r4Du3XAHWNOIQM-_yj8hn3",
     "sha256": "2caf913bdcaacce2baf4d3927af9ac453842a2effb084b3851f0419c49f32a2c"
+  },
+  {
+    "path": "assets/images/trump-border-control-history-20261122.jpg",
+    "url": "https://drive.google.com/uc?export=download&id=1v9dfyb8PnjTKeFPkCO0XUEEbA8dM1rdD",
+    "sha256": "855cd507e3f00db7314bfcc78c0693f10643041628ee270de21e190195f58cd1"
   }
 ]
