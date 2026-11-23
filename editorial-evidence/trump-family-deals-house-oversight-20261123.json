@@ -1,0 +1,127 @@
+{
+  "slug": "trump-family-deals-house-oversight-20261123",
+  "sources": [
+    {
+      "label": "House Oversight Democrats — Garcia’s document preservation letters",
+      "url": "https://oversightdemocrats.house.gov/news/press-releases/incoming-oversight-chairman-robert-garcia-launches-document-preservation-letters-on-trump-family-corruption-corporate-corruption-dhs-misconduct-and-epstein-cover-up",
+      "verified": true,
+      "claims": [
+        "Garcia issued preservation notices concerning World Liberty Financial and Affinity Partners."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Garcia issued preservation notices concerning World Liberty Financial and Affinity Partners."
+    },
+    {
+      "label": "Associated Press — Garcia’s planned oversight inquiries",
+      "url": "https://apnews.com/article/6cfa31f11051c52e567523e27ee5803e",
+      "verified": true,
+      "claims": [
+        "The letters lay groundwork for investigations after the new Congress convenes."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "The letters lay groundwork for investigations after the new Congress convenes."
+    },
+    {
+      "label": "Breitbart — Comer’s Fox News remarks",
+      "url": "https://www.breitbart.com/clips/2026/11/23/comer-house-democrats-will-have-a-hard-time-explaining-not-pursuing-biden-while-pursuing-trump/",
+      "verified": true,
+      "claims": [
+        "Comer said some planned oversight was legitimate and criticized Democratic resistance to the Biden inquiry."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Comer said some planned oversight was legitimate and criticized Democratic resistance to the Biden inquiry."
+    },
+    {
+      "label": "House Oversight Republicans — bank records memo",
+      "url": "https://oversight.house.gov/wp-content/uploads/2023/10/Fourth-Bank-Records-Memo.pdf",
+      "verified": true,
+      "claims": [
+        "An affiliate of CEFC wired $5 million to Hudson West III in 2017."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "An affiliate of CEFC wired $5 million to Hudson West III in 2017."
+    },
+    {
+      "label": "The Washington Post — Hunter Biden’s business dealings",
+      "url": "https://www.washingtonpost.com/politics/2022/03/30/hunter-biden-china-laptop/",
+      "verified": true,
+      "claims": [
+        "The Post reported the $5 million wire in 2022, based in part on corroborating bank statements."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "The Post reported the $5 million wire in 2022, based in part on corroborating bank statements."
+    },
+    {
+      "label": "FactCheck.org — records of the $40,000 transfer and repayment",
+      "url": "https://www.factcheck.org/2023/12/gop-misleading-claims-in-biden-impeachment-investigation/",
+      "verified": true,
+      "claims": [
+        "Transfer records and a check image support the explanation that the $40,000 check repaid an earlier transfer from Joe Biden."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Transfer records and a check image support the explanation that the $40,000 check repaid an earlier transfer from Joe Biden."
+    },
+    {
+      "label": "House Republicans — Biden impeachment inquiry report",
+      "url": "https://waysandmeans.house.gov/wp-content/uploads/2024/08/Report-of-the-Impeachment-Inquiry-of-Joseph-R.-Biden-Jr.-President-of-the-United-States.pdf",
+      "verified": true,
+      "claims": [
+        "The report counted more than $27 million received by relatives and associates from foreign sources."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "The report counted more than $27 million received by relatives and associates from foreign sources."
+    },
+    {
+      "label": "House Oversight Democrats — response to Biden inquiry",
+      "url": "https://oversightdemocrats.house.gov/sites/evo-subsites/democrats-oversight.house.gov/files/evo-media-document/2024-08-19.DEM%20Memo%20re%20Impeachment%20Inquiry%20Exonerates%20President%20Biden.pdf",
+      "verified": true,
+      "claims": [
+        "Democrats disputed the Republican findings and said further production of Trump accounting records ceased."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Democrats disputed the Republican findings and said further production of Trump accounting records ceased."
+    },
+    {
+      "label": "The Washington Post — assessment of the impeachment report",
+      "url": "https://www.washingtonpost.com/politics/2024/08/19/impeachment-report-house-republicans-joe-biden-hunter/",
+      "verified": true,
+      "claims": [
+        "The report did not present direct evidence of Joe Biden’s participation in family business dealings while vice president."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "The report did not present direct evidence of Joe Biden’s participation in family business dealings while vice president."
+    },
+    {
+      "label": "House Oversight Democrats — Trump business receipts",
+      "url": "https://oversightdemocrats.house.gov/news/press-releases/oversight-democrats-release-report-proving-trump-pocketed-millions-from-at-least",
+      "verified": true,
+      "claims": [
+        "Democratic staff reported at least $7.8 million in foreign government payments to four Trump businesses."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Democratic staff reported at least $7.8 million in foreign government payments to four Trump businesses."
+    },
+    {
+      "label": "GovInfo — Presidential Ethics Reform Act, H.R. 8489",
+      "url": "https://www.govinfo.gov/app/details/BILLS-118hr8489ih",
+      "verified": true,
+      "claims": [
+        "Comer and Porter introduced a presidential family financial disclosure bill that was referred to committee."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Comer and Porter introduced a presidential family financial disclosure bill that was referred to committee."
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:James_Comer_official_photo.jpg",
+    "attribution": "United States Congress / EP News design",
+    "rights": "Public-domain U.S. congressional photograph",
+    "authentic": true,
+    "kind": "authentic photograph with editorial typography",
+    "path": "assets/images/trump-family-deals-house-oversight-20261123.jpg",
+    "sha256": "3c3c6f282cdd60dd79e474cf63deb68f60856fd34069f6f0330cc0da6c8ee501",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "a1eb3251fbc554a3e710fb09147925f005c739f78d5c3523e68ef71bc734d62a"
+}
