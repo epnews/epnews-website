@@ -1,0 +1,46 @@
+{
+  "slug": "houston-ice-ms13-whitmire-20261123",
+  "sources": [
+    {
+      "label": "City of Houston Executive Order 1-74",
+      "url": "https://www.houstontx.gov/policies/execorders/1-74.pdf",
+      "claims": [
+        "The Nov. 6 order conditions ICE contact on a jail booking and a positive administrative-warrant hit."
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T16:40:11.390Z",
+      "evidence_excerpt": "Section 4 requires booking on new charges or other warrants and a positive NCIC hit."
+    },
+    {
+      "label": "Breitbart Texas interview with Brett Bradford",
+      "url": "https://www.breitbart.com/border/2026/11/22/exclusive-houston-mayors-post-election-order-shields-ms-13-gang-members-other-criminal-aliens-from-arrest-says-ice/",
+      "claims": [
+        "Bradford’s hypothetical, former 30-minute window, and ICE arrest during the ride-along."
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T16:40:11.390Z",
+      "evidence_excerpt": "Bradford describes the hypothetical traffic stop and cites Grande-Caminos, whom ICE arrested."
+    },
+    {
+      "label": "Houston Public Media reporting",
+      "url": "https://www.kedt.org/texas-news/2026-11-06/houston-mayor-john-whitmire-announces-hpd-will-reduce-ice-cooperation-following-midterm-results",
+      "claims": [
+        "Whitmire said the order was intended to reduce fear and anxiety."
+      ],
+      "verified": true,
+      "checked_at": "2026-11-23T16:40:11.390Z",
+      "evidence_excerpt": "The mayor announced the policy change and explained his rationale at a Nov. 6 press conference."
+    }
+  ],
+  "image": {
+    "path": "assets/images/houston-ice-ms13-whitmire-20261123.jpg",
+    "original_source": "https://commons.wikimedia.org/wiki/File:John_Whitmire_speaking_at_Veterans_Day_Ceremony,_2024_(5369).jpg",
+    "attribution": "File photo: Ed Uthman / Wikimedia Commons, CC BY 2.0, cropped.",
+    "rights": "CC BY 2.0 https://creativecommons.org/licenses/by/2.0/",
+    "authentic": true,
+    "sha256": "2bdcbcce73e86bb1196fa2ab426fd4bf98a565f7ed741c8fdba093dcc1ad07e7",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "60a3dccc7342eb0ceb9a064ec02f8a074d44bd8969de02afeab9a523c027f6a5"
+}
