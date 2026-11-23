@@ -1,0 +1,46 @@
+{
+  "sources": [
+    {
+      "label": "Associated Press — Ukrainian strike, Libyan officials’ accounts and request for a UN investigation",
+      "url": "https://apnews.com/article/c382f8eb06dca7d87e89bc6c18ba7d61",
+      "verified": true,
+      "checked_at": "2026-11-23T12:05:21Z",
+      "claims": [
+        "Strike at Benghazi, severe damage, Kremlin response and eastern Libya’s UN request"
+      ],
+      "evidence_excerpt": "AP cites two Libyan officials reporting severe damage at Benghazi and describes eastern Libya’s request for a UN investigation."
+    },
+    {
+      "label": "Reuters — Zelenskyy’s statement and eastern Libya’s account of the refueling stop",
+      "url": "https://www.investing.com/news/world-news/zelenskiy-says-ukraine-sank-russian-warship-in-libya-5044753",
+      "verified": true,
+      "checked_at": "2026-11-23T12:05:21Z",
+      "claims": [
+        "Zelenskyy’s sinking and Angara claims and the stated reason for the resupply stop"
+      ],
+      "evidence_excerpt": "Reuters reports that eastern Libya said the ship had stopped to refuel and resupply under a cooperation agreement."
+    },
+    {
+      "label": "CBS News — Satellite imagery showing the capsized corvette",
+      "url": "https://www.cbsnews.com/news/ukraine-zelenskyy-2-russian-ships-libya/",
+      "verified": true,
+      "checked_at": "2026-11-23T12:05:21Z",
+      "claims": [
+        "Published satellite imagery shows the corvette capsized"
+      ],
+      "evidence_excerpt": "The satellite-image caption describes a capsized Russian corvette at Benghazi."
+    }
+  ],
+  "image": {
+    "authentic": true,
+    "original_source": "https://commons.wikimedia.org/wiki/File:Корвет-«Меркурий».jpg",
+    "attribution": "13243546A / Wikimedia Commons, CC BY-SA 4.0. 2022 file photo, cropped and overlaid with text. Hero adaptation of the photograph shared under CC BY-SA 4.0.",
+    "rights": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "path": "assets/images/libya-russian-warship-20261123.jpg",
+    "sha256": "aa529d3209b186f939c38454bb1298077ab76b8aa65ba1fdd3db4e29e81a62bc",
+    "publisher_approved": true
+  },
+  "slug": "libya-russian-warship-20261123",
+  "publisher_approved": true,
+  "article_sha256": "f35d6262bc88f1ad5feecf64958647e61736724d8b0b3473d2242299759e9444"
+}
