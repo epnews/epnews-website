@@ -1,0 +1,77 @@
+{
+  "slug": "vance-venezuelan-oil-inquiry-20261123",
+  "sources": [
+    {
+      "label": "Reuters – Hassan’s records request",
+      "url": "https://www.reuters.com/business/energy/exclusive-jd-vances-ties-prized-venezuelan-oil-contract-under-investigation-by-2026-11-23/",
+      "verified": true,
+      "claims": [
+        "Hassan’s Dec. 14 deadline, denials, confirmed call, two licenses and campaign donation"
+      ],
+      "checked_at": "2026-11-23T23:00:00Z",
+      "evidence_excerpt": "The Energy Department confirmed the Jan. 5 call. Hassan requested communications by Dec. 14."
+    },
+    {
+      "label": "Reuters – Original Vitol reporting",
+      "url": "https://ca.investing.com/news/commodities-news/exclusivehow-a-vitol-traders-ties-to-jd-vance-helped-land-a-prized-venezuela-oil-contract-4949529",
+      "verified": true,
+      "claims": [
+        "Reported Montana conversation and Jan. 5 call"
+      ],
+      "checked_at": "2026-11-23T23:00:00Z",
+      "evidence_excerpt": "Flight records placed both aircraft at the same airport on Dec. 27. The reported meeting is disputed."
+    },
+    {
+      "label": "FactCheck.org – Hunter Biden’s testimony in context",
+      "url": "https://www.factcheck.org/2024/03/hunter-bidens-testimony-in-context/",
+      "verified": true,
+      "claims": [
+        "Burisma board service and context of U.S. Ukraine policy"
+      ],
+      "checked_at": "2026-11-23T23:00:00Z",
+      "evidence_excerpt": "Reviews testimony and the timeline of the U.S. effort to remove Shokin."
+    },
+    {
+      "label": "Council on Foreign Relations – Joe Biden’s 2018 remarks",
+      "url": "https://www.cfr.org/event/foreign-affairs-issue-launch-former-vice-president-joe-biden",
+      "verified": true,
+      "claims": [
+        "Biden’s account of the loan guarantee and prosecutor"
+      ],
+      "checked_at": "2026-11-23T23:00:00Z",
+      "evidence_excerpt": "Biden recounted linking the $1 billion guarantee to the prosecutor’s removal."
+    },
+    {
+      "label": "House Judiciary Committee – Burisma case study",
+      "url": "https://judiciary.house.gov/sites/evo-subsites/republicans-judiciary.house.gov/files/evo-media-document/Biden%20Influence%20Peddling.pdf",
+      "verified": true,
+      "claims": [
+        "Hunter Biden’s 2019 ABC interview"
+      ],
+      "checked_at": "2026-11-23T23:00:00Z",
+      "evidence_excerpt": "Quotes Hunter Biden’s acknowledgment that his name probably mattered to his appointment."
+    },
+    {
+      "label": "Council on Foreign Relations – Joe Biden’s 2016 remarks",
+      "url": "https://www.cfr.org/event/future-us-foreign-policy-conversation-vice-president-joe-biden",
+      "verified": true,
+      "claims": [
+        "Obama administration authorization"
+      ],
+      "checked_at": "2026-11-23T23:00:00Z",
+      "evidence_excerpt": "Biden described having presidential authorization and conditioning the guarantee on the prosecutor’s removal."
+    }
+  ],
+  "image": {
+    "original_source": "EP News, created for this article",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "EP News editorial use",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/vance-venezuelan-oil-inquiry-20261123-hero.jpg",
+    "sha256": "d2f63c8ecf3f6fafcc2649f51b400536dd33feef2a6f9e59d5268bfc625e0225",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "787538c7bcd3e1f85d6ada3fe25045f9a216dabcea501aaac83d996754758ed4"
+}
