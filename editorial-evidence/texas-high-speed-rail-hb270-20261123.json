@@ -1,0 +1,77 @@
+{
+  "sources": [
+    {
+      "label": "Texas Legislature — HB 270",
+      "url": "https://capitol.texas.gov/tlodocs/90R/billtext/html/HB00270I.htm",
+      "verified": true,
+      "claims": [
+        "Bucy proposes a private development agreement for the I-35 corridor and repeal of Section 199.003."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Bucy proposes a private development agreement for the I-35 corridor and repeal of Section 199.003."
+    },
+    {
+      "label": "Texas Transportation Code, Chapter 199",
+      "url": "https://statutes.capitol.texas.gov/Docs/TN/pdf/TN.199.pdf",
+      "verified": true,
+      "claims": [
+        "Section 199.003 generally restricts state money for privately operated high-speed rail."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Section 199.003 generally restricts state money for privately operated high-speed rail."
+    },
+    {
+      "label": "California High-Speed Rail Authority — 2026 Business Plan",
+      "url": "https://hsr.ca.gov/wp-content/uploads/2026/06/2026-Final-Business-Plan-060126-A11Y.pdf",
+      "verified": true,
+      "claims": [
+        "Full Phase 1 estimate is $231.3 billion and the optimized approach is $126.1 billion."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Full Phase 1 estimate is $231.3 billion and the optimized approach is $126.1 billion."
+    },
+    {
+      "label": "San Antonio Express-News — Austin–San Antonio feasibility studies",
+      "url": "https://www.expressnews.com/news/article/travis-rail-study-22395375.php",
+      "verified": true,
+      "claims": [
+        "Separate route estimated at $13.5 billion and existing-corridor improvements at $810 million to $1.9 billion."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Separate route estimated at $13.5 billion and existing-corridor improvements at $810 million to $1.9 billion."
+    },
+    {
+      "label": "KUT — Union Pacific and passenger rail",
+      "url": "https://www.kut.org/transportation/2026-08-20/austin-tx-san-antonio-rail-txdot-travis-county-study-13-billion",
+      "verified": true,
+      "claims": [
+        "Union Pacific questioned freight and passenger schedules on its existing tracks."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Union Pacific questioned freight and passenger schedules on its existing tracks."
+    },
+    {
+      "label": "New York Post — Texas officials and California’s rail history",
+      "url": "https://nypost.com/2026/11/21/us-news/texas-democrats-push-high-speed-rail-despite-california-struggles/",
+      "verified": true,
+      "claims": [
+        "Fuentes and McKee-Rodriguez endorsed passenger rail. California voters backed nearly $10 billion in bonds in 2008."
+      ],
+      "checked_at": "2026-11-23",
+      "evidence_excerpt": "Fuentes and McKee-Rodriguez endorsed passenger rail. California voters backed nearly $10 billion in bonds in 2008."
+    }
+  ],
+  "image": {
+    "original_source": "EP News artwork created for this article",
+    "attribution": "EP News",
+    "rights": "EP News commissioned illustration",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/texas-high-speed-rail-hb270-20261123.jpg",
+    "sha256": "69755550d38f4fb54d586938602af352c7ebd42a770c17a956658d3bd6bfc199",
+    "publisher_approved": true
+  },
+  "slug": "texas-high-speed-rail-hb270-20261123",
+  "publisher_approved": true,
+  "article_sha256": "921c45012f6ed8a215b576f95ba0c46b1142872af79efc3a510bd20bc73283c4"
+}

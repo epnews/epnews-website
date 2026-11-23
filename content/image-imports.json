@@ -390,5 +390,10 @@
     "path": "assets/images/houston-ice-ms13-whitmire-20261123.jpg",
     "url": "https://drive.google.com/uc?export=download&id=1q7zjBAv3ovpq6b9zuPY1EoaFdVgygY2M",
     "sha256": "2bdcbcce73e86bb1196fa2ab426fd4bf98a565f7ed741c8fdba093dcc1ad07e7"
+  },
+  {
+    "path": "assets/images/texas-high-speed-rail-hb270-20261123.jpg",
+    "url": "https://drive.google.com/uc?export=download&id=1RV5WinNyiNsLuL_NXW9c2lpVUtWQpID9",
+    "sha256": "69755550d38f4fb54d586938602af352c7ebd42a770c17a956658d3bd6bfc199"
   }
 ]
