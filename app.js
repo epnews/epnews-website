@@ -65,6 +65,8 @@ function trackArticleRead(slug){
 }
 const facebookPageUrl = 'https://www.facebook.com/61593962901875';
 const facebookDiscussionPosts = new Map(Object.entries({
+  "dar-texas-20261122": "https://www.facebook.com/reel/2072321790140567/",
+  "eu-methane-delay-20261122": "https://www.facebook.com/reel/1193854763590632/",
   "texas-abortion-pill-lawsuits-20261121": "https://www.facebook.com/122111730501465430/posts/122133026337465430",
   "poland-nato-airspace-20261121": "https://www.facebook.com/122111730501465430/posts/122133017271465430",
   "north-korea-testing-cap-yongbyon-20261122": "https://www.facebook.com/122111730501465430/posts/122133255723465430"
@@ -74,7 +76,9 @@ function facebookDiscussion(storyId) {
   const postUrl = facebookDiscussionPosts.get(storyId);
   const heading = postUrl ? 'What do you think?' : 'Follow EP News';
   const copy = postUrl ? 'Join readers discussing this story on Facebook.' : 'Get updates from EP News on Facebook.';
-  const label = postUrl ? 'JOIN THE DISCUSSION ON FACEBOOK' : 'FOLLOW EP NEWS ON FACEBOOK';
+  const isReel = postUrl?.startsWith('https://www.facebook.com/reel/');
+  const label = isReel ? 'VIEW THE FACEBOOK REEL AND COMMENTS' :
+    postUrl ? 'JOIN THE DISCUSSION ON FACEBOOK' : 'FOLLOW EP NEWS ON FACEBOOK';
   return `<section class="facebook-discussion"><span class="facebook-discussion-kicker">CONTINUE THE CONVERSATION</span><h2>${heading}</h2><p>${copy}</p><a href="${escapeHtml(postUrl || facebookPageUrl)}" data-fb-cta="article">${label} ↗</a></section>`;
 }
 
