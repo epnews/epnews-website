@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "label": "Associated Press — House tally, North Carolina result and remaining races",
+      "url": "https://apnews.com/article/721096a4d9ba2cd68683692361798cdb",
+      "verified": true,
+      "checked_at": "2026-11-23T12:23:13Z",
+      "claims": [
+        "Hubbard defeated Foxx; the race call gave Democrats at least 258 seats, with four races still uncalled."
+      ],
+      "evidence_excerpt": "Hubbard defeated Foxx; the race call gave Democrats at least 258 seats, with four races still uncalled."
+    },
+    {
+      "label": "Reuters — Historical comparison and four uncalled races",
+      "url": "https://www.reuters.com/world/us/north-carolina-win-gives-democrats-biggest-us-house-majority-since-early-1990s-2026-11-22/",
+      "verified": true,
+      "checked_at": "2026-11-23T12:23:13Z",
+      "claims": [
+        "The 258 seats are the largest House majority for either party since the early 1990s; Democrats also won 258 in 1992."
+      ],
+      "evidence_excerpt": "The 258 seats are the largest House majority for either party since the early 1990s; Democrats also won 258 in 1992."
+    },
+    {
+      "label": "Associated Press — Senate tally and first-100-days health care plans",
+      "url": "https://apnews.com/article/8b60b5fa8c1af9c0a87950100a1d0153",
+      "verified": true,
+      "checked_at": "2026-11-23T12:23:13Z",
+      "claims": [
+        "Democrats are set to hold 56 Senate seats and plan early action on Medicaid cuts and ACA tax credits."
+      ],
+      "evidence_excerpt": "Democrats are set to hold 56 Senate seats and plan early action on Medicaid cuts and ACA tax credits."
+    },
+    {
+      "label": "U.S. Senate — Filibusters and cloture",
+      "url": "https://www.senate.gov/about/powers-procedures/filibusters-cloture.htm",
+      "verified": true,
+      "checked_at": "2026-11-23T12:23:13Z",
+      "claims": [
+        "Senate cloture normally requires three-fifths of senators chosen and sworn, or 60 in a full Senate."
+      ],
+      "evidence_excerpt": "Senate cloture normally requires three-fifths of senators chosen and sworn, or 60 in a full Senate."
+    },
+    {
+      "label": "Congressional Research Service — Veto override procedure",
+      "url": "https://www.congress.gov/crs_external_products/RS/PDF/RS22654/RS22654.8.pdf",
+      "verified": true,
+      "checked_at": "2026-11-23T12:23:13Z",
+      "claims": [
+        "Veto override requires two-thirds of the members voting in each chamber, a quorum being present."
+      ],
+      "evidence_excerpt": "Veto override requires two-thirds of the members voting in each chamber, a quorum being present."
+    },
+    {
+      "label": "U.S. House — Rules and committee subpoena authority",
+      "url": "https://clerk.house.gov/legislative/house-rules.pdf",
+      "verified": true,
+      "checked_at": "2026-11-23T12:23:13Z",
+      "claims": [
+        "House rules allow committees to issue subpoenas under specified conditions."
+      ],
+      "evidence_excerpt": "House rules allow committees to issue subpoenas under specified conditions."
+    }
+  ],
+  "image": {
+    "authentic": true,
+    "original_source": "https://commons.wikimedia.org/wiki/File:United_States_Capitol_west_front_edit2_(cropped).jpg",
+    "attribution": "Architect of the Capitol via Wikimedia Commons (derivative crop by O.J.), U.S. public domain. Cropped and overlaid with EP News text.",
+    "rights": "Public domain in the United States, official federal government photograph.",
+    "path": "assets/images/democrats-house-majority-20261123.jpg",
+    "sha256": "77106527d5d42eea3c897f588dbcaf52ea425bf31c3f0d4a2c3be67e9936b780",
+    "publisher_approved": true
+  },
+  "slug": "democrats-house-majority-20261123",
+  "publisher_approved": true,
+  "article_sha256": "d6c8de973e31377c9259ca9e605678d172d441ca24daa434af939b8776d13eac"
+}
