@@ -1,0 +1,67 @@
+{
+  "sources": [
+    {
+      "label": "Venezuelan government announcement and summary of Venezuela Renace, November 25",
+      "url": "https://consuladobarcelona.gob.ve/webalterna/venezuela-publica-su-nuevo-plan-economico-venezuela-renace/",
+      "verified": true,
+      "claims": [
+        "Government recovery plan and official oil output and investment projections."
+      ],
+      "checked_at": "2026-11-25T22:28:22.476Z",
+      "evidence_excerpt": "1.21 million barrels per day in 2026 and 2.91 million in 2036, with $160 billion in projected oil investment."
+    },
+    {
+      "label": "Reuters on the debt disclosure and creditor breakdown, November 24",
+      "url": "https://www.reuters.com/world/americas/venezuela-unveils-long-awaited-economic-framework-puts-debt-2375-billion-2026-11-24/",
+      "verified": true,
+      "claims": [
+        "Government public debt disclosure and China and Russia creditor balances as reported by Reuters."
+      ],
+      "checked_at": "2026-11-25T22:28:22.476Z",
+      "evidence_excerpt": "$237.5 billion public debt; $16.87 billion owed to China and $5.08 billion to Russia."
+    },
+    {
+      "label": "Reuters on the pending debt sustainability analysis, November 25",
+      "url": "https://www.reuters.com/world/americas/venezuela-data-deluge-cheers-investors-237-billion-debt-test-lies-ahead-2026-11-25/",
+      "verified": true,
+      "claims": [
+        "Debt sustainability analysis timing, projected primary deficits and intra-public obligations."
+      ],
+      "checked_at": "2026-11-25T22:28:22.476Z",
+      "evidence_excerpt": "Vice Finance Minister says analysis expected in the coming days or weeks; primary deficits forecast through 2030."
+    },
+    {
+      "label": "EFE on the government’s public debt figures, November 24",
+      "url": "https://efe.com/economia/2026-11-24/venezuela-deuda-publica-pib-insostenible/",
+      "verified": true,
+      "claims": [
+        "Government debt amount and end-2025 GDP ratio."
+      ],
+      "checked_at": "2026-11-25T22:28:22.476Z",
+      "evidence_excerpt": "Public debt of $237.544 billion at end-2025, about 242% of GDP."
+    },
+    {
+      "label": "U.S. Treasury OFAC guidance on Venezuelan oil and gas licenses",
+      "url": "https://ofac.treasury.gov/faqs/topic/1581",
+      "verified": true,
+      "claims": [
+        "Conditional U.S. authorization of certain oil and gas operations and investments."
+      ],
+      "checked_at": "2026-11-25T22:28:22.476Z",
+      "evidence_excerpt": "FAQ 1242 describes covered oil and gas operations and investment for listed entities under GL 50A."
+    }
+  ],
+  "image": {
+    "original_source": "EP News original AI-generated coastal oil terminal illustration with separately applied EP News masthead and typography",
+    "attribution": "EP News",
+    "rights": "Original EP News editorial artwork created for this article",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/epnews-venezuela-debt-china-russia-20261125.jpg",
+    "sha256": "e14e1b9b7a95f7ae376665303db506bc3b4b08d7f9fe422b6cf7057e1915f45d",
+    "publisher_approved": true
+  },
+  "slug": "venezuela-debt-china-russia-20261125",
+  "publisher_approved": true,
+  "article_sha256": "b0667c4ab149d065b7294e60689facb4f6124fe316513198f6fcacb1901b0a47"
+}
