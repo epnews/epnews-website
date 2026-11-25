@@ -1,0 +1,82 @@
+{
+  "sources": [
+    {
+      "label": "CNBC interview",
+      "url": "https://pressroom.versantmedia.com/cnbc/press-releases/cnbc-transcript-president-donald-trump-speaks-cnbcs-eamon-javers-and-squawk",
+      "claims": [
+        "Trump’s account of speaking with directors and the government assessment"
+      ],
+      "evidence_excerpt": "Trump told CNBC he convinced directors and said he was represented at the board meeting.",
+      "checked_at": "2026-11-25T12:31:48Z",
+      "verified": true
+    },
+    {
+      "label": "Nvidia announcement",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director/",
+      "claims": [
+        "Unanimous vote",
+        "Senior U.S. government input",
+        "Board assessment"
+      ],
+      "evidence_excerpt": "Nvidia announced a unanimous reinstatement after directors received U.S. government input.",
+      "checked_at": "2026-11-25T12:31:48Z",
+      "verified": true
+    },
+    {
+      "label": "SEC filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nvda-20261122.htm",
+      "claims": [
+        "Effective date and three roles"
+      ],
+      "evidence_excerpt": "The 8-K dates the board action to Nov. 22 and lists all reinstated roles.",
+      "checked_at": "2026-11-25T12:31:48Z",
+      "verified": true
+    },
+    {
+      "label": "Nvidia’s Nov. 8 statement",
+      "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+      "claims": [
+        "Independent inquiry announced"
+      ],
+      "evidence_excerpt": "The board said it was initiating an independent investigation.",
+      "checked_at": "2026-11-25T12:31:48Z",
+      "verified": true
+    },
+    {
+      "label": "Reuters",
+      "url": "https://www.reuters.com/technology/nvidia-reinstates-jensen-huang-ceo-2026-11-23/",
+      "claims": [
+        "Earlier position by chair",
+        "Open company inquiry",
+        "Export-control context"
+      ],
+      "evidence_excerpt": "Reuters reported the chair previously ruled out reinstatement and the company inquiry had not finished.",
+      "checked_at": "2026-11-25T12:31:48Z",
+      "verified": true
+    },
+    {
+      "label": "Senate hearing notice",
+      "url": "https://www.banking.senate.gov/hearings/protecting-americas-ai-advantage-oversight-of-us-export-controls",
+      "claims": [
+        "Dec. 3 hearing",
+        "Huang listed as witness"
+      ],
+      "evidence_excerpt": "The committee lists Huang for its Dec. 3 export-controls hearing.",
+      "checked_at": "2026-11-25T12:31:48Z",
+      "verified": true
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:Jensen_Huang_(cropped)_(2024).jpg",
+    "attribution": "Peter Dasilva / © European Union, 2026 · CC BY 4.0 · cropped and placed in EP News layout",
+    "rights": "CC BY 4.0 https://creativecommons.org/licenses/by/4.0/",
+    "kind": "file-photo",
+    "authentic": true,
+    "path": "assets/images/trump-nvidia-huang-board-reinstatement-20261125.jpg",
+    "sha256": "2230a6212a56e6f02aeab1bbb0e8df9e8200811a9f4261382c5b31f277453942",
+    "publisher_approved": true
+  },
+  "slug": "trump-nvidia-huang-board-reinstatement-20261125",
+  "publisher_approved": true,
+  "article_sha256": "c94765f103696f448bf1e53043060510c31c01654605fce91be1cd273a530034"
+}
