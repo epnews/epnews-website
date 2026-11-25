@@ -1,0 +1,57 @@
+{
+  "sources": [
+    {
+      "label": "Bureau of Economic Analysis — Third-quarter GDP, second estimate",
+      "url": "https://www.bea.gov/sites/default/files/2026-11/gdp3q26-2nd.pdf",
+      "verified": true,
+      "checked_at": "2026-11-25T19:41:32.200Z",
+      "claims": [
+        "GDP revision, annualization, contributors and next release"
+      ],
+      "evidence_excerpt": "BEA reports 4.3% annualized and 1.1% quarterly, with an upward revision led by investment and consumption."
+    },
+    {
+      "label": "Bureau of Economic Analysis — October personal income and outlays",
+      "url": "https://bea.gov/sites/default/files/2026-11/pi1026.pdf",
+      "verified": true,
+      "checked_at": "2026-11-25T19:41:32.200Z",
+      "claims": [
+        "Headline and core PCE inflation and spending"
+      ],
+      "evidence_excerpt": "October headline PCE prices rose 3.8% year over year and real spending declined less than 0.1% month over month."
+    },
+    {
+      "label": "Reuters — U.S. growth and October inflation",
+      "url": "https://www.reuters.com/business/us-inflation-rises-further-october-2026-11-25/",
+      "verified": true,
+      "checked_at": "2026-11-25T19:41:32.200Z",
+      "claims": [
+        "Independent reporting on growth and prices"
+      ],
+      "evidence_excerpt": "Reuters described the growth pace as the fastest in three years and identified categories with rising prices."
+    },
+    {
+      "label": "U.S. Trade Representative — November 25 proposed tariff actions",
+      "url": "https://www.ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-makes-determinations-and-proposes-actions-14-section-301-investigations-relating-structural",
+      "verified": true,
+      "checked_at": "2026-11-25T19:41:32.200Z",
+      "claims": [
+        "Tariff proposal timing"
+      ],
+      "evidence_excerpt": "USTR announced proposed actions on November 25, after the October data period."
+    }
+  ],
+  "image": {
+    "original_source": "OpenAI-generated grocery checkout scene with the approved EP News masthead composited separately",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original editorial illustration created for EP News with its approved masthead",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/us-growth-inflation-october-20261125-1600x900.jpg",
+    "sha256": "46fe55a38f87d24ddbd4cc86c2f62665331f91f95b4447d319dcb4b8892091f0",
+    "publisher_approved": true
+  },
+  "slug": "us-growth-inflation-october-20261125",
+  "publisher_approved": true,
+  "article_sha256": "3f2e22001f6f0bca8000233c1d1b2c89e05545033f422a117c187308b181f338"
+}
