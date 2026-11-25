@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "label": "U.S. Attorney's Office for the Eastern District of New York — verdict announcement",
+      "url": "https://www.justice.gov/usao-edny/pr/chinese-telecommunications-conglomerate-huawei-and-subsidiaries-convicted-sanctions",
+      "verified": true,
+      "checked_at": "2026-11-25T21:41:44.179Z",
+      "claims": [
+        "Convictions, subsidiaries, prosecution evidence and possible penalties"
+      ],
+      "evidence_excerpt": "The U.S. Attorney reports guilty verdicts following a 12-week trial and describes the Iran and trade-secret evidence."
+    },
+    {
+      "label": "Associated Press — trial and verdict coverage",
+      "url": "https://apnews.com/article/huawei-racketeering-trial-verdict-b39ac780e2e31140015a1be02f0329ab",
+      "verified": true,
+      "checked_at": "2026-11-25T21:41:44.179Z",
+      "claims": [
+        "Split verdict and defense response"
+      ],
+      "evidence_excerpt": "AP reports 10 convictions, two acquittals and Huawei's planned appeal."
+    },
+    {
+      "label": "Reuters — verdict, defense response and sentencing date",
+      "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/25/china-s-huawei-convicted-at-us-criminal-trial-stemming-from-iran-business",
+      "verified": true,
+      "checked_at": "2026-11-25T21:41:44.179Z",
+      "claims": [
+        "Scheduled sentencing date and response"
+      ],
+      "evidence_excerpt": "Reuters reports Judge Donnelly is scheduled to sentence Huawei on September 14, 2027."
+    }
+  ],
+  "image": {
+    "original_source": "OpenAI-generated telecom tower and courthouse illustration with approved EP News masthead composited separately",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original editorial illustration created for EP News with its approved masthead",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/huawei-split-verdict-20261125-1600x900.jpg",
+    "sha256": "4b6fa2a8552931958dcfe45ccf611bfa8cc4a98ab1a9656122f5acc5cee2ebd8",
+    "publisher_approved": true
+  },
+  "slug": "huawei-split-verdict-20261125",
+  "publisher_approved": true,
+  "article_sha256": "32a757f56acbdae0ef96f7ab0a0eb2766371f7e31cd87ab179bd9f5dfd8ca2be"
+}
