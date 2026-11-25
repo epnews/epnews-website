@@ -1,0 +1,63 @@
+{
+  "sources": [
+    {
+      "label": "Georgia Secretary of State",
+      "url": "https://sos.ga.gov/news/raffensperger-opens-investigation-seminole-countys-late-upload-election-day-results",
+      "claims": [
+        "Post-election reconciliation",
+        "Initial reporting gap",
+        "Nov. 6 unofficial margin",
+        "Investigation scope"
+      ],
+      "evidence_excerpt": "The office identified approximately 388 more Election Day check-ins than reported ballots cast in Seminole County. The Nov. 6 update put Greene 262 votes ahead.",
+      "checked_at": "2026-11-25T12:11:31Z",
+      "verified": true
+    },
+    {
+      "label": "The Carter Center",
+      "url": "https://www.cartercenter.org/news/carter-center-observes-risk-limiting-audit-georgia-2026-election/",
+      "claims": [
+        "Observed full county hand count",
+        "County certified results confirmed"
+      ],
+      "evidence_excerpt": "The Center observed the full District 154 hand count in Seminole County and reported that it confirmed the county’s certified results.",
+      "checked_at": "2026-11-25T12:11:31Z",
+      "verified": true
+    },
+    {
+      "label": "WALB",
+      "url": "https://www.walb.com/2026/11/24/house-district-154-candidates-weigh-seminole-county-election-investigation/",
+      "claims": [
+        "Certification on Nov. 20",
+        "State investigation ongoing",
+        "County and candidate responses"
+      ],
+      "evidence_excerpt": "WALB reported Greene’s win and certification and obtained confirmation Nov. 23 that the state investigation was ongoing, with no announced timetable.",
+      "checked_at": "2026-11-25T12:11:31Z",
+      "verified": true
+    },
+    {
+      "label": "The Atlanta Journal-Constitution",
+      "url": "https://www.ajc.com/politics/2026/11/georgia-elections-missing-memory-card/",
+      "claims": [
+        "Initial 58-vote deficit"
+      ],
+      "evidence_excerpt": "Greene trailed James by 58 votes before the omitted results were uploaded.",
+      "checked_at": "2026-11-25T12:11:31Z",
+      "verified": true
+    }
+  ],
+  "image": {
+    "original_source": "EP News commissioned AI editorial illustration and standalone EP News masthead",
+    "attribution": "EP News / AI-generated illustration",
+    "rights": "Original EP News composition and AI-generated illustration cleared for EP News use",
+    "kind": "ai-generated-editorial-illustration",
+    "authentic": false,
+    "path": "assets/images/georgia-house-154-late-vote-upload-20261125.jpg",
+    "sha256": "b83e6ae6fb830f9a90f3fb9dd551a0ba47de6d916c7e0ce939a4a4a98f6f4aec",
+    "publisher_approved": true
+  },
+  "slug": "georgia-house-154-late-vote-upload-20261125",
+  "publisher_approved": true,
+  "article_sha256": "82824a77a0ca2040f772dd0196316662e0c2d5a98df630852283ed651256bd4a"
+}
