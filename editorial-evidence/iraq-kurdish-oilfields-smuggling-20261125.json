@@ -1,0 +1,92 @@
+{
+  "sources": [
+    {
+      "label": "Reuters",
+      "url": "https://www.reuters.com/world/middle-east/iraqi-pm-orders-takeover-kurdistan-regions-border-crossings-after-oil-smuggling-2026-11-24/",
+      "claims": [
+        "Federal orders",
+        "Kurdish rejection",
+        "Oil-smuggling probe and suspensions"
+      ],
+      "evidence_excerpt": "Zaidi ordered federal management of fields and the regional prime minister rejected the move. Reuters could not independently verify the intelligence report’s findings.",
+      "checked_at": "2026-11-25T13:27:23Z",
+      "verified": true
+    },
+    {
+      "label": "The National",
+      "url": "https://www.thenationalnews.com/news/mena/2026/11/24/iraqs-pm-orders-federal-takeover-of-kurdistan-oil-exports-border-crossings-and-oilfields-in-disputed-areas/",
+      "claims": [
+        "Four provinces",
+        "Export approval and crossings orders"
+      ],
+      "evidence_excerpt": "The directives apply to fields in disputed areas of four provinces and require federal ministry authorization for exports.",
+      "checked_at": "2026-11-25T13:27:23Z",
+      "verified": true
+    },
+    {
+      "label": "Reuters on the ruling",
+      "url": "https://www.reuters.com/world/middle-east/iraqs-top-court-says-baghdad-can-deploy-troops-secure-borders-kurdistan-region-2026-11-25/",
+      "claims": [
+        "Court ruling on international borders"
+      ],
+      "evidence_excerpt": "Iraqi state television reported that the top court affirmed federal power to deploy forces along international borders.",
+      "checked_at": "2026-11-25T13:27:23Z",
+      "verified": true
+    },
+    {
+      "label": "Rudaw",
+      "url": "https://www.rudaw.net/english/categories/iraq/1080314",
+      "claims": [
+        "Federal Supreme Court ruling"
+      ],
+      "evidence_excerpt": "Rudaw reported that the court affirmed federal authority over international borders and border crossings.",
+      "checked_at": "2026-11-25T13:27:23Z",
+      "verified": true
+    },
+    {
+      "label": "Kurdistan Region presidency",
+      "url": "https://presidency.gov.krd/en/statement-by-president-nechirvan-barzani-1/",
+      "claims": [
+        "Regional president's position",
+        "Existing talks"
+      ],
+      "evidence_excerpt": "Nechirvan Barzani said the two governments were already in dialogue and called for a constitutional resolution.",
+      "checked_at": "2026-11-25T13:27:23Z",
+      "verified": true
+    },
+    {
+      "label": "Rudaw on the federal orders",
+      "url": "https://rudaw.net/english/categories/iraq/1080288",
+      "claims": [
+        "Existing federal export arrangements"
+      ],
+      "evidence_excerpt": "Rudaw attributed federal oversight of exports through Turkey and treasury proceeds to the regional natural resources ministry.",
+      "checked_at": "2026-11-25T13:27:23Z",
+      "verified": true
+    },
+    {
+      "label": "Reuters explainer",
+      "url": "https://www.reuters.com/world/middle-east/what-are-disputes-between-iraqs-federal-government-kurdistan-region-2026-11-24/",
+      "claims": [
+        "Previous export shutdown",
+        "September 2025 restart"
+      ],
+      "evidence_excerpt": "Reuters describes the earlier interruption and the September 2025 arrangement that resumed exports through Turkey.",
+      "checked_at": "2026-11-25T13:27:23Z",
+      "verified": true
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:Kirkukoil.jpg",
+    "attribution": "William John Gauthier / Wikimedia Commons · 2011 file photo · CC BY-SA 2.0 · cropped and overlaid with text",
+    "rights": "CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/ · EP News masthead subject to separate brand rights",
+    "kind": "file-photo",
+    "authentic": true,
+    "path": "assets/images/iraq-kurdish-oilfields-smuggling-20261125.jpg",
+    "sha256": "85486042c610d2cef0483197af1c48555c19ad56b19d5c3740c03b6421cb1bb0",
+    "publisher_approved": true
+  },
+  "slug": "iraq-kurdish-oilfields-smuggling-20261125",
+  "publisher_approved": true,
+  "article_sha256": "6da318d59b34d835446fc75f91bbbd86a229ab89081e4b90c4627308b85b0ac1"
+}
