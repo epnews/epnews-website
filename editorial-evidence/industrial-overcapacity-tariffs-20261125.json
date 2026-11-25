@@ -1,0 +1,47 @@
+{
+  "sources": [
+    {
+      "label": "USTR's November 25 announcement and proposed Federal Register notices",
+      "url": "https://www.ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-makes-determinations-and-proposes-actions-14-section-301-investigations-relating-structural",
+      "verified": true,
+      "checked_at": "2026-11-25T16:48:02.667Z",
+      "claims": [
+        "Scope, proposed rates and hearing schedule"
+      ],
+      "evidence_excerpt": "The agency issued findings for 14 economies, with public comments due Jan. 5 and hearings starting Jan. 25."
+    },
+    {
+      "label": "Reuters reporting on the November 25 proposal",
+      "url": "https://www.marketscreener.com/news/trump-unveils-new-tariffs-to-fight-excess-factory-capacity-undeterred-by-midterms-defeat-ce7851d8d889f42c",
+      "verified": true,
+      "checked_at": "2026-11-25T16:48:02.667Z",
+      "claims": [
+        "How trade agreements affect proposed duties"
+      ],
+      "evidence_excerpt": "Reuters independently reports that negotiated lower tariff levels can cap headline rates."
+    },
+    {
+      "label": "U.S. International Trade Commission's 2023 analysis",
+      "url": "https://www.usitc.gov/press_room/news_release/2023/er0315_63679.htm",
+      "verified": true,
+      "checked_at": "2026-11-25T16:48:02.667Z",
+      "claims": [
+        "Historical costs and production effects"
+      ],
+      "evidence_excerpt": "The USITC estimated that importers absorbed almost all of the cost of the tariffs it studied."
+    }
+  ],
+  "image": {
+    "original_source": "EP News commissioned illustration, generated with OpenAI ImageGen and composited with the approved EP News masthead",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original editorial illustration created for EP News with its approved masthead",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/industrial-overcapacity-tariffs-20261125-1600x900.jpg",
+    "sha256": "79a095a06ec6568d35719c0eba2d6afe748ae7e37819034133e143f0d2adaa28",
+    "publisher_approved": true
+  },
+  "slug": "industrial-overcapacity-tariffs-20261125",
+  "publisher_approved": true,
+  "article_sha256": "bf6182ff32db37d025386472489c86487b6734d3aa8c6e048246c830cc255704"
+}
