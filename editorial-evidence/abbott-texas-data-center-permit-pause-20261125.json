@@ -1,0 +1,71 @@
+{
+  "sources": [
+    {
+      "label": "Governor’s announcement",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-directs-tceq-to-halt-data-center-permits",
+      "claims": [
+        "Pause announced Sept. 21",
+        "Power and water rationale"
+      ],
+      "evidence_excerpt": "Abbott announced limits on permit issuance while state entities reviewed the effects of data centers on the grid and water.",
+      "checked_at": "2026-11-25T13:51:59Z",
+      "verified": true
+    },
+    {
+      "label": "Abbott directive",
+      "url": "https://brazosvalleygcd.org/wp-content/uploads/2026/09/Abbot-TCEQ-Data-Center-Letter-Halting-all-Permit.pdf",
+      "claims": [
+        "Scope of directive"
+      ],
+      "evidence_excerpt": "The governor directed TCEQ to pause issuance of all permits related to data center projects.",
+      "checked_at": "2026-11-25T13:51:59Z",
+      "verified": true
+    },
+    {
+      "label": "TCEQ response",
+      "url": "https://www.tceq.texas.gov/downloads/response/tceq-response-gov-abbott-dc-directive.pdf",
+      "claims": [
+        "Types of authorizations reviewed"
+      ],
+      "evidence_excerpt": "TCEQ described screening pending applications and suspending some claimed authorizations where possible.",
+      "checked_at": "2026-11-25T13:51:59Z",
+      "verified": true
+    },
+    {
+      "label": "Houston Chronicle",
+      "url": "https://www.houstonchronicle.com/business/energy/article/texas-data-center-permit-abbott-pause-construction-22538385.php",
+      "claims": [
+        "Review of 14 sites",
+        "Hall County permit discrepancy and developer response",
+        "Caldwell County infrastructure work",
+        "Nov. 13 directive"
+      ],
+      "evidence_excerpt": "The newspaper documented continuing work at six or more reviewed sites and attributed the Hall County authorization claim to QTS.",
+      "checked_at": "2026-11-25T13:51:59Z",
+      "verified": true
+    },
+    {
+      "label": "The Texas Tribune",
+      "url": "https://www.texastribune.org/2026/11/17/tceq-environmental-data-center-permits-resume/",
+      "claims": [
+        "Resumption of normal permit review"
+      ],
+      "evidence_excerpt": "The Tribune reported that TCEQ resumed regular review after notice from Abbott’s office.",
+      "checked_at": "2026-11-25T13:51:59Z",
+      "verified": true
+    }
+  ],
+  "image": {
+    "original_source": "EP News commissioned AI editorial illustration and standalone EP News masthead",
+    "attribution": "EP News / AI-generated editorial illustration of a generic construction site",
+    "rights": "Original EP News composition and AI-generated illustration cleared for EP News use",
+    "kind": "ai-generated-editorial-illustration",
+    "authentic": false,
+    "path": "assets/images/abbott-texas-data-center-permit-pause-20261125.jpg",
+    "sha256": "0638a2d8f77c2704986e09d106365f46d479226999799f1e306b2bafa63252a2",
+    "publisher_approved": true
+  },
+  "slug": "abbott-texas-data-center-permit-pause-20261125",
+  "publisher_approved": true,
+  "article_sha256": "63187cc058711e32259ad280d003d8d87d3a8010fe5668461672ae8237916fe4"
+}
