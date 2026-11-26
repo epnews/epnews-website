@@ -1,0 +1,61 @@
+{
+  "sources": [
+    {
+      "label": "Reuters · Ras Tanura attack and Saudi response",
+      "url": "https://www.reuters.com/world/middle-east/yemens-houthis-say-they-attacked-saudi-oil-refinery-riyadh-financial-district-2026-11-25/",
+      "claims": [
+        "Houthi claim and source confirmation",
+        "Satellite imagery showed smoke",
+        "Saudi coalition reported four interceptions",
+        "Yanbu’s role"
+      ],
+      "evidence_excerpt": "Reuters reported smoke in NASA and Planet Labs imagery, a source’s confirmation and continued uncertainty about the extent of damage.",
+      "checked_at": "2026-11-26",
+      "verified": true
+    },
+    {
+      "label": "Reuters · Thursday oil markets",
+      "url": "https://www.reuters.com/business/energy/oil-rises-supply-concerns-iran-claims-mine-strikes-ships-2026-11-26/",
+      "claims": [
+        "Brent settlement and Thursday quote",
+        "Hormuz reports as separate market context"
+      ],
+      "evidence_excerpt": "Brent settled 3.5% higher Wednesday and traded at $93.79 as of 09:39 UTC Thursday.",
+      "checked_at": "2026-11-26",
+      "verified": true
+    },
+    {
+      "label": "Saudi Aramco · Prospectus",
+      "url": "https://www.aramco.com/-/media/images/investors/saudi-aramco-prospectus-cma-en.pdf?hash=8887077F5ACCE26916E6DA8A953B44771D0C46F1&la=en",
+      "claims": [
+        "Ras Tanura nameplate capacity"
+      ],
+      "evidence_excerpt": "Aramco lists Ras Tanura gross and net capacity at 550,000 barrels of crude oil and condensate per day.",
+      "checked_at": "2026-11-26",
+      "verified": true
+    },
+    {
+      "label": "U.S. Energy Information Administration · Saudi Arabia analysis",
+      "url": "https://www.eia.gov/international/content/analysis/countries_long/Saudi_Arabia/pdf/Saudi-Arabia.pdf",
+      "claims": [
+        "Independent capacity reference"
+      ],
+      "evidence_excerpt": "The EIA lists Ras Tanura refining capacity at 550 thousand barrels per day.",
+      "checked_at": "2026-11-26",
+      "verified": true
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:Ras_Tanura_refinary_01.jpg",
+    "attribution": "Aramco / Wikimedia Commons, circa 1949 (archival photograph, public domain)",
+    "rights": "Public domain per Wikimedia Commons",
+    "authentic": true,
+    "kind": "archival-photograph",
+    "path": "assets/images/ras-tanura-refinery-oil-shipments-20261126.jpg",
+    "sha256": "9ca0de92ec03fb7731bde69888bec4fcb4e1483fd0dd02a0a3636201d9f49545",
+    "publisher_approved": true
+  },
+  "slug": "ras-tanura-refinery-oil-shipments-20261126",
+  "publisher_approved": true,
+  "article_sha256": "90aa1138432495e6a6171e9c236d030aa4343c5139b912ffc180266a4ae955d2"
+}
