@@ -1,0 +1,66 @@
+{
+  "sources": [
+    {
+      "url": "https://www.army.mil/article-amp/297069/army_announces_controlled_detonation_of_degraded_explosive_material_at_iowa_army_ammunition_plant",
+      "label": "U.S. Army",
+      "verified": true,
+      "checked_at": "2026-11-25",
+      "claims": [
+        "Army identified severe degradation in 68 drums totaling more than 9,700 pounds."
+      ],
+      "evidence_excerpt": "Army identified severe degradation in 68 drums totaling more than 9,700 pounds."
+    },
+    {
+      "url": "https://apnews.com/article/77fa69b9e88b46c5d1adc29841d2b4cc",
+      "label": "Associated Press",
+      "verified": true,
+      "checked_at": "2026-11-25",
+      "claims": [
+        "FEMA instructed residents within 20 miles to shelter in place."
+      ],
+      "evidence_excerpt": "FEMA instructed residents within 20 miles to shelter in place."
+    },
+    {
+      "url": "https://content.govdelivery.com/accounts/MODHSS/bulletins/433fa58",
+      "label": "Missouri health department",
+      "verified": true,
+      "checked_at": "2026-11-25",
+      "claims": [
+        "Missouri expected any lead reaching the state to be at low levels."
+      ],
+      "evidence_excerpt": "Missouri expected any lead reaching the state to be at low levels."
+    },
+    {
+      "url": "https://www.epa.gov/newsreleases/initial-air-monitoring-shows-zero-detection-airborne-lead-following-controlled",
+      "label": "EPA",
+      "verified": true,
+      "checked_at": "2026-11-25",
+      "claims": [
+        "EPA reported zero detection of airborne lead one hour after detonation."
+      ],
+      "evidence_excerpt": "EPA reported zero detection of airborne lead one hour after detonation."
+    },
+    {
+      "url": "https://apnews.com/article/714e040baedc1cd90c2ba688be76cfc7",
+      "label": "Associated Press",
+      "verified": true,
+      "checked_at": "2026-11-25",
+      "claims": [
+        "A late-afternoon alert said residents could resume normal activities."
+      ],
+      "evidence_excerpt": "A late-afternoon alert said residents could resume normal activities."
+    }
+  ],
+  "image": {
+    "authentic": true,
+    "original_source": "https://www.dvidshub.net/image/10119876/iowa-national-guard-monitors-us-army-detonation-middletown",
+    "attribution": "U.S. Army National Guard photo by 1st Sgt. Jason Everett",
+    "rights": "Public domain as marked by DVIDS",
+    "path": "assets/images/EP_News_Iowa_Detonation_Hero_1600x900.jpg",
+    "sha256": "36cfc276fe35869f9a8a60d504b0a380acdf412a99a1fd97d24f6dbc21ad5adf",
+    "publisher_approved": true
+  },
+  "slug": "iowa-army-lead-azide-detonation-20261125",
+  "publisher_approved": true,
+  "article_sha256": "7754182dc9a5304e2e966d507d5103aa82bd4b4340197231690696c610f91f22"
+}
