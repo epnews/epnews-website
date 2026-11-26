@@ -1,0 +1,71 @@
+{
+  "sources": [
+    {
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/october/fourteen-economies-join-united-states-signing-joint-ministerial-statement-address-global-excess",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "USTR · October joint statement announcement"
+      ],
+      "evidence_excerpt": "Oct. 7 announcement names Japan, the EU, South Korea and India among the signatories and describes joint work by sector."
+    },
+    {
+      "url": "https://www.ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-makes-determinations-and-proposes-actions-14-section-301-investigations-relating-structural",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "USTR · November Section 301 determinations and proposals"
+      ],
+      "evidence_excerpt": "Nov. 25 release lists the 14 economies, country-specific proposed treatment and January deadlines."
+    },
+    {
+      "url": "https://apnews.com/article/us-tariffs-china-japan-singapore-b94a693004ad8f9b5e78f7aafb196a71",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "Associated Press · Japan and China respond"
+      ],
+      "evidence_excerpt": "AP reports Tokyo’s protest, Kihara’s denial and Beijing’s objection."
+    },
+    {
+      "url": "https://www.reuters.com/markets/emerging/pacific-trade-bloc-asean-meet-vietnam-trump-fires-new-tariff-salvo-2026-11-26/",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "Reuters · EU response at Vietnam trade meeting"
+      ],
+      "evidence_excerpt": "Šefčovič rejected the U.S. finding against Europe and called for its agreed rate to be respected."
+    },
+    {
+      "url": "https://www.mfa.gov.cn/mfa_eng/xw/fyrbt/lxjzh/202611/t20261125_12067121.html",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "China Foreign Ministry · Guo Jiakun briefing"
+      ],
+      "evidence_excerpt": "Guo rejected using overcapacity to justify tariff pressure and called for consultations."
+    },
+    {
+      "url": "https://time.com/article/2026/11/25/trump-administration-new-tariffs-china-european-union-india/",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "Time · Proposed duty scenarios and Commission response"
+      ],
+      "evidence_excerpt": "Reports the EU rate scenario and Brussels’ position that overcapacity is a problem concentrated in third countries."
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:View_of_Port_of_Los_Angeles_with_container_ships.jpg",
+    "attribution": "Downtowngal / Wikimedia Commons, CC BY-SA 4.0 (cropped and overlaid with EP News graphics)",
+    "rights": "CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ (adapted hero distributed under the same license)",
+    "authentic": true,
+    "kind": "file-photograph",
+    "path": "assets/images/japan-eu-china-tariff-pushback-20261126.jpg",
+    "sha256": "09146b617ed6c1b3d63622d41b5b6d41f7862f4e081bf758be44eed53612f5e0",
+    "publisher_approved": true
+  },
+  "slug": "japan-eu-china-tariff-pushback-20261126",
+  "publisher_approved": true,
+  "article_sha256": "72031d73314ef6884d7aec922cabbd86d3e22654606bbcb7c6656318fefaecc8"
+}
