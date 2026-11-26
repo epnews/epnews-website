@@ -1,0 +1,157 @@
+{
+  "sources": [
+    {
+      "label": "Reuters",
+      "url": "https://www.reuters.com/business/energy/houston-refinery-restart-tests-trumps-push-boost-us-fuel-output-2026-11-19/",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Valero targets 165,000 b/d of crude capacity by end-2027."
+      ],
+      "evidence_excerpt": "Valero agreed to acquire the former LyondellBasell refinery and plans a phased restart, beginning with light crude."
+    },
+    {
+      "label": "U.S. Energy Information Administration",
+      "url": "https://www.eia.gov/Todayinenergy/detail.php?id=68404",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Hormuz constraints reduced refinery runs and product exports."
+      ],
+      "evidence_excerpt": "EIA reports crude refinery inputs fell in the Middle East and Russia after shipping disruptions and attacks."
+    },
+    {
+      "label": "International Energy Agency",
+      "url": "https://www.iea.org/reports/oil-market-report-november-2026",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "October Persian Gulf crude exports recovered faster than combined products and LPG; Americas oil output forecast up 1.6 million b/d."
+      ],
+      "evidence_excerpt": "IEA reports Gulf crude exports were at 82% of prewar levels and product and LPG exports at roughly half; higher Chinese product quotas could support recovery."
+    },
+    {
+      "label": "IEA September Oil Market Report",
+      "url": "https://www.iea.org/reports/oil-market-report-september-2026",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Combined Gulf and Russian diesel and gasoil net exports fell 1.6 million b/d between February and August."
+      ],
+      "evidence_excerpt": "IEA estimates the two suppliers represented nearly 45% of global seaborne diesel and gasoil trade in February."
+    },
+    {
+      "label": "Reuters",
+      "url": "https://www.reuters.com/business/energy/more-russian-regions-limit-fuel-sales-ukrainian-drone-strikes-hit-refinery-2026-11-20/",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Russian crude processing volumes fell 45% since late October, according to industry sources."
+      ],
+      "evidence_excerpt": "Reuters cites industry sources reporting a 45% decline in crude processing after renewed attacks."
+    },
+    {
+      "label": "S&P Global",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/112426-russian-diesel-exports-rise-despite-ukraines-refinery-attacks",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Russian diesel and gasoil shipments rose in the week ended November 19."
+      ],
+      "evidence_excerpt": "S&P Global tracked 552,000 metric tons, up from 433,000 the previous week."
+    },
+    {
+      "label": "Reuters",
+      "url": "https://www.reuters.com/world/middle-east/yemens-houthis-say-they-attacked-saudi-oil-refinery-riyadh-financial-district-2026-11-25/",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Houthis claimed a Nov. 25 attack on Ras Tanura."
+      ],
+      "evidence_excerpt": "Reuters reports a source confirmed the attack; scale of capacity loss was not established."
+    },
+    {
+      "label": "Kpler",
+      "url": "https://www.kpler.com/blog/latams-oil-trade-is-being-rerouted-by-the-middle-east-crisis",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "U.S. Gulf Coast supplied more than 85% of Latin American diesel imports per Kpler in September."
+      ],
+      "evidence_excerpt": "Kpler says Russian supply to Brazil largely disappeared and Argentina is increasing Vaca Muerta light crude production."
+    },
+    {
+      "label": "S&P Global",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/111626-diesel-demand-drives-us-refinery-results-as-global-supply-tightens",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "U.S. Gulf Coast accounted for 22% of global diesel trade so far in 2026, as reported Nov. 16."
+      ],
+      "evidence_excerpt": "S&P Global tracks 1.3 million barrels per day out of global flows of 5.97 million b/d."
+    },
+    {
+      "label": "Reuters",
+      "url": "https://www.reuters.com/business/energy/soaring-freight-rates-give-us-refiners-edge-crude-discounts-widen-2026-11-06/",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Freight strengthens the Gulf Coast position in Latin America and complex U.S. refiners can process Canadian heavy crude."
+      ],
+      "evidence_excerpt": "Reuters reports Valero sees a freight advantage in Latin America and Marathon expects record Canadian heavy-crude processing."
+    },
+    {
+      "label": "Marathon Petroleum",
+      "url": "https://ir.marathonpetroleum.com/investor/news-releases/news-details/2026/Marathon-Petroleum-Corp--Reports-Third-Quarter-2026-Results/default.aspx",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Marathon Gulf Coast refining and marketing margin reached $43.46 per barrel in Q3 2026."
+      ],
+      "evidence_excerpt": "Marathon reported $43.46, compared with $14.77 in the year-earlier quarter."
+    },
+    {
+      "label": "EIA",
+      "url": "https://www.eia.gov/petroleum/gasdiesel/",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "U.S. on-highway diesel averaged $5.695 per gallon Nov. 23."
+      ],
+      "evidence_excerpt": "EIA records $5.695 per gallon, up $1.864 on the year."
+    },
+    {
+      "label": "Kpler on Brazil and Guyana",
+      "url": "https://www.kpler.com/blog/brazil-and-guyana-show-q4-crude-supply-promise",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "Brazil and Guyana expanded seaborne crude exports."
+      ],
+      "evidence_excerpt": "Kpler estimates their combined Q3 seaborne exports rose 855,000 b/d year over year."
+    },
+    {
+      "label": "EIA",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=68344",
+      "verified": true,
+      "checked_at": "2026-11-26T15:12:42.021Z",
+      "claims": [
+        "U.S. refinery utilization averaged over 95% from May through September."
+      ],
+      "evidence_excerpt": "EIA reports the highest May–September utilization since 1998."
+    }
+  ],
+  "image": {
+    "original_source": "EP News AI-generated Gulf Coast refinery and tanker illustration, with the approved EP News masthead applied separately.",
+    "attribution": "AI-generated illustration • EP News",
+    "rights": "Original editorial illustration and EP News branding for EP News website use.",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/epnews-global-diesel-chaos-20261126.jpg",
+    "sha256": "55780e7635d392a3bd15e3b0143907a08670009882ac986f49a19f6b2306cb27",
+    "publisher_approved": true
+  },
+  "slug": "global-diesel-chaos-20261126",
+  "publisher_approved": true,
+  "article_sha256": "5fa8b05f5f6e7000bb0c23fd508ca7a39e2c46479a90b5f88fa9e95880c100a3"
+}
