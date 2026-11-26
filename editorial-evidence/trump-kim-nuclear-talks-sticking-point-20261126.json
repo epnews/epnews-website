@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "url": "https://apnews.com/article/north-korea-kim-nuclear-uranium-trump-78d6642ea055e8257518c3d695a58cd4",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "Associated Press · Trump outreach and Kim’s facility tour"
+      ],
+      "evidence_excerpt": "Trump floated contact, no meeting occurred, and Kim’s prior public conditions include respect for North Korea’s nuclear status and dropping what he calls hostile U.S. policy."
+    },
+    {
+      "url": "https://apnews.com/article/ffc5e5a2d384f00960034ec10087502e",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "Associated Press · Trump’s Asia trip and possible Kim meeting"
+      ],
+      "evidence_excerpt": "The United States was seeking to reengage North Korea on its nuclear program."
+    },
+    {
+      "url": "https://www.reuters.com/world/asia-pacific/north-koreas-kim-visits-nuclear-facilities-calls-wider-tactical-nuclear-weapons-2026-11-25/",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "Reuters · Kim’s nuclear facility tour"
+      ],
+      "evidence_excerpt": "Reuters attributed the tour, comments about nuclear status and call for a wider tactical role to KCNA."
+    },
+    {
+      "url": "https://trumpwhitehouse.archives.gov/briefings-statements/joint-statement-president-donald-j-trump-united-states-america-chairman-kim-jong-un-democratic-peoples-republic-korea-singapore-summit/",
+      "verified": true,
+      "checked_at": "2026-11-26",
+      "claims": [
+        "White House archive · Singapore joint statement"
+      ],
+      "evidence_excerpt": "Trump committed to security guarantees. North Korea committed to work toward complete denuclearization of the Korean Peninsula."
+    }
+  ],
+  "image": {
+    "original_source": "https://commons.wikimedia.org/wiki/File:Trump_and_Kim_shaking_hands_in_the_summit_room.jpg",
+    "attribution": "Dan Scavino / White House via Wikimedia Commons, June 12, 2018 (public domain)",
+    "rights": "U.S. federal government work, public domain",
+    "authentic": true,
+    "kind": "file-photograph",
+    "path": "assets/images/trump-kim-nuclear-talks-sticking-point-20261126.jpg",
+    "sha256": "9999a4ab3891e0fcbb0dedb87f3baedb48ce61545dcab2254e0d9e990c50a1cd",
+    "publisher_approved": true
+  },
+  "slug": "trump-kim-nuclear-talks-sticking-point-20261126",
+  "publisher_approved": true,
+  "article_sha256": "2c34e33398e1e34f61edd2450def65e919660a4a257662f45acbd37000648811"
+}
