@@ -1,0 +1,20 @@
+name: SEO article initial HTML verification
+on:
+  pull_request:
+    paths:
+      - 'functions/article/**'
+      - 'functions/share/**'
+      - 'content/**'
+      - 'index.html'
+      - 'scripts/test-seo-article-html.mjs'
+      - '.github/workflows/seo-article-html.yml'
+  workflow_dispatch:
+jobs:
+  verify-article-html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/test-seo-article-html.mjs

@@ -29,5 +29,32 @@ export async function onRequestGet({params,env,request}){
  html=html.replace(/<meta name="description"[^>]*>/i,description);
  // The static HTML shell already declares <base href="/">; do not duplicate it.
  html=html.replace('</head>',tags.filter(t=>!t.includes('property="og:url"')).join('')+ogUrl+canonical+'</head>');
+ // Supply article-specific body text in the initial HTML, not only metadata.
+ // Keep the existing client-side application intact: its normal router restores
+ // the homepage shell before app.js initializes and renders the article.
+ const asset=await env.ASSETS.fetch(new URL('/content/'+slug+'.js',request.url));
+ if(asset.ok){
+  const source=await asset.text();
+  const match=source.match(/["']?body["']?\s*:\s*\[([\s\S]*?)\]\s*,\s*(?:["']?sources|["']?related|["']?tags)/);
+  if(match){
+   const paragraphs=[];
+   for(const token of match[1].match(/"(?:\\.|[^"\\])*"/g)||[]){
+    try{const value=JSON.parse(token);if(typeof value==='string'&&value.length>25)paragraphs.push(value);}catch{}
+   }
+   if(paragraphs.length>=2){
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const headline=(metadata.match(/<meta property="og:title" content="([^"]*)"/i)||[])[1]||slug;
+    const desc=(metadata.match(/<meta name="description" content="([^"]*)"/i)||[])[1]||'';
+    const article='<article class="article-shell" data-ssr-article="'+esc(slug)+'"><h1>'+headline+'</h1><p>'+desc+'</p><div class="article-body">'+paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'</div></article>';
+    const start=html.indexOf('<main id="home-view">');
+    const end=html.indexOf('<div id="route-view" hidden></div>',start);
+    if(start>=0&&end>start){
+     const homepage=html.slice(start,end);
+     const restore='<script>document.getElementById("ep-home-template").replaceWith(document.getElementById("ep-home-template").content.cloneNode(true));document.getElementById("route-view").hidden=true;</'+'script>';
+     html=html.slice(0,start)+'<template id="ep-home-template">'+homepage+'</template><div id="route-view">'+article+'</div>'+restore+html.slice(end+'<div id="route-view" hidden></div>'.length);
+    }
+   }
+  }
+ }
  return new Response(html,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'public, max-age=300'}});
 }
