@@ -1,0 +1,71 @@
+{
+  "slug": "mexico-dea-cartel-tip-line-20261127",
+  "sources": [
+    {
+      "url": "https://apnews.com/article/5c00a0448b600fae2e4ae4e2f08f0425",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "Sheinbaum announced a formal complaint Friday over the DEA reporting channels and framed the dispute as one of Mexican sovereignty.",
+      "claims": [
+        "Sheinbaum announced a formal complaint Friday over the DEA reporting channels and framed the dispute as one of Mexican sovereignty."
+      ]
+    },
+    {
+      "url": "https://www.jornada.com.mx/noticia/2026/11/27/politica/mexico-presenta-queja-formal-ante-embajador-de-eu-por-iniciativa-de-dea-de-lineas-de-denuncia",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "Mexican authorities took the complaint to Ambassador Ronald Johnson. Sheinbaum said the ambassador would examine it and reiterated her willingness to cooperate on security.",
+      "claims": [
+        "Mexican authorities took the complaint to Ambassador Ronald Johnson. Sheinbaum said the ambassador would examine it and reiterated her willingness to cooperate on security."
+      ]
+    },
+    {
+      "url": "https://mexiconewsdaily.com/politics/sheinbaum-calls-foul-after-dea-announces-sinaloa-cartel-tip-line-thursdays-mananera-recapped/",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "The report embeds DEA Administrator Terry Cole’s announcement seeking tips in Sinaloa about cartel associates, alleged official corruption and money laundering, and offering confidential or anonymous reporting.",
+      "claims": [
+        "The report embeds DEA Administrator Terry Cole’s announcement seeking tips in Sinaloa about cartel associates, alleged official corruption and money laundering, and offering confidential or anonymous reporting."
+      ]
+    },
+    {
+      "url": "https://www.reuters.com/world/americas/mexico-files-complaint-with-us-over-dea-tip-line-alleged-drug-traffickers-2026-11-27/",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "Reuters reported that the DEA did not immediately respond to its request for comment on the complaint and that the two countries have recently cooperated on cartel enforcement.",
+      "claims": [
+        "Reuters reported that the DEA did not immediately respond to its request for comment on the complaint and that the two countries have recently cooperated on cartel enforcement."
+      ]
+    },
+    {
+      "url": "https://www.justice.gov/opa/pr/senior-leader-sinaloa-cartel-and-one-fbis-ten-most-wanted-fugitives-arrested-mexico",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "DOJ says Mexican troops arrested Fausto Isidro Meza Flores on Nov. 20 with U.S. assistance. He faces federal charges and was on the FBI’s Ten Most Wanted Fugitives list.",
+      "claims": [
+        "DOJ says Mexican troops arrested Fausto Isidro Meza Flores on Nov. 20 with U.S. assistance. He faces federal charges and was on the FBI’s Ten Most Wanted Fugitives list."
+      ]
+    },
+    {
+      "url": "https://www.latimes.com/world-nation/story/2026-11-27/mexico-files-formal-complaint-to-u-s-over-dea-tip-line",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "AP reports that the U.S. requested extradition and Mexican Attorney General Ernestina Godoy said Meza Flores would be tried in Mexico.",
+      "claims": [
+        "AP reports that the U.S. requested extradition and Mexican Attorney General Ernestina Godoy said Meza Flores would be tried in Mexico."
+      ]
+    }
+  ],
+  "image": {
+    "original_source": "OpenAI-generated editorial still life with EP News masthead applied separately.",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original generated illustration and publisher-supplied branding.",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/mexico-dea-cartel-tip-line-20261127.jpg",
+    "sha256": "767f3fa802fefb8091cc3dbccf79f3052e8fc6a67e5f66407bb83af19c0bd6eb",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "c0cecebee7ee2945cc4e79c778153ef5623e3a4fc5f7a75db402d9e165d53904"
+}
