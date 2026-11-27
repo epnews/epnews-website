@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "label": "European Council",
+      "url": "https://www.consilium.europa.eu/en/meetings/european-council/2026/11/26-27/",
+      "verified": true,
+      "checked_at": "2026-11-27T14:20:00Z",
+      "claims": [
+        "Costa counted 24 supporters, including Bulgaria for the nonmilitary portion only. Discussion resumes in December."
+      ],
+      "evidence_excerpt": "Council summit results record 24 supporting countries and say leaders will return to the issue in December."
+    },
+    {
+      "label": "Associated Press",
+      "url": "https://apnews.com/article/fd025046850b824b2e62def18408c6b6",
+      "verified": true,
+      "checked_at": "2026-11-27T14:20:00Z",
+      "claims": [
+        "The long-term budget talks stalled and the Ukraine loan remained unresolved. Repayment is tied to Russian reparations."
+      ],
+      "evidence_excerpt": "AP reported that the budget stalemate left the Ukraine loan pending, and that repayment would follow Russian war reparations."
+    }
+  ],
+  "image": {
+    "original_source": "EP News generated illustration with approved EP News masthead",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original EP News composite using AI-generated artwork and EP News masthead",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/eu-ukraine-loan-budget-delay-20261127.jpg",
+    "sha256": "c1a1ea45d3fd48b4d345c500e3248e240fe33a7944f72514536d97dfb0cf14ab",
+    "publisher_approved": true
+  },
+  "slug": "eu-ukraine-loan-budget-delay-20261127",
+  "publisher_approved": true,
+  "article_sha256": "01f52c9b5718e1d24e3363955b9d7f6bdf78be0e9f3c7348c3dda4ed3fe825fe"
+}
