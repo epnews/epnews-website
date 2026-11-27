@@ -1,0 +1,71 @@
+{
+  "slug": "cologne-synagogue-plot-us-terror-case-20261127",
+  "sources": [
+    {
+      "url": "https://www.presseportal.de/blaulicht/pm/14981/6398384",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "German authorities arrested two men over an alleged Cologne synagogue plot and allege a link between one suspect and al-Saadi.",
+      "claims": [
+        "German authorities arrested two men over an alleged Cologne synagogue plot and allege a link between one suspect and al-Saadi."
+      ]
+    },
+    {
+      "url": "https://www.reuters.com/world/middle-east/german-police-arrest-two-iraqis-over-alleged-cologne-synagogue-bomb-plot-2026-11-26/",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "Reuters reports the arrests and prosecutors’ allegation that al-Saadi helped form a separate organization in late 2025.",
+      "claims": [
+        "Reuters reports the arrests and prosecutors’ allegation that al-Saadi helped form a separate organization in late 2025."
+      ]
+    },
+    {
+      "url": "https://www.itv.com/news/2026-11-26/video-seen-by-itv-news-appears-to-show-man-directing-london-attacks-from-iraq",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "ITV reports that footage appears to show al-Hassani directing a London arson remotely from Iraq and says his whereabouts are unknown.",
+      "claims": [
+        "ITV reports that footage appears to show al-Hassani directing a London arson remotely from Iraq and says his whereabouts are unknown."
+      ]
+    },
+    {
+      "url": "https://www.justice.gov/usao-sdny/pr/three-iranian-backed-operatives-indicted-their-roles-nearly-20-terrorist-attacks-and-0",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "Federal prosecutors allege three defendants coordinated attacks and attempted attacks and describe the alleged Manhattan and Fairford plots.",
+      "claims": [
+        "Federal prosecutors allege three defendants coordinated attacks and attempted attacks and describe the alleged Manhattan and Fairford plots."
+      ]
+    },
+    {
+      "url": "https://www.itv.com/news/2026-11-11/seven-men-behind-alleged-iranian-terror-network-unmasked",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "ITV attributes its seven-man network assessment to security officials.",
+      "claims": [
+        "ITV attributes its seven-man network assessment to security officials."
+      ]
+    },
+    {
+      "url": "https://apnews.com/article/b9c7812aeb1d74a2cfbc4c4df1431095",
+      "verified": true,
+      "checked_at": "2026-11-27",
+      "evidence_excerpt": "AP corroborates the federal charging announcement and reports Iran denied involvement in the Fairford incident.",
+      "claims": [
+        "AP corroborates the federal charging announcement and reports Iran denied involvement in the Fairford incident."
+      ]
+    }
+  ],
+  "image": {
+    "original_source": "OpenAI-generated city illustration with approved EP News masthead applied as a separate layer.",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original generated illustration and publisher-supplied branding; no third-party photograph used.",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/cologne-synagogue-plot-us-terror-case-20261127.jpg",
+    "sha256": "328e0ab41acbdef607e7ccb3a8580dd1ce9cbc0e7152d39589af3760d7908dff",
+    "publisher_approved": true
+  },
+  "publisher_approved": true,
+  "article_sha256": "5e3bbaba4921dbff69009004e81d111e576f43d7588ec96476a4f539c23f1e7c"
+}
