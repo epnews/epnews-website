@@ -8,7 +8,7 @@ function harness(gpc=false){
  const node=()=>({children:[],style:{},append(...x){this.children.push(...x)}});
  const host=node(), body={getBoundingClientRect:()=>({top,bottom:top+2000,height:2000})};
  const document={readyState:'complete',body:host,createElement:node,querySelector:()=>body,hasFocus:()=>focus,get visibilityState(){return visible},get hidden(){return visible!=='visible'},addEventListener:(n,f)=>docEvents[n]=f};
- vm.runInNewContext(code,{document,navigator:{globalPrivacyControl:gpc},localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)},location:{pathname:'/article/test-story',search:'?utm_source=youtube&utm_content=test-angle'},URLSearchParams,crypto:{randomUUID:()=> '12345678-1234-4234-8234-123456789abc'},performance:{now:()=>clock},innerHeight:500,fetch:(u,o)=>{sent.push(JSON.parse(o.body));return Promise.resolve()},setInterval:f=>tick=f,addEventListener:(n,f)=>events[n]=f});
+ vm.runInNewContext(code,{document,navigator:{globalPrivacyControl:gpc},localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)},location:{pathname:'/article/test-story',search:'?utm_source=youtube&utm_content=test-angle'},URLSearchParams,crypto:{randomUUID:()=> '12345678-1234-4234-8234-123456789abc'},performance:{now:()=>clock},innerHeight:500,fetch:(u,o)=>{if(u==='/api/analytics-policy')return Promise.resolve({json:async()=>({automaticReading:false})});sent.push(JSON.parse(o.body));return Promise.resolve()},setInterval:f=>tick=f,addEventListener:(n,f)=>events[n]=f});
  const panel=host.children[0].children[1];
  return {sent,yes:panel.children[1],no:panel.children[2],advance(n){for(let i=0;i<n;i++){clock+=1000;tick()}},hide(){visible='hidden';docEvents.visibilitychange()},show(){visible='visible'},blur(){focus=false},scroll(){top=-1500},exit(){events.pagehide()}};
 }
@@ -24,3 +24,15 @@ async function post(data,headers={}){return (await onRequestPost({request:new Re
 assert.equal(await post(valid),204);assert.equal(writes.length,4);assert.match(writes[3].sql,/ON CONFLICT\(id\) DO UPDATE/);assert.deepEqual(writes[3].args,[valid.id,valid.slug,valid.source,valid.campaign,30,100]);
 assert.equal(await post({...valid,seconds:1801}),400);assert.equal(await post({...valid,depth:101}),400);assert.equal(await post({...valid,campaign:'diagnostic-test'}),204);assert.equal(await post(valid,{Origin:'https://other.example'}),403);writes=[];assert.equal(await post(valid,{'Sec-GPC':'1'}),204);assert.equal(writes.length,0);assert.equal(await post(valid,{DNT:'1'}),204);assert.equal(writes.length,0);
 console.log('Reading engagement consent, visibility, depth and API contract passed');
+
+import {automaticReading} from '../functions/api/analytics-policy.js';
+const regionRequest=(country,regionCode,headers={})=>({cf:{country,regionCode},headers:new Headers(headers)});
+const enabled={EP_READING_OPTOUT_ENABLED:'true',EP_READING_OPTOUT_REGIONS:'US-TX'};
+assert.equal(automaticReading(regionRequest('US','TX'),{}),false);
+assert.equal(automaticReading(regionRequest('US','TX'),enabled),true);
+assert.equal(automaticReading(regionRequest('US','CA'),enabled),false);
+assert.equal(automaticReading(regionRequest('GB'),enabled),false);
+assert.equal(automaticReading(regionRequest(undefined),enabled),false);
+assert.equal(automaticReading(regionRequest('US','TX',{'Sec-GPC':'1'}),enabled),false);
+assert.equal(automaticReading(regionRequest('US','TX',{'DNT':'1'}),enabled),false);
+console.log('Regional policy default-deny and privacy signals passed');
