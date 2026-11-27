@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "label": "Reuters",
+      "url": "https://www.reuters.com/business/energy/us-pushed-venezuela-iraq-consider-leaving-opec-sources-say-2026-11-27/",
+      "verified": true,
+      "checked_at": "2026-11-27T14:00:00Z",
+      "claims": [
+        "Reuters reported U.S. outreach to Venezuela and Iraq, Saudi intervention, and Iraqi oil ministry opposition. Reuters reported the State Department response."
+      ],
+      "evidence_excerpt": "Reuters attributes the U.S. outreach to people familiar with the discussions and reports the State Department’s response."
+    },
+    {
+      "label": "OPEC Bulletin",
+      "url": "https://www.opec.org/assets/assetdb/bulletin-2025-01.pdf",
+      "verified": true,
+      "checked_at": "2026-11-27T14:00:00Z",
+      "claims": [
+        "Iraq and Venezuela were among OPEC’s five founding members."
+      ],
+      "evidence_excerpt": "Established in Baghdad in September 1960 by five founding members including Iraq and Venezuela."
+    }
+  ],
+  "image": {
+    "original_source": "EP News generated illustration with approved EP News masthead",
+    "attribution": "EP News / AI-generated editorial illustration",
+    "rights": "Original EP News composite using AI-generated artwork and EP News masthead",
+    "authentic": false,
+    "kind": "ai-generated-editorial-illustration",
+    "path": "assets/images/us-venezuela-iraq-opec-exit-talks-20261127.jpg",
+    "sha256": "0caecf37e71f4c00b4566cd92d3c213413d7dbc5011880366c9832325fb41094",
+    "publisher_approved": true
+  },
+  "slug": "us-venezuela-iraq-opec-exit-talks-20261127",
+  "publisher_approved": true,
+  "article_sha256": "04014f1b77efc21089fe804bb8f830216450a05ba6b05a59479c34009ef87bca"
+}
